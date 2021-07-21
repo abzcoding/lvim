@@ -1,5 +1,3 @@
-local _time = os.date "*t"
-
 -- Neovim
 -- local disabled_built_ins = {
 --   "netrw",
@@ -34,15 +32,15 @@ O.keys.leader_key = " "
 -- O.treesitter.highlight.additional_vim_regex_highlighting = false
 
 -- Themes
-if _time.hour > 9 and _time.hour < 16 then
-  O.colorscheme = "tokyonight"
-elseif _time.hour >= 16 and _time.hour < 20 then
-  -- O.colorscheme = "tokyonight"
-  -- vim.g.tokyonight_style = "night"
-  O.colorscheme = "doom-one"
-else
-  O.colorscheme = "spacegray"
-end
+-- if _time.hour > 9 and _time.hour < 16 then
+--   O.colorscheme = "tokyonight"
+-- elseif _time.hour >= 16 and _time.hour < 20 then
+--   -- O.colorscheme = "tokyonight"
+--   -- vim.g.tokyonight_style = "night"
+--   O.colorscheme = "doom-one"
+-- else
+O.colorscheme = "spacegray"
+-- end
 
 -- Default options
 O.default_options.relativenumber = true
@@ -134,13 +132,31 @@ O.user_plugins = {
     "folke/tokyonight.nvim",
     config = function()
       vim.g.tokyonight_hide_inactive_statusline = true
+      local _time = os.date "*t"
+      if _time.hour < 9 then
+        vim.g.tokyonight_style = "night"
+      end
+      vim.cmd [[
+      colorscheme tokyonight
+      ]]
+    end,
+    cond = function()
+      local _time = os.date "*t"
+      return (_time.hour >= 6 and _time.hour < 16)
     end,
   },
   {
     "NTBBloodbath/doom-one.nvim",
     config = function()
       vim.g.doom_one_italic_comments = true
+      vim.cmd [[
+      colorscheme doom-one
+      ]]
       -- vim.g.doom_one_terminal_colors = true
+    end,
+    cond = function()
+      local _time = os.date "*t"
+      return (_time.hour >= 16 and _time.hour < 20)
     end,
   },
   {
