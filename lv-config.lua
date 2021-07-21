@@ -142,7 +142,7 @@ O.user_plugins = {
     end,
     cond = function()
       local _time = os.date "*t"
-      return (_time.hour >= 6 and _time.hour < 16)
+      return (_time.hour >= 0 and _time.hour < 16)
     end,
   },
   {
