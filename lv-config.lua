@@ -113,6 +113,10 @@ O.user_autocommands = {
   { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
   { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+  -- faster formatting for these languages
+  { "Filetype", "go", "nnoremap <leader>lf <Cmd>lua vim.lsp.buf.formatting_sync()<CR>" },
+  { "Filetype", "c", "nnoremap <leader>lf <Cmd>lua vim.lsp.buf.formatting_sync()<CR>" },
+  { "Filetype", "cpp", "nnoremap <leader>lf <Cmd>lua vim.lsp.buf.formatting_sync()<CR>" },
 }
 
 -- Additional Plugins
