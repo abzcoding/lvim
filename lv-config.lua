@@ -41,6 +41,7 @@ O.keys.leader_key = " "
 -- else
 O.colorscheme = "spacegray"
 -- end
+vim.cmd [[ nnoremap <C-n>i <C-i> ]]
 
 -- Default options
 O.default_options.relativenumber = true
