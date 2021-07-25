@@ -390,7 +390,7 @@ lvim.plugins = {
   },
   {
     "folke/zen-mode.nvim",
-    cmd = "ZenMode",
+    -- cmd = "ZenMode",
     config = function()
       require("zen-mode").setup {
         window = {
@@ -412,11 +412,17 @@ lvim.plugins = {
           tmux = { enabled = false },
           twilight = { enabled = true },
         },
-        on_open = function(_win)
-          vim.cmd [[IndentBlanklineDisable]]
+        on_open = function()
+          vim.cmd [[
+          set foldlevel=10
+          IndentBlanklineDisable
+          ]]
         end,
         on_close = function()
-          vim.cmd [[IndentBlanklineEnable]]
+          vim.cmd [[
+          set foldlevel=5
+          IndentBlanklineEnable
+          ]]
         end,
       }
     end,
