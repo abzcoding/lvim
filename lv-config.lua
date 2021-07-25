@@ -73,6 +73,14 @@ lvim.builtin.terminal.active = true
 lvim.lang.python.formatter.exe = "black"
 lvim.lang.python.formatter.args = { "-l", "120", "-" }
 
+-- Autocommands
+lvim.autocommands.custom_groups = {
+  { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+}
+
 -- Additional Plugins
 lvim.plugins = {
   {
@@ -341,15 +349,6 @@ lvim.plugins = {
         }, -- rust-analyser options
       }
       require("rust-tools").setup(opts)
-      vim.api.nvim_exec(
-        [[
-    autocmd Filetype rust nnoremap <leader>lm <Cmd>RustExpandMacro<CR>
-    autocmd Filetype rust nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>
-    autocmd Filetype rust nnoremap <leader>le <Cmd>RustRunnables<CR>
-    autocmd Filetype rust nnoremap <leader>lh <Cmd>RustHoverActions<CR>
-    ]],
-        true
-      )
     end,
     ft = { "rust", "rs" },
   },
