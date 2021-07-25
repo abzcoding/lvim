@@ -294,10 +294,10 @@ lvim.plugins = {
   -- },
   {
     "simrat39/rust-tools.nvim",
-    config = function ()
-      require('rust-tools').setup()
+    config = function()
+      require("rust-tools").setup()
     end,
-    ft="rust"
+    ft = "rust",
   },
   {
     "folke/zen-mode.nvim",
@@ -346,33 +346,31 @@ lvim.plugins = {
 }
 
 -- Additional Leader bindings for WhichKey
-lvim.user_which_key = {
-  o = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
-  P = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" },
-  t = {
-    name = "+Trouble",
-    r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
-  },
-  T = {
-    name = "+Tests",
-    r = { "<cmd>Ultest<cr>", "Run" },
-    s = { "<cmd>UltestSummary<cr>", "Summary" },
-    n = { "<cmd>UltestNearest<cr>", "Nearest" },
-    o = { "<cmd>UltestOutput<cr>", "Output" },
-  },
-  -- z = {"<cmd>ZenMode<cr>", "Zen"},
-  -- Q = {
-  -- 	name = "+Quit",
-  -- 	s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
-  -- 	l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
-  -- 	d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
-  -- },
+lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Trouble",
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
+  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
-lvim.user_which_key["gd"] = { "<cmd>DiffviewOpen HEAD~1<cr>", "Diff" }
-lvim.user_which_key["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
-lvim.user_which_key["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
+lvim.builtin.which_key.mappings["T"] = {
+  name = "+Tests",
+  r = { "<cmd>Ultest<cr>", "Run" },
+  s = { "<cmd>UltestSummary<cr>", "Summary" },
+  n = { "<cmd>UltestNearest<cr>", "Nearest" },
+  o = { "<cmd>UltestOutput<cr>", "Output" },
+}
+lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
+--lvim.builtin.which_key.mappings["Q"] = {
+-- 	name = "+Quit",
+-- 	s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
+-- 	l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
+-- 	d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+-- }
+lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen HEAD~1<cr>", "Diff" }
+lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
+lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
