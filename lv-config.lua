@@ -25,39 +25,25 @@ end
 
 -- General
 lvim.format_on_save = false
-lvim.lint_on_save = false
-lvim.auto_complete = true
-lvim.auto_close_tree = 0
-lvim.keys.leader_key = " "
--- lvim.treesitter.highlight.additional_vim_regex_highlighting = false
-
--- Themes
--- if _time.hour > 9 and _time.hour < 16 then
---   lvim.colorscheme = "tokyonight"
--- elseif _time.hour >= 16 and _time.hour < 20 then
---   -- lvim.colorscheme = "tokyonight"
---   -- vim.g.tokyonight_style = "night"
---   lvim.colorscheme = "doom-one"
--- else
+lvim.leader = ' '
 lvim.colorscheme = "spacegray"
--- end
-vim.cmd [[ nnoremap <C-n>i <C-i> ]]
 
 -- Default options
-lvim.relativenumber = true
-lvim.wrap = true
-lvim.timeoutlen = 200
-lvim.foldmethod = "expr"
-lvim.foldexpr = "nvim_treesitter#foldexpr()"
-lvim.foldlevel = 5
--- lvim.default_options.shiftwidth = 4
--- lvim.default_options.tabstop = 8
+vim.opt.relativenumber = true
+vim.opt.wrap = true
+vim.opt.timeoutlen = 200
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 5
+-- vim.opt.shiftwidth = 4
+-- vim.opt.tabstop = 8
 
 -- LSP
 -- lvim.lsp.document_highlight = false
 -- lvim.lsp.diagnostics.virtual_text = false
 
 -- Completion
+-- lvim.builtin.compe.autocomplete = true
 lvim.builtin.compe.source.tabnine = { kind = " ", priority = 200, max_reslts = 6 }
 
 -- dashboard
@@ -346,6 +332,7 @@ lvim.plugins = {
 }
 
 -- Additional Leader bindings for WhichKey
+vim.cmd [[ nnoremap <C-n>i <C-i> ]]
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
