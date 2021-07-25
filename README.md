@@ -4,6 +4,7 @@
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
+- [zephyr-nvim](https://github.com/glepnir/zephyr-nvim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)
 - [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)
