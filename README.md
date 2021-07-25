@@ -19,7 +19,8 @@
 - [Markdown Preview for (Neo)vim](https://github.com/iamcco/markdown-preview.nvim)
 - [vim-ultest](https://github.com/rcarriga/vim-ultest)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-- [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)
+- [Zen Mode](https://github.com/folke/zen-mode.nvim)
+- [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 
 
 ## How to use

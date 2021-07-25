@@ -1,113 +1,95 @@
 -- Neovim
--- local disabled_built_ins = {
---   "netrw",
---   "netrwPlugin",
---   "netrwSettings",
---   "netrwFileHandlers",
---   "gzip",
---   "zip",
---   "zipPlugin",
---   "tar",
---   "tarPlugin", -- 'man',
---   "getscript",
---   "getscriptPlugin",
---   "vimball",
---   "vimballPlugin",
---   "2html_plugin",
---   "logipat",
---   "rrhelper",
---   "spellfile_plugin",
---   -- 'matchit', 'matchparen', 'shada_plugin',
--- }
--- for _, _plugin in pairs(disabled_built_ins) do
---   vim.g["loaded_" .. _plugin] = 1
--- end
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin", -- 'man',
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  -- 'matchit', 'matchparen', 'shada_plugin',
+}
+for _, _plugin in pairs(disabled_built_ins) do
+  vim.g["loaded_" .. _plugin] = 1
+end
 
 -- General
-O.format_on_save = false
-O.lint_on_save = false
-O.auto_complete = true
-O.auto_close_tree = 0
-O.keys.leader_key = " "
--- O.treesitter.highlight.additional_vim_regex_highlighting = false
+lvim.format_on_save = false
+lvim.lint_on_save = false
+lvim.auto_complete = true
+lvim.auto_close_tree = 0
+lvim.keys.leader_key = " "
+-- lvim.treesitter.highlight.additional_vim_regex_highlighting = false
 
 -- Themes
 -- if _time.hour > 9 and _time.hour < 16 then
---   O.colorscheme = "tokyonight"
+--   lvim.colorscheme = "tokyonight"
 -- elseif _time.hour >= 16 and _time.hour < 20 then
---   -- O.colorscheme = "tokyonight"
+--   -- lvim.colorscheme = "tokyonight"
 --   -- vim.g.tokyonight_style = "night"
---   O.colorscheme = "doom-one"
+--   lvim.colorscheme = "doom-one"
 -- else
-O.colorscheme = "spacegray"
+lvim.colorscheme = "spacegray"
 -- end
 vim.cmd [[ nnoremap <C-n>i <C-i> ]]
 
 -- Default options
-O.default_options.relativenumber = true
-O.default_options.wrap = true
-O.default_options.timeoutlen = 200
-O.default_options.foldmethod = "expr"
-O.default_options.foldexpr = "nvim_treesitter#foldexpr()"
-O.default_options.foldlevel = 5
--- O.default_options.shiftwidth = 4
--- O.default_options.tabstop = 8
+lvim.relativenumber = true
+lvim.wrap = true
+lvim.timeoutlen = 200
+lvim.foldmethod = "expr"
+lvim.foldexpr = "nvim_treesitter#foldexpr()"
+lvim.foldlevel = 5
+-- lvim.default_options.shiftwidth = 4
+-- lvim.default_options.tabstop = 8
 
 -- LSP
--- O.lsp.document_highlight = false
--- O.lsp.diagnostics.virtual_text = false
+-- lvim.lsp.document_highlight = false
+-- lvim.lsp.diagnostics.virtual_text = false
 
 -- Completion
-O.completion.source.tabnine = { kind = " ", priority = 200, max_reslts = 6 }
+lvim.builtin.compe.source.tabnine = { kind = " ", priority = 200, max_reslts = 6 }
 
 -- dashboard
--- O.plugin.dashboard.footer = { "github.com/abzcoding" }
+-- lvim.builtin.dashboard.footer = { "github.com/abzcoding" }
 
 -- Treesitter
-O.treesitter.ensure_installed = "maintained"
-O.treesitter.matchup.enable = true
-O.treesitter.ignore_install = { "haskell" }
-O.treesitter.context_commentstring.enable = true
--- O.treesitter.textsubjects.enable = true
--- O.treesitter.playground.enable = true
-O.treesitter.indent = { enable = false }
+lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.matchup.enable = true
+lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.context_commentstring.enable = true
+-- lvim.treesitter.textsubjects.enable = true
+-- lvim.treesitter.playground.enable = true
+lvim.builtin.treesitter.indent = { enable = false }
 
 -- Plugins
-O.plugin.dashboard.active = true
-O.plugin.dap.active = true
-O.plugin.galaxyline.active = true
-O.plugin.telescope.defaults.path_display = { shorten = 10 }
--- O.plugin.nvimtree.hide_dotfiles = 0
-O.plugin.terminal.active = true
-O.plugin.zen.active = true
-O.plugin.zen.window.height = 0.9
-O.plugin.zen.window.width = 170
-O.plugin.zen.plugins.tmux = { enabled = true }
-O.plugin.zen.on_open = function(_win)
-  vim.cmd [[IndentBlanklineDisable]]
-end
-O.plugin.zen.on_close = function()
-  vim.cmd [[IndentBlanklineEnable]]
-end
+lvim.builtin.dashboard.active = true
+lvim.builtin.dap.active = true
+lvim.builtin.galaxyline.active = true
+lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
+-- lvim.builtin.nvimtree.hide_dotfiles = 0
+lvim.builtin.terminal.active = true
 
 -- Language Specific
 
 -- python
-O.lang.python.formatter.exe = "black"
-O.lang.python.formatter.args = { "-l", "120", "-" }
--- O.lang.python.isort = true
--- O.lang.python.linters = { "flake8", "pylint" }
-O.lang.python.diagnostics.virtual_text = false
-O.lang.python.analysis.type_checking = "basic"
-
--- javascript
-O.lang.tsserver.linter = nil
-
--- rust
-O.lang.rust.rust_tools.active = true
+lvim.lang.python.formatter.exe = "black"
+lvim.lang.python.formatter.args = { "-l", "120", "-" }
+-- lvim.lang.python.isort = true
+-- lvim.lang.python.linters = { "flake8", "pylint" }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
-O.user_autocommands = {
+lvim.autocommands = {
   { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
   { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
@@ -119,7 +101,7 @@ O.user_autocommands = {
 }
 
 -- Additional Plugins
-O.user_plugins = {
+lvim.plugins = {
   {
     "rcarriga/vim-ultest",
     config = function()
@@ -200,10 +182,10 @@ O.user_plugins = {
     cmd = "Trouble",
     -- event = "BufRead",
   },
-  {
-    "ggandor/lightspeed.nvim",
-    event = "BufRead",
-  },
+  -- {
+  --   "ggandor/lightspeed.nvim",
+  --   event = "BufRead",
+  -- },
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
@@ -310,46 +292,46 @@ O.user_plugins = {
   --   require"octo".setup()
   -- end
   -- },
-  -- {
-  --   "simrat39/rust-tools.nvim",
-  --   config = function ()
-  --     require('rust-tools').setup()
-  --   end,
-  --   ft="rust"
-  -- },
-  -- {
-  --   "folke/zen-mode.nvim",
-  --   cmd = "ZenMode",
-  --   config = function()
-  --     require("zen-mode").setup {
-  --       window = {
-  --         backdrop = 1,
-  --         height = 0.9, -- height of the Zen window
-  --         width = 170,
-  --         options = {
-  --           signcolumn = "no", -- disable signcolumn
-  --           number = false, -- disable number column
-  --           relativenumber = false, -- disable relative numbers
-  --           -- cursorline = false, -- disable cursorline
-  --           -- cursorcolumn = false, -- disable cursor column
-  --           -- foldcolumn = "0", -- disable fold column
-  --           -- list = false, -- disable whitespace characters
-  --         },
-  --       },
-  --       plugins = {
-  --         gitsigns = { enabled = false }, -- disables git signs
-  --         tmux = { enabled = false },
-  --         twilight = { enabled = true },
-  --       },
-  --       on_open = function(_win)
-  --         vim.cmd [[IndentBlanklineDisable]]
-  --       end,
-  --       on_close = function()
-  --         vim.cmd [[IndentBlanklineEnable]]
-  --       end,
-  --     }
-  --   end,
-  -- },
+  {
+    "simrat39/rust-tools.nvim",
+    config = function ()
+      require('rust-tools').setup()
+    end,
+    ft="rust"
+  },
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    config = function()
+      require("zen-mode").setup {
+        window = {
+          backdrop = 1,
+          height = 0.9, -- height of the Zen window
+          width = 170,
+          options = {
+            signcolumn = "no", -- disable signcolumn
+            number = false, -- disable number column
+            relativenumber = false, -- disable relative numbers
+            -- cursorline = false, -- disable cursorline
+            -- cursorcolumn = false, -- disable cursor column
+            -- foldcolumn = "0", -- disable fold column
+            -- list = false, -- disable whitespace characters
+          },
+        },
+        plugins = {
+          gitsigns = { enabled = false }, -- disables git signs
+          tmux = { enabled = false },
+          twilight = { enabled = true },
+        },
+        on_open = function(_win)
+          vim.cmd [[IndentBlanklineDisable]]
+        end,
+        on_close = function()
+          vim.cmd [[IndentBlanklineEnable]]
+        end,
+      }
+    end,
+  },
   -- {
   -- 	"folke/persistence.nvim",
   -- 	event = "VimEnter",
@@ -364,7 +346,7 @@ O.user_plugins = {
 }
 
 -- Additional Leader bindings for WhichKey
-O.user_which_key = {
+lvim.user_which_key = {
   o = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
   P = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" },
   t = {
@@ -391,6 +373,6 @@ O.user_which_key = {
   -- 	d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
   -- },
 }
-O.user_which_key["gd"] = { "<cmd>DiffviewOpen HEAD~1<cr>", "Diff" }
-O.user_which_key["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
-O.user_which_key["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
+lvim.user_which_key["gd"] = { "<cmd>DiffviewOpen HEAD~1<cr>", "Diff" }
+lvim.user_which_key["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
+lvim.user_which_key["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
