@@ -333,6 +333,7 @@ lvim.plugins = {
 
 -- Additional Leader bindings for WhichKey
 vim.cmd [[ nnoremap <C-n>i <C-i> ]]
+vim.api.nvim_set_keymap("n", "<S-x>", ":BufferClose<CR>", { noremap = true, silent = true })
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
