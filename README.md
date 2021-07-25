@@ -22,12 +22,10 @@
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 
-
 ## How to use
 
 ```bash
 # install LunarVim
-# curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh | LVBRANCH=rolling bash -s -- --overwrite
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
 lvim # run :PackerSync
@@ -35,5 +33,5 @@ lvim # run :PackerSync
 
 ## Known Issues
 
-- it is extremely bloated! Do not use on a potato PC!! 
+- it is extremely bloated! Do not use on a potato PC!!
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
