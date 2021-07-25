@@ -66,30 +66,30 @@ lvim.builtin.galaxyline.active = true
 lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.terminal.active = true
--- lvim.builtin.dap.on_config_done = function()
---     local dap = require("dap")
---
---     dap.adapters.lldb = {
---       type = 'executable',
---       command = '/usr/bin/lldb-vscode',
---       name = "lldb"
---     }
---
---     dap.configurations.cpp = {
---         {
---             name = "Launch",
---             type = "lldb",
---             request = "launch",
---             program = "${workspaceFolder}/build/custom_ecs",
---             cwd = "${workspaceFolder}/build",
---             stopOnEntry = false,
---             args = {},
---             runInTerminal = false,
---         },
---     }
---     dap.configurations.c = dap.configurations.cpp
---     dap.configurations.rust = dap.configurations.cpp
--- end
+lvim.builtin.dap.on_config_done = function()
+  local dap = require "dap"
+
+  dap.adapters.lldb = {
+    type = "executable",
+    command = "/usr/local/bin/lldb-vscode",
+    name = "lldb",
+  }
+
+  dap.configurations.cpp = {
+    {
+      name = "Launch",
+      type = "lldb",
+      request = "launch",
+      program = "${workspaceFolder}/build/binary_name",
+      cwd = "${workspaceFolder}/build",
+      stopOnEntry = false,
+      args = {},
+      runInTerminal = false,
+    },
+  }
+  dap.configurations.c = dap.configurations.cpp
+  dap.configurations.rust = dap.configurations.cpp
+end
 
 -- Language Specific
 
