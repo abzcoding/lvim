@@ -183,6 +183,8 @@ lvim.autocommands.custom_groups = {
   { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
   { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lc <Cmd>!cargo clippy --all-targets<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lt <Cmd>!cargo test -- --ignored<CR>" },
 }
 
 -- Additional Plugins
