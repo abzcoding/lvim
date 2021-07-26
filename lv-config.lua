@@ -72,6 +72,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.dap.on_config_done = function()
   local dap = require "dap"
   -- C, CPP
+  -- install lldb-vscode
   dap.adapters.lldb = {
     type = "executable",
     command = "lldb-vscode",
@@ -92,6 +93,7 @@ lvim.builtin.dap.on_config_done = function()
   dap.configurations.c = dap.configurations.cpp
 
   -- Rust
+  -- install lldb-vscode
   dap.adapters.rust = {
     type = "executable",
     attach = {
@@ -114,6 +116,7 @@ lvim.builtin.dap.on_config_done = function()
   }
 
   -- Golang
+  -- go get github.com/go-delve/delve/cmd/dlv
   dap.adapters.go = function(callback, config)
     local handle
     -- local pid_or_err
@@ -142,6 +145,7 @@ lvim.builtin.dap.on_config_done = function()
   }
 
   -- Python
+  -- pip install debugpy
   dap.adapters.python = {
     type = "executable",
     command = "python",
