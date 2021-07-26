@@ -67,6 +67,12 @@ lvim.builtin.galaxyline.active = true
 lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.execs = {
+  { "lazygit", "gg", "LazyGit" },
+  { "python manage.py test;read", "jt", "Django tests" },
+  { "python manage.py makemigrations;read", "jm", "Django makemigrations" },
+  { "python manage.py migrate;read", "ji", "Django migrate" },
+}
 
 -- Debugging
 lvim.builtin.dap.on_config_done = function()
