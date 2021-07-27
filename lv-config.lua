@@ -185,6 +185,7 @@ lvim.lang.python.formatter.args = { "-l", "120", "-" }
 
 -- Autocommands
 lvim.autocommands.custom_groups = {
+  { "Filetype", "cpp", "nnoremap <leader>lh <Cmd>ClangdSwitchSourceHeader<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
   { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
