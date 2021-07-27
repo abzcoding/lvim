@@ -518,7 +518,7 @@ lvim.plugins = {
   {
     "michaelb/sniprun",
     run = "bash ./install.sh",
-    ft = { "c", "cpp", "objc" },
+    ft = { "c", "cpp", "objc", "python" },
   },
   -- {
   -- 	"folke/persistence.nvim",
