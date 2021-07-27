@@ -515,6 +515,11 @@ lvim.plugins = {
       }
     end,
   },
+  {
+    "michaelb/sniprun",
+    run = "bash ./install.sh",
+    ft = { "c", "cpp", "objc" },
+  },
   -- {
   -- 	"folke/persistence.nvim",
   -- 	event = "VimEnter",
@@ -549,6 +554,8 @@ lvim.builtin.which_key.mappings["T"] = {
   n = { "<cmd>UltestNearest<cr>", "Nearest" },
   o = { "<cmd>UltestOutput<cr>", "Output" },
 }
+lvim.builtin.which_key.mappings["r"] = { "<cmd>SnipRun<cr>", "SnipRun" }
+lvim.builtin.which_key.mappings["R"] = { "<cmd>'<,'>SnipRun<cr>", "SnipRun Block" }
 lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
 --lvim.builtin.which_key.mappings["Q"] = {
 -- 	name = "+Quit",
