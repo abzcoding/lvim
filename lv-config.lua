@@ -206,7 +206,7 @@ lvim.plugins = {
     end,
     requires = { "vim-test/vim-test" },
     run = ":UpdateRemotePlugins",
-    cmd = "Ultest",
+    cmd = { "Ultest", "UltestSummary", "UltestNearest" },
   },
   {
     "folke/tokyonight.nvim",
