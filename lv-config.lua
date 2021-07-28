@@ -39,8 +39,17 @@ vim.opt.guifont = "FiraCode Nerd Font:h15"
 -- vim.opt.shiftwidth = 4
 -- vim.opt.tabstop = 8
 
--- LSP
+-- Language Specific
 lvim.lsp.override = { "rust" }
+lvim.lang.go.formatter.exe = "goimports"
+lvim.lang.python.formatter.exe = "yapf"
+local function clangd_common_on_attach(client, bufnr)
+  require("lsp").common_on_attach(client, bufnr) -- this line is optional
+
+  local opts = { noremap = true, silent = true }
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lh", "<Cmd>ClangdSwitchSourceHeader<CR>", opts)
+end
+lvim.lang.cpp.lsp.setup.on_attach = clangd_common_on_attach
 -- lvim.lsp.document_highlight = false
 -- lvim.lsp.diagnostics.virtual_text = false
 
@@ -123,7 +132,7 @@ lvim.builtin.dap.on_config_done = function()
 
   -- Golang
   -- go get github.com/go-delve/delve/cmd/dlv
-  dap.adapters.go = function(callback, config)
+  dap.adapters.go = function(callback, _)
     local handle
     -- local pid_or_err
     local port = 38697
@@ -177,15 +186,9 @@ lvim.builtin.dap.on_config_done = function()
   }
 end
 
--- Language Specific
-
--- python
-lvim.lang.python.formatter.exe = "black"
-lvim.lang.python.formatter.args = { "-l", "120", "-" }
-
 -- Autocommands
 lvim.autocommands.custom_groups = {
-  { "Filetype", "cpp", "nnoremap <leader>lh <Cmd>ClangdSwitchSourceHeader<CR>" },
+  -- { "Filetype", "cpp", "nnoremap <leader>lh <Cmd>ClangdSwitchSourceHeader<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
   { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
