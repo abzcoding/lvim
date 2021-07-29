@@ -39,28 +39,10 @@ vim.opt.guifont = "FiraCode Nerd Font:h15"
 -- vim.opt.shiftwidth = 4
 -- vim.opt.tabstop = 8
 
--- Language Specific
-lvim.lsp.override = { "rust" }
-lvim.lang.go.formatter.exe = "goimports"
-lvim.lang.python.formatter.exe = "yapf"
-local function clangd_common_on_attach(client, bufnr)
-  require("lsp").common_on_attach(client, bufnr) -- this line is optional
-
-  local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lh", "<Cmd>ClangdSwitchSourceHeader<CR>", opts)
-end
-lvim.lang.cpp.lsp.setup.on_attach = clangd_common_on_attach
 -- lvim.lsp.document_highlight = false
 -- lvim.lsp.diagnostics.virtual_text = false
 
--- Completion
--- lvim.builtin.compe.autocomplete = true
-lvim.builtin.compe.source.tabnine = { kind = " ", priority = 200, max_reslts = 6 }
-
--- dashboard
--- lvim.builtin.dashboard.footer = { "github.com/abzcoding" }
-
--- Treesitter
+-- builtin
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.matchup.enable = true
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -68,6 +50,7 @@ lvim.builtin.treesitter.context_commentstring.enable = true
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
 lvim.builtin.treesitter.indent = { enable = false }
+lvim.builtin.compe.source.tabnine = { kind = " ", priority = 200, max_reslts = 6 }
 
 -- Plugins
 lvim.builtin.dashboard.active = true
@@ -82,6 +65,34 @@ lvim.builtin.terminal.execs = {
   { "python manage.py makemigrations;read", "jm", "Django makemigrations" },
   { "python manage.py migrate;read", "ji", "Django migrate" },
 }
+
+-- Language Specific
+lvim.lsp.override = { "rust" }
+lvim.lang.go.formatter.exe = "goimports"
+lvim.lang.python.formatter.exe = "yapf"
+-- Autocommands
+local _autocmds = {
+  lang_specific = {
+    -- c, cpp
+    { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
+    { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
+    { "Filetype", "c,cpp", "nnoremap <leader>t :!make test<CR>" },
+    { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
+
+    -- rust
+    { "Filetype", "rust", "nnoremap <leader>r :cargo run<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>t <Cmd>!cargo test -- --ignored<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>H <Cmd>!cargo clippy --all-targets<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+
+    -- python
+    { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
+  },
+}
+require("core.autocmds").define_augroups(_autocmds)
 
 -- Debugging
 lvim.builtin.dap.on_config_done = function()
@@ -186,24 +197,6 @@ lvim.builtin.dap.on_config_done = function()
   }
 end
 
--- Autocommands
-local _autocmds = {
-  lang_specific = {
-    { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
-    { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
-    { "Filetype", "c,cpp", "nnoremap <leader>t :!make test<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>m :cargo build<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>r :cargo run<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>t <Cmd>!cargo test -- --ignored<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>H <Cmd>!cargo clippy --all-targets<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
-    { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
-  },
-}
-require("core.autocmds").define_augroups(_autocmds)
 
 -- Additional Plugins
 lvim.plugins = {
