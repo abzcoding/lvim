@@ -70,6 +70,7 @@ lvim.builtin.terminal.execs = {
 lvim.lsp.override = { "rust" }
 lvim.lang.go.formatter.exe = "goimports"
 lvim.lang.python.formatter.exe = "yapf"
+
 -- Autocommands
 lvim.autocommands.custom_groups = {
   -- c, cpp
@@ -79,6 +80,7 @@ lvim.autocommands.custom_groups = {
   { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
   -- rust
+  { "Filetype", "rust", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('cargo build;read')<CR>"},
   { "Filetype", "rust", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('cargo run;read')<CR>"},
   { "Filetype", "rust", "nnoremap <leader>t <cmd>lua require('core.terminal')._exec_toggle('cargo test -- --ignored;read')<CR>"},
   { "Filetype", "rust", "nnoremap <leader>H <cmd>lua require('core.terminal')._exec_toggle('cargo clippy;read')<CR>"},
