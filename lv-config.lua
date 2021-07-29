@@ -71,8 +71,7 @@ lvim.lsp.override = { "rust" }
 lvim.lang.go.formatter.exe = "goimports"
 lvim.lang.python.formatter.exe = "yapf"
 -- Autocommands
-local _autocmds = {
-  lang_specific = {
+lvim.autocommands.custom_groups={
     -- c, cpp
     { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
     { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
@@ -90,9 +89,7 @@ local _autocmds = {
 
     -- python
     { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
-  },
 }
-require("core.autocmds").define_augroups(_autocmds)
 
 -- Debugging
 lvim.builtin.dap.on_config_done = function()
