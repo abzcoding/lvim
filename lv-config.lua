@@ -187,27 +187,25 @@ lvim.builtin.dap.on_config_done = function()
 end
 
 -- Autocommands
-lvim.autocommands.custom_groups = {
-  -- { "Filetype", "cpp", "nnoremap <leader>lh <Cmd>ClangdSwitchSourceHeader<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>lc <Cmd>!cargo clippy --all-targets<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>lt <Cmd>!cargo test -- --ignored<CR>" },
+local _autocmds = {
+  lang_specific = {
+    { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
+    { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
+    { "Filetype", "c,cpp", "nnoremap <leader>t :!make test<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>m :cargo build<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>r :cargo run<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>t <Cmd>!cargo test -- --ignored<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>H <Cmd>!cargo clippy --all-targets<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
+    { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+  },
 }
+require("core.autocmds").define_augroups(_autocmds)
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "rcarriga/vim-ultest",
-    config = function()
-      vim.g.ultest_use_pty = 1
-    end,
-    requires = { "vim-test/vim-test" },
-    run = ":UpdateRemotePlugins",
-    cmd = { "Ultest", "UltestSummary", "UltestNearest" },
-  },
   {
     "folke/tokyonight.nvim",
     config = function()
@@ -519,11 +517,6 @@ lvim.plugins = {
       }
     end,
   },
-  {
-    "michaelb/sniprun",
-    run = "bash ./install.sh",
-    ft = { "c", "cpp", "objc", "python" },
-  },
   -- {
   -- 	"folke/persistence.nvim",
   -- 	event = "VimEnter",
@@ -542,7 +535,7 @@ vim.cmd [[ nnoremap <C-n>i <C-i> ]]
 vim.api.nvim_set_keymap("n", "<S-x>", ":BufferClose<CR>", { noremap = true, silent = true })
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
-lvim.builtin.which_key.mappings["t"] = {
+lvim.builtin.which_key.mappings["T"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -551,15 +544,6 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
-lvim.builtin.which_key.mappings["T"] = {
-  name = "+Tests",
-  r = { "<cmd>Ultest<cr>", "Run" },
-  s = { "<cmd>UltestSummary<cr>", "Summary" },
-  n = { "<cmd>UltestNearest<cr>", "Nearest" },
-  o = { "<cmd>UltestOutput<cr>", "Output" },
-}
-lvim.builtin.which_key.mappings["r"] = { "<cmd>SnipRun<cr>", "SnipRun" }
-lvim.builtin.which_key.mappings["R"] = { "<cmd>'<,'>SnipRun<cr>", "SnipRun Block" }
 lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
 --lvim.builtin.which_key.mappings["Q"] = {
 -- 	name = "+Quit",
