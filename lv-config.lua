@@ -71,24 +71,24 @@ lvim.lsp.override = { "rust" }
 lvim.lang.go.formatter.exe = "goimports"
 lvim.lang.python.formatter.exe = "yapf"
 -- Autocommands
-lvim.autocommands.custom_groups={
-    -- c, cpp
-    { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
-    { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
-    { "Filetype", "c,cpp", "nnoremap <leader>t :!make test<CR>" },
-    { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
+lvim.autocommands.custom_groups = {
+  -- c, cpp
+  { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
+  { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
+  { "Filetype", "c,cpp", "nnoremap <leader>t :!make test<CR>" },
+  { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
-    -- rust
-    { "Filetype", "rust", "nnoremap <leader>r :cargo run<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>t <Cmd>!cargo test -- --ignored<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>H <Cmd>!cargo clippy --all-targets<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
-    { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+  -- rust
+  { "Filetype", "rust", "nnoremap <leader>r :cargo run<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>t <Cmd>!cargo test -- --ignored<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>H <Cmd>!cargo clippy --all-targets<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
 
-    -- python
-    { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
+  -- python
+  { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
 }
 
 -- Debugging
@@ -193,7 +193,6 @@ lvim.builtin.dap.on_config_done = function()
     },
   }
 end
-
 
 -- Additional Plugins
 lvim.plugins = {
@@ -362,30 +361,30 @@ lvim.plugins = {
     run = "cd app && npm install",
     ft = "markdown",
   },
-  -- 	{
-  -- 		"andweeb/presence.nvim",
-  -- 		config = function()
-  -- 			require("presence"):setup({
-  -- 				-- General options
-  -- 				auto_update = true,
-  -- 				neovim_image_text = "LunarVim to the moon",
-  -- 				main_image = "file",
-  -- 				client_id = "793271441293967371",
-  -- 				log_level = nil,
-  -- 				debounce_timeout = 10,
-  -- 				enable_line_number = true, -- Displays the current line number instead of the current project
-  --
-  -- 				-- Rich Presence text options
-  -- 				editing_text = "Editing %s", -- string rendered when an editable file is loaded in the buffer
-  -- 				file_explorer_text = "Browsing %s", -- Format string rendered when browsing a file explorer
-  -- 				git_commit_text = "Committing changes", -- string rendered when commiting changes in git
-  -- 				plugin_manager_text = "Managing plugins", -- Format string rendered when managing plugins
-  -- 				reading_text = "Reading %s", -- string rendered when a read-only file is loaded in the buffer
-  -- 				workspace_text = "Working on %s", -- Workspace format string (either string or function(git_project_name: string|nil, buffer: string): string)
-  -- 				line_number_text = "Line %s out of %s", -- Line number string (for when enable_line_number is set to true)
-  -- 			})
-  -- 		end,
-  -- 	},
+  {
+    "andweeb/presence.nvim",
+    config = function()
+      require("presence"):setup {
+        -- General options
+        auto_update = true,
+        neovim_image_text = "LunarVim to the moon",
+        main_image = "file",
+        client_id = "793271441293967371",
+        log_level = nil,
+        debounce_timeout = 10,
+        enable_line_number = true, -- Displays the current line number instead of the current project
+
+        -- Rich Presence text options
+        editing_text = "Editing %s", -- string rendered when an editable file is loaded in the buffer
+        file_explorer_text = "Browsing %s", -- Format string rendered when browsing a file explorer
+        git_commit_text = "Committing changes", -- string rendered when commiting changes in git
+        plugin_manager_text = "Managing plugins", -- Format string rendered when managing plugins
+        reading_text = "Reading %s", -- string rendered when a read-only file is loaded in the buffer
+        workspace_text = "Working on %s", -- Workspace format string (either string or function(git_project_name: string|nil, buffer: string): string)
+        line_number_text = "Line %s out of %s", -- Line number string (for when enable_line_number is set to true)
+      }
+    end,
+  },
   -- {'pwntester/octo.nvim', config=function()
   --   require"octo".setup()
   -- end
