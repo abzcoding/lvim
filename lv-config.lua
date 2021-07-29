@@ -200,6 +200,7 @@ local _autocmds = {
     { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
     { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
     { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
+    { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
   },
 }
 require("core.autocmds").define_augroups(_autocmds)
