@@ -75,8 +75,8 @@ lvim.lang.python.formatter.exe = "yapf"
 lvim.autocommands.custom_groups = {
   -- c, cpp
   { "Filetype", "c,cpp", "nnoremap <leader>m <cmd>lua require('core.terminal')._exec_toggle('make;read')<CR>"},
-  { "Filetype", "c,cpp", "nnoremap <leader>t <cmd>lua require('core.terminal')._exec_toggle('make run;read')<CR>"},
-  { "Filetype", "c,cpp", "nnoremap <leader>r <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='make test;read', hidden =false}:toggle()<CR>"},
+  { "Filetype", "c,cpp", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('make run;read')<CR>"},
+  { "Filetype", "c,cpp", "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='make test;read', hidden =false}:toggle()<CR>"},
   { "Filetype", "cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
   -- rust
