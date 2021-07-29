@@ -89,7 +89,8 @@ lvim.autocommands.custom_groups = {
 
   -- python
   { "Filetype", "python", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('python " .. vim.fn.expand("%") .. ";read')<CR>"},
-  -- { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
+  { "Filetype", "python", "nnoremap <leader>t <cmd>lua require('core.terminal')._exec_toggle('python -m test -j0;read')<CR>"},
+  { "Filetype", "python", "nnoremap <leader>m <cmd>lua require('core.terminal')._exec_toggle('echo \"compile :pepelaugh:\";read')<CR>"},
 }
 
 -- Debugging
