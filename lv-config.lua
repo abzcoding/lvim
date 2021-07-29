@@ -73,22 +73,23 @@ lvim.lang.python.formatter.exe = "yapf"
 -- Autocommands
 lvim.autocommands.custom_groups = {
   -- c, cpp
-  { "Filetype", "c,cpp", "nnoremap <leader>m :!make<CR>" },
-  { "Filetype", "c,cpp", "nnoremap <leader>r :!make run<CR>" },
-  { "Filetype", "c,cpp", "nnoremap <leader>t :!make test<CR>" },
+  { "Filetype", "c,cpp", "nnoremap <leader>m <cmd>lua require('core.terminal')._exec_toggle('make;read')<CR>"},
+  { "Filetype", "c,cpp", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('make run;read')<CR>"},
+  { "Filetype", "c,cpp", "nnoremap <leader>t <cmd>lua require('core.terminal')._exec_toggle('make test;read')<CR>"},
   { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
   -- rust
-  { "Filetype", "rust", "nnoremap <leader>r :cargo run<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>t <Cmd>!cargo test -- --ignored<CR>" },
-  { "Filetype", "rust", "nnoremap <leader>H <Cmd>!cargo clippy --all-targets<CR>" },
+  { "Filetype", "rust", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('cargo run;read')<CR>"},
+  { "Filetype", "rust", "nnoremap <leader>t <cmd>lua require('core.terminal')._exec_toggle('cargo test -- --ignored;read')<CR>"},
+  { "Filetype", "rust", "nnoremap <leader>H <cmd>lua require('core.terminal')._exec_toggle('cargo clippy;read')<CR>"},
   { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lH <Cmd>RustToggleInlayHints<CR>" },
   { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
   { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
 
   -- python
-  { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
+  { "Filetype", "python", "nnoremap <leader>r <cmd>lua require('core.terminal')._exec_toggle('python " .. vim.fn.expand("%") .. ";read')<CR>"},
+  -- { "Filetype", "python", "nnoremap <leader>r :python %<CR>" },
 }
 
 -- Debugging
