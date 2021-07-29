@@ -21,7 +21,6 @@
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
-- [Discord Presence](https://github.com/andweeb/presence.nvim)
 
 ## How to use
 
