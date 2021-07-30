@@ -24,11 +24,13 @@ for _, _plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. _plugin] = 1
 end
 
+
 -- General
 -- =========================================
 lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "spacegray"
+
 
 -- Default options
 -- =========================================
@@ -39,6 +41,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 5
 vim.opt.guifont = "FiraCode Nerd Font:h15"
+
 
 -- Builtin
 -- =========================================
@@ -52,9 +55,6 @@ lvim.builtin.dashboard.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.galaxyline.active = true
 lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
--- lvim.builtin.nvimtree.hide_dotfiles = 0
--- lvim.treesitter.textsubjects.enable = true
--- lvim.treesitter.playground.enable = true
 lvim.builtin.terminal.active = true
 lvim.builtin.terminal.execs = {
   { "lazygit", "gg", "LazyGit" },
@@ -62,6 +62,10 @@ lvim.builtin.terminal.execs = {
   { "python manage.py makemigrations;read", "jm", "Django makemigrations" },
   { "python manage.py migrate;read", "ji", "Django migrate" },
 }
+-- lvim.builtin.nvimtree.hide_dotfiles = 0
+-- lvim.treesitter.textsubjects.enable = true
+-- lvim.treesitter.playground.enable = true
+
 
 -- Language Specific
 -- =========================================
