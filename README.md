@@ -22,6 +22,7 @@
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
+- [Hop](https://github.com/phaazon/hop.nvim)
 
 ## How to use
 

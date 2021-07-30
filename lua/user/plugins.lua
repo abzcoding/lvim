@@ -75,10 +75,13 @@ M.config = function()
       end,
       cmd = "Trouble",
     },
-    -- {
-    --   "ggandor/lightspeed.nvim",
-    --   event = "BufRead",
-    -- },
+    {
+      "phaazon/hop.nvim",
+      event = "BufRead",
+      config = function()
+        require("user.hop").config()
+      end,
+    },
     {
       "simrat39/symbols-outline.nvim",
       cmd = "SymbolsOutline",
