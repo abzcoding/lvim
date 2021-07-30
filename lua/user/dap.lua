@@ -1,5 +1,9 @@
-lvim.builtin.dap.on_config_done = function()
-  local dap = require "dap"
+local M = {}
+M.config = function()
+  local status_ok, dap = pcall(require, "dap")
+  if not status_ok then
+    return
+  end
   -- C, CPP
   -- install lldb-vscode
   dap.adapters.lldb = {
@@ -99,3 +103,4 @@ lvim.builtin.dap.on_config_done = function()
     },
   }
 end
+return M

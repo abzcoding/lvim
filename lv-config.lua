@@ -95,8 +95,7 @@ load("luafile ~/.config/lvim/autocommands.lua")
 
 -- Debugging
 -- =========================================
-load("luafile ~/.config/lvim/debugging.lua")
-
+lvim.builtin.dap.on_config_done = require("user.dap").config()
 
 -- Additional Leader bindings for WhichKey
 -- =========================================
