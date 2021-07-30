@@ -100,4 +100,4 @@ load("luafile ~/.config/lvim/debugging.lua")
 
 -- Additional Leader bindings for WhichKey
 -- =========================================
-load("luafile ~/.config/lvim/keybinding.lua")
+load("luafile ~/.config/lvim/keybindings.lua")
