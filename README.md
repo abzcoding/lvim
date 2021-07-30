@@ -23,7 +23,9 @@
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
-- [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
+<!--
+- [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
+-->
 
 ## How to use
 

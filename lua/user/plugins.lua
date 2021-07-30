@@ -158,13 +158,13 @@ M.config = function()
         require("user.spectre").config()
       end,
     },
-    {
-      "kristijanhusak/orgmode.nvim",
-      ft = { "org" },
-      config = function()
-        require("user.orgmode").setup {}
-      end,
-    },
+    -- {
+    --   "kristijanhusak/orgmode.nvim",
+    --   ft = { "org" },
+    --   config = function()
+    --     require("user.orgmode").setup {}
+    --   end,
+    -- },
     -- {
     -- 	"folke/persistence.nvim",
     -- 	event = "VimEnter",
