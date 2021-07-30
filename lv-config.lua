@@ -24,13 +24,11 @@ for _, _plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. _plugin] = 1
 end
 
-
 -- General
 -- =========================================
 lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "spacegray"
-
 
 -- Default options
 -- =========================================
@@ -41,7 +39,6 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 5
 vim.opt.guifont = "FiraCode Nerd Font:h15"
-
 
 -- Builtin
 -- =========================================
@@ -66,32 +63,19 @@ lvim.builtin.terminal.execs = {
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
 
-
 -- Language Specific
 -- =========================================
 lvim.lsp.override = { "rust" }
 lvim.lang.go.formatter.exe = "goimports"
 lvim.lang.python.formatter.exe = "yapf"
 
-local load = function(path)
-  local status_ok, error = pcall(vim.cmd, path)
-
-  if not status_ok then
-    print "something is wrong with your lv-config"
-    print(error)
-  end
-end
-
-
 -- Additional Plugins
 -- =========================================
-load "luafile ~/.config/lvim/plugins.lua"
-
+require("user.plugins").config()
 
 -- Autocommands
 -- =========================================
-load("luafile ~/.config/lvim/autocommands.lua")
-
+require("user.autocommands").config()
 
 -- Debugging
 -- =========================================
@@ -99,4 +83,4 @@ lvim.builtin.dap.on_config_done = require("user.dap").config()
 
 -- Additional Leader bindings for WhichKey
 -- =========================================
-load("luafile ~/.config/lvim/keybindings.lua")
+require("user.keybindings").config()
