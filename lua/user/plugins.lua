@@ -148,6 +148,13 @@ M.config = function()
         require("user.zen").config()
       end,
     },
+    {
+      "windwp/nvim-spectre",
+      event = "BufRead",
+      config = function()
+        require("user.spectre").config()
+      end,
+    },
     -- {
     -- 	"folke/persistence.nvim",
     -- 	event = "VimEnter",
