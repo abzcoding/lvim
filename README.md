@@ -23,6 +23,7 @@
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
+- [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
 
 ## How to use
 
@@ -37,3 +38,4 @@ lvim # run :PackerSync
 
 - it is extremely bloated! Do not use on a potato PC!!
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
+- orgmode is set to use `~/shared/orgs` folder
