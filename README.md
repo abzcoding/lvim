@@ -27,6 +27,7 @@ pip install yapf flake8 black  # for python stuff
 # if you want to use the markdown thingy
 brew install vale
 cp -r ~/.config/lvim/.vale ~/.config/vale
+# fix the address inside .vale.ini
 cp ~/.config/lvim/.vale.ini ~/.vale.ini
 lvim # run :PackerSync
 ```
