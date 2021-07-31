@@ -51,7 +51,6 @@ lvim # run :PackerSync
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
-- [zephyr-nvim](https://github.com/glepnir/zephyr-nvim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)
 - [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)
@@ -73,5 +72,6 @@ lvim # run :PackerSync
 
 <!--
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
+- [zephyr-nvim](https://github.com/glepnir/zephyr-nvim)
   -->
 
