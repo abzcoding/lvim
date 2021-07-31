@@ -1,6 +1,6 @@
 # Bloated LunarVim
 
-Do not use as is 😅, use it as source of inspiration.
+Do not use as is 😅, use it as a source of inspiration.
 
 ## Included Plugins
 
