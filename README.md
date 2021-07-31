@@ -1,6 +1,8 @@
 # Bloated LunarVim
 
-## What is included
+Do not use as is 😅, use it as source of inspiration.
+
+## Included Plugins
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
@@ -23,9 +25,10 @@
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
+
 <!--
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
--->
+  -->
 
 ## How to use
 
@@ -38,6 +41,11 @@ lvim # run :PackerSync
 
 ## Known Issues
 
-- it is extremely bloated! Do not use on a potato PC!!
+- Do not use as is, too much bloated! Also do not use on a potato PC!!
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
-- orgmode is set to use `~/shared/orgs` folder
+- if you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
+- I'm using tailwinds CSS for markdown, disable it if you want
+
+<!--
+- orgmode is using `~/shared/orgs` folder
+  -->

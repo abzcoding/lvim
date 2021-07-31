@@ -66,6 +66,10 @@ lvim.builtin.terminal.execs = {
 
 -- Language Specific
 -- =========================================
+lvim.builtin.lspinstall.on_config_done = function ()
+  require("lsp").setup("markdown")
+end
+lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.override = { "rust", "java" }
 require("user.json_schemas").setup()
 
