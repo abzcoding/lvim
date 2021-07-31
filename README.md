@@ -69,9 +69,9 @@ lvim # run :PackerSync
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
+- [zephyr-nvim](https://github.com/abzcoding/zephyr-nvim)
 
 <!--
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
-- [zephyr-nvim](https://github.com/glepnir/zephyr-nvim)
   -->
 
