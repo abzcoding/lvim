@@ -33,18 +33,18 @@ M.config = function()
         return (_time.hour >= 16 and _time.hour < 20)
       end,
     },
-    -- {
-    --   "glepnir/zephyr-nvim",
-    --   config = function()
-    --     vim.cmd [[
-    --   colorscheme zephyr
-    --   ]]
-    --   end,
-    --   cond = function()
-    --     local _time = os.date "*t"
-    --     return (_time.hour >= 20 and _time.hour <= 24)
-    --   end,
-    -- },
+    {
+      "abzcoding/zephyr-nvim",
+      config = function()
+        vim.cmd [[
+      colorscheme zephyr
+      ]]
+      end,
+      cond = function()
+        local _time = os.date "*t"
+        return (_time.hour >= 20 and _time.hour <= 24)
+      end,
+    },
     {
       "ray-x/lsp_signature.nvim",
       config = function()
