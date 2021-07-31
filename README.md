@@ -32,7 +32,7 @@ Do not use as is 😅, use it as a source of inspiration.
 
 ## How to use
 
-```bash
+```shell
 # install LunarVim
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
@@ -44,7 +44,7 @@ lvim # run :PackerSync
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
 - if you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
-- I'm using tailwinds CSS for markdown, disable it if you want
+- Using tailwinds CSS for markdown, disable it if you want
 
 <!--
 - orgmode is using `~/shared/orgs` folder

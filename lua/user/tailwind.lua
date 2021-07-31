@@ -54,7 +54,7 @@ M.setup = function()
       },
     },
   }
-  require("lsp").setup("markdown")
+  require("lsp").setup "markdown"
 end
 
 return M

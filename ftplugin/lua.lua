@@ -4,3 +4,9 @@ lvim.lang.lua.formatters = {
     args = {},
   },
 }
+-- lvim.lang.lua.linters = {
+--   {
+--     exe = "selene",
+--     args = {},
+--   },
+-- }
