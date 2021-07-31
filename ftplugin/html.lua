@@ -1,4 +1,4 @@
-lvim.lang.json.formatters = {
+lvim.lang.html.formatters = {
   {
     exe = "prettier",
     args = {},

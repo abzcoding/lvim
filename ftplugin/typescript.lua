@@ -1,4 +1,4 @@
-lvim.lang.json.formatters = {
+lvim.lang.typescript.formatters = {
   {
     exe = "prettier",
     args = {},
