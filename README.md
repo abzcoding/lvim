@@ -2,6 +2,50 @@
 
 Do not use as is 😅, use it as a source of inspiration.
 
+## Known Issues
+
+- Do not use as is, too much bloated! Also do not use on a potato PC!!
+- sometimes `compe-tabnine` doesn't play nice, you can disable it :)
+- if you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
+- Using tailwinds CSS for markdown, disable it if you want
+
+<!--
+- orgmode is using `~/shared/orgs` folder
+  -->
+
+## How to use
+
+```shell
+# install LunarVim
+mv ~/.config/lvim ~/.config/lvim_backup
+git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+cargo install selene  # if you want to use selene instead of luacheck
+brew install hadolint  # if you want to lint dockerfiles
+pip install vim-vint  # for vim linting
+# install llvm and clang_format for clang stuff
+pip install yapf flake8 black  # for python stuff
+# if you want to use the markdown thingy
+brew install vale
+cp -r ~/.config/lvim/.vale ~/.config/vale
+cp ~/.config/lvim/.vale.ini ~/.vale.ini
+lvim # run :PackerSync
+```
+```vim
+:LspInstall lua
+:LspInstall yaml
+:LspInstall dockerfile
+:LspInstall python
+:LspInstall vim
+:LspInstall json
+:LspInstall go
+:LspInstall bash
+:LspInstall cpp
+:LspInstall csharp
+:LspInstall rust
+:LspInstall cmake
+:LspInstall tailwindcss
+```
+
 ## Included Plugins
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
@@ -30,24 +74,3 @@ Do not use as is 😅, use it as a source of inspiration.
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
   -->
 
-## How to use
-
-```shell
-# install LunarVim
-mv ~/.config/lvim ~/.config/lvim_backup
-git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
-cp -r ~/.config/lvim/.vale ~/.config/vale
-cp ~/.config/lvim/.vale.ini ~/.vale.ini
-lvim # run :PackerSync
-```
-
-## Known Issues
-
-- Do not use as is, too much bloated! Also do not use on a potato PC!!
-- sometimes `compe-tabnine` doesn't play nice, you can disable it :)
-- if you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
-- Using tailwinds CSS for markdown, disable it if you want
-
-<!--
-- orgmode is using `~/shared/orgs` folder
-  -->
