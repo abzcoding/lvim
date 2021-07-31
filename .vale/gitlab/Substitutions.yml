@@ -1,0 +1,49 @@
+---
+# Error: gitlab.Substitutions
+#
+# Checks for misused terms that should never be used at GitLab.
+# SubstitutionWarning.yml and SubstitionSuggestions.yml also exist.
+#
+# For a list of all options, see https://docs.errata.ai/vale/styles
+extends: substitution
+message: 'Use "%s" instead of "%s".'
+link: https://about.gitlab.com/handbook/communication/#top-misused-terms
+level: error
+ignorecase: true
+swap:
+  codequality: code quality
+  Customer [Pp]ortal: Customers Portal
+  frontmatter: front matter
+  GitLabber: GitLab team member
+  GitLabbers: GitLab team members
+  GitLab-shell: GitLab Shell
+  gitlab omnibus: Omnibus GitLab
+  param: parameter
+  params: parameters
+  pg: PostgreSQL
+  'postgres$': PostgreSQL
+  raketask: Rake task
+  raketasks: Rake tasks
+  rspec: RSpec
+  self hosted: self-managed
+  self-hosted: self-managed
+  styleguide: style guide
+  to login: to log in
+  can login: can log in
+  to log-in: to log in
+  can log-in: can log in
+  to signin: to sign in
+  can signin: can sign in
+  to sign-in: to sign in
+  can sign-in: can sign in
+  x509: X.509
+  yaml: YAML
+  developer access: the Developer role
+  developer permission: the Developer role
+  developer permissions: the Developer role
+  maintainer access: the Maintainer role
+  maintainer permission: the Maintainer role
+  maintainer permissions: the Maintainer role
+  owner access: the Owner role
+  owner permission: the Owner role
+  owner permissions: the Owner role

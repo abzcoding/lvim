@@ -36,6 +36,8 @@ Do not use as is 😅, use it as a source of inspiration.
 # install LunarVim
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+cp -r ~/.config/lvim/.vale ~/.config/vale
+cp ~/.config/lvim/.vale.ini ~/.vale.ini
 lvim # run :PackerSync
 ```
 
