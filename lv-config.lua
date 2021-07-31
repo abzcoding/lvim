@@ -67,8 +67,6 @@ lvim.builtin.terminal.execs = {
 -- Language Specific
 -- =========================================
 lvim.lsp.override = { "rust", "java" }
-lvim.lang.go.formatter.exe = "goimports"
-lvim.lang.python.formatter.exe = "yapf"
 require("user.json_schemas").setup()
 
 -- Additional Plugins
