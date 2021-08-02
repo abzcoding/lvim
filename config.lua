@@ -61,13 +61,9 @@ lvim.builtin.terminal.execs = {
   { "python manage.py makemigrations;read", "jm", "Django makemigrations" },
   { "python manage.py migrate;read", "ji", "Django migrate" },
 }
-lvim.builtin.dashboard.custom_section["l"] = {
-  description = { "  Load Last Session  " },
-  command = "SessionLoad",
-}
 lvim.builtin.dashboard.custom_section["m"] = {
   description = { "  Marks              " },
-  command = "Telescope Marks",
+  command = "Telescope marks",
 }
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 -- lvim.treesitter.textsubjects.enable = true
