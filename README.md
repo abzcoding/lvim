@@ -70,6 +70,7 @@ lvim # run :PackerSync
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [zephyr-nvim](https://github.com/abzcoding/zephyr-nvim)
+- [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 
 <!--
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
