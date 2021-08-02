@@ -1,4 +1,4 @@
-M = {}
+local M = {}
 
 M.config = function()
   vim.cmd [[ nnoremap <C-n>i <C-i> ]]

@@ -3,6 +3,7 @@ if require("utils").check_lsp_client_active "jdt.ls" then
 end
 
 -- find_root looks for parent directories relative to the current buffer containing one of the given arguments.
+local WORKSPACE_PATH
 if vim.fn.has "mac" == 1 then
   WORKSPACE_PATH = "/Users/" .. USER .. "/workspace/"
 elseif vim.fn.has "unix" == 1 then
@@ -11,7 +12,7 @@ else
   print "Unsupported system"
 end
 
-JAVA_LS_EXECUTABLE = os.getenv "HOME" .. "/.local/share/lunarvim/lvim/utils/bin/jdtls"
+local JAVA_LS_EXECUTABLE = os.getenv "HOME" .. "/.local/share/lunarvim/lvim/utils/bin/jdtls"
 
 require("jdtls").start_or_attach {
   on_attach = require("lsp").common_on_attach,
