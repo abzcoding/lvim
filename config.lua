@@ -66,7 +66,7 @@ lvim.builtin.dashboard.custom_section["l"] = {
   command = "SessionLoad",
 }
 lvim.builtin.dashboard.custom_section["m"] = {
-  description = { "  Marks              " },
+  description = { "  Marks              " },
   command = "Telescope Marks",
 }
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
