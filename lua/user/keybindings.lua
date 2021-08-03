@@ -29,9 +29,9 @@ M.config = function()
   lvim.builtin.which_key.mappings["H"] = "Help"
   lvim.builtin.which_key.mappings["R"] = {
     name = "Replace",
-    r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+    p = { "<cmd>lua require('spectre').open()<cr>", "Project" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Current Buffer" },
   }
 end
 
