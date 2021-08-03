@@ -65,13 +65,14 @@ lvim.builtin.dashboard.custom_section["m"] = {
   description = { "  Marks              " },
   command = "Telescope marks",
 }
-
--- Additional keybindings
-lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
-lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
+
+-- Additional keybindings
+-- =========================================
+lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
+lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
 
 -- Language Specific
 -- =========================================
