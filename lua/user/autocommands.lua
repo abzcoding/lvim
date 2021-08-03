@@ -37,7 +37,7 @@ M.config = function()
     {
       "Filetype",
       "python",
-      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='python -m test -j0;read', hidden =false}:toggle()<CR>",
+      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='python -m unittest;read', hidden =false}:toggle()<CR>",
     },
     {
       "Filetype",
