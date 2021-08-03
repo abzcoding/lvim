@@ -29,6 +29,7 @@ end
 lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "spacegray"
+lvim.debug = false
 -- if you want to choose the source of formatting
 -- lvim.lsp.on_init_callback = function(client, _bufnr)
 --   client.resolved_capabilities.document_formatting = true
