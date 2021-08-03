@@ -58,6 +58,7 @@ M.config = function()
         require("user.lastplace").config()
       end,
       event = "BufWinEnter",
+      disable = not lvim.builtin.lastplace.active,
     },
     {
       "folke/todo-comments.nvim",
@@ -103,7 +104,13 @@ M.config = function()
         require("user.indent_blankline").setup()
       end,
     },
-    { "tzachar/compe-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-compe", event = "InsertEnter" },
+    {
+      "tzachar/compe-tabnine",
+      run = "./install.sh",
+      requires = "hrsh7th/nvim-compe",
+      event = "InsertEnter",
+      disable = not lvim.builtin.tabnine.active,
+    },
     {
       "folke/twilight.nvim",
       config = function()
@@ -165,8 +172,8 @@ M.config = function()
       end,
     },
     {
-      "nvim-lua/lsp-status.nvim"
-    }
+      "nvim-lua/lsp-status.nvim",
+    },
     -- {
     --   "kristijanhusak/orgmode.nvim",
     --   ft = { "org" },

@@ -34,6 +34,12 @@ lvim.colorscheme = "spacegray"
 --   client.resolved_capabilities.document_formatting = true
 -- end
 
+-- Known Issues
+-- =========================================
+-- change these too false if you encounter issues
+lvim.builtin.lastplace = { active = true }
+lvim.builtin.tabnine = { active = true }
+
 -- Default options
 -- =========================================
 vim.opt.relativenumber = true
