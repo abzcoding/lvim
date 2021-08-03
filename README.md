@@ -28,9 +28,10 @@ pip install yapf flake8 black  # for python stuff
 brew install vale
 cp -r ~/.config/lvim/.vale ~/.config/vale
 # fix the address inside .vale.ini
-cp ~/.config/lvim/.vale.ini ~/.vale.ini
+cp ~/.config/lvim/vale_config.ini ~/.vale.ini
 lvim # run :PackerSync
 ```
+
 ```vim
 :LspInstall lua
 :LspInstall yaml
@@ -76,4 +77,3 @@ lvim # run :PackerSync
 <!--
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
   -->
-
