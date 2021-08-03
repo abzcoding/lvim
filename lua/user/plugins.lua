@@ -164,6 +164,9 @@ M.config = function()
         require("user.colorizer").config()
       end,
     },
+    {
+      "nvim-lua/lsp-status.nvim"
+    }
     -- {
     --   "kristijanhusak/orgmode.nvim",
     --   ft = { "org" },

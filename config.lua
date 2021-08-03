@@ -68,6 +68,9 @@ lvim.builtin.dashboard.custom_section["m"] = {
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
+lvim.builtin.galaxyline.on_config_done = function(gl)
+  require("user.galaxyline").config(gl)
+end
 
 -- Additional keybindings
 -- =========================================
