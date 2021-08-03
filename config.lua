@@ -69,16 +69,19 @@ lvim.builtin.dashboard.custom_section["m"] = {
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
 
+-- Additional keybindings
+-- =========================================
+lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
+lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
+lvim.keys.normal_mode["Y"] = "y$"
+lvim.keys.visual_mode["p"] = [["_dP]]
+
 -- StatusLine
 -- =========================================
 lvim.builtin.galaxyline.on_config_done = function(gl)
   require("user.galaxyline").config(gl)
 end
-
--- Additional keybindings
--- =========================================
-lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
-lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
 
 -- Language Specific
 -- =========================================
