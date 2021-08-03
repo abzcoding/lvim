@@ -1,6 +1,7 @@
 # Bloated LunarVim
 
 Do not use as is 😅, use it as a source of inspiration.
+
 I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly 😅
 
 ## Known Issues
