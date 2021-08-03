@@ -36,7 +36,7 @@ lvim.colorscheme = "spacegray"
 
 -- Known Issues
 -- =========================================
--- change these too false if you encounter issues
+-- change these to false if you encounter issues
 lvim.builtin.lastplace = { active = true }
 lvim.builtin.tabnine = { active = true }
 
