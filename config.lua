@@ -65,6 +65,10 @@ lvim.builtin.dashboard.custom_section["m"] = {
   description = { "  Marks              " },
   command = "Telescope marks",
 }
+
+-- Additional keybindings
+lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
+lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
@@ -91,6 +95,6 @@ require("user.autocommands").config()
 -- =========================================
 lvim.builtin.dap.on_config_done = require("user.dap").config()
 
--- Additional Leader bindings for WhichKey
+-- Additional keybindings
 -- =========================================
 require("user.keybindings").config()
