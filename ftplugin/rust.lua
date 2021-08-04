@@ -1,6 +1,6 @@
 lvim.lang.rust.formatters = {
   {
-    exe = "rustfmt",
+    exe = "",
     args = {},
   },
 }
