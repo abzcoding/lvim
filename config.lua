@@ -97,8 +97,10 @@ end
 -- Language Specific
 -- =========================================
 lvim.lang.markdown = {}
+lvim.lang.dockerfile = {}
 lvim.builtin.lspinstall.on_config_done = function()
   require("user.tailwind").setup()
+  require("user.dockerls").setup()
 end
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.override = { "rust", "java" }
