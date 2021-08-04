@@ -4,3 +4,9 @@ lvim.lang.typescript.formatters = {
     args = {},
   },
 }
+lvim.lang.typescript.linters = {
+  {
+    exe = "eslint_d",
+    args = {},
+  },
+}
