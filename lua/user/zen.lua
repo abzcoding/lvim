@@ -27,14 +27,17 @@ M.config = function()
       twilight = { enabled = true },
     },
     on_open = function()
-      vim.lsp.diagnostic.disable()
+      vim.lsp.diagnostic.set_virtual_text = false
       vim.cmd [[
           set foldlevel=10
           IndentBlanklineDisable
           ]]
     end,
     on_close = function()
-      vim.lsp.diagnostic.enable()
+      vim.lsp.diagnostic.set_virtual_text = {
+        prefix = "",
+        spacing = 0,
+      }
       vim.cmd [[
           set foldlevel=5
           IndentBlanklineEnable
