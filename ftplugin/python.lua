@@ -1,6 +1,6 @@
 lvim.lang.python.formatters = {
   {
-    exe = "yapf",
+    exe = "black",
     args = {},
   },
 }
