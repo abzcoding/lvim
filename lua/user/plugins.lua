@@ -126,6 +126,7 @@ M.config = function()
       end,
       requires = { "mfussenegger/nvim-dap" },
       ft = "python",
+      disable = not lvim.builtin.debugging.active,
     },
     {
       "andymass/vim-matchup",
