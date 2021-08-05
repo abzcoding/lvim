@@ -39,6 +39,7 @@ lvim.debug = false
 -- =========================================
 lvim.builtin.lastplace = { active = true } -- change to false if you are jumping to future
 lvim.builtin.tabnine = { active = true } -- change to false if you don't like tabnine
+lvim.builtin.dap.active = false -- change this to enable/disable debugging
 
 -- Default options
 -- =========================================
@@ -111,10 +112,6 @@ require("user.plugins").config()
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()
-
--- Debugging
--- =========================================
-lvim.builtin.dap.active = false
 
 -- Additional keybindings
 -- =========================================

@@ -124,8 +124,8 @@ M.config = function()
       config = function()
         require("dapui").setup()
       end,
+      ft = { "python", "rust", "go" },
       requires = { "mfussenegger/nvim-dap" },
-      ft = "python",
       disable = not lvim.builtin.dap.active,
     },
     {
