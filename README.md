@@ -8,7 +8,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - if you want to use debugging, change the following line to true:
-  - `lvim.builtin.debugging = { active = true }`
+  - `lvim.builtin.dap.active = true`
 - sometimes instead of saving you jump trough jumplist ðŸ˜¢ just disable nvim-lastplace
   - `lvim.builtin.lastplace = { active = false }`
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)

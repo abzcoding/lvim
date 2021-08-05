@@ -37,9 +37,8 @@ lvim.debug = false
 
 -- Known Issues
 -- =========================================
-lvim.builtin.lastplace = { active = true }  -- change to false if you are jumping to future
-lvim.builtin.tabnine = { active = true }  -- change to false if you don't like tabnine
-lvim.builtin.debugging = { active = false }  -- change to true if you need debugging
+lvim.builtin.lastplace = { active = true } -- change to false if you are jumping to future
+lvim.builtin.tabnine = { active = true } -- change to false if you don't like tabnine
 
 -- Default options
 -- =========================================
@@ -54,7 +53,6 @@ vim.opt.cmdheight = 1
 
 -- Builtin
 -- =========================================
-lvim.builtin.dap.active = false
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.matchup.enable = true
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -116,10 +114,7 @@ require("user.autocommands").config()
 
 -- Debugging
 -- =========================================
-if lvim.builtin.debugging.active then
-  lvim.builtin.dap.active = true
-  lvim.builtin.dap.on_config_done = require("user.dap").config()
-end
+lvim.builtin.dap.active = false
 
 -- Additional keybindings
 -- =========================================

@@ -5,3 +5,8 @@ lvim.lang.go.formatters = {
     args = {},
   },
 }
+
+if lvim.builtin.dap.active then
+  local dap_install = require "dap-install"
+  dap_install.config("go_dbg", {})
+end
