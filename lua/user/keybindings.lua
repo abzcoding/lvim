@@ -10,6 +10,7 @@ M.config = function()
     d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    t = { "<cmd>TodoLocList <cr>", "Todo" },
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
   }
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
