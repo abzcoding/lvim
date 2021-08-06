@@ -37,8 +37,9 @@ lvim.debug = false
 
 -- Known Issues
 -- =========================================
-lvim.builtin.lastplace = { active = false } -- change to false if you are jumping to future
+lvim.builtin.lastplace = { active = true } -- change to false if you are jumping to future
 lvim.builtin.tabnine = { active = true } -- change to false if you don't like tabnine
+lvim.builtin.persistence = { active = true } -- change to false if you don't like tabnine
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
 
 -- Default options

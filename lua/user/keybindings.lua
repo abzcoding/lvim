@@ -13,12 +13,14 @@ M.config = function()
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
   }
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
-  --lvim.builtin.which_key.mappings["Q"] = {
-  -- 	name = "+Quit",
-  -- 	s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
-  -- 	l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
-  -- 	d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
-  -- }
+  if lvim.builtin.persistence then
+    lvim.builtin.which_key.mappings["q"] = {
+      name = "+Quit",
+      s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
+      l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
+      d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+    }
+  end
   lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen HEAD~1<cr>", "Diff" }
   lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
   lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }

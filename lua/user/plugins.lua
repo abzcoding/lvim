@@ -178,23 +178,20 @@ M.config = function()
     {
       "nvim-lua/lsp-status.nvim",
     },
+    {
+      "folke/persistence.nvim",
+      event = "BufReadPre", -- this will only start session saving when an actual file was opened
+      module = "persistence",
+      config = function()
+        require("persistence").setup()
+      end,
+    },
     -- {
     --   "kristijanhusak/orgmode.nvim",
     --   ft = { "org" },
     --   config = function()
     --     require("user.orgmode").setup {}
     --   end,
-    -- },
-    -- {
-    -- 	"folke/persistence.nvim",
-    -- 	event = "VimEnter",
-    -- 	module = "persistence",
-    -- 	config = function()
-    -- 		require("persistence").setup({
-    -- 			dir = vim.fn.expand(vim.fn.stdpath("config") .. "/session/"),
-    -- 			options = { "buffers", "curdir", "tabpages", "winsize" },
-    -- 		})
-    -- 	end,
     -- },
   }
 end
