@@ -55,7 +55,7 @@ M.config = function()
     {
       "ethanholz/nvim-lastplace",
       config = function()
-        require("user.lastplace").config()
+        require("nvim-lastplace").setup {}
       end,
       event = "BufWinEnter",
       disable = not lvim.builtin.lastplace.active,
