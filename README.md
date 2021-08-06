@@ -81,6 +81,7 @@ lvim # run :PackerSync
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)
 - [Persistence](https://github.com/folke/persistence.nvim)
+- [Presence](https://github.com/andweeb/presence.nvim)
 
 <!--
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))

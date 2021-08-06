@@ -141,12 +141,6 @@ M.config = function()
       run = "cd app && npm install",
       ft = "markdown",
     },
-    -- {
-    --   "andweeb/presence.nvim",
-    --   config = function()
-    --     require("user.presence").config()
-    --   end,
-    -- },
     {
       "simrat39/rust-tools.nvim",
       config = function()
@@ -180,11 +174,18 @@ M.config = function()
     },
     {
       "folke/persistence.nvim",
-      event = "BufReadPre", -- this will only start session saving when an actual file was opened
+      event = "BufReadPre",
       module = "persistence",
       config = function()
         require("persistence").setup()
       end,
+    },
+    {
+      "andweeb/presence.nvim",
+      config = function()
+        require("user.presence").config()
+      end,
+      disable = not lvim.builtin.presence.active,
     },
     -- {
     --   "kristijanhusak/orgmode.nvim",
