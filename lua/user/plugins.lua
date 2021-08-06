@@ -103,6 +103,7 @@ M.config = function()
       setup = function()
         require("user.indent_blankline").setup()
       end,
+      event = "BufRead",
     },
     {
       "tzachar/compe-tabnine",
@@ -158,6 +159,7 @@ M.config = function()
       config = function()
         require("user.zen").config()
       end,
+      cmd = "ZenMode",
     },
     {
       "windwp/nvim-spectre",
@@ -171,6 +173,7 @@ M.config = function()
       config = function()
         require("user.colorizer").config()
       end,
+      event = "BufRead",
     },
     {
       "nvim-lua/lsp-status.nvim",
