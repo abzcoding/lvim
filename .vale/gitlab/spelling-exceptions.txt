@@ -40,6 +40,8 @@ Cloudwatch
 Cobertura
 Codepen
 Cognito
+Colorscheme
+Colorschemes
 Conda
 Consul
 Contentful
@@ -87,6 +89,7 @@ GitHub
 GitLab
 Gitaly
 Gitea
+Github
 Gitleaks
 Gitpod
 Gitter
@@ -133,6 +136,7 @@ Kubernetes
 Kubesec
 Kustomize
 LSP
+LSP
 Laravel
 Lefthook
 Leiningen
@@ -141,7 +145,11 @@ Lodash
 Lograge
 Logrus
 Logstash
+LspInstall
+Lua
 Lucene
+LunarVim
+Lunarvim
 Maildir
 Mailgun
 Mailroom
@@ -157,6 +165,7 @@ Minikube
 ModSecurity
 Monokai
 Nanoc
+Neovim
 Netlify
 Nokogiri
 Nurtch
@@ -221,6 +230,7 @@ SpotBugs
 Stackdriver
 Stackprof
 Sysbench
+TODO
 Tabnine
 Thanos
 Thoughtbot
@@ -326,8 +336,12 @@ checksumming
 clonable
 colocated
 colocating
+colorscheme
+colorschemes
 compilable
 composable
+config
+configs
 cron
 cronjob
 cronjobs
@@ -386,10 +400,12 @@ falsy
 fastlane
 favicon
 favorited
+filetype
 firewalled
 firewalling
 formatters
 fuzzer
+gb
 gettext
 gitlabsos
 globals
@@ -423,8 +439,11 @@ irker
 issuables
 jQuery
 jasmine-jquery
+javascript
 jq
 jsdom
+julia
+jumplist
 kanban
 kanbans
 kaniko
@@ -433,8 +452,11 @@ keyspace
 keytab
 keytabs
 kubectl
+lang
 ldapsearch
 libFuzzer
+linter
+linters
 liveness
 logrotate
 lookahead
@@ -443,6 +465,10 @@ lookbehind
 lookbehinds
 lookups
 loopback
+lsp
+lspconfig
+lua
+luajit
 markdownlint
 matcher
 matchers
@@ -480,11 +506,13 @@ namespaces
 namespacing
 namespacings
 negatable
+neovim
 noteable
 noteables
 npm
 nullability
 nullable
+nvim
 nvim
 nyc
 offboarded
@@ -702,6 +730,7 @@ transpile
 transpiled
 transpiles
 transpiling
+treesitter
 triaged
 triages
 triaging
