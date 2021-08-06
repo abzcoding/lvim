@@ -44,6 +44,23 @@ M.config = function()
       "python",
       "nnoremap <leader>m <cmd>lua require('core.terminal')._exec_toggle('echo \"compile :pepelaugh:\";read')<CR>",
     },
+
+    -- java
+    {
+      "Filetype",
+      "java",
+      "nnoremap <leader>m <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn package;read', hidden =false}:toggle()<CR>",
+    },
+    {
+      "Filetype",
+      "java",
+      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn test;read', hidden =false}:toggle()<CR>",
+    },
+    {
+      "Filetype",
+      "java",
+      "nnoremap <leader>m <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn compile;read', hidden =false}:toggle()<CR>",
+    },
   }
   -- vim.g.compiler_gcc_ignore_unmatched_lines = true
   -- vim.g.compiler_clang_ignore_unmatched_lines = true
