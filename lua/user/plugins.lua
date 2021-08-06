@@ -117,7 +117,7 @@ M.config = function()
       config = function()
         require("user.twilight").config()
       end,
-      cmd = "ZenMode",
+      event = "BufRead",
     },
     { "kevinhwang91/nvim-bqf", event = "BufRead" },
     {
@@ -153,7 +153,7 @@ M.config = function()
       config = function()
         require("user.zen").config()
       end,
-      cmd = "ZenMode",
+      event = "BufRead",
     },
     {
       "windwp/nvim-spectre",
@@ -187,6 +187,7 @@ M.config = function()
       end,
       disable = not lvim.builtin.presence.active,
     },
+    { "mfussenegger/nvim-jdtls", ft = "java" },
     -- {
     --   "kristijanhusak/orgmode.nvim",
     --   ft = { "org" },
