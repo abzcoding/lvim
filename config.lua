@@ -39,7 +39,7 @@ vim.opt.timeoutlen = 200
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 5
-vim.opt.guifont = "FiraCode Nerd Font:h15"
+vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.opt.cmdheight = 1
 -- if you want to choose the source of formatting
 -- lvim.lsp.on_init_callback = function(client, _bufnr)
