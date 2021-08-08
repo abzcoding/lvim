@@ -12,7 +12,7 @@ lvim.lang.python.formatters = {
 lvim.lang.python.linters = {
   {
     -- can be pylint or flake8
-    exe = "flake8",
+    exe = "",
     args = {},
   },
 }
