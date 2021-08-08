@@ -10,7 +10,7 @@ M.config = function()
     {
       "Filetype",
       "c,cpp",
-      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='make test;read', hidden =false}:toggle()<CR>",
+      "nnoremap <leader>T <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='make test;read', hidden =false}:toggle()<CR>",
     },
     { "Filetype", "cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
@@ -20,7 +20,7 @@ M.config = function()
     {
       "Filetype",
       "rust",
-      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='cargo test -- --ignored;read', hidden =false}:toggle()<CR>",
+      "nnoremap <leader>T <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='cargo test -- --ignored;read', hidden =false}:toggle()<CR>",
     },
     { "Filetype", "rust", "nnoremap <leader>H <cmd>lua require('core.terminal')._exec_toggle('cargo clippy;read')<CR>" },
     { "Filetype", "rust", "nnoremap <leader>lm <Cmd>RustExpandMacro<CR>" },
@@ -37,7 +37,7 @@ M.config = function()
     {
       "Filetype",
       "python",
-      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='python -m unittest;read', hidden =false}:toggle()<CR>",
+      "nnoremap <leader>T <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='python -m unittest;read', hidden =false}:toggle()<CR>",
     },
     {
       "Filetype",
@@ -54,7 +54,7 @@ M.config = function()
     {
       "Filetype",
       "java",
-      "nnoremap <leader>t <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn test;read', hidden =false}:toggle()<CR>",
+      "nnoremap <leader>T <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn test;read', hidden =false}:toggle()<CR>",
     },
     {
       "Filetype",
