@@ -84,5 +84,5 @@ lvim # run :PackerSync
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
 - [Persistence](https://github.com/folke/persistence.nvim)
 - [Presence](https://github.com/andweeb/presence.nvim)
-- [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim))
+- [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
