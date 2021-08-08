@@ -188,13 +188,14 @@ M.config = function()
       disable = not lvim.builtin.presence.active,
     },
     { "mfussenegger/nvim-jdtls", ft = "java" },
-    -- {
-    --   "kristijanhusak/orgmode.nvim",
-    --   ft = { "org" },
-    --   config = function()
-    --     require("user.orgmode").setup {}
-    --   end,
-    -- },
+    {
+      "kristijanhusak/orgmode.nvim",
+      ft = { "org" },
+      config = function()
+        require("user.orgmode").setup {}
+      end,
+      disable = not lvim.builtin.orgmode.active,
+    },
   }
 end
 
