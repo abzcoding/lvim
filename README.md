@@ -6,6 +6,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 ## Things to Know
 
+- I'm on the `rolling` branch of LunarVim
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - if you want to use debugging, change the following line to true:
   - `lvim.builtin.dap.active = true`
