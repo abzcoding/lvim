@@ -9,8 +9,8 @@ M.config = function()
     -- This setting only take effect in insert mode, it does not affect signature help in normal
     -- mode, 10 by default
 
-    floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
-    fix_pos = false, -- set to true, the floating window will not auto-close until finish all parameters
+    floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
+    fix_pos = true, -- set to true, the floating window will not auto-close until finish all parameters
     hint_enable = true, -- virtual hint enable
     hint_prefix = "🐼 ", -- Panda for parameter
     hint_scheme = "String",
@@ -31,7 +31,7 @@ M.config = function()
 
     padding = "", -- character to pad on left and right of signature can be ' ', or '|'  etc
 
-    shadow_blend = 12, -- if you using shadow as border use this set the opacity
+    shadow_blend = 36, -- if you using shadow as border use this set the opacity
     shadow_guibg = "Black", -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
   }
   require("lsp_signature").setup(cfg)
