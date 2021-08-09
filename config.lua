@@ -1,24 +1,29 @@
 -- Neovim
 -- =========================================
 local disabled_built_ins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  -- 'matchit',
+  "man",
+  -- 'matchparen',
   "netrw",
   "netrwPlugin",
   "netrwSettings",
   "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "tar",
-  "tarPlugin", -- 'man',
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
   "rrhelper",
   "spellfile_plugin",
-  -- 'matchit', 'matchparen', 'shada_plugin',
+  "spec",
+  "shada_plugin",
+  "tar",
+  "tarPlugin",
+  "tutor_mode",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
 }
 for _, _plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. _plugin] = 1
@@ -41,6 +46,8 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 5
 vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.opt.cmdheight = 1
+vim.g.dashboard_enable_session = 0
+vim.g.dashboard_disable_statusline = 0
 -- if you want to choose the source of formatting
 -- lvim.lsp.on_init_callback = function(client, _bufnr)
 --   client.resolved_capabilities.document_formatting = true
@@ -77,11 +84,19 @@ lvim.builtin.dashboard.custom_section["m"] = {
   command = "Telescope marks",
 }
 if lvim.builtin.tabnine.active then
-  lvim.builtin.compe.source.tabnine = { kind = " ", priority = 200, max_reslts = 6 }
+  lvim.builtin.compe.source.tabnine = { kind = " ", priority = 150, max_reslts = 6 }
 end
 if lvim.builtin.orgmode.active then
   lvim.builtin.compe.source.orgmode = true
 end
+if lvim.builtin.lastplace.active == false then
+  -- go to last loc when opening a buffer
+  vim.cmd [[
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+]]
+end
+lvim.builtin.compe.preselect = "always"
+lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 -- lvim.builtin.nvimtree.hide_dotfiles = 0
 -- lvim.treesitter.textsubjects.enable = true
 -- lvim.treesitter.playground.enable = true
