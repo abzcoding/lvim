@@ -36,9 +36,6 @@ lvim.leader = " "
 lvim.colorscheme = "spacegray"
 lvim.debug = false
 -- lvim.log.level = "debug"
-
--- Default options
--- =========================================
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.timeoutlen = 200
@@ -52,10 +49,6 @@ vim.g.dashboard_disable_statusline = 0
 vim.opt.pumblend = 10 -- Popup blend
 vim.opt.joinspaces = false -- No double spaces with join after a dot
 vim.opt.list = true -- Show some invisible characters (tabs...
--- if you want to choose the source of formatting
--- lvim.lsp.on_init_callback = function(client, _bufnr)
---   client.resolved_capabilities.document_formatting = true
--- end
 
 -- Customization
 -- =========================================
@@ -66,51 +59,7 @@ lvim.builtin.presence = { active = false } -- change to true if you want discord
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
 lvim.builtin.treesitter.indent = { enable = false }
-
--- Builtin
--- =========================================
-lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.matchup.enable = true
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.context_commentstring.enable = true
-lvim.builtin.dashboard.active = true
-lvim.builtin.galaxyline.active = true
-lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
-lvim.builtin.terminal.active = true
-lvim.builtin.terminal.execs = {
-  { "lazygit", "gg", "LazyGit" },
-  { "python manage.py test;read", "jt", "Django tests" },
-  { "python manage.py makemigrations;read", "jm", "Django makemigrations" },
-  { "python manage.py migrate;read", "ji", "Django migrate" },
-}
-lvim.builtin.dashboard.custom_section["m"] = {
-  description = { "  Marks              " },
-  command = "Telescope marks",
-}
-if lvim.builtin.tabnine.active then
-  lvim.builtin.compe.source.tabnine = { kind = " ", priority = 150, max_reslts = 6 }
-end
-if lvim.builtin.orgmode.active then
-  lvim.builtin.compe.source.orgmode = true
-end
-if lvim.builtin.lastplace.active == false then
-  -- go to last loc when opening a buffer
-  vim.cmd [[
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
-]]
-end
-lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
--- lvim.builtin.nvimtree.hide_dotfiles = 0
--- lvim.treesitter.textsubjects.enable = true
--- lvim.treesitter.playground.enable = true
-
--- Additional keybindings
--- =========================================
-lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
-lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
-lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
-lvim.keys.normal_mode["Y"] = "y$"
-lvim.keys.visual_mode["p"] = [["_dP]]
+require("user.builtin").config()
 
 -- StatusLine
 -- =========================================

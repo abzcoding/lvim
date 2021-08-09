@@ -1,6 +1,17 @@
 local M = {}
 
 M.config = function()
+  -- Additional keybindings
+  -- =========================================
+  lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
+  lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+  lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
+  lvim.keys.normal_mode["Y"] = "y$"
+  lvim.keys.visual_mode["p"] = [["_dP]]
+  lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
+
+  -- WhichKey keybindings
+  -- =========================================
   lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }
   lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
   lvim.builtin.which_key.mappings["t"] = {
