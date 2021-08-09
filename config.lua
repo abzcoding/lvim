@@ -48,6 +48,7 @@ vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.opt.cmdheight = 1
 vim.g.dashboard_enable_session = 0
 vim.g.dashboard_disable_statusline = 0
+vim.opt.pumblend = 10 -- Popup blend
 -- if you want to choose the source of formatting
 -- lvim.lsp.on_init_callback = function(client, _bufnr)
 --   client.resolved_capabilities.document_formatting = true
