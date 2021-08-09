@@ -35,6 +35,7 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "spacegray"
 lvim.debug = false
+-- lvim.log.level = "debug"
 
 -- Default options
 -- =========================================
