@@ -24,6 +24,8 @@ M.setup = function()
     "function",
     "method",
     "^if",
+    "^do",
+    "^switch",
     "^while",
     "jsx_element",
     "^for",
