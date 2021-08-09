@@ -5,11 +5,7 @@ M.config = function()
     {
       "folke/tokyonight.nvim",
       config = function()
-        vim.g.tokyonight_hide_inactive_statusline = true
-        local _time = os.date "*t"
-        if _time.hour < 9 then
-          vim.g.tokyonight_style = "night"
-        end
+        require("user/theme").tokyonight()
         vim.cmd [[
       colorscheme tokyonight
       ]]
@@ -48,7 +44,7 @@ M.config = function()
     {
       "ray-x/lsp_signature.nvim",
       config = function()
-        require("lsp_signature").setup()
+        require("user/lsp_signature").config()
       end,
       event = "InsertEnter",
     },
