@@ -1,36 +1,5 @@
 -- Neovim
 -- =========================================
-local disabled_built_ins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  -- 'matchit',
-  "man",
-  -- 'matchparen',
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "rrhelper",
-  "spellfile_plugin",
-  "spec",
-  "shada_plugin",
-  "tar",
-  "tarPlugin",
-  "tutor_mode",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-}
-for _, _plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. _plugin] = 1
-end
-
--- General
--- =========================================
 lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "spacegray"
