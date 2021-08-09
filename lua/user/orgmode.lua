@@ -8,6 +8,18 @@ M.setup = function()
   org_mode.setup {
     org_agenda_files = { "~/shared/orgs/**/*" },
     org_default_notes_file = "~/shared/orgs/refile.org",
+    org_agenda_templates = {
+      T = {
+        description = "Todo",
+        template = "* TODO %?\n  DEADLINE: %T",
+        target = "~/shared/orgs/todos.org",
+      },
+      w = {
+        description = "Work todo",
+        template = "* TODO %?\n  DEADLINE: %T",
+        target = "~/shared/orgs/work.org",
+      },
+    },
   }
 end
 
