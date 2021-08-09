@@ -9,8 +9,8 @@ M.config = function()
     -- This setting only take effect in insert mode, it does not affect signature help in normal
     -- mode, 10 by default
 
-    floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
-    fix_pos = true, -- set to true, the floating window will not auto-close until finish all parameters
+    floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
+    fix_pos = false, -- set to true, the floating window will not auto-close until finish all parameters
     hint_enable = true, -- virtual hint enable
     hint_prefix = "🐼 ", -- Panda for parameter
     hint_scheme = "String",
