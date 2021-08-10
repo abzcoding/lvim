@@ -4,3 +4,8 @@ lvim.lang.sh.formatters = {
     args = {},
   },
 }
+lvim.lang.sh.linters = {
+  {
+    exe = "shellcheck"
+  }
+}
