@@ -39,6 +39,10 @@ if lvim.builtin.fancy_galaxyline.active then
   end
 end
 
+if lvim.builtin.dap.active then
+  require("user.dap").config()
+end
+
 -- Language Specific
 -- =========================================
 lvim.lang.markdown = {}
