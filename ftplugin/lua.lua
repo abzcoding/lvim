@@ -6,7 +6,7 @@ lvim.lang.lua.formatters = {
 }
 lvim.lang.lua.linters = {
   {
-    exe = "selene",
+    exe = "luacheck",
     args = {},
   },
 }
