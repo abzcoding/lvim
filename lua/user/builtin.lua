@@ -5,6 +5,7 @@ M.config = function()
   lvim.builtin.treesitter.matchup.enable = true
   lvim.builtin.treesitter.ignore_install = { "haskell" }
   lvim.builtin.treesitter.context_commentstring.enable = true
+  lvim.builtin.treesitter.indent = { enable = false } -- treesitter is buggy :(
   lvim.builtin.dashboard.active = true
   lvim.builtin.galaxyline.active = true
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
