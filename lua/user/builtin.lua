@@ -33,6 +33,20 @@ M.config = function()
 ]]
   end
   lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  lvim.builtin.treesitter.incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<C-n>",
+      node_incremental = "<C-n>",
+      scope_incremental = "<C-s>",
+      node_decremental = "<C-r>",
+    },
+  }
+  lvim.builtin.treesitter.query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = { "BufWrite", "CursorHold" },
+  }
   -- lvim.builtin.nvimtree.hide_dotfiles = 0
   -- lvim.treesitter.textsubjects.enable = true
   -- lvim.treesitter.playground.enable = true
