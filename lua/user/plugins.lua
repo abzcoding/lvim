@@ -167,6 +167,7 @@ M.config = function()
     },
     {
       "nvim-lua/lsp-status.nvim",
+      disable = not lvim.builtin.fancy_galaxyline.active,
     },
     {
       "folke/persistence.nvim",

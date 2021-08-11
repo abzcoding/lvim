@@ -27,7 +27,7 @@ lvim.builtin.persistence = { active = true } -- change to false if you don't wan
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
-lvim.builtin.fancy_galaxyline = { enable = true } -- if you want lsp status in your galaxyline
+lvim.builtin.fancy_galaxyline = { active = false } -- if you want lsp status in your galaxyline
 require("user.builtin").config()
 
 -- StatusLine
