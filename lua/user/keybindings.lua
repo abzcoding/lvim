@@ -9,6 +9,7 @@ M.config = function()
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.visual_mode["p"] = [["_dP]]
   lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
+  lvim.keys.insert_mode["<c-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
 
   -- WhichKey keybindings
   -- =========================================
