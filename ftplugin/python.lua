@@ -1,11 +1,11 @@
 lvim.lang.python.formatters = {
   {
     exe = "black",
-    args = {},
+    -- args = {},
   },
   {
     exe = "isort",
-    args = {},
+    -- args = {},
   },
 }
 

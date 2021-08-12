@@ -1,7 +1,7 @@
 lvim.lang.markdown.formatters = {
   {
     exe = "prettier",
-    args = {},
+    -- args = {},
   },
 }
 
@@ -9,11 +9,11 @@ lvim.lang.markdown.linters = {
   {
     -- @usage can be write_good or vale or markdownlint
     exe = "markdownlint",
-    args = {},
+    -- args = {},
   },
   {
     -- @usage can be write_good or vale or markdownlint
     exe = "vale",
-    args = {},
+    -- args = {},
   },
 }
