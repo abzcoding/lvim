@@ -27,6 +27,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 # install LunarVim
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+brew install luarocks
+luarocks install luacheck  # if you want to use luacheck
 cargo install selene  # if you want to use selene instead of luacheck
 brew install hadolint  # if you want to lint dockerfiles
 pip install vim-vint  # for vim linting
