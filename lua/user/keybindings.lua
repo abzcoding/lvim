@@ -48,6 +48,10 @@ M.config = function()
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Current Buffer" },
   }
+  lvim.builtin.which_key.mappings["lh"] = {
+    "<cmd>hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b<cr>",
+    "Clear HL",
+  }
 end
 
 return M
