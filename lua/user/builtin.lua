@@ -47,6 +47,7 @@ M.config = function()
     use_virtual_text = true,
     lint_events = { "BufWrite", "CursorHold" },
   }
+  lvim.builtin.nvimtree.auto_open = 0
   -- lvim.builtin.nvimtree.hide_dotfiles = 0
   -- lvim.treesitter.textsubjects.enable = true
   -- lvim.treesitter.playground.enable = true

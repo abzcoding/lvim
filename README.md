@@ -16,6 +16,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.tabnine = { active = false }`
 - if you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - Using tailwinds CSS for markdown, disable it if you want
+- disable lir if you don't like it
+  - `lvim.builin.lir = {active = false}`
 
 <!--
 - orgmode is using `~/shared/orgs` folder
@@ -89,3 +91,4 @@ lvim # run :PackerSync
 - [Presence](https://github.com/andweeb/presence.nvim)
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [lir.nvim](https://github.com/tamago324/lir.nvim)

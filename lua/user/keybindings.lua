@@ -52,6 +52,9 @@ M.config = function()
     "<cmd>hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b<cr>",
     "Clear HL",
   }
+  if lvim.builtin.lir.active then
+    lvim.builtin.which_key.mappings["."] = { "<cmd>lua require('lir.float').toggle()<cr>", "Files" }
+  end
 end
 
 return M
