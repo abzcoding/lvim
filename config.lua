@@ -45,7 +45,7 @@ end
 -- Language Specific
 -- =========================================
 lvim.lang.markdown = {}
-lvim.lang.dockerfile = {}
+lvim.lang.dockerfile = { formatters = {} }
 lvim.builtin.lspinstall.on_config_done = function()
   require("user.tailwind").setup()
   require("user.dockerls").setup()
