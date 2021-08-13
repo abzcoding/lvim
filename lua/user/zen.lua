@@ -31,6 +31,9 @@ M.config = function()
       vim.cmd [[
           set foldlevel=10
           IndentBlanklineDisable
+          hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b
+          hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b
+          hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b
           ]]
     end,
     on_close = function()
@@ -41,6 +44,9 @@ M.config = function()
       vim.cmd [[
           set foldlevel=5
           IndentBlanklineEnable
+          hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
+          hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
+          hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
           ]]
     end,
   }
