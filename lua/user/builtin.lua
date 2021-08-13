@@ -10,6 +10,7 @@ M.config = function()
   lvim.builtin.galaxyline.active = true
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.terminal.active = true
+  lvim.lsp.document_highlight = false
   lvim.builtin.terminal.execs = {
     { "lazygit", "gg", "LazyGit" },
     { "python manage.py test;read", "jt", "Django tests" },
