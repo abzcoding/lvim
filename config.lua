@@ -2,7 +2,7 @@
 -- =========================================
 lvim.format_on_save = false
 lvim.leader = " "
-lvim.colorscheme = "spacegray"
+lvim.colorscheme = "pablo"
 lvim.debug = false
 -- lvim.log.level = "debug"
 vim.opt.relativenumber = true
