@@ -23,7 +23,7 @@ M.config = function()
     },
     plugins = {
       gitsigns = { enabled = false }, -- disables git signs
-      tmux = { enabled = false },
+      tmux = { enabled = true },
       twilight = { enabled = true },
     },
     on_open = function()
