@@ -26,12 +26,12 @@ M.config = function()
   if lvim.builtin.orgmode.active then
     lvim.builtin.compe.source.orgmode = true
   end
-  if lvim.builtin.lastplace.active == false then
-    -- go to last loc when opening a buffer
-    vim.cmd [[
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
-]]
-  end
+--   if lvim.builtin.lastplace.active == false then
+--     -- go to last loc when opening a buffer
+--     vim.cmd [[
+--   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+-- ]]
+--   end
   lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.treesitter.incremental_selection = {
     enable = true,
