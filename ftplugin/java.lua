@@ -1,6 +1,3 @@
-if require("utils").check_lsp_client_active "jdt.ls" then
-  return
-end
 local status_ok, jdtls = pcall(require, "jdtls")
 if not status_ok then
   return
