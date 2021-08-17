@@ -88,13 +88,6 @@ M.config = function()
       cmd = "DiffviewOpen",
     },
     {
-      "nvim-telescope/telescope-project.nvim",
-      event = "BufWinEnter",
-      setup = function()
-        vim.cmd [[packadd telescope.nvim]]
-      end,
-    },
-    {
       "lukas-reineke/indent-blankline.nvim",
       setup = function()
         require("user.indent_blankline").setup()
