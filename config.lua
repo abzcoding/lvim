@@ -27,17 +27,11 @@ lvim.builtin.persistence = { active = true } -- change to false if you don't wan
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
-lvim.builtin.fancy_galaxyline = { active = false } -- if you want lsp status in your galaxyline
 lvim.builtin.lir = { active = true } -- change this to enable/disable lir
 require("user.builtin").config()
 
 -- StatusLine
 -- =========================================
-if lvim.builtin.fancy_galaxyline.active then
-  lvim.builtin.galaxyline.on_config_done = function(gl)
-    require("user.galaxyline").config(gl)
-  end
-end
 
 if lvim.builtin.dap.active then
   require("user.dap").config()

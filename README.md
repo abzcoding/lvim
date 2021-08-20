@@ -80,7 +80,6 @@ lvim # run :PackerSync
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [zephyr-nvim](https://github.com/abzcoding/zephyr-nvim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
-- [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)
 
 ### Optional Plugins
 
