@@ -35,7 +35,7 @@ M.catppuccino = function()
     transparency = false,
     styles = {
       comments = "italic",
-      functions = "italic",
+      functions = "NONE",
       keywords = "italic",
       strings = "NONE",
       variables = "NONE",
@@ -68,6 +68,7 @@ M.catppuccino = function()
       markdown = false,
     },
   }
+  catppuccino.load()
 end
 
 return M

@@ -3,6 +3,16 @@ local M = {}
 M.config = function()
   lvim.plugins = {
     {
+      "Pocco81/Catppuccino.nvim",
+      config = function()
+        require("user/theme").catppuccino()
+      end,
+      cond = function()
+        local _time = os.date "*t"
+        return (_time.hour >= 0 and _time.hour < 11)
+      end,
+    },
+    {
       "folke/tokyonight.nvim",
       config = function()
         require("user/theme").tokyonight()
@@ -12,20 +22,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 12)
-      end,
-    },
-    {
-      "Pocco81/Catppuccino.nvim",
-      config = function()
-        require("user/theme").catppuccino()
-        vim.cmd [[
-        colorscheme catppuccino
-        ]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 12 and _time.hour < 16)
+        return (_time.hour >= 11 and _time.hour < 17)
       end,
     },
     {
@@ -39,7 +36,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 16 and _time.hour < 20)
+        return (_time.hour >= 17 and _time.hour < 21)
       end,
     },
     {
@@ -51,7 +48,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 20 and _time.hour <= 24)
+        return (_time.hour >= 21 and _time.hour <= 24)
       end,
     },
     {
