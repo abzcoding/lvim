@@ -12,7 +12,20 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 16)
+        return (_time.hour >= 0 and _time.hour < 12)
+      end,
+    },
+    {
+      "Pocco81/Catppuccino.nvim",
+      config = function()
+        require("user/theme").catppuccino()
+        vim.cmd [[
+        colorscheme catppuccino
+        ]]
+      end,
+      cond = function()
+        local _time = os.date "*t"
+        return (_time.hour >= 12 and _time.hour < 16)
       end,
     },
     {
