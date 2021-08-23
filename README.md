@@ -64,6 +64,8 @@ lvim # run :PackerSync
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
+- [Catppuccino Theme](https://github.com/Pocco81/Catppuccino.nvim)
+- [Zephyr Theme](https://github.com/abzcoding/zephyr-nvim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
@@ -78,7 +80,6 @@ lvim # run :PackerSync
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
-- [zephyr-nvim](https://github.com/abzcoding/zephyr-nvim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 
 ### Optional Plugins
