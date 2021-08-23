@@ -9,7 +9,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 11)
+        return (_time.hour >= 7 and _time.hour < 11)
       end,
     },
     {
@@ -22,7 +22,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 11 and _time.hour < 17)
+        return (_time.hour >= 0 and _time.hour < 7) or (_time.hour >= 11 and _time.hour < 17)
       end,
     },
     {
