@@ -56,7 +56,10 @@ M.catppuccino = function()
       gitgutter = false,
       gitsigns = true,
       telescope = true,
-      nvimtree = true,
+      nvimtree = {
+        enabled = true,
+        show_root = true,
+      },
       which_key = true,
       indent_blankline = true,
       dashboard = true,
