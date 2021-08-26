@@ -8,6 +8,7 @@ M.config = function()
   lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
   lvim.builtin.dashboard.active = true
   lvim.builtin.lualine.active = true
+  lvim.builtin.lualine.sections.lualine_b = { "branch" }
   lvim.builtin.project.active = true
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.terminal.active = true
