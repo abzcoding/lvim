@@ -4,6 +4,11 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "pablo"
 lvim.debug = false
+local _time = os.date "*t"
+if _time.hour < 6 then
+  lvim.transparent_window = true
+end
+
 -- lvim.log.level = "debug"
 vim.opt.relativenumber = true
 vim.opt.wrap = true

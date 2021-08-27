@@ -23,8 +23,9 @@ M.tokyonight = function()
   vim.g.tokyonight_dark_sidebar = true
   vim.g.tokyonight_dark_float = true
   local _time = os.date "*t"
-  if _time.hour < 9 then
+  if _time.hour < 8 then
     vim.g.tokyonight_style = "night"
+    vim.g.tokyonight_transparent = true
   end
 end
 
