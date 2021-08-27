@@ -215,7 +215,10 @@ M.config = function()
     color = { fg = colors.green },
     condition = conditions.hide_in_width,
   }
-  ins_left { lsp_progress }
+  ins_left {
+    lsp_progress,
+    condition = conditions.hide_in_width,
+  }
 
   -- Insert mid section. You can make any number of sections in neovim :)
   -- for lualine it's any number greater then 2
@@ -292,21 +295,13 @@ M.config = function()
     upper = true,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
     color = { fg = colors.green, gui = "bold" },
+    condition = conditions.hide_in_width,
   }
 
   ins_right {
     clock,
-    color = { fg = colors.blue, bg = colors.bg },
-  }
-
-  ins_right {
-    "diff",
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = " ", modified = "柳 ", removed = " " },
-    color_added = { fg = colors.green },
-    color_modified = { fg = colors.orange },
-    color_removed = { fg = colors.red },
     condition = conditions.hide_in_width,
+    color = { fg = colors.blue, bg = colors.bg },
   }
 
   ins_right {
