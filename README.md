@@ -8,6 +8,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 - I'm on the `rolling` branch of LunarVim
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
+- i use a custom lualine disable it if you don't like it
+  - `lvim.builtin.fancy_statusline = { active = false }`
 - if you want to use debugging, change the following line to true:
   - `lvim.builtin.dap.active = true`
 - sometimes instead of saving you jump trough jumplist ðŸ˜¢ just disable nvim-lastplace
