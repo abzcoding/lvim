@@ -32,6 +32,21 @@ local function diff_source()
   end
 end
 
+local default_colors = {
+  bg = "#202328",
+  fg = "#bbc2cf",
+  yellow = "#ECBE7B",
+  cyan = "#008080",
+  darkblue = "#081633",
+  green = "#98be65",
+  orange = "#FF8800",
+  violet = "#a9a1e1",
+  magenta = "#c678dd",
+  blue = "#51afef",
+  red = "#ec5f67",
+  git = { change = "#ECBE7B", add = "#98be65", delete = "#ec5f67", conflict = "#bb7a61" },
+}
+
 M.config = function()
   local status_ok, gps = pcall(require, "nvim-gps")
   if not status_ok then
@@ -39,22 +54,24 @@ M.config = function()
       is_available = false,
     }
   end
+  local theme = require "user.theme"
+
+  local colors
+  local _time = os.date "*t"
+  if (_time.hour >= 0 and _time.hour < 7) or (_time.hour >= 11 and _time.hour < 17) then
+    colors = theme.colors.tokyonight_colors
+  elseif _time.hour >= 7 and _time.hour < 11 then
+    colors = theme.colors.catppuccino_colors
+  elseif _time.hour >= 21 and _time.hour <= 24 then
+    colors = theme.colors.zephyr_colors
+  elseif _time.hour >= 17 and _time.hour < 21 then
+    colors = theme.colors.doom_one_colors
+  else
+    colors = default_colors
+  end
   -- Color table for highlights
-  local colors = {
-    bg = "#202328",
-    fg = "#bbc2cf",
-    yellow = "#ECBE7B",
-    cyan = "#008080",
-    darkblue = "#081633",
-    green = "#98be65",
-    orange = "#FF8800",
-    violet = "#a9a1e1",
-    magenta = "#c678dd",
-    blue = "#51afef",
-    red = "#ec5f67",
-  }
   local mode_color = {
-    n = colors.red,
+    n = colors.git.delete,
     i = colors.green,
     v = colors.blue,
     [""] = colors.blue,
@@ -81,6 +98,9 @@ M.config = function()
     end,
     hide_in_width = function()
       return vim.fn.winwidth(0) > 80
+    end,
+    hide_small = function()
+      return vim.fn.winwidth(0) > 150
     end,
     check_git_workspace = function()
       local filepath = vim.fn.expand "%:p:h"
@@ -122,8 +142,8 @@ M.config = function()
       lualine_v = {},
       lualine_y = {},
       lualine_z = {},
-      lualine_c = {},
-      lualine_x = {},
+      lualine_c = { "filename" },
+      lualine_x = { "location" },
     },
   }
 
@@ -196,9 +216,9 @@ M.config = function()
     "diff",
     source = diff_source,
     symbols = { added = "  ", modified = "柳", removed = " " },
-    color_added = { fg = colors.green },
-    color_modified = { fg = colors.yellow },
-    color_removed = { fg = colors.red },
+    color_added = { fg = colors.git.add },
+    color_modified = { fg = colors.git.change },
+    color_removed = { fg = colors.git.delete },
     color = {},
     condition = nil,
   }
@@ -223,11 +243,11 @@ M.config = function()
   }
   ins_left {
     gps.get_location,
-    condition = gps.is_available,
+    condition = gps.is_available and conditions.hide_small,
   }
   ins_left {
     lsp_progress,
-    condition = conditions.hide_in_width,
+    condition = conditions.hide_small,
   }
 
   -- Insert mid section. You can make any number of sections in neovim :)
@@ -255,6 +275,8 @@ M.config = function()
       end
       return ""
     end,
+    left_padding = 0,
+    right_padding = 0,
     color = { fg = colors.green },
     condition = conditions.hide_in_width,
   }
@@ -273,29 +295,37 @@ M.config = function()
       local active_client = utils.get_active_client_by_ft(buf_ft)
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
-          table.insert(buf_client_names, client.name)
+          table.insert(buf_client_names, string.sub(client.name, 1, 3))
         end
       end
       vim.list_extend(buf_client_names, active_client or {})
 
       -- add formatter
       local formatters = require "lsp.null-ls.formatters"
-      local supported_formatters = formatters.list_supported_names(buf_ft)
+      local supported_formatters = {}
+      for _, fmt in pairs(formatters.list_supported_names(buf_ft)) do
+        table.insert(supported_formatters, string.sub(fmt, 1, 3))
+      end
       vim.list_extend(buf_client_names, supported_formatters)
 
       -- add linter
       local linters = require "lsp.null-ls.linters"
-      local supported_linters = linters.list_supported_names(buf_ft)
+      local supported_linters = {}
+      for _, lnt in pairs(linters.list_supported_names(buf_ft)) do
+        table.insert(supported_linters, string.sub(lnt, 1, 3))
+      end
       vim.list_extend(buf_client_names, supported_linters)
 
       return table.concat(buf_client_names, ", ")
     end,
     icon = " ",
-    color = { gui = "bold" },
+    color = { fg = colors.fg },
     condition = conditions.hide_in_width,
   }
   ins_right {
     "location",
+    left_padding = 0,
+    right_padding = 0,
     color = { fg = colors.orange },
   }
   -- Add components to right sections
