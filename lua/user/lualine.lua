@@ -33,6 +33,12 @@ local function diff_source()
 end
 
 M.config = function()
+  local status_ok, gps = pcall(require, "nvim-gps")
+  if not status_ok then
+    gps = {
+      is_available = false,
+    }
+  end
   -- Color table for highlights
   local colors = {
     bg = "#202328",
@@ -214,6 +220,10 @@ M.config = function()
     end,
     color = { fg = colors.green },
     condition = conditions.hide_in_width,
+  }
+  ins_left {
+    gps.get_location,
+    condition = gps.is_available,
   }
   ins_left {
     lsp_progress,

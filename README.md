@@ -93,3 +93,4 @@ lvim # run :PackerSync
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [lir.nvim](https://github.com/tamago324/lir.nvim)
+- [nvim-gps](https://github.com/SmiteshP/nvim-gps)
