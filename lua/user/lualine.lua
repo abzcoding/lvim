@@ -152,7 +152,7 @@ M.config = function()
             return ""
           end,
           color = "LualineModeInactive",
-          left_padding = 0,
+          left_padding = 1,
         },
         {
           "filename",
@@ -184,7 +184,7 @@ M.config = function()
 
     -- color = { fg = colors.red },
     color = "LualineMode",
-    left_padding = 0,
+    left_padding = 1,
   }
   ins_left {
     "b:gitsigns_head",
