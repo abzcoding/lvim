@@ -52,7 +52,12 @@ M.config = function()
   local status_ok, gps = pcall(require, "nvim-gps")
   if not status_ok then
     gps = {
-      is_available = false,
+      get_location = function()
+        return ""
+      end,
+      is_available = function()
+        return false
+      end,
     }
   end
   local theme = require "user.theme"

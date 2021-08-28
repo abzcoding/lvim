@@ -206,7 +206,7 @@ M.config = function()
           icons = {
             ["class-name"] = " ", -- Classes and class-like objects
             ["function-name"] = " ", -- Functions
-            ["method-name"] = " ",      -- Methods (functions inside class-like objects)
+            ["method-name"] = " ",   -- Methods (functions inside class-like objects)
           },
           languages = { -- You can disable any language individually here
             ["c"] = true,
@@ -217,6 +217,7 @@ M.config = function()
             ["lua"] = true,
             ["python"] = true,
             ["rust"] = true,
+            ["yaml"] = false,
           },
           separator = " > ",
         }
