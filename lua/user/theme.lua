@@ -160,8 +160,8 @@ M.colors = {
     base7 = "#9ca0a4",
     base8 = "#b1b1b1",
 
-    bg = "#282a36",
-    bg_alt = "#2E323C",
+    bg_alt = "#282a36",
+    bg= "#2E323C",
     bg_popup = "#3E4556",
     bg_highlight = "#2E323C",
     bg_visual = "#b3deef",
