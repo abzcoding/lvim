@@ -48,6 +48,16 @@ local default_colors = {
   git = { change = "#ECBE7B", add = "#98be65", delete = "#ec5f67", conflict = "#bb7a61" },
 }
 
+local function gps_available()
+  local status_ok, gps = pcall(require, "nvim-gps")
+  if not status_ok then
+    return nil
+  end
+  if (gps.is_available() == true) and (vim.fn.winwidth(0) > 120) then
+    return true
+  end
+  return nil
+end
 M.config = function()
   local status_ok, gps = pcall(require, "nvim-gps")
   if not status_ok then
@@ -265,7 +275,7 @@ M.config = function()
   }
   ins_left {
     gps.get_location,
-    condition = gps.is_available and conditions.hide_small,
+    condition = gps_available,
   }
   ins_left {
     lsp_progress,
