@@ -212,8 +212,8 @@ M.colors = {
     cyan = "#46D9FF",
     white = "#efefef",
 
-    bg = "#282c34",
-    bg_alt = "#21242b",
+    bg_alt = "#282c34",
+    bg = "#21242b",
     bg_highlight = "#21252a",
     bg_popup = "#3E4556",
     bg_statusline = "#3E4556",
