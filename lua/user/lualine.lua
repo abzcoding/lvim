@@ -34,6 +34,7 @@ end
 
 local default_colors = {
   bg = "#202328",
+  bg_alt = "#202328",
   fg = "#bbc2cf",
   yellow = "#ECBE7B",
   cyan = "#008080",
@@ -121,7 +122,7 @@ M.config = function()
         -- right section. Both are highlighted by c theme .  So we
         -- are just setting default looks o statusline
         normal = { c = { fg = colors.fg, bg = colors.bg } },
-        inactive = { c = { fg = colors.fg, bg = colors.bg } },
+        inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
       },
       disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
     },
@@ -142,8 +143,24 @@ M.config = function()
       lualine_v = {},
       lualine_y = {},
       lualine_z = {},
-      lualine_c = { "filename" },
-      lualine_x = { "location" },
+      lualine_c = {
+        {
+          function()
+            vim.api.nvim_command(
+              "hi! LualineModeInactive guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_alt
+            )
+            return ""
+          end,
+          color = "LualineModeInactive",
+          left_padding = 0,
+        },
+        {
+          "filename",
+          condition = conditions.buffer_not_empty,
+          color = { fg = colors.blue, gui = "bold" },
+        },
+      },
+      lualine_x = {},
     },
   }
 
