@@ -289,13 +289,18 @@ M.config = function()
       end
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
+      local trim = vim.fn.winwidth(0) < 120
 
       -- add client
       local utils = require "lsp.utils"
       local active_client = utils.get_active_client_by_ft(buf_ft)
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
-          table.insert(buf_client_names, string.sub(client.name, 1, 3))
+          local _added_client = client.name
+          if trim then
+            _added_client = string.sub(client.name, 1, 4)
+          end
+          table.insert(buf_client_names, _added_client)
         end
       end
       vim.list_extend(buf_client_names, active_client or {})
@@ -304,7 +309,11 @@ M.config = function()
       local formatters = require "lsp.null-ls.formatters"
       local supported_formatters = {}
       for _, fmt in pairs(formatters.list_supported_names(buf_ft)) do
-        table.insert(supported_formatters, string.sub(fmt, 1, 3))
+        local _added_formatter = fmt
+        if trim then
+          _added_formatter = string.sub(fmt, 1, 4)
+        end
+        table.insert(supported_formatters, _added_formatter)
       end
       vim.list_extend(buf_client_names, supported_formatters)
 
@@ -312,7 +321,11 @@ M.config = function()
       local linters = require "lsp.null-ls.linters"
       local supported_linters = {}
       for _, lnt in pairs(linters.list_supported_names(buf_ft)) do
-        table.insert(supported_linters, string.sub(lnt, 1, 3))
+        local _added_linter = lnt
+        if trim then
+          _added_linter = string.sub(lnt, 1, 4)
+        end
+        table.insert(supported_linters, _added_linter)
       end
       vim.list_extend(buf_client_names, supported_linters)
 
