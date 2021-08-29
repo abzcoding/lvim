@@ -204,9 +204,9 @@ M.config = function()
       config = function()
         require("nvim-gps").setup {
           icons = {
-            ["class-name"] = " ", -- Classes and class-like objects
-            ["function-name"] = " ", -- Functions
-            ["method-name"] = " ",   -- Methods (functions inside class-like objects)
+            ["class-name"] = " ",
+            ["function-name"] = " ",
+            ["method-name"] = " ",
           },
           languages = { -- You can disable any language individually here
             ["c"] = true,
