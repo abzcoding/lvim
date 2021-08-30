@@ -115,8 +115,8 @@ M.colors = {
 
   catppuccino_colors = {
     none = "NONE",
-    bg = "#0e171c", -- nvim bg
-    bg_alt = "#24283b",
+    bg_alt = "#0e171c", -- nvim bg
+    bg = "#24283b",
     fg = "#abb2bf", -- fg color (text)
     fg_gutter = "#3b4261",
     black = "#393b44",
