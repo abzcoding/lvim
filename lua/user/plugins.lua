@@ -94,10 +94,6 @@ M.config = function()
       cmd = "SymbolsOutline",
     },
     {
-      "sindrets/diffview.nvim",
-      cmd = "DiffviewOpen",
-    },
-    {
       "lukas-reineke/indent-blankline.nvim",
       setup = function()
         require("user.indent_blankline").setup()
