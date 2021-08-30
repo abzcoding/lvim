@@ -53,7 +53,9 @@ end
 lvim.lang.markdown = {}
 lvim.lang.dockerfile = { formatters = {} }
 lvim.builtin.lspinstall.on_config_done = function()
-  require("user.tailwind").setup()
+  lvim.lang.tailwindcss.lsp.setup.filetypes = { "markdown" }
+  lvim.lang.tailwindcss.lsp.active = true
+  require("lsp").setup "tailwindcss"
   require("user.dockerls").setup()
 end
 lvim.lsp.diagnostics.virtual_text = false
