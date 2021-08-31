@@ -232,8 +232,8 @@ M.colors = {
 
   onedarker_colors = {
     fg = "#abb2bf",
-    bg = "#1f2227",
-    alt_bg = "#282c34",
+    bg_alt = "#1f2227",
+    bg = "#282c34",
     dark = "#282c34",
     accent = "#BBBBBB",
     dark_gray = "#2a2f3e",
@@ -256,9 +256,6 @@ M.colors = {
     magenta = "#D16D9E",
     cursor_fg = "#515052",
     cursor_bg = "#AEAFAD",
-    sign_add = "#587c0c",
-    sign_change = "#0c7d9d",
-    sign_delete = "#94151b",
     error_red = "#F44747",
     warning_orange = "#ff8800",
     info_yellow = "#FFCC66",
@@ -266,6 +263,12 @@ M.colors = {
     purple_test = "#ff007c",
     cyan_test = "#00dfff",
     ui_blue = "#264F78",
+    git = {
+      add = "#587c0c",
+      change = "#0c7d9d",
+      delete = "#e06c75",
+      conflict = "#ff8800",
+    },
   },
 }
 
