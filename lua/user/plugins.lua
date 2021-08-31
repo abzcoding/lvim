@@ -39,18 +39,18 @@ M.config = function()
         return (_time.hour >= 17 and _time.hour < 21)
       end,
     },
-    {
-      "abzcoding/zephyr-nvim",
-      config = function()
-        vim.cmd [[
-      colorscheme zephyr
-      ]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 21 and _time.hour <= 24)
-      end,
-    },
+    -- {
+    --   "abzcoding/zephyr-nvim",
+    --   config = function()
+    --     vim.cmd [[
+    --   colorscheme zephyr
+    --   ]]
+    --   end,
+    --   cond = function()
+    --     local _time = os.date "*t"
+    --     return (_time.hour >= 21 and _time.hour <= 24)
+    --   end,
+    -- },
     {
       "ray-x/lsp_signature.nvim",
       config = function()

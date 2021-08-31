@@ -79,7 +79,7 @@ M.config = function()
   elseif _time.hour >= 7 and _time.hour < 11 then
     colors = theme.colors.catppuccino_colors
   elseif _time.hour >= 21 and _time.hour <= 24 then
-    colors = theme.colors.zephyr_colors
+    colors = theme.colors.onedarker_colors
   elseif _time.hour >= 17 and _time.hour < 21 then
     colors = theme.colors.doom_one_colors
   else
