@@ -56,6 +56,11 @@ M.config = function()
   end
 
   lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+  lvim.builtin.which_key.mappings["n"] = {
+    name = "Neogen",
+    f = { "<cmd>lua require('neogen').generate({ type = 'func'})<CR>", "Function Documentation" },
+    c = { "<cmd>lua require('neogen').generate({ type = 'class'})<CR>", "Class Documentation" },
+  }
 end
 
 return M

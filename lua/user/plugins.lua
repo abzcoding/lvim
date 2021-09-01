@@ -202,6 +202,16 @@ M.config = function()
       end,
       disable = not lvim.builtin.fancy_statusline.active,
     },
+    {
+      "danymat/neogen",
+      config = function()
+        require("neogen").setup {
+          enabled = true,
+        }
+      end,
+      event = "BufRead",
+      requires = "nvim-treesitter/nvim-treesitter",
+    },
   }
 end
 

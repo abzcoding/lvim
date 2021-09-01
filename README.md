@@ -82,6 +82,7 @@ lvim # run :PackerSync
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
+- [Neogen](https://github.com/danymat/neogen)
 
 ### Optional Plugins
 
