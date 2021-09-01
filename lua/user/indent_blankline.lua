@@ -3,6 +3,20 @@ local M = {}
 M.setup = function()
   vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
   vim.g.indent_blankline_filetype_exclude = {
+    "log",
+    "gitcommit",
+    "vimwiki",
+    "markdown",
+    "json",
+    "txt",
+    "vista",
+    "NvimTree",
+    "git",
+    "TelescopePrompt",
+    "undotree",
+    "flutterToolsOutline",
+    "org",
+    "orgagenda",
     "help",
     "startify",
     "dashboard",
@@ -10,6 +24,7 @@ M.setup = function()
     "neogitstatus",
     "NvimTree",
     "Trouble",
+    "", -- for all buffers without a file type
   }
   vim.g.indentLine_enabled = 1
   -- vim.g.indent_blankline_char = "│"
