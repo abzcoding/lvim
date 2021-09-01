@@ -198,25 +198,7 @@ M.config = function()
     {
       "SmiteshP/nvim-gps",
       config = function()
-        require("nvim-gps").setup {
-          icons = {
-            ["class-name"] = " ",
-            ["function-name"] = " ",
-            ["method-name"] = " ",
-          },
-          languages = { -- You can disable any language individually here
-            ["c"] = true,
-            ["cpp"] = true,
-            ["go"] = true,
-            ["java"] = true,
-            ["javascript"] = true,
-            ["lua"] = true,
-            ["python"] = true,
-            ["rust"] = true,
-            ["yaml"] = false,
-          },
-          separator = " > ",
-        }
+        require("user.gps").config()
       end,
       disable = not lvim.builtin.fancy_statusline.active,
     },
