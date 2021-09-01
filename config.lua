@@ -9,9 +9,6 @@ local _time = os.date "*t"
 if _time.hour >= 21 and _time.hour <= 24 then
   lvim.colorscheme = "onedarker"
 end
-if _time.hour < 6 then
-  lvim.transparent_window = true
-end
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.timeoutlen = 200
