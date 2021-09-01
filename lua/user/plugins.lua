@@ -196,13 +196,6 @@ M.config = function()
       disable = not lvim.builtin.lir.active,
     },
     {
-      "SmiteshP/nvim-gps",
-      config = function()
-        require("user.gps").config()
-      end,
-      disable = not lvim.builtin.fancy_statusline.active,
-    },
-    {
       "danymat/neogen",
       config = function()
         require("neogen").setup {
@@ -211,6 +204,20 @@ M.config = function()
       end,
       event = "BufRead",
       requires = "nvim-treesitter/nvim-treesitter",
+    },
+    {
+      "vim-test/vim-test",
+      cmd = { "Test*" },
+      keys = { "<localleader>tf", "<localleader>tn", "<localleader>ts" },
+      config = function()
+        vim.cmd [[
+          function! ToggleTermStrategy(cmd) abort
+            call luaeval("require('toggleterm').exec(_A[1])", [a:cmd])
+          endfunction
+          let g:test#custom_strategies = {'toggleterm': function('ToggleTermStrategy')}
+        ]]
+        vim.g["test#strategy"] = "toggleterm"
+      end,
     },
   }
 end
