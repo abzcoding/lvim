@@ -54,6 +54,8 @@ M.config = function()
   if lvim.builtin.lir.active then
     lvim.builtin.which_key.mappings["."] = { "<cmd>lua require('lir.float').toggle()<cr>", "Files" }
   end
+
+  lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 end
 
 return M
