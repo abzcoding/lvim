@@ -8,8 +8,6 @@ M.config = function()
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
   lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
   lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
-  lvim.keys.normal_mode["ga"] =
-    '<cmd>lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_dropdown({winblend = 10,border = true,previewer = false,shorten_path = false}))<cr>'
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
   lvim.keys.visual_mode["p"] = [["_dP]]
@@ -47,10 +45,8 @@ M.config = function()
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
   }
 
-  lvim.builtin.which_key.mappings["ss"] = {
-    '<cmd>lua require("telescope.builtin").live_grep({border = true,previewer = false,shorten_path = false, layout_strategy = "flex",layout_config = {width = 0.9,height = 0.8, horizontal = {width = { padding = 0.15 }},vertical = { preview_height = 0.75}}})<cr>',
-    "String",
-  }
+  lvim.builtin.which_key.mappings["se"] = { "<cmd>lua require('user.telescope').file_browser()<cr>", "File Browser" }
+  lvim.builtin.which_key.mappings["ss"] = { "<cmd>lua require('user.telescope').find_string()<cr>", "String" }
   lvim.builtin.which_key.mappings["r"] = "Run"
   lvim.builtin.which_key.mappings["T"] = {
     name = "Test",
