@@ -7,7 +7,6 @@ M.config = function()
   end
 
   presence:setup {
-    -- General options
     auto_update = true,
     neovim_image_text = "LunarVim to the moon",
     main_image = "file",
@@ -15,8 +14,6 @@ M.config = function()
     log_level = nil,
     debounce_timeout = 10,
     enable_line_number = true, -- Displays the current line number instead of the current project
-
-    -- Rich Presence text options
     editing_text = "Editing %s", -- string rendered when an editable file is loaded in the buffer
     file_explorer_text = "Browsing %s", -- Format string rendered when browsing a file explorer
     git_commit_text = "Committing changes", -- string rendered when commiting changes in git

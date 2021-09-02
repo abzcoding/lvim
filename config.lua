@@ -4,7 +4,7 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "pablo"
 lvim.debug = false
--- lvim.log.level = "debug"
+lvim.log.level = "warn"
 local _time = os.date "*t"
 if _time.hour >= 21 and _time.hour <= 24 then
   lvim.colorscheme = "onedarker"
@@ -19,9 +19,9 @@ vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.opt.cmdheight = 1
 vim.g.dashboard_enable_session = 0
 vim.g.dashboard_disable_statusline = 0
-vim.opt.pumblend = 10 -- Popup blend
-vim.opt.joinspaces = false -- No double spaces with join after a dot
-vim.opt.list = true -- Show some invisible characters (tabs...
+vim.opt.pumblend = 10
+vim.opt.joinspaces = false
+vim.opt.list = true
 
 -- Customization
 -- =========================================
