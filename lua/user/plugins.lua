@@ -176,13 +176,6 @@ M.config = function()
       disable = not lvim.builtin.orgmode.active,
     },
     {
-      "tamago324/lir.nvim",
-      config = function()
-        require "user.lir"
-      end,
-      disable = not lvim.builtin.lir.active,
-    },
-    {
       "danymat/neogen",
       config = function()
         require("neogen").setup {

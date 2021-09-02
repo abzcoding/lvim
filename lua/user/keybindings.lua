@@ -16,9 +16,6 @@ M.config = function()
 
   -- WhichKey keybindings
   -- =========================================
-  if lvim.builtin.lir.active then
-    lvim.builtin.which_key.mappings["."] = { "<cmd>lua require('lir.float').toggle()<cr>", "Files" }
-  end
   lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
   lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
   lvim.builtin.which_key.mappings["H"] = "Help"
