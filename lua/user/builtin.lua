@@ -62,9 +62,6 @@ M.config = function()
   lvim.builtin.terminal.active = true
   lvim.builtin.terminal.execs = {
     { "lazygit", "gg", "LazyGit" },
-    { "python manage.py test;read", "jt", "Django tests" },
-    { "python manage.py makemigrations;read", "jm", "Django makemigrations" },
-    { "python manage.py migrate;read", "ji", "Django migrate" },
   }
 
   -- WhichKey
