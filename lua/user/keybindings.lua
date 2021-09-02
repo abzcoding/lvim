@@ -46,6 +46,11 @@ M.config = function()
     p = { "<cmd>lua require('spectre').open()<cr>", "Project" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
   }
+
+  lvim.builtin.which_key.mappings["ss"] = {
+    '<cmd>lua require("telescope.builtin").live_grep({border = true,previewer = false,shorten_path = false, layout_strategy = "flex",layout_config = {width = 0.9,height = 0.8, horizontal = {width = { padding = 0.15 }},vertical = { preview_height = 0.75}}})<cr>',
+    "String",
+  }
   lvim.builtin.which_key.mappings["r"] = "Run"
   lvim.builtin.which_key.mappings["T"] = {
     name = "Test",
