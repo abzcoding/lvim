@@ -8,6 +8,8 @@ M.config = function()
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
   lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
   lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
+  lvim.keys.normal_mode["ga"] =
+    '<cmd>lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_dropdown({winblend = 10,border = true,previewer = false,shorten_path = false}))<cr>'
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
   lvim.keys.visual_mode["p"] = [["_dP]]
