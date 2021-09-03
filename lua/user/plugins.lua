@@ -199,6 +199,16 @@ M.config = function()
         vim.g["test#strategy"] = "toggleterm"
       end,
     },
+    {
+      "folke/lua-dev.nvim",
+      config = function()
+        local luadev = require("lua-dev").setup {
+          lspconfig = lvim.lang.lua.lsp.setup,
+        }
+        lvim.lang.lua.lsp.setup = luadev
+      end,
+      ft = "lua",
+    },
   }
 end
 

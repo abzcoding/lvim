@@ -81,6 +81,7 @@ lvim # run :PackerSync
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Neogen](https://github.com/danymat/neogen)
+- [LuaDev](https://github.com/folke/lua-dev.nvim)
 
 ### Optional Plugins
 
