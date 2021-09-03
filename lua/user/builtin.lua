@@ -69,7 +69,7 @@ M.config = function()
   lvim.builtin.which_key.on_config_done = function(wk)
     local keys = {
       ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
-      ["gR"] = { "<cmd>lua require('user.telescope').lsp_references()<CR>", "Goto references" },
+      ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
     }
     wk.register(keys, { mode = "n" })
