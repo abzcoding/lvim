@@ -37,7 +37,9 @@ M.config = function()
         spacing = 0,
       }
       vim.cmd [[
-          set foldlevel=5
+          set foldlevel=4
+          set foldmethod=expr
+          set foldexpr=nvim_treesitter#foldexpr()
           hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
           hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
           hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646

@@ -12,9 +12,9 @@ end
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.timeoutlen = 200
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 5
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 4
 vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.opt.cmdheight = 1
 vim.g.dashboard_enable_session = 0
