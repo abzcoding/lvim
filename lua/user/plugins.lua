@@ -187,7 +187,7 @@ M.config = function()
     },
     {
       "vim-test/vim-test",
-      cmd = { "Test*" },
+      cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
       keys = { "<localleader>tf", "<localleader>tn", "<localleader>ts" },
       config = function()
         vim.cmd [[
