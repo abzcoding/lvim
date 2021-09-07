@@ -3,7 +3,7 @@ local M = {}
 M.config = function()
   -- Compe
   -- =========================================
-  lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  -- lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 
   -- Dashboard
   -- =========================================
@@ -76,9 +76,9 @@ M.config = function()
   end
   -- ETC
   -- =========================================
-  if lvim.builtin.tabnine.active then
-    lvim.builtin.compe.source.tabnine = { kind = " ", priority = 150, max_reslts = 6 }
-  end
+  -- if lvim.builtin.tabnine.active then
+  --   lvim.builtin.compe.source.tabnine = { kind = " ", priority = 150, max_reslts = 6 }
+  -- end
   if lvim.builtin.orgmode.active then
     lvim.builtin.compe.source.orgmode = true
   end
