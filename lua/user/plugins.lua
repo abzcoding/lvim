@@ -158,6 +158,7 @@ M.config = function()
       config = function()
         require("persistence").setup()
       end,
+      disable = not lvim.builtin.persistence.active,
     },
     {
       "andweeb/presence.nvim",
