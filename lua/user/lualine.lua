@@ -32,6 +32,24 @@ local function diff_source()
   end
 end
 
+local mode = function()
+  local mod = vim.fn.mode()
+  if mod == "n" or mod == "no" or mod == "nov" then
+    return "  "
+  elseif mod == "i" or mod == "ic" or mod == "ix" then
+    return "  "
+  elseif mod == "V" or mod == "v" or mod == "vs" or mod == "Vs" or mod == "cv" then
+    return "  "
+  elseif mod == "c" or mod == "ce" then
+    return " ﴣ "
+  elseif mod == "r" or mod == "rm" or mod == "r?" then
+    return "  "
+  elseif mod == "R" or mod == "Rc" or mod == "Rv" or mod == "Rv" then
+    return "  "
+  end
+  return "  "
+end
+
 local default_colors = {
   bg = "#202328",
   bg_alt = "#202328",
@@ -68,11 +86,11 @@ M.config = function()
   local mode_color = {
     n = colors.git.delete,
     i = colors.green,
-    v = colors.blue,
+    v = colors.yellow,
     [""] = colors.blue,
-    V = colors.blue,
-    c = colors.magenta,
-    no = colors.red,
+    V = colors.yellow,
+    c = colors.red,
+    no = colors.magenta,
     s = colors.orange,
     S = colors.orange,
     [""] = colors.orange,
@@ -143,7 +161,8 @@ M.config = function()
             vim.api.nvim_command(
               "hi! LualineModeInactive guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_alt
             )
-            return ""
+            -- return ""
+            return mode()
           end,
           color = "LualineModeInactive",
           left_padding = 1,
@@ -173,7 +192,8 @@ M.config = function()
     function()
       -- auto change color according to neovims mode
       vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
-      return ""
+      return mode()
+      -- return ""
     end,
 
     -- color = { fg = colors.red },
@@ -268,7 +288,7 @@ M.config = function()
   ins_right {
     "diagnostics",
     sources = { "nvim_lsp" },
-    symbols = { error = " ", warn = " ", info = " ", hint = " " },
+    symbols = { error = " ", warn = " ", info = " ", hint = " " },
     condition = conditions.hide_in_width,
   }
   ins_right {
