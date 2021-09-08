@@ -4,7 +4,8 @@ M.config = function()
   local cfg = {
     bind = true,
     doc_lines = 10,
-    floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
+    floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
+    floating_window_above_cur_line = true,
     fix_pos = false, -- set to true, the floating window will not auto-close until finish all parameters
     hint_enable = true, -- virtual hint enable
     hint_prefix = "🐼 ", -- Panda for parameter
@@ -15,8 +16,9 @@ M.config = function()
     -- to view the hiding contents
     max_width = 120, -- max_width of signature floating_window, line will be wrapped if exceed max_width
     handler_opts = {
-      border = "single",   -- double, single, shadow, none
+      border = "single", -- double, single, shadow, none
     },
+    -- transpancy = 80,
     extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
     zindex = 200, -- by default it will be on top of all floating windows, set to 50 send it to bottom
     debug = false, -- set to true to enable debug logging

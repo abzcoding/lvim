@@ -88,10 +88,17 @@ M.config = function()
       event = "BufRead",
     },
     {
-      "tzachar/compe-tabnine",
+      "tzachar/cmp-tabnine",
       run = "./install.sh",
-      requires = "hrsh7th/nvim-compe",
-      event = "InsertEnter",
+      requires = "hrsh7th/nvim-cmp",
+      config = function()
+        local tabnine = require "cmp_tabnine.config"
+        tabnine:setup {
+          max_lines = 1000,
+          max_num_results = 10,
+          sort = true,
+        }
+      end,
       disable = not lvim.builtin.tabnine.active,
     },
     {

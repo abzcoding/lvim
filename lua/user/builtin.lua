@@ -1,9 +1,21 @@
 local M = {}
 
 M.config = function()
-  -- Compe
+  -- CMP
   -- =========================================
-  -- lvim.builtin.compe.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  lvim.builtin.cmp.sources = {
+    { name = "nvim_lsp", max_item_count = 7 },
+    { name = "cmp_tabnine", max_item_count = 3 },
+    { name = "buffer", max_item_count = 3 },
+    { name = "path", max_item_count = 3 },
+    { name = "luasnip", max_item_count = 3 },
+    { name = "nvim_lua" },
+    { name = "calc" },
+    { name = "emoji" },
+    { name = "treesitter" },
+    { name = "crates" },
+  }
+  lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 
   -- Dashboard
   -- =========================================
@@ -76,9 +88,6 @@ M.config = function()
   end
   -- ETC
   -- =========================================
-  -- if lvim.builtin.tabnine.active then
-  --   lvim.builtin.compe.source.tabnine = { kind = " ", priority = 150, max_reslts = 6 }
-  -- end
   if lvim.builtin.orgmode.active then
     lvim.builtin.compe.source.orgmode = true
   end
