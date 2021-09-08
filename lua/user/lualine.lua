@@ -161,8 +161,8 @@ M.config = function()
             vim.api.nvim_command(
               "hi! LualineModeInactive guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_alt
             )
-            -- return ""
-            return mode()
+            return ""
+            -- return mode()
           end,
           color = "LualineModeInactive",
           left_padding = 1,
