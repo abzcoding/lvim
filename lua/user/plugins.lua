@@ -208,6 +208,7 @@ M.config = function()
         lvim.lang.lua.lsp.setup = luadev
       end,
       ft = "lua",
+      disable = not lvim.builtin.lua_dev.active,
     },
   }
 end
