@@ -31,7 +31,6 @@ lvim.builtin.persistence = { active = true } -- change to false if you don't wan
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
-lvim.builtin.tabnine = { active = true } -- change this to enable/disable tabnine
 lvim.builtin.fancy_statusline = { active = true } -- change this to enable/disable fancy statusline
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 require("user.builtin").config()
