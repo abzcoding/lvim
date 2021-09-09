@@ -98,11 +98,9 @@ M.config = function()
     end
     wk.register(keys, { mode = "n" })
   end
+
   -- ETC
   -- =========================================
-  if lvim.builtin.orgmode.active then
-    lvim.builtin.compe.source.orgmode = true
-  end
   --   if lvim.builtin.lastplace.active == false then
   --     -- go to last loc when opening a buffer
   --     vim.cmd [[
