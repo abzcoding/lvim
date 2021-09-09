@@ -218,6 +218,20 @@ M.config = function()
       ft = "lua",
       disable = not lvim.builtin.lua_dev.active,
     },
+    {
+      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      config = function()
+        require("user.ts_utils").config()
+      end,
+      ft = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+      },
+    },
   }
 end
 

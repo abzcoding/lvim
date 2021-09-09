@@ -59,6 +59,10 @@ lvim.builtin.lspinstall.on_config_done = function()
   lvim.lang.tailwindcss.lsp.active = true
   require("lsp").setup "tailwindcss"
 end
+lvim.lang.typescript.on_attach = function(client, _bufnr)
+  require("nvim-lsp-ts-utils").setup_client(client)
+end
+lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.override = { "rust", "java" }
 require("user.json_schemas").setup()
