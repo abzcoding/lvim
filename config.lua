@@ -59,7 +59,7 @@ lvim.builtin.lspinstall.on_config_done = function()
   lvim.lang.tailwindcss.lsp.active = true
   require("lsp").setup "tailwindcss"
 end
-lvim.lang.typescript.on_attach = function(client, _bufnr)
+lvim.lang.typescript.on_attach = function(client, _)
   require("nvim-lsp-ts-utils").setup_client(client)
 end
 lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
