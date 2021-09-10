@@ -198,22 +198,13 @@ M.config = function()
       cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
       keys = { "<localleader>tf", "<localleader>tn", "<localleader>ts" },
       config = function()
-        vim.cmd [[
-          function! ToggleTermStrategy(cmd) abort
-            call luaeval("require('toggleterm').exec(_A[1])", [a:cmd])
-          endfunction
-          let g:test#custom_strategies = {'toggleterm': function('ToggleTermStrategy')}
-        ]]
-        vim.g["test#strategy"] = "toggleterm"
+        require("user.vim_test").config()
       end,
     },
     {
       "folke/lua-dev.nvim",
       config = function()
-        local luadev = require("lua-dev").setup {
-          lspconfig = lvim.lang.lua.lsp.setup,
-        }
-        lvim.lang.lua.lsp.setup = luadev
+        require("user.lua_dev").config()
       end,
       ft = "lua",
       disable = not lvim.builtin.lua_dev.active,
