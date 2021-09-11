@@ -410,6 +410,31 @@ M.setup = function()
       schemas = extended_schemas,
     },
   }
+  lvim.lang.yaml.lsp.setup.settings = {
+    yaml = {
+      hover = true,
+      completion = true,
+      validate = true,
+      schemaStore = {
+        enable = true,
+        url = "https://www.schemastore.org/api/json/catalog.json",
+      },
+      schemas = {
+        Kubernetes = {
+          "daemon.yaml",
+          "manager.yaml",
+          "restapi.yaml",
+          "role.yaml",
+          "role_binding.yaml",
+          "*onfigma*.yml",
+          "*ngres*.yml",
+          "*ecre*.yml",
+          "*eployment*.yml",
+          "*ervic*.yml",
+        },
+      },
+    },
+  }
 end
 
 return M
