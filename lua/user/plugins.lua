@@ -223,6 +223,10 @@ M.config = function()
         "typescript.tsx",
       },
     },
+    {
+      "lervag/vimtex",
+      ft = "tex",
+    },
   }
 end
 
