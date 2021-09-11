@@ -65,6 +65,7 @@ lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.override = { "rust", "java" }
 require("user.json_schemas").setup()
+require("user.yaml_schemas").setup()
 
 -- Additional Plugins
 -- =========================================
