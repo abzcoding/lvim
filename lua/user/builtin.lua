@@ -67,6 +67,7 @@ M.config = function()
   -- =========================================
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
+  lvim.builtin.telescope.defaults.file_ignore_patterns = { "vendor/*" }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
 
   -- Terminal

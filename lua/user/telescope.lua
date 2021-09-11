@@ -45,6 +45,7 @@ function M.find_string()
       horizontal = { width = { padding = 0.15 } },
       vertical = { preview_height = 0.75 },
     },
+    file_ignore_patterns = { "vendor/*" },
   }
   builtin.live_grep(opts)
 end
@@ -58,6 +59,7 @@ function M.file_browser()
     layout_config = {
       prompt_position = "top",
     },
+    file_ignore_patterns = { "vendor/*" },
 
     attach_mappings = function(prompt_bufnr, map)
       local current_picker = action_state.get_current_picker(prompt_bufnr)
