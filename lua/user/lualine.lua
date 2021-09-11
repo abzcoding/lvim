@@ -237,7 +237,20 @@ M.config = function()
     end,
     condition = conditions.buffer_not_empty,
   }
-
+  ins_left {
+    function()
+      local utils = require "core.lualine.utils"
+      local filename = vim.fn.expand "%"
+      local kube_env = os.getenv "KUBECONFIG"
+      local kube_filename = "kubectl-edit"
+      if (vim.bo.filetype == "yaml") and (string.sub(filename, 1, kube_filename:len()) == kube_filename) then
+        return string.format("⎈  (%s)", utils.env_cleanup(kube_env))
+      end
+      return ""
+    end,
+    color = { fg = colors.cyan },
+    condition = conditions.hide_in_width,
+  }
   ins_left {
     "filename",
     condition = conditions.buffer_not_empty,
