@@ -33,11 +33,10 @@ lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
 lvim.builtin.fancy_statusline = { active = true } -- change this to enable/disable fancy statusline
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
-lvim.builtin.latex =
-  {
-    view_method = "skim", -- change to zathura if you are on linux
-    preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
-  }
+lvim.builtin.latex = {
+  view_method = "skim", -- change to zathura if you are on linux
+  preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
+}
 require("user.builtin").config()
 
 -- StatusLine

@@ -42,6 +42,9 @@ brew install vale
 cp -r ~/.config/lvim/.vale ~/.config/vale
 # fix the address inside .vale.ini
 cp ~/.config/lvim/vale_config.ini ~/.vale.ini
+# if you want the latex stuff
+# brew install --cask mactex-no-gui # for mac
+# or install zathura and chktex on linux
 lvim # run :PackerSync
 ```
 
