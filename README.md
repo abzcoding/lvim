@@ -17,6 +17,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
   - `lvim.builtin.tabnine = { active = false }`
 - if you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
+- i'm using skim for latex stuff, change it to zathura if you are on linux
 - Using tailwinds CSS for markdown, disable it if you want
 
 <!--
@@ -81,6 +82,8 @@ lvim # run :PackerSync
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Neogen](https://github.com/danymat/neogen)
+- [Vimtex](https://github.com/lervag/vimtex)
+- [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
 
 ### Optional Plugins
 

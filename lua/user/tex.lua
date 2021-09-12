@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   vim.g.vimtex_compiler_method = "latexmk"
-  vim.g.vimtex_view_method = "skim"
+  vim.g.vimtex_view_method = lvim.builtin.latex.view_method
   vim.g.vimtex_fold_enabled = 0
   vim.g.vimtex_quickfix_ignore_filters = {}
   vim.cmd [[
@@ -13,7 +13,7 @@ M.config = function()
         augroup END
     ]]
   local tex_preview_settings = {}
-  local forward_search_executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
+  local forward_search_executable = lvim.builtin.latex.preview_exec
 
   local sumatrapdf_args = { "-reuse-instance", "%p", "-forward-search", "%f", "%l" }
   local evince_args = { "-f", "%l", "%p", '"code -g %f:%l"' }
