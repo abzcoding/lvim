@@ -6,31 +6,39 @@ M.config = function()
   lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
   lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
-  lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+  if lvim.builtin.fancy_bufferline.active then
+    lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
+    lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
+    lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
+    lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
+    lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
+  else
+    lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+  end
   lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
   lvim.keys.visual_mode["p"] = [["_dP]]
-  lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
-  lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
-  lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
-  lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
 
   -- WhichKey keybindings
   -- =========================================
-  lvim.builtin.which_key.mappings["b1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" }
-  lvim.builtin.which_key.mappings["b2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" }
-  lvim.builtin.which_key.mappings["b3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" }
-  lvim.builtin.which_key.mappings["b4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" }
-  lvim.builtin.which_key.mappings["b5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" }
-  lvim.builtin.which_key.mappings["b6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" }
-  lvim.builtin.which_key.mappings["b7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" }
-  lvim.builtin.which_key.mappings["b8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" }
-  lvim.builtin.which_key.mappings["b9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" }
-  lvim.builtin.which_key.mappings["bc"] = { "<Cmd>BufferLinePickClose<CR>", "bufferline: delete buffer" }
-  lvim.builtin.which_key.mappings["bp"] = { "<Cmd>BufferLinePick<CR>", "bufferline: pick buffer" }
-  lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
-  lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
+  if lvim.builtin.fancy_bufferline.active then
+    lvim.builtin.which_key.mappings["b1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" }
+    lvim.builtin.which_key.mappings["b2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" }
+    lvim.builtin.which_key.mappings["b3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" }
+    lvim.builtin.which_key.mappings["b4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" }
+    lvim.builtin.which_key.mappings["b5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" }
+    lvim.builtin.which_key.mappings["b6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" }
+    lvim.builtin.which_key.mappings["b7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" }
+    lvim.builtin.which_key.mappings["b8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" }
+    lvim.builtin.which_key.mappings["b9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" }
+    lvim.builtin.which_key.mappings["bc"] = { "<Cmd>BufferLinePickClose<CR>", "bufferline: delete buffer" }
+    lvim.builtin.which_key.mappings["bp"] = { "<Cmd>BufferLinePick<CR>", "bufferline: pick buffer" }
+  end
+  if lvim.builtin.dap.active then
+    lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
+    lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
+  end
   lvim.builtin.which_key.mappings["H"] = "Help"
   lvim.builtin.which_key.mappings["lf"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" }
   lvim.builtin.which_key.mappings["lh"] = {
