@@ -8,18 +8,6 @@ any = true
 [lvim]
 any = true
 
-[USER]
-property = true
-writable = "overridden"
-
-[DATA_PATH]
-property = true
-writable = "overridden"
-
-[WORKSPACE_PATH]
-property = true
-writable = "overridden"
-
 [[describe.args]]
 type = "string"
 [[describe.args]]
