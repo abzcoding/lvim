@@ -227,6 +227,14 @@ M.config = function()
       "lervag/vimtex",
       ft = "tex",
     },
+    {
+      "akinsho/bufferline.nvim",
+      config = function()
+        require("user.bufferline").config()
+      end,
+      requires = "nvim-web-devicons",
+      disable = not lvim.builtin.fancy_bufferline.active,
+    },
   }
 end
 
