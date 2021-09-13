@@ -3,22 +3,12 @@ if not status_ok then
   return
 end
 
-local WORKSPACE_PATH
-
--- find_root looks for parent directories relative to the current buffer containing one of the given arguments.
-if vim.fn.has "mac" == 1 then
-  WORKSPACE_PATH = "/Users/" .. vim.fn.expand("$USER") .. "/workspace/"
-elseif vim.fn.has "unix" == 1 then
-  WORKSPACE_PATH = "/home/" .. vim.fn.expand("$USER") .. "/workspace/"
-else
-  print "Unsupported system"
-end
-
+local workspace_path = os.getenv "HOME" .. "/workspace/"
 local JAVA_LS_EXECUTABLE = os.getenv "HOME" .. "/.local/share/lunarvim/lvim/utils/bin/jdtls"
 
 jdtls.start_or_attach {
   on_attach = require("lsp").common_on_attach,
-  cmd = { JAVA_LS_EXECUTABLE, WORKSPACE_PATH .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t") },
+  cmd = { JAVA_LS_EXECUTABLE, workspace_path .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t") },
 }
 
 vim.api.nvim_set_keymap("n", "<leader>la", ":lua require('jdtls').code_action()<CR>", { noremap = true, silent = true })
