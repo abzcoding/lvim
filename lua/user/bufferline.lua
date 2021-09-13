@@ -50,7 +50,8 @@ M.config = function()
 
   require("bufferline").setup {
     options = {
-      sort_by = sort_by_mtime,
+      -- sort_by = sort_by_mtime,
+      sort_by = "id",
       right_mouse_command = "vert sbuffer %d",
       show_close_icon = false,
       show_buffer_icons = true,
@@ -99,7 +100,7 @@ M.config = function()
         items = {
           groups.builtin.ungrouped,
           {
-            highlight = { guisp = "#51AFEF", gui = "underline" },
+            highlight = { guisp = "#51AFEF" },
             name = "tests",
             matcher = function(buf)
               return buf.filename:match "_spec" or buf.filename:match "test"
@@ -107,7 +108,7 @@ M.config = function()
           },
           {
             name = "view models",
-            highlight = { guisp = "#03589C", gui = "underline" },
+            highlight = { guisp = "#03589C" },
             matcher = function(buf)
               return buf.filename:match "view_model%.dart"
             end,
@@ -119,7 +120,7 @@ M.config = function()
             end,
           },
           {
-            highlight = { guisp = "#C678DD", gui = "underline" },
+            highlight = { guisp = "#C678DD" },
             name = "docs",
             matcher = function(buf)
               local list = List { "md", "txt", "org", "norg", "wiki" }

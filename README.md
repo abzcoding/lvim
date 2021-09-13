@@ -89,6 +89,7 @@ lvim # run :PackerSync
 - [Neogen](https://github.com/danymat/neogen)
 - [Vimtex](https://github.com/lervag/vimtex)
 - [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
+- [Bufferline](https://github.com/akinsho/bufferline.nvim)
 
 ### Optional Plugins
 
