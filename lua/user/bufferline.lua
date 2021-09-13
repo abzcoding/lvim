@@ -130,24 +130,6 @@ M.config = function()
       },
     },
   }
-
-  require("which-key").register {
-    ["<leader>bc"] = { "<Cmd>BufferLinePickClose<CR>", "bufferline: delete buffer" },
-    ["<leader>bp"] = { "<Cmd>BufferLinePick<CR>", "bufferline: pick buffer" },
-    ["L"] = { "<Cmd>BufferLineCycleNext<CR>", "bufferline: next" },
-    ["H"] = { "<Cmd>BufferLineCyclePrev<CR>", "bufferline: prev" },
-    ["[b"] = { "<Cmd>BufferLineMoveNext<CR>", "bufferline: move next" },
-    ["]b"] = { "<Cmd>BufferLineMovePrev<CR>", "bufferline: move prev" },
-    ["<leader>b1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "bufferline: goto 1" },
-    ["<leader>b2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "bufferline: goto 2" },
-    ["<leader>b3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "bufferline: goto 3" },
-    ["<leader>b4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "bufferline: goto 4" },
-    ["<leader>b5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "bufferline: goto 5" },
-    ["<leader>b6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "bufferline: goto 6" },
-    ["<leader>b7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "bufferline: goto 7" },
-    ["<leader>b8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "bufferline: goto 8" },
-    ["<leader>b9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "bufferline: goto 9" },
-  }
 end
 
 return M
