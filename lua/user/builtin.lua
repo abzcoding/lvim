@@ -31,6 +31,15 @@ M.config = function()
     command = "Telescope marks",
   }
 
+  -- LSP
+  -- =========================================
+  lvim.lsp.diagnostics.signs.values = {
+    { name = "LspDiagnosticsSignError", text = " " },
+    { name = "LspDiagnosticsSignWarning", text = "" },
+    { name = "LspDiagnosticsSignHint", text = "" },
+    { name = "LspDiagnosticsSignInformation", text = "" },
+  }
+
   -- Lualine
   -- =========================================
   lvim.builtin.lualine.active = true

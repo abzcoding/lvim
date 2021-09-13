@@ -6,7 +6,7 @@ M.config = function()
     return vim.bo[b].filetype == ft
   end
 
-  local symbols = { error = " ", warning = " ", info = " " }
+  local symbols = { error = " ", warning = " ", info = " " }
 
   local function diagnostics_indicator(_, _, diagnostics)
     local result = {}
