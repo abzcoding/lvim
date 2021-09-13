@@ -34,6 +34,7 @@ lvim.builtin.dap.active = false -- change this to enable/disable debugging
 lvim.builtin.fancy_statusline = { active = true } -- change this to enable/disable fancy statusline
 lvim.builtin.fancy_bufferline = { active = true } -- change this to enable/disable fancy bufferline
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
+lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
   preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
@@ -67,7 +68,6 @@ lvim.lang.typescript.on_attach = function(client, _)
   require("nvim-lsp-ts-utils").setup_client(client)
 end
 lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
-lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.override = { "rust", "java" }
 require("user.json_schemas").setup()
 require("user.yaml_schemas").setup()
