@@ -235,6 +235,10 @@ M.config = function()
       requires = "nvim-web-devicons",
       disable = not lvim.builtin.fancy_bufferline.active,
     },
+    {
+      -- "ChristianChiarulli/vim-solidity",
+      "ilya-bobyr/vim-solidity"
+    },
   }
 end
 

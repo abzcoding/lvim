@@ -90,6 +90,7 @@ lvim # run :PackerSync
 - [Vimtex](https://github.com/lervag/vimtex)
 - [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
+- [vim-solidity](https://github.com/ilya-bobyr/vim-solidity)
 
 ### Optional Plugins
 

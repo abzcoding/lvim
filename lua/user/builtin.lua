@@ -77,6 +77,16 @@ M.config = function()
     use_virtual_text = true,
     lint_events = { "BufWrite", "CursorHold" },
   }
+  lvim.builtin.treesitter.on_config_done = function()
+    require("nvim-treesitter.parsers").get_parser_configs().solidity = {
+      install_info = {
+        url = "https://github.com/JoranHonig/tree-sitter-solidity",
+        files = { "src/parser.c" },
+        requires_generate_from_grammar = true,
+      },
+      filetype = "solidity",
+    }
+  end
 
   -- Telescope
   -- =========================================
