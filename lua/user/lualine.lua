@@ -127,8 +127,8 @@ M.config = function()
     options = {
       icons_enabled = true,
       -- Disable sections and component separators
-      component_separators = "",
-      section_separators = "",
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       theme = {
         -- We are going to use lualine_c an lualine_x as left and
         -- right section. Both are highlighted by c theme .  So we
@@ -165,11 +165,12 @@ M.config = function()
             -- return mode()
           end,
           color = "LualineModeInactive",
-          left_padding = 1,
+          padding = { left = 1, right = 0 },
+          -- left_padding = 1,
         },
         {
           "filename",
-          condition = conditions.buffer_not_empty,
+          cond = conditions.buffer_not_empty,
           color = { fg = colors.blue, gui = "bold" },
         },
       },
@@ -198,19 +199,21 @@ M.config = function()
 
     -- color = { fg = colors.red },
     color = "LualineMode",
-    left_padding = 1,
+    padding = { left = 1, right = 0 },
+    -- left_padding = 1,
   }
   ins_left {
     "b:gitsigns_head",
     icon = " ",
     -- color = "LualineBranchMode",
-    condition = conditions.check_git_workspace,
+    cond = conditions.check_git_workspace,
     -- function()
     --   return "▊"
     -- end,
     -- -- color = "LualineMode",
     color = { fg = colors.blue }, -- Sets highlighting of component
-    left_padding = 0, -- We don't need space before this
+    -- left_padding = 0, -- We don't need space before this
+    padding = 0,
   }
 
   ins_left {
@@ -235,7 +238,7 @@ M.config = function()
       end
       return format_file_size(file)
     end,
-    condition = conditions.buffer_not_empty,
+    cond = conditions.buffer_not_empty,
   }
   ins_left {
     function()
@@ -249,22 +252,24 @@ M.config = function()
       return ""
     end,
     color = { fg = colors.cyan },
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
   }
   ins_left {
     "filename",
-    condition = conditions.buffer_not_empty,
+    cond = conditions.buffer_not_empty,
     color = { fg = colors.magenta, gui = "bold" },
   }
   ins_left {
     "diff",
     source = diff_source,
     symbols = { added = "  ", modified = "柳", removed = " " },
-    color_added = { fg = colors.git.add },
-    color_modified = { fg = colors.git.change },
-    color_removed = { fg = colors.git.delete },
+    diff_color = {
+      added = { fg = colors.git.add },
+      modified = { fg = colors.git.change },
+      removed = { fg = colors.git.delete },
+    },
     color = {},
-    condition = nil,
+    cond = nil,
   }
   ins_left {
     function()
@@ -283,11 +288,11 @@ M.config = function()
       return ""
     end,
     color = { fg = colors.green },
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
   }
   ins_left {
     lsp_progress,
-    condition = conditions.hide_small,
+    cond = conditions.hide_small,
   }
 
   -- Insert mid section. You can make any number of sections in neovim :)
@@ -302,7 +307,7 @@ M.config = function()
     "diagnostics",
     sources = { "nvim_lsp" },
     symbols = { error = " ", warn = " ", info = " ", hint = " " },
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
   }
   ins_right {
     function()
@@ -311,10 +316,11 @@ M.config = function()
       end
       return ""
     end,
-    left_padding = 0,
-    right_padding = 0,
+    padding = 0,
+    -- left_padding = 0,
+    -- right_padding = 0,
     color = { fg = colors.green },
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
   }
   ins_right {
     function(msg)
@@ -372,27 +378,29 @@ M.config = function()
     end,
     icon = " ",
     color = { fg = colors.fg },
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
   }
   ins_right {
     "location",
-    left_padding = 0,
-    right_padding = 0,
+    padding = 0,
+    -- left_padding = 0,
+    -- right_padding = 0,
     color = { fg = colors.orange },
   }
   -- Add components to right sections
 
   ins_right {
     "fileformat",
-    upper = true,
+    -- upper = true,
+    fmt = string.upper,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
     color = { fg = colors.green, gui = "bold" },
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
   }
 
   ins_right {
     clock,
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
     color = { fg = colors.blue, bg = colors.bg },
   }
 
@@ -405,10 +413,11 @@ M.config = function()
       local index = math.ceil(line_ratio * #chars)
       return chars[index]
     end,
-    left_padding = 0,
-    right_padding = 0,
+    padding = 0,
+    -- left_padding = 0,
+    -- right_padding = 0,
     color = { fg = colors.yellow, bg = colors.bg },
-    condition = nil,
+    cond = nil,
   }
 
   -- Now don't forget to initialize lualine
