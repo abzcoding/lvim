@@ -13,6 +13,7 @@ M.config = function()
         use_telescope = true,
       },
       inlay_hints = {
+        only_current_line = false,
         show_parameter_hints = true,
         parameter_hints_prefix = "<-",
         other_hints_prefix = "=>",
@@ -20,6 +21,7 @@ M.config = function()
         max_len_align_padding = 1,
         right_align = false,
         right_align_padding = 7,
+        highlight = "Comment",
       },
       hover_actions = {
         border = {
@@ -37,6 +39,7 @@ M.config = function()
     server = {
       cmd = { vim.fn.stdpath "data" .. "/lspinstall/rust/rust-analyzer" },
       on_attach = require("lsp").common_on_attach,
+      on_init = require("lsp").common_on_init,
     },
   }
   rust_tools.setup(opts)

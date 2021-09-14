@@ -131,7 +131,7 @@ M.config = function()
       ft = "markdown",
     },
     {
-      "simrat39/rust-tools.nvim",
+      "Joakker/rust-tools.nvim",
       config = function()
         require("user.rust_tools").config()
       end,
@@ -237,7 +237,7 @@ M.config = function()
     },
     {
       -- "ChristianChiarulli/vim-solidity",
-      "ilya-bobyr/vim-solidity"
+      "ilya-bobyr/vim-solidity",
     },
   }
 end
