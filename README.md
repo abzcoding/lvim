@@ -6,7 +6,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 ## Things to Know
 
-- I'm on the `rolling` branch of LunarVim
+- I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
