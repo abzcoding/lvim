@@ -23,17 +23,23 @@ M.config = function()
   -- WhichKey keybindings
   -- =========================================
   if lvim.builtin.fancy_bufferline.active then
-    lvim.builtin.which_key.mappings["b1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" }
-    lvim.builtin.which_key.mappings["b2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" }
-    lvim.builtin.which_key.mappings["b3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" }
-    lvim.builtin.which_key.mappings["b4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" }
-    lvim.builtin.which_key.mappings["b5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" }
-    lvim.builtin.which_key.mappings["b6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" }
-    lvim.builtin.which_key.mappings["b7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" }
-    lvim.builtin.which_key.mappings["b8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" }
-    lvim.builtin.which_key.mappings["b9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" }
-    lvim.builtin.which_key.mappings["bc"] = { "<Cmd>BufferLinePickClose<CR>", "bufferline: delete buffer" }
-    lvim.builtin.which_key.mappings["bp"] = { "<Cmd>BufferLinePick<CR>", "bufferline: pick buffer" }
+    lvim.builtin.which_key.mappings.b = {
+      name = "Buffers",
+      ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },
+      ["2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" },
+      ["3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" },
+      ["4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" },
+      ["5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" },
+      ["6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" },
+      ["7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" },
+      ["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" },
+      ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" },
+      c = { "<Cmd>BufferLinePickClose<CR>", "delete buffer" },
+      p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
+      t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
+      f = { "<cmd>Telescope buffers<cr>", "Find" },
+      b = { "<cmd>b#<cr>", "Previous" },
+    }
   end
   if lvim.builtin.dap.active then
     lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }

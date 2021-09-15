@@ -229,6 +229,7 @@ M.config = function()
     },
     {
       "akinsho/bufferline.nvim",
+      branch = "feature/auto-close-groups",
       config = function()
         require("user.bufferline").config()
       end,

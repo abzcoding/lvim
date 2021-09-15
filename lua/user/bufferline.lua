@@ -102,6 +102,7 @@ M.config = function()
           {
             highlight = { guisp = "#51AFEF" },
             name = "tests",
+            icon = "",
             matcher = function(buf)
               return buf.filename:match "_spec" or buf.filename:match "test"
             end,
@@ -122,6 +123,7 @@ M.config = function()
           {
             highlight = { guisp = "#C678DD" },
             name = "docs",
+            icon="",
             matcher = function(buf)
               local list = List { "md", "txt", "org", "norg", "wiki" }
               return list:contains(fn.fnamemodify(buf.path, ":e"))
