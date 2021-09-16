@@ -43,7 +43,7 @@ M.config = function()
       config = function()
         require("user/lsp_signature").config()
       end,
-      event = "InsertEnter",
+      event = "BufRead",
     },
     {
       "ethanholz/nvim-lastplace",
