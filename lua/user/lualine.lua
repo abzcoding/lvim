@@ -49,6 +49,81 @@ local mode = function()
   end
   return "  "
 end
+local file_icons = {
+  Brown = { "" },
+  Aqua = { "" },
+  LightBlue = { "", "" },
+  Blue = { "", "", "", "", "", "", "", "", "", "", "", "", "" },
+  Darkblue = { "", "" },
+  Purple = { "", "", "", "", "" },
+  Red = { "", "", "", "", "", "" },
+  Beige = { "", "", "" },
+  Yellow = { "", "", "λ", "", "" },
+  Orange = { "", "" },
+  Darkorange = { "", "", "", "", "" },
+  Pink = { "", "" },
+  Salmon = { "" },
+  Green = { "", "", "", "", "", "" },
+  Lightgreen = { "", "", "", "﵂" },
+  White = { "", "", "", "", "", "" },
+}
+
+local file_icon_colors = {
+  Brown = "#905532",
+  Aqua = "#3AFFDB",
+  Blue = "#689FB6",
+  Darkblue = "#44788E",
+  Purple = "#834F79",
+  Red = "#AE403F",
+  Beige = "#F5C06F",
+  Yellow = "#F09F17",
+  Orange = "#D4843E",
+  Darkorange = "#F16529",
+  Pink = "#CB6F6F",
+  Salmon = "#EE6E73",
+  Green = "#8FAA54",
+  Lightgreen = "#31B53E",
+  White = "#FFFFFF",
+  LightBlue = "#5fd7ff",
+}
+
+local function get_file_info()
+  return vim.fn.expand "%:t", vim.fn.expand "%:e"
+end
+
+local function get_file_icon()
+  local icon
+  local ok, devicons = pcall(require, "nvim-web-devicons")
+  if not ok then
+    print "No icon plugin found. Please install 'kyazdani42/nvim-web-devicons'"
+    return ""
+  end
+  local f_name, f_extension = get_file_info()
+  icon = devicons.get_icon(f_name, f_extension)
+  if icon == nil then
+      icon = ""
+  end
+  return icon
+end
+
+local function get_file_icon_color()
+  local f_name, f_ext = get_file_info()
+
+  local has_devicons, devicons = pcall(require, "nvim-web-devicons")
+  if has_devicons then
+    local icon, iconhl = devicons.get_icon(f_name, f_ext)
+    if icon ~= nil then
+      return vim.fn.synIDattr(vim.fn.hlID(iconhl), "fg")
+    end
+  end
+
+  local icon = get_file_icon():match "%S+"
+  for k, _ in pairs(file_icons) do
+    if vim.fn.index(file_icons[k], icon) ~= -1 then
+      return file_icon_colors[k]
+    end
+  end
+end
 
 local default_colors = {
   bg = "#202328",
@@ -217,30 +292,6 @@ M.config = function()
   }
 
   ins_left {
-    -- filesize component
-    function()
-      local function format_file_size(file)
-        local size = vim.fn.getfsize(file)
-        if size <= 0 then
-          return ""
-        end
-        local sufixes = { "b", "k", "m", "g" }
-        local i = 1
-        while size > 1024 do
-          size = size / 1024
-          i = i + 1
-        end
-        return string.format("%.1f%s", size, sufixes[i])
-      end
-      local file = vim.fn.expand "%:p"
-      if string.len(file) == 0 then
-        return ""
-      end
-      return format_file_size(file)
-    end,
-    cond = conditions.buffer_not_empty,
-  }
-  ins_left {
     function()
       local utils = require "core.lualine.utils"
       local filename = vim.fn.expand "%"
@@ -255,9 +306,18 @@ M.config = function()
     cond = conditions.hide_in_width,
   }
   ins_left {
+    function()
+      return get_file_icon()
+    end,
+    padding = { left = 2, right = 0 },
+    cond = conditions.buffer_not_empty,
+    color = { fg = get_file_icon_color(), gui = "bold" },
+  }
+  ins_left {
     "filename",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.magenta, gui = "bold" },
+    padding = { left = 1, right = 1 },
+    color = { fg = colors.fg, gui = "bold" },
   }
   ins_left {
     "diff",
@@ -380,6 +440,7 @@ M.config = function()
     color = { fg = colors.fg },
     cond = conditions.hide_in_width,
   }
+
   ins_right {
     "location",
     padding = 0,
@@ -388,7 +449,30 @@ M.config = function()
     color = { fg = colors.orange },
   }
   -- Add components to right sections
-
+  ins_right {
+    -- filesize component
+    function()
+      local function format_file_size(file)
+        local size = vim.fn.getfsize(file)
+        if size <= 0 then
+          return ""
+        end
+        local sufixes = { "b", "k", "m", "g" }
+        local i = 1
+        while size > 1024 do
+          size = size / 1024
+          i = i + 1
+        end
+        return string.format("%.1f%s", size, sufixes[i])
+      end
+      local file = vim.fn.expand "%:p"
+      if string.len(file) == 0 then
+        return ""
+      end
+      return format_file_size(file)
+    end,
+    cond = conditions.buffer_not_empty,
+  }
   ins_right {
     "fileformat",
     -- upper = true,
