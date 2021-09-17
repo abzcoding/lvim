@@ -3,7 +3,7 @@ local M = {}
 M.config = function()
   lvim.plugins = {
     {
-      "Pocco81/Catppuccino.nvim",
+      "abzcoding/Catppuccino.nvim",
       config = function()
         require("user/theme").catppuccino()
       end,
@@ -13,7 +13,8 @@ M.config = function()
       end,
     },
     {
-      "folke/tokyonight.nvim",
+      "abzcoding/tokyonight.nvim",
+      branch="feature/vim-diagnostics",
       config = function()
         require("user/theme").tokyonight()
         vim.cmd [[
