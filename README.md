@@ -18,6 +18,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.lastplace = { active = false }`
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
   - `lvim.builtin.tabnine = { active = false }`
+- if you don't need testing, just disable it
+  - `lvim.builtin.test_runner = { active = false }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -101,3 +103,5 @@ lvim # run :PackerSync
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [LuaDev](https://github.com/folke/lua-dev.nvim)
+- [vim-test](https://github.com/vim-test/vim-test)
+- [vim-ultest](https://github.com/rcarriga/vim-ultest)

@@ -14,7 +14,7 @@ M.config = function()
     },
     {
       "abzcoding/tokyonight.nvim",
-      branch="feature/vim-diagnostics",
+      branch = "feature/vim-diagnostics",
       config = function()
         require("user/theme").tokyonight()
         vim.cmd [[
@@ -201,6 +201,7 @@ M.config = function()
       config = function()
         require("user.vim_test").config()
       end,
+      disable = not lvim.builtin.test_runner.active,
     },
     {
       "folke/lua-dev.nvim",
@@ -239,6 +240,14 @@ M.config = function()
     {
       -- "ChristianChiarulli/vim-solidity",
       "ilya-bobyr/vim-solidity",
+    },
+    {
+      "rcarriga/vim-ultest",
+      cmd = { "Ultest", "UltestSummary", "UltestNearest" },
+      wants = "vim-test",
+      requires = { "vim-test/vim-test" },
+      run = ":UpdateRemotePlugins",
+      disable = not lvim.builtin.test_runner.active,
     },
   }
 end
