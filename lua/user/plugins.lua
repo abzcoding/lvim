@@ -249,6 +249,14 @@ M.config = function()
       run = ":UpdateRemotePlugins",
       disable = not lvim.builtin.test_runner.active,
     },
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      run = "make",
+      after = "telescope.nvim",
+      config = function()
+        require("telescope").load_extension "fzf"
+      end,
+    },
   }
 end
 

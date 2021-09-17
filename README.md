@@ -93,6 +93,7 @@ lvim # run :PackerSync
 - [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [vim-solidity](https://github.com/ilya-bobyr/vim-solidity)
+- [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 
 ### Optional Plugins
 
