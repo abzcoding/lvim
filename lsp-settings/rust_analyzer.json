@@ -1,0 +1,4 @@
+{
+  "rust-analyzer.checkOnSave.enable": true,
+  "rust-analyzer.checkOnSave.command": "clippy"
+}
