@@ -132,7 +132,7 @@ M.config = function()
       ft = "markdown",
     },
     {
-      "Joakker/rust-tools.nvim",
+      "simrat39/rust-tools.nvim",
       config = function()
         require("user.rust_tools").config()
       end,
