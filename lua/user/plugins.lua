@@ -257,6 +257,18 @@ M.config = function()
         require("telescope").load_extension "fzf"
       end,
     },
+    {
+      "akinsho/flutter-tools.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("flutter-tools").setup {
+          lsp = {
+            on_attach = require("lsp").common_on_attach,
+          },
+        }
+      end,
+      ft = "dart",
+    },
   }
 end
 

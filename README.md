@@ -94,6 +94,7 @@ lvim # run :PackerSync
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [vim-solidity](https://github.com/ilya-bobyr/vim-solidity)
 - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
+- [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 
 ### Optional Plugins
 

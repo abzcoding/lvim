@@ -69,7 +69,7 @@ lvim.lang.typescript.on_attach = function(client, _)
   require("nvim-lsp-ts-utils").setup_client(client)
 end
 lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
-lvim.lsp.override = { "rust", "java" }
+lvim.lsp.override = { "rust", "java", "dart" }
 require("user.json_schemas").setup()
 require("user.yaml_schemas").setup()
 
