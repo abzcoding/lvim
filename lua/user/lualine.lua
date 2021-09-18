@@ -101,7 +101,7 @@ local function get_file_icon()
   local f_name, f_extension = get_file_info()
   icon = devicons.get_icon(f_name, f_extension)
   if icon == nil then
-      icon = ""
+    icon = ""
   end
   return icon
 end
@@ -363,12 +363,22 @@ M.config = function()
     end,
   }
 
-  ins_right {
-    "diagnostics",
-    sources = { "nvim_lsp" },
-    symbols = { error = " ", warn = " ", info = " ", hint = " " },
-    cond = conditions.hide_in_width,
-  }
+  local ok, vim_diag = pcall(require, "vim.diagnostic")
+  if ok then
+    ins_right {
+      "diagnostics",
+      sources = { "nvim" },
+      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      cond = conditions.hide_in_width,
+    }
+  else
+    ins_right {
+      "diagnostics",
+      sources = { "nvim_lsp" },
+      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      cond = conditions.hide_in_width,
+    }
+  end
   ins_right {
     function()
       if next(vim.treesitter.highlighter.active) then
