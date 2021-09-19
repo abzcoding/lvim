@@ -108,7 +108,6 @@ end
 
 local function get_file_icon_color()
   local f_name, f_ext = get_file_info()
-
   local has_devicons, devicons = pcall(require, "nvim-web-devicons")
   if has_devicons then
     local icon, iconhl = devicons.get_icon(f_name, f_ext)
@@ -307,11 +306,13 @@ M.config = function()
   }
   ins_left {
     function()
+      vim.api.nvim_command("hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg)
       return get_file_icon()
     end,
     padding = { left = 2, right = 0 },
     cond = conditions.buffer_not_empty,
-    color = { fg = get_file_icon_color(), gui = "bold" },
+    color = "LualineFileIconColor",
+    gui = "bold",
   }
   ins_left {
     "filename",
