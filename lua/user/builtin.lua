@@ -94,6 +94,7 @@ M.config = function()
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
     "vendor/*",
+    "node_modules",
     "%.jpg",
     "%.jpeg",
     "%.png",
