@@ -3,6 +3,27 @@ local M = {}
 M.config = function()
   vim.g.vimtex_compiler_method = "latexmk"
   vim.g.vimtex_view_method = lvim.builtin.latex.view_method
+  if lvim.builtin.latex.view_method == "skim" then
+    vim.g.vimtex_view_skim_activate = 1
+    vim.g.vimtex_view_skim_reading_bar = 0
+  end
+  local latexmk_args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" }
+  if lvim.builtin.latex.rtl_support then
+    latexmk_args = { "-xelatex", "-file-line-error", "-interaction=nonstopmode", "-synctex=1", "%f" }
+    vim.g.vimtex_compiler_latexmk_engines = {
+      _ = "-xelatex",
+      pdflatex = "-pdf",
+      dvipdfex = "-pdfdvi",
+      lualatex = "-lualatex",
+      xelatex = "-xelatex",
+    }
+    vim.g.vimtex_compiler_latexrun_engines = {
+      _ = "xelatex",
+      pdflatex = "pdflatex",
+      lualatex = "lualatex",
+      xelatex = "xelatex",
+    }
+  end
   vim.g.vimtex_fold_enabled = 0
   vim.g.vimtex_quickfix_ignore_filters = {}
   vim.cmd [[
@@ -44,7 +65,7 @@ M.config = function()
         bibtexFormatter = "texlab",
         build = {
           executable = "latexmk",
-          args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+          args = latexmk_args,
           on_save = false,
           forward_search_after = false,
         },

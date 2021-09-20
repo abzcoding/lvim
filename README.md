@@ -52,6 +52,8 @@ cp ~/.config/lvim/vale_config.ini ~/.vale.ini
 lvim # run :PackerSync
 ```
 
+Install the language servers that you need
+
 ```vim
 :LspInstall lua
 :LspInstall yaml
@@ -67,6 +69,8 @@ lvim # run :PackerSync
 :LspInstall cmake
 :LspInstall tailwindcss
 ```
+
+In case you want a better tex support in mac, check [this](https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1) out
 
 ## Included Plugins
 
