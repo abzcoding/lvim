@@ -80,7 +80,37 @@ M.config = function()
 
   -- Treesitter
   -- =========================================
-  require("user.treesitter").config()
+  lvim.builtin.treesitter.context_commentstring.enable = true
+  lvim.builtin.treesitter.ensure_installed = "maintained"
+  lvim.builtin.treesitter.ignore_install = { "haskell" }
+  lvim.builtin.treesitter.incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<C-n>",
+      node_incremental = "<C-n>",
+      scope_incremental = "<C-s>",
+      node_decremental = "<C-r>",
+    },
+  }
+  lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
+  lvim.builtin.treesitter.matchup.enable = true
+  -- lvim.treesitter.textsubjects.enable = true
+  -- lvim.treesitter.playground.enable = true
+  lvim.builtin.treesitter.query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = { "BufWrite", "CursorHold" },
+  }
+  lvim.builtin.treesitter.on_config_done = function()
+    require("nvim-treesitter.parsers").get_parser_configs().solidity = {
+      install_info = {
+        url = "https://github.com/JoranHonig/tree-sitter-solidity",
+        files = { "src/parser.c" },
+        requires_generate_from_grammar = true,
+      },
+      filetype = "solidity",
+    }
+  end
 
   -- Telescope
   -- =========================================

@@ -269,11 +269,6 @@ M.config = function()
       end,
       ft = "dart",
     },
-    {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      branch = "0.5-compat",
-      before = "nvim-treesitter",
-    },
   }
 end
 

@@ -99,7 +99,6 @@ In case you want a better tex support in mac, check [this](https://gist.github.c
 - [vim-solidity](https://github.com/ilya-bobyr/vim-solidity)
 - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
-- [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 
 ### Optional Plugins
 
