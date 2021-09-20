@@ -114,7 +114,8 @@ M.config = function()
 
   -- Telescope
   -- =========================================
-  lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
+  -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
+  lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.telescope.defaults.winblend = 6
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
