@@ -4,6 +4,7 @@ local action_state = require "telescope.actions.state"
 local themes = require "telescope.themes"
 local builtin = require "telescope.builtin"
 
+-- beautiful default layout for telescope prompt
 function M.layout_config()
   return {
     width = 0.90,
@@ -33,6 +34,7 @@ function M.layout_config()
   }
 end
 
+-- another file string search
 function M.find_string()
   local opts = {
     border = true,
@@ -45,11 +47,21 @@ function M.find_string()
       horizontal = { width = { padding = 0.15 } },
       vertical = { preview_height = 0.75 },
     },
-    file_ignore_patterns = { "vendor/*" },
+    file_ignore_patterns = {
+      "vendor/*",
+      "node_modules",
+      "%.jpg",
+      "%.jpeg",
+      "%.png",
+      "%.svg",
+      "%.otf",
+      "%.ttf",
+    },
   }
   builtin.live_grep(opts)
 end
 
+-- fince file browser using telescope instead of lir
 function M.file_browser()
   local opts
 
@@ -101,6 +113,7 @@ function M.file_browser()
   builtin.file_browser(opts)
 end
 
+-- show code actions in a fancy floating window
 function M.code_actions()
   local opts = {
     winblend = 10,
@@ -111,6 +124,7 @@ function M.code_actions()
   builtin.lsp_code_actions(themes.get_dropdown(opts))
 end
 
+-- show refrences to this using language server
 function M.lsp_references()
   local opts = {
     layout_strategy = "vertical",
@@ -123,6 +137,7 @@ function M.lsp_references()
   builtin.lsp_references(opts)
 end
 
+-- show implementations of the current thingy using language server
 function M.lsp_implementations()
   local opts = {
     layout_strategy = "vertical",
@@ -133,6 +148,16 @@ function M.lsp_implementations()
     ignore_filename = false,
   }
   builtin.lsp_implementations(opts)
+end
+
+-- find files in the upper directory
+function M.find_updir()
+  local up_dir = vim.fn.getcwd():gsub("(.*)/.*$", "%1")
+  local opts = {
+    cwd = up_dir,
+  }
+
+  builtin.find_files(opts)
 end
 
 return M
