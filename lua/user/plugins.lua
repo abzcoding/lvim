@@ -71,7 +71,7 @@ M.config = function()
       cmd = "Trouble",
     },
     {
-      "phaazon/hop.nvim",
+      "IndianBoy42/hop.nvim",
       event = "BufRead",
       config = function()
         require("user.hop").config()
