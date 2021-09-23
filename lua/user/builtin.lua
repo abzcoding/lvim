@@ -82,6 +82,7 @@ M.config = function()
   -- =========================================
   lvim.builtin.treesitter.context_commentstring.enable = true
   lvim.builtin.treesitter.ensure_installed = "maintained"
+  lvim.builtin.treesitter.highlight.disable = {}
   lvim.builtin.treesitter.ignore_install = { "haskell" }
   lvim.builtin.treesitter.incremental_selection = {
     enable = true,
