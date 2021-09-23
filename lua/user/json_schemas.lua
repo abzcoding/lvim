@@ -28,7 +28,7 @@ M.setup = function()
         ".babelrc",
         "babel.config.json",
       },
-      url = "http://json.schemastore.org/lerna",
+      url = "http://json.schemastore.org/babelrc.json",
     },
     {
       description = "ESLint config",
@@ -178,6 +178,11 @@ M.setup = function()
         "*.vsconfig",
       },
       url = "https://json.schemastore.org/vsconfig.json",
+    },
+    {
+      description = "Resume json",
+      fileMatch = { "resume.json" },
+      url = "http://json.schemastore.org/resume.json",
     },
   }
 
