@@ -79,6 +79,9 @@ M.config = function()
     },
     {
       "simrat39/symbols-outline.nvim",
+      config = function()
+        vim.g.symbols_outline.auto_preview = false
+      end,
       cmd = "SymbolsOutline",
     },
     {
@@ -109,7 +112,13 @@ M.config = function()
       end,
       event = "BufRead",
     },
-    { "kevinhwang91/nvim-bqf", event = "BufRead" },
+    {
+      "kevinhwang91/nvim-bqf",
+      config = function()
+        require("user.bqf").config()
+      end,
+      event = "BufRead",
+    },
     {
       "rcarriga/nvim-dap-ui",
       config = function()
