@@ -20,6 +20,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.tabnine = { active = false }`
 - if you don't need testing, just disable it
   - `lvim.builtin.test_runner = { active = false }`
+- if you don't want [cheat.sh](http://cheat.sh) integration, disable it
+  - `lvim.builtin.cheat = { active = false }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -111,3 +113,4 @@ In case you want a better tex support in mac, check [this](https://gist.github.c
 - [LuaDev](https://github.com/folke/lua-dev.nvim)
 - [vim-test](https://github.com/vim-test/vim-test)
 - [vim-ultest](https://github.com/rcarriga/vim-ultest)
+- [nvim-cheat](https://github.com/RishabhRD/nvim-cheat.sh)

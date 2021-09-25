@@ -19,6 +19,7 @@ lvim.builtin.fancy_statusline = { active = true } -- change this to enable/disab
 lvim.builtin.fancy_bufferline = { active = true } -- change this to enable/disable fancy bufferline
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest
+lvim.builtin.cheat = { active = true } -- enable cheat.sh integration
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
