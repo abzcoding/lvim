@@ -47,7 +47,7 @@ M.config = function()
     lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
   end
   if lvim.builtin.cheat.active then
-    lvim.builtin.which_key.mappings["h"] = { "<cmd>Cheat<CR>", "Cheat.sh" }
+    lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", "Cheat.sh" }
   end
   lvim.builtin.which_key.mappings["H"] = "Help"
   local ok, _ = pcall(require, "vim.diagnostic")
