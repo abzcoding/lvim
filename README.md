@@ -42,6 +42,7 @@ cargo install selene  # if you want to use selene instead of luacheck
 brew install hadolint  # if you want to lint dockerfiles
 pip install vim-vint  # for vim linting
 # install llvm and clang_format for clang stuff
+npm install -g @fsouza/prettierd # if you want to use prettierd
 pip install yapf flake8 black  # for python stuff
 # if you want to use the markdown thingy
 brew install vale

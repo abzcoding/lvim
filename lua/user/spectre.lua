@@ -5,6 +5,12 @@ M.config = function()
   if not status_ok then
     return
   end
+
+  local sed_args = nil
+  if vim.fn.has "mac" == 1 then
+    sed_args = { "-I", "" }
+  end
+
   spectre.setup {
 
     color_devicons = true,
@@ -106,7 +112,7 @@ M.config = function()
     replace_engine = {
       ["sed"] = {
         cmd = "sed",
-        args = nil,
+        args = sed_args,
       },
       options = {
         ["ignore-case"] = {
