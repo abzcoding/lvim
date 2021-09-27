@@ -1,6 +1,6 @@
 lvim.lang.vue.formatters = {
   {
-    exe = "prettier",
+    exe = "prettierd",
     -- args = {},
   },
 }

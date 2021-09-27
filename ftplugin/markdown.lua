@@ -1,6 +1,6 @@
 lvim.lang.markdown.formatters = {
   {
-    exe = "prettier",
+    exe = "prettierd",
     -- args = {},
   },
 }

@@ -22,7 +22,7 @@ M.config = function()
 
     -- formatting
     enable_formatting = false,
-    formatter = "prettier",
+    formatter = "prettierd",
     formatter_config_fallback = nil,
 
     -- parentheses completion

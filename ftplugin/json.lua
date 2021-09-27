@@ -1,6 +1,6 @@
 lvim.lang.json.formatters = {
   {
-    exe = "prettier",
+    exe = "prettierd",
     -- args = {},
   },
 }

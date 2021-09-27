@@ -1,6 +1,6 @@
 lvim.lang.javascript.formatters = {
   {
-    exe = "prettier",
+    exe = "prettierd",
     -- args = {},
   },
 }

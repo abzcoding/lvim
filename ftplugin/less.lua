@@ -1,6 +1,6 @@
 lvim.lang.less.formatters = {
   {
-    exe = "prettier",
+    exe = "prettierd",
     -- args = {},
   },
 }

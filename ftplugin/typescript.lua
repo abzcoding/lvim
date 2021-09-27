@@ -1,6 +1,6 @@
 lvim.lang.typescript.formatters = {
   {
-    exe = "prettier",
+    exe = "prettierd",
     -- args = {},
   },
 }
