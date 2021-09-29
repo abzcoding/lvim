@@ -160,4 +160,100 @@ function M.find_updir()
   builtin.find_files(opts)
 end
 
+function M.grep_last_search(opts)
+  opts = opts or {}
+
+  -- \<getreg\>\C
+  -- -> Subs out the search things
+  local register = vim.fn.getreg("/"):gsub("\\<", ""):gsub("\\>", ""):gsub("\\C", "")
+
+  opts.path_display = { "shorten" }
+  opts.word_match = "-w"
+  opts.search = register
+
+  builtin.grep_string(opts)
+end
+
+function M.installed_plugins()
+  builtin.find_files {
+    cwd = join_paths(os.getenv "LUNARVIM_RUNTIME_DIR", "site", "pack", "packer"),
+  }
+end
+
+function M.project_search()
+  builtin.find_files {
+    previewer = false,
+    layout_strategy = "vertical",
+    cwd = require("nvim_lsp.util").root_pattern ".git"(vim.fn.expand "%:p"),
+  }
+end
+
+function M.curbuf()
+  local opts = themes.get_dropdown {
+    winblend = 10,
+    border = true,
+    previewer = false,
+    shorten_path = false,
+  }
+  builtin.current_buffer_fuzzy_find(opts)
+end
+
+function M.git_status()
+  local opts = themes.get_dropdown {
+    winblend = 10,
+    border = true,
+    previewer = false,
+    shorten_path = false,
+  }
+
+  -- Can change the git icons using this.
+  -- opts.git_icons = {
+  --   changed = "M"
+  -- }
+
+  builtin.git_status(opts)
+end
+
+function M.search_only_certain_files()
+  builtin.find_files {
+    find_command = {
+      "rg",
+      "--files",
+      "--type",
+      vim.fn.input "Type: ",
+    },
+  }
+end
+
+function M.builtin()
+  builtin.builtin()
+end
+
+function M.git_files()
+  local path = vim.fn.expand "%:h"
+  if path == "" then
+    path = nil
+  end
+
+  local width = 0.35
+  if path and string.find(path, "sourcegraph.*sourcegraph", 1, false) then
+    width = 0.6
+  end
+
+  local opts = themes.get_dropdown {
+    winblend = 5,
+    previewer = false,
+    shorten_path = false,
+    cwd = path,
+    layout_config = {
+      width = width,
+    },
+  }
+
+  opts.file_ignore_patterns = {
+    "^[.]vale/",
+  }
+  builtin.git_files(opts)
+end
+
 return M
