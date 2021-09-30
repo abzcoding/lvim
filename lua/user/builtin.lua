@@ -46,6 +46,20 @@ M.config = function()
       return vim_item
     end,
   }
+  lvim.builtin.cmp.mapping["<CR>"] = require("cmp").mapping(function(fallback)
+    if vim.bo.filetype == "tex" then
+      lvim.builtin.cmp.confirm_opts.select = false
+    else
+      lvim.builtin.cmp.confirm_opts.select = true
+    end
+    if not require("cmp").confirm(lvim.builtin.cmp.confirm_opts) then
+      if require("luasnip").jumpable() then
+        vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-next", true, true, true)
+      else
+        fallback()
+      end
+    end
+  end)
 
   -- Dashboard
   -- =========================================
