@@ -189,7 +189,7 @@ M.config = function()
       "kristijanhusak/orgmode.nvim",
       ft = { "org" },
       config = function()
-        require("user.orgmode").setup {}
+        require("user.orgmode").setup()
       end,
       disable = not lvim.builtin.orgmode.active,
     },
