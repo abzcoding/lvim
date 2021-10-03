@@ -4,7 +4,6 @@ M.config = function()
   lvim.plugins = {
     {
       "abzcoding/zephyr-nvim",
-      branch = "feat/nvim-6",
       config = function()
         vim.cmd [[
        colorscheme zephyr
