@@ -10,7 +10,7 @@ local opts = {
           url = "https://www.schemastore.org/api/json/catalog.json",
         },
         schemas = {
-          Kubernetes = {
+          kubernetes = {
             "daemon.yaml",
             "manager.yaml",
             "restapi.yaml",
