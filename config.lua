@@ -26,6 +26,7 @@ lvim.builtin.latex = {
   preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
   rtl_support = true, -- if you want to use xelatex, it's a bit slower but works very well for RTL langs
 }
+lvim.lsp.automatic_servers_installation = true
 require("user.builtin").config()
 
 -- StatusLine
@@ -42,22 +43,9 @@ end
 
 -- Language Specific
 -- =========================================
-lvim.lang.markdown = {}
-lvim.lang.dockerfile.lsp.setup.root_dir = function(fname)
-  return require("lspconfig").util.root_pattern ".git"(fname) or require("lspconfig").util.path.dirname(fname)
-end
-lvim.builtin.lspinstall.on_config_done = function()
-  lvim.lang.tailwindcss.lsp.setup.filetypes = { "markdown" }
-  lvim.lang.tailwindcss.lsp.active = true
-  require("lsp").setup "tailwindcss"
-end
-lvim.lang.typescript.on_attach = function(client, _)
-  require("nvim-lsp-ts-utils").setup_client(client)
-end
-lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
+require("user.external_helpers").formatters()
+require("user.external_helpers").linters()
 lvim.lsp.override = { "rust", "java", "dart" }
-require("user.json_schemas").setup()
-require("user.yaml_schemas").setup()
 
 -- Additional Plugins
 -- =========================================

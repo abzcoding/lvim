@@ -225,14 +225,14 @@ M.config = function()
       end,
       disable = not lvim.builtin.test_runner.active,
     },
-    {
-      "folke/lua-dev.nvim",
-      config = function()
-        require("user.lua_dev").config()
-      end,
-      ft = "lua",
-      disable = not lvim.builtin.lua_dev.active,
-    },
+    -- {
+    --   "folke/lua-dev.nvim",
+    --   config = function()
+    --     require("user.lua_dev").config()
+    --   end,
+    --   ft = "lua",
+    --   disable = not lvim.builtin.lua_dev.active,
+    -- },
     {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
       config = function()
