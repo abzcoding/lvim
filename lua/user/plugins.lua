@@ -228,13 +228,11 @@ M.config = function()
     {
       "folke/lua-dev.nvim",
       ft = "lua",
+      before = "williamboman/nvim-lsp-installer",
       disable = not lvim.builtin.lua_dev.active,
     },
     {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
-      config = function()
-        require("user.ts_utils").config()
-      end,
       ft = {
         "javascript",
         "javascriptreact",
@@ -243,6 +241,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
+      before = "williamboman/nvim-lsp-installer",
     },
     {
       "lervag/vimtex",

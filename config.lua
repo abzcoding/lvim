@@ -69,6 +69,8 @@ for _, server_name in pairs(lvim.lsp.override) do
   if status_ok then
     local new_config = vim.tbl_deep_extend("force", default_config, custom_config)
     requested_server:setup(new_config)
+  else
+    requested_server:setup(default_config)
   end
 end
 

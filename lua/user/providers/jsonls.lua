@@ -192,11 +192,9 @@ end
 local extended_schemas = extend(schemas, require("nlspsettings.jsonls").get_default_schemas())
 
 local opts = {
-  setup = {
-    settings = {
-      json = {
-        schemas = extended_schemas,
-      },
+  settings = {
+    json = {
+      schemas = extended_schemas,
     },
   },
 }

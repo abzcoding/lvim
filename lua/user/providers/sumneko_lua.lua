@@ -1,4 +1,10 @@
-local luadev = require("lua-dev").setup {
+local status_ok, lua_dev = pcall(require, "lua-dev")
+if not status_ok then
+  vim.cmd [[ packadd lua-dev.nvim ]] 
+  -- return {}
+end
+
+local luadev = lua_dev.setup {
   library = {
     vimruntime = true, -- runtime path
     types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
@@ -7,6 +13,9 @@ local luadev = require("lua-dev").setup {
     -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
   },
   lspconfig = {
+    on_attach = require("lsp").common_on_attach,
+    on_init = require("lsp").common_on_init,
+    capabilities = require("lsp").common_capabilities(),
     settings = {
       Lua = {
         diagnostics = {
@@ -26,8 +35,4 @@ local luadev = require("lua-dev").setup {
   },
 }
 
-local opts = {
-  setup = luadev,
-}
-
-return opts
+return luadev
