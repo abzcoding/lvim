@@ -366,7 +366,7 @@ M.config = function()
     end,
   }
 
-  local ok, vim_diag = pcall(require, "vim.diagnostic")
+  local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
     ins_right {
       "diagnostics",
