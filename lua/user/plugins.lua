@@ -3,13 +3,26 @@ local M = {}
 M.config = function()
   lvim.plugins = {
     {
+      "abzcoding/zephyr-nvim",
+      branch = "feat/nvim-6",
+      config = function()
+        vim.cmd [[
+       colorscheme zephyr
+       ]]
+      end,
+      cond = function()
+        local _time = os.date "*t"
+        return (_time.hour >= 5 and _time.hour < 8)
+      end,
+    },
+    {
       "Pocco81/Catppuccino.nvim",
       config = function()
         require("user/theme").catppuccino()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 7 and _time.hour < 11)
+        return (_time.hour >= 8 and _time.hour < 11)
       end,
     },
     {
@@ -23,11 +36,12 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 7) or (_time.hour >= 11 and _time.hour < 17)
+        return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17)
       end,
     },
     {
-      "NTBBloodbath/doom-one.nvim",
+      "abzcoding/doom-one.nvim",
+      branch = "feat/lsp-reference-hi",
       config = function()
         vim.g.doom_one_italic_comments = true
         vim.cmd [[
