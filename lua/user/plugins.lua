@@ -1,7 +1,6 @@
 local M = {}
 
 M.config = function()
-  local themes = require "user/theme"
   lvim.plugins = {
     {
       "abzcoding/zephyr-nvim",
@@ -18,7 +17,7 @@ M.config = function()
     {
       "Pocco81/Catppuccino.nvim",
       config = function()
-        themes.catppuccino()
+        require("user.theme").catppuccino()
       end,
       cond = function()
         local _time = os.date "*t"
@@ -29,7 +28,7 @@ M.config = function()
       "abzcoding/tokyonight.nvim",
       branch = "feature/vim-diagnostics",
       config = function()
-        themes.tokyonight()
+        require("user.theme").tokyonight()
         vim.cmd [[
       colorscheme tokyonight
       ]]
