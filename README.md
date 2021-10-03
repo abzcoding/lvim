@@ -36,6 +36,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 # install LunarVim
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+lvim +LvimUpdate +LvimCacheReset +q
 brew install luarocks
 luarocks install luacheck  # if you want to use luacheck
 cargo install selene  # if you want to use selene instead of luacheck
@@ -58,19 +59,7 @@ lvim # run :PackerSync
 Install the language servers that you need
 
 ```vim
-:LspInstall lua
-:LspInstall yaml
-:LspInstall dockerfile
-:LspInstall python
-:LspInstall vim
-:LspInstall json
-:LspInstall go
-:LspInstall bash
-:LspInstall cpp
-:LspInstall csharp
-:LspInstall rust
-:LspInstall cmake
-:LspInstall tailwindcss
+:LspInstall ansiblels bashls clangd cssls jdtls pyright rust_analyzer terraformls vimls jsonls dockerls cmake gopls sumneko_lua tailwindcss texlab tsserver yamlls
 ```
 
 In case you want a better tex support in mac, check [this](https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1) out

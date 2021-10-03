@@ -1,6 +1,7 @@
 local M = {}
 
 M.config = function()
+  local themes = require "user/theme"
   lvim.plugins = {
     {
       "abzcoding/zephyr-nvim",
@@ -17,7 +18,7 @@ M.config = function()
     {
       "Pocco81/Catppuccino.nvim",
       config = function()
-        require("user/theme").catppuccino()
+        themes.catppuccino()
       end,
       cond = function()
         local _time = os.date "*t"
@@ -28,7 +29,7 @@ M.config = function()
       "abzcoding/tokyonight.nvim",
       branch = "feature/vim-diagnostics",
       config = function()
-        require("user/theme").tokyonight()
+        themes.tokyonight()
         vim.cmd [[
       colorscheme tokyonight
       ]]
@@ -227,17 +228,12 @@ M.config = function()
     },
     {
       "folke/lua-dev.nvim",
-      config = function()
-        require("user.lua_dev").config()
-      end,
       ft = "lua",
+      before = "williamboman/nvim-lsp-installer",
       disable = not lvim.builtin.lua_dev.active,
     },
     {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
-      config = function()
-        require("user.ts_utils").config()
-      end,
       ft = {
         "javascript",
         "javascriptreact",
@@ -246,6 +242,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
+      before = "williamboman/nvim-lsp-installer",
     },
     {
       "lervag/vimtex",

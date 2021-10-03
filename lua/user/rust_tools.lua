@@ -5,6 +5,9 @@ M.config = function()
     return
   end
 
+  local lsp_installer_servers = require "nvim-lsp-installer.servers"
+  local _, requested_server = lsp_installer_servers.get_server("rust_analyzer")
+
   local opts = {
     tools = {
       autoSetHints = true,
@@ -37,7 +40,7 @@ M.config = function()
       },
     },
     server = {
-      cmd = { vim.fn.stdpath "data" .. "/lspinstall/rust/rust-analyzer" },
+      cmd = requested_server._default_options.cmd,
       on_attach = require("lsp").common_on_attach,
       on_init = require("lsp").common_on_init,
     },

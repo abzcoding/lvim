@@ -26,6 +26,7 @@ lvim.builtin.latex = {
   preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
   rtl_support = true, -- if you want to use xelatex, it's a bit slower but works very well for RTL langs
 }
+lvim.lsp.automatic_servers_installation = true
 require("user.builtin").config()
 
 -- StatusLine
@@ -42,22 +43,36 @@ end
 
 -- Language Specific
 -- =========================================
-lvim.lang.markdown = {}
-lvim.lang.dockerfile.lsp.setup.root_dir = function(fname)
-  return require("lspconfig").util.root_pattern ".git"(fname) or require("lspconfig").util.path.dirname(fname)
+require("user.external_helpers").formatters()
+require("user.external_helpers").linters()
+lvim.lsp.override = { "dockerls", "jsonls", "sumneko_lua", "texlab", "tsserver", "yamlls", "rust_analyzer" }
+for _, server_name in pairs(lvim.lsp.override) do
+  local lsp_installer_servers = require "nvim-lsp-installer.servers"
+  local server_available, requested_server = lsp_installer_servers.get_server(server_name)
+  if server_available then
+    if not requested_server:is_installed() then
+      if lvim.lsp.automatic_servers_installation then
+        requested_server:install()
+      else
+        return
+      end
+    end
+  end
+
+  local default_config = {
+    on_attach = require("lsp").common_on_attach,
+    on_init = require("lsp").common_on_init,
+    capabilities = require("lsp").common_capabilities(),
+  }
+
+  local status_ok, custom_config = pcall(require, "user/providers/" .. requested_server.name)
+  if status_ok then
+    local new_config = vim.tbl_deep_extend("force", default_config, custom_config)
+    requested_server:setup(new_config)
+  else
+    requested_server:setup(default_config)
+  end
 end
-lvim.builtin.lspinstall.on_config_done = function()
-  lvim.lang.tailwindcss.lsp.setup.filetypes = { "markdown" }
-  lvim.lang.tailwindcss.lsp.active = true
-  require("lsp").setup "tailwindcss"
-end
-lvim.lang.typescript.on_attach = function(client, _)
-  require("nvim-lsp-ts-utils").setup_client(client)
-end
-lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
-lvim.lsp.override = { "rust", "java", "dart" }
-require("user.json_schemas").setup()
-require("user.yaml_schemas").setup()
 
 -- Additional Plugins
 -- =========================================

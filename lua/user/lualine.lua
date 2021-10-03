@@ -366,7 +366,7 @@ M.config = function()
     end,
   }
 
-  local ok, vim_diag = pcall(require, "vim.diagnostic")
+  local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
     ins_right {
       "diagnostics",
@@ -400,7 +400,7 @@ M.config = function()
       msg = msg or "LS Inactive"
       local buf_clients = vim.lsp.buf_get_clients()
       if next(buf_clients) == nil then
-        if #msg == 0 then
+        if type(msg) == "boolean" or #msg == 0 then
           return "LS Inactive"
         end
         return msg
@@ -410,8 +410,8 @@ M.config = function()
       local trim = vim.fn.winwidth(0) < 120
 
       -- add client
-      local utils = require "lsp.utils"
-      local active_client = utils.get_active_client_by_ft(buf_ft)
+      -- local utils = require "lsp.utils"
+      -- local active_client = utils.get_active_client_by_ft(buf_ft)
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
           local _added_client = client.name
@@ -421,7 +421,7 @@ M.config = function()
           table.insert(buf_client_names, _added_client)
         end
       end
-      vim.list_extend(buf_client_names, active_client or {})
+      -- vim.list_extend(buf_client_names, active_client or {})
 
       -- add formatter
       local formatters = require "lsp.null-ls.formatters"
