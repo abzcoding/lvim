@@ -1,7 +1,7 @@
 local status_ok, lua_dev = pcall(require, "lua-dev")
 if not status_ok then
-  vim.cmd [[ packadd lua-dev.nvim ]] 
-  -- return {}
+  vim.cmd [[ packadd lua-dev.nvim ]]
+  lua_dev = require "lua-dev"
 end
 
 local luadev = lua_dev.setup {

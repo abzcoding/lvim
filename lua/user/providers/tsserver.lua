@@ -1,6 +1,7 @@
 local status_ok, ts_utils = pcall(require, "nvim-lsp-ts-utils")
 if not status_ok then
   vim.cmd [[ packadd jose-elias-alvarez/nvim-lsp-ts-utils ]]
+  ts_utils = require "nvim-lsp-ts-utils"
 end
 
 -- defaults
