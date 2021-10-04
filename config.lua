@@ -43,8 +43,7 @@ end
 
 -- Language Specific
 -- =========================================
-require("user.external_helpers").formatters()
-require("user.external_helpers").linters()
+require("user.null_ls").config()
 lvim.lsp.override = { "dockerls", "jsonls", "sumneko_lua", "texlab", "tsserver", "yamlls", "rust_analyzer" }
 for _, server_name in pairs(lvim.lsp.override) do
   local lsp_installer_servers = require "nvim-lsp-installer.servers"

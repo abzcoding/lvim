@@ -1,21 +1,22 @@
+local default_schemas = nil
+local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
+if status_ok then
+  default_schemas = jsonls_settings.get_default_schemas()
+end
+
 local schemas = {
-  {
-    description = "Package JSON file",
-    fileMatch = { "package.json" },
-    url = "https://json.schemastore.org/package.json",
-  },
   {
     description = "TypeScript compiler configuration file",
     fileMatch = {
       "tsconfig.json",
       "tsconfig.*.json",
     },
-    url = "http://json.schemastore.org/tsconfig",
+    url = "https://json.schemastore.org/tsconfig.json",
   },
   {
     description = "Lerna config",
     fileMatch = { "lerna.json" },
-    url = "http://json.schemastore.org/lerna",
+    url = "https://json.schemastore.org/lerna.json",
   },
   {
     description = "Babel configuration",
@@ -24,7 +25,7 @@ local schemas = {
       ".babelrc",
       "babel.config.json",
     },
-    url = "http://json.schemastore.org/babelrc.json",
+    url = "https://json.schemastore.org/babelrc.json",
   },
   {
     description = "ESLint config",
@@ -32,12 +33,12 @@ local schemas = {
       ".eslintrc.json",
       ".eslintrc",
     },
-    url = "http://json.schemastore.org/eslintrc",
+    url = "https://json.schemastore.org/eslintrc.json",
   },
   {
     description = "Bucklescript config",
     fileMatch = { "bsconfig.json" },
-    url = "https://bucklescript.github.io/bucklescript/docson/build-schema.json",
+    url = "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/8.2.0/docs/docson/build-schema.json",
   },
   {
     description = "Prettier config",
@@ -46,12 +47,12 @@ local schemas = {
       ".prettierrc.json",
       "prettier.config.json",
     },
-    url = "http://json.schemastore.org/prettierrc",
+    url = "https://json.schemastore.org/prettierrc",
   },
   {
     description = "Vercel Now config",
     fileMatch = { "now.json" },
-    url = "http://json.schemastore.org/now",
+    url = "https://json.schemastore.org/now",
   },
   {
     description = "Stylelint config",
@@ -60,7 +61,7 @@ local schemas = {
       ".stylelintrc.json",
       "stylelint.config.json",
     },
-    url = "http://json.schemastore.org/stylelintrc",
+    url = "https://json.schemastore.org/stylelintrc",
   },
   {
     description = "A JSON schema for the ASP.NET LaunchSettings.json files",
@@ -102,7 +103,7 @@ local schemas = {
       "*.cf.json",
       "cloudformation.json",
     },
-    url = "https://raw.githubusercontent.com/awslabs/goformation/v4.18.2/schema/cloudformation.schema.json",
+    url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/cloudformation.schema.json",
   },
   {
     description = "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
@@ -111,7 +112,7 @@ local schemas = {
       "*.sam.json",
       "sam.json",
     },
-    url = "https://raw.githubusercontent.com/awslabs/goformation/v4.18.2/schema/sam.schema.json",
+    url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/sam.schema.json",
   },
   {
     description = "Json schema for properties json file for a GitHub Workflow template",
@@ -119,13 +120,6 @@ local schemas = {
       ".github/workflow-templates/**.properties.json",
     },
     url = "https://json.schemastore.org/github-workflow-template-properties.json",
-  },
-  {
-    description = "JSON schema for configuring Gitlab CI",
-    fileMatch = {
-      "*.gitlab-ci.yml",
-    },
-    url = "https://json.schemastore.org/gitlab-ci.json",
   },
   {
     description = "golangci-lint configuration file",
@@ -178,7 +172,7 @@ local schemas = {
   {
     description = "Resume json",
     fileMatch = { "resume.json" },
-    url = "http://json.schemastore.org/resume.json",
+    url = "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   },
 }
 
@@ -189,14 +183,24 @@ local function extend(tab1, tab2)
   return tab1
 end
 
-local extended_schemas = extend(schemas, require("nlspsettings.jsonls").get_default_schemas())
+local extended_schemas = extend(schemas, default_schemas)
 
 local opts = {
-  settings = {
-    json = {
-      schemas = extended_schemas,
+  setup = {
+    settings = {
+      json = {
+        schemas = extended_schemas,
+      },
+    },
+    commands = {
+      Format = {
+        function()
+          vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 })
+        end,
+      },
     },
   },
 }
 
 return opts
+

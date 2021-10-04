@@ -39,8 +39,7 @@ M.config = function()
       end,
     },
     {
-      "abzcoding/doom-one.nvim",
-      branch = "feat/lsp-reference-hi",
+      "NTBBloodbath/doom-one.nvim",
       config = function()
         vim.g.doom_one_italic_comments = true
         vim.cmd [[
