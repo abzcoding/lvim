@@ -4,7 +4,7 @@ Do not use as is, use it as a source of inspiration.
 
 I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly 😅
 
-## Things to Know
+## Customization
 
 - I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
@@ -59,10 +59,13 @@ lvim # run :PackerSync
 Install the language servers that you need
 
 ```vim
-:LspInstall ansiblels bashls clangd cssls jdtls pyright rust_analyzer terraformls vimls jsonls dockerls cmake gopls sumneko_lua tailwindcss texlab tsserver yamlls
+:LspInstall ansiblels bashls clangd cssls jdtls pyright rust_analyzer
+:LspInstall terraformls vimls jsonls dockerls cmake gopls sumneko_lua
+:LspInstall tailwindcss texlab tsserver yamlls
 ```
 
-In case you want a better tex support in mac, check [this](https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1) out
+In case you want a better tex support in mac, check
+[this](https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1) out
 
 ## Included Plugins
 
@@ -91,6 +94,7 @@ In case you want a better tex support in mac, check [this](https://gist.github.c
 - [vim-solidity](https://github.com/ilya-bobyr/vim-solidity)
 - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
+- [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 
 ### Optional Plugins
 

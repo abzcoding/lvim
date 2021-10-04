@@ -295,6 +295,13 @@ M.config = function()
       cmd = { "Cheat", "CheatWithoutComments", "CheatList", "CheatListWithoutComments" },
       disable = not lvim.builtin.cheat.active,
     },
+    {
+      "AckslD/nvim-neoclip.lua",
+      config = function()
+        require("user.neoclip").config()
+      end,
+      requires = { "tami5/sqlite.lua", module = "sqlite" },
+    },
   }
 end
 

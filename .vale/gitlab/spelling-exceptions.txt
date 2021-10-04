@@ -30,6 +30,7 @@ Buildkite
 CSV
 Caddy
 Camo
+Catppuccino
 CentOS
 Certbot
 ChaosKube
@@ -165,6 +166,7 @@ Minikube
 ModSecurity
 Monokai
 Nanoc
+Neogen
 Neovim
 Netlify
 Nokogiri
@@ -249,6 +251,7 @@ URIs
 Ubuntu
 Unicorn
 Vagrantfile
+Vimtex
 Vue
 Vuex
 WebdriverIO
@@ -304,6 +307,7 @@ backtraced
 backtraces
 backtracing
 badging
+barbar
 blockquote
 blockquoted
 blockquotes
@@ -311,6 +315,7 @@ blockquoting
 boolean
 booleans
 browsable
+bufferline
 bugfix
 bugfixed
 bugfixes
@@ -706,6 +711,7 @@ syslog
 tanuki
 tcpdump
 templated
+tex
 throughputs
 timebox
 timeboxed
@@ -856,4 +862,5 @@ wireframes
 wireframing
 worktree
 worktrees
-zsh
+z
+

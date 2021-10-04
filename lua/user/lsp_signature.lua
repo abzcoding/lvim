@@ -1,6 +1,11 @@
 local M = {}
 
 M.config = function()
+  local status_ok, sig = pcall(require, "lsp_signature")
+  if not status_ok then
+    return
+  end
+
   local cfg = {
     bind = true,
     doc_lines = 10,
@@ -28,7 +33,7 @@ M.config = function()
     shadow_blend = 36, -- if you using shadow as border use this set the opacity
     shadow_guibg = "Black", -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
   }
-  require("lsp_signature").setup(cfg)
+  sig.setup(cfg)
 end
 
 return M

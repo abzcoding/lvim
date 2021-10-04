@@ -8,6 +8,13 @@ M.config = function()
   lvim.keys.insert_mode["<C-l>"] = "<C-o>$<cmd>silent! LuaSnipUnlinkCurrent<CR>"
   lvim.keys.insert_mode["<C-j>"] = "<C-o>o<cmd>silent! LuaSnipUnlinkCurrent<CR>"
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
+  if vim.fn.has "mac" == 1 then
+    lvim.keys.normal_mode["gx"] =
+      [[<cmd>lua os.execute("open " .. vim.fn.shellescape(vim.fn.expand "<cWORD>")); vim.cmd "redraw!"<cr>]]
+  elseif vim.fn.has "linux" then
+    lvim.keys.normal_mode["gx"] =
+      [[<cmd>lua os.execute("xdg-open " .. vim.fn.shellescape(vim.fn.expand "<cWORD>")); vim.cmd "redraw!"<cr>]]
+  end
   if lvim.builtin.fancy_bufferline.active then
     lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
     lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
