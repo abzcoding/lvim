@@ -44,7 +44,7 @@ end
 -- Language Specific
 -- =========================================
 require("user.null_ls").config()
-lvim.lsp.override = { "dockerls", "sumneko_lua", "texlab", "tsserver", "yamlls", "rust_analyzer" }
+lvim.lsp.override = { "dockerls", "sumneko_lua", "texlab", "tsserver", "rust_analyzer" }
 for _, server_name in pairs(lvim.lsp.override) do
   local lsp_installer_servers = require "nvim-lsp-installer.servers"
   local server_available, requested_server = lsp_installer_servers.get_server(server_name)
