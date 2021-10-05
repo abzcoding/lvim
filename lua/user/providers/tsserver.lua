@@ -33,8 +33,9 @@ ts_utils.setup {
   watch_dir = nil,
 }
 local opts = {
-  on_attach = function(client, _)
+  on_attach = function(client, bufnr)
     ts_utils.setup_client(client)
+    require("lsp").common_on_attach(client, bufnr)
   end,
 }
 
