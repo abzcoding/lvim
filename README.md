@@ -8,6 +8,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 - I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
+- i have a autocmd to disable syntax,etc when you open files larger than 1MB
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
 - I'm using bufferline instead of barbar, if you don't like it, disable it
