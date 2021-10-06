@@ -41,7 +41,7 @@ M.config = function()
     {
       "NTBBloodbath/doom-one.nvim",
       config = function()
-        vim.g.doom_one_italic_comments = true
+        require("user.theme").doom()
         vim.cmd [[
       colorscheme doom-one
       ]]

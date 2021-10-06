@@ -87,6 +87,36 @@ M.catppuccino = function()
   catppuccino.load()
 end
 
+M.doom = function()
+  local doom = require "doom-one"
+  doom.setup {
+    cursor_coloring = true,
+    terminal_colors = false,
+    italic_comments = true,
+    enable_treesitter = true,
+    transparent_background = false,
+    pumblend = {
+      enable = true,
+      transparency_amount = 20,
+    },
+    plugins_integrations = {
+      barbar = true,
+      bufferline = true,
+      gitgutter = false,
+      gitsigns = true,
+      telescope = true,
+      neogit = false,
+      nvim_tree = true,
+      dashboard = true,
+      startify = true,
+      whichkey = true,
+      indent_blankline = true,
+      vim_illuminate = false,
+      lspsaga = false,
+    },
+  }
+end
+
 M.colors = {
   tokyonight_colors = {
     none = "NONE",
