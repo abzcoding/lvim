@@ -17,7 +17,11 @@ M.config = function()
   local function clip()
     require("telescope").extensions.neoclip.default(require("telescope.themes").get_dropdown())
   end
-  require("which-key").register {
+  local whk_status, whk = pcall(require, "which-key")
+  if not whk_status then
+    return
+  end
+  whk.register {
     ["<leader>y"] = { clip, "neoclip: open yank history" },
   }
 end
