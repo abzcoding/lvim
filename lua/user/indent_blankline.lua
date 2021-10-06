@@ -24,6 +24,7 @@ M.setup = function()
     "neogitstatus",
     "NvimTree",
     "Trouble",
+    "lspinfo",
     "", -- for all buffers without a file type
   }
   vim.g.indentLine_enabled = 1
