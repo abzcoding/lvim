@@ -24,6 +24,7 @@ function DisableSyntaxTreesitter()
     set noundofile
     set noswapfile
     set noloadplugins
+    set lazyredraw
 endfunction
 
 augroup BigFileDisable
