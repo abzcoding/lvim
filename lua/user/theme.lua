@@ -102,6 +102,7 @@ M.doom = function()
     plugins_integrations = {
       barbar = true,
       bufferline = true,
+      cmp = true,
       gitgutter = false,
       gitsigns = true,
       telescope = true,

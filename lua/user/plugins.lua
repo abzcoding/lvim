@@ -39,7 +39,8 @@ M.config = function()
       end,
     },
     {
-      "NTBBloodbath/doom-one.nvim",
+      "abzcoding/doom-one.nvim",
+      branch = "feat/nvim-cmp-floating",
       config = function()
         require("user.theme").doom()
         vim.cmd [[
