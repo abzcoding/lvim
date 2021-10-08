@@ -24,6 +24,7 @@ M.config = function()
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.cmp.experimental = {
     ghost_text = false,
+    native_menu =  false,
     custom_menu = true,
   }
   lvim.builtin.cmp.formatting = {
