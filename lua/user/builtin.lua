@@ -22,6 +22,10 @@ M.config = function()
     { name = "crates" },
   }
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  lvim.builtin.cmp.experimental = {
+    ghost_text = false,
+    native_menu = true,
+  }
   lvim.builtin.cmp.formatting = {
     format = function(entry, vim_item)
       local cmp_kind = require("user.lsp_kind").cmp_kind
