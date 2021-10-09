@@ -33,4 +33,8 @@ function lspkind.cmp_kind(kind)
   return kind_symbols[kind] or ""
 end
 
+function lspkind.symbols()
+  return kind_symbols
+end
+
 return lspkind
