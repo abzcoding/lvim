@@ -51,46 +51,6 @@ M.config = function()
       return vim_item
     end,
   }
-  local cmp = require "cmp"
-  local luasnip = require "luasnip"
-  local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-  end
-  lvim.builtin.cmp.mapping["<Tab>"] = function(fallback)
-    if cmp.visible() then
-      cmp.select_next_item()
-    elseif luasnip.expand_or_jumpable() then
-      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), '')
-    elseif check_backspace() then
-      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n")
-    else
-      fallback()
-    end
-  end
-  lvim.builtin.cmp.mapping["<S-Tab>"] = function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item()
-    elseif luasnip.jumpable(-1) then
-      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), '')
-    else
-      fallback()
-    end
-  end
-  lvim.builtin.cmp.mapping["<CR>"] = function(fallback)
-    if vim.bo.filetype == "tex" then
-      lvim.builtin.cmp.confirm_opts.select = false
-    else
-      lvim.builtin.cmp.confirm_opts.select = true
-    end
-    if not cmp.confirm(lvim.builtin.cmp.confirm_opts) then
-      if luasnip.jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-next", true, true, true), '')
-      else
-        fallback()
-      end
-    end
-  end
 
   -- Dashboard
   -- =========================================
