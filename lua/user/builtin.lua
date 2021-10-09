@@ -40,12 +40,6 @@ M.config = function()
     calc = "  ",
     cmp_tabnine = "  ",
   }
-  lvim.builtin.cmp.formatting.duplicates = {
-    buffer = 1,
-    path = 1,
-    nvim_lsp = 0,
-  }
-  lvim.builtin.cmp.formatting.duplicates_default = 0
 
   -- Dashboard
   -- =========================================
