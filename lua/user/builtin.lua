@@ -66,6 +66,15 @@ M.config = function()
   -- NvimTree
   -- =========================================
   lvim.builtin.nvimtree.setup.auto_open = 0
+  lvim.builtin.nvimtree.setup.diagnostics = {
+    enable = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    },
+  }
   -- lvim.builtin.nvimtree.hide_dotfiles = 0
 
   -- Project
