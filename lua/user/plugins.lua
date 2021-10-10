@@ -292,7 +292,7 @@ M.config = function()
       config = function()
         require("flutter-tools").setup {
           lsp = {
-            on_attach = require("lsp").common_on_attach,
+            on_attach = require("lvim.lsp").common_on_attach,
           },
         }
       end,

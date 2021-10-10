@@ -35,7 +35,7 @@ ts_utils.setup {
 local opts = {
   on_attach = function(client, bufnr)
     ts_utils.setup_client(client)
-    require("lsp").common_on_attach(client, bufnr)
+    require("lvim.lsp").common_on_attach(client, bufnr)
   end,
 }
 
