@@ -294,7 +294,7 @@ M.config = function()
 
   ins_left {
     function()
-      local utils = require "core.lualine.utils"
+      local utils = require "lvim.core.lualine.utils"
       local filename = vim.fn.expand "%"
       local kube_env = os.getenv "KUBECONFIG"
       local kube_filename = "kubectl-edit"
@@ -336,7 +336,7 @@ M.config = function()
   }
   ins_left {
     function()
-      local utils = require "core.lualine.utils"
+      local utils = require "lvim.core.lualine.utils"
       if vim.bo.filetype == "python" then
         local venv = os.getenv "CONDA_DEFAULT_ENV"
         if venv then
@@ -424,7 +424,7 @@ M.config = function()
       -- vim.list_extend(buf_client_names, active_client or {})
 
       -- add formatter
-      local formatters = require "lsp.null-ls.formatters"
+      local formatters = require "lvim.lsp.null-ls.formatters"
       local supported_formatters = {}
       for _, fmt in pairs(formatters.list_supported_names(buf_ft)) do
         local _added_formatter = fmt
@@ -436,7 +436,7 @@ M.config = function()
       vim.list_extend(buf_client_names, supported_formatters)
 
       -- add linter
-      local linters = require "lsp.null-ls.linters"
+      local linters = require "lvim.lsp.null-ls.linters"
       local supported_linters = {}
       for _, lnt in pairs(linters.list_supported_names(buf_ft)) do
         local _added_linter = lnt

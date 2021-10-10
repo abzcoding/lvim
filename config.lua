@@ -61,9 +61,9 @@ for _, server_name in pairs(lvim.lsp.override) do
   end
 
   local default_config = {
-    on_attach = require("lsp").common_on_attach,
-    on_init = require("lsp").common_on_init,
-    capabilities = require("lsp").common_capabilities(),
+    on_attach = require("lvim.lsp").common_on_attach,
+    on_init = require("lvim.lsp").common_on_init,
+    capabilities = require("lvim.lsp").common_capabilities(),
   }
 
   local status_ok, custom_config = pcall(require, "user/providers/" .. requested_server.name)

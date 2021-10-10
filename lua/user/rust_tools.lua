@@ -41,8 +41,8 @@ M.config = function()
     },
     server = {
       cmd = requested_server._default_options.cmd,
-      on_attach = require("lsp").common_on_attach,
-      on_init = require("lsp").common_on_init,
+      on_attach = require("lvim.lsp").common_on_attach,
+      on_init = require("lvim.lsp").common_on_init,
     },
   }
   rust_tools.setup(opts)

@@ -13,9 +13,9 @@ local luadev = lua_dev.setup {
     -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
   },
   lspconfig = {
-    on_attach = require("lsp").common_on_attach,
-    on_init = require("lsp").common_on_init,
-    capabilities = require("lsp").common_capabilities(),
+    on_attach = require("lvim.lsp").common_on_attach,
+    on_init = require("lvim.lsp").common_on_init,
+    capabilities = require("lvim.lsp").common_capabilities(),
     settings = {
       Lua = {
         diagnostics = {
@@ -23,7 +23,7 @@ local luadev = lua_dev.setup {
         },
         workspace = {
           library = {
-            [require("utils").join_paths(get_runtime_dir(), "lvim", "lua")] = true,
+            [require("lvim.utils").join_paths(get_runtime_dir(), "lvim", "lua")] = true,
             [vim.fn.expand "$VIMRUNTIME/lua"] = true,
             [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
           },
