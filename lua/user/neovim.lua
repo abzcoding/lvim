@@ -28,6 +28,22 @@ M.config = function()
   vim.opt.pumblend = 10
   vim.opt.joinspaces = false
   vim.opt.list = true
+  vim.opt.wildignore = {
+    "*.aux,*.out,*.toc",
+    "*.o,*.obj,*.dll,*.jar,*.pyc,__pycache__,*.rbc,*.class",
+    -- media
+    "*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp",
+    "*.avi,*.m4a,*.mp3,*.oga,*.ogg,*.wav,*.webm",
+    "*.eot,*.otf,*.ttf,*.woff",
+    "*.doc,*.pdf",
+    -- archives
+    "*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz",
+    -- temp/system
+    "*.*~,*~ ",
+    "*.swp,.lock,.DS_Store,._*,tags.lock",
+    -- version control
+    ".git,.svn",
+  }
 end
 
 return M
