@@ -29,6 +29,39 @@ M.config = function()
   }
 
   -- or use the lunarvim syntax
+  -- local formatters = require "lvim.lsp.null-ls.formatters"
+  -- formatters.setup {
+  --   {
+  --     exe = "prettier",
+  --     filetypes = {
+  --       "javascriptreact",
+  --       "javascript",
+  --       "typescriptreact",
+  --       "typescript",
+  --       "json",
+  --       "markdown",
+  --     },
+  --   },
+  --   {
+
+  --   }
+  -- }
+  -- local linters = require "lvim.lsp.null-ls.linters"
+  -- linters.setup {
+  --   {
+  --     exe = "eslint",
+  --     filetypes = {
+  --       "javascriptreact",
+  --       "javascript",
+  --       "typescriptreact",
+  --       "typescript",
+  --       "vue",
+  --     },
+  --   },
+  -- }
+
+  -- WARN: do not redfine or reuse formatter/linters in this format
+  -- or use the lang specific format
   lvim.lang.python.formatters = {
     {
       exe = "black",
