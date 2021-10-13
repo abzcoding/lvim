@@ -45,7 +45,22 @@ end
 
 -- Language Specific
 -- =========================================
+-- NOTE: By default, all null-ls providers are checked on startup.
+-- If you want to avoid that or want to only set up the provider
+-- when you opening the associated file-type,
+-- then you can use filetype plugins for this purpose.
+-- https://www.lunarvim.org/languages/#lazy-loading-the-formatter-setup
 require("user.null_ls").config()
+
+-- NOTE: if you want to disable the lang server builtin formatter.
+-- here's an example to disable formatting in "tsserver" and "jsonls"
+-- lvim.lsp.on_attach_callback = function(client, _)
+--   if client.name == "tsserver" or client.name == "jsonls" then
+--     client.resolved_capabilities.document_formatting = false
+--     client.resolved_capabilities.document_range_formatting = false
+--   end
+-- end
+-- https://www.lunarvim.org/languages/#multi-languages-per-formatter
 lvim.lsp.override = { "dockerls", "sumneko_lua", "texlab", "tsserver", "rust_analyzer" }
 for _, server_name in pairs(lvim.lsp.override) do
   local lsp_installer_servers = require "nvim-lsp-installer.servers"
