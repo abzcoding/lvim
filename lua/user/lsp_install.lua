@@ -1,16 +1,15 @@
 local M = {}
 
 M.install = function()
-
--- NOTE: if you want to disable the lang server builtin formatter.
--- here's an example to disable formatting in "tsserver" and "jsonls"
--- lvim.lsp.on_attach_callback = function(client, _)
---   if client.name == "tsserver" or client.name == "jsonls" then
---     client.resolved_capabilities.document_formatting = false
---     client.resolved_capabilities.document_range_formatting = false
---   end
--- end
--- https://www.lunarvim.org/languages/#multi-languages-per-formatter
+  -- NOTE: if you want to disable the lang server builtin formatter.
+  -- here's an example to disable formatting in "tsserver" and "jsonls"
+  lvim.lsp.on_attach_callback = function(client, _)
+    if client.name == "tsserver" or client.name == "jsonls" then
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end
+  end
+  -- https://www.lunarvim.org/languages/#multi-languages-per-formatter
   for _, server_name in pairs(lvim.lsp.override) do
     local lsp_installer_servers = require "nvim-lsp-installer.servers"
     local server_available, requested_server = lsp_installer_servers.get_server(server_name)
