@@ -1,6 +1,11 @@
 local M = {}
 
 M.config = function()
+  -- NOTE: By default, all null-ls providers are checked on startup.
+  -- If you want to avoid that or want to only set up the provider
+  -- when you opening the associated file-type,
+  -- then you can use filetype plugins for this purpose.
+  -- https://www.lunarvim.org/languages/#lazy-loading-the-formatter-setup
   local status_ok, nls = pcall(require, "null-ls")
   if not status_ok then
     return
