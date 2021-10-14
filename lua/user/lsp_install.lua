@@ -32,9 +32,31 @@ M.install = function()
     local status_ok, custom_config = pcall(require, "user/providers/" .. requested_server.name)
     if status_ok then
       local new_config = vim.tbl_deep_extend("force", default_config, custom_config)
+      M.generate_filetype(requested_server.name)
       requested_server:setup(new_config)
     else
       requested_server:setup(default_config)
+    end
+  end
+end
+
+M.generate_filetype = function(server_name)
+  local filetypes = require("lvim.lsp.utils").get_supported_filetypes(server_name) or {}
+  if not filetypes then
+    return
+  end
+
+  if require("lvim.lsp.templates").is_ignored(server_name, filetypes) then
+    return
+  end
+
+  local utils = require "lvim.utils"
+
+  for _, filetype in ipairs(filetypes) do
+    local filename = _G.join_paths(lvim.lsp.templates_dir, filetype .. ".lua")
+    local setup_cmd = string.format([[require("lvim.lsp.manager").setup(%q)]], server_name)
+    if not utils.is_file(filename) then
+      utils.write_file(filename, setup_cmd .. "\n", "a")
     end
   end
 end
