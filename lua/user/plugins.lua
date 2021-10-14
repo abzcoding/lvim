@@ -291,7 +291,19 @@ M.config = function()
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("flutter-tools").setup {
+          ui = { border = "rounded" },
+          debugger = { enabled = true },
+          outline = { auto_open = false },
+          decorations = {
+            statusline = { device = true, app_version = true },
+          },
+          widget_guides = { enabled = true, debug = true },
+          dev_log = { open_cmd = "tabedit" },
           lsp = {
+            settings = {
+              showTodos = false,
+              renameFilesWithClasses = "always",
+            },
             on_attach = require("lvim.lsp").common_on_attach,
           },
         }
