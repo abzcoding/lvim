@@ -35,8 +35,16 @@ augroup END
 
   lvim.autocommands.custom_groups = {
     -- c, cpp
-    { "Filetype", "c,cpp", "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle('make ;read')<CR>" },
-    { "Filetype", "c,cpp", "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle('make run;read')<CR>" },
+    {
+      "Filetype",
+      "c,cpp",
+      "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle('make ;read')<CR>",
+    },
+    {
+      "Filetype",
+      "c,cpp",
+      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle('make run;read')<CR>",
+    },
     { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
     -- java
@@ -55,7 +63,9 @@ augroup END
     {
       "Filetype",
       "python",
-      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle('python " .. vim.fn.expand "%" .. ";read')<CR>",
+      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle('python "
+        .. vim.fn.expand "%"
+        .. ";read')<CR>",
     },
     {
       "Filetype",
@@ -69,7 +79,11 @@ augroup END
       "rust",
       "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle('cargo build;read')<CR>",
     },
-    { "Filetype", "rust", "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle('cargo run;read')<CR>" },
+    {
+      "Filetype",
+      "rust",
+      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle('cargo run;read')<CR>",
+    },
     {
       "Filetype",
       "rust",
