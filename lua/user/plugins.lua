@@ -273,20 +273,6 @@ M.config = function()
       disable = not lvim.builtin.test_runner.active,
     },
     {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      run = "make",
-      after = "telescope.nvim",
-      config = function()
-        lvim.builtin.telescope.extensions["fzf"] = {
-          fuzzy = true,
-          override_generic_sorter = true,
-          override_file_sorter = true,
-          case_mode = "smart_case",
-        }
-        require("telescope").load_extension "fzf"
-      end,
-    },
-    {
       "akinsho/flutter-tools.nvim",
       requires = "nvim-lua/plenary.nvim",
       config = function()
