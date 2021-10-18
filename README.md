@@ -70,6 +70,33 @@ Install the language servers that you need
 In case you want a better tex support in mac, check
 [this](https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1) out
 
+---
+
+## What does it look like?
+
+#### StatusLine
+
+<img width="662" alt="Screen Shot 2021-10-18 at 5 44 20 PM" src="https://user-images.githubusercontent.com/10992695/137748538-33c59697-6783-43e5-bbd7-d920f91965bf.png">
+
+#### BufferLine
+
+<img width="1912" alt="Screen Shot 2021-10-18 at 5 45 16 PM" src="https://user-images.githubusercontent.com/10992695/137748708-ce6a91e1-aec4-46ea-b119-2086897c1d0e.png">
+
+#### Dashboard
+
+<img width="1913" alt="Screen Shot 2021-10-18 at 5 40 16 PM" src="https://user-images.githubusercontent.com/10992695/137747972-825b31a8-ce43-483e-b766-8d26f9d77d3f.png">
+
+<img width="1879" alt="Screen Shot 2021-10-18 at 5 41 31 PM" src="https://user-images.githubusercontent.com/10992695/137748075-62077458-3299-4a15-8ecf-b9bd13022c80.png">
+
+<img width="1904" alt="Screen Shot 2021-10-18 at 5 51 50 PM" src="https://user-images.githubusercontent.com/10992695/137749839-6b53ee28-5cc2-4ed0-999d-14905a68c645.png">
+
+
+#### Completion
+
+<img width="1912" alt="Screen Shot 2021-10-18 at 5 43 22 PM" src="https://user-images.githubusercontent.com/10992695/137748383-fddc84b9-4744-4905-9588-f8675b6c83e1.png">
+
+---
+
 ## Included Plugins
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
@@ -110,3 +137,5 @@ In case you want a better tex support in mac, check
 - [vim-ultest](https://github.com/rcarriga/vim-ultest)
 - [nvim-cheat](https://github.com/RishabhRD/nvim-cheat.sh)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
+
+
