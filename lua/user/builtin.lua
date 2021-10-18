@@ -139,6 +139,7 @@ M.config = function()
     "%.svg",
     "%.otf",
     "%.ttf",
+    ".git",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {
