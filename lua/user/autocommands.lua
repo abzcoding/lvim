@@ -34,6 +34,8 @@ augroup END
   ]]
 
   lvim.autocommands.custom_groups = {
+    -- dashboard
+    { "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
     -- c, cpp
     {
       "Filetype",
