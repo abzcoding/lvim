@@ -95,6 +95,30 @@ In case you want a better tex support in mac, check
 
 <img width="1912" alt="Screen Shot 2021-10-18 at 5 43 22 PM" src="https://user-images.githubusercontent.com/10992695/137748383-fddc84b9-4744-4905-9588-f8675b6c83e1.png">
 
+#### Cheat.sh
+use `<leader>?`
+<img width="1883" alt="Screen Shot 2021-10-18 at 6 02 31 PM" src="https://user-images.githubusercontent.com/10992695/137751690-311849e6-42b2-4bb1-a3ed-a52fd1a804cf.png">
+
+<img width="1918" alt="Screen Shot 2021-10-18 at 6 01 34 PM" src="https://user-images.githubusercontent.com/10992695/137751541-0c6bcb6f-3498-454d-bcf5-7001cf004c1f.png">
+
+#### Symbols Outline
+
+<img width="1906" alt="Screen Shot 2021-10-18 at 6 03 57 PM" src="https://user-images.githubusercontent.com/10992695/137751933-291297b4-4233-406a-88bc-68b93733048a.png">
+
+#### Folding
+
+<img width="955" alt="Screen Shot 2021-10-18 at 6 05 29 PM" src="https://user-images.githubusercontent.com/10992695/137752198-ecdd8718-6ee0-4d4a-a751-a11f81eaf912.png">
+
+
+#### Builtin Terminal
+
+<img width="1913" alt="Screen Shot 2021-10-18 at 6 07 13 PM" src="https://user-images.githubusercontent.com/10992695/137752572-87a5792f-87a3-4131-8a1b-4ba786b83086.png">
+
+#### Testing
+
+<img width="1706" alt="Screen Shot 2021-10-18 at 6 13 22 PM" src="https://user-images.githubusercontent.com/10992695/137753736-a4502a50-cff5-4365-bfd7-22dfd08c71ed.png">
+
+
 ---
 
 ## Included Plugins
