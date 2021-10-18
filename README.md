@@ -92,7 +92,6 @@ In case you want a better tex support in mac, check
 - [Vimtex](https://github.com/lervag/vimtex)
 - [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
-- [vim-solidity](https://github.com/ilya-bobyr/vim-solidity)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 

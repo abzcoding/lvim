@@ -218,7 +218,8 @@ M.config = function()
           enabled = true,
         }
       end,
-      event = "BufRead",
+      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go" },
+      event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
     },
     {
@@ -259,10 +260,6 @@ M.config = function()
       end,
       requires = "nvim-web-devicons",
       disable = not lvim.builtin.fancy_bufferline.active,
-    },
-    {
-      -- "ChristianChiarulli/vim-solidity",
-      "ilya-bobyr/vim-solidity",
     },
     {
       "rcarriga/vim-ultest",
