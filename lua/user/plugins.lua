@@ -314,7 +314,7 @@ M.config = function()
       config = function()
         require("user.dashboard").config()
       end,
-      disable = lvim.builtin.fancy_dashboard.active,
+      disable = not lvim.builtin.fancy_dashboard.active,
     },
   }
 end
