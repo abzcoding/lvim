@@ -91,9 +91,21 @@ In case you want a better tex support in mac, check
 <img width="1879" alt="Screen Shot 2021-10-18 at 5 41 31 PM" src="https://user-images.githubusercontent.com/10992695/137748075-62077458-3299-4a15-8ecf-b9bd13022c80.png">
 
 
-#### Completion
+#### Lang Server
 
+*completion*
 <img width="1912" alt="Screen Shot 2021-10-18 at 5 43 22 PM" src="https://user-images.githubusercontent.com/10992695/137748383-fddc84b9-4744-4905-9588-f8675b6c83e1.png">
+
+*diagnostics using `gl`*
+<img width="855" alt="Screen_Shot_2021-07-31_at_7 54 52_PM" src="https://user-images.githubusercontent.com/10992695/127746932-e42b63ee-7994-4b63-9550-a359e32e6f78.png">
+
+*code_actions using `ga`*
+<img width="1305" alt="Screen Shot 2021-10-18 at 6 25 58 PM" src="https://user-images.githubusercontent.com/10992695/137756116-63ebb337-f944-4b3f-80df-ae00634f78eb.png">
+
+*code_lens and inlay hints when supported by lang server*
+<img width="670" alt="Screen Shot 2021-10-18 at 6 26 47 PM" src="https://user-images.githubusercontent.com/10992695/137756336-3658ff1d-c385-4341-8371-89ef32c2cc50.png">
+
+
 
 #### Cheat.sh
 use `<leader>?`
@@ -117,6 +129,11 @@ use `<leader>?`
 #### Testing
 
 <img width="1706" alt="Screen Shot 2021-10-18 at 6 13 22 PM" src="https://user-images.githubusercontent.com/10992695/137753736-a4502a50-cff5-4365-bfd7-22dfd08c71ed.png">
+
+#### ETC
+
+k8s help
+<img width="1571" alt="Screen Shot 2021-10-18 at 6 23 21 PM" src="https://user-images.githubusercontent.com/10992695/137755742-d9c2f106-de34-4503-857a-ada7ba1160f3.png">
 
 
 ---
