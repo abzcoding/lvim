@@ -43,11 +43,13 @@ M.config = function()
 
   -- Dashboard
   -- =========================================
-  lvim.builtin.dashboard.active = true
-  lvim.builtin.dashboard.custom_section["m"] = {
-    description = { "  Marks              " },
-    command = "Telescope marks",
-  }
+  lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
+  if not lvim.builtin.fancy_dashboard.active then
+    lvim.builtin.dashboard.custom_section["m"] = {
+      description = { "  Marks              " },
+      command = "Telescope marks",
+    }
+  end
 
   -- LSP
   -- =========================================

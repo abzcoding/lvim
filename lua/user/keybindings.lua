@@ -32,6 +32,9 @@ M.config = function()
 
   -- WhichKey keybindings
   -- =========================================
+  if lvim.builtin.fancy_dashboard.active then
+    lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "Dashboard" }
+  end
   if lvim.builtin.fancy_bufferline.active then
     lvim.builtin.which_key.mappings.b = {
       name = "Buffers",

@@ -309,6 +309,13 @@ M.config = function()
       end,
       requires = { "tami5/sqlite.lua", module = "sqlite" },
     },
+    {
+      "goolord/alpha-nvim",
+      config = function()
+        require("user.dashboard").config()
+      end,
+      disable = lvim.builtin.fancy_dashboard.active,
+    },
   }
 end
 

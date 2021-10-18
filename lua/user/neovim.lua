@@ -3,12 +3,28 @@ local M = {}
 M.config = function()
   vim.opt.relativenumber = true
   vim.opt.wrap = true
+  -- vim.opt.updatetime = 100
+  -- vim.opt.timeout = true
   vim.opt.timeoutlen = 200
+  -- vim.opt.ttimeoutlen = 10
+  vim.opt.wrapscan = true -- Searches wrap around the end of the file
   vim.o.foldmethod = "expr"
   vim.o.foldexpr = "nvim_treesitter#foldexpr()"
   vim.o.foldlevel = 4
   vim.o.foldtext =
     [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
+  vim.o.foldnestmax = 3
+  vim.o.foldminlines = 1
+  vim.opt.guifont = "FiraCode Nerd Font:h13"
+  vim.opt.cmdheight = 1
+  vim.g.dashboard_enable_session = 0
+  vim.g.dashboard_disable_statusline = 1
+  vim.opt.pumblend = 10
+  vim.opt.joinspaces = false
+  vim.opt.list = true
+  vim.opt.confirm = true -- make vim prompt me to save before doing destructive things
+  vim.opt.autowriteall = true -- automatically :write before running commands and changing files
+  vim.opt.clipboard = { "unnamedplus" }
   vim.opt.fillchars = {
     vert = "▕", -- alternatives │
     fold = " ",
@@ -19,15 +35,6 @@ M.config = function()
     foldsep = "│",
     foldclose = "▸",
   }
-  vim.o.foldnestmax = 3
-  vim.o.foldminlines = 1
-  vim.opt.guifont = "FiraCode Nerd Font:h13"
-  vim.opt.cmdheight = 1
-  vim.g.dashboard_enable_session = 0
-  vim.g.dashboard_disable_statusline = 1
-  vim.opt.pumblend = 10
-  vim.opt.joinspaces = false
-  vim.opt.list = true
   vim.opt.wildignore = {
     "*.aux,*.out,*.toc",
     "*.o,*.obj,*.dll,*.jar,*.pyc,__pycache__,*.rbc,*.class",
@@ -44,6 +51,41 @@ M.config = function()
     -- version control
     ".git,.svn",
   }
+  vim.opt.shortmess = {
+    t = true, -- truncate file messages at start
+    A = true, -- ignore annoying swap file messages
+    o = true, -- file-read message overwrites previous
+    O = true, -- file-read message overwrites previous
+    T = true, -- truncate non-file messages in middle
+    f = true, -- (file x of x) instead of just (x of x
+    F = true, -- Don't give file info when editing a file, NOTE: this breaks autocommand messages
+    s = true,
+    c = true,
+    W = true, -- Don't show [w] or written when writing
+  }
+  vim.opt.formatoptions = {
+    ["1"] = true,
+    ["2"] = true, -- Use indent from 2nd line of a paragraph
+    q = true, -- continue comments with gq"
+    c = true, -- Auto-wrap comments using textwidth
+    r = true, -- Continue comments when pressing Enter
+    n = true, -- Recognize numbered lists
+    t = false, -- autowrap lines using text width value
+    j = true, -- remove a comment leader when joining lines.
+    -- Only break if the line was not longer than 'textwidth' when the insert
+    -- started and only at a white character that has been entered during the
+    -- current insert command.
+    l = true,
+    v = true,
+  }
+  vim.opt.listchars = {
+    eol = nil,
+    tab = "│ ",
+    extends = "›", -- Alternatives: … »
+    precedes = "‹", -- Alternatives: … «
+    trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
+  }
+
   if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0.01
     vim.g.neovide_cursor_trail_length = 0.05
