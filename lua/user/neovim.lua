@@ -3,6 +3,7 @@ local M = {}
 M.config = function()
   vim.opt.relativenumber = true
   vim.opt.wrap = true
+  -- vim.opt.termguicolors = true
   -- vim.opt.updatetime = 100
   -- vim.opt.timeout = true
   vim.opt.timeoutlen = 200
