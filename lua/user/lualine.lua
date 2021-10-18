@@ -212,7 +212,7 @@ M.config = function()
         normal = { c = { fg = colors.fg, bg = colors.bg } },
         inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
       },
-      disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+      disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
     },
     sections = {
       -- these are to remove the defaults
