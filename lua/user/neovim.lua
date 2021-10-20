@@ -92,14 +92,14 @@ M.config = function()
     vim.g.neovide_cursor_trail_length = 0.05
     vim.g.neovide_cursor_antialiasing = true
     vim.g.neovide_remember_window_size = true
-    vim.cmd [[set guifont=JetBrainsMono\ Nerd\ Font:h16]]
+    vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h14]]
   end
 
-  if vim.fn.exists "g:nvui" ~= 0 then
+  if vim.g.nvui then
     -- Configure nvui here
-    vim.cmd [[NvuiCmdFontFamily VictorMono Nerd Font]]
+    vim.cmd [[NvuiCmdFontFamily FiraCode Nerd Font]]
     vim.cmd [[set linespace=1]]
-    vim.cmd [[set guifont=VictorMono\ Nerd\ Font:h18]]
+    vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h14]]
     vim.cmd [[NvuiPopupMenuDefaultIconFg white]]
     vim.cmd [[NvuiCmdBg #1e2125]]
     vim.cmd [[NvuiCmdFg #abb2bf]]
@@ -107,7 +107,7 @@ M.config = function()
     vim.cmd [[NvuiCmdPadding 10]]
     vim.cmd [[NvuiCmdCenterXPos 0.5]]
     vim.cmd [[NvuiCmdTopPos 0.0]]
-    vim.cmd [[NvuiCmdFontSize 25.0]]
+    vim.cmd [[NvuiCmdFontSize 20.0]]
     vim.cmd [[NvuiCmdBorderWidth 5]]
     vim.cmd [[NvuiPopupMenuIconFg variable #56b6c2]]
     vim.cmd [[NvuiPopupMenuIconFg function #c678dd]]
@@ -121,6 +121,8 @@ M.config = function()
     vim.cmd [[NvuiTitlebarFontSize 12]]
     vim.cmd [[NvuiTitlebarFontFamily Arial]]
     vim.cmd [[NvuiCursorAnimationDuration 0.1]]
+    -- vim.cmd [[NvuiToggleFrameless]]
+    vim.cmd [[NvuiOpacity 0.99]]
   end
 end
 
