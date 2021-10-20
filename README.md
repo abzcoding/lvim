@@ -74,6 +74,9 @@ In case you want a better tex support in mac, check
 
 ## What does it look like?
 
+<img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
+
+
 #### StatusLine
 
 <img width="662" alt="Screen Shot 2021-10-18 at 5 44 20 PM" src="https://user-images.githubusercontent.com/10992695/137748538-33c59697-6783-43e5-bbd7-d920f91965bf.png">
@@ -87,8 +90,6 @@ In case you want a better tex support in mac, check
 <img width="1913" alt="Screen Shot 2021-10-18 at 5 40 16 PM" src="https://user-images.githubusercontent.com/10992695/137747972-825b31a8-ce43-483e-b766-8d26f9d77d3f.png">
 
 <img width="1904" alt="Screen Shot 2021-10-18 at 5 51 50 PM" src="https://user-images.githubusercontent.com/10992695/137749839-6b53ee28-5cc2-4ed0-999d-14905a68c645.png">
-
-<img width="1879" alt="Screen Shot 2021-10-18 at 5 41 31 PM" src="https://user-images.githubusercontent.com/10992695/137748075-62077458-3299-4a15-8ecf-b9bd13022c80.png">
 
 
 #### Lang Server
