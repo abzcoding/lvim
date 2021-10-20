@@ -91,6 +91,14 @@ In case you want a better tex support in mac, check
 
 <img width="1904" alt="Screen Shot 2021-10-18 at 5 51 50 PM" src="https://user-images.githubusercontent.com/10992695/137749839-6b53ee28-5cc2-4ed0-999d-14905a68c645.png">
 
+#### lsp_signature
+
+<img width="809" alt="lsp_signature_2" src="https://user-images.githubusercontent.com/10992695/138069979-13a43683-3ba0-46b3-ae53-0904fbab66bc.png">
+<img width="819" alt="lsp_signature" src="https://user-images.githubusercontent.com/10992695/138069986-897e29bd-f23d-4cec-a410-a8b7fcb0d465.png">
+
+#### Tabnine
+
+<img width="717" alt="tabnine" src="https://user-images.githubusercontent.com/10992695/138070107-c6aecc6d-6423-4f21-bc58-d0ee24142e3f.png">
 
 #### Lang Server
 
@@ -128,15 +136,19 @@ In case you want a better tex support in mac, check
 #### ETC
 
 *k8s help*
+
 <img width="1571" alt="Screen Shot 2021-10-18 at 6 23 21 PM" src="https://user-images.githubusercontent.com/10992695/137755742-d9c2f106-de34-4503-857a-ada7ba1160f3.png">
 
 *lazy git integration*
+
 <img width="1893" alt="Screen Shot 2021-10-18 at 6 27 45 PM" src="https://user-images.githubusercontent.com/10992695/137756730-f4ff78c8-dc9a-43bf-9646-916cd467c4c3.png">
 
 *zen mode*
+
 <img width="1870" alt="Screen Shot 2021-10-18 at 6 30 00 PM" src="https://user-images.githubusercontent.com/10992695/137757021-b084822c-457b-4a5f-9592-0992977ae218.png">
 
 *Cheat.sh integration*
+
 use `<leader>?`
 <img width="1883" alt="Screen Shot 2021-10-18 at 6 02 31 PM" src="https://user-images.githubusercontent.com/10992695/137751690-311849e6-42b2-4bb1-a3ed-a52fd1a804cf.png">
 
@@ -145,8 +157,6 @@ use `<leader>?`
 *Symbols Outline*
 
 <img width="1906" alt="Screen Shot 2021-10-18 at 6 03 57 PM" src="https://user-images.githubusercontent.com/10992695/137751933-291297b4-4233-406a-88bc-68b93733048a.png">
-
-
 
 ---
 
