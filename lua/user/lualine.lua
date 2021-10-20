@@ -426,7 +426,7 @@ M.config = function()
       -- add formatter
       local formatters = require "lvim.lsp.null-ls.formatters"
       local supported_formatters = {}
-      for _, fmt in pairs(formatters.list_supported_names(buf_ft)) do
+      for _, fmt in pairs(formatters.list_registered_providers(buf_ft)) do
         local _added_formatter = fmt
         if trim then
           _added_formatter = string.sub(fmt, 1, 4)
@@ -438,7 +438,7 @@ M.config = function()
       -- add linter
       local linters = require "lvim.lsp.null-ls.linters"
       local supported_linters = {}
-      for _, lnt in pairs(linters.list_supported_names(buf_ft)) do
+      for _, lnt in pairs(linters.list_registered_providers(buf_ft)) do
         local _added_linter = lnt
         if trim then
           _added_linter = string.sub(lnt, 1, 4)
