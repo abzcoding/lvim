@@ -10,7 +10,7 @@ augroup CustomLuaSnip
 augroup end
 
 " disable syntax highlighting in big files
-function DisableSyntaxTreesitter()
+function! DisableSyntaxTreesitter()
     echo("Big file, disabling syntax, treesitter and folding")
     if exists(':TSBufDisable')
         exec 'TSBufDisable autotag'
