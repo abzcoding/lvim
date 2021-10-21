@@ -99,7 +99,8 @@ M.config = function()
       config = function()
         require("user.symbols_outline").config()
       end,
-      cmd = "SymbolsOutline",
+      event = "BufReadPost",
+      -- cmd = "SymbolsOutline",
     },
     {
       "lukas-reineke/indent-blankline.nvim",
