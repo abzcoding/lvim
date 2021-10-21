@@ -97,7 +97,7 @@ M.config = function()
     {
       "simrat39/symbols-outline.nvim",
       config = function()
-        vim.g.symbols_outline.auto_preview = false
+        require("user.symbols_outline").config()
       end,
       cmd = "SymbolsOutline",
     },
