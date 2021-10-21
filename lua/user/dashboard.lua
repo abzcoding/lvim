@@ -5,15 +5,10 @@ M.config = function()
   if not present then
     return
   end
-  local headers = require("user.banners").dashboard()
-  math.randomseed(os.time())
-  local function header_logo()
-    return headers[math.random(1, #headers)]
-  end
 
   local header = {
     type = "text",
-    val = header_logo(),
+    val = require("user.banners").dashboard(),
     opts = {
       position = "center",
       hl = "Comment",
