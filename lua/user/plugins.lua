@@ -1,11 +1,6 @@
 local M = {}
 
 M.config = function()
-  local trouble_plugin = "folke/trouble.nvim"
-  local ok, _ = pcall(require, "vim.diagnostic")
-  if ok then
-    trouble_plugin = "HungryJoe/trouble.nvim"
-  end
   lvim.plugins = {
     {
       "abzcoding/zephyr-nvim",
@@ -80,7 +75,7 @@ M.config = function()
       event = "BufRead",
     },
     {
-      trouble_plugin,
+      "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("trouble").setup()
