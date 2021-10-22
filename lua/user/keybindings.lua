@@ -76,11 +76,11 @@ M.config = function()
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
     lvim.builtin.which_key.mappings["l"]["j"] = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
+      "<cmd>lua vim.diagnostic.goto_next({float = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
       "Next Diagnostic",
     }
     lvim.builtin.which_key.mappings["l"]["k"] = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
+      "<cmd>lua vim.diagnostic.goto_prev({float = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
       "Prev Diagnostic",
     }
   end
