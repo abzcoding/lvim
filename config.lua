@@ -15,9 +15,10 @@ lvim.builtin.persistence = { active = true } -- change to false if you don't wan
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
-lvim.builtin.fancy_statusline = { active = true } -- change this to enable/disable fancy statusline
-lvim.builtin.fancy_bufferline = { active = true } -- change this to enable/disable fancy bufferline
-lvim.builtin.fancy_dashboard = { active = true } -- change this to enable/disable fancy dashboard
+lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
+lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy bufferline
+lvim.builtin.fancy_dashboard = { active = true } -- enable/disable fancy dashboard
+lvim.builtin.fancy_wild_menu = { active = false } -- enable/disable use wilder.nvim
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest
 lvim.builtin.cheat = { active = true } -- enable cheat.sh integration

@@ -15,6 +15,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.fancy_statusline = { active = false }`
 - I'm using bufferline instead of barbar, if you don't like it, disable it
   - `lvim.builtin.fancy_bufferline = { active = false }`
+- You can use the fancy wildmenu if you want, make sure to do a `:UpdateRemotePlugins`
+  - `lvim.builtin.fancy_wild_menu = { active = true }`
 - if you want to use debugging, change the following line to true:
   - `lvim.builtin.dap.active = true`
 - sometimes instead of saving you jump trough jumplist ðŸ˜¢ just disable nvim-lastplace
@@ -189,6 +191,7 @@ use `<leader>?`
 
 ### Optional Plugins
 
+- [wilder.nvim](https://github.com/gelguy/wilder.nvim)
 - [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
 - [Persistence](https://github.com/folke/persistence.nvim)

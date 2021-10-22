@@ -316,6 +316,17 @@ M.config = function()
       end,
       disable = not lvim.builtin.fancy_dashboard.active,
     },
+    {
+      "gelguy/wilder.nvim",
+      event = { "CursorHold", "CmdlineEnter" },
+      rocks = { "luarocks-fetch-gitrec", "pcre2" },
+      requires = { "romgrk/fzy-lua-native" },
+      config = function()
+        vim.cmd(string.format("source %s", "~/.config/lvim/vimscript/wilder.vim"))
+      end,
+      run = ":UpdateRemotePlugins",
+      disable = not lvim.builtin.fancy_wild_menu.active,
+    },
   }
 end
 
