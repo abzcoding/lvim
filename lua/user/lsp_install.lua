@@ -46,9 +46,6 @@ M.generate_filetype = function(server_name)
     return
   end
 
-  if require("lvim.lsp.templates").is_ignored(server_name, filetypes) then
-    return
-  end
 
   local utils = require "lvim.utils"
 
