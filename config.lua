@@ -28,6 +28,7 @@ lvim.builtin.latex = {
   preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
   rtl_support = true, -- if you want to use xelatex, it's a bit slower but works very well for RTL langs
 }
+lvim.builtin.notify.active = true
 lvim.lsp.automatic_servers_installation = true
 lvim.lsp.document_highlight = true
 lvim.lsp.code_lens_refresh = true
