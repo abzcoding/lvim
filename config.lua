@@ -29,7 +29,7 @@ lvim.builtin.latex = {
   rtl_support = true, -- if you want to use xelatex, it's a bit slower but works very well for RTL langs
 }
 lvim.builtin.notify.active = true
-lvim.lsp.automatic_servers_installation = true
+lvim.lsp.automatic_servers_installation = false
 lvim.lsp.document_highlight = true
 lvim.lsp.code_lens_refresh = true
 require("user.builtin").config()
