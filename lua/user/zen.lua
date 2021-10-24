@@ -26,9 +26,6 @@ M.config = function()
       vim.lsp.diagnostic.set_virtual_text = false
       vim.cmd [[
           set foldlevel=10
-          hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b
-          hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b
-          hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b
           ]]
     end,
     on_close = function()
@@ -40,9 +37,6 @@ M.config = function()
           set foldlevel=4
           set foldmethod=expr
           set foldexpr=nvim_treesitter#foldexpr()
-          hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
-          hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
-          hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
           ]]
     end,
   }
