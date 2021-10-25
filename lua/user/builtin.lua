@@ -39,6 +39,7 @@ M.config = function()
     path = "  ",
     calc = "  ",
     cmp_tabnine = "  ",
+    ["vim-dadbod-completion"] = "𝓐 ",
   }
 
   -- Dashboard
