@@ -33,6 +33,16 @@ augroup BigFileDisable
 augroup END
   ]]
 
+  if lvim.builtin.sql_integration.active then
+    -- Add vim-dadbod-completion in sql files
+    vim.cmd [[
+    augroup DadbodSql
+      au!
+      autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }
+    augroup END
+    ]]
+  end
+
   lvim.autocommands.custom_groups = {
     -- toggleterm
     { "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },

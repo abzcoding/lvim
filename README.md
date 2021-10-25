@@ -27,6 +27,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.test_runner = { active = false }`
 - if you don't want [cheat.sh](http://cheat.sh) integration, disable it
   - `lvim.builtin.cheat = { active = false }`
+- if you don't want the sql integration, disable it
+  - `lvim.builtin.sql_integration = { active = false }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -78,7 +80,6 @@ In case you want a better tex support in mac, check
 
 <img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
 
-
 #### StatusLine
 
 <img width="662" alt="Screen Shot 2021-10-18 at 5 44 20 PM" src="https://user-images.githubusercontent.com/10992695/137748538-33c59697-6783-43e5-bbd7-d920f91965bf.png">
@@ -104,28 +105,27 @@ In case you want a better tex support in mac, check
 
 #### Lang Server
 
-*completion*
+_completion_
 <img width="1912" alt="Screen Shot 2021-10-18 at 5 43 22 PM" src="https://user-images.githubusercontent.com/10992695/137748383-fddc84b9-4744-4905-9588-f8675b6c83e1.png">
 
-*diagnostics using `gl`*
+_diagnostics using `gl`_
 <img width="855" alt="Screen_Shot_2021-07-31_at_7 54 52_PM" src="https://user-images.githubusercontent.com/10992695/127746932-e42b63ee-7994-4b63-9550-a359e32e6f78.png">
 
-*code_actions using `ga`*
+_code_actions using `ga`_
 <img width="1305" alt="Screen Shot 2021-10-18 at 6 25 58 PM" src="https://user-images.githubusercontent.com/10992695/137756116-63ebb337-f944-4b3f-80df-ae00634f78eb.png">
 
-*`code_lens` and `inlay_hints` when supported by lang server*
+_`code_lens` and `inlay_hints` when supported by lang server_
 <img width="670" alt="Screen Shot 2021-10-18 at 6 26 47 PM" src="https://user-images.githubusercontent.com/10992695/137756336-3658ff1d-c385-4341-8371-89ef32c2cc50.png">
 
-*references in `qf`*
+_references in `qf`_
 <img width="1911" alt="Screen Shot 2021-10-18 at 6 31 03 PM" src="https://user-images.githubusercontent.com/10992695/137757171-b50a0c43-5861-4c60-b95e-4bdab97b338e.png">
 
-*treesitter backed folding*
+_treesitter backed folding_
 <img width="955" alt="Screen Shot 2021-10-18 at 6 05 29 PM" src="https://user-images.githubusercontent.com/10992695/137752198-ecdd8718-6ee0-4d4a-a751-a11f81eaf912.png">
 
-*peek using `gp`*
+_peek using `gp`_
 
 <img width="643" alt="Screen Shot 2021-10-18 at 6 33 06 PM" src="https://user-images.githubusercontent.com/10992695/137757505-d742558a-56c7-4c1d-b037-14bfab200901.png">
-
 
 #### Builtin Terminal
 
@@ -137,26 +137,26 @@ In case you want a better tex support in mac, check
 
 #### ETC
 
-*k8s help*
+_k8s help_
 
 <img width="1571" alt="Screen Shot 2021-10-18 at 6 23 21 PM" src="https://user-images.githubusercontent.com/10992695/137755742-d9c2f106-de34-4503-857a-ada7ba1160f3.png">
 
-*lazy git integration*
+_lazy git integration_
 
 <img width="1893" alt="Screen Shot 2021-10-18 at 6 27 45 PM" src="https://user-images.githubusercontent.com/10992695/137756730-f4ff78c8-dc9a-43bf-9646-916cd467c4c3.png">
 
-*zen mode*
+_zen mode_
 
 <img width="1870" alt="Screen Shot 2021-10-18 at 6 30 00 PM" src="https://user-images.githubusercontent.com/10992695/137757021-b084822c-457b-4a5f-9592-0992977ae218.png">
 
-*Cheat.sh integration*
+_Cheat.sh integration_
 
 use `<leader>?`
 <img width="1883" alt="Screen Shot 2021-10-18 at 6 02 31 PM" src="https://user-images.githubusercontent.com/10992695/137751690-311849e6-42b2-4bb1-a3ed-a52fd1a804cf.png">
 
 <img width="1918" alt="Screen Shot 2021-10-18 at 6 01 34 PM" src="https://user-images.githubusercontent.com/10992695/137751541-0c6bcb6f-3498-454d-bcf5-7001cf004c1f.png">
 
-*Symbols Outline*
+_Symbols Outline_
 
 <img width="1906" alt="Screen Shot 2021-10-18 at 6 03 57 PM" src="https://user-images.githubusercontent.com/10992695/137751933-291297b4-4233-406a-88bc-68b93733048a.png">
 
@@ -203,5 +203,6 @@ use `<leader>?`
 - [vim-ultest](https://github.com/rcarriga/vim-ultest)
 - [nvim-cheat](https://github.com/RishabhRD/nvim-cheat.sh)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
-
-
+- [vim-dadbod](https://github.com/tpope/vim-dadbod)
+- [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
+- [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)

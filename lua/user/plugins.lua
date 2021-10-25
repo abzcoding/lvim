@@ -322,6 +322,20 @@ M.config = function()
       run = ":UpdateRemotePlugins",
       disable = not lvim.builtin.fancy_wild_menu.active,
     },
+    {
+      "tpope/vim-dadbod",
+      cmd = "DB",
+      disable = not lvim.builtin.sql_integration.active,
+    },
+    {
+      "kristijanhusak/vim-dadbod-completion",
+      disable = not lvim.builtin.sql_integration.active,
+    },
+    {
+      "kristijanhusak/vim-dadbod-ui",
+      cmd = "DBUI",
+      disable = not lvim.builtin.sql_integration.active,
+    },
   }
 end
 

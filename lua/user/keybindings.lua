@@ -39,6 +39,7 @@ M.config = function()
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
   lvim.keys.visual_mode["p"] = [["_dP]]
+  lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
 
   -- WhichKey keybindings
   -- =========================================

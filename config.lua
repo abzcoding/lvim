@@ -22,6 +22,7 @@ lvim.builtin.fancy_wild_menu = { active = false } -- enable/disable use wilder.n
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest
 lvim.builtin.cheat = { active = true } -- enable cheat.sh integration
+lvim.builtin.sql_integration = { active = true } -- enable sql integration
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
