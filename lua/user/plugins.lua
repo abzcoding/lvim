@@ -336,6 +336,13 @@ M.config = function()
       cmd = "DBUI",
       disable = not lvim.builtin.sql_integration.active,
     },
+    {
+      "karb94/neoscroll.nvim",
+      config = function()
+        require("neoscroll").setup()
+      end,
+      disable = not lvim.builtin.neoscroll.active,
+    },
   }
 end
 
