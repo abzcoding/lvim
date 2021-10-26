@@ -99,6 +99,9 @@ M.config = function()
     },
     {
       "lukas-reineke/indent-blankline.nvim",
+      setup = function()
+        vim.g.indent_blankline_char = "▏"
+      end,
       config = function()
         require("user.indent_blankline").config()
       end,
