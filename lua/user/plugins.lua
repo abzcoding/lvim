@@ -358,6 +358,10 @@ M.config = function()
         }
       end,
     },
+    {
+      "github/copilot.vim",
+      disable = not lvim.builtin.sell_your_soul_to_devil,
+    },
   }
 end
 
