@@ -70,7 +70,7 @@ M.config = function()
       "folke/todo-comments.nvim",
       requires = "nvim-lua/plenary.nvim",
       config = function()
-        require("todo-comments").setup()
+        require("user.todo_comments").config()
       end,
       event = "BufRead",
     },
@@ -351,6 +351,9 @@ M.config = function()
             literal = {
               ["kitty.conf"] = "kitty",
               [".gitignore"] = "conf",
+              [".eslintrc"] = "json",
+              [".stylelintrc"] = "json",
+              [".htmlhintrc"] = "json",
             },
           },
         }

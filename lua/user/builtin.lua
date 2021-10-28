@@ -147,6 +147,19 @@ M.config = function()
     "%.otf",
     "%.ttf",
     ".git/",
+    "%.webp",
+    ".dart_tool/",
+    ".github/",
+    ".gradle/",
+    ".idea/",
+    ".settings/",
+    ".vscode/",
+    "__pycache__/",
+    "build/",
+    "env/",
+    "gradle/",
+    "node_modules/",
+    "target/",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {

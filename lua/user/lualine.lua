@@ -414,6 +414,16 @@ M.config = function()
     end,
   }
 
+  ins_right {
+    function()
+      if not vim.bo.readonly or not vim.bo.modifiable then
+        return ""
+      end
+      return "" -- """
+    end,
+    color = { fg = colors.red },
+  }
+
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
     ins_right {

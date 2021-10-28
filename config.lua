@@ -50,7 +50,7 @@ end
 
 -- Language Specific
 -- =========================================
-lvim.lsp.override = { "dockerls", "sumneko_lua", "texlab", "tsserver", "rust_analyzer", "jsonls" }
+lvim.lsp.override = { "dockerls", "sumneko_lua", "texlab", "tsserver", "rust_analyzer", "jsonls", "gopls" }
 require("user.null_ls").config()
 require("user.lsp_install").install()
 
