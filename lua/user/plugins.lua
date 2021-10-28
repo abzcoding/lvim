@@ -307,7 +307,6 @@ M.config = function()
     {
       "gelguy/wilder.nvim",
       -- event = { "CursorHold", "CmdlineEnter" },
-      opt = true,
       rocks = { "luarocks-fetch-gitrec", "pcre2" },
       requires = { "romgrk/fzy-lua-native" },
       config = function()
