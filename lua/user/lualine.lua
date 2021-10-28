@@ -32,6 +32,22 @@ local function diff_source()
   end
 end
 
+local function testing()
+  if vim.g.testing_status == "running" then
+    return " "
+  end
+  if vim.g.testing_status == "fail" then
+    return ""
+  end
+  if vim.g.testing_status == "pass" then
+    return " "
+  end
+  return nil
+end
+local function using_session()
+  return (vim.g.using_persistence ~= nil)
+end
+
 local mode = function()
   local mod = vim.fn.mode()
   if mod == "n" or mod == "no" or mod == "nov" then
@@ -353,6 +369,38 @@ M.config = function()
     color = { fg = colors.green },
     cond = conditions.hide_in_width,
   }
+  ins_left {
+    provider = function()
+      return testing()
+    end,
+    enabled = function()
+      return testing() ~= nil
+    end,
+    hl = {
+      fg = colors.fg,
+    },
+    left_sep = " ",
+    right_sep = {
+      str = " |",
+      hl = { fg = colors.fg },
+    },
+  }
+  ins_left {
+    provider = function()
+      if vim.g.using_persistence then
+        return "  |"
+      elseif vim.g.using_persistence == false then
+        return "  |"
+      end
+    end,
+    enabled = function()
+      return using_session()
+    end,
+    hl = {
+      fg = colors.fg,
+    },
+  }
+
   ins_left {
     lsp_progress,
     cond = conditions.hide_small,
