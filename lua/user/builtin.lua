@@ -47,10 +47,8 @@ M.config = function()
     vim.g.copilot_assume_mapped = true
     vim.g.copilot_tab_fallback = ""
     local cmp = require "cmp"
-    lvim.builtin.cmp.mapping["<Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
+    lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
+        cmp.mapping.abort()
         local copilot_keys = vim.fn["copilot#Accept"]()
         if copilot_keys ~= "" then
           vim.api.nvim_feedkeys(copilot_keys, "i", true)
@@ -58,7 +56,6 @@ M.config = function()
           fallback()
         end
       end
-    end
   end
 
   -- Dashboard
