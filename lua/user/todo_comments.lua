@@ -5,6 +5,11 @@ M.config = function()
   if not status_ok then
     return
   end
+  vim.cmd [[
+  if !hlexists('TextSuccess')
+    hi! link TextSuccess Normal
+  endif
+  ]]
 
   todo.setup {
     keywords = {
@@ -27,7 +32,7 @@ M.config = function()
       hint = { "DiagnosticHint" },
       hack = { "Function" },
       ref = { "FloatBorder" },
-      success = { "healthSuccess" },
+      success = { "TextSuccess" },
       default = { "Identifier" },
     },
   }
