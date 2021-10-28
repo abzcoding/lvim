@@ -51,6 +51,7 @@ M.config = function()
       TypeParameter = { icon = "𝙏", hl = "TSParameter" },
     },
   }
+  vim.cmd('hi FocusedSymbol guibg=#a9b1d6"')
 end
 
 return M

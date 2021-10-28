@@ -91,7 +91,7 @@ M.config = function()
     },
     {
       "simrat39/symbols-outline.nvim",
-      config = function()
+      setup = function()
         require("user.symbols_outline").config()
       end,
       event = "BufReadPost",
