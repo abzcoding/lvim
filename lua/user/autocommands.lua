@@ -2,6 +2,17 @@ local M = {}
 
 M.config = function()
   -- Autocommands
+  if lvim.builtin.nonumber_unfocus then
+    vim.cmd [[
+" don't show line number in unfocued window
+augroup WindFocus
+    autocmd!
+    autocmd WinEnter * set relativenumber number cursorline
+    autocmd WinLeave * set norelativenumber nonumber nocursorline
+augroup END
+  ]]
+  end
+
   vim.cmd [[
 " fix the luasnip weird issue
 augroup CustomLuaSnip

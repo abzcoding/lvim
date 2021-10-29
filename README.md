@@ -8,16 +8,16 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 - I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
-- i have a autocmd to disable syntax,etc when you open files larger than 1MB
-- if you want to try out github copilot, change the following
+- i have a auto command to disable syntax,etc when you open files larger than `1MB`
+- if you want to try out GitHub copilot, change the following
   - `lvim.builtin.sell_your_soul_to_devil = true`
 - I'm using a custom dashboard, use the default LunarVim one if you like it better
   - `lvim.builtin.fancy_dashboard = { active = false }`
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
-- I'm using bufferline instead of barbar, if you don't like it, disable it
+- I'm using `bufferline` instead of `barbar`, if you don't like it, disable it
   - `lvim.builtin.fancy_bufferline = { active = false }`
-- You can use the fancy wildmenu if you want, make sure to do a `:UpdateRemotePlugins`
+- You can use the fancy wild menu if you want, make sure to do a `:UpdateRemotePlugins`
   - `lvim.builtin.fancy_wild_menu = { active = true }`
 - if you want to use debugging, change the following line to true:
   - `lvim.builtin.dap.active = true`
@@ -29,10 +29,12 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.test_runner = { active = false }`
 - if you don't want [cheat.sh](http://cheat.sh) integration, disable it
   - `lvim.builtin.cheat = { active = false }`
-- if you don't want the sql integration, disable it
+- if you don't want the SQL integration, disable it
   - `lvim.builtin.sql_integration = { active = false }`
 - if you don't like smooth scrolling, disable it
   - `lvim.builtin.neoscroll = { active = false }`
+- if you want an obvious focused window, and you don't get seizures from it
+  - `lvim.builtin.nonumber_unfocus = true`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -212,3 +214,4 @@ _Symbols Outline_
 - [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
+- [Copilot](https://github.com/github/copilot.vim)
