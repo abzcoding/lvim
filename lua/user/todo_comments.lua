@@ -5,11 +5,6 @@ M.config = function()
   if not status_ok then
     return
   end
-  vim.cmd [[
-  if !hlexists('TextSuccess')
-    hi! link TextSuccess Normal
-  endif
-  ]]
 
   todo.setup {
     keywords = {
@@ -20,7 +15,6 @@ M.config = function()
       PERF = { icon = "龍" },
       NOTE = { icon = " ", alt = { "INFO", "NB" } },
       LINK = { icon = " ", color = "ref", alt = { "LINKS", "REF", "REFS" } },
-      SUCCESS = { icon = " ", color = "success", alt = { "OK", "DONE" } },
       ERROR = { icon = " ", color = "error", alt = { "ERR" } },
       REFS = { icon = "" },
     },
@@ -32,7 +26,6 @@ M.config = function()
       hint = { "DiagnosticHint" },
       hack = { "Function" },
       ref = { "FloatBorder" },
-      success = { "TextSuccess" },
       default = { "Identifier" },
     },
   }

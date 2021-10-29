@@ -331,7 +331,7 @@ M.config = function()
       requires = {
         {
           "tpope/vim-dadbod",
-opt = true
+          opt = true,
         },
       },
       opt = true,
@@ -367,6 +367,15 @@ opt = true
     {
       "github/copilot.vim",
       disable = not lvim.builtin.sell_your_soul_to_devil,
+    },
+    {
+      "akinsho/dependency-assist.nvim",
+      branch = "refactor",
+      --- requires libyaml-dev on ubuntu or libyaml on macOS
+      rocks = { { "lyaml", server = "http://rocks.moonscript.org" } },
+      config = function()
+        require("dependency_assist").setup()
+      end,
     },
   }
 end

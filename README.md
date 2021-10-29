@@ -9,6 +9,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 - I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - i have a autocmd to disable syntax,etc when you open files larger than 1MB
+- if you want to try out github copilot, change the following
+  - `lvim.builtin.sell_your_soul_to_devil = true`
 - I'm using a custom dashboard, use the default LunarVim one if you like it better
   - `lvim.builtin.fancy_dashboard = { active = false }`
 - I use a custom `lualine` disable it if you don't like it
@@ -190,6 +192,7 @@ _Symbols Outline_
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
+- [Dependency-assist.nvim](https://github.com/akinsho/dependency-assist.nvim)
 
 ### Optional Plugins
 
