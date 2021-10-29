@@ -47,14 +47,14 @@ M.config = function()
     vim.g.copilot_tab_fallback = ""
     local cmp = require "cmp"
     lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
-        cmp.mapping.abort()
-        local copilot_keys = vim.fn["copilot#Accept"]()
-        if copilot_keys ~= "" then
-          vim.api.nvim_feedkeys(copilot_keys, "i", true)
-        else
-          fallback()
-        end
+      cmp.mapping.abort()
+      local copilot_keys = vim.fn["copilot#Accept"]()
+      if copilot_keys ~= "" then
+        vim.api.nvim_feedkeys(copilot_keys, "i", true)
+      else
+        fallback()
       end
+    end
   end
 
   -- Dashboard
@@ -182,6 +182,18 @@ M.config = function()
       ["<esc>"] = require("telescope.actions").close,
       ["<C-y>"] = require("telescope.actions").which_key,
     },
+  }
+  local telescope_actions = require "telescope.actions.set"
+  lvim.builtin.telescope.defaults.pickers.find_files = {
+    attach_mappings = function(_)
+      telescope_actions.select:enhance {
+        post = function()
+          vim.cmd ":normal! zx"
+        end,
+      }
+      return true
+    end,
+    find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
   }
 
   -- Terminal

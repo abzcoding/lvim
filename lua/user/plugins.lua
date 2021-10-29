@@ -316,19 +316,25 @@ M.config = function()
       disable = not lvim.builtin.fancy_wild_menu.active,
     },
     {
-      "tpope/vim-dadbod",
-      opt = true,
-      cmd = "DB",
-      disable = not lvim.builtin.sql_integration.active,
-    },
-    {
       "kristijanhusak/vim-dadbod-completion",
       disable = not lvim.builtin.sql_integration.active,
     },
     {
       "kristijanhusak/vim-dadbod-ui",
+      cmd = {
+        "DBUIToggle",
+        "DBUIAddConnection",
+        "DBUI",
+        "DBUIFindBuffer",
+        "DBUIRenameBuffer",
+      },
+      requires = {
+        {
+          "tpope/vim-dadbod",
+opt = true
+        },
+      },
       opt = true,
-      cmd = "DBUI",
       disable = not lvim.builtin.sql_integration.active,
     },
     {
