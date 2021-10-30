@@ -38,6 +38,13 @@ M.config = function()
   lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
+  if lvim.builtin.harpoon.active then
+    lvim.keys.normal_mode["<C-Space>"] = "<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>"
+    lvim.keys.normal_mode["tu"] = "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>"
+    lvim.keys.normal_mode["te"] = "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>"
+    lvim.keys.normal_mode["cu"] = "<cmd>lua require('harpoon.term').sendCommand(1, 1)<CR>"
+    lvim.keys.normal_mode["ce"] = "<cmd>lua require('harpoon.term').sendCommand(1, 2)<CR>"
+  end
   lvim.keys.visual_mode["p"] = [["_dP]]
   lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
 
@@ -45,6 +52,24 @@ M.config = function()
   -- =========================================
   if lvim.builtin.fancy_dashboard.active then
     lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "Dashboard" }
+  end
+  if lvim.builtin.harpoon.active then
+    lvim.builtin.which_key.mappings["a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add Mark" }
+    lvim.builtin.which_key.mappings["<leader>"] = {
+      "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+      "Harpoon",
+    }
+
+    local whk_status, whk = pcall(require, "which-key")
+    if not whk_status then
+      return
+    end
+    whk.register {
+      ["1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
+      ["2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
+      ["3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
+      ["4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
+    }
   end
   if lvim.builtin.fancy_bufferline.active then
     lvim.builtin.which_key.mappings.b = {

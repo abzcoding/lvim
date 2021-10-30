@@ -1,6 +1,10 @@
 local M = {}
 
 M.config = function()
+  -- Snippets
+  -- =========================================
+  require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/snippets" } }
+
   -- Barbar
   -- =========================================
   if lvim.builtin.fancy_bufferline.active then
@@ -207,6 +211,7 @@ M.config = function()
   -- =========================================
   lvim.builtin.which_key.setup.window.winblend = 10
   lvim.builtin.which_key.setup.window.border = "none"
+  lvim.builtin.which_key.setup.ignore_missing = true
   lvim.builtin.which_key.on_config_done = function(wk)
     local keys = {
       ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },

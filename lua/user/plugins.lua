@@ -349,22 +349,6 @@ M.config = function()
       "b0o/schemastore.nvim",
     },
     {
-      "nathom/filetype.nvim", -- Replace default filetype.vim which is slower
-      config = function()
-        require("filetype").setup {
-          overrides = {
-            literal = {
-              ["kitty.conf"] = "kitty",
-              [".gitignore"] = "conf",
-              [".eslintrc"] = "json",
-              [".stylelintrc"] = "json",
-              [".htmlhintrc"] = "json",
-            },
-          },
-        }
-      end,
-    },
-    {
       "github/copilot.vim",
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
@@ -376,6 +360,14 @@ M.config = function()
       config = function()
         require("dependency_assist").setup()
       end,
+    },
+    {
+      "ThePrimeagen/harpoon",
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-lua/popup.nvim" },
+      },
+      disable = not lvim.builtin.harpoon.active,
     },
   }
 end
