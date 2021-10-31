@@ -81,6 +81,9 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 </details>
 
+<details>
+  <summary><strong>Prerequisites</strong> <small><i>(ðŸ”Ž Click to expand/collapse)</i></small></summary>
+
 ## Prerequisites
 
 - [Neovim](neovim-install) >= v0.6.0
@@ -105,6 +108,8 @@ cargo install ripgrep fd-find
 ```shell
 brew install node
 ```
+
+</details>
 
 ## Install
 
