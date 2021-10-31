@@ -34,7 +34,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
 
 ## Customization
 
-<details open>
+<details>
   <summary>
     <strong>Customization</strong>
     <small><i>(🔎 Click to expand/collapse)</i></small>
@@ -190,10 +190,10 @@ In case you want a better tex support in mac, check
 
 ## Screenshot
 
+<img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
+
 <details>
   <summary><strong>Screenshots</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
-
-<img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
 
 #### BufferLine
 
@@ -430,7 +430,6 @@ Note that,
 | <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>j</kbd> or <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>k</kbd> |  𝐍   | Next/previous LSP diagnostic        |
 | <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        |
 | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       |
-
 
 </details>
 
