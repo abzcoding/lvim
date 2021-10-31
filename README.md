@@ -9,6 +9,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 - I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - i have a auto command to disable syntax,etc when you open files larger than `1MB`
+- if you don't want to use `harpoon`, disable it
+  - `lvim.builtin.harpoon = { active = false }`
 - if you want to try out GitHub copilot, change the following
   - `lvim.builtin.sell_your_soul_to_devil = true`
 - I'm using a custom dashboard, use the default LunarVim one if you like it better
@@ -215,3 +217,4 @@ _Symbols Outline_
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
 - [Copilot](https://github.com/github/copilot.vim)
+- [Harpoon](https://github.com/ThePrimeagen/harpoon)
