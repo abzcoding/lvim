@@ -4,6 +4,8 @@ Do not use as is, use it as a source of inspiration.
 
 I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly 😅
 
+<img width="1903" alt="Screen Shot 2021-10-31 at 2 53 38 PM" src="https://user-images.githubusercontent.com/10992695/139580682-381c0d8f-efef-4bd3-9235-bc3c76c5feda.png">
+
 <details open>
   <summary>
     <strong>Table of Contents</strong>
@@ -31,6 +33,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
 </details>
 
 ## Features
+
+- TBD
 
 ## Customization
 
@@ -195,10 +199,10 @@ In case you want a better tex support in mac, check
 
 ## Screenshot
 
-<img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
-
 <details>
   <summary><strong>Screenshots</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
+
+<img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
 
 #### BufferLine
 
