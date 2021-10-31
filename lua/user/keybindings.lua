@@ -65,10 +65,10 @@ M.config = function()
       return
     end
     whk.register {
-      ["1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
-      ["2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
-      ["3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
-      ["4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
+      ["<leader>1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
+      ["<leader>2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
+      ["<leader>3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
+      ["<leader>4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
     }
   end
   if lvim.builtin.fancy_bufferline.active then
