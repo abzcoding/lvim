@@ -15,8 +15,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 - [Features](#features)
 - [Customization](#features)
 - [Screenshot](#screenshot)
-- [Prerequisites](#prerequisites)
 - [Install](#install)
+- [Prerequisites](#prerequisites)
 - [Language-Server Protocol (LSP)](#language-server-protocol-lsp)
 - [Upgrade](#upgrade)
   - [Recommended Fonts](#recommended-fonts)
@@ -81,10 +81,12 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 </details>
 
+## Install
+
 <details>
   <summary><strong>Prerequisites</strong> <small><i>(ðŸ”Ž Click to expand/collapse)</i></small></summary>
 
-## Prerequisites
+### Prerequisites
 
 - [Neovim](neovim-install) >= v0.6.0
 
@@ -110,8 +112,6 @@ brew install node
 ```
 
 </details>
-
-## Install
 
 ```shell
 # install LunarVim
@@ -338,6 +338,9 @@ _Symbols Outline_
 
 ## Structure
 
+<details>
+  <summary><strong>Structure</strong> <small><i>(ðŸ”Ž Click to expand/collapse)</i></small></summary>
+
 - [ftdetect/](./ftdetect) - Let neovim identify custom filetypes
 - [ftplugin/](./ftplugin) - Language specific custom settings
 - [lsp-settings](./lsp-settings) - Custom lang server settings
@@ -353,6 +356,8 @@ _Symbols Outline_
 - [config.lua](./config.lua) - Main customization point for settings
 - [snippets/](./snippets) - Personal code snippets
 - [vimscript/](./vimscript) - wilder settings
+
+</details>
 
 ## Custom Key-mappings
 
