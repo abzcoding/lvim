@@ -239,12 +239,91 @@ M.config = function()
   if _time.hour >= 21 and _time.hour <= 24 then
     lvim.colorscheme = "onedarker"
   end
+
+  -- override lsp rename handler
+  vim.lsp.handlers["textDocument/rename"] = function(err, result)
+    if err then
+      vim.notify(("Error running lsp query 'rename': " .. err), vim.log.levels.ERROR)
+    end
+    if result and result.changes then
+      local msg = ""
+      for f, c in pairs(result.changes) do
+        local new = c[1].newText
+        msg = msg .. string.format("%d changes -> %s", #c, f:gsub("file://", ""):gsub(vim.fn.getcwd(), ".")) .. "\n"
+        msg = msg:sub(1, #msg - 1)
+        vim.notify(
+          msg,
+          vim.log.levels.INFO,
+          { title = string.format("Rename: %s -> %s", vim.fn.expand "<cword>", new) }
+        )
+      end
+    end
+    vim.lsp.util.apply_workspace_edit(result)
+  end
+
   --   if lvim.builtin.lastplace.active == false then
   --     -- go to last loc when opening a buffer
   --     vim.cmd [[
   --   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
   -- ]]
   --   end
+end
+
+function M.rename(curr, win)
+  local name = vim.trim(vim.fn.getline ".")
+  vim.api.nvim_win_close(win, true)
+  if #name > 0 and name ~= curr then
+    local params = vim.lsp.util.make_position_params()
+    params.newName = name
+    vim.lsp.buf_request(0, "textDocument/rename", params)
+  end
+end
+
+function M.lsp_rename()
+  local name = vim.fn.expand "<cword>"
+  local ok, ts = pcall(require, "nvim-treesitter-playground.hl-info")
+  local tshl = ""
+  if ok and ts then
+    if #ts <= 0 then
+      return
+    end
+    tshl = ts.get_treesitter_hl()
+    local ind = tshl[#tshl]:match "^.*()%*%*.*%*%*"
+    tshl = tshl[#tshl]:sub(ind + 2, -3)
+  end
+
+  local win = require("plenary.popup").create(name, {
+    title = "New Name",
+    style = "minimal",
+    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    relative = "cursor",
+    borderhighlight = "FloatBorder",
+    titlehighlight = "Title",
+    highlight = tshl,
+    focusable = true,
+    width = 25,
+    height = 1,
+    line = "cursor+2",
+    col = "cursor-1",
+  })
+
+  local opts = { noremap = false, silent = true }
+  vim.api.nvim_buf_set_keymap(0, "i", "<Esc>", "<cmd>stopinsert | q!<CR>", opts)
+  vim.api.nvim_buf_set_keymap(0, "n", "<Esc>", "<cmd>stopinsert | q!<CR>", opts)
+  vim.api.nvim_buf_set_keymap(
+    0,
+    "i",
+    "<CR>",
+    "<cmd>stopinsert | lua require('user.builtin').rename(" .. name .. "," .. win .. ")<CR>",
+    opts
+  )
+  vim.api.nvim_buf_set_keymap(
+    0,
+    "n",
+    "<CR>",
+    "<cmd>stopinsert | lua require('user.builtin').rename(" .. name .. "," .. win .. ")<CR>",
+    opts
+  )
 end
 
 return M
