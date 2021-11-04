@@ -310,6 +310,9 @@ function M.lsp_rename()
     line = "cursor+2",
     col = "cursor-1",
   })
+  -- Move cursor to the end of the prefix
+  vim.cmd "stopinsert"
+  vim.cmd "startinsert!"
 
   local opts = { noremap = false, silent = true }
   vim.api.nvim_buf_set_keymap(0, "i", "<Esc>", "<cmd>stopinsert | q!<CR>", opts)
