@@ -379,7 +379,7 @@ Note that,
 
 - **Leader** key set as <kbd>Space</kbd>
 
-<details>
+<details open>
   <summary>
     <strong>Key-mappings</strong>
     <small><i>(🔎 Click to expand/collapse)</i></small>
