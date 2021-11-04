@@ -28,6 +28,16 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
 - [Plugins Included](#plugins-included)
   - [Optional Plugins](#optional-plugins)
 - [Custom Key-mappings](#custom-key-mappings)
+  - [Editor UI](#ui)
+  - [Motions](#motion)
+  - [LSP](#lsp)
+  - [Plugin: Gitsigns](#plugin-gitsigns)
+  - [Plugin: LazyGit](#plugin-lazygit)
+  - [Plugin: Telescope](#plugin-telescope)
+  - [Plugin: Harpoon](#plugin-harpoon)
+  - [Plugin: Neogen](#plugin-neogen)
+  - [Plugin: Persistence](#plugin-persistence)
+  - [Plugin: Bufferline](#plugin-bufferline)
 
 <!-- vim-markdown-toc -->
 </details>
@@ -387,8 +397,38 @@ Note that,
 | <kbd>Space</kbd>+<kbd>h</kbd> |  𝐍   | Remove highlight | <small>`nohlsearch<`</small>   |
 | <kbd>Space</kbd>+<kbd>/</kbd> |  𝐍   | Toggle comment   | <small>Comment.nvim</small>    |
 | <kbd>Space</kbd>+<kbd>?</kbd> |  𝐍   | Open cheats      | <small>cheat.sh</small>        |
+| <kbd>Space</kbd>+<kbd>'</kbd> |  𝐍   | Open marks       | <small>which-key marks</small> |
 | <kbd>Space</kbd>+<kbd>z</kbd> |  𝐍   | Zen mode         | <small>zen-mode.nvim</small>   |
 | <kbd>Space</kbd>+<kbd>P</kbd> |  𝐍   | Projects         | <small>project.nvim</small>    |
+
+### Motion
+
+| Key          | Mode | Action                    | Plugin or Mapping             |
+| ------------ | :--: | ------------------------- | ----------------------------- |
+| <kbd>f</kbd> |  𝐍   | find next chacharacter    | <small>HopChar1LineAC</small> |
+| <kbd>F</kbd> |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
+| <kbd>s</kbd> |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
+| <kbd>F</kbd> |  𝐍   | find word                 | <small>HopWord</small>        |
+
+### LSP
+
+| Key                                                                                      | Mode | Action                              |
+| ---------------------------------------------------------------------------------------- | :--: | ----------------------------------- |
+| <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    |  𝐈   | Navigate completion-menu            |
+| <kbd>Enter</kbd>                                                                         |  𝐈   | Select completion or expand snippet |
+| <kbd>Up</kbd>or <kbd>Down</kbd>                                                          |  𝐈   | Movement in completion pop-up       |
+| <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>j</kbd> or <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>k</kbd> |  𝐍   | Next/previous LSP diagnostic        |
+| <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        |
+| <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       |
+| <kbd>Space</kbd>+<kbd>l</kbd>                                                            |  𝐍   | keybindings for lsp                 |
+| <kbd>g</kbd>+<kbd>a</kbd>                                                                |  𝐍   | code actions                        |
+| <kbd>g</kbd>+<kbd>d</kbd>                                                                |  𝐍   | goto definition                     |
+| <kbd>g</kbd>+<kbd>D</kbd>                                                                |  𝐍   | goto declaration                    |
+| <kbd>g</kbd>+<kbd>I</kbd>                                                                |  𝐍   | goto implementation                 |
+| <kbd>g</kbd>+<kbd>p</kbd>                                                                |  𝐍   | peek implementation                 |
+| <kbd>g</kbd>+<kbd>r</kbd>                                                                |  𝐍   | goto references                     |
+| <kbd>g</kbd>+<kbd>s</kbd>                                                                |  𝐍   | show signature help                 |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>                                                             |  𝐈   | show signature help                 |
 
 ### Plugin: Gitsigns
 
@@ -430,20 +470,44 @@ Note that,
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>p</kbd> |  𝐍   | Project search           |
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins        |
 | **Within _Telescope_ window**              |      |
-| <kbd>Escape</kbd>                          |  𝐈   | Exit telescope           |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd>               |  𝐈   | Exit telescope           |
 | <kbd>Ctrl</kbd>+<kbd>v</kbd>               |  𝐍   | Open in a vertical split |
 | <kbd>Ctrl</kbd>+<kbd>s</kbd>               |  𝐍   | Open in a split          |
 
-### Plugin: LSP
+### Plugin: Harpoon
 
-| Key                                                                                      | Mode | Action                              |
-| ---------------------------------------------------------------------------------------- | :--: | ----------------------------------- |
-| <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    |  𝐈   | Navigate completion-menu            |
-| <kbd>Enter</kbd>                                                                         |  𝐈   | Select completion or expand snippet |
-| <kbd>Up</kbd>or <kbd>Down</kbd>                                                          |  𝐈   | Movement in completion pop-up       |
-| <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>j</kbd> or <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>k</kbd> |  𝐍   | Next/previous LSP diagnostic        |
-| <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        |
-| <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       |
+| Key                               | Mode | Action                           |
+| --------------------------------- | :--: | -------------------------------- |
+| <kbd>Space</kbd>+<kbd>Space</kbd> |  𝐍   | show harpoon shortlist           |
+| <kbd>Space</kbd>+<kbd>a</kbd>     |  𝐍   | add file to shortlist            |
+| <kbd>Space</kbd>+<kbd>1</kbd>     |  𝐍   | jump to first file on shortlist  |
+| <kbd>Space</kbd>+<kbd>2</kbd>     |  𝐍   | jump to second file on shortlist |
+| <kbd>Space</kbd>+<kbd>3</kbd>     |  𝐍   | jump to third file on shortlist  |
+| <kbd>Space</kbd>+<kbd>4</kbd>     |  𝐍   | jump to forforthle on shortlist  |
+
+### Plugin: Neogen
+
+| Key                                        | Mode | Action                    |
+| ------------------------------------------ | :--: | ------------------------- |
+| <kbd>Space</kbd>+<kbd>n</kbd>+<kbd>c</kbd> |  𝐍   | class docdocumentation    |
+| <kbd>Space</kbd>+<kbd>n</kbd>+<kbd>f</kbd> |  𝐍   | function docdocumentation |
+
+### Plugin: Persistence
+
+| Key                                        | Mode | Action                                |
+| ------------------------------------------ | :--: | ------------------------------------- |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>d</kbd> |  𝐍   | quit without saving session           |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>l</kbd> |  𝐍   | restore last session                  |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>s</kbd> |  𝐍   | restore last session from current dir |
+
+### Plugin: Bufferline
+
+| Key                                        | Mode | Action               |
+| ------------------------------------------ | :--: | -------------------- |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>f</kbd> |  𝐍   | find buffer          |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>b</kbd> |  𝐍   | toggle buffer groups |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>p</kbd> |  𝐍   | pick buffer          |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>1</kbd> |  𝐍   | goto buffer 1        |
 
 </details>
 

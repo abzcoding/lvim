@@ -5,5 +5,11 @@
   "rust-analyzer.lens.enable": true,
   "rust-analyzer.inlayHints.enable": true,
   "rust-analyzer.inlayHints.typeHints": true,
-  "rust-analyzer.inlayHints.parameterHints": true
+  "rust-analyzer.inlayHints.parameterHints": true,
+  "rust-analyzer.lens.references": true,
+  "rust-analyzer.lens.implementations": true,
+  "rust-analyzer.lens.enumVariantReferences": true,
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.cargo.autoreload": true,
+  "rust-analyzer.hoverActions.enable": true
 }
