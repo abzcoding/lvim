@@ -241,24 +241,28 @@ M.config = function()
   end
 
   -- override lsp rename handler
-  vim.lsp.handlers["textDocument/rename"] = function(err, result)
-    if err then
-      vim.notify(("Error running lsp query 'rename': " .. err), vim.log.levels.ERROR)
-    end
-    if result and result.changes then
-      local msg = ""
-      for f, c in pairs(result.changes) do
-        local new = c[1].newText
-        msg = msg .. string.format("%d changes -> %s", #c, f:gsub("file://", ""):gsub(vim.fn.getcwd(), ".")) .. "\n"
-        msg = msg:sub(1, #msg - 1)
-        vim.notify(
-          msg,
-          vim.log.levels.INFO,
-          { title = string.format("Rename: %s -> %s", vim.fn.expand "<cword>", new) }
-        )
+  -- NOTE: only override in the newer neovim versions
+  local ok, _ = pcall(require, "vim.diagnostic")
+  if ok then
+    vim.lsp.handlers["textDocument/rename"] = function(err, result)
+      if err then
+        vim.notify(("Error running lsp query 'rename': " .. err), vim.log.levels.ERROR)
       end
+      if result and result.changes then
+        local msg = ""
+        for f, c in pairs(result.changes) do
+          local new = c[1].newText
+          msg = msg .. string.format("%d changes -> %s", #c, f:gsub("file://", ""):gsub(vim.fn.getcwd(), ".")) .. "\n"
+          msg = msg:sub(1, #msg - 1)
+          vim.notify(
+            msg,
+            vim.log.levels.INFO,
+            { title = string.format("Rename: %s -> %s", vim.fn.expand "<cword>", new) }
+          )
+        end
+      end
+      vim.lsp.util.apply_workspace_edit(result)
     end
-    vim.lsp.util.apply_workspace_edit(result)
   end
 
   --   if lvim.builtin.lastplace.active == false then
