@@ -241,9 +241,7 @@ M.config = function()
   end
 
   -- override lsp rename handler
-  -- NOTE: only override in the newer neovim versions
-  local ok, _ = pcall(require, "vim.diagnostic")
-  if ok then
+  if lvim.builtin.fancy_rename then
     vim.lsp.handlers["textDocument/rename"] = function(err, result)
       if err then
         vim.notify(("Error running lsp query 'rename': " .. err), vim.log.levels.ERROR)

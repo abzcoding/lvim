@@ -128,6 +128,8 @@ M.config = function()
       "<cmd>lua vim.diagnostic.goto_prev({float = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
       "Prev Diagnostic",
     }
+  end
+  if lvim.builtin.fancy_rename then
     lvim.builtin.which_key.mappings["l"]["r"] = { "<cmd>lua require('user.builtin').lsp_rename()<cr>", "Rename" }
   end
   lvim.builtin.which_key.mappings["l"]["f"] = {
