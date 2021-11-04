@@ -69,6 +69,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - `lvim.builtin.fancy_bufferline = { active = false }`
 - You can use the fancy wild menu if you want, make sure to do a `:UpdateRemotePlugins`
   - `lvim.builtin.fancy_wild_menu = { active = true }`
+- You can use the `diffview` plugin instead of normal `gitsigns diff`
+  - `lvim.builtin.fancy_diff = { active = true }`
 - if you want to use debugging, change the following line to true:
   - `lvim.builtin.dap.active = true`
 - sometimes instead of saving you jump trough jumplist ðŸ˜¢ just disable nvim-lastplace

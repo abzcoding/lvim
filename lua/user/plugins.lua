@@ -369,6 +369,25 @@ M.config = function()
       },
       disable = not lvim.builtin.harpoon.active,
     },
+    {
+      "sindrets/diffview.nvim",
+      cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+      module = "diffview",
+      keys = "<leader>gd",
+      setup = function()
+        require("which-key").register { ["<leader>gd"] = "diffview: diff HEAD" }
+      end,
+      config = function()
+        require("diffview").setup {
+          enhanced_diff_hl = true,
+          key_bindings = {
+            file_panel = { q = "<Cmd>DiffviewClose<CR>" },
+            view = { q = "<Cmd>DiffviewClose<CR>" },
+          },
+        }
+      end,
+      disable = not lvim.builtin.fancy_diff.active,
+    },
   }
 end
 
