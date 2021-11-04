@@ -261,6 +261,10 @@ _peek using `gp`_
 
 <img width="643" alt="Screen Shot 2021-10-18 at 6 33 06 PM" src="https://user-images.githubusercontent.com/10992695/137757505-d742558a-56c7-4c1d-b037-14bfab200901.png">
 
+__rename__
+<img width="470" alt="Screen Shot 2021-11-04 at 3 54 15 PM" src="https://user-images.githubusercontent.com/10992695/140312997-77a30d8e-3c1a-413a-920e-971474c6f92e.png">
+
+
 #### Builtin Terminal
 
 <img width="1913" alt="Screen Shot 2021-10-18 at 6 07 13 PM" src="https://user-images.githubusercontent.com/10992695/137752572-87a5792f-87a3-4131-8a1b-4ba786b83086.png">
