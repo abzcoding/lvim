@@ -252,6 +252,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
+      opt = true,
       before = "williamboman/nvim-lsp-installer",
     },
     {
@@ -271,13 +272,9 @@ M.config = function()
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
       wants = "vim-test",
       requires = { "vim-test/vim-test" },
-      run = function()
-        vim.cmd [[packadd vim-ultest]]
-        vim.cmd [[UpdateRemotePlugins]]
-      end,
-      config = function()
-        vim.cmd [[UpdateRemotePlugins]]
-      end,
+      run = ":UpdateRemotePlugins",
+      opt = true,
+      event = { "BufEnter *_test.*,*_spec.*" },
       disable = not lvim.builtin.test_runner.active,
     },
     {
@@ -296,6 +293,7 @@ M.config = function()
       end,
       opt = true,
       cmd = { "Cheat", "CheatWithoutComments", "CheatList", "CheatListWithoutComments" },
+      keys = "<leader>?",
       disable = not lvim.builtin.cheat.active,
     },
     {
