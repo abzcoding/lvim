@@ -267,7 +267,6 @@ _rename using `<leader>lr`_
 
 <img width="470" alt="Screen Shot 2021-11-04 at 3 54 15 PM" src="https://user-images.githubusercontent.com/10992695/140312997-77a30d8e-3c1a-413a-920e-971474c6f92e.png">
 
-
 #### Builtin Terminal
 
 <img width="1913" alt="Screen Shot 2021-10-18 at 6 07 13 PM" src="https://user-images.githubusercontent.com/10992695/137752572-87a5792f-87a3-4131-8a1b-4ba786b83086.png">
@@ -410,12 +409,13 @@ Note that,
 
 ### Motion
 
-| Key          | Mode | Action                    | Plugin or Mapping             |
-| ------------ | :--: | ------------------------- | ----------------------------- |
-| <kbd>f</kbd> |  𝐍   | find next chacharacter    | <small>HopChar1LineAC</small> |
-| <kbd>F</kbd> |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
-| <kbd>s</kbd> |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
-| <kbd>F</kbd> |  𝐍   | find word                 | <small>HopWord</small>        |
+| Key                          | Mode | Action                    | Plugin or Mapping             |
+| ---------------------------- | :--: | ------------------------- | ----------------------------- |
+| <kbd>f</kbd>                 |  𝐍   | find next chacharacter    | <small>HopChar1LineAC</small> |
+| <kbd>F</kbd>                 |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
+| <kbd>s</kbd>                 |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
+| <kbd>F</kbd>                 |  𝐍   | find word                 | <small>HopWord</small>        |
+| <kbd>Ctrl</kbd>+<kbd>a</kbd> |  𝐍   | select all                | <small>ggVG</small>           |
 
 ### LSP
 

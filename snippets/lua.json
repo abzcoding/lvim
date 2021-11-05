@@ -1,8 +1,4 @@
 {
-  "it": {
-    "prefix": "it",
-    "body": ["it('should ${1:do something}', function()", "\t${2}", "end)"]
-  },
   "describe": {
     "prefix": "describe",
     "body": ["describe('${1:Title}', function()", "\t${2}", "end)"]
@@ -17,7 +13,7 @@
   },
   "apifun": {
     "prefix": "api.",
-    "body": ["api.nvim_${1:buf}_${2:get}_${3:name}"]
+    "body": ["vim.api.nvim_${1:buf}_${2:get}_${3:name}"]
   },
   "fn": {
     "prefix": "lfn",
