@@ -267,7 +267,13 @@ M.config = function()
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
       wants = "vim-test",
       requires = { "vim-test/vim-test" },
-      run = ":UpdateRemotePlugins",
+      run = function()
+        vim.cmd [[packadd vim-ultest]]
+        vim.cmd [[UpdateRemotePlugins]]
+      end,
+      config = function()
+        vim.cmd [[UpdateRemotePlugins]]
+      end,
       disable = not lvim.builtin.test_runner.active,
     },
     {
@@ -371,6 +377,7 @@ M.config = function()
     },
     {
       "sindrets/diffview.nvim",
+      opt = true,
       cmd = { "DiffviewOpen", "DiffviewFileHistory" },
       module = "diffview",
       keys = "<leader>gd",
@@ -387,6 +394,22 @@ M.config = function()
         }
       end,
       disable = not lvim.builtin.fancy_diff.active,
+    },
+    {
+      "chipsenkbeil/distant.nvim",
+      opt = true,
+      run = { "DistantInstall" },
+      cmd = { "DistantLaunch", "DistantRun" },
+      config = function()
+        require("distant").setup {
+          ["*"] = vim.tbl_extend(
+            "force",
+            require("distant.settings").chip_default(),
+            { mode = "ssh" } -- use SSH mode by default
+          ),
+        }
+      end,
+      disable = not lvim.builtin.remote_dev.active,
     },
   }
 end
