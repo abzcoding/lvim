@@ -416,6 +416,19 @@ M.config = function()
       end,
       disable = not lvim.builtin.remote_dev.active,
     },
+    {
+      "nathom/filetype.nvim",
+      config = function()
+        require("filetype").setup {
+          overrides = {
+            literal = {
+              ["kitty.conf"] = "kitty",
+              [".gitignore"] = "conf",
+            },
+          },
+        }
+      end,
+    },
   }
 end
 
