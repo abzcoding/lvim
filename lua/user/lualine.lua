@@ -325,7 +325,29 @@ M.config = function()
   ins_left {
     function()
       vim.api.nvim_command("hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg)
-      return get_file_icon()
+      local winnr = vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
+      local win = " "
+      if winnr == 2 then
+        win = " "
+      elseif winnr == 3 then
+        win = " "
+      elseif winnr == 4 then
+        win = " "
+      elseif winnr == 5 then
+        win = " "
+      elseif winnr == 6 then
+        win = " "
+      elseif winnr == 7 then
+        win = " "
+      elseif winnr == 8 then
+        win = " "
+      elseif winnr == 9 then
+        win = " "
+      elseif winnr > 9 then
+        win = " "
+      end
+      return win .. " " .. get_file_icon()
+      -- return get_file_icon()
     end,
     padding = { left = 2, right = 0 },
     cond = conditions.buffer_not_empty,
@@ -333,7 +355,10 @@ M.config = function()
     gui = "bold",
   }
   ins_left {
-    "filename",
+    function()
+      local fname = vim.fn.expand "%:t"
+      return fname .. "%{&readonly?'  ':''}" .. "%{&modified?'  ':''}"
+    end,
     cond = conditions.buffer_not_empty,
     padding = { left = 1, right = 1 },
     color = { fg = colors.fg, gui = "bold" },
