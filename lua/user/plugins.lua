@@ -80,7 +80,6 @@ M.config = function()
     },
     {
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("trouble").setup()
       end,
@@ -426,6 +425,10 @@ M.config = function()
           },
         }
       end,
+    },
+    {
+      "Nguyen-Hoang-Nam/nvim-mini-file-icons",
+      disable = lvim.builtin.nvim_web_devicons == nil,
     },
   }
 end
