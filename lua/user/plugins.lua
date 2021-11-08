@@ -221,9 +221,10 @@ M.config = function()
       config = function()
         require("neogen").setup {
           enabled = true,
+          jump_map = "<Tab>",
         }
       end,
-      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go" },
+      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },
       event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
     },

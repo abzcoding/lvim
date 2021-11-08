@@ -24,7 +24,7 @@ M.config = function()
     { name = "emoji" },
     { name = "treesitter" },
     { name = "crates" },
-    { name = "orgmode"}
+    { name = "orgmode" },
   }
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.cmp.experimental = {
@@ -46,11 +46,34 @@ M.config = function()
     cmp_tabnine = "ﮧ",
     ["vim-dadbod-completion"] = "𝓐",
   }
+  local cmp_methods = require("lvim.core.cmp").methods
+  local cmp = require "cmp"
+  local luasnip = require "luasnip"
+  local neogen = require "neogen"
+  lvim.builtin.cmp.mapping["<Tab>"] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_next_item()
+    elseif neogen.jumpable() then
+      cmp_methods.feedkeys("<cmd>lua require('neogen').jump_next()<CR>", "")
+    elseif luasnip.expandable() then
+      luasnip.expand()
+    elseif cmp_methods.jumpable() then
+      luasnip.jump(1)
+    elseif cmp_methods.check_backspace() then
+      fallback()
+    elseif cmp_methods.is_emmet_active() then
+      return vim.fn["cmp#complete"]()
+    else
+      fallback()
+    end
+  end, {
+    "i",
+    "s",
+  })
   if lvim.builtin.sell_your_soul_to_devil then
     vim.g.copilot_no_tab_map = true
     vim.g.copilot_assume_mapped = true
     vim.g.copilot_tab_fallback = ""
-    local cmp = require "cmp"
     lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
       cmp.mapping.abort()
       local copilot_keys = vim.fn["copilot#Accept"]()
