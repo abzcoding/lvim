@@ -6,7 +6,6 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 <img width="1911" alt="Screen Shot 2021-11-08 at 2 19 27 PM" src="https://user-images.githubusercontent.com/10992695/140749733-13085cb2-90fd-4d09-8974-3226795864f8.png">
 
-
 <details open>
   <summary>
     <strong>Table of Contents</strong>
@@ -16,6 +15,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 <!-- vim-markdown-toc GFM -->
 
 - [Features](#features)
+- [Theme](#theme)
 - [Customization](#features)
 - [Screenshot](#screenshot)
 - [Install](#install)
@@ -43,7 +43,19 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 <!-- vim-markdown-toc -->
 </details>
 
-## Features
+## Theme
+
+Themes are automatically changed based on time of the day:
+
+| Theme       |     Time of the day     |
+| ----------- | :---------------------: |
+| zephyr      |       [5am, 8am)        |
+| catppuccino |       [8am, 11am)       |
+| tokyonight  | [0am, 5am), [11am, 5pm] |
+| doom-one    |       [5pm, 9pm)        |
+| onedarker   |     [9pm, 11:59pm]      |
+
+You can change this in [theme.lua](./lua/user/theme.lua)
 
 - TBD
 

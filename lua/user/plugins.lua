@@ -13,20 +13,14 @@ M.config = function()
        colorscheme zephyr
        ]]
       end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 5 and _time.hour < 8)
-      end,
+      cond = lvim.builtin.themes.zephyr.condition(),
     },
     {
       "Pocco81/Catppuccino.nvim",
       config = function()
         require("user.theme").catppuccino()
       end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 8 and _time.hour < 11)
-      end,
+      cond = lvim.builtin.themes.catppuccino.condition(),
     },
     {
       "folke/tokyonight.nvim",
@@ -36,10 +30,7 @@ M.config = function()
       colorscheme tokyonight
       ]]
       end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17)
-      end,
+      cond = lvim.builtin.themes.tokyonight.condition(),
     },
     {
       "abzcoding/doom-one.nvim",
@@ -50,10 +41,7 @@ M.config = function()
       colorscheme doom-one
       ]]
       end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 17 and _time.hour < 21)
-      end,
+      cond = lvim.builtin.themes.doom_one.condition(),
     },
     {
       "ray-x/lsp_signature.nvim",
@@ -221,7 +209,7 @@ M.config = function()
       config = function()
         require("neogen").setup {
           enabled = true,
-          jump_map = "<Tab>",
+          jump_map = "<C-,>",
         }
       end,
       ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },

@@ -1,5 +1,46 @@
 local M = {}
 
+M.selector = function()
+  local _time = os.date "*t"
+  lvim.builtin.themes = {
+    zephyr = {
+      condition = function()
+        return (_time.hour >= 5 and _time.hour < 8)
+      end,
+      colors = M.colors.zephyr_colors,
+    },
+    catppuccino = {
+      condition = function()
+        return (_time.hour >= 8 and _time.hour < 11)
+      end,
+      colors = M.colors.catppuccino_colors,
+    },
+    tokyonight = {
+      condition = function()
+        return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17)
+      end,
+      colors = M.colors.tokyonight_colors,
+    },
+    doom_one = {
+      condition = function()
+        return (_time.hour >= 17 and _time.hour < 21)
+      end,
+      colors = M.colors.doom_one_colors,
+    },
+    onedarker = {
+      condition = function()
+        return (_time.hour >= 21 and _time.hour < 24)
+      end,
+      colors = M.colors.onedarker_colors,
+    },
+  }
+
+  -- NOTE: this is an expection, since we don't need an external plugin for it
+  if lvim.builtin.themes.onedarker.condition() then
+    lvim.colorscheme = "onedarker"
+  end
+end
+
 M.tokyonight = function()
   vim.g.tokyonight_dev = true
   vim.g.tokyonight_style = "storm"
