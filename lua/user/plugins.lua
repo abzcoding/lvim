@@ -349,7 +349,9 @@ M.config = function()
     {
       "karb94/neoscroll.nvim",
       config = function()
-        require("neoscroll").setup()
+        require("neoscroll").setup {
+          easing_function = "quadratic",
+        }
       end,
       event = "BufRead",
       disable = not lvim.builtin.neoscroll.active,
@@ -430,6 +432,9 @@ M.config = function()
     {
       "Nguyen-Hoang-Nam/nvim-mini-file-icons",
       disable = lvim.builtin.nvim_web_devicons == nil,
+    },
+    {
+      "nvim-telescope/telescope-live-grep-raw.nvim",
     },
   }
 end

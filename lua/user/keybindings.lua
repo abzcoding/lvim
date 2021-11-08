@@ -168,7 +168,10 @@ M.config = function()
   }
 
   lvim.builtin.which_key.mappings["se"] = { "<cmd>lua require('user.telescope').file_browser()<cr>", "File Browser" }
-  lvim.builtin.which_key.mappings["ss"] = { "<cmd>lua require('user.telescope').find_string()<cr>", "String" }
+  lvim.builtin.which_key.mappings["ss"] = {
+    "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>",
+    "String",
+  }
   lvim.builtin.which_key.mappings["r"] = "Run"
   lvim.builtin.which_key.mappings["T"] = {
     name = "Test",
