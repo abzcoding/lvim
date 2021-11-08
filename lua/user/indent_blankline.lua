@@ -42,7 +42,9 @@ M.config = function()
     show_first_indent_level = false,
     space_char_blankline = " ",
     use_treesitter = true,
+    show_foldtext = false,
     show_current_context = true,
+    show_current_context_start = false,
     context_patterns = {
       "class",
       "return",

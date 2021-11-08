@@ -20,6 +20,12 @@ M.setup = function()
         target = "~/shared/orgs/work.org",
       },
     },
+    mappings = {
+      global = {
+        org_agenda = "go",
+        org_capture = "gc",
+      },
+    },
   }
 end
 
