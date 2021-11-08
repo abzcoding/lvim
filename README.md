@@ -4,7 +4,8 @@ Do not use as is, use it as a source of inspiration.
 
 I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly 😅
 
-<img width="1903" alt="Screen Shot 2021-10-31 at 2 53 38 PM" src="https://user-images.githubusercontent.com/10992695/139580682-381c0d8f-efef-4bd3-9235-bc3c76c5feda.png">
+<img width="1911" alt="Screen Shot 2021-11-08 at 2 19 27 PM" src="https://user-images.githubusercontent.com/10992695/140749733-13085cb2-90fd-4d09-8974-3226795864f8.png">
+
 
 <details open>
   <summary>
