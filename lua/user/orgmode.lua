@@ -23,7 +23,7 @@ M.setup = function()
     mappings = {
       global = {
         org_agenda = "go",
-        org_capture = "gc",
+        org_capture = "gC",
       },
     },
   }

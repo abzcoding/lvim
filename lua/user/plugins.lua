@@ -209,7 +209,7 @@ M.config = function()
     { "mfussenegger/nvim-jdtls", ft = "java" },
     {
       "kristijanhusak/orgmode.nvim",
-      keys = { "go", "gc" },
+      keys = { "go", "gC" },
       ft = { "org" },
       config = function()
         require("user.orgmode").setup()
