@@ -47,17 +47,15 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 Themes are automatically changed based on time of the day:
 
-| Theme       |     Time of the day     |
-| ----------- | :---------------------: |
-| zephyr      |       [5am, 8am)        |
-| catppuccino |       [8am, 11am)       |
-| tokyonight  | [0am, 5am), [11am, 5pm] |
-| doom-one    |       [5pm, 9pm)        |
-| onedarker   |     [9pm, 11:59pm]      |
+| Theme                                                                              |     Time of the day     |
+| ---------------------------------------------------------------------------------- | :---------------------: |
+| [zephyr](https://github.com/abzcoding/zephyr-nvim)                                 |       [5am, 8am)        |
+| [catppuccino](https://github.com/Pocco81/Catppuccino.nvim)                         |       [8am, 11am)       |
+| [tokyonight](https://github.com/folke/tokyonight)                                  | [0am, 5am), [11am, 5pm] |
+| [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |       [5pm, 9pm)        |
+| onedarker                                                                          |     [9pm, 11:59pm]      |
 
 You can change this in [theme.lua](./lua/user/theme.lua)
-
-- TBD
 
 ## Customization
 
