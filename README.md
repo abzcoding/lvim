@@ -427,7 +427,9 @@ Note that,
 | <kbd>F</kbd>                 |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
 | <kbd>s</kbd>                 |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
 | <kbd>F</kbd>                 |  𝐍   | find word                 | <small>HopWord</small>        |
-| <kbd>Ctrl</kbd>+<kbd>a</kbd> |  𝐍   | select all                | <small>ggVG</small>           |
+| <kbd>Alt</kbd>+<kbd>a</kbd>  |  𝐈   | select all                | <small>ggVG</small>           |
+| <kbd>Alt</kbd>+<kbd>a</kbd>  |  𝐍   | increment number          | <small>C-A</small>            |
+| <kbd>Alt</kbd>+<kbd>x</kbd>  |  𝐍   | decrement number          | <small>C-X</small>            |
 
 ### LSP
 

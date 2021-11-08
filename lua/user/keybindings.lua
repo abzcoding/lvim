@@ -21,7 +21,9 @@ end
 M.config = function()
   -- Additional keybindings
   -- =========================================
-  lvim.keys.normal_mode["<C-a>"] = "<ESC>ggVG<CR>"
+  lvim.keys.normal_mode["<A-a>"] = "<C-a>"
+  lvim.keys.normal_mode["<A-x>"] = "<C-x>"
+  lvim.keys.insert_mode["<A-a>"] = "<ESC>ggVG<CR>"
   lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
   lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
   lvim.keys.insert_mode["<C-l>"] = "<C-o>$<cmd>silent! LuaSnipUnlinkCurrent<CR>"
