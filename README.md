@@ -365,6 +365,7 @@ _Symbols Outline_
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
 - [Copilot](https://github.com/github/copilot.vim)
 - [Harpoon](https://github.com/ThePrimeagen/harpoon)
+- [renamer](https://github.com/filipdutescu/renamer.nvim)
 
 </details>
 

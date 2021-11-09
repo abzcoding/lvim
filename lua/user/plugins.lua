@@ -425,6 +425,15 @@ M.config = function()
     {
       "nvim-telescope/telescope-live-grep-raw.nvim",
     },
+    {
+      "filipdutescu/renamer.nvim",
+      config = function()
+        require("renamer").setup {
+          title = "Rename",
+        }
+      end,
+      disable = not lvim.builtin.fancy_rename.active,
+    },
   }
 end
 
