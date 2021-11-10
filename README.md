@@ -370,6 +370,7 @@ _Symbols Outline_
 - [Floatline](https://github.com/windwp/floatline.nvim)
 - [Stabilize](https://github.com/luukvbaal/stabilize.nvim)
 - [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)
+- [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 
 </details>
 

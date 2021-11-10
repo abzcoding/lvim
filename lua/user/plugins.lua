@@ -455,6 +455,12 @@ M.config = function()
       disable = not lvim.builtin.global_status_line.active,
     },
     { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
+    {
+      "yamatsum/nvim-cursorline",
+      opt = true,
+      event = "BufWinEnter",
+      disable = not lvim.builtin.curorline.active,
+    },
   }
 end
 
