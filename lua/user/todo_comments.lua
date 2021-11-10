@@ -14,7 +14,6 @@ M.config = function()
       WARN = { icon = "裂" },
       PERF = { icon = "龍" },
       NOTE = { icon = " ", alt = { "INFO", "NB" } },
-      LINK = { icon = " ", color = "ref", alt = { "LINKS", "REF", "REFS" } },
       ERROR = { icon = " ", color = "error", alt = { "ERR" } },
       REFS = { icon = "" },
     },

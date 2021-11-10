@@ -454,6 +454,7 @@ M.config = function()
       end,
       disable = not lvim.builtin.global_status_line.active,
     },
+    { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
   }
 end
 

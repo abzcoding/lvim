@@ -369,6 +369,7 @@ _Symbols Outline_
 - [Renamer](https://github.com/filipdutescu/renamer.nvim)
 - [Floatline](https://github.com/windwp/floatline.nvim)
 - [Stabilize](https://github.com/luukvbaal/stabilize.nvim)
+- [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)
 
 </details>
 
