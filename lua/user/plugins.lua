@@ -69,7 +69,13 @@ M.config = function()
     {
       "folke/trouble.nvim",
       config = function()
-        require("trouble").setup()
+        require("trouble").setup {
+          auto_open = true,
+          auto_close = true,
+          padding = false,
+          height = 10,
+          use_lsp_diagnostic_signs = true,
+        }
       end,
       cmd = "Trouble",
     },
@@ -433,6 +439,20 @@ M.config = function()
         }
       end,
       disable = not lvim.builtin.fancy_rename.active,
+    },
+    {
+      "windwp/floatline.nvim",
+      config = function()
+        require("floatline").setup()
+      end,
+      disable = not lvim.builtin.global_status_line.active,
+    },
+    {
+      "luukvbaal/stabilize.nvim",
+      config = function()
+        require("stabilize").setup { forcemark = "f", nested = "QuickFixCmdPost,User LspDiagnosticsChanged" }
+      end,
+      disable = not lvim.builtin.global_status_line.active,
     },
   }
 end

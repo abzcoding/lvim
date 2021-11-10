@@ -39,6 +39,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
   - [Plugin: Neogen](#plugin-neogen)
   - [Plugin: Persistence](#plugin-persistence)
   - [Plugin: Bufferline](#plugin-bufferline)
+  - [Plugin: Trouble](#plugin-trouble)
 
 <!-- vim-markdown-toc -->
 </details>
@@ -365,7 +366,9 @@ _Symbols Outline_
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
 - [Copilot](https://github.com/github/copilot.vim)
 - [Harpoon](https://github.com/ThePrimeagen/harpoon)
-- [renamer](https://github.com/filipdutescu/renamer.nvim)
+- [Renamer](https://github.com/filipdutescu/renamer.nvim)
+- [Floatline](https://github.com/windwp/floatline.nvim)
+- [Stabilize](https://github.com/luukvbaal/stabilize.nvim)
 
 </details>
 
@@ -422,15 +425,15 @@ Note that,
 
 ### Motion
 
-| Key                          | Mode | Action                    | Plugin or Mapping             |
-| ---------------------------- | :--: | ------------------------- | ----------------------------- |
-| <kbd>f</kbd>                 |  𝐍   | find next chacharacter    | <small>HopChar1LineAC</small> |
-| <kbd>F</kbd>                 |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
-| <kbd>s</kbd>                 |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
-| <kbd>F</kbd>                 |  𝐍   | find word                 | <small>HopWord</small>        |
-| <kbd>Alt</kbd>+<kbd>a</kbd>  |  𝐈   | select all                | <small>ggVG</small>           |
-| <kbd>Alt</kbd>+<kbd>a</kbd>  |  𝐍   | increment number          | <small>C-A</small>            |
-| <kbd>Alt</kbd>+<kbd>x</kbd>  |  𝐍   | decrement number          | <small>C-X</small>            |
+| Key                         | Mode | Action                    | Plugin or Mapping             |
+| --------------------------- | :--: | ------------------------- | ----------------------------- |
+| <kbd>f</kbd>                |  𝐍   | find next chacharacter    | <small>HopChar1LineAC</small> |
+| <kbd>F</kbd>                |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
+| <kbd>s</kbd>                |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
+| <kbd>F</kbd>                |  𝐍   | find word                 | <small>HopWord</small>        |
+| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐈   | select all                | <small>ggVG</small>           |
+| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐍   | increment number          | <small>C-A</small>            |
+| <kbd>Alt</kbd>+<kbd>x</kbd> |  𝐍   | decrement number          | <small>C-X</small>            |
 
 ### LSP
 
@@ -531,6 +534,16 @@ Note that,
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>b</kbd> |  𝐍   | toggle buffer groups |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>p</kbd> |  𝐍   | pick buffer          |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>1</kbd> |  𝐍   | goto buffer 1        |
+
+### Plugin: Trouble
+
+| Key                                        | Mode | Action                |
+| ------------------------------------------ | :--: | --------------------- |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>d</kbd> |  𝐍   | diagnostics           |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | definitions           |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>r</kbd> |  𝐍   | references            |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>t</kbd> |  𝐍   | todo                  |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>w</kbd> |  𝐍   | workspace diagnostics |
 
 </details>
 
