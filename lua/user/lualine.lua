@@ -161,6 +161,7 @@ M.config = function()
   for _, colorscheme in ipairs(lvim.builtin.themes) do
     if colorscheme.condition() then
       colors = colorscheme.colors
+      break
     end
   end
   -- Color table for highlights
