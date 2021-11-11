@@ -72,12 +72,6 @@ local custom_servers = { "dockerls", "sumneko_lua", "texlab", "tsserver", "jsonl
 vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
 vim.list_extend(lvim.lsp.override, custom_servers)
 require("user.null_ls").config()
-for _, server_name in ipairs(custom_servers) do
-  local status_ok, custom_config = pcall(require, "user/providers/" .. server_name)
-  if status_ok then
-    require("lvim.lsp.manager").setup(server_name, custom_config)
-  end
-end
 
 -- Additional Plugins
 -- =========================================
