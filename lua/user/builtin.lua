@@ -343,10 +343,14 @@ function M.tab(fallback)
   elseif copilot_keys ~= "" then -- prioritise copilot over snippets
     -- Copilot keys do not need to be wrapped in termcodes
     vim.api.nvim_feedkeys(copilot_keys, "i", true)
-  elseif luasnip and luasnip.expand_or_locally_jumpable() then
-    luasnip.expand_or_jump()
+  elseif luasnip.expandable() then
+    luasnip.expand()
+  elseif methods.jumpable() then
+    luasnip.jump(1)
+  elseif methods.check_backspace() then
+    fallback()
   else
-    methods.feedkeys "<Plug>(Tabout)"
+    methods.feedkeys("<Plug>(Tabout)", "")
   end
 end
 
@@ -356,16 +360,16 @@ function M.shift_tab(fallback)
   local cmp = require "cmp"
   if cmp.visible() then
     cmp.select_prev_item()
-  elseif luasnip and luasnip.jumpable(-1) then
-    luasnip.jump(-1)
   elseif vim.api.nvim_get_mode().mode == "c" then
     fallback()
+  elseif methods.jumpable(-1) then
+    luasnip.jump(-1)
   else
     local copilot_keys = vim.fn["copilot#Accept"]()
     if copilot_keys ~= "" then
       methods.feedkeys(copilot_keys, "i")
     else
-      methods.feedkeys "<Plug>(Tabout)"
+      methods.feedkeys("<Plug>(Tabout)", "")
     end
   end
 end

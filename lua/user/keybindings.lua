@@ -26,6 +26,10 @@ M.config = function()
   lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
   lvim.keys.insert_mode["<C-l>"] = "<C-o>$<cmd>silent! LuaSnipUnlinkCurrent<CR>"
   lvim.keys.insert_mode["<C-j>"] = "<C-o>o<cmd>silent! LuaSnipUnlinkCurrent<CR>"
+  lvim.keys.normal_mode["]d"] =
+    "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>"
+  lvim.keys.normal_mode["[d"] =
+    "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>"
   lvim.keys.normal_mode["<A-a>"] = "<C-a>"
   lvim.keys.normal_mode["<A-x>"] = "<C-x>"
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }

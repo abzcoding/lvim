@@ -362,6 +362,7 @@ M.config = function()
         vim.g.copilot_tab_fallback = ""
         vim.g.copilot_filetypes = {
           ["*"] = true,
+          markdown = false,
           dart = false,
           gitcommit = false,
           NeogitCommitMessage = false,
@@ -477,10 +478,7 @@ M.config = function()
       wants = { "nvim-treesitter" },
       after = { "nvim-cmp" },
       config = function()
-        require("tabout").setup {
-          completion = false,
-          ignore_beginning = false,
-        }
+        require("user.tabout").config()
       end,
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
