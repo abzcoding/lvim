@@ -37,6 +37,7 @@ lvim.builtin.curorline = { active = false } -- use a bit fancier cursorline
 local user = os.getenv "USER"
 if user and user == "abz" then
   lvim.builtin.nvim_web_devicons = { active = false }
+  lvim.builtin.sell_your_soul_to_devil = true
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {

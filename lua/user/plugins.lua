@@ -356,6 +356,17 @@ M.config = function()
     },
     {
       "github/copilot.vim",
+      config = function()
+        vim.g.copilot_no_tab_map = true
+        vim.g.copilot_assume_mapped = true
+        vim.g.copilot_tab_fallback = ""
+        vim.g.copilot_filetypes = {
+          ["*"] = true,
+          dart = false,
+          gitcommit = false,
+          NeogitCommitMessage = false,
+        }
+      end,
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
     {
@@ -460,6 +471,18 @@ M.config = function()
       opt = true,
       event = "BufWinEnter",
       disable = not lvim.builtin.curorline.active,
+    },
+    {
+      "abecodes/tabout.nvim",
+      wants = { "nvim-treesitter" },
+      after = { "nvim-cmp" },
+      config = function()
+        require("tabout").setup {
+          completion = false,
+          ignore_beginning = false,
+        }
+      end,
+      disable = not lvim.builtin.sell_your_soul_to_devil,
     },
   }
 end
