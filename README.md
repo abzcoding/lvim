@@ -379,12 +379,17 @@ _Symbols Outline_
 <details>
   <summary><strong>Structure</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
 
+- [after/](./after) - Stuff that happens after
+  - [ftplugin/](./after/ftplugin) - Language specific settings
+  - [syntax/](./after/syntax) - Custom syntax for languages
 - [ftdetect/](./ftdetect) - Let neovim identify custom filetypes
 - [ftplugin/](./ftplugin) - Language specific custom settings
 - [lsp-settings](./lsp-settings) - Custom lang server settings
 - [lua/](./lua) - Lua plugin configurations
+  - [lvim/](./lua/lvim) - Custom provider settings
+    - [providers/](./lua/lvim/lsp/providers) - Custom installation and configuration of language servers
+  - [telescope/](./lua/telescope/_extensions) - Telescope extensions
   - [user/](./lua/user) - User specific settings
-    - [providers/](./lua/user/providers) - Custom installation and configuration of language servers
     - [autocommands.lua](./lua/user/autocommands.lua) - user defined autocommands
     - [builtin.lua](./lua/user/builtin.lua) - change internal lunarvim settings
     - [keybindings.lua](./lua/user/keybindings.lua) - user defined keybindings
