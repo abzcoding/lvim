@@ -90,7 +90,7 @@ M.config = function()
       button("s", "   Ripgrep", ":Telescope live_grep<CR>"),
       button("r", "   Recents", ":Telescope oldfiles<CR>"),
       button("b", "   Buffers", ":Telescope buffers<CR>"),
-      button("o", "   Options", ":e ~/.config/lvim/config.lua | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+      button("o", "   Options", ":e ~/.config/lvim/config.lua<CR>"),
     },
     opts = {
       spacing = 1,

@@ -51,7 +51,7 @@ Themes are automatically changed based on time of the day:
 | Theme                                                                              |     Time of the day      |
 | ---------------------------------------------------------------------------------- | :----------------------: |
 | [zephyr](https://github.com/abzcoding/zephyr-nvim)                                 |        [5am, 8am)        |
-| [catppuccino](https://github.com/Pocco81/Catppuccino.nvim)                         |       [8am, 11am)        |
+| [rose-pine](https://github.com/rose-pine/neovim)                                   |       [8am, 11am)        |
 | [tokyonight](https://github.com/folke/tokyonight)                                  | [12am, 5am), [11am, 5pm) |
 | [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |        [5pm, 9pm)        |
 | onedarker                                                                          |      [9pm, 11:59pm]      |
@@ -321,7 +321,7 @@ _Symbols Outline_
 
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
-- [Catppuccino Theme](https://github.com/Pocco81/Catppuccino.nvim)
+- [Rose Pine Theme](https://github.com/rose-pine/neovim)
 - [Zephyr Theme](https://github.com/abzcoding/zephyr-nvim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)

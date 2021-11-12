@@ -16,11 +16,12 @@ M.config = function()
       cond = lvim.builtin.themes.zephyr.condition(),
     },
     {
-      "Pocco81/Catppuccino.nvim",
+      "rose-pine/neovim",
+      as = "rose-pine",
       config = function()
-        require("user.theme").catppuccino()
+        require("user.theme").rose_pine()
       end,
-      cond = lvim.builtin.themes.catppuccino.condition(),
+      cond = lvim.builtin.themes.rose_pine.condition(),
     },
     {
       "folke/tokyonight.nvim",

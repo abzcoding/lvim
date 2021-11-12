@@ -9,12 +9,12 @@ M.selector = function()
       end,
       colors = M.colors.zephyr_colors,
     },
-    catppuccino = {
+    rose_pine = {
       condition = function()
         local _time = os.date "*t"
         return (_time.hour >= 8 and _time.hour < 11)
       end,
-      colors = M.colors.catppuccino_colors,
+      colors = M.colors.rose_pine_colors,
     },
     tokyonight = {
       condition = function()
@@ -73,63 +73,9 @@ M.tokyonight = function()
   end
 end
 
-M.catppuccino = function()
-  local catppuccino = require "catppuccino"
-  catppuccino.setup {
-    colorscheme = "dark_catppuccino",
-    transparency = false,
-    term_colors = false,
-    styles = {
-      comments = "italic",
-      functions = "NONE",
-      keywords = "italic",
-      strings = "NONE",
-      variables = "NONE",
-    },
-    integrations = {
-      treesitter = true,
-      native_lsp = {
-        enabled = true,
-        virtual_text = {
-          errors = "italic",
-          hints = "italic",
-          warnings = "italic",
-          information = "italic",
-        },
-        underlines = {
-          errors = "underline",
-          hints = "underline",
-          warnings = "underline",
-          information = "underline",
-        },
-      },
-      lsp_trouble = true,
-      lsp_saga = false,
-      gitgutter = false,
-      gitsigns = true,
-      telescope = true,
-      nvimtree = {
-        enabled = true,
-        show_root = true,
-      },
-      which_key = true,
-      indent_blankline = {
-        enabled = true,
-        colored_indent_levels = true,
-      },
-      dashboard = true,
-      neogit = false,
-      vim_sneak = false,
-      fern = false,
-      barbar = true,
-      bufferline = true,
-      markdown = true,
-      lightspeed = false,
-      ts_rainbow = false,
-      hop = true,
-    },
-  }
-  catppuccino.load()
+M.rose_pine = function()
+  vim.g.rose_pine_variant = "moon"
+  vim.cmd [[colorscheme rose-pine]]
 end
 
 M.doom = function()
@@ -201,22 +147,21 @@ M.colors = {
     gitSigns = { add = "#164846", change = "#394b70", delete = "#823c41" },
   },
 
-  catppuccino_colors = {
+  rose_pine_colors = {
     none = "NONE",
-    -- bg = "#2a2e36", -- nvim bg
-    bg = "#222424",
-    fg = "#abb2bf", -- fg color (text)
+    bg = "#232136",
+    fg = "#e0def4",
     fg_gutter = "#3b4261",
     black = "#393b44",
     gray = "#2a2e36",
-    red = "#c94f6d",
+    red = "#eb6f92",
     green = "#97c374",
-    yellow = "#dbc074",
-    blue = "#61afef",
-    magenta = "#c678dd",
-    cyan = "#63cdcf",
+    yellow = "#f6c177",
+    blue = "#9ccfd8",
+    magenta = "#c4a7e7",
+    cyan = "#9ccfd8",
     white = "#dfdfe0",
-    orange = "#F4A261",
+    orange = "#ea9a97",
     pink = "#D67AD2",
     black_br = "#7f8c98",
     red_br = "#e06c75",
@@ -229,12 +174,12 @@ M.colors = {
     orange_br = "#F6A878",
     pink_br = "#DF97DB",
     comment = "#526175",
-    bg_alt = "#0e171c", -- nvim bg
+    bg_alt = "#393552", -- nvim bg
     git = {
       add = "#dfdfe0",
-      change = "#F6A878",
-      delete = "#e06c75",
-      conflict = "#FFE37E",
+      change = "#ea9a97",
+      delete = "#eb6f92",
+      conflict = "#f6c177",
     },
   },
 
