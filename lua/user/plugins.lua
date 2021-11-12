@@ -117,6 +117,8 @@ M.config = function()
           sort = true,
         }
       end,
+      opt = true,
+      event = "InsertEnter",
       disable = not lvim.builtin.tabnine.active,
     },
     {
