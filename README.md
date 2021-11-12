@@ -56,7 +56,7 @@ Themes are automatically changed based on time of the day:
 | [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |        [5pm, 9pm)        |
 | onedarker                                                                          |      [9pm, 11:59pm]      |
 
-You can change this in [theme.lua](./lua/user/theme.lua)
+You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](./lua/user/lualine.lua)
 
 ## Customization
 

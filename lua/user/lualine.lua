@@ -158,12 +158,20 @@ local default_colors = {
 
 M.config = function()
   local colors = default_colors
-  for _, colorscheme in ipairs(lvim.builtin.themes) do
-    if colorscheme.condition() then
-      colors = colorscheme.colors
-      break
-    end
+  local themes = require("user.theme").colors
+  local _time = os.date "*t"
+  if _time.hour >= 5 and _time.hour < 8 then
+    colors = themes.zephyr_colors
+  elseif _time.hour >= 8 and _time.hour < 11 then
+    colors = themes.rose_pine_colors
+  elseif (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17) then
+    colors = themes.tokyonight_colors
+  elseif _time.hour >= 17 and _time.hour < 21 then
+    colors = themes.doom_one_colors
+  elseif _time.hour >= 21 and _time.hour < 24 then
+    colors = themes.onedarker_colors
   end
+
   -- Color table for highlights
   local mode_color = {
     n = colors.git.delete,

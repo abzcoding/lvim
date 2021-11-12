@@ -1,46 +1,9 @@
 local M = {}
 
 M.selector = function()
-  lvim.builtin.themes = {
-    zephyr = {
-      condition = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 5 and _time.hour < 8)
-      end,
-      colors = M.colors.zephyr_colors,
-    },
-    rose_pine = {
-      condition = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 8 and _time.hour < 11)
-      end,
-      colors = M.colors.rose_pine_colors,
-    },
-    tokyonight = {
-      condition = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17)
-      end,
-      colors = M.colors.tokyonight_colors,
-    },
-    doom_one = {
-      condition = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 17 and _time.hour < 21)
-      end,
-      colors = M.colors.doom_one_colors,
-    },
-    onedarker = {
-      condition = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 21 and _time.hour < 24)
-      end,
-      colors = M.colors.onedarker_colors,
-    },
-  }
-
-  -- NOTE: this is an expection, since we don't need an external plugin for it
-  if lvim.builtin.themes.onedarker.condition() then
+  -- NOTE: this is an exception, since we don't need an external plugin for it
+  local _time = os.date "*t"
+  if _time.hour >= 21 and _time.hour < 24 then
     lvim.colorscheme = "onedarker"
   end
 end
