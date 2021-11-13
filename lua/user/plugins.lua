@@ -486,7 +486,7 @@ M.config = function()
       "yamatsum/nvim-cursorline",
       opt = true,
       event = "BufWinEnter",
-      disable = not lvim.builtin.curorline.active,
+      disable = not lvim.builtin.cursorline.active,
     },
     {
       "abecodes/tabout.nvim",
