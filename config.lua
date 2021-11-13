@@ -33,7 +33,7 @@ lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non fo
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin
 lvim.builtin.remote_dev = { active = false } -- enable/disable remote development
 lvim.builtin.global_status_line = { active = true } -- use the global status line
-lvim.builtin.curorline = { active = false } -- use a bit fancier cursorline
+lvim.builtin.cursorline = { active = false } -- use a bit fancier cursorline
 local user = os.getenv "USER"
 if user and user == "abz" then
   lvim.builtin.nvim_web_devicons = { active = false }
@@ -48,7 +48,7 @@ lvim.builtin.latex = {
 lvim.builtin.notify.active = true
 lvim.lsp.automatic_servers_installation = false
 lvim.lsp.document_highlight = false
-if lvim.builtin.curorline.active then
+if lvim.builtin.cursorline.active then
   lvim.lsp.document_highlight = false
 end
 lvim.lsp.code_lens_refresh = true
