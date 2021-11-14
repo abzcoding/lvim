@@ -220,15 +220,10 @@ In case you want a better tex support in mac, check
 if you want the custom `gostructhelper`, first get the pkg:
 
 ```sh
-go get -v github.com/vanhtuan0409/gostructhelper
-```
-
-create a file called `/usr/local/bin/gostructhelper` and fill it like this
-
-```sh
-cd $GOPATH/src/github.com/vanhtuan0409/gostructhelper
-go run ./cmds/gostructhelper/main.go "$@"
-cd ~-
+cd /tmp
+git clone https://github.com/vanhtuan0409/gostructhelper.git
+cd gostructhelper/cmds/gostructhelper
+go build -o /usr/local/bin/gostructhelper && chmod 0755 /usr/local/bin/gostructhelper
 ```
 
 </details>
