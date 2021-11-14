@@ -6,7 +6,10 @@ lvim.colorscheme = "pablo"
 lvim.debug = false
 lvim.log.level = "warn"
 require("user.neovim").config()
-require("user.theme").selector() -- you can change the time of colorschemes here
+local _time = os.date "*t"
+if _time.hour >= 21 and _time.hour < 24 then
+  lvim.colorscheme = "onedarker"
+end
 
 -- Customization
 -- =========================================

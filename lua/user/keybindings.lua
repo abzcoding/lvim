@@ -24,8 +24,7 @@ M.config = function()
   lvim.keys.insert_mode["<A-a>"] = "<ESC>ggVG<CR>"
   lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
   lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
-  lvim.keys.insert_mode["<C-l>"] = "<C-o>$<cmd>silent! LuaSnipUnlinkCurrent<CR>"
-  lvim.keys.insert_mode["<C-j>"] = "<C-o>o<cmd>silent! LuaSnipUnlinkCurrent<CR>"
+  lvim.keys.command_mode["w!!"] = "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!"
   lvim.keys.normal_mode["]d"] =
     "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>"
   lvim.keys.normal_mode["[d"] =
@@ -124,7 +123,10 @@ M.config = function()
     f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
     g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
     i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
-    l = { "<cmd>lua require('user.telescope').grep_last_search({layout_strategy = \"vertical\"})<cr>", "Last Search" },
+    l = {
+      "<cmd>lua require('user.telescope').grep_last_search({layout_strategy = \"vertical\"})<cr>",
+      "Last Search",
+    },
     p = { "<cmd>lua require('user.telescope').project_search()<cr>", "Project" },
     s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },

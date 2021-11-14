@@ -1,13 +1,5 @@
 local M = {}
 
-M.selector = function()
-  -- NOTE: this is an exception, since we don't need an external plugin for it
-  local _time = os.date "*t"
-  if _time.hour >= 21 and _time.hour < 24 then
-    lvim.colorscheme = "onedarker"
-  end
-end
-
 M.tokyonight = function()
   vim.g.tokyonight_dev = true
   vim.g.tokyonight_style = "storm"
