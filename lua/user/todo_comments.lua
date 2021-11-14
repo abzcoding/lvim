@@ -9,7 +9,7 @@ M.config = function()
   todo.setup {
     keywords = {
       FIX = { icon = "律" },
-      TODO = { icon = " " },
+      TODO = { icon = " ", alt = { "WIP" } },
       HACK = { icon = " ", color = "hack" },
       WARN = { icon = "裂" },
       PERF = { icon = "龍" },

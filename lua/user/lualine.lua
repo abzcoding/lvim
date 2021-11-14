@@ -478,11 +478,11 @@ M.config = function()
   }
   ins_right {
     function(msg)
-      msg = msg or "LS Inactive"
+      msg = msg or "  LS Inactive"
       local buf_clients = vim.lsp.buf_get_clients()
       if next(buf_clients) == nil then
         if type(msg) == "boolean" or #msg == 0 then
-          return "LS Inactive"
+          return "  LS Inactive"
         end
         return msg
       end
@@ -531,9 +531,9 @@ M.config = function()
       end
       vim.list_extend(buf_client_names, supported_linters)
 
-      return table.concat(buf_client_names, ", ")
+      return " " .. table.concat(buf_client_names, ", ")
     end,
-    icon = " ",
+    -- icon = " ",
     color = { fg = colors.fg },
     cond = conditions.hide_in_width,
   }
