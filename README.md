@@ -217,6 +217,20 @@ cp ~/.config/lvim/vale_config.ini ~/.vale.ini
 In case you want a better tex support in mac, check
 [this](tex support) out
 
+if you want the custom `gostructhelper`, first get the pkg:
+
+```sh
+go get -v github.com/vanhtuan0409/gostructhelper
+```
+
+create a file called `/usr/local/bin/gostructhelper` and fill it like this
+
+```sh
+cd $GOPATH/src/github.com/vanhtuan0409/gostructhelper
+go run ./cmds/gostructhelper/main.go "$@"
+cd ~-
+```
+
 </details>
 
 ---
