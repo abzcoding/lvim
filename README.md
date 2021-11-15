@@ -99,6 +99,8 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.neoscroll = { active = false }`
 - if you want an obvious focused window, and you don't get seizures from it
   - `lvim.builtin.nonumber_unfocus = true`
+- choose between [hop](https://github.com/phaazon/hop.nvim) and [lightspeed](https://github.com/ggandor/lightspeed.nvim) as your favorite motion provider
+  - `lvim.builtin.motion_provider = "hop"`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -344,7 +346,6 @@ _Symbols Outline_
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rust-tools](https://github.com/simrat39/rust-tools.nvim)
 - [nvim-spectre](https://github.com/windwp/nvim-spectre)
-- [Hop](https://github.com/phaazon/hop.nvim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Neogen](https://github.com/danymat/neogen)
 - [Vimtex](https://github.com/lervag/vimtex)
@@ -357,6 +358,8 @@ _Symbols Outline_
 
 ### Optional Plugins
 
+- [Hop](https://github.com/phaazon/hop.nvim)
+- [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
 - [wilder.nvim](https://github.com/gelguy/wilder.nvim)
 - [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
@@ -441,15 +444,15 @@ Note that,
 
 ### Motion
 
-| Key                         | Mode | Action                    | Plugin or Mapping             |
-| --------------------------- | :--: | ------------------------- | ----------------------------- |
-| <kbd>f</kbd>                |  𝐍   | find next chacharacter    | <small>HopChar1LineAC</small> |
-| <kbd>F</kbd>                |  𝐍   | find prprevious character | <small>HopChar1LineBC</small> |
-| <kbd>s</kbd>                |  𝐍   | find chacharacter         | <small>HopChar2</small>       |
-| <kbd>F</kbd>                |  𝐍   | find word                 | <small>HopWord</small>        |
-| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐈   | select all                | <small>ggVG</small>           |
-| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐍   | increment number          | <small>C-A</small>            |
-| <kbd>Alt</kbd>+<kbd>x</kbd> |  𝐍   | decrement number          | <small>C-X</small>            |
+| Key                         | Mode | Action                    | Plugin or Mapping                                                   |
+| --------------------------- | :--: | ------------------------- | ------------------------------------------------------------------- |
+| <kbd>f</kbd>                |  𝐍   | find next chacharacter    | <small>HopChar1CurrentLineAC</small> or <small>Lightspeed_f</small> |
+| <kbd>F</kbd>                |  𝐍   | find prprevious character | <small>HopChar1CurrentLineBC</small> or <small>Lightspeed_F</small> |
+| <kbd>s</kbd>                |  𝐍   | find chacharacter         | <small>HopChar2</small> or <small>Lightspeed_s</small>              |
+| <kbd>S</kbd>                |  𝐍   | find word                 | <small>HopWord</small> or <small>Lightspeed_S</small>               |
+| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐈   | select all                | <small>ggVG</small>                                                 |
+| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐍   | increment number          | <small>C-A</small>                                                  |
+| <kbd>Alt</kbd>+<kbd>x</kbd> |  𝐍   | decrement number          | <small>C-X</small>                                                  |
 
 ### LSP
 
