@@ -93,12 +93,15 @@ M.config = function()
       cmd = "Trouble",
     },
     {
-      "IndianBoy42/hop.nvim",
+      "phaazon/hop.nvim",
       event = "BufRead",
       config = function()
         require("user.hop").config()
       end,
     },
+    -- {
+    --   "indianboy42/hop-extensions"
+    -- },
     {
       "simrat39/symbols-outline.nvim",
       setup = function()
