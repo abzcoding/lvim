@@ -4,7 +4,8 @@ Do not use as is, use it as a source of inspiration.
 
 I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly 😅
 
-![140749733-13085cb2-90fd-4d09-8974-3226795864f8 2](https://user-images.githubusercontent.com/10992695/141789968-ed61958c-9154-4774-b2e2-dfabe48d9660.jpg)
+![141789968-ed61958c-9154-4774-b2e2-dfabe48d9660](https://user-images.githubusercontent.com/10992695/141791212-1e0270b1-b781-4189-8fce-d988de06f2ab.jpg)
+
 
 
 <details open>
