@@ -25,7 +25,6 @@ M.config = function()
     vim.g["loaded_" .. plugin] = 1
   end
   vim.g.did_load_filetypes = 1
-  vim.opt.shada = "!,'0,f0,<50,s10,h"
   vim.opt.relativenumber = true
   vim.opt.wrap = true
   vim.opt.termguicolors = true

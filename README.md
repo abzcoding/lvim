@@ -219,7 +219,7 @@ In case you want a better tex support in mac, check
 
 if you want the custom `gostructhelper`, first get the pkg:
 
-```sh
+```shell
 cd /tmp
 git clone https://github.com/vanhtuan0409/gostructhelper.git
 cd gostructhelper/cmds/gostructhelper
