@@ -42,6 +42,7 @@ local user = os.getenv "USER"
 if user and user == "abz" then
   lvim.builtin.nvim_web_devicons = { active = false }
   lvim.builtin.sell_your_soul_to_devil = true
+  lvim.lsp.document_highlight = false
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
@@ -51,7 +52,6 @@ lvim.builtin.latex = {
 }
 lvim.builtin.notify.active = true
 lvim.lsp.automatic_servers_installation = false
-lvim.lsp.document_highlight = false
 if lvim.builtin.cursorline.active then
   lvim.lsp.document_highlight = false
 end
