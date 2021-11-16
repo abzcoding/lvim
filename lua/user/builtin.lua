@@ -248,18 +248,6 @@ M.config = function()
       ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
     }
-
-    -- better keybindings for ts and tsx files
-    local langs = { "typescript", "typescriptreact" }
-    local ftype = vim.bo.filetype
-    if vim.tbl_contains(langs, ftype) then
-      local ts_keys = {
-        ["gA"] = { "<cmd>TSLspImportAll<CR>", "Import All" },
-        ["gr"] = { "<cmd>TSLspRenameFile<CR>", "Rename File" },
-        ["gS"] = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
-      }
-      wk.register(ts_keys, { mode = "n" })
-    end
     wk.register(keys, { mode = "n" })
   end
 
