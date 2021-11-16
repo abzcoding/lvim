@@ -1,5 +1,21 @@
 local M = {}
 
+M.hide_diagnostics = function()
+  local clients = vim.lsp.get_active_clients()
+  for _, client in ipairs(clients) do
+    local ns = vim.lsp.diagnostic.get_namespace(client.id)
+    vim.diagnostic.hide(ns)
+  end
+end
+
+M.show_diagnostics = function()
+  local clients = vim.lsp.get_active_clients()
+  for _, client in ipairs(clients) do
+    local ns = vim.lsp.diagnostic.get_namespace(client.id)
+    vim.diagnostic.show(ns,nil,nil,lvim.lsp.diagnostics)
+  end
+end
+
 M.config = function()
   local status_ok, zen_mode = pcall(require, "zen-mode")
   if not status_ok then
@@ -26,6 +42,7 @@ M.config = function()
       vim.lsp.diagnostic.set_virtual_text = false
       vim.cmd [[
           set foldlevel=10
+          lua require("user.zen").hide_diagnostics()
           ]]
     end,
     on_close = function()
@@ -37,6 +54,7 @@ M.config = function()
           set foldlevel=4
           set foldmethod=expr
           set foldexpr=nvim_treesitter#foldexpr()
+          lua require("user.zen").show_diagnostics()
           ]]
     end,
   }
