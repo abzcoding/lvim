@@ -14,8 +14,30 @@ M.set_hop_keymaps = function()
   local opts = { noremap = true, silent = true }
   vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", opts)
   vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", opts)
-  vim.api.nvim_set_keymap("n", "f", ":HopChar1CurrentLineAC<cr>", opts)
-  vim.api.nvim_set_keymap("n", "F", ":HopChar1CurrentLineBC<cr>", opts)
+  vim.api.nvim_set_keymap(
+    "n",
+    "f",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+    {}
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "F",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+    {}
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "t",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+    {}
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "T",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+    {}
+  )
 end
 
 M.set_lightspeed_keymaps = function()
@@ -27,6 +49,56 @@ nmap <expr> F reg_recording() . reg_executing() == "" ? "<Plug>Lightspeed_F" : "
 nmap <expr> t reg_recording() . reg_executing() == "" ? "<Plug>Lightspeed_t" : "t"
 nmap <expr> T reg_recording() . reg_executing() == "" ? "<Plug>Lightspeed_T" : "T"
   ]]
+end
+
+local function set_bufferline_keymaps()
+  lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
+  lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
+  lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
+  lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
+  lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
+  lvim.builtin.which_key.mappings["c"] = { "<CMD>bdelete!<CR>", "Close Buffer" }
+  lvim.builtin.which_key.mappings.b = {
+    name = "Buffers",
+    ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },
+    ["2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" },
+    ["3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" },
+    ["4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" },
+    ["5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" },
+    ["6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" },
+    ["7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" },
+    ["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" },
+    ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" },
+    c = { "<Cmd>BufferLinePickClose<CR>", "delete buffer" },
+    p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
+    t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
+    f = { "<cmd>Telescope buffers<cr>", "Find" },
+    b = { "<cmd>b#<cr>", "Previous" },
+  }
+end
+
+local function set_harpoon_keymaps()
+  lvim.keys.normal_mode["<C-Space>"] = "<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>"
+  lvim.keys.normal_mode["tu"] = "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>"
+  lvim.keys.normal_mode["te"] = "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>"
+  lvim.keys.normal_mode["cu"] = "<cmd>lua require('harpoon.term').sendCommand(1, 1)<CR>"
+  lvim.keys.normal_mode["ce"] = "<cmd>lua require('harpoon.term').sendCommand(1, 2)<CR>"
+  lvim.builtin.which_key.mappings["a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add Mark" }
+  lvim.builtin.which_key.mappings["<leader>"] = {
+    "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+    "Harpoon",
+  }
+
+  local whk_status, whk = pcall(require, "which-key")
+  if not whk_status then
+    return
+  end
+  whk.register {
+    ["<leader>1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
+    ["<leader>2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
+    ["<leader>3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
+    ["<leader>4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
+  }
 end
 
 M.config = function()
@@ -51,12 +123,7 @@ M.config = function()
       [[<cmd>lua os.execute("xdg-open " .. vim.fn.shellescape(vim.fn.expand "<cWORD>")); vim.cmd "redraw!"<cr>]]
   end
   if lvim.builtin.fancy_bufferline.active then
-    lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
-    lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
-    lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
-    lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
-    lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
-    lvim.builtin.which_key.mappings["c"] = { "<CMD>bdelete!<CR>", "Close Buffer" }
+    set_bufferline_keymaps()
   else
     lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
   end
@@ -65,11 +132,7 @@ M.config = function()
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
   lvim.keys.normal_mode["gA"] = "<cmd>lua vim.lsp.codelens.run()<cr>"
   if lvim.builtin.harpoon.active then
-    lvim.keys.normal_mode["<C-Space>"] = "<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>"
-    lvim.keys.normal_mode["tu"] = "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>"
-    lvim.keys.normal_mode["te"] = "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>"
-    lvim.keys.normal_mode["cu"] = "<cmd>lua require('harpoon.term').sendCommand(1, 1)<CR>"
-    lvim.keys.normal_mode["ce"] = "<cmd>lua require('harpoon.term').sendCommand(1, 2)<CR>"
+    set_harpoon_keymaps()
   end
   lvim.keys.visual_mode["p"] = [["_dP]]
   lvim.keys.visual_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
@@ -80,43 +143,6 @@ M.config = function()
   -- =========================================
   if lvim.builtin.fancy_dashboard.active then
     lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "Dashboard" }
-  end
-  if lvim.builtin.harpoon.active then
-    lvim.builtin.which_key.mappings["a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add Mark" }
-    lvim.builtin.which_key.mappings["<leader>"] = {
-      "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
-      "Harpoon",
-    }
-
-    local whk_status, whk = pcall(require, "which-key")
-    if not whk_status then
-      return
-    end
-    whk.register {
-      ["<leader>1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
-      ["<leader>2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
-      ["<leader>3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
-      ["<leader>4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
-    }
-  end
-  if lvim.builtin.fancy_bufferline.active then
-    lvim.builtin.which_key.mappings.b = {
-      name = "Buffers",
-      ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },
-      ["2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" },
-      ["3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" },
-      ["4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" },
-      ["5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" },
-      ["6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" },
-      ["7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" },
-      ["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" },
-      ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" },
-      c = { "<Cmd>BufferLinePickClose<CR>", "delete buffer" },
-      p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
-      t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
-      f = { "<cmd>Telescope buffers<cr>", "Find" },
-      b = { "<cmd>b#<cr>", "Previous" },
-    }
   end
   if lvim.builtin.dap.active then
     lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
