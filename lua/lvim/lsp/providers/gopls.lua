@@ -10,6 +10,12 @@ local opts = {
         upgrade_dependency = true, -- Upgrades a dependency in the go.mod file for a module
         vendor = true, -- Runs go mod vendor for a module
       },
+      diagnosticsDelay = "500ms",
+      experimentalWatchedFileDelay = "100ms",
+      symbolMatcher = "fuzzy",
+      completeUnimported = true,
+      staticcheck = true,
+      matcher = "Fuzzy",
       usePlaceholders = true, -- enables placeholders for function parameters or struct fields in completion responses
       analyses = {
         fieldalignment = true, -- find structs that would use less memory if their fields were sorted

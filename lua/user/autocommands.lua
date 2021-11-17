@@ -64,6 +64,9 @@ augroup END
   end
 
   lvim.autocommands.custom_groups = {
+    -- highlights
+    { "Filetype", "rust,go", "highlight! link LspCodeLens WarningMsg" },
+
     -- toggleterm
     { "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },
 
