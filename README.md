@@ -386,6 +386,7 @@ _Symbols Outline_
 - [Stabilize](https://github.com/luukvbaal/stabilize.nvim)
 - [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)
 - [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
+- [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 
 </details>
 

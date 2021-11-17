@@ -14,12 +14,6 @@ augroup END
   end
 
   vim.cmd [[
-" fix the luasnip weird issue
-augroup CustomLuaSnip
-	au!
-	au TextChanged,InsertLeave * lua require'luasnip'.unlink_current_if_deleted()
-augroup end
-
 " disable syntax highlighting in big files
 function! DisableSyntaxTreesitter()
     echo("Big file, disabling syntax, treesitter and folding")
