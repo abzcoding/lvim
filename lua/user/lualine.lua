@@ -13,7 +13,39 @@ local function lsp_progress()
   for _, msg in pairs(messages) do
     table.insert(status, (msg.percentage or 0) .. "%% " .. (msg.title or ""))
   end
-  local spinners = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+  -- local spinners = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+  -- local spinners = { " ", " ", " ", " ", " ", " ", " ", " ", " ", " " }
+  -- local spinners = { " ", " ", " ", " ", " ", " ", " ", " ", " " }
+  local spinners = {
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+  }
   local ms = vim.loop.hrtime() / 1000000
   local frame = math.floor(ms / 120) % #spinners
   return table.concat(status, " | ") .. " " .. spinners[frame + 1]
@@ -50,20 +82,46 @@ end
 
 local mode = function()
   local mod = vim.fn.mode()
+  local _time = os.date "*t"
+  local selector = math.floor(_time.hour / 8) + 1
+  local normal_icons = {
+    "  ",
+    "  ",
+    "  ",
+  }
   if mod == "n" or mod == "no" or mod == "nov" then
-    return "  "
+    return normal_icons[selector]
   elseif mod == "i" or mod == "ic" or mod == "ix" then
-    return "  "
+    local insert_icons = {
+      "  ",
+      "  ",
+      "  ",
+    }
+    return insert_icons[selector]
   elseif mod == "V" or mod == "v" or mod == "vs" or mod == "Vs" or mod == "cv" then
-    return "  "
+    local verbose_icons = {
+      " 勇",
+      "  ",
+      "  ",
+    }
+    return verbose_icons[selector]
   elseif mod == "c" or mod == "ce" then
-    return " ﴣ "
-  elseif mod == "r" or mod == "rm" or mod == "r?" then
-    return "  "
-  elseif mod == "R" or mod == "Rc" or mod == "Rv" or mod == "Rv" then
-    return "  "
+    local command_icons = {
+      "  ",
+      "  ",
+      "  ",
+    }
+
+    return command_icons[selector]
+  elseif mod == "r" or mod == "rm" or mod == "r?" or mod == "R" or mod == "Rc" or mod == "Rv" or mod == "Rv" then
+    local replace_icons = {
+      "  ",
+      "  ",
+      "  ",
+    }
+    return replace_icons[selector]
   end
-  return "  "
+  return normal_icons[selector]
 end
 local file_icons = {
   Brown = { "" },
@@ -251,7 +309,14 @@ M.config = function()
             vim.api.nvim_command(
               "hi! LualineModeInactive guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_alt
             )
-            return ""
+            local selector = math.floor(_time.hour / 8) + 1
+            local icns = {
+              "  ",
+              "  ",
+              "  ",
+            }
+            return icns[selector]
+            -- return " "
             -- return mode()
           end,
           color = "LualineModeInactive",
@@ -355,7 +420,7 @@ M.config = function()
   ins_left {
     function()
       local fname = vim.fn.expand "%:t"
-      return fname .. "%{&readonly?'  ':''}" .. "%{&modified?'  ':''}"
+      return fname .. "%{&readonly?'  ':''}" .. "%{&modified?'  ':''}"
     end,
     cond = conditions.buffer_not_empty,
     padding = { left = 1, right = 1 },
@@ -478,11 +543,11 @@ M.config = function()
   }
   ins_right {
     function(msg)
-      msg = msg or "  LS Inactive"
+      msg = msg or "轢 LS Inactive"
       local buf_clients = vim.lsp.buf_get_clients()
       if next(buf_clients) == nil then
         if type(msg) == "boolean" or #msg == 0 then
-          return "  LS Inactive"
+          return "轢 LS Inactive"
         end
         return msg
       end
@@ -531,7 +596,7 @@ M.config = function()
       end
       vim.list_extend(buf_client_names, supported_linters)
 
-      return " " .. table.concat(buf_client_names, ", ")
+      return "歷" .. table.concat(buf_client_names, ", ")
     end,
     -- icon = " ",
     color = { fg = colors.fg },
