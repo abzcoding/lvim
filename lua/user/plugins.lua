@@ -505,6 +505,14 @@ M.config = function()
       end,
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
+    {
+      "kevinhwang91/nvim-hlslens",
+      config = function()
+        require("user.hlslens").config()
+      end,
+      event = "BufReadPost",
+      disable = not lvim.builtin.hlslens.active,
+    },
   }
 end
 

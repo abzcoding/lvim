@@ -54,6 +54,21 @@ augroup END
     ]]
   end
 
+  if lvim.builtin.hlslens.active then
+    vim.cmd [[
+function! Hls_coloring()
+  hi HlSearchNear guibg=None guifg=#bb9af7 gui=underline
+  hi HlSearchFloat guibg=None guifg=#bb9af7 gui=underline
+  hi HlSearchLensNear guibg=None guifg=#bb9af7 gui=italic
+  hi HlSearchLens guibg=None guifg=#bb9af7 gui=underline
+endfunction
+augroup hlsColor
+  autocmd!
+  autocmd BufReadPost * exec Hls_coloring()
+augroup END
+  ]]
+  end
+
   lvim.autocommands.custom_groups = {
     -- toggleterm
     { "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },
