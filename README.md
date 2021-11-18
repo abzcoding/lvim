@@ -101,6 +101,8 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.nonumber_unfocus = true`
 - choose between [hop](https://github.com/phaazon/hop.nvim) and [lightspeed](https://github.com/ggandor/lightspeed.nvim) as your favorite motion provider
   - `lvim.builtin.motion_provider = "hop"`
+- if you don't need csv support, disable it
+  - `lvim.builtin.csv_support = false`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -385,6 +387,7 @@ _Symbols Outline_
 - [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)
 - [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
+- [csv.vim](https://github.com/chrisbra/csv.vim)
 
 </details>
 

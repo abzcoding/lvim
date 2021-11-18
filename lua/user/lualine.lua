@@ -425,8 +425,14 @@ M.config = function()
   }
   ins_left {
     function()
-      local fname = vim.fn.expand "%:t"
-      return fname .. "%{&readonly?'  ':''}" .. "%{&modified?'  ':''}"
+      local fname = vim.fn.expand "%:p"
+      local ftype = vim.fn.expand "%:e"
+      local cwd = vim.api.nvim_call_function("getcwd", {})
+      local show_name = vim.fn.expand "%:t"
+      if #cwd > 0 and #ftype > 0 then
+        show_name = fname:sub(#cwd + 2)
+      end
+      return show_name .. "%{&readonly?'  ':''}" .. "%{&modified?'  ':''}"
     end,
     cond = conditions.buffer_not_empty,
     padding = { left = 1, right = 1 },

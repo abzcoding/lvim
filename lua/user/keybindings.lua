@@ -134,6 +134,7 @@ M.config = function()
     "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>"
   lvim.keys.normal_mode["<A-a>"] = "<C-a>"
   lvim.keys.normal_mode["<A-x>"] = "<C-x>"
+  lvim.keys.normal_mode["<C-,>"] = "<cmd>lua require('neogen').jump_next()<CR>"
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
   if vim.fn.has "mac" == 1 then
     lvim.keys.normal_mode["gx"] =
