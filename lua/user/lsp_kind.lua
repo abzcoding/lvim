@@ -1,4 +1,4 @@
-local lspkind = {}
+local M = {}
 
 local kind_symbols = {
   Class = " ",
@@ -29,12 +29,19 @@ local kind_symbols = {
   Variable = " ",
 }
 
-function lspkind.cmp_kind(kind)
+function M.cmp_kind(kind)
   return kind_symbols[kind] or ""
 end
 
-function lspkind.symbols()
+function M.symbols()
   return kind_symbols
 end
 
-return lspkind
+M.icons = {
+  error = " ",
+  warn = " ",
+  info = "",
+  hint = " ",
+}
+
+return M

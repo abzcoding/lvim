@@ -27,44 +27,23 @@ M.config = function()
       nls.builtins.formatting.sqlformat,
       nls.builtins.formatting.terraform_fmt,
       nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
+      nls.builtins.formatting.black.with { extra_args = { "--fast" }, filetypes = {"python"} },
+      nls.builtins.formatting.isort.with { extra_args = { "--profile", "black" }, filetypes = {"python"} },
       nls.builtins.diagnostics.hadolint,
       nls.builtins.diagnostics.eslint_d,
       nls.builtins.diagnostics.shellcheck,
       nls.builtins.diagnostics.luacheck,
       nls.builtins.diagnostics.vint,
       nls.builtins.diagnostics.chktex,
+      nls.builtins.diagnostics.markdownlint.with {
+        filetypes = { "markdown" },
+      },
+      nls.builtins.diagnostics.vale.with {
+        filetypes = { "markdown" },
+      },
       custom_go_actions.gomodifytags,
       custom_go_actions.gostructhelper,
       custom_md_hover.dictionary,
-    },
-  }
-
-  -- or use the lunarvim syntax
-  local formatters = require "lvim.lsp.null-ls.formatters"
-  formatters.setup {
-    {
-      exe = "black",
-      args = { "--fast" },
-      filetypes = { "python" },
-    },
-    {
-      exe = "isort",
-      args = {
-        "--profile",
-        "black",
-      },
-      filetypes = { "python" },
-    },
-  }
-  local linters = require "lvim.lsp.null-ls.linters"
-  linters.setup {
-    {
-      exe = "vale",
-      filetypes = { "markdown" },
-    },
-    {
-      exe = "markdownlint",
-      filetypes = { "markdown" },
     },
   }
 end

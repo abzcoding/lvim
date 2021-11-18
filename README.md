@@ -412,6 +412,7 @@ _Symbols Outline_
     - [builtin.lua](./lua/user/builtin.lua) - change internal lunarvim settings
     - [keybindings.lua](./lua/user/keybindings.lua) - user defined keybindings
     - [plugins.lua](./lua/user/plugins.lua) - list of installed plugins
+    - [lsp_kind.lua](./lua/user/lsp_kind.lua) - all the icons and lsp ui goodies are here
     - [theme.lua](./lua/user/theme.lua) - customized themes
 - [config.lua](./config.lua) - Main customization point for settings
 - [snippets/](./snippets) - Personal code snippets

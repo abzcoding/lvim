@@ -39,17 +39,12 @@ M.config = function()
       twilight = { enabled = true },
     },
     on_open = function()
-      vim.lsp.diagnostic.set_virtual_text = false
       vim.cmd [[
           set foldlevel=10
           lua require("user.zen").hide_diagnostics()
           ]]
     end,
     on_close = function()
-      vim.lsp.diagnostic.set_virtual_text = {
-        prefix = "",
-        spacing = 0,
-      }
       vim.cmd [[
           set foldlevel=4
           set foldmethod=expr

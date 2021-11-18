@@ -1,6 +1,7 @@
 local M = {}
 
 M.config = function()
+  local kind = require "user.lsp_kind"
   -- Snippets
   -- =========================================
   require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/snippets" } }
@@ -32,7 +33,7 @@ M.config = function()
     native_menu = false,
     custom_menu = true,
   }
-  lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
+  lvim.builtin.cmp.formatting.kind_icons = kind.symbols()
   lvim.builtin.cmp.formatting.source_names = {
     buffer = "(Buffer)",
     nvim_lsp = "(LSP)",
@@ -90,11 +91,15 @@ M.config = function()
   -- LSP
   -- =========================================
   lvim.lsp.diagnostics.signs.values = {
-    { name = "LspDiagnosticsSignError", text = " " },
-    { name = "LspDiagnosticsSignWarning", text = " " },
-    { name = "LspDiagnosticsSignInformation", text = "" },
-    { name = "LspDiagnosticsSignHint", text = " " },
+    { name = "LspDiagnosticsSignError", text = kind.icons.error },
+    { name = "LspDiagnosticsSignWarning", text = kind.icons.warn },
+    { name = "LspDiagnosticsSignInformation", text = kind.icons.info },
+    { name = "LspDiagnosticsSignHint", text = kind.icons.hint },
   }
+  local ok, _ = pcall(require, "vim.diagnostic")
+  if ok then
+    vim.diagnostic.config { virtual_text = false }
+  end
 
   -- Lualine
   -- =========================================
@@ -107,10 +112,10 @@ M.config = function()
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = kind.icons.hint,
+      info = kind.icons.info,
+      warning = kind.icons.warn,
+      error = kind.icons.error,
     },
   }
   lvim.builtin.nvimtree.icons = {
