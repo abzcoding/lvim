@@ -39,12 +39,13 @@ lvim.builtin.global_status_line = { active = true } -- use the global status lin
 lvim.builtin.cursorline = { active = false } -- use a bit fancier cursorline
 lvim.builtin.motion_provider = "hop" -- change this to use different motion providers ( hop or lightspeed )
 lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
-lvim.builtin.csv_support = true -- enable/disable csv support
+lvim.builtin.csv_support = false -- enable/disable csv support
 local user = os.getenv "USER"
 if user and user == "abz" then
   lvim.builtin.nvim_web_devicons = { active = false }
   lvim.builtin.sell_your_soul_to_devil = true
   lvim.lsp.document_highlight = false
+  lvim.builtin.csv_support = true
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
