@@ -522,6 +522,14 @@ M.config = function()
       event = "BufReadPost",
       disable = not lvim.builtin.hlslens.active,
     },
+    {
+      "kosayoda/nvim-lightbulb",
+      config = function()
+        vim.fn.sign_define("LightBulbSign", { text = "", texthl = "DiagnosticInfo" })
+      end,
+      event = "BufRead",
+      ft = { "rust", "go" },
+    },
   }
 end
 

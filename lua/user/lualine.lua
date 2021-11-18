@@ -517,14 +517,14 @@ M.config = function()
     ins_right {
       "diagnostics",
       sources = { "nvim" },
-      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      symbols = { error = " ", warn = " ", info = " ", hint = " " },
       cond = conditions.hide_in_width,
     }
   else
     ins_right {
       "diagnostics",
       sources = { "nvim_lsp" },
-      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      symbols = { error = " ", warn = " ", info = " ", hint = " " },
       cond = conditions.hide_in_width,
     }
   end

@@ -87,6 +87,7 @@ augroup END
     { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
     -- go
+    { "CursorHold", "*.rs,*.go", "lua require'nvim-lightbulb'.update_lightbulb()" },
     {
       "Filetype",
       "go",

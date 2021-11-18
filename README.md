@@ -358,6 +358,7 @@ _Symbols Outline_
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 - [Dependency-assist.nvim](https://github.com/akinsho/dependency-assist.nvim)
 - [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
+- [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
 
 ### Optional Plugins
 
