@@ -388,6 +388,7 @@ _Symbols Outline_
 - [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 - [csv.vim](https://github.com/chrisbra/csv.vim)
+- [sidebar.nvim](https://github.com/sidebar-nvim/sidebar.nvim)
 
 </details>
 

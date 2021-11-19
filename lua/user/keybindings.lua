@@ -148,6 +148,9 @@ M.config = function()
   else
     lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
   end
+  if lvim.builtin.sidebar.active then
+    lvim.keys.normal_mode["E"] = ":SidebarNvimToggle<cr>"
+  end
   lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
   lvim.keys.normal_mode["Y"] = "y$"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"

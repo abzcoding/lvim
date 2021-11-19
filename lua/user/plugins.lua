@@ -541,6 +541,14 @@ M.config = function()
       "nvim-treesitter/nvim-treesitter-textobjects",
       after = "nvim-treesitter",
     },
+    {
+      "sidebar-nvim/sidebar.nvim",
+      config = function()
+        require("user.sidebar").config()
+      end,
+      event = "BufRead",
+      disable = not lvim.builtin.sidebar.active,
+    },
   }
 end
 
