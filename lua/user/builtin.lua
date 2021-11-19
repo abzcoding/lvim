@@ -151,6 +151,56 @@ M.config = function()
     use_virtual_text = true,
     lint_events = { "BufWrite", "CursorHold" },
   }
+  lvim.builtin.treesitter.textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["al"] = "@loop.outer",
+        ["il"] = "@loop.inner",
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader><M-a>"] = "@parameter.inner",
+        ["<leader><M-f>"] = "@function.outer",
+        ["<leader><M-e>"] = "@element",
+      },
+      swap_previous = {
+        ["<leader><M-A>"] = "@parameter.inner",
+        ["<leader><M-F>"] = "@function.outer",
+        ["<leader><M-E>"] = "@element",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]f"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]F"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[f"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[F"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+  }
   lvim.builtin.treesitter.on_config_done = function()
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
     parser_config.solidity = {
