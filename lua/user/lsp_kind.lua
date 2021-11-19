@@ -1,6 +1,6 @@
 local M = {}
 
-local kind_symbols = {
+M.cmp_kind = {
   Class = " ",
   Color = " ",
   Constant = "",
@@ -29,19 +29,117 @@ local kind_symbols = {
   Variable = " ",
 }
 
-function M.cmp_kind(kind)
-  return kind_symbols[kind] or ""
-end
-
-function M.symbols()
-  return kind_symbols
-end
-
 M.icons = {
   error = " ",
   warn = " ",
   info = "",
   hint = " ",
+  code_action = "",
+  test = "",
+  docs = "",
+  clock = " ",
+  calendar = " ",
+  buffer = " ",
+  settings = " ",
+  ls_inactive = "轢",
+  ls_active = "歷",
+  question = "",
+}
+
+M.nvim_tree_icons = {
+  default = "",
+  symlink = "",
+  git = {
+    unstaged = "",
+    staged = "",
+    unmerged = "",
+    renamed = "➜",
+    untracked = "",
+    deleted = "",
+    ignored = "◌",
+  },
+  folder = {
+    arrow_closed = "",
+    arrow_open = "",
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+    symlink_open = "",
+  },
+}
+
+M.symbols_outline = {
+  File = "",
+  Module = "",
+  Namespace = "",
+  Package = "",
+  Class = "",
+  Method = "ƒ",
+  Property = "",
+  Field = "",
+  Constructor = "",
+  Enum = "練",
+  Interface = "ﰮ",
+  Function = "",
+  Variable = "",
+  Constant = "",
+  String = "𝓐",
+  Number = "#",
+  Boolean = "⊨",
+  Array = "",
+  Object = "⦿",
+  Key = "",
+  Null = "NULL",
+  EnumMember = "",
+  Struct = "פּ",
+  Event = "",
+  Operator = "",
+  TypeParameter = "𝙏",
+}
+
+M.todo_comments = {
+  FIX = "律",
+  TODO = " ",
+  HACK = " ",
+  WARN = "裂",
+  PERF = "龍",
+  NOTE = " ",
+  ERROR = " ",
+  REFS = "",
+}
+
+M.numbers = {
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+}
+
+M.file_icons = {
+  Brown = { "" },
+  Aqua = { "" },
+  LightBlue = { "", "" },
+  Blue = { "", "", "", "", "", "", "", "", "", "", "", "", "" },
+  Darkblue = { "", "" },
+  Purple = { "", "", "", "", "" },
+  Red = { "", "", "", "", "", "" },
+  Beige = { "", "", "" },
+  Yellow = { "", "", "λ", "", "" },
+  Orange = { "", "" },
+  Darkorange = { "", "", "", "", "" },
+  Pink = { "", "" },
+  Salmon = { "" },
+  Green = { "", "", "", "", "", "" },
+  Lightgreen = { "", "", "", "﵂" },
+  White = { "", "", "", "", "", "" },
 }
 
 return M

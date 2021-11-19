@@ -33,7 +33,7 @@ M.config = function()
     native_menu = false,
     custom_menu = true,
   }
-  lvim.builtin.cmp.formatting.kind_icons = kind.symbols()
+  lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
   lvim.builtin.cmp.formatting.source_names = {
     buffer = "(Buffer)",
     nvim_lsp = "(LSP)",
@@ -118,29 +118,7 @@ M.config = function()
       error = kind.icons.error,
     },
   }
-  lvim.builtin.nvimtree.icons = {
-    default = "",
-    symlink = "",
-    git = {
-      unstaged = "",
-      staged = "",
-      unmerged = "",
-      renamed = "➜",
-      untracked = "",
-      deleted = "",
-      ignored = "◌",
-    },
-    folder = {
-      arrow_closed = "",
-      arrow_open = "",
-      default = "",
-      open = "",
-      empty = "",
-      empty_open = "",
-      symlink = "",
-      symlink_open = "",
-    },
-  }
+  lvim.builtin.nvimtree.icons = kind.nvim_tree_icons
   -- lvim.builtin.nvimtree.hide_dotfiles = 0
 
   -- Project

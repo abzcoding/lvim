@@ -7,7 +7,7 @@ if ok then
 end
 
 local function clock()
-  return " " .. os.date "%H:%M"
+  return kind.icons.clock .. os.date "%H:%M"
 end
 
 local function lsp_progress()
@@ -129,24 +129,6 @@ local mode = function()
   end
   return normal_icons[selector]
 end
-local file_icons = {
-  Brown = { "" },
-  Aqua = { "" },
-  LightBlue = { "", "" },
-  Blue = { "", "", "", "", "", "", "", "", "", "", "", "", "" },
-  Darkblue = { "", "" },
-  Purple = { "", "", "", "", "" },
-  Red = { "", "", "", "", "", "" },
-  Beige = { "", "", "" },
-  Yellow = { "", "", "λ", "", "" },
-  Orange = { "", "" },
-  Darkorange = { "", "", "", "", "" },
-  Pink = { "", "" },
-  Salmon = { "" },
-  Green = { "", "", "", "", "", "" },
-  Lightgreen = { "", "", "", "﵂" },
-  White = { "", "", "", "", "", "" },
-}
 
 local file_icon_colors = {
   Brown = "#905532",
@@ -181,7 +163,7 @@ local function get_file_icon()
   local f_name, f_extension = get_file_info()
   icon = devicons.get_icon(f_name, f_extension)
   if icon == nil then
-    icon = ""
+    icon = kind.icons.question
   end
   return icon
 end
@@ -197,8 +179,8 @@ local function get_file_icon_color()
   end
 
   local icon = get_file_icon():match "%S+"
-  for k, _ in pairs(file_icons) do
-    if vim.fn.index(file_icons[k], icon) ~= -1 then
+  for k, _ in pairs(kind.file_icons) do
+    if vim.fn.index(kind.file_icons[k], icon) ~= -1 then
       return file_icon_colors[k]
     end
   end
@@ -327,7 +309,6 @@ M.config = function()
           end,
           color = "LualineModeInactive",
           padding = { left = 1, right = 0 },
-          -- left_padding = 1,
         },
         {
           "filename",
@@ -350,30 +331,18 @@ M.config = function()
   end
 
   ins_left {
-    -- mode component
     function()
-      -- auto change color according to neovims mode
       vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
       return mode()
-      -- return ""
     end,
-
-    -- color = { fg = colors.red },
     color = "LualineMode",
     padding = { left = 1, right = 0 },
-    -- left_padding = 1,
   }
   ins_left {
     "b:gitsigns_head",
     icon = " ",
-    -- color = "LualineBranchMode",
     cond = conditions.check_git_workspace,
-    -- function()
-    --   return "▊"
-    -- end,
-    -- -- color = "LualineMode",
-    color = { fg = colors.blue }, -- Sets highlighting of component
-    -- left_padding = 0, -- We don't need space before this
+    color = { fg = colors.blue },
     padding = 0,
   }
 
@@ -391,38 +360,23 @@ M.config = function()
     color = { fg = colors.cyan },
     cond = conditions.hide_in_width,
   }
+
   ins_left {
     function()
       vim.api.nvim_command("hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg)
       local winnr = vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
-      local win = " "
-      if winnr == 2 then
-        win = " "
-      elseif winnr == 3 then
-        win = " "
-      elseif winnr == 4 then
-        win = " "
-      elseif winnr == 5 then
-        win = " "
-      elseif winnr == 6 then
-        win = " "
-      elseif winnr == 7 then
-        win = " "
-      elseif winnr == 8 then
-        win = " "
-      elseif winnr == 9 then
-        win = " "
-      elseif winnr > 9 then
-        win = " "
+      if winnr > 10 then
+        winnr = 10
       end
+      local win = kind.numbers[winnr]
       return win .. " " .. get_file_icon()
-      -- return get_file_icon()
     end,
     padding = { left = 2, right = 0 },
     cond = conditions.buffer_not_empty,
     color = "LualineFileIconColor",
     gui = "bold",
   }
+
   ins_left {
     function()
       local fname = vim.fn.expand "%:p"
@@ -438,6 +392,7 @@ M.config = function()
     padding = { left = 1, right = 1 },
     color = { fg = colors.fg, gui = "bold" },
   }
+
   ins_left {
     "diff",
     source = diff_source,
@@ -450,6 +405,7 @@ M.config = function()
     color = {},
     cond = nil,
   }
+
   ins_left {
     function()
       local utils = require "lvim.core.lualine.utils"
@@ -485,6 +441,7 @@ M.config = function()
       hl = { fg = colors.fg },
     },
   }
+
   ins_left {
     provider = function()
       if vim.g.using_persistence then
@@ -539,18 +496,16 @@ M.config = function()
       return ""
     end,
     padding = 0,
-    -- left_padding = 0,
-    -- right_padding = 0,
     color = { fg = colors.green },
     cond = conditions.hide_in_width,
   }
   ins_right {
     function(msg)
-      msg = msg or "轢 LS Inactive"
+      msg = msg or kind.icons.ls_inactive .. "LS Inactive"
       local buf_clients = vim.lsp.buf_get_clients()
       if next(buf_clients) == nil then
         if type(msg) == "boolean" or #msg == 0 then
-          return "轢 LS Inactive"
+          return kind.icons.ls_inactive .. "LS Inactive"
         end
         return msg
       end
@@ -561,9 +516,6 @@ M.config = function()
         trim = false
       end
 
-      -- add client
-      -- local utils = require "lsp.utils"
-      -- local active_client = utils.get_active_client_by_ft(buf_ft)
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
           local _added_client = client.name
@@ -573,7 +525,6 @@ M.config = function()
           table.insert(buf_client_names, _added_client)
         end
       end
-      -- vim.list_extend(buf_client_names, active_client or {})
 
       -- add formatter
       local formatters = require "lvim.lsp.null-ls.formatters"
@@ -599,9 +550,8 @@ M.config = function()
       end
       vim.list_extend(buf_client_names, supported_linters)
 
-      return "歷" .. table.concat(buf_client_names, ", ")
+      return kind.icons.ls_active .. table.concat(buf_client_names, ", ")
     end,
-    -- icon = " ",
     color = { fg = colors.fg },
     cond = conditions.hide_in_width,
   }
@@ -609,13 +559,10 @@ M.config = function()
   ins_right {
     "location",
     padding = 0,
-    -- left_padding = 0,
-    -- right_padding = 0,
     color = { fg = colors.orange },
   }
-  -- Add components to right sections
+
   ins_right {
-    -- filesize component
     function()
       local function format_file_size(file)
         local size = vim.fn.getfsize(file)
@@ -640,9 +587,8 @@ M.config = function()
   }
   ins_right {
     "fileformat",
-    -- upper = true,
     fmt = string.upper,
-    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+    icons_enabled = true,
     color = { fg = colors.green, gui = "bold" },
     cond = conditions.hide_in_width,
   }
@@ -663,8 +609,6 @@ M.config = function()
       return chars[index]
     end,
     padding = 0,
-    -- left_padding = 0,
-    -- right_padding = 0,
     color = { fg = colors.yellow, bg = colors.bg },
     cond = nil,
   }
