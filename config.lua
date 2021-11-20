@@ -76,9 +76,7 @@ end
 
 -- Language Specific
 -- =========================================
-local custom_servers = { "dockerls", "sumneko_lua", "texlab", "tsserver", "jsonls", "gopls" }
 vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
-vim.list_extend(lvim.lsp.override, custom_servers)
 require("user.null_ls").config()
 
 -- Additional Plugins
