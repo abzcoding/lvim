@@ -44,6 +44,9 @@ M.icons = {
   ls_inactive = "轢",
   ls_active = "歷",
   question = "",
+  screen = "冷",
+  dart = " ",
+  config = " ",
 }
 
 M.nvim_tree_icons = {

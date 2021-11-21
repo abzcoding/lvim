@@ -116,6 +116,7 @@ M.config = function()
           },
           {
             name = "screens",
+            icon = icons.screen,
             matcher = function(buf)
               return buf.path:match "screen"
             end,
@@ -127,6 +128,16 @@ M.config = function()
             matcher = function(buf)
               local list = List { "md", "txt", "org", "norg", "wiki" }
               return list:contains(fn.fnamemodify(buf.path, ":e"))
+            end,
+          },
+          {
+            highlight = { guisp = "#F6A878" },
+            name = "config",
+            matcher = function(buf)
+              return buf.filename:match "go.mod"
+                or buf.filename:match "Cargo.toml"
+                or buf.filename:match "manage.py"
+                or buf.filename:match "Makefile"
             end,
           },
         },
