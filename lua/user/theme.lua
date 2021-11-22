@@ -104,7 +104,7 @@ M.colors = {
 
   rose_pine_colors = {
     none = "NONE",
-    bg = "#232136",
+    bg = "#393552",
     fg = "#e0def4",
     fg_gutter = "#3b4261",
     black = "#393b44",
@@ -129,10 +129,10 @@ M.colors = {
     orange_br = "#F6A878",
     pink_br = "#DF97DB",
     comment = "#526175",
-    bg_alt = "#393552", -- nvim bg
+    bg_alt = "#232136",
     git = {
-      add = "#dfdfe0",
-      change = "#ea9a97",
+      add = "#84Cee4",
+      change = "#c4a7e7",
       delete = "#eb6f92",
       conflict = "#f6c177",
     },
