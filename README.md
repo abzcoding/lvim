@@ -32,6 +32,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
   - [Editor UI](#ui)
   - [Motions](#motion)
   - [LSP](#lsp)
+  - [Plugin: AsyncTasks](#plugin-asynctasks)
   - [Plugin: Gitsigns](#plugin-gitsigns)
   - [Plugin: LazyGit](#plugin-lazygit)
   - [Plugin: Telescope](#plugin-telescope)
@@ -103,6 +104,8 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.motion_provider = "hop"`
 - if you don't need csv support, disable it
   - `lvim.builtin.csv_support = false`
+- if you want to use the cool make and run system, enable it
+  - `lvim.builtin.async_tasks = { active = true }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 - Using tailwinds CSS for markdown, disable it if you want
@@ -389,6 +392,8 @@ _Symbols Outline_
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 - [csv.vim](https://github.com/chrisbra/csv.vim)
 - [sidebar.nvim](https://github.com/sidebar-nvim/sidebar.nvim)
+- [asynctasks.vim](https://github.com/skywind3000/asynctasks.vim)
+- [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim)
 
 </details>
 
@@ -482,6 +487,17 @@ Note that,
 | <kbd>g</kbd>+<kbd>r</kbd>                                                                |  𝐍   | goto references                     |
 | <kbd>g</kbd>+<kbd>s</kbd>                                                                |  𝐍   | show signature help                 |
 | <kbd>Ctrl</kbd>+<kbd>s</kbd>                                                             |  𝐈   | show signature help                 |
+
+### Plugin: AsyncTasks
+
+| Key                                        | Mode | Action        |
+| ------------------------------------------ | :--: | ------------- |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>f</kbd> |  𝐍   | Build File    |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>p</kbd> |  𝐍   | Build Project |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>e</kbd> |  𝐍   | Edit Tasks    |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>l</kbd> |  𝐍   | List Tasks    |
+| <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>f</kbd> |  𝐍   | Run File      |
+| <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>p</kbd> |  𝐍   | Run Project   |
 
 ### Plugin: Gitsigns
 

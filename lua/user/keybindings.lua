@@ -121,6 +121,28 @@ local function set_harpoon_keymaps()
   }
 end
 
+M.set_async_tasks_keymaps = function()
+  local poor_mans_autocmds = require("user.autocommands").make_run()
+  if lvim.builtin.async_tasks.active then
+    lvim.builtin.which_key.mappings["m"] = {
+      name = "Make",
+      f = { "<cmd>AsyncTask file-build<cr>", "File" },
+      p = { "<cmd>AsyncTask project-build<cr>", "Project" },
+      e = { "<cmd>AsyncTaskEdit<cr>", "Edit" },
+      l = { "<cmd>AsyncTaskList<cr>", "List" },
+    }
+    lvim.builtin.which_key.mappings["r"] = {
+      name = "Run",
+      f = { "<cmd>AsyncTask file-run<cr>", "File" },
+      p = { "<cmd>AsyncTask project-run<cr>", "Project" },
+    }
+  else
+    lvim.builtin.which_key.mappings["m"] = "Make"
+    lvim.builtin.which_key.mappings["r"] = "Run"
+    vim.tbl_deep_extend(lvim.autocommands.custom_groups, poor_mans_autocmds)
+  end
+end
+
 M.config = function()
   -- Additional keybindings
   -- =========================================
@@ -164,6 +186,7 @@ M.config = function()
 
   -- WhichKey keybindings
   -- =========================================
+  M.set_async_tasks_keymaps()
   if lvim.builtin.fancy_dashboard.active then
     lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "Dashboard" }
   end
@@ -222,7 +245,6 @@ M.config = function()
       s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
     }
   end
-  lvim.builtin.which_key.mappings["m"] = "Make"
   lvim.builtin.which_key.mappings["n"] = {
     name = "Neogen",
     c = { "<cmd>lua require('neogen').generate({ type = 'class'})<CR>", "Class Documentation" },
@@ -244,7 +266,6 @@ M.config = function()
     "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>",
     "String",
   }
-  lvim.builtin.which_key.mappings["r"] = "Run"
   lvim.builtin.which_key.mappings["T"] = {
     name = "Test",
     f = { "<cmd>TestFile<cr>", "File" },
