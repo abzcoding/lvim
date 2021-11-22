@@ -66,9 +66,9 @@ M.config = function()
   }
   local user = os.getenv "USER"
   if user and user == "abz" then
-    local extension_path = "~/.vscode-oss/extensions/vadimcn.vscode-lldb-1.6.0/"
+    local extension_path = "/Users/abz/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/"
     local codelldb_path = extension_path .. "adapter/codelldb"
-    local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+    local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
 
     opts.dap = {
       adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),

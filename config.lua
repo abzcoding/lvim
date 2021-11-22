@@ -49,6 +49,7 @@ if user and user == "abz" then
   lvim.lsp.document_highlight = false
   lvim.builtin.csv_support = true
   lvim.builtin.async_tasks.active = true
+  lvim.builtin.dap.active = true
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
