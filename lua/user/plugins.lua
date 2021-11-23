@@ -553,7 +553,7 @@ M.config = function()
       config = function()
         require("user.sidebar").config()
       end,
-      event = "BufRead",
+      -- event = "BufRead",
       disable = not lvim.builtin.sidebar.active,
     },
     {

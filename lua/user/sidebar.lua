@@ -8,9 +8,9 @@ M.config = function()
 
   sidebar.setup {
     open = false,
-    initial_width = 40,
+    initial_width = 30,
     enable_profile = false,
-    sections = { "git-status", "lsp-diagnostics", "containers" },
+    sections = { "datetime", "git-status", "lsp-diagnostics", "containers" },
     datetime = {
       icon = "",
       format = "%a %b %d, %H:%M",

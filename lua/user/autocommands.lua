@@ -63,6 +63,12 @@ augroup END
   ]]
   end
 
+  local codelens_viewer = "lua require('nvim-lightbulb').update_lightbulb()"
+  local user = os.getenv "USER"
+  if user and user == "abz" then
+    codelens_viewer = "lua require('user.codelens').show_line_sign()"
+  end
+
   lvim.autocommands.custom_groups = {
     -- toggleterm
     { "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },
@@ -74,7 +80,7 @@ augroup END
     { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
     -- go
-    { "CursorHold", "*.rs,*.go", "lua require'nvim-lightbulb'.update_lightbulb()" },
+    { "CursorHold", "*.rs,*.go", codelens_viewer },
     {
       "Filetype",
       "go",
