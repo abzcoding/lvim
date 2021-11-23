@@ -33,8 +33,8 @@ M.show_line_sign = function()
   if codelens_found == false then
     vim.fn.sign_unplace(SIGN_GROUP, { id = vim.b.codelens_line, buffer = "%" })
     vim.b.codelens_line = nil
-    require("nvim-lightbulb").update_lightbulb()
   end
+  require("nvim-lightbulb").update_lightbulb()
 end
 
 return M
