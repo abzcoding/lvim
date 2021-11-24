@@ -4,7 +4,7 @@ M.show_line_sign = function()
   local SIGN_GROUP = "nvim-lightbulblens"
   local SIGN_NAME = "LightBulbLensSign"
   if vim.tbl_isempty(vim.fn.sign_getdefined(SIGN_NAME)) then
-    vim.fn.sign_define(SIGN_NAME, { text = " ", texthl = "LspDiagnosticsDefaultInformation" })
+    vim.fn.sign_define(SIGN_NAME, { text = " ", texthl = "MoreMsg" })
   end
   local codelens_actions = {}
   for _, l in ipairs(vim.lsp.codelens.get(0)) do
