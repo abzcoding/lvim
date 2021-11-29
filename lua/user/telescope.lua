@@ -214,7 +214,7 @@ function M.project_search()
   builtin.find_files {
     previewer = false,
     layout_strategy = "vertical",
-    cwd = require("nvim_lsp.util").root_pattern ".git"(vim.fn.expand "%:p"),
+    cwd = require("lspconfig/util").root_pattern ".git"(vim.fn.expand "%:p"),
   }
 end
 
@@ -231,9 +231,18 @@ end
 function M.git_status()
   local opts = themes.get_dropdown {
     winblend = 10,
-    border = true,
     previewer = false,
     shorten_path = false,
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
+    layout_config = {
+      width = 0.45,
+      prompt_position = "top",
+    },
   }
 
   -- Can change the git icons using this.
@@ -265,7 +274,7 @@ function M.git_files()
     path = nil
   end
 
-  local width = 0.35
+  local width = 0.45
   if path and string.find(path, "sourcegraph.*sourcegraph", 1, false) then
     width = 0.6
   end
@@ -274,9 +283,16 @@ function M.git_files()
     winblend = 5,
     previewer = false,
     shorten_path = false,
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
     cwd = path,
     layout_config = {
       width = width,
+      prompt_position = "top",
     },
   }
 
