@@ -19,4 +19,4 @@ hi veta guifg=#ffffff
 "hi TaskWikiTaskCompletedCheck guifg=#00ff00
 
 highlight clear Conceal 
-highlight link Conceal VimwikiListTodo" youtube video: https://youtu.be/UuHJloiDErM?t=793
+highlight link Conceal VimwikiListTodo

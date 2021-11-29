@@ -1,2 +1,1 @@
-
 set shiftwidth=2
