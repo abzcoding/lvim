@@ -29,7 +29,7 @@ lvim.builtin.fancy_diff = { active = false } -- enable/disable fancier git diff
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest
 lvim.builtin.cheat = { active = true } -- enable cheat.sh integration
-lvim.builtin.sql_integration = { active = true } -- use sql integration
+lvim.builtin.sql_integration = { active = false } -- use sql integration
 lvim.builtin.neoscroll = { active = true } -- smooth scrolling
 lvim.builtin.neoclip = { active = true, enable_persistant_history = false }
 lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non focused windows
@@ -50,6 +50,7 @@ if user and user == "abz" then
   lvim.builtin.csv_support = true
   lvim.builtin.async_tasks.active = true
   lvim.builtin.dap.active = true
+  lvim.builtin.sql_integration.active = true
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
