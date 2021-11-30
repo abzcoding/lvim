@@ -3,6 +3,42 @@ local M = {}
 local action_state = require "telescope.actions.state"
 local themes = require "telescope.themes"
 local builtin = require "telescope.builtin"
+local actions = require "telescope.actions"
+
+function M._multiopen(prompt_bufnr, open_cmd)
+  local picker = action_state.get_current_picker(prompt_bufnr)
+  local num_selections = table.getn(picker:get_multi_selection())
+  if num_selections > 1 then
+    local picker = action_state.get_current_picker(prompt_bufnr)
+    vim.cmd "bw!"
+    for _, entry in ipairs(picker:get_multi_selection()) do
+      vim.cmd(string.format("%s %s", open_cmd, entry.value))
+    end
+    vim.cmd "stopinsert"
+  else
+    if open_cmd == "vsplit" then
+      actions.file_vsplit(prompt_bufnr)
+    elseif open_cmd == "split" then
+      actions.file_split(prompt_bufnr)
+    elseif open_cmd == "tabe" then
+      actions.file_tab(prompt_bufnr)
+    else
+      actions.file_edit(prompt_bufnr)
+    end
+  end
+end
+function M.multi_selection_open_vsplit(prompt_bufnr)
+  M._multiopen(prompt_bufnr, "vsplit")
+end
+function M.multi_selection_open_split(prompt_bufnr)
+  M._multiopen(prompt_bufnr, "split")
+end
+function M.multi_selection_open_tab(prompt_bufnr)
+  M._multiopen(prompt_bufnr, "tabe")
+end
+function M.multi_selection_open(prompt_bufnr)
+  M._multiopen(prompt_bufnr, "edit")
+end
 
 -- beautiful default layout for telescope prompt
 function M.layout_config()

@@ -539,10 +539,14 @@ Note that,
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins        |
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>p</kbd> |  𝐍   | Project search           |
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins        |
-| **Within _Telescope_ window**              |      |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd>               |  𝐈   | Exit telescope           |
-| <kbd>Ctrl</kbd>+<kbd>v</kbd>               |  𝐍   | Open in a vertical split |
-| <kbd>Ctrl</kbd>+<kbd>s</kbd>               |  𝐍   | Open in a split          |
+| **Within _Telescope_ window**              |      |                          |
+| <kbd>CR</kbd>                              | 𝐈 𝐍  | Multi/Single Open        |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd>               | 𝐈 𝐍  | Exit telescope           |
+| <kbd>Ctrl</kbd>+<kbd>v</kbd>               | 𝐈 𝐍  | Open in a vertical split |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>               | 𝐈 𝐍  | Open in a split          |
+| <kbd>Ctrl</kbd>+<kbd>t</kbd>               | 𝐈 𝐍  | Open in a tab            |
+| <kbd>Tab</kbd>                             | 𝐈 𝐍  | Toggle Selection + Next  |
+| <kbd>Shift</kbd>+<kbd>Tab</kbd>            | 𝐈 𝐍  | Toggle Selection + Prev  |
 
 ### Plugin: Harpoon
 

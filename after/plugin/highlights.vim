@@ -25,3 +25,4 @@ highlight! link CmpItemKindStruct  Type
 highlight! link CmpItemKindEvent  TSVariable
 highlight! link CmpItemKindOperator  Operator
 highlight! link CmpItemKindTypeParameter  Type
+highlight! link CmpItemKindSnippet  Statement
