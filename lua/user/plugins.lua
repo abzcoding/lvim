@@ -160,7 +160,8 @@ M.config = function()
       config = function()
         require("dapui").setup()
       end,
-      ft = { "python", "rust", "go" },
+      -- ft = { "python", "rust", "go" },
+      event = "BufReadPost",
       requires = { "mfussenegger/nvim-dap" },
       disable = not lvim.builtin.dap.active,
     },
@@ -243,7 +244,7 @@ M.config = function()
           enabled = true,
         }
       end,
-      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },
+      -- ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },
       event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
     },
