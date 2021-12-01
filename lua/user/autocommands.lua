@@ -48,21 +48,6 @@ augroup END
     ]]
   end
 
-  if lvim.builtin.hlslens.active then
-    vim.cmd [[
-function! Hls_coloring()
-  hi HlSearchNear guibg=None guifg=#bb9af7 gui=underline
-  hi HlSearchFloat guibg=None guifg=#bb9af7 gui=underline
-  hi HlSearchLensNear guibg=None guifg=#bb9af7 gui=italic
-  hi HlSearchLens guibg=None guifg=#bb9af7 gui=underline
-endfunction
-augroup hlsColor
-  autocmd!
-  autocmd BufReadPost * exec Hls_coloring()
-augroup END
-  ]]
-  end
-
   local codelens_viewer = "lua require('nvim-lightbulb').update_lightbulb()"
   local user = os.getenv "USER"
   if user and user == "abz" then
