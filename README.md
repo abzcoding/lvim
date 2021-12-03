@@ -442,17 +442,19 @@ Note that,
 
 ### UI
 
-| Key                           | Mode | Action           | Plugin or Mapping              |
-| ----------------------------- | :--: | ---------------- | ------------------------------ |
-| <kbd>Space</kbd>+<kbd>e</kbd> |  𝐍   | Open file tree   | <small>NvimTree</small>        |
-| <kbd>Space</kbd>+<kbd>o</kbd> |  𝐍   | Open symbols     | <small>Symbols-outline</small> |
-| <kbd>Space</kbd>+<kbd>f</kbd> |  𝐍   | Open file finder | <small>Telescope</small>       |
-| <kbd>Space</kbd>+<kbd>h</kbd> |  𝐍   | Remove highlight | <small>`nohlsearch<`</small>   |
-| <kbd>Space</kbd>+<kbd>/</kbd> |  𝐍   | Toggle comment   | <small>Comment.nvim</small>    |
-| <kbd>Space</kbd>+<kbd>?</kbd> |  𝐍   | Open cheats      | <small>cheat.sh</small>        |
-| <kbd>Space</kbd>+<kbd>'</kbd> |  𝐍   | Open marks       | <small>which-key marks</small> |
-| <kbd>Space</kbd>+<kbd>z</kbd> |  𝐍   | Zen mode         | <small>zen-mode.nvim</small>   |
-| <kbd>Space</kbd>+<kbd>P</kbd> |  𝐍   | Projects         | <small>project.nvim</small>    |
+| Key                           | Mode | Action              | Plugin or Mapping                           |
+| ----------------------------- | :--: | ------------------- | ------------------------------------------- |
+| <kbd>Space</kbd>+<kbd>e</kbd> |  𝐍   | Open file tree      | <small>NvimTree</small>                     |
+| <kbd>Space</kbd>+<kbd>o</kbd> |  𝐍   | Open symbols        | <small>Symbols-outline</small>              |
+| <kbd>Space</kbd>+<kbd>f</kbd> |  𝐍   | Open file finder    | <small>Telescope</small>                    |
+| <kbd>Space</kbd>+<kbd>h</kbd> |  𝐍   | Remove highlight    | <small>`nohlsearch<`</small>                |
+| <kbd>Space</kbd>+<kbd>/</kbd> |  𝐍   | Toggle comment      | <small>Comment.nvim</small>                 |
+| <kbd>Space</kbd>+<kbd>?</kbd> |  𝐍   | Open cheats         | <small>cheat.sh</small>                     |
+| <kbd>Space</kbd>+<kbd>'</kbd> |  𝐍   | Open marks          | <small>which-key marks</small>              |
+| <kbd>Space</kbd>+<kbd>z</kbd> |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                |
+| <kbd>Space</kbd>+<kbd>P</kbd> |  𝐍   | Projects            | <small>project.nvim</small>                 |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>  |  𝐈   | show signature help | <small>vim.lsp.buf.signature_help()</small> |
+| <kbd>Alt</kbd>+<kbd>s</kbd>   |  𝐈   | snippet selection   | <small>telescope luasnip extension</small>  |
 
 ### Motion
 
@@ -486,7 +488,6 @@ Note that,
 | <kbd>g</kbd>+<kbd>p</kbd>                                                                |  𝐍   | peek implementation                 |
 | <kbd>g</kbd>+<kbd>r</kbd>                                                                |  𝐍   | goto references                     |
 | <kbd>g</kbd>+<kbd>s</kbd>                                                                |  𝐍   | show signature help                 |
-| <kbd>Ctrl</kbd>+<kbd>s</kbd>                                                             |  𝐈   | show signature help                 |
 
 ### Plugin: AsyncTasks
 

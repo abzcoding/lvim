@@ -8,6 +8,11 @@ local actions = require "telescope.actions"
 function M._multiopen(prompt_bufnr, open_cmd)
   local picker = action_state.get_current_picker(prompt_bufnr)
   local num_selections = table.getn(picker:get_multi_selection())
+  local border_contents = picker.prompt_border.contents[1]
+  if string.find(border_contents, "LuaSnip") then
+    actions.select_default(prompt_bufnr)
+    return
+  end
   if num_selections > 1 then
     local picker = action_state.get_current_picker(prompt_bufnr)
     vim.cmd "bw!"
@@ -257,9 +262,18 @@ end
 function M.curbuf()
   local opts = themes.get_dropdown {
     winblend = 10,
-    border = true,
     previewer = false,
     shorten_path = false,
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
+    layout_config = {
+      width = 0.45,
+      prompt_position = "top",
+    },
   }
   builtin.current_buffer_fuzzy_find(opts)
 end
