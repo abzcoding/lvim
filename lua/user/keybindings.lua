@@ -158,6 +158,7 @@ M.config = function()
   lvim.keys.normal_mode["<A-x>"] = "<C-x>"
   lvim.keys.normal_mode["<C-,>"] = "<cmd>lua require('neogen').jump_next()<CR>"
   lvim.keys.normal_mode["<C-n>i"] = { "<C-i>", { noremap = true } }
+  lvim.keys.normal_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
   if vim.fn.has "mac" == 1 then
     lvim.keys.normal_mode["gx"] =
       [[<cmd>lua os.execute("open " .. vim.fn.shellescape(vim.fn.expand "<cWORD>")); vim.cmd "redraw!"<cr>]]
@@ -180,7 +181,6 @@ M.config = function()
     set_harpoon_keymaps()
   end
   lvim.keys.visual_mode["p"] = [["_dP]]
-  lvim.keys.visual_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
   lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
   lvim.keys.visual_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
 
