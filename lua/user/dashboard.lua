@@ -89,10 +89,14 @@ M.config = function()
     val = {
       button("f", " " .. kind.cmp_kind.Folder .. " Explore", ":Telescope find_files<CR>"),
       button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
-      button("s", " " .. kind.cmp_kind.Text .. " Ripgrep", ":Telescope live_grep<CR>"),
+      button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
+      button(
+        "g",
+        " " .. kind.icons.git .. " Git Status",
+        ":lua require('lvim.core.terminal')._exec_toggle('lazygit')<CR>"
+      ),
       button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
-      button("b", " " .. kind.icons.buffer .. " Buffers", ":Telescope buffers<CR>"),
-      button("o", " " .. kind.icons.settings .. " Options", ":e ~/.config/lvim/config.lua<CR>"),
+      button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
     },
     opts = {
       spacing = 1,
