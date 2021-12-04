@@ -13,13 +13,14 @@ M.config = function()
 
   local custom_go_actions = require "user.null_ls.go"
   local custom_md_hover = require "user.null_ls.markdown"
+  local nls_helpers = require "null-ls.helpers"
 
   -- you can either config null-ls itself
   nls.config {
     debounce = 150,
     save_after_format = false,
     sources = {
-      require("null-ls.helpers").conditional(function(utils)
+      nls_helpers.conditional(function(utils)
         return utils.root_has_file ".eslintrc.js"
             and nls.builtins.formatting.eslint_d.with { prefer_local = "node_modules/.bin" }
           or nls.builtins.formatting.prettierd.with { prefer_local = "node_modules/.bin" }
@@ -33,6 +34,11 @@ M.config = function()
       nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
       nls.builtins.formatting.black.with { extra_args = { "--fast" }, filetypes = { "python" } },
       nls.builtins.formatting.isort.with { extra_args = { "--profile", "black" }, filetypes = { "python" } },
+      nls_helpers.conditional(function(utils)
+        return utils.root_has_file "roles"
+          and utils.root_has_file "inventories"
+          and nls.builtins.diagnostics.ansiblelint
+      end),
       nls.builtins.diagnostics.hadolint,
       nls.builtins.diagnostics.eslint_d.with { prefer_local = "node_modules/.bin" },
       nls.builtins.diagnostics.shellcheck,
@@ -45,10 +51,11 @@ M.config = function()
       nls.builtins.diagnostics.vale.with {
         filetypes = { "markdown" },
       },
-      require("null-ls.helpers").conditional(function(utils)
+      nls_helpers.conditional(function(utils)
         return utils.root_has_file "revive.toml" and nls.builtins.diagnostics.revive
           or utils.root_has_file ".golangci.yml" and nls.builtins.diagnostics.golangci_lint
       end),
+      nls.builtins.code_actions.shellcheck,
       nls.builtins.code_actions.eslint_d.with { prefer_local = "node_modules/.bin" },
       -- TODO: try these later on
       -- nls.builtins.formatting.google_java_format,

@@ -6,6 +6,13 @@ M.config = function()
   -- =========================================
   require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/snippets" } }
 
+  -- Autopairs
+  -- =========================================
+  lvim.builtin.autopairs.on_config_done = function(autopairs)
+    autopairs.remove_rule("$$", "$$", "tex")
+    autopairs.remove_rule("$", "$", { "tex", "latex" })
+  end
+
   -- Barbar
   -- =========================================
   if lvim.builtin.fancy_bufferline.active then
