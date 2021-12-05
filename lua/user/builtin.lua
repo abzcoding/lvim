@@ -322,9 +322,6 @@ M.config = function()
   -- Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
-  lvim.builtin.terminal.execs = {
-    { "lazygit", "gg", "LazyGit" },
-  }
 
   -- WhichKey
   -- =========================================

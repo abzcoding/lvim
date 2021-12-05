@@ -176,7 +176,7 @@ M.config = function()
     },
     {
       "andymass/vim-matchup",
-      event = "CursorMoved",
+      event = "BufReadPost",
       config = function()
         vim.g.matchup_enabled = 1
         vim.g.matchup_surround_enabled = 1
