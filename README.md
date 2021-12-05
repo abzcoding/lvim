@@ -67,7 +67,7 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
     <small><i>(🔎 Click to expand/collapse)</i></small>
   </summary>
 
-- I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.6 head`
+- I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.7 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - i have a auto command to disable syntax,etc when you open files larger than `1MB`
 - if you don't want to use `harpoon`, disable it

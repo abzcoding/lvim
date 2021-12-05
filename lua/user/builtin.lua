@@ -97,11 +97,13 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  lvim.lsp.diagnostics.float.border = "rounded"
+  lvim.lsp.diagnostics.float.focusable = false
   lvim.lsp.diagnostics.signs.values = {
-    { name = "LspDiagnosticsSignError", text = kind.icons.error },
-    { name = "LspDiagnosticsSignWarning", text = kind.icons.warn },
-    { name = "LspDiagnosticsSignInformation", text = kind.icons.info },
-    { name = "LspDiagnosticsSignHint", text = kind.icons.hint },
+    { name = "DiagnosticSignError", text = kind.icons.error },
+    { name = "DiagnosticSignWarn", text = kind.icons.warn },
+    { name = "DiagnosticSignInfo", text = kind.icons.info },
+    { name = "DiagnosticSignHint", text = kind.icons.hint },
   }
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then

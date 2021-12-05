@@ -495,7 +495,7 @@ M.config = function()
       disable = not lvim.builtin.fancy_rename.active,
     },
     {
-      "windwp/floatline.nvim",
+      "simrat39/floatline.nvim",
       config = function()
         require("floatline").setup()
       end,

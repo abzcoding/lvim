@@ -4,6 +4,7 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "pablo"
 lvim.debug = false
+vim.lsp.set_log_level "warn"
 lvim.log.level = "warn"
 require("user.neovim").config()
 local _time = os.date "*t"
@@ -35,7 +36,7 @@ lvim.builtin.neoclip = { active = true, enable_persistant_history = false }
 lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non focused windows
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin
 lvim.builtin.remote_dev = { active = false } -- enable/disable remote development
-lvim.builtin.global_status_line = { active = true } -- use the global status line
+lvim.builtin.global_status_line = { active = false } -- WARN: doesn't work with nvim head
 lvim.builtin.cursorline = { active = false } -- use a bit fancier cursorline
 lvim.builtin.motion_provider = "hop" -- change this to use different motion providers ( hop or lightspeed )
 lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
