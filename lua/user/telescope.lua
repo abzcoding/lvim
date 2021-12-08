@@ -14,7 +14,6 @@ function M._multiopen(prompt_bufnr, open_cmd)
     return
   end
   if num_selections > 1 then
-    local picker = action_state.get_current_picker(prompt_bufnr)
     vim.cmd "bw!"
     for _, entry in ipairs(picker:get_multi_selection()) do
       vim.cmd(string.format("%s %s", open_cmd, entry.value))
