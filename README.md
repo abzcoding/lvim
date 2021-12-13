@@ -409,8 +409,6 @@ _Symbols Outline_
 - [ftplugin/](./ftplugin) - Language specific custom settings
 - [lsp-settings](./lsp-settings) - Custom lang server settings
 - [lua/](./lua) - Lua plugin configurations
-  - [lvim/](./lua/lvim) - Custom provider settings
-    - [providers/](./lua/lvim/lsp/providers) - Custom installation and configuration of language servers
   - [telescope/](./lua/telescope/_extensions) - Telescope extensions
   - [user/](./lua/user) - User specific settings
     - [null_ls](./lua/user/null_ls) - list of configured linters/formatters

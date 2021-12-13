@@ -35,4 +35,9 @@ local luadev = lua_dev.setup {
   },
 }
 
-return luadev
+local servers = require "nvim-lsp-installer.servers"
+local server_available, requested_server = servers.get_server "sumneko_lua"
+
+if server_available then
+  requested_server:setup(luadev)
+end

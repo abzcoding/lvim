@@ -37,6 +37,12 @@ local opts = {
     ts_utils.setup_client(client)
     require("lvim.lsp").common_on_attach(client, bufnr)
   end,
+  on_init = require("lvim.lsp").common_on_init,
+  capabilities = require("lvim.lsp").common_capabilities(),
 }
 
-return opts
+local servers = require "nvim-lsp-installer.servers"
+local server_available, requested_server = servers.get_server "tsserver"
+if server_available then
+  requested_server:setup(opts)
+end

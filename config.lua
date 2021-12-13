@@ -82,7 +82,7 @@ end
 
 -- Language Specific
 -- =========================================
-vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
+vim.list_extend(lvim.lsp.override, { "rust_analyzer", "tsserver", "dockerls", "texlab", "sumneko_lua", "gopls", "jsonls" })
 require("user.null_ls").config()
 
 -- Additional Plugins
