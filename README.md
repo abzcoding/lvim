@@ -102,7 +102,7 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.nonumber_unfocus = true`
 - choose between [hop](https://github.com/phaazon/hop.nvim) and [lightspeed](https://github.com/ggandor/lightspeed.nvim) as your favorite motion provider
   - `lvim.builtin.motion_provider = "hop"`
-- if you don't need csv support, disable it
+- if you don't need CSV support, disable it
   - `lvim.builtin.csv_support = false`
 - if you want to use the cool make and run system, enable it
   - `lvim.builtin.async_tasks = { active = true }`
@@ -161,12 +161,12 @@ lvim # run :PackerSync
 
 ## Language-Server Protocol (LSP)
 
-To leverage LSP auto-completions and other functionalities, once you open a
+To leverage LSP auto-completions and other functionalities, after you open a
 file in Neovim, run `:LspInstall <server>` to use
 [nvim-lsp-installer](lsp installer) installation feature.
 Use `Tab` to list available servers.
 
-Here are some useful LSP server installations:
+Here are some common LSP server installations:
 
 - `:LspInstall html cssls jsonls yamlls`
 - `:LspInstall gopls`
@@ -244,7 +244,7 @@ go build -o /usr/local/bin/gostructhelper && chmod 0755 /usr/local/bin/gostructh
 
 <img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
 
-#### BufferLine
+### BufferLine
 
 <img width="662" alt="Screen Shot 2021-10-18 at 5 44 20 PM" src="https://user-images.githubusercontent.com/10992695/137748538-33c59697-6783-43e5-bbd7-d920f91965bf.png">
 
@@ -299,7 +299,7 @@ _rename using `<leader>lr`_
 
 <img width="1913" alt="Screen Shot 2021-10-18 at 6 07 13 PM" src="https://user-images.githubusercontent.com/10992695/137752572-87a5792f-87a3-4131-8a1b-4ba786b83086.png">
 
-#### Testing
+#### Test
 
 <img width="1706" alt="Screen Shot 2021-10-18 at 6 13 22 PM" src="https://user-images.githubusercontent.com/10992695/137753736-a4502a50-cff5-4365-bfd7-22dfd08c71ed.png">
 
@@ -442,31 +442,31 @@ Note that,
 
 ### UI
 
-| Key                           | Mode | Action              | Plugin or Mapping                           |
-| ----------------------------- | :--: | ------------------- | ------------------------------------------- |
-| <kbd>Space</kbd>+<kbd>e</kbd> |  𝐍   | Open file tree      | <small>NvimTree</small>                     |
-| <kbd>Space</kbd>+<kbd>o</kbd> |  𝐍   | Open symbols        | <small>Symbols-outline</small>              |
-| <kbd>Space</kbd>+<kbd>f</kbd> |  𝐍   | Open file finder    | <small>Telescope</small>                    |
-| <kbd>Space</kbd>+<kbd>h</kbd> |  𝐍   | Remove highlight    | <small>`nohlsearch<`</small>                |
-| <kbd>Space</kbd>+<kbd>/</kbd> |  𝐍   | Toggle comment      | <small>Comment.nvim</small>                 |
-| <kbd>Space</kbd>+<kbd>?</kbd> |  𝐍   | Open cheats         | <small>cheat.sh</small>                     |
-| <kbd>Space</kbd>+<kbd>'</kbd> |  𝐍   | Open marks          | <small>which-key marks</small>              |
-| <kbd>Space</kbd>+<kbd>z</kbd> |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                |
-| <kbd>Space</kbd>+<kbd>P</kbd> |  𝐍   | Projects            | <small>project.nvim</small>                 |
-| <kbd>Ctrl</kbd>+<kbd>s</kbd>  |  𝐈   | show signature help | <small>vim.lsp.buf.signature_help()</small> |
-| <kbd>Alt</kbd>+<kbd>s</kbd>   |  𝐈   | snippet selection   | <small>telescope luasnip extension</small>  |
+| Key                           | Mode | Action              | Plugin or Mapping                             |
+| ----------------------------- | :--: | ------------------- | --------------------------------------------- |
+| <kbd>Space</kbd>+<kbd>e</kbd> |  𝐍   | Open file tree      | <small>NvimTree</small>                       |
+| <kbd>Space</kbd>+<kbd>o</kbd> |  𝐍   | Open symbols        | <small>Symbols-outline</small>                |
+| <kbd>Space</kbd>+<kbd>f</kbd> |  𝐍   | Open file finder    | <small>Telescope</small>                      |
+| <kbd>Space</kbd>+<kbd>h</kbd> |  𝐍   | Remove highlight    | <small>`nohlsearch<`</small>                  |
+| <kbd>Space</kbd>+<kbd>/</kbd> |  𝐍   | Toggle comment      | <small>Comment.nvim</small>                   |
+| <kbd>Space</kbd>+<kbd>?</kbd> |  𝐍   | Open cheats         | <small>cheat.sh</small>                       |
+| <kbd>Space</kbd>+<kbd>'</kbd> |  𝐍   | Open marks          | <small>which-key marks</small>                |
+| <kbd>Space</kbd>+<kbd>z</kbd> |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                  |
+| <kbd>Space</kbd>+<kbd>P</kbd> |  𝐍   | Projects            | <small>project.nvim</small>                   |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>  |  𝐈   | show signature help | <small>`vim.lsp.buf.signature_help()`</small> |
+| <kbd>Alt</kbd>+<kbd>s</kbd>   |  𝐈   | snippet selection   | <small>telescope luasnip extension</small>    |
 
 ### Motion
 
-| Key                         | Mode | Action                    | Plugin or Mapping                                                   |
-| --------------------------- | :--: | ------------------------- | ------------------------------------------------------------------- |
-| <kbd>f</kbd>                |  𝐍   | find next chacharacter    | <small>HopChar1CurrentLineAC</small> or <small>Lightspeed_f</small> |
-| <kbd>F</kbd>                |  𝐍   | find prprevious character | <small>HopChar1CurrentLineBC</small> or <small>Lightspeed_F</small> |
-| <kbd>s</kbd>                |  𝐍   | find chacharacter         | <small>HopChar2</small> or <small>Lightspeed_s</small>              |
-| <kbd>S</kbd>                |  𝐍   | find word                 | <small>HopWord</small> or <small>Lightspeed_S</small>               |
-| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐈   | select all                | <small>ggVG</small>                                                 |
-| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐍   | increment number          | <small>C-A</small>                                                  |
-| <kbd>Alt</kbd>+<kbd>x</kbd> |  𝐍   | decrement number          | <small>C-X</small>                                                  |
+| Key                         | Mode | Action                  | Plugin or Mapping                                                   |
+| --------------------------- | :--: | ----------------------- | ------------------------------------------------------------------- |
+| <kbd>f</kbd>                |  𝐍   | find next character     | <small>HopChar1CurrentLineAC</small> or <small>Lightspeed_f</small> |
+| <kbd>F</kbd>                |  𝐍   | find previous character | <small>HopChar1CurrentLineBC</small> or <small>Lightspeed_F</small> |
+| <kbd>s</kbd>                |  𝐍   | find character          | <small>HopChar2</small> or <small>Lightspeed_s</small>              |
+| <kbd>S</kbd>                |  𝐍   | find word               | <small>HopWord</small> or <small>Lightspeed_S</small>               |
+| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐈   | select all              | <small>ggVG</small>                                                 |
+| <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐍   | increment number        | <small>C-A</small>                                                  |
+| <kbd>Alt</kbd>+<kbd>x</kbd> |  𝐍   | decrement number        | <small>C-X</small>                                                  |
 
 ### LSP
 
@@ -540,7 +540,7 @@ Note that,
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins        |
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>p</kbd> |  𝐍   | Project search           |
 | <kbd>Space</kbd>+<kbd>F</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins        |
-| **Within _Telescope_ window**              |      |                          |
+| **in _Telescope_ window**                  |      |                          |
 | <kbd>CR</kbd>                              | 𝐈 𝐍  | Multi/Single Open        |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | 𝐈 𝐍  | Exit telescope           |
 | <kbd>Ctrl</kbd>+<kbd>v</kbd>               | 𝐈 𝐍  | Open in a vertical split |
@@ -558,14 +558,14 @@ Note that,
 | <kbd>Space</kbd>+<kbd>1</kbd>     |  𝐍   | jump to first file on shortlist  |
 | <kbd>Space</kbd>+<kbd>2</kbd>     |  𝐍   | jump to second file on shortlist |
 | <kbd>Space</kbd>+<kbd>3</kbd>     |  𝐍   | jump to third file on shortlist  |
-| <kbd>Space</kbd>+<kbd>4</kbd>     |  𝐍   | jump to forforthle on shortlist  |
+| <kbd>Space</kbd>+<kbd>4</kbd>     |  𝐍   | jump to forth file on shortlist  |
 
 ### Plugin: Neogen
 
-| Key                                        | Mode | Action                    |
-| ------------------------------------------ | :--: | ------------------------- |
-| <kbd>Space</kbd>+<kbd>n</kbd>+<kbd>c</kbd> |  𝐍   | class docdocumentation    |
-| <kbd>Space</kbd>+<kbd>n</kbd>+<kbd>f</kbd> |  𝐍   | function docdocumentation |
+| Key                                        | Mode | Action                 |
+| ------------------------------------------ | :--: | ---------------------- |
+| <kbd>Space</kbd>+<kbd>n</kbd>+<kbd>c</kbd> |  𝐍   | class documentation    |
+| <kbd>Space</kbd>+<kbd>n</kbd>+<kbd>f</kbd> |  𝐍   | function documentation |
 
 ### Plugin: Persistence
 

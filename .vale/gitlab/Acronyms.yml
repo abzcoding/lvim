@@ -22,9 +22,11 @@ exceptions:
   - ARN
   - ASCII
   - AWS
+  - BGP
   - BSD
   - CAS
   - CDN
+  - CIS
   - CLI
   - CNA
   - CNAME
@@ -38,16 +40,20 @@ exceptions:
   - CVS
   - DAG
   - DAST
+  - DDOS
   - DHCP
+  - DLL
   - DNS
   - DOM
   - DSA
   - DVCS
   - ECDSA
   - ECS
+  - EDR
   - EFS
   - EKS
   - EOL
+  - ETC
   - EXIF
   - FAQ
   - FIFO
@@ -74,6 +80,7 @@ exceptions:
   - HTML
   - HTTP
   - HTTPS
+  - HSTS
   - IAM
   - IANA
   - IBM
@@ -140,10 +147,12 @@ exceptions:
   - SCP
   - SCSS
   - SDK
+  - SDN
   - SELF
   - SEO
   - SFTP
   - SHA
+  - SIEM
   - SLA
   - SMS
   - SMTP
@@ -157,6 +166,7 @@ exceptions:
   - SSH
   - SSL
   - SSO
+  - SSRF
   - SVG
   - SVN
   - TCP
@@ -178,8 +188,10 @@ exceptions:
   - VCS
   - VPC
   - VPN
+  - WAF
   - WIP
   - WSL
+  - XDR
   - XML
   - XSS
   - YAML

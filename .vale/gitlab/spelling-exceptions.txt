@@ -6,6 +6,7 @@ Alibaba
 Aliyun
 Ansible
 Anthos
+Anycast
 Apdex
 Arel
 Artifactory
@@ -19,14 +20,17 @@ Axios
 Ayoa
 Azure
 B-tree
+BGP
 Bamboo
 Bazel
+Bepa
 Bhyve
 Bitbucket
 Blankline
 Bootsnap
 Bugzilla
 Buildkite
+CIS
 CSV
 Caddy
 Camo
@@ -50,6 +54,8 @@ Corosync
 Coursier
 Crossplane
 CrowdIn
+Cyber
+DDOS
 Dangerfile
 Datadog
 Debian
@@ -64,6 +70,7 @@ Dockerized
 Dockerizing
 Dpl
 Dreamweaver
+EDR
 ETag
 Ecto
 Elasticsearch
@@ -75,6 +82,7 @@ Figma
 Filebeat
 Fio
 Flawfinder
+Floatline
 Flowdock
 Fluentd
 Forgerock
@@ -93,6 +101,7 @@ Gitea
 Github
 Gitleaks
 Gitpod
+Gitsigns
 Gitter
 Gmail
 Godep
@@ -103,6 +112,7 @@ Gradle
 Grafana
 Grafonnet
 Gzip
+HSTS
 Haml
 Haswell
 Helm
@@ -123,9 +133,12 @@ Jira
 Jsonnet
 JupyterHub
 Kaminari
+Karagah
+Kargadan
 Karma
 Kerberos
 Keycloak
+Keymap
 Kibana
 Kinesis
 Klar
@@ -133,6 +146,7 @@ Knative
 Kramdown
 Kroki
 Kubecost
+Kubernetes
 Kubernetes
 Kubesec
 Kustomize
@@ -167,8 +181,10 @@ ModSecurity
 Monokai
 Nanoc
 Neogen
+Neoscroll
 Neovim
 Netlify
+Nginx
 Nokogiri
 Nurtch
 OAuth
@@ -209,8 +225,11 @@ Rubinius
 Rubix
 Rubocop
 Rubular
+SIEM
+SSRF
 Salesforce
 Schemastore
+Seccomp
 Semgrep
 Sendmail
 Sentry
@@ -224,8 +243,10 @@ Slack
 Slackbot
 Slony
 Sobelow
+SolarWinds
 Solargraph
 Solarized
+Sotoon
 Sourcegraph
 Splunk
 SpotBugs
@@ -241,6 +262,7 @@ Tmux
 Todo
 Tokenizers
 Tokyonight
+Traceroute
 Trello
 Trivy
 Truststore
@@ -254,6 +276,8 @@ Vagrantfile
 Vimtex
 Vue
 Vuex
+WAF
+Wazuh
 WebdriverIO
 Webex
 Webservice
@@ -282,6 +306,7 @@ architected
 architecting
 archiver
 auditability
+autocommands
 autocomplete
 autocompleted
 autocompletes
@@ -308,6 +333,7 @@ backtraces
 backtracing
 badging
 barbar
+bepa
 blockquote
 blockquoted
 blockquotes
@@ -331,6 +357,7 @@ cacheable
 callstack
 callstacks
 canonicalized
+cgroups
 chai
 changeset
 changesets
@@ -338,6 +365,7 @@ chatbot
 chatbots
 checksummed
 checksumming
+chroot
 clonable
 colocated
 colocating
@@ -356,6 +384,7 @@ crontabs
 crosslinked
 crosslinking
 crosslinks
+cyber
 cybersecurity
 datasource
 datasources
@@ -406,9 +435,12 @@ fastlane
 favicon
 favorited
 filetype
+filetypes
 firewalled
 firewalling
 formatters
+ftdetect
+ftplugin
 fuzzer
 gb
 gettext
@@ -416,6 +448,7 @@ gitlabsos
 globals
 goroutine
 goroutines
+goto
 gravatar
 hardcode
 hardcoded
@@ -460,6 +493,7 @@ kubectl
 lang
 ldapsearch
 libFuzzer
+lightspeed
 linter
 linters
 liveness
@@ -474,6 +508,9 @@ lsp
 lspconfig
 lua
 luajit
+luasnip
+lunarvim
+lvim
 markdownlint
 matcher
 matchers
@@ -524,6 +561,7 @@ offboarded
 offboarding
 offboards
 onboarding
+onedarker
 parallelization
 parallelizations
 passwordless
@@ -651,6 +689,7 @@ skippable
 smartcard
 smartcards
 snapshotting
+sotoon
 sparkline
 sparklines
 spectre
@@ -708,6 +747,7 @@ syncable
 syscall
 syscalls
 syslog
+tabnine
 tanuki
 tcpdump
 templated
@@ -721,9 +761,11 @@ timecop
 tiptap
 tmux
 tmux
+todo
 todos
 tokenizer
 tokenizing
+tokyonight
 tolerations
 toolchain
 toolchains
@@ -846,6 +888,7 @@ vendored
 versionless
 viewport
 viewports
+vimscript
 virtualized
 virtualizing
 walkthrough
@@ -863,4 +906,3 @@ wireframing
 worktree
 worktrees
 z
-

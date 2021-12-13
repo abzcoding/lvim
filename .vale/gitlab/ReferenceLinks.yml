@@ -7,7 +7,7 @@
 extends: existence
 message: 'Link "%s" must be inline.'
 link: https://docs.gitlab.com/ee/development/documentation/styleguide/index.html#basic-link-criteria
-level: error
+level: suggestion
 scope: raw
 raw:
   - '\n\[[^\]]*\]: .*'
