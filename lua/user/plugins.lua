@@ -96,7 +96,7 @@ M.config = function()
           auto_close = true,
           padding = false,
           height = 10,
-          use_lsp_diagnostic_signs = true,
+          use_diagnostic_signs = true,
         }
       end,
       cmd = "Trouble",
