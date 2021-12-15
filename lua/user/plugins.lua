@@ -283,6 +283,7 @@ M.config = function()
         "typescript.tsx",
       },
       opt = true,
+      event = "BufReadPre",
       before = "williamboman/nvim-lsp-installer",
     },
     {
@@ -404,6 +405,7 @@ M.config = function()
           html = true,
           c = true,
           cpp = true,
+          java = true,
           javascript = true,
           typescript = true,
           javascriptreact = true,
