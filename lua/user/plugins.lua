@@ -552,7 +552,7 @@ M.config = function()
         )
       end,
       event = "BufRead",
-      ft = { "rust", "go" },
+      ft = { "rust", "go", "typescript", "typescriptreact" },
     },
     {
       "chrisbra/csv.vim",

@@ -65,7 +65,7 @@ augroup END
     { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
 
     -- go
-    { "CursorHold", "*.rs,*.go", codelens_viewer },
+    { "CursorHold", "*.rs,*.go,*.ts,*.tsx", codelens_viewer },
     {
       "Filetype",
       "go",
