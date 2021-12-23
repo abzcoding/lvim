@@ -153,9 +153,9 @@ M.config = function()
     "<cmd>lua require('telescope').extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<CR>"
   lvim.keys.command_mode["w!!"] = "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!"
   lvim.keys.normal_mode["]d"] =
-    "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>"
+    "<cmd>lua vim.diagnostic.goto_next()<cr>"
   lvim.keys.normal_mode["[d"] =
-    "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>"
+    "<cmd>lua vim.diagnostic.goto_prev()<cr>"
   lvim.keys.normal_mode["<A-a>"] = "<C-a>"
   lvim.keys.normal_mode["<A-x>"] = "<C-x>"
   lvim.keys.normal_mode["<C-,>"] = "<cmd>lua require('neogen').jump_next()<CR>"
