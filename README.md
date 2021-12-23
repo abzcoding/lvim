@@ -55,7 +55,7 @@ Themes are automatically changed based on time of the day:
 | [rose-pine](https://github.com/rose-pine/neovim)                                   |       [8am, 11am)        |
 | [tokyonight](https://github.com/folke/tokyonight)                                  | [12am, 5am), [11am, 5pm) |
 | [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |        [5pm, 9pm)        |
-| onedarker                                                                          |      [9pm, 11:59pm]      |
+| [kanagawa](https://github.com/rebelot/kanagawa.nvim)                               |      [9pm, 11:59pm)      |
 
 You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](./lua/user/lualine.lua)
 

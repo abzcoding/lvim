@@ -18,7 +18,7 @@ M.tokyonight = function()
   vim.g.tokyonight_italic_keywords = true
   vim.g.tokyonight_italic_functions = false
   vim.g.tokyonight_italic_variables = false
-  vim.g.tokyonight_transparent = false
+  vim.g.tokyonight_transparent = lvim.transparent_window
   vim.g.tokyonight_hide_inactive_statusline = true
   vim.g.tokyonight_dark_sidebar = true
   vim.g.tokyonight_dark_float = true
@@ -40,7 +40,7 @@ M.doom = function()
     terminal_colors = false,
     italic_comments = true,
     enable_treesitter = true,
-    transparent_background = false,
+    transparent_background = lvim.transparent_window,
     pumblend = {
       enable = true,
       transparency_amount = 20,
@@ -61,6 +61,24 @@ M.doom = function()
       vim_illuminate = false,
       lspsaga = false,
     },
+  }
+end
+
+M.kanagawa = function()
+  local kanagawa = require "kanagawa"
+  kanagawa.setup {
+    undercurl = true, -- enable undercurls
+    commentStyle = "italic",
+    functionStyle = "NONE",
+    keywordStyle = "italic",
+    statementStyle = "bold",
+    typeStyle = "NONE",
+    variablebuiltinStyle = "italic",
+    specialReturn = true, -- special highlight for the return keyword
+    specialException = true, -- special highlight for exception handling keywords
+    transparent = lvim.transparent_window,
+    colors = {},
+    overrides = {},
   }
 end
 
@@ -251,6 +269,25 @@ M.colors = {
       change = "#61afef",
       delete = "#e95678",
       conflict = "#D98e48",
+    },
+  },
+
+  kanagawa_colors = {
+    bg = "#16161D",
+    bg_alt = "#1F1F28",
+    fg = "#DCD7BA",
+    red = "#43242B",
+    orange = "#FFA066",
+    yellow = "#DCA561",
+    blue = "#7FB4CA",
+    cyan = "#658594",
+    violet = "#957FB8",
+    magenta = "#938AA9",
+    git = {
+      add = "#76946A",
+      conflict = "#252535",
+      delete = "#C34043",
+      change = "#DCA561",
     },
   },
 }

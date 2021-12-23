@@ -57,6 +57,19 @@ M.config = function()
       end,
     },
     {
+      "rebelot/kanagawa.nvim",
+      config = function()
+        require("user.theme").kanagawa()
+        vim.cmd [[
+      colorscheme kanagawa
+      ]]
+      end,
+      cond = function()
+        local _time = os.date "*t"
+        return (_time.hour >= 21 and _time.hour < 24)
+      end,
+    },
+    {
       "ray-x/lsp_signature.nvim",
       config = function()
         require("user/lsp_signature").config()

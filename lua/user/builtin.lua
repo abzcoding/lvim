@@ -220,13 +220,6 @@ M.config = function()
       filetype = "solidity",
     }
     parser_config.jsonc.used_by = "json"
-    parser_config.markdown = {
-      install_info = {
-        url = "https://github.com/ikatyang/tree-sitter-markdown",
-        files = { "src/parser.c", "src/scanner.cc" },
-      },
-      filetype = "markdown",
-    }
     if lvim.builtin.orgmode.active then
       parser_config.org = {
         install_info = {

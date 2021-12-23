@@ -210,7 +210,7 @@ M.config = function()
   elseif _time.hour >= 17 and _time.hour < 21 then
     colors = themes.doom_one_colors
   elseif _time.hour >= 21 and _time.hour < 24 then
-    colors = themes.onedarker_colors
+    colors = themes.kanagawa_colors
   end
 
   -- Color table for highlights

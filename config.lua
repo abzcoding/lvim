@@ -7,10 +7,6 @@ lvim.debug = false
 vim.lsp.set_log_level "warn"
 lvim.log.level = "warn"
 require("user.neovim").config()
-local _time = os.date "*t"
-if _time.hour >= 21 and _time.hour < 24 then
-  lvim.colorscheme = "onedarker"
-end
 
 -- Customization
 -- =========================================
