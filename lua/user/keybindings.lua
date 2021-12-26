@@ -152,10 +152,8 @@ M.config = function()
   lvim.keys.insert_mode["<A-s>"] =
     "<cmd>lua require('telescope').extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<CR>"
   lvim.keys.command_mode["w!!"] = "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!"
-  lvim.keys.normal_mode["]d"] =
-    "<cmd>lua vim.diagnostic.goto_next()<cr>"
-  lvim.keys.normal_mode["[d"] =
-    "<cmd>lua vim.diagnostic.goto_prev()<cr>"
+  lvim.keys.normal_mode["]d"] = "<cmd>lua vim.diagnostic.goto_next()<cr>"
+  lvim.keys.normal_mode["[d"] = "<cmd>lua vim.diagnostic.goto_prev()<cr>"
   lvim.keys.normal_mode["<A-a>"] = "<C-a>"
   lvim.keys.normal_mode["<A-x>"] = "<C-x>"
   lvim.keys.normal_mode["<C-,>"] = "<cmd>lua require('neogen').jump_next()<CR>"
@@ -215,6 +213,10 @@ M.config = function()
     p = { "<cmd>lua require('user.telescope').project_search()<cr>", "Project" },
     s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
+  }
+  lvim.builtin.which_key.mappings["C"] = {
+    "<cmd>Telescope command_palette<cr>",
+    "Command Palette",
   }
   lvim.builtin.which_key.mappings["H"] = "Help"
   local ok, _ = pcall(require, "vim.diagnostic")
