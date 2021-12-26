@@ -68,7 +68,7 @@ end
 local function commands(opts, table)
   opts = opts or {}
   pickers.new(opts, {
-    prompt_title = "***" .. opts.commands_title,
+    prompt_title = opts.commands_title,
     finder = finders.new_table {
       results = table,
       entry_maker = function(entry)

@@ -312,6 +312,7 @@ M.config = function()
     "%.docx",
     "%.met",
     "smalljre_*/*",
+    ".vale/",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   local actions = require "telescope.actions"
