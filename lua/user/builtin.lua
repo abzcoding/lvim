@@ -345,6 +345,7 @@ M.config = function()
       ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
       ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
+      ["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
     }
     wk.register(keys, { mode = "n" })
   end

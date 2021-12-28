@@ -280,12 +280,6 @@ M.config = function()
       disable = not lvim.builtin.test_runner.active,
     },
     {
-      "folke/lua-dev.nvim",
-      ft = "lua",
-      before = "williamboman/nvim-lsp-installer",
-      disable = not lvim.builtin.lua_dev.active,
-    },
-    {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
       ft = {
         "javascript",
