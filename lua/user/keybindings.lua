@@ -213,7 +213,7 @@ M.config = function()
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
   }
   lvim.builtin.which_key.mappings["C"] = {
-    "<cmd>Telescope command_palette<cr>",
+    "<cmd>lua require('telescope').extensions.command_palette.command_palette()<cr>",
     "Command Palette",
   }
   lvim.builtin.which_key.mappings["H"] = "Help"
