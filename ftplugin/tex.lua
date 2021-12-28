@@ -10,5 +10,7 @@ local opts = {
 local servers = require "nvim-lsp-installer.servers"
 local server_available, requested_server = servers.get_server "texlab"
 if server_available then
-  requested_server:setup(opts)
+  opts.cmd = requested_server:get_default_options().cmd
 end
+
+require("lvim.lsp.manager").setup("texlab", opts)
