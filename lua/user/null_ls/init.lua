@@ -21,11 +21,18 @@ M.config = function()
     debounce = 150,
     save_after_format = false,
     sources = {
-      nls_helpers.conditional(function(utils)
-        return utils.root_has_file ".eslintrc.js"
-            and nls.builtins.formatting.eslint_d.with { prefer_local = "node_modules/.bin" }
-          or nls.builtins.formatting.prettierd.with { prefer_local = "node_modules/.bin" }
-      end),
+      nls.builtins.formatting.prettierd.with {
+        condition = function(utils)
+          return not utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
+      nls.builtins.formatting.eslint_d.with {
+        condition = function(utils)
+          return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
       nls.builtins.formatting.stylua,
       nls.builtins.formatting.goimports,
       nls.builtins.formatting.cmake_format,
@@ -35,13 +42,18 @@ M.config = function()
       nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
       nls.builtins.formatting.black.with { extra_args = { "--fast" }, filetypes = { "python" } },
       nls.builtins.formatting.isort.with { extra_args = { "--profile", "black" }, filetypes = { "python" } },
-      nls_helpers.conditional(function(utils)
-        return utils.root_has_file "roles"
-          and utils.root_has_file "inventories"
-          and nls.builtins.diagnostics.ansiblelint
-      end),
+      nls.builtins.diagnostics.ansiblelint.with {
+        condition = function(utils)
+          return utils.root_has_file "roles" and utils.root_has_file "inventories"
+        end,
+      },
       nls.builtins.diagnostics.hadolint,
-      nls.builtins.diagnostics.eslint_d.with { prefer_local = "node_modules/.bin" },
+      nls.builtins.diagnostics.eslint_d.with {
+        condition = function(utils)
+          return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
       nls.builtins.diagnostics.shellcheck,
       nls.builtins.diagnostics.luacheck,
       nls.builtins.diagnostics.vint,
@@ -52,12 +64,23 @@ M.config = function()
       nls.builtins.diagnostics.vale.with {
         filetypes = { "markdown" },
       },
-      nls_helpers.conditional(function(utils)
-        return utils.root_has_file "revive.toml" and nls.builtins.diagnostics.revive
-          or utils.root_has_file ".golangci.yml" and nls.builtins.diagnostics.golangci_lint
-      end),
+      nls.builtins.diagnostics.revive.with {
+        condition = function(utils)
+          return utils.root_has_file "revive.toml"
+        end,
+      },
+      nls.builtins.diagnostics.golangci_lint.with {
+        condition = function(utils)
+          return utils.root_has_file ".golangci.yml"
+        end,
+      },
       nls.builtins.code_actions.shellcheck,
-      nls.builtins.code_actions.eslint_d.with { prefer_local = "node_modules/.bin" },
+      nls.builtins.code_actions.eslint_d.with {
+        condition = function(utils)
+          return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
       -- TODO: try these later on
       -- nls.builtins.formatting.google_java_format,
       -- nls.builtins.code_actions.refactoring,

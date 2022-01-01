@@ -18,7 +18,7 @@ local opts = {
       eslint_enable_disable_comments = true,
       eslint_bin = "eslint_d",
       eslint_config_fallback = nil,
-      eslint_enable_diagnostics = true,
+      eslint_enable_diagnostics = false,
 
       -- formatting
       enable_formatting = false,
