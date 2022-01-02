@@ -25,6 +25,7 @@ M.config = function()
     vim.g["loaded_" .. plugin] = 1
   end
   vim.g.did_load_filetypes = 1
+  vim.g.ultest_summary_width = 30
   vim.opt.relativenumber = true
   vim.opt.wrap = true
   vim.opt.termguicolors = true

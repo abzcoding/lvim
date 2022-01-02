@@ -280,13 +280,13 @@ M.config = function()
   }
   lvim.builtin.which_key.mappings["t"] = {
     name = "+Trouble",
-    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
+    d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
     t = { "<cmd>TodoLocList <cr>", "Todo" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnosticss" },
   }
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
 

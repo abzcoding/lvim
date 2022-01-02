@@ -30,7 +30,7 @@ end
 
 M.rose_pine = function()
   vim.g.rose_pine_variant = "moon"
-  vim.cmd [[colorscheme rose-pine]]
+  vim.g.rose_pine_disable_italics = true
 end
 
 M.doom = function()
@@ -283,6 +283,7 @@ M.colors = {
     cyan = "#658594",
     violet = "#957FB8",
     magenta = "#938AA9",
+    green = "#76946A",
     git = {
       add = "#76946A",
       conflict = "#252535",

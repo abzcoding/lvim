@@ -9,9 +9,7 @@ M.config = function()
     {
       "abzcoding/zephyr-nvim",
       config = function()
-        vim.cmd [[
-       colorscheme zephyr
-       ]]
+        vim.cmd [[colorscheme zephyr]]
       end,
       cond = function()
         local _time = os.date "*t"
@@ -23,6 +21,7 @@ M.config = function()
       as = "rose-pine",
       config = function()
         require("user.theme").rose_pine()
+        vim.cmd [[colorscheme rose-pine]]
       end,
       cond = function()
         local _time = os.date "*t"
@@ -33,9 +32,7 @@ M.config = function()
       "folke/tokyonight.nvim",
       config = function()
         require("user.theme").tokyonight()
-        vim.cmd [[
-      colorscheme tokyonight
-      ]]
+        vim.cmd [[colorscheme tokyonight]]
       end,
       cond = function()
         local _time = os.date "*t"
@@ -47,9 +44,7 @@ M.config = function()
       branch = "feat/nvim-cmp-floating",
       config = function()
         require("user.theme").doom()
-        vim.cmd [[
-      colorscheme doom-one
-      ]]
+        vim.cmd [[colorscheme doom-one]]
       end,
       cond = function()
         local _time = os.date "*t"
@@ -60,9 +55,7 @@ M.config = function()
       "rebelot/kanagawa.nvim",
       config = function()
         require("user.theme").kanagawa()
-        vim.cmd [[
-      colorscheme kanagawa
-      ]]
+        vim.cmd [[colorscheme kanagawa]]
       end,
       cond = function()
         local _time = os.date "*t"
