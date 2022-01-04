@@ -1,5 +1,16 @@
 local M = {}
 
+-- HACK: for some reason, the alt keybindings are not working in my wezterm
+M.set_wezterm_keybindings = function()
+  lvim.keys.insert_mode["å"] = lvim.keys.insert_mode["<A-a>"]
+  lvim.keys.insert_mode["ß"] = lvim.keys.insert_mode["<A-s>"]
+  lvim.keys.insert_mode["´"] = lvim.keys.insert_mode["<A-e>"]
+  lvim.keys.insert_mode["∆"] = lvim.keys.insert_mode["<A-j>"]
+  lvim.keys.insert_mode["˚"] = lvim.keys.insert_mode["<A-k>"]
+  lvim.keys.normal_mode["å"] = lvim.keys.normal_mode["<A-a>"]
+  lvim.keys.normal_mode["≈"] = lvim.keys.normal_mode["<A-x>"]
+end
+
 M.set_terminal_keymaps = function()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
@@ -293,6 +304,13 @@ M.config = function()
     w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnosticss" },
   }
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
+
+  -- My wezterm is weird
+  -- =========================================
+  local user = os.getenv "USER"
+  if user and user == "abz" then
+    M.set_wezterm_keybindings()
+  end
 
   -- Navigate merge conflict markers
   local whk_status, whk = pcall(require, "which-key")

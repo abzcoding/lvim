@@ -7,16 +7,6 @@ M.config = function()
   end
   lvim.plugins = {
     {
-      "abzcoding/zephyr-nvim",
-      config = function()
-        vim.cmd [[colorscheme zephyr]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 5 and _time.hour < 8)
-      end,
-    },
-    {
       "rose-pine/neovim",
       as = "rose-pine",
       config = function()
@@ -59,7 +49,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 21 and _time.hour < 24)
+        return (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 5 and _time.hour < 8)
       end,
     },
     {

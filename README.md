@@ -49,13 +49,12 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 Themes are automatically changed based on time of the day:
 
-| Theme                                                                              |     Time of the day      |
-| ---------------------------------------------------------------------------------- | :----------------------: |
-| [zephyr](https://github.com/abzcoding/zephyr-nvim)                                 |        [5am, 8am)        |
-| [rose-pine](https://github.com/rose-pine/neovim)                                   |       [8am, 11am)        |
-| [tokyonight](https://github.com/folke/tokyonight)                                  | [12am, 5am), [11am, 5pm) |
-| [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |        [5pm, 9pm)        |
-| [kanagawa](https://github.com/rebelot/kanagawa.nvim)                               |      [9pm, 11:59pm)      |
+| Theme                                                                              |      Time of the day       |
+| ---------------------------------------------------------------------------------- | :------------------------: |
+| [rose-pine](https://github.com/rose-pine/neovim)                                   |        [8am, 11am)         |
+| [tokyonight](https://github.com/folke/tokyonight)                                  |  [12am, 5am), [11am, 5pm)  |
+| [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |         [5pm, 9pm)         |
+| [kanagawa](https://github.com/rebelot/kanagawa.nvim)                               | [9pm, 11:59pm), [5am, 8am] |
 
 You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](./lua/user/lualine.lua)
 
@@ -338,7 +337,6 @@ _Symbols Outline_
 - [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
 - [Rose Pine Theme](https://github.com/rose-pine/neovim)
-- [Zephyr Theme](https://github.com/abzcoding/zephyr-nvim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
