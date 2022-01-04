@@ -499,9 +499,7 @@ M.config = function()
     {
       "filipdutescu/renamer.nvim",
       config = function()
-        require("renamer").setup {
-          title = "Rename",
-        }
+        require("user.renamer").config()
       end,
       disable = not lvim.builtin.fancy_rename.active,
     },

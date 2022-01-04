@@ -11,8 +11,10 @@ M.config = function()
     enable_persistant_history = lvim.builtin.neoclip.enable_persistant_history,
     db_path = vim.fn.stdpath "data" .. "/neoclip.sqlite3",
     keys = {
-      i = { select = "<c-p>", paste = "<CR>", paste_behind = "<c-k>" },
-      n = { select = "p", paste = "<CR>", paste_behind = "P" },
+      telescope = {
+        i = { select = "<c-p>", paste = "<CR>", paste_behind = "<c-k>" },
+        n = { select = "p", paste = "<CR>", paste_behind = "P" },
+      },
     },
   }
   local function clip()
