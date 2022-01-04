@@ -241,10 +241,10 @@ M.config = function()
       return vim.fn.empty(vim.fn.expand "%:t") ~= 1
     end,
     hide_in_width = function()
-      return vim.fn.winwidth(0) > 80 or lvim.builtin.global_status_line.active
+      return vim.fn.winwidth(0) > 80
     end,
     hide_small = function()
-      return vim.fn.winwidth(0) > 150 or lvim.builtin.global_status_line.active
+      return vim.fn.winwidth(0) > 150
     end,
     check_git_workspace = function()
       local filepath = vim.fn.expand "%:p:h"
@@ -507,9 +507,6 @@ M.config = function()
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
       local trim = vim.fn.winwidth(0) < 120
-      if lvim.builtin.global_status_line.active then
-        trim = false
-      end
 
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then

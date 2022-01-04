@@ -385,8 +385,6 @@ _Symbols Outline_
 - [Copilot](https://github.com/github/copilot.vim)
 - [Harpoon](https://github.com/ThePrimeagen/harpoon)
 - [Renamer](https://github.com/filipdutescu/renamer.nvim)
-- [Floatline](https://github.com/windwp/floatline.nvim)
-- [Stabilize](https://github.com/luukvbaal/stabilize.nvim)
 - [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)
 - [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)

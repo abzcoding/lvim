@@ -503,20 +503,6 @@ M.config = function()
       end,
       disable = not lvim.builtin.fancy_rename.active,
     },
-    {
-      "simrat39/floatline.nvim",
-      config = function()
-        require("floatline").setup()
-      end,
-      disable = not lvim.builtin.global_status_line.active,
-    },
-    {
-      "luukvbaal/stabilize.nvim",
-      config = function()
-        require("stabilize").setup { forcemark = "f", nested = "QuickFixCmdPost,User LspDiagnosticsChanged" }
-      end,
-      disable = not lvim.builtin.global_status_line.active,
-    },
     { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
     {
       "yamatsum/nvim-cursorline",
