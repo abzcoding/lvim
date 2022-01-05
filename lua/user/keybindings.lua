@@ -220,7 +220,7 @@ M.config = function()
     g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
     i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
     l = {
-      "<cmd>lua require('user.telescope').grep_last_search({layout_strategy = \"vertical\"})<cr>",
+      "<cmd>lua require('telescope.builtin').resume()<cr>",
       "Last Search",
     },
     p = { "<cmd>lua require('user.telescope').project_search()<cr>", "Project" },

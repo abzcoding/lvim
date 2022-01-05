@@ -242,6 +242,7 @@ M.config = function()
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.telescope.defaults.winblend = 6
+  lvim.builtin.telescope.defaults.cache_picker = { num_pickers = 3 }
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
     "vendor/*",
@@ -481,7 +482,7 @@ function M.cpmenu()
       { "file browser", ":lua require('user.telescope').file_browser()", 1 },
       { "files", ":lua require('telescope.builtin').find_files()", 1 },
       { "git files", ":lua require('user.telescope').git_files()", 1 },
-      { "last search", ":lua require('user.telescope').grep_last_search()", 1 },
+      { "last search", ":lua require('telescope.builtin').resume({cache_index=3})" },
       { "quit", ":qa" },
       { "save all files", ":wa" },
       { "save current file", ":w" },
