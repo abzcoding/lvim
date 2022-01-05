@@ -201,13 +201,13 @@ M.config = function()
   local colors = default_colors
   local themes = require("user.theme").colors
   local _time = os.date "*t"
-  if _time.hour >= 8 and _time.hour < 11 then
+  if _time.hour >= 1 and _time.hour < 9 then
     colors = themes.rose_pine_colors
-  elseif (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17) then
+  elseif _time.hour >= 9 and _time.hour < 17 then
     colors = themes.tokyonight_colors
   elseif _time.hour >= 17 and _time.hour < 21 then
     colors = themes.doom_one_colors
-  elseif (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 5 and _time.hour < 8) then
+  elseif (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1) then
     colors = themes.kanagawa_colors
   end
 

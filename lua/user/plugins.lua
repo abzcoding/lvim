@@ -15,7 +15,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 8 and _time.hour < 11)
+        return (_time.hour >= 1 and _time.hour < 9)
       end,
     },
     {
@@ -26,7 +26,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17)
+        return _time.hour >= 9 and _time.hour < 17
       end,
     },
     {
@@ -49,7 +49,7 @@ M.config = function()
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 5 and _time.hour < 8)
+        return (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1)
       end,
     },
     {
@@ -465,6 +465,9 @@ M.config = function()
             literal = {
               ["kitty.conf"] = "kitty",
               [".gitignore"] = "conf",
+            },
+            complex = {
+              [".clang*"] = "yaml",
             },
           },
         }

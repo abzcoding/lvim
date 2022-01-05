@@ -103,6 +103,7 @@ M.config = function()
   -- =========================================
   lvim.lsp.diagnostics.float.border = "rounded"
   lvim.lsp.diagnostics.float.focusable = false
+  lvim.lsp.float.focusable = true
   lvim.lsp.diagnostics.signs.values = {
     { name = "DiagnosticSignError", text = kind.icons.error },
     { name = "DiagnosticSignWarn", text = kind.icons.warn },
