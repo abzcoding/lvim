@@ -230,19 +230,6 @@ function M.find_updir()
   builtin.find_files(opts)
 end
 
-function M.grep_last_search(opts)
-  opts = opts or {}
-
-  -- \<getreg\>\C
-  -- -> Subs out the search things
-  local register = vim.fn.getreg("/"):gsub("\\<", ""):gsub("\\>", ""):gsub("\\C", "")
-
-  opts.path_display = { "shorten" }
-  opts.word_match = "-w"
-  opts.search = register
-
-  builtin.grep_string(opts)
-end
 
 function M.installed_plugins()
   builtin.find_files {
