@@ -16,7 +16,11 @@ M.config = function()
   }
 
   -- Use your attach function here
-  local lsp = require "lspconfig"
+  local status_ok, lsp = pcall(require, "lspconfig")
+  if not status_ok then
+    return
+  end
+
   lsp.prosemd.setup {
     on_attach = require("lvim.lsp").common_on_attach,
     on_init = require("lvim.lsp").common_on_init,

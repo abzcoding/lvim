@@ -13,7 +13,6 @@ M.config = function()
 
   local custom_go_actions = require "user.null_ls.go"
   local custom_md_hover = require "user.null_ls.markdown"
-  local nls_helpers = require "null-ls.helpers"
 
   -- you can either config null-ls itself
   nls.setup {

@@ -10,7 +10,7 @@ local opts = {
         upgrade_dependency = true, -- Upgrades a dependency in the go.mod file for a module
         vendor = true, -- Runs go mod vendor for a module
       },
-      diagnosticsDelay = "500ms",
+      diagnosticsDelay = "300ms",
       experimentalWatchedFileDelay = "100ms",
       symbolMatcher = "fuzzy",
       completeUnimported = true,

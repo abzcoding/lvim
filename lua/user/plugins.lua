@@ -405,15 +405,6 @@ M.config = function()
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
     {
-      "akinsho/dependency-assist.nvim",
-      branch = "refactor",
-      --- requires libyaml-dev on ubuntu or libyaml on macOS
-      rocks = { { "lyaml", server = "http://rocks.moonscript.org" } },
-      config = function()
-        require("dependency_assist").setup()
-      end,
-    },
-    {
       "ThePrimeagen/harpoon",
       requires = {
         { "nvim-lua/plenary.nvim" },
@@ -469,6 +460,10 @@ M.config = function()
             complex = {
               [".clang*"] = "yaml",
             },
+            extensions = {
+              tfvars = "terraform",
+              tfstate = "json",
+            },
           },
         }
       end,
@@ -481,6 +476,16 @@ M.config = function()
             icon = "",
             color = "#d28445",
             name = "Rust",
+          },
+          tf = {
+            icon = "",
+            color = "#3d59a1",
+            name = "Terraform",
+          },
+          tfvars = {
+            icon = "勇",
+            color = "#51afef",
+            name = "Terraform",
           },
         }
       end,
