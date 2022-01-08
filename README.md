@@ -389,6 +389,7 @@ _Symbols Outline_
 - [sidebar.nvim](https://github.com/sidebar-nvim/sidebar.nvim)
 - [asynctasks.vim](https://github.com/skywind3000/asynctasks.vim)
 - [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim)
+- [nvim-metals](https://github.com/scalameta/nvim-metals)
 
 </details>
 

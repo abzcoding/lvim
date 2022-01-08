@@ -38,6 +38,12 @@ lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
 lvim.builtin.csv_support = false -- enable/disable csv support
 lvim.builtin.sidebar = { active = false } -- enable/disable sidebar
 lvim.builtin.async_tasks = { active = false } -- enable/disable async tasks
+lvim.builtin.metals = {
+  active = false, -- enable/disable nvim-metals for scala development
+  fallbackScalaVersion = "2.13.7",
+  serverVersion = "0.10.9+271-a8bb69f6-SNAPSHOT",
+}
+
 local user = os.getenv "USER"
 if user and user == "abz" then
   lvim.builtin.nvim_web_devicons = { active = false }

@@ -402,6 +402,7 @@ M.config = function()
           typescript = true,
           javascriptreact = true,
           typescriptreact = true,
+          terraform = true,
         }
       end,
       disable = not lvim.builtin.sell_your_soul_to_devil,
@@ -569,6 +570,11 @@ M.config = function()
       end,
       event = "BufRead",
       disable = not lvim.builtin.async_tasks.active,
+    },
+    {
+      "scalameta/nvim-metals",
+      requires = { "nvim-lua/plenary.nvim" },
+      disable = not lvim.builtin.metals.active,
     },
   }
 end

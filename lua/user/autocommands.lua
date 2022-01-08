@@ -84,6 +84,11 @@ augroup END
       "java",
       "nnoremap <leader>m <cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn compile;read', hidden =false}:toggle()<CR>",
     },
+    {
+      "Filetype",
+      "scala,sbt,java",
+      "lua require('user.metals').config()",
+    },
 
     -- rust
     {
