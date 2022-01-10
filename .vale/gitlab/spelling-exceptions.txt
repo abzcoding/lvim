@@ -1,3 +1,4 @@
+ACK
 Akismet
 Alacritty
 Alertmanager
@@ -60,6 +61,7 @@ Dangerfile
 Datadog
 Debian
 Decompressor
+Denormalization
 DevOps
 Disqus
 Divio
@@ -123,6 +125,7 @@ HipChat
 Iglu
 Immer
 Ingress
+Inode
 Istio
 Jaeger
 JavaScript
@@ -146,7 +149,6 @@ Knative
 Kramdown
 Kroki
 Kubecost
-Kubernetes
 Kubernetes
 Kubesec
 Kustomize
@@ -248,10 +250,12 @@ Solargraph
 Solarized
 Sotoon
 Sourcegraph
+Spinlock
 Splunk
 SpotBugs
 Stackdriver
 Stackprof
+Superblock
 Sysbench
 TODO
 Tabnine
@@ -301,6 +305,7 @@ allowlisting
 allowlists
 anonymization
 anonymized
+ansible
 approvers
 architected
 architecting
@@ -357,6 +362,7 @@ cacheable
 callstack
 callstacks
 canonicalized
+cgroup
 cgroups
 chai
 changeset
@@ -367,6 +373,7 @@ checksummed
 checksumming
 chroot
 clonable
+cmd
 colocated
 colocating
 colorscheme
@@ -490,6 +497,7 @@ keyspace
 keytab
 keytabs
 kubectl
+kubernetes
 lang
 ldapsearch
 libFuzzer
@@ -524,6 +532,7 @@ mergeable
 middleware
 middlewares
 migratus
+minikube
 misconfiguration
 misconfigurations
 misconfigure
@@ -747,6 +756,7 @@ syncable
 syscall
 syscalls
 syslog
+systemd
 tabnine
 tanuki
 tcpdump

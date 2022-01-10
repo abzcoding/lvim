@@ -135,6 +135,7 @@ M.config = function()
             name = "config",
             matcher = function(buf)
               return buf.filename:match "go.mod"
+                or buf.filename:match "go.sum"
                 or buf.filename:match "Cargo.toml"
                 or buf.filename:match "manage.py"
                 or buf.filename:match "Makefile"

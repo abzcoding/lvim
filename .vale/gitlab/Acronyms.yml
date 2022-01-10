@@ -14,12 +14,14 @@ first: '\b([A-Z]{3,5})\b'
 second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
-  - LSP
+  - ACID
+  - ACK
   - AJAX
   - ANSI
   - API
   - ARM
   - ARN
+  - ARP
   - ASCII
   - AWS
   - BGP
@@ -28,6 +30,7 @@ exceptions:
   - CDN
   - CIS
   - CLI
+  - CMD
   - CNA
   - CNAME
   - CORE
@@ -42,6 +45,7 @@ exceptions:
   - DAST
   - DDOS
   - DHCP
+  - DHT
   - DLL
   - DNS
   - DOM
@@ -57,6 +61,7 @@ exceptions:
   - EXIF
   - FAQ
   - FIFO
+  - FIN
   - FIPS
   - FOSS
   - FQDN
@@ -77,18 +82,20 @@ exceptions:
   - HDD
   - HEAD
   - HIPAA
+  - HSTS
   - HTML
   - HTTP
   - HTTPS
-  - HSTS
   - IAM
   - IANA
   - IBM
+  - ICMP
   - IDE
   - IID
   - IMAP
   - IOPS
   - IRC
+  - ISN
   - ISO
   - JPEG
   - JPG
@@ -101,7 +108,9 @@ exceptions:
   - LESS
   - LFS
   - LRU
+  - LSP
   - LTS
+  - MBR
   - MIME
   - MIT
   - MVC
@@ -113,6 +122,7 @@ exceptions:
   - NPM
   - NTP
   - ONLY
+  - OSI
   - OSS
   - OWASP
   - PAT
@@ -125,6 +135,7 @@ exceptions:
   - PNG
   - POSIX
   - POST
+  - PPP
   - PUT
   - RAID
   - RAM
@@ -169,6 +180,7 @@ exceptions:
   - SSRF
   - SVG
   - SVN
+  - SYN
   - TCP
   - TIFF
   - TIP
