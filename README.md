@@ -155,34 +155,7 @@ lvim +LvimUpdate +LvimCacheReset +q
 lvim # run :PackerSync
 ```
 
-<details>
-  <summary><strong>Other Stuff</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
-
-## Language-Server Protocol (LSP)
-
-To leverage LSP auto-completions and other functionalities, after you open a
-file in Neovim, run `:LspInstall <server>` to use
-[nvim-lsp-installer](lsp installer) installation feature.
-Use `Tab` to list available servers.
-
-Here are some common LSP server installations:
-
-- `:LspInstall html cssls jsonls yamlls`
-- `:LspInstall gopls`
-- `:LspInstall pylsp`
-- `:LspInstall bashls vimls sumneko_lua`
-- `:LspInstall diagnosticls`
-- and [more](lsp installer)…
-
-## Upgrade
-
-```shell
-cd ~/.config/lvim
-git pull
-lvim # run :PackerSync
-```
-
-## Recommended Fonts
+### Recommended Fonts
 
 - [FiraCode Nerd Font](firaCode): My preferred font
 - Any of the [Nerd Fonts]
@@ -197,6 +170,33 @@ brew install --cask font-fira-code
 brew install --cask font-victor-mono-nerd-font
 brew install --cask font-iosevka-nerd-font-mono
 brew install --cask font-hack-nerd-font
+```
+
+<details>
+  <summary><strong>Other Stuff</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
+
+## Language-Server Protocol (LSP)
+
+To leverage LSP auto-completions and other functionalities, after you open a
+file in Neovim, run `:LspInstall <server>` to use
+[nvim-lsp-installer](lsp-installer) installation feature.
+Use `Tab` to list available servers.
+
+Here are some common LSP server installations:
+
+- `:LspInstall html cssls jsonls yamlls`
+- `:LspInstall gopls`
+- `:LspInstall pylsp`
+- `:LspInstall bashls vimls sumneko_lua`
+- `:LspInstall diagnosticls`
+- and [more](lsp-installer)…
+
+## Upgrade
+
+```shell
+cd ~/.config/lvim
+git pull
+lvim # run :PackerSync
 ```
 
 ### Recommended Linters
@@ -221,7 +221,7 @@ cp ~/.config/lvim/vale_config.ini ~/.vale.ini
 ```
 
 In case you want a better tex support in mac, check
-[this](tex support) out
+[this](tex-support) out
 
 if you want the custom `gostructhelper`, first get the pkg:
 
@@ -600,5 +600,5 @@ Note that,
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [fd]: https://github.com/sharkdp/fd
 [nodejs install]: https://nodejs.org/en/download/package-manager/#macos
-[lsp installer]: https://github.com/williamboman/nvim-lsp-installer#available-lsps
-[tex support]: https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1
+[lsp-installer]: https://github.com/williamboman/nvim-lsp-installer#available-lsps
+[tex-support]: https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1
