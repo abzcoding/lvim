@@ -59,7 +59,7 @@ M.config = function()
       },
     },
     server = {
-      cmd = requested_server._default_options.cmd,
+      cmd_env = requested_server._default_options.cmd_env,
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
     },
