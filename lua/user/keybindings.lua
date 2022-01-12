@@ -271,6 +271,7 @@ M.config = function()
     c = { "<cmd>lua require('neogen').generate({ type = 'class'})<CR>", "Class Documentation" },
     f = { "<cmd>lua require('neogen').generate({ type = 'func'})<CR>", "Function Documentation" },
     t = { "<cmd>lua require('neogen').generate({ type = 'type'})<CR>", "Type Documentation" },
+    F = { "<cmd>lua require('neogen').generate({ type = 'file'})<CR>", "File Documentation" },
   }
   lvim.builtin.which_key.mappings["N"] = { "<cmd>Telescope file_create<CR>", "Create new file" }
   lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }

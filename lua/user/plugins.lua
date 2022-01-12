@@ -251,7 +251,6 @@ M.config = function()
           enabled = true,
         }
       end,
-      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },
       event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
     },
@@ -464,6 +463,7 @@ M.config = function()
               [".clang*"] = "yaml",
             },
             extensions = {
+              tf = "terraform",
               tfvars = "terraform",
               tfstate = "json",
             },
