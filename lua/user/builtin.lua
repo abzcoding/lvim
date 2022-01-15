@@ -61,13 +61,6 @@ M.config = function()
   if lvim.builtin.sell_your_soul_to_devil then
     lvim.keys.insert_mode["<c-h>"] = { [[copilot#Accept("\<CR>")]], { expr = true, script = true } }
     local cmp = require "cmp"
-    cmp.setup.cmdline(":", {
-      sources = cmp.config.sources({
-        { name = "path" },
-      }, {
-        { name = "cmdline" },
-      }),
-    })
     lvim.builtin.cmp.mapping["<Tab>"] = cmp.mapping(M.tab, { "i", "c" })
     lvim.builtin.cmp.mapping["<S-Tab>"] = cmp.mapping(M.shift_tab, { "i", "c" })
   end
