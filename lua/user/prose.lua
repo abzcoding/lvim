@@ -21,10 +21,12 @@ M.config = function()
     return
   end
 
-  lsp.prosemd.setup {
-    on_attach = require("lvim.lsp").common_on_attach,
-    on_init = require("lvim.lsp").common_on_init,
-    capabilities = require("lvim.lsp").common_capabilities(),
-  }
+  if lsp.prosemd.setup then
+    lsp.prosemd.setup {
+      on_attach = require("lvim.lsp").common_on_attach,
+      on_init = require("lvim.lsp").common_on_init,
+      capabilities = require("lvim.lsp").common_capabilities(),
+    }
+  end
 end
 return M

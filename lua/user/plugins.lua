@@ -576,6 +576,9 @@ M.config = function()
       requires = { "nvim-lua/plenary.nvim" },
       disable = not lvim.builtin.metals.active,
     },
+    {
+      "hrsh7th/cmp-cmdline",
+    },
   }
 end
 
