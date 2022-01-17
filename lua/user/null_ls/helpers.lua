@@ -34,7 +34,7 @@ M.make_code_action = function(opts)
 
           -- patch params method
           params.lsp_method = methods.lsp.FORMATTING
-          require("null-ls.formatting").apply_edits({
+          M.apply_edits({
             {
               row = 1,
               col = 1,
@@ -100,6 +100,29 @@ M.make_code_action = function(opts)
       end,
     },
   }
+end
+
+M.apply_edits = function(edits, params)
+  local bufnr = params.bufnr
+  -- directly use handler, since formatting_sync uses a custom handler that won't work if called twice
+  -- formatting and rangeFormatting handlers should be identical
+  local handler = require("null-ls.client").resolve_handler(params.lsp_method)
+
+  local diffed_edits = {}
+  for _, edit in ipairs(edits) do
+    local split_text, line_ending = require("null-ls.utils").split_at_newline(bufnr, edit.text)
+    local diffed = require("null-ls.diff").compute_diff(params.content, split_text, line_ending)
+    -- check if the computed diff is an actual edit
+    if not (diffed.newText == "" and diffed.rangeLength == 0) then
+      table.insert(diffed_edits, diffed)
+    end
+  end
+
+  handler(nil, diffed_edits, {
+    method = params.lsp_method,
+    client_id = params.client_id,
+    bufnr = bufnr,
+  })
 end
 
 return M
