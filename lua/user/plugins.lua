@@ -576,6 +576,11 @@ M.config = function()
       requires = { "nvim-lua/plenary.nvim" },
       disable = not lvim.builtin.metals.active,
     },
+    {
+      "jbyuki/instant.nvim",
+      event = "BufRead",
+      disable = not lvim.builtin.collaborative_editing.active,
+    },
   }
 end
 

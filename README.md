@@ -14,17 +14,12 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 
 <!-- vim-markdown-toc GFM -->
 
-- [Features](#features)
 - [Theme](#theme)
 - [Customization](#features)
-- [Screenshot](#screenshot)
 - [Install](#install)
-- [Prerequisites](#prerequisites)
-- [Language-Server Protocol (LSP)](#language-server-protocol-lsp)
-- [Upgrade](#upgrade)
-  - [Recommended Fonts](#recommended-fonts)
-  - [Recommended Linters](#recommended-linters)
-  - [Recommended Tools](#recommended-tools)
+- [Collaborative Editing](#collaborative-editing)
+- [Recommended Fonts](#recommended-fonts)
+- [Screenshot](#screenshot)
 - [Structure](#structure)
 - [Plugins Included](#plugins-included)
   - [Optional Plugins](#optional-plugins)
@@ -236,6 +231,24 @@ go build -o /usr/local/bin/gostructhelper && chmod 0755 /usr/local/bin/gostructh
 
 ---
 
+## Collaborative Editing
+
+The default is to serve localhost only, on port 8080. For a more advanced (remote server) overview see [Deploy a server](https://github.com/jbyuki/instant.nvim/wiki/Deploy-a-server)
+
+### Server side
+
+- `:InstantStartServer [host] [port]` : Start the server using
+  - `:InstantStartSingle [host] [port]` : This only shares the current buffer.
+  - `:InstantStartSession [host] [port]` :This shares all opened (and newly opened) buffers with the other clients
+
+### Client side
+
+- `let g:instant_username="sth"` : Set your preferred username.
+  - `:InstantJoinSingle [host] [port]` : Use this command if another client already initiated a single share.
+  - `:InstantJoinSession [host] [port]` : Use this command if another client already initiated a session share
+
+---
+
 ## Screenshot
 
 <details>
@@ -390,6 +403,7 @@ _Symbols Outline_
 - [asynctasks.vim](https://github.com/skywind3000/asynctasks.vim)
 - [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim)
 - [nvim-metals](https://github.com/scalameta/nvim-metals)
+- [instant.nvim](https://github.com/jbyuki/instant.nvim)
 
 </details>
 
