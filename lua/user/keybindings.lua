@@ -288,13 +288,13 @@ M.config = function()
     "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>",
     "String",
   }
-  lvim.builtin.which_key.mappings["T"] = {
-    name = "Test",
-    f = { "<cmd>TestFile<cr>", "File" },
-    n = { "<cmd>TestNearest<cr>", "Nearest" },
-    s = { "<cmd>TestSuite<cr>", "Suite" },
-  }
   lvim.builtin.which_key.mappings["t"] = {
+    name = "Test",
+    f = { "<cmd>Ultest<cr>", "File" },
+    n = { "<cmd>UltestNearest<cr>", "Nearest" },
+    s = { "<cmd>UltestSummary<cr>", "Summary" },
+  }
+  lvim.builtin.which_key.mappings["T"] = {
     name = "+Trouble",
     d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },

@@ -257,7 +257,6 @@ M.config = function()
     {
       "vim-test/vim-test",
       cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
-      keys = { "<localleader>tf", "<localleader>tn", "<localleader>ts" },
       config = function()
         require("user.vim_test").config()
       end,
