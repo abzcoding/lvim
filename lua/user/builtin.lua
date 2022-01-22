@@ -331,6 +331,9 @@ M.config = function()
   lvim.builtin.telescope.on_config_done = function(telescope)
     telescope.load_extension "file_create"
     telescope.load_extension "command_palette"
+    if lvim.builtin.file_browser.active then
+      telescope.load_extension "file_browser"
+    end
   end
 
   -- Terminal

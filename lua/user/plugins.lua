@@ -585,6 +585,10 @@ M.config = function()
       event = "BufRead",
       disable = not lvim.builtin.collaborative_editing.active,
     },
+    {
+      "nvim-telescope/telescope-file-browser.nvim",
+      disable = not lvim.builtin.file_browser.active,
+    },
   }
 end
 

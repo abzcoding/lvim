@@ -231,6 +231,10 @@ M.config = function()
     "<cmd>lua require('telescope').extensions.command_palette.command_palette()<cr>",
     "Command Palette",
   }
+
+  if lvim.builtin.file_browser.active then
+    lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
+  end
   lvim.builtin.which_key.mappings["H"] = "Help"
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
