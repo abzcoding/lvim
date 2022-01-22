@@ -460,11 +460,16 @@ M.config = function()
             },
             complex = {
               [".clang*"] = "yaml",
+              [".*%.env.*"] = "sh",
+              [".*ignore"] = "conf",
             },
             extensions = {
               tf = "terraform",
               tfvars = "terraform",
               tfstate = "json",
+              eslintrc = "json",
+              prettierrc = "json",
+              mdx = "markdown",
             },
           },
         }
