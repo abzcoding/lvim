@@ -8,10 +8,10 @@ M.config = function()
 
   -- Autopairs
   -- =========================================
-  lvim.builtin.autopairs.on_config_done = function(autopairs)
-    autopairs.remove_rule("$$", "$$", "tex")
-    autopairs.remove_rule("$", "$", { "tex", "latex" })
-  end
+  -- lvim.builtin.autopairs.on_config_done = function(autopairs)
+  --   local Rule = require "nvim-autopairs.rule"
+  --   autopairs.add_rule(Rule("$$", "$$", "tex"))
+  -- end
 
   -- Command Palette
   -- =========================================
