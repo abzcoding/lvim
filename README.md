@@ -373,6 +373,7 @@ _Symbols Outline_
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 - [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
 - [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
+- [fidget](https://github.com/j-hui/fidget.nvim)
 
 ### Optional Plugins
 

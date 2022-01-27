@@ -589,6 +589,12 @@ M.config = function()
       "nvim-telescope/telescope-file-browser.nvim",
       disable = not lvim.builtin.file_browser.active,
     },
+    {
+      "j-hui/fidget.nvim",
+      config = function()
+        require("user.fidget_spinner").config()
+      end,
+    },
   }
 end
 
