@@ -464,8 +464,9 @@ Note that,
 | <kbd>Space</kbd>+<kbd>'</kbd> |  𝐍   | Open marks          | <small>which-key marks</small>                |
 | <kbd>Space</kbd>+<kbd>z</kbd> |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                  |
 | <kbd>Space</kbd>+<kbd>P</kbd> |  𝐍   | Projects            | <small>project.nvim</small>                   |
-| <kbd>Ctrl</kbd>+<kbd>s</kbd>  |  𝐈   | show signature help | <small>`vim.lsp.buf.signature_help()`</small> |
-| <kbd>Alt</kbd>+<kbd>s</kbd>   |  𝐈   | snippet selection   | <small>Telescope luasnip extension</small>    |
+| <kbd>Ctrl</kbd>+<kbd>\</kbd>  |  𝐈   | Open terminal       | <small>toggleterm.nvim</small>                |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>  |  𝐈   | Show signature help | <small>`vim.lsp.buf.signature_help()`</small> |
+| <kbd>Alt</kbd>+<kbd>s</kbd>   |  𝐈   | Snippet selection   | <small>Telescope luasnip extension</small>    |
 | <kbd>Space</kbd>+<kbd>C</kbd> |  𝐍   | Command Palette     | <small>Telescope command_palette</small>      |
 
 ### Motion
@@ -497,6 +498,7 @@ Note that,
 | <kbd>g</kbd>+<kbd>a</kbd>                                                                |  𝐍   | code actions                        |
 | <kbd>g</kbd>+<kbd>A</kbd>                                                                |  𝐍   | codelens actions                    |
 | <kbd>g</kbd>+<kbd>d</kbd>                                                                |  𝐍   | goto definition                     |
+| <kbd>g</kbd>+<kbd>t</kbd>                                                                |  𝐍   | goto type definition                |
 | <kbd>g</kbd>+<kbd>D</kbd>                                                                |  𝐍   | goto declaration                    |
 | <kbd>g</kbd>+<kbd>I</kbd>                                                                |  𝐍   | goto implementation                 |
 | <kbd>g</kbd>+<kbd>p</kbd>                                                                |  𝐍   | peek implementation                 |

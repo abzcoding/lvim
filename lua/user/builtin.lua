@@ -339,6 +339,7 @@ M.config = function()
   -- Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
+  lvim.builtin.terminal.open_mapping = [[<c-\>]]
 
   -- WhichKey
   -- =========================================
@@ -351,6 +352,7 @@ M.config = function()
       ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
       ["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
+      ["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
     }
     wk.register(keys, { mode = "n" })
   end
