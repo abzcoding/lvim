@@ -51,6 +51,11 @@ M.config = function()
       fidget_decay = 2000, -- how long to keep around empty fidget, in ms
       task_decay = 1000, -- how long to keep around completed task, in ms
     },
+    window = {
+      relative = "editor", -- where to anchor the window, either `"win"` or `"editor"`
+      blend = 100, -- `&winblend` for the window
+      zindex = nil, -- the `zindex` value for the window
+    },
     fmt = {
       leftpad = true, -- right-justify text in fidget box
       stack_upwards = true, -- list of tasks grows upwards
@@ -62,6 +67,9 @@ M.config = function()
       task = function(task_name, message, percentage)
         return string.format("%s%s [%s]", message, percentage and string.format(" (%s%%)", percentage) or "", task_name)
       end,
+    },
+    debug = {
+      logging = false, -- whether to enable logging, for debugging
     },
   }
 end
