@@ -595,6 +595,11 @@ M.config = function()
         require("user.fidget_spinner").config()
       end,
     },
+    {
+      "michaelb/sniprun",
+      run = "bash ./install.sh",
+      disable = not lvim.builtin.sniprun.active,
+    },
   }
 end
 

@@ -407,6 +407,7 @@ _Symbols Outline_
 - [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim)
 - [nvim-metals](https://github.com/scalameta/nvim-metals)
 - [instant.nvim](https://github.com/jbyuki/instant.nvim)
+- [SnipRun](https://github.com/michaelb/sniprun)
 
 </details>
 

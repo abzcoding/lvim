@@ -45,6 +45,7 @@ lvim.builtin.metals = {
 }
 lvim.builtin.collaborative_editing = { active = false } -- enable/disable collaborative editing
 lvim.builtin.file_browser = { active = false } -- enable/disable telescope file browser
+lvim.builtin.sniprun = { active = false } -- enable/disable sniprun
 
 local user = os.getenv "USER"
 if user and user == "abz" then
