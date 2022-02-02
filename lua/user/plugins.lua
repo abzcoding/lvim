@@ -502,7 +502,8 @@ M.config = function()
       "nvim-telescope/telescope-live-grep-raw.nvim",
     },
     {
-      "filipdutescu/renamer.nvim",
+      "abzcoding/renamer.nvim",
+      branch = "develop",
       config = function()
         require("user.renamer").config()
       end,
