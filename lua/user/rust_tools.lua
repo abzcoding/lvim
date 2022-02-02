@@ -64,16 +64,14 @@ M.config = function()
       on_init = require("lvim.lsp").common_on_init,
     },
   }
-  local user = os.getenv "USER"
-  if user and user == "abz" then
-    local extension_path = "/Users/abz/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/"
-    local codelldb_path = extension_path .. "adapter/codelldb"
-    local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+  local extension_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.6.10/"
 
-    opts.dap = {
-      adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-    }
-  end
+  local codelldb_path = extension_path .. "adapter/codelldb"
+  local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+
+  opts.dap = {
+    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+  }
   rust_tools.setup(opts)
 end
 

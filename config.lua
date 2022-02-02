@@ -59,6 +59,7 @@ if user and user == "abz" then
   vim.g.instant_username = user
   lvim.builtin.collaborative_editing.active = true
   lvim.builtin.file_browser.active = true
+  lvim.builtin.sniprun.active = true
   require("user.prose").config() -- setup prosemd-lsp for my local use
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors

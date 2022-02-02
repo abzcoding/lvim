@@ -80,7 +80,7 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.fancy_wild_menu = { active = true }`
 - You can use the `diffview` plugin instead of normal `gitsigns diff`
   - `lvim.builtin.fancy_diff = { active = true }`
-- if you want to use debugging, change the following line to true:
+- if you want to use debugging, change the following line to true, also [install codelldb](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)):
   - `lvim.builtin.dap.active = true`
 - sometimes instead of saving you jump trough jumplist 😢 just disable nvim-lastplace
   - `lvim.builtin.lastplace = { active = false }`
