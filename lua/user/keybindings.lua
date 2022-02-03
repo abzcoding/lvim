@@ -233,7 +233,7 @@ M.config = function()
   }
 
   if lvim.builtin.file_browser.active then
-    lvim.builtin.which_key.mappings["sF"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
+    lvim.builtin.which_key.mappings["se"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
   end
   lvim.builtin.which_key.mappings["H"] = "Help"
   local ok, _ = pcall(require, "vim.diagnostic")
@@ -287,7 +287,6 @@ M.config = function()
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
   }
 
-  lvim.builtin.which_key.mappings["se"] = { "<cmd>lua require('user.telescope').file_browser()<cr>", "File Browser" }
   lvim.builtin.which_key.mappings["ss"] = {
     "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>",
     "String",

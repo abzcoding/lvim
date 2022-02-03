@@ -477,19 +477,29 @@ M.config = function()
       config = function()
         require("nvim-web-devicons").set_icon {
           rs = {
-            icon = "",
+            icon = "",
             color = "#d28445",
             name = "Rust",
           },
           tf = {
-            icon = "",
+            icon = "ﲽ",
             color = "#3d59a1",
             name = "Terraform",
           },
           tfvars = {
-            icon = "勇",
+            icon = "ﲽ",
             color = "#51afef",
             name = "Terraform",
+          },
+          mod = {
+            icon = "ﳑ",
+            color = "#6a9fb5",
+            name = "Mod",
+          },
+          sum = {
+            icon = "",
+            color = "#6a9fb5",
+            name = "Sum",
           },
         }
       end,
