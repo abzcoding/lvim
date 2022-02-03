@@ -378,9 +378,6 @@ M.config = function()
       disable = not lvim.builtin.neoscroll.active,
     },
     {
-      "b0o/schemastore.nvim",
-    },
-    {
       "github/copilot.vim",
       config = function()
         vim.g.copilot_no_tab_map = true
