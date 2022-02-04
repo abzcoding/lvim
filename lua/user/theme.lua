@@ -32,8 +32,8 @@ M.rose_pine = function()
   vim.g.rose_pine_variant = "moon"
   vim.g.rose_pine_disable_italics = false
   vim.g.rose_pine_bold_vertical_split_line = false
-  vim.g.rose_pine_disable_background = not lvim.transparent_window
-  vim.g.rose_pine_disable_float_background = false
+  vim.g.rose_pine_disable_background = lvim.transparent_window
+  vim.g.rose_pine_disable_float_background = true
   vim.g.rose_pine_inactive_background = false
 end
 
