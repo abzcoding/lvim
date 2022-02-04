@@ -101,6 +101,19 @@ M.config = function()
     },
   }
 
+  dap.adapters.firefox = {
+    type = "executable",
+    command = "node",
+    args = {
+      os.getenv "HOME" .. "/.vscode/extensions/firefox-devtools.vscode-firefox-debug-2.9.6/dist/adapter.bundle.js",
+    },
+  }
+
+  local firefoxExecutable = "/usr/bin/firefox"
+  if vim.fn.has "mac" == 1 then
+    firefoxExecutable = "/Applications/Firefox.app/Contents/MacOS/firefox"
+  end
+
   dap.configurations.typescript = {
     {
       type = "node2",
@@ -127,78 +140,21 @@ M.config = function()
         ["webpack:///./*"] = "${webRoot}/*",
       },
     },
-  }
-
-  dap.configurations.typescriptreact = {
     {
-      type = "chrome",
-      request = "chrome attach",
-      name = "chrome",
-      program = "${file}",
-      -- cwd = "${workspaceFolder}",
-      -- protocol = "inspector",
-      port = 9222,
-      webRoot = "${workspaceFolder}",
-      -- sourceMaps = true,
-      sourceMapPathOverrides = {
-        -- Sourcemap override for nextjs
-        ["webpack://_N_E/./*"] = "${webRoot}/*",
-        ["webpack:///./*"] = "${webRoot}/*",
-      },
-    },
-  }
-
-  dap.configurations.javascript = {
-    {
-      type = "node2",
-      name = "node attach",
-      request = "attach",
-      program = "${file}",
-      cwd = vim.fn.getcwd(),
-      sourceMaps = true,
-      protocol = "inspector",
-    },
-    {
-      type = "node2",
-      name = "node launch",
+      name = "Debug with Firefox",
+      type = "firefox",
       request = "launch",
-      program = "${workspaceFolder}/${file}",
-      cwd = "${workspaceFolder}",
+      reAttach = true,
       sourceMaps = true,
-      protocol = "inspector",
-    },
-    {
-      type = "chrome",
-      request = "attach",
-      name = "chrome",
-      program = "${file}",
-      port = 9222,
+      url = "http://localhost:6969",
       webRoot = "${workspaceFolder}",
-      sourceMapPathOverrides = {
-        -- Sourcemap override for nextjs
-        ["webpack://_N_E/./*"] = "${webRoot}/*",
-        ["webpack:///./*"] = "${webRoot}/*",
-      },
+      firefoxExecutable = firefoxExecutable,
     },
   }
 
-  dap.configurations.javascriptreact = {
-    {
-      type = "chrome",
-      name = "chrome attach",
-      request = "attach",
-      program = "${file}",
-      -- cwd = vim.fn.getcwd(),
-      -- sourceMaps = true,
-      -- protocol = "inspector",
-      port = 9222,
-      sourceMapPathOverrides = {
-        -- Sourcemap override for nextjs
-        ["webpack://_N_E/./*"] = "${webRoot}/*",
-        ["webpack:///./*"] = "${webRoot}/*",
-      },
-    },
-  }
+  dap.configurations.typescriptreact = dap.configurations.typescript
+  dap.configurations.javascript = dap.configurations.typescript
+  dap.configurations.javascriptreact = dap.configurations.typescript
 
   dap.adapters.codelldb = function(on_adapter)
     local stdout = vim.loop.new_pipe(false)
