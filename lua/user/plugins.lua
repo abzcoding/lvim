@@ -380,25 +380,7 @@ M.config = function()
     {
       "github/copilot.vim",
       config = function()
-        vim.g.copilot_no_tab_map = true
-        vim.g.copilot_assume_mapped = true
-        vim.g.copilot_tab_fallback = ""
-        vim.g.copilot_filetypes = {
-          ["*"] = false,
-          python = true,
-          lua = true,
-          go = true,
-          rust = true,
-          html = true,
-          c = true,
-          cpp = true,
-          java = true,
-          javascript = true,
-          typescript = true,
-          javascriptreact = true,
-          typescriptreact = true,
-          terraform = true,
-        }
+        require("user.copilot").config()
       end,
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
@@ -449,59 +431,13 @@ M.config = function()
     {
       "nathom/filetype.nvim",
       config = function()
-        require("filetype").setup {
-          overrides = {
-            literal = {
-              ["kitty.conf"] = "kitty",
-              [".gitignore"] = "conf",
-            },
-            complex = {
-              [".clang*"] = "yaml",
-              [".*%.env.*"] = "sh",
-              [".*ignore"] = "conf",
-            },
-            extensions = {
-              tf = "terraform",
-              tfvars = "terraform",
-              tfstate = "json",
-              eslintrc = "json",
-              prettierrc = "json",
-              mdx = "markdown",
-            },
-          },
-        }
+        require("user.filetype").config()
       end,
     },
     {
       "Nguyen-Hoang-Nam/nvim-mini-file-icons",
       config = function()
-        require("nvim-web-devicons").set_icon {
-          rs = {
-            icon = "",
-            color = "#d28445",
-            name = "Rust",
-          },
-          tf = {
-            icon = "ﲽ",
-            color = "#3d59a1",
-            name = "Terraform",
-          },
-          tfvars = {
-            icon = "ﲽ",
-            color = "#51afef",
-            name = "Terraform",
-          },
-          mod = {
-            icon = "ﳑ",
-            color = "#6a9fb5",
-            name = "Mod",
-          },
-          sum = {
-            icon = "",
-            color = "#6a9fb5",
-            name = "Sum",
-          },
-        }
+        require("user.dev_icons").set_icon()
       end,
       disable = lvim.builtin.nvim_web_devicons == nil,
     },

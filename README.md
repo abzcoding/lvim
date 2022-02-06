@@ -408,6 +408,7 @@ _Symbols Outline_
 - [nvim-metals](https://github.com/scalameta/nvim-metals)
 - [instant.nvim](https://github.com/jbyuki/instant.nvim)
 - [SnipRun](https://github.com/michaelb/sniprun)
+- [Vista](https://github.com/liuchengxu/vista.vim)
 
 </details>
 

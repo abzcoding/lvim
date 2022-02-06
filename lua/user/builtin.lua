@@ -284,6 +284,17 @@ M.config = function()
     "%.met",
     "smalljre_*/*",
     ".vale/",
+    "%.burp",
+    "%.mp4",
+    "%.mkv",
+    "%.rar",
+    "%.zip",
+    "%.7z",
+    "%.tar",
+    "%.bz2",
+    "%.epub",
+    "%.flac",
+    "%.tar.gz",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   local actions = require "telescope.actions"
