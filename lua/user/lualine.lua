@@ -95,7 +95,7 @@ local mode = function()
   elseif mod == "i" or mod == "ic" or mod == "ix" then
     local insert_icons = {
       "  ",
-      "  ",
+      "  ",
       "  ",
     }
     return insert_icons[selector]
@@ -110,7 +110,7 @@ local mode = function()
     local command_icons = {
       "  ",
       "  ",
-      "  ",
+      "  ",
     }
 
     return command_icons[selector]
