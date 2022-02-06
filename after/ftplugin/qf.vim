@@ -1,5 +1,5 @@
-function! s:adjust_height(minheight, maxheight)
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+function! AdjustWindowHeight(minheight, maxheight)
+  execute max([a:minheight, min([line('$'), a:maxheight])]) . 'wincmd _'
 endfunction
 
 " force quickfix to open beneath all other splits
@@ -11,7 +11,7 @@ setlocal nowrap
 setlocal signcolumn=yes
 setlocal colorcolumn=
 setlocal nobuflisted " quickfix buffers should not pop up when doing :bn or :bp
-call s:adjust_height(7, 12)
+call AdjustWindowHeight(5, 15)
 setlocal winfixheight
 setlocal winhighlight=Normal:PanelBackground,SignColumn:PanelBackground,EndOfBuffer:PanelBackground
 nnoremap <buffer> H :colder<CR>

@@ -265,7 +265,7 @@ M.config = function()
         normal = { c = { fg = colors.fg, bg = colors.bg } },
         inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
       },
-      disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
+      disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha", "vista", "vista_kind" },
     },
     sections = {
       -- these are to remove the defaults
