@@ -180,11 +180,7 @@ M.config = function()
     lvim.keys.normal_mode["gx"] =
       [[<cmd>lua os.execute("xdg-open " .. vim.fn.shellescape(vim.fn.expand "<cWORD>")); vim.cmd "redraw!"<cr>]]
   end
-  if lvim.builtin.fancy_bufferline.active then
-    set_bufferline_keymaps()
-  else
-    lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
-  end
+  set_bufferline_keymaps()
   if lvim.builtin.sidebar.active then
     lvim.keys.normal_mode["E"] = ":SidebarNvimToggle<cr>"
   end

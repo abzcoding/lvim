@@ -74,8 +74,6 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.fancy_dashboard = { active = false }`
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
-- I'm using `bufferline` instead of `barbar`, if you don't like it, disable it
-  - `lvim.builtin.fancy_bufferline = { active = false }`
 - You can use the fancy wild menu if you want, make sure to do a `:UpdateRemotePlugins`
   - `lvim.builtin.fancy_wild_menu = { active = true }`
 - You can use the `diffview` plugin instead of normal `gitsigns diff`
@@ -368,7 +366,6 @@ _Symbols Outline_
 - [Neogen](https://github.com/danymat/neogen)
 - [Vimtex](https://github.com/lervag/vimtex)
 - [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
-- [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 - [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
