@@ -273,28 +273,6 @@ M.config = function()
       },
     },
   }
-  lvim.builtin.treesitter.on_config_done = function()
-    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-    parser_config.solidity = {
-      install_info = {
-        url = "https://github.com/JoranHonig/tree-sitter-solidity",
-        files = { "src/parser.c" },
-        requires_generate_from_grammar = true,
-      },
-      filetype = "solidity",
-    }
-    parser_config.jsonc.used_by = "json"
-    if lvim.builtin.orgmode.active then
-      parser_config.org = {
-        install_info = {
-          url = "https://github.com/milisims/tree-sitter-org",
-          revision = "main",
-          files = { "src/parser.c", "src/scanner.cc" },
-        },
-        filetype = "org",
-      }
-    end
-  end
 
   -- Telescope
   -- =========================================
@@ -355,19 +333,19 @@ M.config = function()
     "%.flac",
     "%.tar.gz",
   }
-  lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
+  local user_telescope = require('user.telescope')
+  lvim.builtin.telescope.defaults.layout_config = user_telescope.layout_config()
   local actions = require "telescope.actions"
-  local custom_actions = require "user.telescope"
   lvim.builtin.telescope.defaults.mappings = {
     i = {
       ["<c-c>"] = require("telescope.actions").close,
       ["<c-y>"] = require("telescope.actions").which_key,
       ["<tab>"] = actions.toggle_selection + actions.move_selection_next,
       ["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
-      ["<cr>"] = custom_actions.multi_selection_open,
-      ["<c-v>"] = custom_actions.multi_selection_open_vsplit,
-      ["<c-s>"] = custom_actions.multi_selection_open_split,
-      ["<c-t>"] = custom_actions.multi_selection_open_tab,
+      ["<cr>"] = user_telescope.multi_selection_open,
+      ["<c-v>"] = user_telescope.multi_selection_open_vsplit,
+      ["<c-s>"] = user_telescope.multi_selection_open_split,
+      ["<c-t>"] = user_telescope.multi_selection_open_tab,
       ["<c-j>"] = actions.move_selection_next,
       ["<c-k>"] = actions.move_selection_previous,
     },
@@ -375,10 +353,10 @@ M.config = function()
       ["<esc>"] = actions.close,
       ["<tab>"] = actions.toggle_selection + actions.move_selection_next,
       ["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
-      ["<cr>"] = custom_actions.multi_selection_open,
-      ["<c-v>"] = custom_actions.multi_selection_open_vsplit,
-      ["<c-s>"] = custom_actions.multi_selection_open_split,
-      ["<c-t>"] = custom_actions.multi_selection_open_tab,
+      ["<cr>"] = user_telescope.multi_selection_open,
+      ["<c-v>"] = user_telescope.multi_selection_open_vsplit,
+      ["<c-s>"] = user_telescope.multi_selection_open_split,
+      ["<c-t>"] = user_telescope.multi_selection_open_tab,
       ["<c-j>"] = actions.move_selection_next,
       ["<c-k>"] = actions.move_selection_previous,
       ["<c-n>"] = actions.cycle_history_next,
