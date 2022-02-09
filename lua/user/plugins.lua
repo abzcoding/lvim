@@ -544,6 +544,13 @@ M.config = function()
       event = "BufReadPost",
       disable = lvim.builtin.tag_provider ~= "vista",
     },
+    {
+      "p00f/clangd_extensions.nvim",
+      config = function()
+        require("user.cle").config()
+      end,
+      ft = { "c", "cpp", "objc", "objcpp" },
+    },
   }
 end
 

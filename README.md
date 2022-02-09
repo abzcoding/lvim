@@ -371,6 +371,7 @@ _Symbols Outline_
 - [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
 - [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
 - [fidget](https://github.com/j-hui/fidget.nvim)
+- [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
 
 ### Optional Plugins
 
