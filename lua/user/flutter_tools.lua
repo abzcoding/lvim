@@ -15,6 +15,10 @@ M.config = function()
     widget_guides = { enabled = true, debug = true },
     dev_log = { open_cmd = "tabedit" },
     lsp = {
+      color = {
+        background = true,
+        virtual_text = false,
+      },
       settings = {
         showTodos = false,
         renameFilesWithClasses = "always",
