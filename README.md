@@ -372,7 +372,6 @@ _Symbols Outline_
 - [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
 - [fidget](https://github.com/j-hui/fidget.nvim)
 - [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
-- [cutlass.nvim](https://github.com/gbprod/cutlass.nvim)
 
 ### Optional Plugins
 

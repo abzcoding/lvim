@@ -6,10 +6,29 @@ M.config = function()
     return
   end
 
+  local clangd_flags = {
+    "--background-index",
+    "-j=12",
+    "--all-scopes-completion",
+    "--pch-storage=disk",
+    "--clang-tidy",
+    "--log=error",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+    "--header-insertion-decorators",
+    "--enable-config",
+    "--offset-encoding=utf-16",
+    "--ranking-model=heuristics",
+    "--folding-ranges",
+  }
   clangd_extensions.setup {
     server = {
       -- options to pass to nvim-lspconfig
       -- i.e. the arguments to require("lspconfig").clangd.setup({})
+      cmd = { "clangd", unpack(clangd_flags) },
+      on_attach = require("lvim.lsp").common_on_attach,
+      on_init = require("lvim.lsp").common_on_init,
+      capabilities = require("lvim.lsp").common_capabilities(),
     },
     extensions = {
       -- defaults:
