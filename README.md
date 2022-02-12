@@ -407,6 +407,7 @@ _Symbols Outline_
 - [instant.nvim](https://github.com/jbyuki/instant.nvim)
 - [SnipRun](https://github.com/michaelb/sniprun)
 - [Vista](https://github.com/liuchengxu/vista.vim)
+- [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
 
 </details>
 

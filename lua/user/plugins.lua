@@ -551,6 +551,11 @@ M.config = function()
       end,
       ft = { "c", "cpp", "objc", "objcpp" },
     },
+    {
+      "editorconfig/editorconfig-vim",
+      event = "BufRead",
+      disable = not lvim.builtin.editorconfig.active,
+    },
   }
 end
 
