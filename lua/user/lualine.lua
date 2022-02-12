@@ -157,7 +157,7 @@ M.config = function()
   elseif _time.hour >= 9 and _time.hour < 17 then
     colors = themes.tokyonight_colors
   elseif _time.hour >= 17 and _time.hour < 21 then
-    colors = themes.doom_one_colors
+    colors = themes.catppuccin_colors
   elseif (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1) then
     colors = themes.kanagawa_colors
   end

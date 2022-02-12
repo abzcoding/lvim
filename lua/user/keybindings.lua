@@ -83,7 +83,7 @@ M.set_hlslens_keymaps = function()
 end
 
 local function set_bufferline_keymaps()
-  lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
+  -- lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
   lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
   lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
   lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
@@ -105,6 +105,19 @@ local function set_bufferline_keymaps()
     t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
     f = { "<cmd>Telescope buffers<cr>", "Find" },
     b = { "<cmd>b#<cr>", "Previous" },
+    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+    l = {
+      "<cmd>BufferLineCloseRight<cr>",
+      "Close all to the right",
+    },
+    D = {
+      "<cmd>BufferLineSortByDirectory<cr>",
+      "Sort by directory",
+    },
+    L = {
+      "<cmd>BufferLineSortByExtension<cr>",
+      "Sort by language",
+    },
   }
 end
 

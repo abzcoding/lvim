@@ -30,11 +30,11 @@ M.config = function()
       end,
     },
     {
-      "abzcoding/doom-one.nvim",
-      branch = "feat/nvim-cmp-floating",
+      "catppuccin/nvim",
+      as = "catppuccin",
       config = function()
-        require("user.theme").doom()
-        vim.cmd [[colorscheme doom-one]]
+        require("user.theme").catppuccin()
+        vim.cmd [[colorscheme catppuccin]]
       end,
       cond = function()
         local _time = os.date "*t"

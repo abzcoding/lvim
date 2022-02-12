@@ -46,12 +46,12 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
 
 Themes are automatically changed based on time of the day:
 
-| Theme                                                                              |      Time of the day       |
-| ---------------------------------------------------------------------------------- | :------------------------: |
-| [rose-pine](https://github.com/rose-pine/neovim)                                   |         [1am, 9am)         |
-| [tokyonight](https://github.com/folke/tokyonight)                                  |         [9am, 5pm)         |
-| [doom-one](https://github.com/abzcoding/doom-one.nvim/tree/feat/nvim-cmp-floating) |         [5pm, 9pm)         |
-| [kanagawa](https://github.com/rebelot/kanagawa.nvim)                               | [9pm, 11:59pm), [0am, 1am] |
+| Theme                                                |      Time of the day       |
+| ---------------------------------------------------- | :------------------------: |
+| [rose-pine](https://github.com/rose-pine/neovim)     |         [1am, 9am)         |
+| [tokyonight](https://github.com/folke/tokyonight)    |         [9am, 5pm)         |
+| [catppuccin](https://github.com/catppuccin/nvim)     |         [5pm, 9pm)         |
+| [kanagawa](https://github.com/rebelot/kanagawa.nvim) | [9pm, 11:59pm), [0am, 1am] |
 
 You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](./lua/user/lualine.lua)
 
@@ -78,7 +78,7 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](.
   - `lvim.builtin.fancy_wild_menu = { active = true }`
 - You can use the `diffview` plugin instead of normal `gitsigns diff`
   - `lvim.builtin.fancy_diff = { active = true }`
-- if you want to use debugging, change the following line to true, also [install codelldb](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)):
+- if you want to use debugging, change the following line to true, also [install codelldb](<https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)>):
   - `lvim.builtin.dap.active = true`
 - sometimes instead of saving you jump trough jumplist 😢 just disable nvim-lastplace
   - `lvim.builtin.lastplace = { active = false }`
@@ -605,6 +605,10 @@ Note that,
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>b</kbd> |  𝐍   | toggle buffer groups |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>p</kbd> |  𝐍   | pick buffer          |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>1</kbd> |  𝐍   | goto buffer 1        |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>h</kbd> |  𝐍   | Close all to left    |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>l</kbd> |  𝐍   | Close all to right   |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>D</kbd> |  𝐍   | Sort by directory    |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>L</kbd> |  𝐍   | Sort by language     |
 
 ### Plugin: Trouble
 
