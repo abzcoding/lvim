@@ -210,6 +210,7 @@ M.colors = {
     gray0 = "#6E6C7E",
     black4 = "#575268",
     bg = "#302D41",
+    bg_alt = "#1E1E2E",
     fg = "#D9E0EE",
     black = "#1A1826",
     git = {
