@@ -11,7 +11,7 @@ setlocal nowrap
 setlocal signcolumn=yes
 setlocal colorcolumn=
 setlocal nobuflisted " quickfix buffers should not pop up when doing :bn or :bp
-call AdjustWindowHeight(5, 15)
+call AdjustWindowHeight(7, 15)
 setlocal winfixheight
 setlocal winhighlight=Normal:PanelBackground,SignColumn:PanelBackground,EndOfBuffer:PanelBackground
 nnoremap <buffer> H :colder<CR>
