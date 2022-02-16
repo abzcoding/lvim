@@ -183,7 +183,7 @@ M.colors = {
 
   rose_pine_colors = {
     none = "NONE",
-    bg = "#191724",
+    bg = "#1f1d2e",
     fg = "#e0def4",
     fg_gutter = "#3b4261",
     black = "#393b44",
