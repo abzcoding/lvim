@@ -149,18 +149,8 @@ local default_colors = {
 }
 
 M.config = function()
-  local colors = default_colors
-  local themes = require("user.theme").colors
   local _time = os.date "*t"
-  if _time.hour >= 1 and _time.hour < 9 then
-    colors = themes.rose_pine_colors
-  elseif _time.hour >= 9 and _time.hour < 17 then
-    colors = themes.tokyonight_colors
-  elseif _time.hour >= 17 and _time.hour < 21 then
-    colors = themes.catppuccin_colors
-  elseif (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1) then
-    colors = themes.kanagawa_colors
-  end
+  local colors = require("user.theme").current_colors()
 
   -- Color table for highlights
   local mode_color = {

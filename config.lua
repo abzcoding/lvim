@@ -47,6 +47,7 @@ lvim.builtin.file_browser = { active = false } -- enable/disable telescope file 
 lvim.builtin.sniprun = { active = false } -- enable/disable sniprun
 lvim.builtin.tag_provider = "symbols-outline" -- change this to use different tag providers ( symbols-outline or vista )
 lvim.builtin.editorconfig = { active = true } -- enable/disable editorconfig
+lvim.builtin.fancy_telescope = { active = true } -- telescope to the moon
 
 local user = os.getenv "USER"
 if user and user == "abz" then

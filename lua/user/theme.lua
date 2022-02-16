@@ -148,7 +148,7 @@ M.colors = {
     bg_dark = "#1f2335",
     bg_alt = "#1f2335",
     bg = "#1a1b26",
-    bg_highlight = "#292e42",
+    bg_br = "#292e42",
     terminal_black = "#414868",
     fg = "#c0caf5",
     fg_dark = "#a9b1d6",
@@ -183,7 +183,7 @@ M.colors = {
 
   rose_pine_colors = {
     none = "NONE",
-    bg = "#393552",
+    bg = "#191724",
     fg = "#e0def4",
     fg_gutter = "#3b4261",
     black = "#393b44",
@@ -201,6 +201,7 @@ M.colors = {
     red_br = "#e06c75",
     green_br = "#58cd8b",
     yellow_br = "#FFE37E",
+    bg_br = "#393552",
     blue_br = "#84CEE4",
     violet = "#B8A1E3",
     cyan_br = "#59F0FF",
@@ -236,7 +237,8 @@ M.colors = {
     gray1 = "#988BA2",
     gray0 = "#6E6C7E",
     black4 = "#575268",
-    bg = "#302D41",
+    bg_br = "#302D41",
+    bg = "#1A1826",
     bg_alt = "#1E1E2E",
     fg = "#D9E0EE",
     black = "#1A1826",
@@ -248,53 +250,12 @@ M.colors = {
     },
   },
 
-  onedarker_colors = {
-    fg = "#abb2bf",
-    bg_alt = "#1f2227",
-    bg = "#282c34",
-    dark = "#282c34",
-    accent = "#BBBBBB",
-    dark_gray = "#2a2f3e",
-    context = "#4b5263",
-    popup_back = "#282c34",
-    search_orange = "#613214",
-    search_blue = "#5e81ac",
-    gray = "#5c6370",
-    light_gray = "#abb2bf",
-    blue = "#61AFEF",
-    dark_blue = "#223E55",
-    green = "#98C379",
-    cyan = "#56B6C2",
-    red = "#e06c75",
-    orange = "#D19A66",
-    light_red = "#be5046",
-    yellow = "#E5C07B",
-    yellow_orange = "#D7BA7D",
-    purple = "#C678DD",
-    violet = "#C678DD",
-    magenta = "#D16D9E",
-    cursor_fg = "#515052",
-    cursor_bg = "#AEAFAD",
-    error_red = "#F44747",
-    warning_orange = "#ff8800",
-    info_yellow = "#FFCC66",
-    hint_blue = "#4FC1FF",
-    purple_test = "#ff007c",
-    cyan_test = "#00dfff",
-    ui_blue = "#264F78",
-    git = {
-      add = "#587c0c",
-      change = "#0c7d9d",
-      delete = "#e06c75",
-      conflict = "#ff8800",
-    },
-  },
-
   kanagawa_colors = {
     bg = "#16161D",
     bg_alt = "#1F1F28",
+    bg_br = "#363646",
     fg = "#DCD7BA",
-    red = "#43242B",
+    red = "#E46876",
     orange = "#FFA066",
     yellow = "#DCA561",
     blue = "#7FB4CA",
@@ -310,5 +271,43 @@ M.colors = {
     },
   },
 }
+
+M.current_colors = function()
+  local colors = M.colors.tokyonight_colors
+  local _time = os.date "*t"
+  if _time.hour >= 1 and _time.hour < 9 then
+    colors = M.colors.rose_pine_colors
+  elseif _time.hour >= 9 and _time.hour < 17 then
+    colors = M.colors.tokyonight_colors
+  elseif _time.hour >= 17 and _time.hour < 21 then
+    colors = M.colors.catppuccin_colors
+  elseif (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1) then
+    colors = M.colors.kanagawa_colors
+  end
+  return colors
+end
+
+M.telescope_theme = function()
+  if lvim.builtin.fancy_telescope.active then
+    local colors = M.current_colors()
+    M.fg_bg("TelescopeBorder", colors.bg, colors.bg)
+    M.fg_bg("TelescopePromptBorder", colors.bg_br, colors.bg_br)
+    M.fg_bg("TelescopePromptNormal", colors.fg, colors.bg_br)
+    M.fg_bg("TelescopePromptPrefix", colors.red, colors.bg_br)
+    M.bg("TelescopeNormal", colors.bg)
+    M.fg_bg("TelescopePreviewTitle", colors.bg, colors.green)
+    M.fg_bg("TelescopePromptTitle", colors.bg_alt, colors.red)
+    M.fg_bg("TelescopeResultsTitle", colors.bg, colors.blue)
+    M.bg("TelescopeSelection", colors.bg_alt)
+  end
+end
+
+M.bg = function(group, col)
+  vim.cmd("hi " .. group .. " guibg=" .. col)
+end
+
+M.fg_bg = function(group, fgcol, bgcol)
+  vim.cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
+end
 
 return M
