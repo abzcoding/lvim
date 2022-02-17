@@ -287,6 +287,7 @@ M.current_colors = function()
   return colors
 end
 
+-- credit: siduck (https://github.com/NvChad/NvChad/blob/4be722d4a657178781e48d0c0be460a3a5ae19e1/lua/colors/highlights.lua#L118)
 M.telescope_theme = function()
   if lvim.builtin.fancy_telescope.active then
     local colors = M.current_colors()
@@ -297,7 +298,7 @@ M.telescope_theme = function()
     M.bg("TelescopeNormal", colors.bg)
     M.fg_bg("TelescopePreviewTitle", colors.bg, colors.green)
     M.fg_bg("TelescopePromptTitle", colors.bg_alt, colors.red)
-    M.fg_bg("TelescopeResultsTitle", colors.bg, colors.blue)
+    M.fg_bg("TelescopeResultsTitle", colors.bg, colors.bg)
     M.bg("TelescopeSelection", colors.bg_alt)
   end
 end
