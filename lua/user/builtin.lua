@@ -169,9 +169,16 @@ M.config = function()
     { name = "DiagnosticSignInfo", text = kind.icons.info },
     { name = "DiagnosticSignHint", text = kind.icons.hint },
   }
-  local ok, _ = pcall(require, "vim.diagnostic")
-  if ok then
-    vim.diagnostic.config { virtual_text = false }
+  lvim.lsp.diagnostics.float.source = "if_many"
+  lvim.lsp.diagnostics.float.format = function(d)
+    local t = vim.deepcopy(d)
+    local code = d.code or (d.user_data and d.user_data.lsp.code)
+    for _, table in pairs(M.codes) do
+      if vim.tbl_contains(table, code) then
+        return table.message
+      end
+    end
+    return t.message
   end
 
   -- Lualine
@@ -611,5 +618,71 @@ function M.cpmenu()
     },
   }
 end
+
+-- credit: https://github.com/max397574/NeovimConfig/blob/master/lua/configs/lsp/init.lua
+M.codes = {
+  no_matching_function = {
+    message = " Can't find a matching function",
+    "redundant-parameter",
+    "ovl_no_viable_function_in_call",
+  },
+  different_requires = {
+    message = " Buddy you've imported this before, with the same name",
+    "different-requires",
+  },
+  empty_block = {
+    message = " That shouldn't be empty here",
+    "empty-block",
+  },
+  missing_symbol = {
+    message = " Here should be a symbol",
+    "miss-symbol",
+  },
+  expected_semi_colon = {
+    message = " Remember the `;` or `,`",
+    "expected_semi_declaration",
+    "miss-sep-in-table",
+    "invalid_token_after_toplevel_declarator",
+  },
+  redefinition = {
+    message = " That variable was defined before",
+    "redefinition",
+    "redefined-local",
+  },
+  no_matching_variable = {
+    message = " Can't find that variable",
+    "undefined-global",
+    "reportUndefinedVariable",
+  },
+  trailing_whitespace = {
+    message = " Remove trailing whitespace",
+    "trailing-whitespace",
+    "trailing-space",
+  },
+  unused_variable = {
+    message = " Don't define variables you don't use",
+    "unused-local",
+  },
+  unused_function = {
+    message = " Don't define functions you don't use",
+    "unused-function",
+  },
+  useless_symbols = {
+    message = " Remove that useless symbols",
+    "unknown-symbol",
+  },
+  wrong_type = {
+    message = " Try to use the correct types",
+    "init_conversion_failed",
+  },
+  undeclared_variable = {
+    message = " Have you delcared that variable somewhere?",
+    "undeclared_var_use",
+  },
+  lowercase_global = {
+    message = " Should that be a global? (if so make it uppercase)",
+    "lowercase-global",
+  },
+}
 
 return M

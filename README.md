@@ -53,7 +53,7 @@ Themes are automatically changed based on time of the day:
 | [catppuccin](https://github.com/catppuccin/nvim)     |         [5pm, 9pm)         |
 | [kanagawa](https://github.com/rebelot/kanagawa.nvim) | [9pm, 11:59pm), [0am, 1am] |
 
-You can change this in [plugins.lua](./lua/user/plugins.lua) and [lualine.lua](./lua/user/lualine.lua)
+You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./lua/user/theme.lua)
 
 ## Customization
 
