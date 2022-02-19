@@ -8,10 +8,11 @@ local luadev = lua_dev.setup {
   library = {
     vimruntime = true, -- runtime path
     types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
-    plugins = false, -- installed opt or start plugins in packpath
+    -- plugins = false, -- installed opt or start plugins in packpath
     -- you can also specify the list of plugins to make available as a workspace library
-    -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
+    plugins = { "lua-dev.nvim", "plenary.nvim" },
   },
+  -- runtime_path = true,
   lspconfig = {
     on_attach = require("lvim.lsp").common_on_attach,
     on_init = require("lvim.lsp").common_on_init,

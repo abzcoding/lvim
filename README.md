@@ -372,6 +372,7 @@ _Symbols Outline_
 - [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
 - [fidget](https://github.com/j-hui/fidget.nvim)
 - [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
+- [crates.nvim](https://github.com/Saecki/crates.nvim)
 
 ### Optional Plugins
 
@@ -601,6 +602,7 @@ Note that,
 
 | Key                                        | Mode | Action               |
 | ------------------------------------------ | :--: | -------------------- |
+| <kbd>Shift</kbd>+<kbd>x</kbd>              |  𝐍   | close buffer         |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>f</kbd> |  𝐍   | find buffer          |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>b</kbd> |  𝐍   | toggle buffer groups |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>p</kbd> |  𝐍   | pick buffer          |

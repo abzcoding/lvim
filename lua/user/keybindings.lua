@@ -83,12 +83,12 @@ M.set_hlslens_keymaps = function()
 end
 
 local function set_bufferline_keymaps()
-  -- lvim.keys.normal_mode["<S-x>"] = ":bdelete!<CR>"
+  lvim.keys.normal_mode["<S-x>"] = "<Cmd>BufferKill<CR>"
   lvim.keys.normal_mode["<S-l>"] = "<Cmd>BufferLineCycleNext<CR>"
   lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
   lvim.keys.normal_mode["[b"] = "<Cmd>BufferLineMoveNext<CR>"
   lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
-  lvim.builtin.which_key.mappings["c"] = { "<CMD>bdelete!<CR>", "Close Buffer" }
+  lvim.builtin.which_key.mappings["c"] = {}
   lvim.builtin.which_key.mappings.b = {
     name = "Buffers",
     ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },

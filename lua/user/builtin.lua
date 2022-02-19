@@ -160,6 +160,10 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  lvim.lsp.buffer_mappings.normal_mode["K"] = {
+    "<cmd>lua require('user.builtin').show_documentation()<CR>",
+    "Show Documentation",
+  }
   lvim.lsp.diagnostics.float.border = "rounded"
   lvim.lsp.diagnostics.float.focusable = false
   lvim.lsp.float.focusable = true
@@ -287,8 +291,18 @@ M.config = function()
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
-  lvim.builtin.telescope.defaults.winblend = 3
-  lvim.builtin.telescope.defaults.selection_caret = "  "
+  if lvim.builtin.fancy_dashboard.active then
+    lvim.builtin.telescope.defaults.prompt_prefix = "  "
+    lvim.builtin.telescope.defaults.borderchars = {
+      prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+      results = { "─", "▐", "─", "│", "╭", "▐", "▐", "╰" },
+      -- results = {' ', '▐', '▄', '▌', '▌', '▐', '▟', '▙' };
+      preview = { " ", "│", " ", "▌", "▌", "╮", "╯", "▌" },
+    }
+    lvim.builtin.telescope.defaults.selection_caret = "  "
+  else
+    lvim.builtin.telescope.defaults.winblend = 15
+  end
   lvim.builtin.telescope.defaults.cache_picker = { num_pickers = 3 }
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
@@ -343,8 +357,6 @@ M.config = function()
     "%.flac",
     "%.tar.gz",
   }
-  lvim.builtin.telescope.defaults.color_devicons = true
-  lvim.builtin.telescope.defaults.use_less = true
   local user_telescope = require "user.telescope"
   lvim.builtin.telescope.defaults.layout_config = user_telescope.layout_config()
   local actions = require "telescope.actions"
@@ -684,5 +696,18 @@ M.codes = {
     "lowercase-global",
   },
 }
+
+M.show_documentation = function()
+  local filetype = vim.bo.filetype
+  if vim.tbl_contains({ "vim", "help" }, filetype) then
+    vim.cmd("h " .. vim.fn.expand "<cword>")
+  elseif vim.fn.expand "%:t" == "Cargo.toml" then
+    require("crates").show_popup()
+  elseif vim.tbl_contains({ "man" }, filetype) then
+    vim.cmd("Man " .. vim.fn.expand "<cword>")
+  else
+    vim.lsp.buf.hover()
+  end
+end
 
 return M
