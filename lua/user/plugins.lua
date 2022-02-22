@@ -113,9 +113,7 @@ M.config = function()
       disable = lvim.builtin.motion_provider ~= "hop",
     },
     {
-      -- NOTE: temporary workaround for neovim head, change back to simrat39 once merged
-      "zeertzjq/symbols-outline.nvim",
-      branch = "patch-1",
+      "simrat39/symbols-outline.nvim",
       setup = function()
         require("user.symbols_outline").config()
       end,
