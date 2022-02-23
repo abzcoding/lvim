@@ -7,6 +7,7 @@ M.config = function()
     result = result:gsub("/", path_sep)
     return result
   end
+  local join_path = require("lvim.utils").join_paths
 
   local status_ok, dap = pcall(require, "dap")
   if not status_ok then
@@ -94,8 +95,8 @@ M.config = function()
       type = "dart",
       request = "launch",
       name = "Launch flutter",
-      dartSdkPath = sep_os_replacer(os.getenv "HOME" .. "/flutter/bin/cache/dart-sdk/"),
-      flutterSdkPath = sep_os_replacer(os.getenv "HOME" .. "/flutter"),
+      dartSdkPath = sep_os_replacer(join_path(vim.fn.expand "~/", "/flutter/bin/cache/dart-sdk/")),
+      flutterSdkPath = sep_os_replacer(join_path(vim.fn.expand "~/", "/flutter")),
       program = sep_os_replacer "${workspaceFolder}/lib/main.dart",
       cwd = "${workspaceFolder}",
     },
@@ -105,7 +106,10 @@ M.config = function()
     type = "executable",
     command = "node",
     args = {
-      os.getenv "HOME" .. "/.vscode/extensions/firefox-devtools.vscode-firefox-debug-2.9.6/dist/adapter.bundle.js",
+      join_path(
+        vim.fn.expand "~/",
+        "/.vscode/extensions/firefox-devtools.vscode-firefox-debug-2.9.6/dist/adapter.bundle.js"
+      ),
     },
   }
 

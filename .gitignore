@@ -41,3 +41,5 @@ luac.out
 
 # LunarVim
 plugin/
+
+.luacheckcache

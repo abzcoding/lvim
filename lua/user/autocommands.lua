@@ -49,7 +49,7 @@ augroup END
   end
 
   local codelens_viewer = "lua require('nvim-lightbulb').update_lightbulb()"
-  local user = os.getenv "USER"
+  local user = os.getenv "USER" and vim.fn.has "win" ~= 1 or os.getenv "USERNAME" == "Abouz"
   if user and user == "abz" then
     codelens_viewer = "lua require('user.codelens').show_line_sign()"
   end
