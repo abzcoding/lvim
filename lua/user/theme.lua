@@ -22,6 +22,7 @@ M.tokyonight = function()
   vim.g.tokyonight_hide_inactive_statusline = true
   vim.g.tokyonight_dark_sidebar = true
   vim.g.tokyonight_dark_float = true
+  vim.g.tokyonight_colors = { git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" } }
   local _time = os.date "*t"
   if _time.hour < 8 then
     vim.g.tokyonight_style = "night"
