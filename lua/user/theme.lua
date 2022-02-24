@@ -139,7 +139,9 @@ M.kanagawa = function()
     specialException = true, -- special highlight for exception handling keywords
     transparent = lvim.transparent_window,
     colors = {},
-    overrides = {},
+    overrides = {
+      diffRemoved = { fg = "#E46876" },
+    },
   }
 end
 
