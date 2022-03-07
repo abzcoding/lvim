@@ -314,9 +314,9 @@ M.config = function()
     source = diff_source,
     symbols = { added = "  ", modified = "柳", removed = " " },
     diff_color = {
-      added = { fg = colors.git.add },
-      modified = { fg = colors.git.change },
-      removed = { fg = colors.git.delete },
+      added = { fg = colors.git.add, bg = colors.bg },
+      modified = { fg = colors.git.change, bg = colors.bg },
+      removed = { fg = colors.git.delete, bg = colors.bg },
     },
     color = {},
     cond = nil,
