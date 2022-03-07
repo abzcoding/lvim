@@ -18,6 +18,10 @@ M.config = function()
     },
     fallbackScalaVersion = lvim.builtin.metals.fallbackScalaVersion,
     serverVersion = lvim.builtin.metals.serverVersion,
+    serverProperties = {
+      "-Xms750m",
+      "-Xmx5G",
+    },
   }
 
   metals_config.init_options.statusBarProvider = "on"

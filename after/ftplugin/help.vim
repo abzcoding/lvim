@@ -1,6 +1,3 @@
-" TODO(stream): We chould turn this into a plugin to make writing vim help
-" text easier. There's a lot of stuff that would be nice for it.
-
 setlocal expandtab
 setlocal textwidth=78
 setlocal tabstop=4

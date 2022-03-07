@@ -223,6 +223,27 @@ M.config = function()
   }
   dap.configurations.c = dap.configurations.cpp
   dap.configurations.rust = dap.configurations.cpp
+
+  if lvim.builtin.metals.active then
+    dap.configurations.scala = {
+      {
+        type = "scala",
+        request = "launch",
+        name = "Run or Test Target",
+        metals = {
+          runType = "runOrTestFile",
+        },
+      },
+      {
+        type = "scala",
+        request = "launch",
+        name = "Test Target",
+        metals = {
+          runType = "testTarget",
+        },
+      },
+    }
+  end
 end
 
 return M
