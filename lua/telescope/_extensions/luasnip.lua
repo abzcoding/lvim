@@ -23,15 +23,15 @@
 
 local has_telescope, telescope = pcall(require, "telescope")
 if not has_telescope then
-  error("This plugins requires nvim-telescope/telescope.nvim")
+  error "This plugins requires nvim-telescope/telescope.nvim"
 end
 
-local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
-local finders = require("telescope.finders")
-local pickers = require("telescope.pickers")
-local previewers = require("telescope.previewers")
-local entry_display = require("telescope.pickers.entry_display")
+local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
+local finders = require "telescope.finders"
+local pickers = require "telescope.pickers"
+local previewers = require "telescope.previewers"
+local entry_display = require "telescope.pickers.entry_display"
 local conf = require("telescope.config").values
 
 local filter_null = function(str, default)
@@ -84,7 +84,7 @@ local luasnip_fn = function(opts)
       end
     end
   else
-    print("LuaSnips is not available")
+    print "LuaSnips is not available"
   end
 
   table.sort(objs, function(a, b)
@@ -97,24 +97,24 @@ local luasnip_fn = function(opts)
     end
   end)
 
-  local displayer = entry_display.create({
+  local displayer = entry_display.create {
     separator = " ",
     items = {
       { width = 24 },
       { remaining = true },
     },
-  })
+  }
 
   local make_display = function(entry)
-    return displayer({
+    return displayer {
       entry.value.context.name,
       filter_description(entry.value.context.name, entry.value.context.description),
-    })
+    }
   end
 
   pickers.new(opts, {
     prompt_title = "LuaSnip",
-    finder = finders.new_table({
+    finder = finders.new_table {
 
       results = objs,
       entry_maker = function(entry)
@@ -133,11 +133,18 @@ local luasnip_fn = function(opts)
           preview_command = function(pvw_entry, bufnr)
             local snippet = get_docstring(luasnip.snippets, entry.ft, entry.context)
             vim.api.nvim_buf_set_option(bufnr, "filetype", entry.ft)
+            if type(snippet) ~= "table" then
+              local lines = {}
+              for s in snippet:gmatch "[^\r\n]+" do
+                table.insert(lines, s)
+              end
+              snippet = lines
+            end
             vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, snippet)
           end,
         }
       end,
-    }),
+    },
 
     previewer = previewers.display_content.new(opts),
     sorter = conf.generic_sorter(opts),
@@ -147,9 +154,9 @@ local luasnip_fn = function(opts)
         actions.close(prompt_bufnr)
         vim.api.nvim_put({ selection.value.context.trigger }, "", true, true)
         if luasnip.expandable() then
-          vim.cmd("startinsert")
+          vim.cmd "startinsert"
           luasnip.expand()
-          vim.cmd("stopinsert")
+          vim.cmd "stopinsert"
         else
           print(
             "Snippet '"
@@ -164,4 +171,4 @@ local luasnip_fn = function(opts)
   }):find()
 end -- end custom function
 
-return telescope.register_extension({ exports = { luasnip = luasnip_fn } })
+return telescope.register_extension { exports = { luasnip = luasnip_fn } }
