@@ -49,6 +49,7 @@ M.icons = {
   config = " ",
   git = "",
   magic = " ",
+  exit = " ",
 }
 
 M.nvim_tree_icons = {

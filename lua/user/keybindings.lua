@@ -90,7 +90,7 @@ local function set_bufferline_keymaps()
   lvim.keys.normal_mode["]b"] = "<Cmd>BufferLineMovePrev<CR>"
   lvim.builtin.which_key.mappings["c"] = {}
   lvim.builtin.which_key.mappings.b = {
-    name = "Buffers",
+    name = "﩯Buffer",
     ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },
     ["2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" },
     ["3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" },
@@ -127,10 +127,10 @@ local function set_harpoon_keymaps()
   lvim.keys.normal_mode["te"] = "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>"
   lvim.keys.normal_mode["cu"] = "<cmd>lua require('harpoon.term').sendCommand(1, 1)<CR>"
   lvim.keys.normal_mode["ce"] = "<cmd>lua require('harpoon.term').sendCommand(1, 2)<CR>"
-  lvim.builtin.which_key.mappings["a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add Mark" }
+  lvim.builtin.which_key.mappings["a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", " Add Mark" }
   lvim.builtin.which_key.mappings["<leader>"] = {
     "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
-    "Harpoon",
+    " Harpoon",
   }
 
   local whk_status, whk = pcall(require, "which-key")
@@ -138,10 +138,10 @@ local function set_harpoon_keymaps()
     return
   end
   whk.register {
-    ["<leader>1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
-    ["<leader>2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
-    ["<leader>3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
-    ["<leader>4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
+    ["<leader>1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", " goto1" },
+    ["<leader>2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", " goto2" },
+    ["<leader>3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", " goto3" },
+    ["<leader>4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", " goto4" },
   }
 end
 
@@ -149,14 +149,14 @@ M.set_async_tasks_keymaps = function()
   local poor_mans_autocmds = require("user.autocommands").make_run()
   if lvim.builtin.async_tasks.active then
     lvim.builtin.which_key.mappings["m"] = {
-      name = "Make",
+      name = " Make",
       f = { "<cmd>AsyncTask file-build<cr>", "File" },
       p = { "<cmd>AsyncTask project-build<cr>", "Project" },
       e = { "<cmd>AsyncTaskEdit<cr>", "Edit" },
       l = { "<cmd>AsyncTaskList<cr>", "List" },
     }
     lvim.builtin.which_key.mappings["r"] = {
-      name = "Run",
+      name = " Run",
       f = { "<cmd>AsyncTask file-run<cr>", "File" },
       p = { "<cmd>AsyncTask project-run<cr>", "Project" },
     }
@@ -209,8 +209,12 @@ M.config = function()
   -- WhichKey keybindings
   -- =========================================
   M.set_async_tasks_keymaps()
+  lvim.builtin.which_key.mappings["/"] = {
+    "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>",
+    " Comment",
+  }
   if lvim.builtin.fancy_dashboard.active then
-    lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "Dashboard" }
+    lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "舘Dashboard" }
   end
   if lvim.builtin.dap.active then
     lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
@@ -220,10 +224,10 @@ M.config = function()
     lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen<cr>", "diffview: diff HEAD" }
   end
   if lvim.builtin.cheat.active then
-    lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", "Cheat.sh" }
+    lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", " Cheat.sh" }
   end
   lvim.builtin.which_key.mappings["F"] = {
-    name = "Find",
+    name = " Find",
     b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },
     f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
     g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
@@ -238,13 +242,20 @@ M.config = function()
   }
   lvim.builtin.which_key.mappings["C"] = {
     "<cmd>lua require('telescope').extensions.command_palette.command_palette()<cr>",
-    "Command Palette",
+    " Command Palette",
   }
 
   if lvim.builtin.file_browser.active then
     lvim.builtin.which_key.mappings["se"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
   end
-  lvim.builtin.which_key.mappings["H"] = "Help"
+  lvim.builtin.which_key.mappings["H"] = " Help"
+  lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", " No Highlight" }
+  lvim.builtin.which_key.mappings.g.name = " Git"
+  lvim.builtin.which_key.mappings.l.name = " LSP"
+  lvim.builtin.which_key.mappings["f"] = {
+    require("lvim.core.telescope.custom-finders").find_project_files,
+    " Find File",
+  }
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
     lvim.builtin.which_key.mappings["l"]["j"] = {
@@ -273,45 +284,47 @@ M.config = function()
   }
   if lvim.builtin.persistence then
     lvim.builtin.which_key.mappings["q"] = {
-      name = "+Quit",
+      name = " Quit",
       d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
       l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
       s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
     }
   end
   lvim.builtin.which_key.mappings["n"] = {
-    name = "Neogen",
+    name = " Neogen",
     c = { "<cmd>lua require('neogen').generate({ type = 'class'})<CR>", "Class Documentation" },
     f = { "<cmd>lua require('neogen').generate({ type = 'func'})<CR>", "Function Documentation" },
     t = { "<cmd>lua require('neogen').generate({ type = 'type'})<CR>", "Type Documentation" },
     F = { "<cmd>lua require('neogen').generate({ type = 'file'})<CR>", "File Documentation" },
   }
-  lvim.builtin.which_key.mappings["N"] = { "<cmd>Telescope file_create<CR>", "Create new file" }
+  lvim.builtin.which_key.mappings["N"] = { "<cmd>Telescope file_create<CR>", " Create new file" }
   if lvim.builtin.tag_provider == "symbols-outline" then
-    lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" }
+    lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", " Symbol Outline" }
   elseif lvim.builtin.tag_provider == "vista" then
     lvim.builtin.which_key.mappings["o"] = { "<cmd>Vista!!<cr>", "Vista" }
   end
-  lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+  lvim.builtin.which_key.mappings.L.name = " LunarVim"
+  lvim.builtin.which_key.mappings.p.name = " Packer"
+  lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", " Projects" }
   lvim.builtin.which_key.mappings["R"] = {
-    name = "Replace",
+    name = " Replace",
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Current Buffer" },
     p = { "<cmd>lua require('spectre').open()<cr>", "Project" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
   }
-
+  lvim.builtin.which_key.mappings.s.name = " Search"
   lvim.builtin.which_key.mappings["ss"] = {
     "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>",
     "String",
   }
   lvim.builtin.which_key.mappings["t"] = {
-    name = "Test",
+    name = "ﭧ Test",
     f = { "<cmd>Ultest<cr>", "File" },
     n = { "<cmd>UltestNearest<cr>", "Nearest" },
     s = { "<cmd>UltestSummary<cr>", "Summary" },
   }
   lvim.builtin.which_key.mappings["T"] = {
-    name = "+Trouble",
+    name = "飯Trouble",
     d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
@@ -320,7 +333,8 @@ M.config = function()
     t = { "<cmd>TodoLocList <cr>", "Todo" },
     w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnosticss" },
   }
-  lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
+  lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", " Zen" }
+  lvim.builtin.which_key.mappings["w"] = { "<cmd>w!<CR>", " Save" }
 
   -- My wezterm is weird
   -- =========================================
