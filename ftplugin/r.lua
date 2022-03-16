@@ -37,11 +37,4 @@ local my_server = server.Server:new {
   },
 }
 servers.register(my_server)
-
-local opts = {
-  on_attach = require("lvim.lsp").common_on_attach,
-  on_init = require("lvim.lsp").common_on_init,
-  capabilities = require("lvim.lsp").common_capabilities(),
-}
-
-require("lvim.lsp.manager").setup(server_name, opts)
+require("lvim.lsp.manager").setup(server_name, {})

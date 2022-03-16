@@ -26,9 +26,6 @@ local opts = {
       },
     },
   },
-  on_attach = require("lvim.lsp").common_on_attach,
-  on_init = require("lvim.lsp").common_on_init,
-  capabilities = require("lvim.lsp").common_capabilities(),
 }
 
 local servers = require "nvim-lsp-installer.servers"
