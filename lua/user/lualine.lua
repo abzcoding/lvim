@@ -190,7 +190,8 @@ M.config = function()
         normal = { c = { fg = colors.fg, bg = colors.bg } },
         inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
       },
-      disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha", "vista", "vista_kind" },
+      disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha", "vista", "vista_kind", "TelescopePrompt" },
+      globalstatus = lvim.builtin.global_statusline,
     },
     sections = {
       -- these are to remove the defaults
@@ -422,7 +423,7 @@ M.config = function()
       end
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
-      local trim = vim.fn.winwidth(0) < 120
+      local trim = vim.fn.winwidth(0) < 117
 
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then

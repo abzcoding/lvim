@@ -61,6 +61,17 @@ M.config = function()
     foldsep = "│",
     foldclose = "▸",
   }
+  if lvim.builtin.global_statusline then
+    vim.tbl_extend("force", vim.opt.fillchars, {
+      horiz = "━",
+      horizup = "┻",
+      horizdown = "┳",
+      vert = "┃",
+      vertleft = "┫",
+      vertright = "┣",
+      verthoriz = "╋",
+    })
+  end
   vim.opt.wildignore = {
     "*.aux,*.out,*.toc",
     "*.o,*.obj,*.dll,*.jar,*.pyc,__pycache__,*.rbc,*.class",
@@ -111,6 +122,25 @@ M.config = function()
     precedes = "‹", -- Alternatives: … «
     trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
   }
+
+  -- Cursorline highlighting control
+  --  Only have it on in the active buffer
+  vim.opt.cursorline = true -- Highlight the current line
+  if vim.fn.has "nvim-0.7" then
+    local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
+    vim.api.nvim_create_autocmd("WinLeave", {
+      group = group,
+      callback = function()
+        vim.opt_local.cursorline = false
+      end,
+    })
+    vim.api.nvim_create_autocmd("WinEnter", {
+      group = group,
+      callback = function()
+        vim.opt_local.cursorline = true
+      end,
+    })
+  end
 
   if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0.01

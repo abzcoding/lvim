@@ -5,6 +5,10 @@ M.config = function()
   if not status_ok then
     return
   end
+  local relative = "editor"
+  if lvim.builtin.global_statusline then
+    relative = "win"
+  end
 
   fidget.setup {
     text = {
@@ -52,7 +56,7 @@ M.config = function()
       task_decay = 300, -- how long to keep around completed task, in ms
     },
     window = {
-      relative = "editor", -- where to anchor the window, either `"win"` or `"editor"`
+      relative = relative, -- where to anchor the window, either `"win"` or `"editor"`
       blend = 100, -- `&winblend` for the window
       zindex = nil, -- the `zindex` value for the window
     },
