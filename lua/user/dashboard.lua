@@ -1,11 +1,6 @@
 local M = {}
 
 M.config = function()
-  local present, alpha = pcall(require, "alpha")
-  if not present then
-    return
-  end
-
   local kind = require "user.lsp_kind"
 
   local header = {
@@ -137,7 +132,7 @@ M.config = function()
       margin = 5,
     },
   }
-  alpha.setup(opts)
+  return opts
 end
 
 return M

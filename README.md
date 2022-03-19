@@ -70,8 +70,6 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./l
   - `lvim.builtin.harpoon = { active = false }`
 - if you want to try out GitHub copilot, change the following
   - `lvim.builtin.sell_your_soul_to_devil = true`
-- I'm using a custom dashboard, use the default LunarVim one if you like it better
-  - `lvim.builtin.fancy_dashboard = { active = false }`
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
 - You can use the fancy wild menu if you want, make sure to do a `:UpdateRemotePlugins`
@@ -389,7 +387,6 @@ _Symbols Outline_
 - [vim-test](https://github.com/vim-test/vim-test)
 - [vim-ultest](https://github.com/rcarriga/vim-ultest)
 - [nvim-cheat](https://github.com/RishabhRD/nvim-cheat.sh)
-- [alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [vim-dadbod](https://github.com/tpope/vim-dadbod)
 - [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)

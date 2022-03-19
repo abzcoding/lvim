@@ -150,13 +150,9 @@ M.config = function()
 
   -- Dashboard
   -- =========================================
-  lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
-  if not lvim.builtin.fancy_dashboard.active then
-    lvim.builtin.dashboard.custom_section["m"] = {
-      description = { "  Marks              " },
-      command = "Telescope marks",
-    }
-  end
+	lvim.builtin.alpha.mode = "custom"
+	local alpha_opts = require("user.dashboard").config()
+	lvim.builtin.alpha["custom"] = {config = alpha_opts}
 
   -- LSP
   -- =========================================
@@ -201,7 +197,6 @@ M.config = function()
       error = kind.icons.error,
     },
   }
-  lvim.builtin.nvimtree.setup.actions.open_file.resize_window = true
   lvim.builtin.nvimtree.icons = kind.nvim_tree_icons
   lvim.builtin.nvimtree.on_config_done = function(_)
     lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<CR>", " Explorer" }

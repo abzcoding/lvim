@@ -318,13 +318,6 @@ M.config = function()
       disable = not lvim.builtin.neoclip.active,
     },
     {
-      "goolord/alpha-nvim",
-      config = function()
-        require("user.dashboard").config()
-      end,
-      disable = not lvim.builtin.fancy_dashboard.active,
-    },
-    {
       "gelguy/wilder.nvim",
       -- event = { "CursorHold", "CmdlineEnter" },
       rocks = { "luarocks-fetch-gitrec", "pcre2" },

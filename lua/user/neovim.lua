@@ -133,7 +133,9 @@ M.config = function()
     vim.api.nvim_create_autocmd("WinEnter", {
       group = group,
       callback = function()
-        vim.opt_local.cursorline = true
+        if vim.bo.filetype ~= "alpha" then
+          vim.opt_local.cursorline = true
+        end
       end,
     })
   end

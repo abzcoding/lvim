@@ -191,6 +191,7 @@ M.config = function()
         inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
       },
       disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha", "vista", "vista_kind", "TelescopePrompt" },
+      always_divide_middle = true,
       globalstatus = lvim.builtin.global_statusline,
     },
     sections = {
