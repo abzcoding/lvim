@@ -335,6 +335,10 @@ M.config = function()
   }
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", " Zen" }
   lvim.builtin.which_key.mappings["w"] = { "<cmd>w!<CR>", " Save" }
+  lvim.builtin.which_key.vmappings["g"] = {
+    name = " Git",
+    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+  }
 
   -- My wezterm is weird
   -- =========================================
