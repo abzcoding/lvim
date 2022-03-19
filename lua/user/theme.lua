@@ -137,6 +137,8 @@ M.kanagawa = function()
     variablebuiltinStyle = "italic",
     specialReturn = true, -- special highlight for the return keyword
     specialException = true, -- special highlight for exception handling keywords
+    dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+    globalStatus = lvim.builtin.global_statusline, -- adjust window separators highlight for laststatus=3
     transparent = lvim.transparent_window,
     colors = {},
     overrides = {
@@ -329,7 +331,7 @@ M.telescope_theme = function()
 
   if lvim.builtin.fancy_telescope.active then
     local colors = M.hi_colors()
-    set_fg_bg("WinSeparator", colors.bg, "None")
+    -- set_fg_bg("WinSeparator", colors.bg, "None")
     set_fg_bg("TelescopeBorder", colors.bg_alt, colors.bg)
     set_fg_bg("TelescopePromptBorder", colors.bg, colors.bg)
     set_fg_bg("TelescopePromptNormal", colors.fg, colors.bg_alt)

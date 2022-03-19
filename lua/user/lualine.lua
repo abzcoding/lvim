@@ -423,7 +423,11 @@ M.config = function()
       end
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
-      local trim = vim.fn.winwidth(0) < 117
+      local trim_width = 120
+      if lvim.builtin.global_statusline then
+        trim_width = 100
+      end
+      local trim = vim.fn.winwidth(0) < trim_width
 
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then

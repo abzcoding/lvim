@@ -52,7 +52,7 @@ M.config = function()
   vim.opt.autowriteall = true -- automatically :write before running commands and changing files
   vim.opt.clipboard = "unnamedplus"
   vim.opt.fillchars = {
-    vert = "▕", -- alternatives │
+    -- vert = "▕", -- alternatives │
     fold = " ",
     eob = " ", -- suppress ~ at EndOfBuffer
     diff = "╱", -- alternatives = ⣿ ░ ─
@@ -60,18 +60,14 @@ M.config = function()
     foldopen = "▾",
     foldsep = "│",
     foldclose = "▸",
+    horiz = "━",
+    horizup = "┻",
+    horizdown = "┳",
+    vert = "┃",
+    vertleft = "┫",
+    vertright = "┣",
+    verthoriz = "╋",
   }
-  if lvim.builtin.global_statusline then
-    vim.tbl_extend("force", vim.opt.fillchars, {
-      horiz = "━",
-      horizup = "┻",
-      horizdown = "┳",
-      vert = "┃",
-      vertleft = "┫",
-      vertright = "┣",
-      verthoriz = "╋",
-    })
-  end
   vim.opt.wildignore = {
     "*.aux,*.out,*.toc",
     "*.o,*.obj,*.dll,*.jar,*.pyc,__pycache__,*.rbc,*.class",
