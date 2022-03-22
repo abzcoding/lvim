@@ -34,7 +34,7 @@ M.rose_pine = function()
     ---@usage 'main'|'moon'
     dark_variant = "moon",
     bold_vert_split = false,
-    dim_nc_background = false,
+    dim_nc_background = lvim.builtin.global_statusline,
     disable_background = lvim.transparent_window,
     disable_float_background = true,
     disable_italics = false,
@@ -137,7 +137,7 @@ M.kanagawa = function()
     variablebuiltinStyle = "italic",
     specialReturn = true, -- special highlight for the return keyword
     specialException = true, -- special highlight for exception handling keywords
-    dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+    dimInactive = lvim.builtin.global_statusline, -- dim inactive window `:h hl-NormalNC`
     globalStatus = lvim.builtin.global_statusline, -- adjust window separators highlight for laststatus=3
     transparent = lvim.transparent_window,
     colors = {},
@@ -332,6 +332,8 @@ M.telescope_theme = function()
   if lvim.builtin.fancy_telescope.active then
     local colors = M.hi_colors()
     -- set_fg_bg("WinSeparator", colors.bg, "None")
+    set_fg_bg("NormalFloat", colors.fg, colors.bg)
+    set_fg_bg("FloatBorder", colors.fg, colors.bg)
     set_fg_bg("TelescopeBorder", colors.bg_alt, colors.bg)
     set_fg_bg("TelescopePromptBorder", colors.bg, colors.bg)
     set_fg_bg("TelescopePromptNormal", colors.fg, colors.bg_alt)

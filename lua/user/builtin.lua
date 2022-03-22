@@ -150,9 +150,9 @@ M.config = function()
 
   -- Dashboard
   -- =========================================
-	lvim.builtin.alpha.mode = "custom"
-	local alpha_opts = require("user.dashboard").config()
-	lvim.builtin.alpha["custom"] = {config = alpha_opts}
+  lvim.builtin.alpha.mode = "custom"
+  local alpha_opts = require("user.dashboard").config()
+  lvim.builtin.alpha["custom"] = { config = alpha_opts }
 
   -- LSP
   -- =========================================
@@ -160,7 +160,39 @@ M.config = function()
     "<cmd>lua require('user.builtin').show_documentation()<CR>",
     "Show Documentation",
   }
-  lvim.lsp.diagnostics.float.border = "rounded"
+  lvim.lsp.float.border = {
+    { "╔", "FloatBorder" },
+    { "═", "FloatBorder" },
+    { "╗", "FloatBorder" },
+    { "║", "FloatBorder" },
+    { "╝", "FloatBorder" },
+    { "═", "FloatBorder" },
+    { "╚", "FloatBorder" },
+    { "║", "FloatBorder" },
+  }
+  lvim.lsp.diagnostics.float.border = {
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+    { " ", "FloatBorder" },
+  }
+  if os.getenv "KITTY_WINDOW_ID" then
+    lvim.lsp.float.border = {
+      { "🭽", "FloatBorder" },
+      { "▔", "FloatBorder" },
+      { "🭾", "FloatBorder" },
+      { "▕", "FloatBorder" },
+      { "🭿", "FloatBorder" },
+      { "▁", "FloatBorder" },
+      { "🭼", "FloatBorder" },
+      { "▏", "FloatBorder" },
+    }
+    lvim.lsp.diagnostics.float.border = lvim.lsp.float.border
+  end
   lvim.lsp.diagnostics.float.focusable = false
   lvim.lsp.float.focusable = true
   lvim.lsp.diagnostics.signs.values = {
