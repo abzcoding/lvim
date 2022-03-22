@@ -101,6 +101,7 @@ GitLab
 Gitaly
 Gitea
 Github
+Gitlab
 Gitleaks
 Gitpod
 Gitsigns
@@ -199,6 +200,7 @@ Opsgenie
 Overcommit
 Packagist
 Patroni
+Pentest
 PgBouncer
 Phabricator
 Pipfile
@@ -573,6 +575,7 @@ onboarding
 onedarker
 parallelization
 parallelizations
+paravirtualization
 passwordless
 performant
 pgLoader
@@ -899,8 +902,10 @@ versionless
 viewport
 viewports
 vimscript
+virtio
 virtualized
 virtualizing
+vulnerabilities
 walkthrough
 walkthroughs
 webpack
