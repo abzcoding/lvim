@@ -474,8 +474,8 @@ Note that,
 | --------------------------- | :--: | ----------------------- | ------------------------------------------------------------------- |
 | <kbd>f</kbd>                |  𝐍   | find next character     | <small>HopChar1CurrentLineAC</small> or <small>Lightspeed_f</small> |
 | <kbd>F</kbd>                |  𝐍   | find previous character | <small>HopChar1CurrentLineBC</small> or <small>Lightspeed_F</small> |
-| <kbd>s</kbd>                |  𝐍   | find character          | <small>HopChar2</small> or <small>Lightspeed_s</small>              |
-| <kbd>S</kbd>                |  𝐍   | find word               | <small>HopWord</small> or <small>Lightspeed_S</small>               |
+| <kbd>s</kbd>                |  𝐍   | find character          | <small>HopChar2MW</small> or <small>Lightspeed_s</small>            |
+| <kbd>S</kbd>                |  𝐍   | find word               | <small>HopWordMW</small> or <small>Lightspeed_S</small>             |
 | <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐈   | select all              | <small>ggVG</small>                                                 |
 | <kbd>Alt</kbd>+<kbd>a</kbd> |  𝐍   | increment number        | <small>C-A</small>                                                  |
 | <kbd>Alt</kbd>+<kbd>x</kbd> |  𝐍   | decrement number        | <small>C-X</small>                                                  |
