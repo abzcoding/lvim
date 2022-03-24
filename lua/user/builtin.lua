@@ -81,6 +81,7 @@ M.config = function()
       },
     },
   }
+  lvim.builtin.bufferline.options.separator_style = os.getenv 'KITTY_WINDOW_ID' and 'slant' or 'thin'
 
   -- CMP
   -- =========================================
@@ -279,6 +280,8 @@ M.config = function()
         ["il"] = "@loop.inner",
         ["aa"] = "@parameter.outer",
         ["ia"] = "@parameter.inner",
+        ["av"] = "@variable.outer",
+        ["iv"] = "@variable.inner",
       },
     },
     swap = {

@@ -100,7 +100,6 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./l
   - `lvim.builtin.async_tasks = { active = true }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
-- Using tailwinds CSS for markdown, disable it if you want
 
 <!--
 - orgmode is using `~/shared/orgs` folder

@@ -72,7 +72,7 @@ M.catppuccin = function()
     styles = {
       comments = "NONE",
       functions = "italic",
-      keywords = "italic",
+      keywords = "NONE",
       strings = "NONE",
       variables = "NONE",
     },
@@ -121,6 +121,7 @@ M.catppuccin = function()
       hop = lvim.builtin.motion_provider == "hop",
       notify = true,
       telekasten = true,
+      symbols_outline = true,
     },
   }
 end
