@@ -282,6 +282,10 @@ M.config = function()
   ins_left {
     function()
       vim.api.nvim_command("hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg)
+      local fname = vim.fn.expand "%:p"
+      if string.find(fname, "term://") ~= nil then
+        return kind.icons.term
+      end
       local winnr = vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
       if winnr > 10 then
         winnr = 10
@@ -300,6 +304,19 @@ M.config = function()
       local fname = vim.fn.expand "%:p"
       local ftype = vim.fn.expand "%:e"
       local cwd = vim.api.nvim_call_function("getcwd", {})
+      if
+        string.find(fname, "term") ~= nil
+        and string.find(fname, "lazygit;#toggleterm") ~= nil
+        and (vim.fn.has "linux" == 1 or vim.fn.has "mac" == 1)
+      then
+        local git_repo_cmd = io.popen 'git remote get-url origin | tr -d "\n"'
+        local git_repo = git_repo_cmd:read "*a"
+        git_repo_cmd:close()
+        local git_branch_cmd = io.popen 'git branch --show-current | tr -d "\n"'
+        local git_branch = git_branch_cmd:read "*a"
+        git_branch_cmd:close()
+        return git_repo .. "~" .. git_branch
+      end
       local show_name = vim.fn.expand "%:t"
       if #cwd > 0 and #ftype > 0 then
         show_name = fname:sub(#cwd + 2)
