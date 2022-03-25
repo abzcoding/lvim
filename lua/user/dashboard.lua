@@ -46,11 +46,11 @@ M.config = function()
     },
   }
 
-  local fortune = require "alpha.fortune"()
+  -- local fortune = require "alpha.fortune"()
   -- fortune = fortune:gsub("^%s+", ""):gsub("%s+$", "")
   local footer = {
     type = "text",
-    val = fortune,
+    -- val = fortune,
     opts = {
       position = "center",
       hl = "Comment",

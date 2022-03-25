@@ -22,8 +22,8 @@ end
 
 M.set_hop_keymaps = function()
   local opts = { noremap = true, silent = true }
-  vim.api.nvim_set_keymap("n", "s", ":HopChar2MW<cr>", opts)
-  vim.api.nvim_set_keymap("n", "S", ":HopWordMW<cr>", opts)
+  vim.api.nvim_set_keymap("n", "s", ":HopChar1<cr>", opts)
+  vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", opts)
   vim.api.nvim_set_keymap(
     "n",
     "f",
@@ -112,6 +112,7 @@ local function set_bufferline_keymaps()
     ["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" },
     ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" },
     c = { "<Cmd>BufferLinePickClose<CR>", "delete buffer" },
+    e = { "<Cmd>e<CR>", "reload buffer" },
     p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
     t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
     f = { "<cmd>Telescope buffers<cr>", "Find" },
@@ -249,6 +250,26 @@ M.config = function()
     s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
   }
+  lvim.builtin.which_key.mappings["S"] = {
+		name = "+spectre",
+		["o"] = { ":lua require('spectre').open()<CR>", "lvim.en Spectre" },
+		["f"] = { ":lua require('spectre').open()<CR>", "Search in current file" },
+	}
+	lvim.builtin.which_key.mappings["v"] = {
+		name = "+split views",
+		v = { "<C-W>v", "Split Vertically" },
+		s = { "<C-W>s", "Split Horizontially" },
+	}
+	lvim.builtin.which_key.mappings["M"] = {
+		name = "Markdown",
+		g = { "<cmd>GenTocGFM<cr>", "Generate table of contents in GFM link style" },
+		r = { "<cmd>GenTocRedcarpet<cr>", "Generate table of contents in GFM link style" },
+		G = { "<cmd>GenTocGitLab<cr>", "Generate table of contents in Gitlab link style" },
+		m = {
+			"<cmd>GenTocMarked<cr>",
+			"Generate table of contents for iamcco/markdown-preview.vim which use Marked markdown parser.",
+		},
+	}
   lvim.builtin.which_key.mappings["C"] = {
     "<cmd>lua require('telescope').extensions.command_palette.command_palette()<cr>",
     " Command Palette",
