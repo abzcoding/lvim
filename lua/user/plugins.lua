@@ -7,51 +7,9 @@ M.config = function()
   end
   lvim.plugins = {
     {
-      "rose-pine/neovim",
-      as = "rose-pine",
-      config = function()
-        require("user.theme").rose_pine()
-        vim.cmd [[colorscheme rose-pine]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 1 and _time.hour < 9)
-      end,
+      "Mofiqul/dracula.nvim",
     },
-    {
-      "folke/tokyonight.nvim",
-      config = function()
-        require("user.theme").tokyonight()
-        vim.cmd [[colorscheme tokyonight]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return _time.hour >= 9 and _time.hour < 17
-      end,
-    },
-    {
-      "catppuccin/nvim",
-      as = "catppuccin",
-      config = function()
-        require("user.theme").catppuccin()
-        vim.cmd [[colorscheme catppuccin]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 17 and _time.hour < 21)
-      end,
-    },
-    {
-      "rebelot/kanagawa.nvim",
-      config = function()
-        require("user.theme").kanagawa()
-        vim.cmd [[colorscheme kanagawa]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1)
-      end,
-    },
+    { "f-person/git-blame.nvim", event = "BufRead", disable = false },
     {
       "ray-x/lsp_signature.nvim",
       config = function()
@@ -75,6 +33,26 @@ M.config = function()
       end,
       event = "BufWinEnter",
       disable = not lvim.builtin.lastplace.active,
+    },
+    {
+      "ruifm/gitlinker.nvim",
+      event = "BufRead",
+      config = function()
+        require("gitlinker").setup {
+          opts = {
+            -- remote = 'github', -- force the use of a specific remote
+            -- adds current line nr in the url for normal mode
+            add_current_line_on_normal_mode = true,
+            -- callback for what to do with the url
+            action_callback = require("gitlinker.actions").open_in_browser,
+            -- print the url after performing the action
+            print_url = false,
+            -- mapping to call url generation
+            mappings = "<leader>gy",
+          },
+        }
+      end,
+      requires = "nvim-lua/plenary.nvim",
     },
     {
       "folke/todo-comments.nvim",
@@ -131,6 +109,11 @@ M.config = function()
       event = "BufRead",
     },
     {
+      "kdheepak/lazygit.nvim",
+      event = "BufRead",
+      disable = false,
+    },
+    {
       "tzachar/cmp-tabnine",
       run = "./install.sh",
       requires = "hrsh7th/nvim-cmp",
@@ -180,10 +163,31 @@ M.config = function()
         vim.g.matchup_matchparen_offscreen = { method = "popup" }
       end,
     },
+    { "romgrk/nvim-treesitter-context", event = "BufRead", disable = false },
+    { "windwp/nvim-ts-autotag", event = "BufRead", disable = false },
+    { "nvim-treesitter/playground", event = "BufRead", disable = false },
+    { "p00f/nvim-ts-rainbow", event = "BufRead", disable = false },
     {
       "iamcco/markdown-preview.nvim",
       run = "cd app && npm install",
       ft = "markdown",
+    },
+    {
+      "heavenshell/vim-jsdoc",
+      event = "BufRead",
+      run = "make install",
+      ft = { "javascript", "javascript.jsx", "typescript", "vue" },
+    },
+    {
+      "mzlogin/vim-markdown-toc",
+      config = function()
+        vim.g.vmt_auto_update_on_save = true
+        vim.g.vmt_list_item_char = "-"
+        vim.g.vmt_fence_text = "TOC"
+        vim.g.vmt_fence_closing_text = "/TOC"
+      end,
+      event = "BufRead",
+      disable = false,
     },
     {
       "simrat39/rust-tools.nvim",
@@ -198,6 +202,24 @@ M.config = function()
         require("user.zen").config()
       end,
       event = "BufRead",
+    },
+    {
+      "nvim-telescope/telescope-media-files.nvim",
+      event = "BufWinEnter",
+      setup = function()
+        vim.cmd [[packadd telescope.nvim]]
+      end,
+    },
+    {
+      "nacro90/numb.nvim",
+      event = "BufRead",
+      config = function()
+        require("numb").setup {
+          show_numbers = true, -- Enable 'number' for the window while peeking
+          show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+        }
+      end,
+      disable = false,
     },
     {
       "windwp/nvim-spectre",
@@ -449,7 +471,7 @@ M.config = function()
       config = function()
         require("user.tabout").config()
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil,
+      disable = not lvim.builtin.tabout.active,
     },
     {
       "kevinhwang91/nvim-hlslens",
@@ -501,11 +523,6 @@ M.config = function()
       end,
       event = "BufRead",
       disable = not lvim.builtin.async_tasks.active,
-    },
-    {
-      "scalameta/nvim-metals",
-      requires = { "nvim-lua/plenary.nvim" },
-      disable = not lvim.builtin.metals.active,
     },
     {
       "jbyuki/instant.nvim",

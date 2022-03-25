@@ -1,0 +1,22 @@
+-- lvim.lang.terraform = {
+-- 	formatters = {
+-- 		{
+-- 			exe = "terraform_fmt",
+-- 			args = {},
+-- 		},
+-- 	},
+-- 	linters = {},
+-- 	lsp = {
+-- 		provider = "terraformls",
+-- 		setup = {
+-- 			cmd = {
+-- 				DATA_PATH .. "/lspinstall/terraform/terraform-ls",
+-- 				"serve",
+-- 				-- "--log-file",
+-- 				-- "/tmp/tf.log",
+-- 			},
+-- 			-- filetypes = { "terraform", "hcl" },
+-- 			-- root_dir = root_pattern(".terraform", ".git"),
+-- 		},
+-- 	},
+-- }

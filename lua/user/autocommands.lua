@@ -32,6 +32,32 @@ function! DisableSyntaxTreesitter()
     set lazyredraw
 endfunction
 
+augroup _general_settings
+    autocmd!
+    autocmd FileType qf,help,man,lspinfo,spectre_panel nnoremap <silent> <buffer> q :close<CR>
+    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
+    autocmd BufWinEnter * :set formatoptions-=cro
+    autocmd FileType qf set nobuflisted
+augroup end
+
+augroup _git
+    autocmd!
+    autocmd FileType gitcommit setlocal wrap
+    autocmd FileType gitcommit setlocal spell
+augroup end
+
+
+augroup _markdown
+    autocmd!
+    autocmd FileType markdown setlocal wrap
+    autocmd FileType markdown setlocal spell
+augroup end
+
+augroup _auto_resize
+    autocmd!
+    autocmd VimResized * tabdo wincmd =
+augroup end
+
 augroup BigFileDisable
     autocmd!
     autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
@@ -71,6 +97,13 @@ augroup END
       "Filetype",
       "go",
       "nnoremap <leader>H <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
+    },
+
+    -- Terraform
+    {
+      "Filetype",
+      "terraform",
+      "autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_seq_sync()",
     },
 
     -- java

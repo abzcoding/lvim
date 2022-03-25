@@ -151,9 +151,9 @@ M.config = function()
 
   -- Dashboard
   -- =========================================
-  lvim.builtin.alpha.mode = "custom"
+  -- lvim.builtin.alpha.mode = "custom"
   local alpha_opts = require("user.dashboard").config()
-  lvim.builtin.alpha["custom"] = { config = alpha_opts }
+  -- lvim.builtin.alpha["custom"] = { config = alpha_opts }
 
   -- LSP
   -- =========================================
@@ -446,6 +446,10 @@ M.config = function()
   -- =========================================
   lvim.builtin.terminal.active = true
   lvim.builtin.terminal.open_mapping = [[<c-\>]]
+  lvim.builtin.terminal.execs = {
+    { "lazygit", "<leader>gg", "LazyGit" },
+    { "htop", "<leader>HH", "htop" },
+  }
 
   -- WhichKey
   -- =========================================
