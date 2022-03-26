@@ -81,7 +81,7 @@ M.config = function()
       },
     },
   }
-  lvim.builtin.bufferline.options.separator_style = os.getenv 'KITTY_WINDOW_ID' and 'slant' or 'thin'
+  lvim.builtin.bufferline.options.separator_style = os.getenv "KITTY_WINDOW_ID" and "slant" or "thin"
 
   -- CMP
   -- =========================================
@@ -157,6 +157,16 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  lvim.lsp.buffer_mappings.normal_mode["ga"] = {
+    "<cmd>lua require('user.telescope').code_actions()<CR>",
+    "Code Action",
+  }
+  lvim.lsp.buffer_mappings.normal_mode["gI"] = {
+    "<cmd>lua require('user.telescope').lsp_implementations()<CR>",
+    "Goto Implementation",
+  }
+  lvim.lsp.buffer_mappings.normal_mode["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" }
+  lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
   lvim.lsp.buffer_mappings.normal_mode["K"] = {
     "<cmd>lua require('user.builtin').show_documentation()<CR>",
     "Show Documentation",
@@ -457,16 +467,6 @@ M.config = function()
     group = "", -- symbol prepended to a group
   }
   lvim.builtin.which_key.setup.ignore_missing = true
-  lvim.builtin.which_key.on_config_done = function(wk)
-    local keys = {
-      ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
-      ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
-      ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
-      ["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
-      ["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
-    }
-    wk.register(keys, { mode = "n" })
-  end
 
   -- ETC
   -- =========================================
