@@ -335,18 +335,14 @@ M.config = function()
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
-  if lvim.builtin.fancy_telescope.active then
-    lvim.builtin.telescope.defaults.prompt_prefix = "  "
-    lvim.builtin.telescope.defaults.borderchars = {
-      prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-      results = { "─", "▐", "─", "│", "╭", "▐", "▐", "╰" },
-      -- results = {' ', '▐', '▄', '▌', '▌', '▐', '▟', '▙' };
-      preview = { " ", "│", " ", "▌", "▌", "╮", "╯", "▌" },
-    }
-    lvim.builtin.telescope.defaults.selection_caret = "  "
-  else
-    lvim.builtin.telescope.defaults.winblend = 15
-  end
+  lvim.builtin.telescope.defaults.prompt_prefix = "  "
+  lvim.builtin.telescope.defaults.borderchars = {
+    prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    results = { "─", "▐", "─", "│", "╭", "▐", "▐", "╰" },
+    -- results = {' ', '▐', '▄', '▌', '▌', '▐', '▟', '▙' };
+    preview = { " ", "│", " ", "▌", "▌", "╮", "╯", "▌" },
+  }
+  lvim.builtin.telescope.defaults.selection_caret = "  "
   lvim.builtin.telescope.defaults.cache_picker = { num_pickers = 3 }
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
