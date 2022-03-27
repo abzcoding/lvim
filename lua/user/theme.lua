@@ -330,7 +330,7 @@ M.telescope_theme = function()
     vim.cmd("hi " .. group .. " guifg=" .. fg .. " guibg=" .. bg)
   end
 
-  if lvim.builtin.fancy_telescope.active then
+  if lvim.builtin["fancy_telescope"] ~= nil and lvim.builtin.fancy_telescope.active then
     local colors = M.hi_colors()
     -- set_fg_bg("WinSeparator", colors.bg, "None")
     set_fg_bg("NormalFloat", colors.fg, colors.bg)
