@@ -51,23 +51,35 @@ M.config = function()
   vim.opt.confirm = true -- make vim prompt me to save before doing destructive things
   vim.opt.autowriteall = true -- automatically :write before running commands and changing files
   vim.opt.clipboard = "unnamedplus"
-  vim.opt.fillchars = {
-    -- vert = "▕", -- alternatives │
-    fold = " ",
-    eob = " ", -- suppress ~ at EndOfBuffer
-    diff = "╱", -- alternatives = ⣿ ░ ─
-    msgsep = "‾",
-    foldopen = "▾",
-    foldsep = "│",
-    foldclose = "▸",
-    horiz = "━",
-    horizup = "┻",
-    horizdown = "┳",
-    vert = "┃",
-    vertleft = "┫",
-    vertright = "┣",
-    verthoriz = "╋",
-  }
+  if vim.fn.has "nvim-0.7" then
+    vim.opt.fillchars = {
+      fold = " ",
+      eob = " ", -- suppress ~ at EndOfBuffer
+      diff = "╱", -- alternatives = ⣿ ░ ─
+      msgsep = "‾",
+      foldopen = "▾",
+      foldsep = "│",
+      foldclose = "▸",
+      horiz = "━",
+      horizup = "┻",
+      horizdown = "┳",
+      vert = "┃",
+      vertleft = "┫",
+      vertright = "┣",
+      verthoriz = "╋",
+    }
+  else
+    vim.opt.fillchars = {
+      vert = "▕", -- alternatives │
+      fold = " ",
+      eob = " ", -- suppress ~ at EndOfBuffer
+      diff = "╱", -- alternatives = ⣿ ░ ─
+      msgsep = "‾",
+      foldopen = "▾",
+      foldsep = "│",
+      foldclose = "▸",
+    }
+  end
   vim.opt.wildignore = {
     "*.aux,*.out,*.toc",
     "*.o,*.obj,*.dll,*.jar,*.pyc,__pycache__,*.rbc,*.class",
@@ -118,7 +130,7 @@ M.config = function()
     precedes = "‹", -- Alternatives: … «
     trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
   }
-  vim.o.qftf = '{info -> v:lua._G.qftf(info)}'
+  vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
 
   -- Cursorline highlighting control
   --  Only have it on in the active buffer

@@ -141,7 +141,7 @@ M.kanagawa = function()
     dimInactive = lvim.builtin.global_statusline, -- dim inactive window `:h hl-NormalNC`
     globalStatus = lvim.builtin.global_statusline, -- adjust window separators highlight for laststatus=3
     transparent = lvim.transparent_window,
-    colors = {},
+    colors = { sumiInk1b = "#1b1b23" },
     overrides = {
       diffRemoved = { fg = "#E46876" },
     },
