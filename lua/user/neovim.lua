@@ -51,7 +51,7 @@ M.config = function()
   vim.opt.confirm = true -- make vim prompt me to save before doing destructive things
   vim.opt.autowriteall = true -- automatically :write before running commands and changing files
   vim.opt.clipboard = "unnamedplus"
-  if vim.fn.has "nvim-0.7" then
+  if vim.fn.has "nvim-0.7" ~= 0 then
     vim.opt.fillchars = {
       fold = " ",
       eob = " ", -- suppress ~ at EndOfBuffer
@@ -135,7 +135,7 @@ M.config = function()
   -- Cursorline highlighting control
   --  Only have it on in the active buffer
   vim.opt.cursorline = true -- Highlight the current line
-  if vim.fn.has "nvim-0.7" then
+  if vim.fn.has "nvim-0.7" ~= 0 then
     local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
     vim.api.nvim_create_autocmd("WinLeave", {
       group = group,
