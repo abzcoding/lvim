@@ -88,42 +88,139 @@
 )
 
 (
-  (dot_index_expression) @keyword
-    (#eq? @keyword  "vim.keymap.set" )
-  (#set! conceal "襁")
+  (dot_index_expression) @function
+    (#eq? @function  "vim.cmd" )
+  (#set! conceal "")
 )
 
 (
   (dot_index_expression) @function
-    (#eq? @function  "vim.cmd" )
-  (#set! conceal ">")
+    (#eq? @function  "vim.api" )
+  (#set! conceal "")
 )
 
-; (
-;   (dot_index_expression) @keyword
-;     (#eq? @keyword  "vim.opt" )
-;   (#set! conceal "opt")
-; )
+(
+  (dot_index_expression) @function
+    (#eq? @function  "vim.fn" )
+  (#set! conceal "")
+)
 
-; (
-;   (dot_index_expression
-;   )@keyword
-;     (#eq? @keyword  "vim.keymap.set" )
-;   (#set! conceal "")
-; )
+(
+  (dot_index_expression) @keyword
+    (#eq? @keyword  "vim.opt" )
+  (#set! conceal "opt")
+)
+
+(
+  (dot_index_expression) @keyword
+    (#eq? @keyword  "vim.wo" )
+  (#set! conceal "wo")
+)
+
+(
+  (dot_index_expression) @keyword
+    (#eq? @keyword  "vim.g" )
+  (#set! conceal "g")
+)
+
+(
+  (dot_index_expression) @keyword
+    (#eq? @keyword  "vim.bo" )
+  (#set! conceal "b")
+)
+
+(
+  (dot_index_expression) @keyword
+    (#eq? @keyword  "vim.opt_local" )
+  (#set! conceal "l")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "vim.keymap.set" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.keys" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.which_key" )
+  (#set! conceal "גּ")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.telescope" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.bufferline" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.comment" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.treesitter" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.dap" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.builtin.terminal" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "lvim.lsp" )
+  (#set! conceal "")
+)
+
+(
+  (dot_index_expression
+  )@keyword
+    (#eq? @keyword  "vim.lsp" )
+  (#set! conceal "歷")
+)
 
 (("return" @keyword) (#set! conceal ""))
-; (("local" @keyword) (#set! conceal "L"))
 (("local" @keyword) (#set! conceal ""))
-; (("local" @keyword) (#set! conceal ""))
-; (("function" @keyword) (#set! conceal ""))
 (("function" @keyword) (#set! conceal ""))
 (("then" @keyword) (#set! conceal ""))
+(("do" @keyword) (#set! conceal ""))
 (("not" @keyword) (#set! conceal ""))
 (("for" @repeat) (#set! conceal ""))
 (("while" @repeat) (#set! conceal "∞"))
 
-; for -> circle arrow
 (
   (break_statement)@keyword
   (#eq? @keyword  "break" )
