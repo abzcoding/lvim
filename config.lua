@@ -6,6 +6,7 @@ lvim.colorscheme = "pablo"
 lvim.debug = false
 vim.lsp.set_log_level "warn"
 lvim.log.level = "warn"
+-- vim.o.conceallevel = 2 -- uncomment if you want to see concealed text
 require("user.neovim").config()
 
 -- Customization
