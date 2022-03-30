@@ -31,7 +31,8 @@ M.config = function()
     result = table.concat(result, " ")
     return #result > 0 and result or ""
   end
-
+  lvim.builtin.bufferline.options.mode = "buffers"
+  lvim.builtin.bufferline.options.sort_by = "insert_after_current"
   lvim.builtin.bufferline.options.groups = {
     options = {
       toggle_hidden_on_enter = true,
