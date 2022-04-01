@@ -142,68 +142,68 @@
   (#set! conceal "")
 )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.keys" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.keys" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.which_key" )
-  (#set! conceal "גּ")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.which_key" )
+;   (#set! conceal "גּ")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.telescope" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.telescope" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.bufferline" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.bufferline" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.comment" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.comment" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.treesitter" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.treesitter" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.dap" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.dap" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.builtin.terminal" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.builtin.terminal" )
+;   (#set! conceal "")
+; )
 
-(
-  (dot_index_expression
-  )@keyword
-    (#eq? @keyword  "lvim.lsp" )
-  (#set! conceal "")
-)
+; (
+;   (dot_index_expression
+;   )@keyword
+;     (#eq? @keyword  "lvim.lsp" )
+;   (#set! conceal "")
+; )
 
 (
   (dot_index_expression
