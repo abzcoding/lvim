@@ -81,7 +81,7 @@ M.config = function()
       },
     },
   }
-  lvim.builtin.bufferline.options.separator_style = os.getenv 'KITTY_WINDOW_ID' and 'slant' or 'thin'
+  lvim.builtin.bufferline.options.separator_style = os.getenv "KITTY_WINDOW_ID" and "slant" or "thin"
 
   -- CMP
   -- =========================================
@@ -221,6 +221,11 @@ M.config = function()
 
   -- NvimTree
   -- =========================================
+  -- lvim.builtin.nvimtree.setup = {
+  --   view = {
+  --     width = 60,
+  --   },
+  -- }
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
     icons = {
@@ -230,6 +235,8 @@ M.config = function()
       error = kind.icons.error,
     },
   }
+
+  lvim.builtin.nvimtree.setup.view.width = 60
   lvim.builtin.nvimtree.icons = kind.nvim_tree_icons
   lvim.builtin.nvimtree.on_config_done = function(_)
     lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<CR>", " Explorer" }

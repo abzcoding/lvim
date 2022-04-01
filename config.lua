@@ -14,7 +14,6 @@ require("user.neovim").config()
 -- Customization
 -- =========================================
 lvim.builtin.dashboard.active = true
-  lvim.builtin.nvim_web_devicons = { active = true }
 lvim.builtin.tabout = { active = true }
 lvim.builtin.sell_your_soul_to_devil = true -- if you want microsoft to abuse your soul
 lvim.builtin.lastplace = { active = true } -- change to false if you are jumping to future
@@ -33,14 +32,14 @@ lvim.builtin.cheat = { active = true } -- enable cheat.sh integration
 lvim.builtin.sql_integration = { active = true } -- use sql integration
 lvim.builtin.neoscroll = { active = true } -- smooth scrolling
 lvim.builtin.neoclip = { active = true, enable_persistent_history = false }
-lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non focused windows
+lvim.builtin.nonumber_unfocus = true -- differntiate between focused and non focused windows
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin
 lvim.builtin.remote_dev = { active = false } -- enable/disable remote development
 lvim.builtin.cursorline = { active = true } -- use a bit fancier cursorline
 lvim.builtin.motion_provider = "hop" -- change this to use different motion providers ( hop or lightspeed )
 lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
 lvim.builtin.csv_support = true -- enable/disable csv support
-lvim.builtin.sidebar = { active = false } -- enable/disable sidebar
+lvim.builtin.sidebar = { active = true } -- enable/disable sidebar
 lvim.builtin.async_tasks = { active = true } -- enable/disable async tasks
 lvim.builtin.metals = {
   active = false, -- enable/disable nvim-metals for scala development
@@ -111,3 +110,13 @@ require("user.autocommands").config()
 -- Additional keybindings
 -- =========================================
 require("user.keybindings").config()
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+
+formatters.setup {
+  {
+    command = "prettierd",
+    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+    filetypes = { "typescript", "typescriptreact", "vue" },
+  },
+}
