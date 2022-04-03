@@ -153,6 +153,7 @@ lvim # run :PackerSync
 Please run the following to have a better debugging and testing support for java
 
 ```shell
+mkdir -p ~/workspace
 git clone git@github.com:microsoft/java-debug.git ~/.config/lvim/.java-debug
 cd ~/.config/lvim/.java-debug/
 ./mvnw clean install

@@ -23,7 +23,6 @@ elseif vim.fn.has "unix" == 1 then
 else
   print "Unsupported system"
 end
-local config_path = home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG
 
 -- Find root of project
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
