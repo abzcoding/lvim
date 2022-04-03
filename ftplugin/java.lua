@@ -110,7 +110,7 @@ local config = {
         includeDecompiledSources = true,
       },
       format = {
-        enabled = false,
+        enabled = true,
         settings = {
           profile = "GoogleStyle",
           url = home .. "/.config/lvim/.java-google-formatter.xml",

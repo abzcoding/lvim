@@ -23,7 +23,7 @@
 <setting id="org.eclipse.jdt.core.formatter.insert_space_after_prefix_operator" value="do not insert"/>
 <setting id="org.eclipse.jdt.core.formatter.keep_else_statement_on_same_line" value="false"/>
 <setting id="org.eclipse.jdt.core.formatter.insert_space_after_ellipsis" value="insert"/>
-<setting id="org.eclipse.jdt.core.formatter.comment.insert_new_line_for_parameter" value="insert"/>
+<setting id="org.eclipse.jdt.core.formatter.comment.insert_new_line_for_parameter" value="do not insert"/>
 <setting id="org.eclipse.jdt.core.formatter.wrap_comment_inline_tags" value="false"/>
 <setting id="org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_annotation_type_declaration" value="insert"/>
 <setting id="org.eclipse.jdt.core.formatter.indent_breaks_compare_to_cases" value="true"/>
