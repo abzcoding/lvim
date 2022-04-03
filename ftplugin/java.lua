@@ -9,14 +9,16 @@ local home = os.getenv "HOME"
 local launcher_path = vim.fn.glob(
   home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"
 )
-if vim.fn.has "mac" == 1 then
-  WORKSPACE_PATH = home .. "/workspace/"
-  CONFIG = "mac"
+if #launcher_path == 0 then
   launcher_path = vim.fn.glob(
     home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar",
     1,
     1
   )[1]
+end
+if vim.fn.has "mac" == 1 then
+  WORKSPACE_PATH = home .. "/workspace/"
+  CONFIG = "mac"
 elseif vim.fn.has "unix" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
   CONFIG = "linux"
@@ -42,23 +44,31 @@ local workspace_dir = WORKSPACE_PATH .. project_name
 -- git clone git@github.com:microsoft/java-debug.git ~/.config/lvim/.java-debug
 -- cd ~/.config/lvim/.java-debug/
 -- ./mvnw clean install
-local bundles = {
-  vim.fn.glob(
-    home .. "/.config/lvim/.java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-  ),
-}
+local bundles = vim.fn.glob(
+  home .. "/.config/lvim/.java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+)
+if #bundles == 0 then
+  bundles = vim.fn.glob(
+    home .. "/.config/lvim/.java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+    1,
+    1
+  )
+end
 
 -- NOTE: for testing
 -- git clone git@github.com:microsoft/vscode-java-test.git ~/.config/lvim/.vscode-java-test
 -- cd ~/.config/lvim/vscode-java-test
 -- npm install
 -- npm run build-plugin
-
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/lvim/.vscode-java-test/server/*.jar"), "\n"))
+local extra_bundles = vim.split(vim.fn.glob(home .. "/.config/lvim/.vscode-java-test/server/*.jar"), "\n")
+if #extra_bundles == 0 then
+  extra_bundles = vim.fn.glob(home .. "/.config/lvim/.vscode-java-test/server/*.jar", 1, 1)
+end
+vim.list_extend(bundles, extra_bundles)
 
 local config = {
   cmd = {
-    "java", -- or '/path/to/java11_or_newer/bin/java'
+    "java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -153,8 +163,8 @@ local config = {
   },
 }
 
-require("jdtls").start_or_attach(config)
--- require('jdtls').setup_dap()
+jdtls.start_or_attach(config)
+jdtls.setup_dap { hotcodereplace = "auto" }
 
 vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
 vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
