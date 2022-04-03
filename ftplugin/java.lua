@@ -6,15 +6,24 @@ end
 
 -- Determine OS
 local home = os.getenv "HOME"
+local launcher_path = vim.fn.glob(
+  home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"
+)
 if vim.fn.has "mac" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
   CONFIG = "mac"
+  launcher_path = vim.fn.glob(
+    home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar",
+    1,
+    1
+  )[1]
 elseif vim.fn.has "unix" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
   CONFIG = "linux"
 else
   print "Unsupported system"
 end
+local config_path = home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG
 
 -- Find root of project
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
@@ -64,15 +73,17 @@ local config = {
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
     "-jar",
-    vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+    launcher_path,
     "-configuration",
     home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
     "-data",
     workspace_dir,
   },
 
-  on_attach = require("user.lsp.handlers").on_attach,
-  capabilities = require("user.lsp.handlers").capabilities,
+  on_attach = require("lvim.lsp").common_on_attach,
+  on_init = require("lvim.lsp").common_on_init,
+  on_exit = require("lvim.lsp").common_on_exit,
+  capabilities = require("lvim.lsp").common_capabilities(),
   root_dir = root_dir,
   settings = {
     java = {

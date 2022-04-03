@@ -96,6 +96,7 @@ vim.list_extend(lvim.lsp.override, {
   "clangd",
   "dockerls",
   "gopls",
+  "jdtls",
   "pyright",
   "r_language_server",
   "rust_analyzer",
