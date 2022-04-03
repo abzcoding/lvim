@@ -1,5 +1,7 @@
 # Compiled Lua sources
 luac.out
+.java-debug
+.vscode-java-test
 
 # luarocks build files
 *.src.rock
