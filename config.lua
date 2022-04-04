@@ -54,6 +54,7 @@ lvim.builtin.tag_provider = "symbols-outline" -- change this to use different ta
 lvim.builtin.editorconfig = { active = true } -- enable/disable editorconfig
 lvim.builtin.fancy_telescope = { active = true } -- telescope to the moon
 lvim.builtin.global_statusline = true -- set true to use global statusline
+lvim.builtin.treesitter.autotag.enable = true
 
 require("user.prose").config() -- setup prosemd-lsp for my local use
 
