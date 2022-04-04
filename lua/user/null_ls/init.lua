@@ -46,6 +46,11 @@ M.config = function()
           return utils.root_has_file "roles" and utils.root_has_file "inventories"
         end,
       },
+      nls.builtins.diagnostics.solhint.with {
+        condition = function(utils)
+          return utils.root_has_file ".solhint.json"
+        end,
+      },
       nls.builtins.diagnostics.hadolint,
       nls.builtins.diagnostics.eslint_d.with {
         condition = function(utils)

@@ -53,6 +53,7 @@ exceptions:
   - DNS
   - DOM
   - DSA
+  - DSS
   - DVCS
   - ECDSA
   - ECS
@@ -123,6 +124,7 @@ exceptions:
   - NDA
   - NFS
   - NGINX
+  - NIST
   - NOTE
   - NPM
   - NTP
@@ -199,6 +201,7 @@ exceptions:
   - TLS
   - TODO
   - TOML
+  - TSC
   - TTL
   - UDP
   - UNIX

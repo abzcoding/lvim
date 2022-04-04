@@ -61,7 +61,12 @@ M.set_icon = function()
       icon = "",
       color = "#689FB6",
       name = "HCL",
-    }
+    },
+    sol = {
+      icon = "",
+      color = "#555555",
+      name = "Sol",
+    },
   }
 end
 
