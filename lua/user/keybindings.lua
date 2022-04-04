@@ -306,7 +306,7 @@ M.config = function()
     }
   end
   lvim.builtin.which_key.mappings["l"]["f"] = {
-    "<cmd>lua vim.lsp.buf.formatting_sync(nil, 6000)<cr>",
+    "<cmd>lua vim.lsp.buf.formatting_sync(nil, 20000)<cr>",
     "Format",
   }
   lvim.builtin.which_key.mappings["lh"] = {
