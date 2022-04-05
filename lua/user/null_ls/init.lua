@@ -20,6 +20,11 @@ M.config = function()
     debounce = 150,
     save_after_format = false,
     sources = {
+      -- NOTE: npm install -g prettier prettier-plugin-solidity
+      nls.builtins.formatting.prettier.with {
+        filetypes = { "solidity" },
+        timeout = 10000,
+      },
       nls.builtins.formatting.prettierd.with {
         condition = function(utils)
           return not utils.root_has_file { ".eslintrc", ".eslintrc.js" }
