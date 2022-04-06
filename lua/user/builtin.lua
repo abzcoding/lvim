@@ -99,7 +99,19 @@ M.config = function()
     { name = "crates" },
     { name = "orgmode" },
   }
-  lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  local border = {
+    { "╭", "CmpBorder" },
+    { "─", "CmpBorder" },
+    { "╮", "CmpBorder" },
+    { "│", "CmpBorder" },
+    { "╯", "CmpBorder" },
+    { "─", "CmpBorder" },
+    { "╰", "CmpBorder" },
+    { "│", "CmpBorder" },
+  }
+  lvim.builtin.cmp.documentation.border = border
+  lvim.builtin.cmp.documentation.scrollbar = "║"
+  lvim.builtin.cmp.window = { border = border, scrollbar = "║" }
   lvim.builtin.cmp.experimental = {
     ghost_text = false,
     native_menu = false,
