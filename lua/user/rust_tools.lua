@@ -64,7 +64,7 @@ M.config = function()
       on_init = require("lvim.lsp").common_on_init,
     },
   }
-  local extension_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.6.10/"
+  local extension_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.7.0/"
 
   local codelldb_path = extension_path .. "adapter/codelldb"
   local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"

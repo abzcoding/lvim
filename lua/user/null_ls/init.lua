@@ -20,6 +20,11 @@ M.config = function()
     debounce = 150,
     save_after_format = false,
     sources = {
+      -- NOTE: npm install -g prettier prettier-plugin-solidity
+      nls.builtins.formatting.prettier.with {
+        filetypes = { "solidity" },
+        timeout = 10000,
+      },
       nls.builtins.formatting.prettierd.with {
         condition = function(utils)
           return not utils.root_has_file { ".eslintrc", ".eslintrc.js" }
@@ -44,6 +49,11 @@ M.config = function()
       nls.builtins.diagnostics.ansiblelint.with {
         condition = function(utils)
           return utils.root_has_file "roles" and utils.root_has_file "inventories"
+        end,
+      },
+      nls.builtins.diagnostics.solhint.with {
+        condition = function(utils)
+          return utils.root_has_file ".solhint.json"
         end,
       },
       nls.builtins.diagnostics.hadolint,

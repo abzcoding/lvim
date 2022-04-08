@@ -8,6 +8,7 @@ lvim.transparent_window = true -- Transparent window
 vim.lsp.set_log_level "warn"
 lvim.lsp.document_highlight = true
 lvim.log.level = "warn"
+-- vim.o.conceallevel = 2 -- uncomment if you want to see concealed text
 vim.g.instant_username = os.getenv "USER"
 require("user.neovim").config()
 
@@ -90,6 +91,7 @@ vim.list_extend(lvim.lsp.override, {
   "clangd",
   "dockerls",
   "gopls",
+  "jdtls",
   "pyright",
   "r_language_server",
   "rust_analyzer",

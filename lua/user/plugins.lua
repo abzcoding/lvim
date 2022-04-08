@@ -434,7 +434,8 @@ M.config = function()
       disable = not lvim.builtin.remote_dev.active,
     },
     {
-      "nathom/filetype.nvim",
+      "abzcoding/filetype.nvim",
+      branch = "fix/qf-syntax",
       config = function()
         require("user.filetype").config()
       end,

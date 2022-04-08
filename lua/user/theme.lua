@@ -14,13 +14,15 @@ M.tokyonight = function()
   }
   vim.g.tokyonight_cterm_colors = false
   vim.g.tokyonight_terminal_colors = true
-  vim.g.tokyonight_italic_comments = true
+  vim.g.tokyonight_italic_comments = false
   vim.g.tokyonight_italic_keywords = true
   vim.g.tokyonight_italic_functions = false
   vim.g.tokyonight_italic_variables = false
   vim.g.tokyonight_transparent = lvim.transparent_window
   vim.g.tokyonight_hide_inactive_statusline = true
   vim.g.tokyonight_dark_sidebar = true
+  vim.g.tokyonight_dim_inactive = true
+  vim.g.tokyonight_global_status = true
   vim.g.tokyonight_dark_float = true
   vim.g.tokyonight_colors = { git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" } }
   local _time = os.date "*t"
@@ -37,7 +39,7 @@ M.rose_pine = function()
     dim_nc_background = false,
     disable_background = lvim.transparent_window,
     disable_float_background = true,
-    disable_italics = false,
+    disable_italics = true,
     ---@usage string hex value or named color from rosepinetheme.com/palette
     groups = {
       border = "highlight_med",
@@ -129,10 +131,10 @@ M.kanagawa = function()
   local kanagawa = require "kanagawa"
   kanagawa.setup {
     undercurl = true, -- enable undercurls
-    commentStyle = "italic",
+    commentStyle = "NONE",
     functionStyle = "NONE",
     keywordStyle = "italic",
-    statementStyle = "bold",
+    statementStyle = "italic",
     typeStyle = "NONE",
     variablebuiltinStyle = "italic",
     specialReturn = true, -- special highlight for the return keyword
@@ -140,7 +142,7 @@ M.kanagawa = function()
     dimInactive = false, -- dim inactive window `:h hl-NormalNC`
     globalStatus = lvim.builtin.global_statusline, -- adjust window separators highlight for laststatus=3
     transparent = lvim.transparent_window,
-    colors = {},
+    colors = { sumiInk1b = "#1b1b23" },
     overrides = {
       diffRemoved = { fg = "#E46876" },
     },

@@ -31,7 +31,8 @@ M.config = function()
     result = table.concat(result, " ")
     return #result > 0 and result or ""
   end
-
+  lvim.builtin.bufferline.options.mode = "buffers"
+  lvim.builtin.bufferline.options.sort_by = "insert_after_current"
   lvim.builtin.bufferline.options.groups = {
     options = {
       toggle_hidden_on_enter = true,
@@ -98,7 +99,19 @@ M.config = function()
     { name = "crates" },
     { name = "orgmode" },
   }
-  lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  local border = {
+    { "╭", "CmpBorder" },
+    { "─", "CmpBorder" },
+    { "╮", "CmpBorder" },
+    { "│", "CmpBorder" },
+    { "╯", "CmpBorder" },
+    { "─", "CmpBorder" },
+    { "╰", "CmpBorder" },
+    { "│", "CmpBorder" },
+  }
+  lvim.builtin.cmp.documentation.border = border
+  lvim.builtin.cmp.documentation.scrollbar = "║"
+  lvim.builtin.cmp.window = { border = border, scrollbar = "║" }
   lvim.builtin.cmp.experimental = {
     ghost_text = false,
     native_menu = false,
@@ -157,6 +170,16 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  lvim.lsp.buffer_mappings.normal_mode["ga"] = {
+    "<cmd>lua require('user.telescope').code_actions()<CR>",
+    "Code Action",
+  }
+  lvim.lsp.buffer_mappings.normal_mode["gI"] = {
+    "<cmd>lua require('user.telescope').lsp_implementations()<CR>",
+    "Goto Implementation",
+  }
+  lvim.lsp.buffer_mappings.normal_mode["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" }
+  lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
   lvim.lsp.buffer_mappings.normal_mode["K"] = {
     "<cmd>lua require('user.builtin').show_documentation()<CR>",
     "Show Documentation",
@@ -332,18 +355,14 @@ M.config = function()
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
-  if lvim.builtin.fancy_telescope.active then
-    lvim.builtin.telescope.defaults.prompt_prefix = "  "
-    lvim.builtin.telescope.defaults.borderchars = {
-      prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-      results = { "─", "▐", "─", "│", "╭", "▐", "▐", "╰" },
-      -- results = {' ', '▐', '▄', '▌', '▌', '▐', '▟', '▙' };
-      preview = { " ", "│", " ", "▌", "▌", "╮", "╯", "▌" },
-    }
-    lvim.builtin.telescope.defaults.selection_caret = "  "
-  else
-    lvim.builtin.telescope.defaults.winblend = 15
-  end
+  lvim.builtin.telescope.defaults.prompt_prefix = "  "
+  lvim.builtin.telescope.defaults.borderchars = {
+    prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    results = { "─", "▐", "─", "│", "╭", "▐", "▐", "╰" },
+    -- results = {' ', '▐', '▄', '▌', '▌', '▐', '▟', '▙' };
+    preview = { " ", "│", " ", "▌", "▌", "╮", "╯", "▌" },
+  }
+  lvim.builtin.telescope.defaults.selection_caret = "  "
   lvim.builtin.telescope.defaults.cache_picker = { num_pickers = 3 }
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
@@ -468,16 +487,6 @@ M.config = function()
     group = "", -- symbol prepended to a group
   }
   lvim.builtin.which_key.setup.ignore_missing = true
-  lvim.builtin.which_key.on_config_done = function(wk)
-    local keys = {
-      ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
-      ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
-      ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
-      ["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
-      ["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
-    }
-    wk.register(keys, { mode = "n" })
-  end
 
   -- ETC
   -- =========================================
