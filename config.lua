@@ -50,10 +50,11 @@ lvim.builtin.collaborative_editing = { active = true } -- enable/disable collabo
 lvim.builtin.file_browser = { active = true } -- enable/disable telescope file browser
 lvim.builtin.sniprun = { active = false } -- enable/disable sniprun
 lvim.builtin.tag_provider = "symbols-outline" -- change this to use different tag providers ( symbols-outline or vista )
-lvim.builtin.editorconfig = { active = true } -- enable/disable editorconfig
+lvim.builtin.editorconfig = { active = false } -- enable/disable editorconfig
 lvim.builtin.fancy_telescope = { active = true } -- telescope to the moon
 lvim.builtin.global_statusline = true -- set true to use global statusline
 lvim.builtin.treesitter.autotag.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 require("user.prose").config() -- setup prosemd-lsp for my local use
 
