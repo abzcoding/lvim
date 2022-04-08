@@ -25,9 +25,9 @@ M.config = function()
     vim.g["loaded_" .. plugin] = 1
   end
   -- vim.g.did_load_filetypes = 1
-  -- vim.opt.expandtab = true -- convert tabs to spaces
-  -- vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
-  -- vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+  vim.opt.expandtab = true -- convert tabs to spaces
+  vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+  vim.opt.fileencoding = "utf-8" -- the encoding written to a file
   vim.opt.ignorecase = true -- ignore case in search patterns
   vim.opt.smartcase = true -- smart case
   -- vim.opt.smartindent = true -- make indenting smarter again
