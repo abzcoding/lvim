@@ -20,6 +20,8 @@ M.config = function()
   -- Bufferline
   -- =========================================
   local List = require "plenary.collections.py_list"
+  local bufferline_groups = require "bufferline.groups"
+  lvim.builtin.bufferline.options.diagnostics = false -- do not show diagnostics in bufferline
   lvim.builtin.bufferline.options.diagnostics_indicator = function(_, _, diagnostics)
     local result = {}
     local symbols = { error = kind.icons.error, warning = kind.icons.warn, info = kind.icons.info }
@@ -38,7 +40,7 @@ M.config = function()
       toggle_hidden_on_enter = true,
     },
     items = {
-      { name = "ungrouped" },
+      bufferline_groups.builtin.ungrouped,
       {
         highlight = { guisp = "#51AFEF" },
         name = "tests",
