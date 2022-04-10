@@ -136,6 +136,13 @@ M.config = function()
     cmp_tabnine = "ﮧ",
     ["vim-dadbod-completion"] = "𝓐",
   }
+  if not lvim.builtin.fancy_wild_menu.active then
+    require("cmp").setup.cmdline(":", {
+      sources = {
+        { name = "cmdline" },
+      },
+    })
+  end
   if lvim.builtin.sell_your_soul_to_devil then
     lvim.keys.insert_mode["<c-h>"] = { [[copilot#Accept("\<CR>")]], { expr = true, script = true } }
     lvim.keys.insert_mode["<M-]>"] = { "<Plug>(copilot-next)", { silent = true } }

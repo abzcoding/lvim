@@ -39,7 +39,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - [Plugin: Trouble](#plugin-trouble)
   - [Plugin: Ultest](#plugin-ultest)
   - [Plugin: Spectre](#plugin-spectre)
-  - [Plugin: Spectre](#plugin-copilot)
+  - [Plugin: Copilot](#plugin-copilot)
 
 <!-- vim-markdown-toc -->
 </details>
