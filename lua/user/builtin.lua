@@ -20,7 +20,10 @@ M.config = function()
   -- Bufferline
   -- =========================================
   local List = require "plenary.collections.py_list"
-  local bufferline_groups = require "bufferline.groups"
+  local g_ok, bufferline_groups = pcall(require, "bufferline.groups")
+  if not g_ok then
+    bufferline_groups = { builtin = { ungroupued = { name = "ungrouped" } } }
+  end
   lvim.builtin.bufferline.options.diagnostics = false -- do not show diagnostics in bufferline
   lvim.builtin.bufferline.options.diagnostics_indicator = function(_, _, diagnostics)
     local result = {}
