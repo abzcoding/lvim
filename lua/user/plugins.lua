@@ -548,6 +548,7 @@ M.config = function()
         require("user.cc").config()
       end,
       requires = "nvim-telescope/telescope.nvim",
+      event = "BufWinEnter",
     },
     {
       "stevearc/dressing.nvim",
@@ -555,6 +556,7 @@ M.config = function()
         require("user.dress").config()
       end,
       disable = not lvim.builtin.dressing.active,
+      event = "BufWinEnter",
     },
     {
       "kdheepak/cmp-latex-symbols",
