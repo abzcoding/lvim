@@ -573,6 +573,10 @@ M.config = function()
         require("user.crates").config()
       end,
     },
+    {
+      "hrsh7th/cmp-cmdline",
+      disable = lvim.builtin.fancy_wild_menu.active,
+    },
   }
 end
 

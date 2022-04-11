@@ -39,6 +39,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
   - [Plugin: Trouble](#plugin-trouble)
   - [Plugin: Ultest](#plugin-ultest)
   - [Plugin: Spectre](#plugin-spectre)
+  - [Plugin: Copilot](#plugin-copilot)
 
 <!-- vim-markdown-toc -->
 </details>
@@ -649,6 +650,16 @@ Note that,
 | <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>p</kbd> |  𝐍   | replace word in project        |
 | <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>w</kbd> |  𝐍   | replace visually selected word |
 | <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>f</kbd> |  𝐍   | replace word in current buffer |
+
+### Plugin: Copilot
+
+| Key                          | Mode | Action                              |
+| ---------------------------- | :--: | ----------------------------------- |
+| <kbd>Ctrl</kbd>+<kbd>h</kbd> |  𝐈   | `copilot#Accept("<CR>")`            |
+| <kbd>Ctrl</kbd>+<kbd>e</kbd> |  𝐈   | close cmp menu                     |
+| <kbd>Alt</kbd>+<kbd>]</kbd>  |  𝐈   | `<Plug>(copilot-next)`              |
+| <kbd>Alt</kbd>+<kbd>[</kbd>  |  𝐈   | `<Plug>(copilot-previous)`          |
+| <kbd>Alt</kbd>+<kbd>\</kbd>  |  𝐈   | `"<Cmd>vertical Copilot panel<CR>"` |
 
 </details>
 

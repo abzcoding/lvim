@@ -20,6 +20,11 @@ M.config = function()
   -- Bufferline
   -- =========================================
   local List = require "plenary.collections.py_list"
+  local g_ok, bufferline_groups = pcall(require, "bufferline.groups")
+  if not g_ok then
+    bufferline_groups = { builtin = { ungroupued = { name = "ungrouped" } } }
+  end
+  lvim.builtin.bufferline.options.diagnostics = false -- do not show diagnostics in bufferline
   lvim.builtin.bufferline.options.diagnostics_indicator = function(_, _, diagnostics)
     local result = {}
     local symbols = { error = kind.icons.error, warning = kind.icons.warn, info = kind.icons.info }
@@ -38,7 +43,7 @@ M.config = function()
       toggle_hidden_on_enter = true,
     },
     items = {
-      { name = "ungrouped" },
+      bufferline_groups.builtin.ungrouped,
       {
         highlight = { guisp = "#51AFEF" },
         name = "tests",
@@ -131,8 +136,18 @@ M.config = function()
     cmp_tabnine = "ﮧ",
     ["vim-dadbod-completion"] = "𝓐",
   }
+  if not lvim.builtin.fancy_wild_menu.active then
+    require("cmp").setup.cmdline(":", {
+      sources = {
+        { name = "cmdline" },
+      },
+    })
+  end
   if lvim.builtin.sell_your_soul_to_devil then
     lvim.keys.insert_mode["<c-h>"] = { [[copilot#Accept("\<CR>")]], { expr = true, script = true } }
+    lvim.keys.insert_mode["<M-]>"] = { "<Plug>(copilot-next)", { silent = true } }
+    lvim.keys.insert_mode["<M-[>"] = { "<Plug>(copilot-previous)", { silent = true } }
+    lvim.keys.insert_mode["<M-\\>"] = { "<Cmd>vertical Copilot panel<CR>", { silent = true } }
     local cmp = require "cmp"
     lvim.builtin.cmp.mapping["<Tab>"] = cmp.mapping(M.tab, { "i", "c" })
     lvim.builtin.cmp.mapping["<S-Tab>"] = cmp.mapping(M.shift_tab, { "i", "c" })
@@ -274,7 +289,16 @@ M.config = function()
   -- Treesitter
   -- =========================================
   lvim.builtin.treesitter.context_commentstring.enable = true
-  lvim.builtin.treesitter.ensure_installed = "maintained"
+  local languages = vim.tbl_flatten {
+    { "bash", "c", "c_sharp", "cmake", "comment", "cpp", "css", "d", "dart" },
+    { "dockerfile", "elixir", "elm", "erlang", "fennel", "fish", "go" },
+    { "gomod", "graphql", "hcl", "help", "html", "java", "javascript", "jsdoc" },
+    { "json", "jsonc", "julia", "kotlin", "latex", "ledger", "lua", "make" },
+    { "markdown", "nix", "ocaml", "perl", "php", "python", "query", "r" },
+    { "regex", "rego", "ruby", "rust", "scala", "scss", "solidity", "swift" },
+    { "teal", "toml", "tsx", "typescript", "vim", "vue", "yaml", "zig" },
+  }
+  lvim.builtin.treesitter.ensure_installed = languages
   lvim.builtin.treesitter.highlight.disable = { "org" }
   lvim.builtin.treesitter.highlight.aditional_vim_regex_highlighting = { "org" }
   lvim.builtin.treesitter.ignore_install = { "haskell", "norg" }
