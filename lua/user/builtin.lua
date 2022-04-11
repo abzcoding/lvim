@@ -94,6 +94,7 @@ M.config = function()
     { name = "calc" },
     { name = "emoji" },
     { name = "treesitter" },
+    { name = "latex_symbols" },
     { name = "crates" },
     { name = "orgmode" },
   }
@@ -126,23 +127,50 @@ M.config = function()
     emoji = "",
     path = "",
     calc = "",
+    latex_symbols = "(LaTeX)",
+    crates = "(Crates)",
     cmp_tabnine = "ﮧ",
     ["vim-dadbod-completion"] = "𝓐",
   }
+  local cmp_ok, cmp = pcall(require, "cmp")
+  if not cmp_ok or cmp == nil then
+    cmp = {
+      mapping = function(...) end,
+      setup = { filetype = function(...) end, cmdline = function(...) end },
+      config = { sources = function(...) end },
+    }
+  end
   if lvim.builtin.fancy_wild_menu.active then
-    require("cmp").setup.cmdline(":", {
+    cmp.setup.cmdline(":", {
       sources = {
         { name = "cmdline" },
         { name = "path" },
       },
     })
   end
+  cmp.setup.filetype("toml", {
+    sources = cmp.config.sources({
+      { name = "nvim_lsp", max_item_count = 8 },
+      { name = "crates" },
+      { name = "luasnip", max_item_count = 5 },
+    }, {
+      { name = "buffer", max_item_count = 5, keyword_length = 5 },
+    }),
+  })
+  cmp.setup.filetype("tex", {
+    sources = cmp.config.sources({
+      { name = "latex_symbols", max_item_count = 3, keyword_length = 3 },
+      { name = "nvim_lsp", max_item_count = 8 },
+      { name = "luasnip", max_item_count = 5 },
+    }, {
+      { name = "buffer", max_item_count = 5, keyword_length = 5 },
+    }),
+  })
   if lvim.builtin.sell_your_soul_to_devil then
     lvim.keys.insert_mode["<c-h>"] = { [[copilot#Accept("\<CR>")]], { expr = true, script = true } }
     lvim.keys.insert_mode["<M-]>"] = { "<Plug>(copilot-next)", { silent = true } }
     lvim.keys.insert_mode["<M-[>"] = { "<Plug>(copilot-previous)", { silent = true } }
     lvim.keys.insert_mode["<M-\\>"] = { "<Cmd>vertical Copilot panel<CR>", { silent = true } }
-    local cmp = require "cmp"
     lvim.builtin.cmp.mapping["<Tab>"] = cmp.mapping(M.tab, { "i", "c" })
     lvim.builtin.cmp.mapping["<S-Tab>"] = cmp.mapping(M.shift_tab, { "i", "c" })
   end

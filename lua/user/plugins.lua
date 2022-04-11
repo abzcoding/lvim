@@ -556,6 +556,11 @@ M.config = function()
       end,
       disable = not lvim.builtin.dressing.active,
     },
+    {
+      "kdheepak/cmp-latex-symbols",
+      requires = "hrsh7th/nvim-cmp",
+      ft = "tex",
+    },
   }
 end
 
