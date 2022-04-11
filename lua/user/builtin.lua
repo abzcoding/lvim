@@ -186,7 +186,7 @@ M.config = function()
     "<cmd>lua require('user.telescope').lsp_implementations()<CR>",
     "Goto Implementation",
   }
-  lvim.lsp.buffer_mappings.normal_mode["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" }
+  lvim.lsp.buffer_mappings.normal_mode["gA"] = { "<cmd>lua if vim.bo.filetype == 'rust' then vim.cmd[[RustHoverActions]] else vim.lsp.codelens.run() end<CR>", "CodeLens Action" }
   lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
   lvim.lsp.buffer_mappings.normal_mode["K"] = {
     "<cmd>lua require('user.builtin').show_documentation()<CR>",

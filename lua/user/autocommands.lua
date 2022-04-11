@@ -101,12 +101,11 @@ augroup END
     { "Filetype", "rust", "nnoremap <leader>le <Cmd>RustRunnables<CR>" },
     { "Filetype", "rust", "nnoremap <leader>lh <Cmd>RustHoverActions<CR>" },
     { "Filetype", "rust", "nnoremap <leader>lc <Cmd>RustOpenCargo<CR>" },
-    { "Filetype", "rust", "nnoremap gA <Cmd>RustHoverActions<CR>" },
 
     -- typescript
-    { "Filetype", "typescript,typescriptreact", "nnoremap gA <Cmd>TSLspImportAll<CR>" },
-    { "Filetype", "typescript,typescriptreact", "nnoremap gr <Cmd>TSLspRenameFile<CR>" },
-    { "Filetype", "typescript,typescriptreact", "nnoremap gS <Cmd>TSLspOrganize<CR>" },
+    { "Filetype", "typescript,typescriptreact", "nnoremap <leader>lA <Cmd>TSLspImportAll<CR>" },
+    { "Filetype", "typescript,typescriptreact", "nnoremap <leader>lR <Cmd>TSLspRenameFile<CR>" },
+    { "Filetype", "typescript,typescriptreact", "nnoremap <leader>lO <Cmd>TSLspOrganize<CR>" },
 
     -- uncomment the following if you want to show diagnostics on hover
     -- { "CursorHold", "*", "lua vim.diagnostic.open_float(0,{scope='line'})" },

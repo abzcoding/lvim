@@ -568,6 +568,13 @@ M.config = function()
       end,
       requires = "nvim-telescope/telescope.nvim",
     },
+    {
+      "stevearc/dressing.nvim",
+      config = function()
+        require("user.dress").config()
+      end,
+      disable = not lvim.builtin.dressing.active,
+    },
   }
 end
 

@@ -423,6 +423,7 @@ _Symbols Outline_
 - [SnipRun](https://github.com/michaelb/sniprun)
 - [Vista](https://github.com/liuchengxu/vista.vim)
 - [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
+- [dressing.nvim](https://github.com/stevearc/dressing.nvim)
 
 </details>
 
