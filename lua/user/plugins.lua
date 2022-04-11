@@ -429,14 +429,6 @@ M.config = function()
     {
       "nvim-telescope/telescope-live-grep-raw.nvim",
     },
-    {
-      "abzcoding/renamer.nvim",
-      branch = "develop",
-      config = function()
-        require("user.renamer").config()
-      end,
-      disable = not lvim.builtin.fancy_rename.active,
-    },
     { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
     {
       "yamatsum/nvim-cursorline",

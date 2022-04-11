@@ -20,7 +20,6 @@ lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
 lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
 lvim.builtin.fancy_wild_menu = { active = false } -- enable/disable use wilder.nvim
-lvim.builtin.fancy_rename = { active = true } -- enable/disable custom rename
 lvim.builtin.fancy_diff = { active = false } -- enable/disable fancier git diff
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest

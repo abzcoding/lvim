@@ -274,13 +274,10 @@ M.config = function()
       "Prev Diagnostic",
     }
   end
-  if lvim.builtin.fancy_rename then
-    lvim.builtin.which_key.mappings["l"]["r"] = { "<cmd>lua require('renamer').rename()<cr>", "Rename" }
-    lvim.builtin.which_key.vmappings["l"] = {
-      name = "+Lsp",
-      r = { "<ESC><CMD>lua require('renamer').rename()<CR>", "Rename" },
-    }
-  end
+  lvim.builtin.which_key.vmappings["l"] = {
+    name = "+Lsp",
+    r = { "<ESC><CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
+  }
   lvim.builtin.which_key.mappings["l"]["f"] = {
     "<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>",
     "Format",

@@ -410,7 +410,6 @@ _Symbols Outline_
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
 - [Copilot](https://github.com/github/copilot.vim)
 - [Harpoon](https://github.com/ThePrimeagen/harpoon)
-- [Renamer](https://github.com/filipdutescu/renamer.nvim)
 - [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)
 - [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
