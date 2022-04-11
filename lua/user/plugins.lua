@@ -561,6 +561,13 @@ M.config = function()
       "hrsh7th/cmp-cmdline",
       disable = lvim.builtin.fancy_wild_menu.active,
     },
+    {
+      "gfeiyou/command-center.nvim",
+      config = function()
+        require("user.cc").config()
+      end,
+      requires = "nvim-telescope/telescope.nvim",
+    },
   }
 end
 
