@@ -74,8 +74,6 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./l
   - `lvim.builtin.sell_your_soul_to_devil = true`
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
-- You can use the fancy wild menu if you want, make sure to do a `:UpdateRemotePlugins`
-  - `lvim.builtin.fancy_wild_menu = { active = true }`
 - You can use the `diffview` plugin instead of normal `gitsigns diff`
   - `lvim.builtin.fancy_diff = { active = true }`
 - if you want to use debugging, change the following line to true, also [install codelldb](<https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)>):
@@ -393,7 +391,6 @@ _Symbols Outline_
 
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-- [wilder.nvim](https://github.com/gelguy/wilder.nvim)
 - [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
 - [Persistence](https://github.com/folke/persistence.nvim)
@@ -449,7 +446,6 @@ _Symbols Outline_
     - [theme.lua](./lua/user/theme.lua) - customized themes
 - [config.lua](./config.lua) - Main customization point for settings
 - [snippets/](./snippets) - Personal code snippets
-- [vimscript/](./vimscript) - wilder settings
 
 </details>
 

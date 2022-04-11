@@ -129,10 +129,11 @@ M.config = function()
     cmp_tabnine = "ﮧ",
     ["vim-dadbod-completion"] = "𝓐",
   }
-  if not lvim.builtin.fancy_wild_menu.active then
+  if lvim.builtin.fancy_wild_menu.active then
     require("cmp").setup.cmdline(":", {
       sources = {
         { name = "cmdline" },
+        { name = "path" },
       },
     })
   end

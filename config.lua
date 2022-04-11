@@ -19,7 +19,7 @@ lvim.builtin.presence = { active = false } -- change to true if you want discord
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = false -- change this to enable/disable debugging
 lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
-lvim.builtin.fancy_wild_menu = { active = false } -- enable/disable use wilder.nvim
+lvim.builtin.fancy_wild_menu = { active = false } -- enable/disable cmp-cmdline
 lvim.builtin.fancy_diff = { active = false } -- enable/disable fancier git diff
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest
@@ -63,6 +63,7 @@ if user and user == "abz" then
   lvim.builtin.file_browser.active = true
   lvim.builtin.global_statusline = true
   lvim.builtin.dressing.active = true
+  lvim.builtin.fancy_wild_menu.active = true
   require("user.prose").config() -- setup prosemd-lsp for my local use
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors

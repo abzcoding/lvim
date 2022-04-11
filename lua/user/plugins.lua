@@ -319,17 +319,6 @@ M.config = function()
       disable = not lvim.builtin.neoclip.active,
     },
     {
-      "gelguy/wilder.nvim",
-      -- event = { "CursorHold", "CmdlineEnter" },
-      rocks = { "luarocks-fetch-gitrec", "pcre2" },
-      requires = { "romgrk/fzy-lua-native" },
-      config = function()
-        vim.cmd(string.format("source %s", "~/.config/lvim/vimscript/wilder.vim"))
-      end,
-      run = ":UpdateRemotePlugins",
-      disable = not lvim.builtin.fancy_wild_menu.active,
-    },
-    {
       "kristijanhusak/vim-dadbod-completion",
       disable = not lvim.builtin.sql_integration.active,
     },
@@ -551,7 +540,7 @@ M.config = function()
     },
     {
       "hrsh7th/cmp-cmdline",
-      disable = lvim.builtin.fancy_wild_menu.active,
+      disable = not lvim.builtin.fancy_wild_menu.active,
     },
     {
       "gfeiyou/command-center.nvim",
