@@ -24,6 +24,7 @@ M.config = function()
       xelatex = "xelatex",
     }
   end
+  vim.g.tex_flavor = "latex"
   vim.g.vimtex_fold_enabled = 0
   vim.g.vimtex_quickfix_ignore_filters = {}
   vim.cmd [[
