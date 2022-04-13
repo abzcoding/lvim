@@ -94,7 +94,7 @@ end
 
 -- Language Specific
 -- =========================================
-vim.list_extend(lvim.lsp.override, {
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {
   "clangd",
   "dockerls",
   "gopls",

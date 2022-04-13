@@ -548,7 +548,6 @@ M.config = function()
         require("user.cc").config()
       end,
       requires = "nvim-telescope/telescope.nvim",
-      event = "BufWinEnter",
     },
     {
       "stevearc/dressing.nvim",
