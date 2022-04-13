@@ -72,10 +72,10 @@ M.config = function()
         name = "config",
         matcher = function(buf)
           return buf.filename:match "go.mod"
-            or buf.filename:match "go.sum"
-            or buf.filename:match "Cargo.toml"
-            or buf.filename:match "manage.py"
-            or buf.filename:match "Makefile"
+              or buf.filename:match "go.sum"
+              or buf.filename:match "Cargo.toml"
+              or buf.filename:match "manage.py"
+              or buf.filename:match "Makefile"
         end,
       },
     },
@@ -98,19 +98,6 @@ M.config = function()
     { name = "crates" },
     { name = "orgmode" },
   }
-  local border = {
-    { "╭", "CmpBorder" },
-    { "─", "CmpBorder" },
-    { "╮", "CmpBorder" },
-    { "│", "CmpBorder" },
-    { "╯", "CmpBorder" },
-    { "─", "CmpBorder" },
-    { "╰", "CmpBorder" },
-    { "│", "CmpBorder" },
-  }
-  lvim.builtin.cmp.documentation.border = border
-  lvim.builtin.cmp.documentation.scrollbar = "║"
-  lvim.builtin.cmp.window = { border = border, scrollbar = "║" }
   lvim.builtin.cmp.experimental = {
     ghost_text = false,
     native_menu = false,
