@@ -26,7 +26,15 @@ M.config = function()
   end
   -- vim.g.did_load_filetypes = 1
   vim.g.ultest_summary_width = 30
+  vim.opt.completeopt = { "menu", "menuone", "noselect" }
   vim.opt.relativenumber = true
+  vim.opt.diffopt = {
+    "internal",
+    "filler",
+    "closeoff",
+    "hiddenoff",
+    "algorithm:minimal",
+  }
   vim.opt.wrap = true
   vim.opt.termguicolors = true
   vim.opt.updatetime = 100
