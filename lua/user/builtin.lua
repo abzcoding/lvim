@@ -72,10 +72,10 @@ M.config = function()
         name = "config",
         matcher = function(buf)
           return buf.filename:match "go.mod"
-              or buf.filename:match "go.sum"
-              or buf.filename:match "Cargo.toml"
-              or buf.filename:match "manage.py"
-              or buf.filename:match "Makefile"
+            or buf.filename:match "go.sum"
+            or buf.filename:match "Cargo.toml"
+            or buf.filename:match "manage.py"
+            or buf.filename:match "Makefile"
         end,
       },
     },
@@ -129,6 +129,7 @@ M.config = function()
   end
   if lvim.builtin.fancy_wild_menu.active then
     cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline {},
       sources = {
         { name = "cmdline" },
         { name = "path" },
