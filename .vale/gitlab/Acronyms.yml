@@ -42,6 +42,7 @@ exceptions:
   - CSRF
   - CSS
   - CSV
+  - CTI
   - CVE
   - CVS
   - DAG
@@ -179,6 +180,7 @@ exceptions:
   - SLA
   - SMS
   - SMTP
+  - SOAR
   - SOC
   - SOX
   - SPDX

@@ -25,7 +25,7 @@ lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/
 lvim.builtin.test_runner = { active = true } -- change this to enable/disable vim-test, ultest
 lvim.builtin.cheat = { active = true } -- enable cheat.sh integration
 lvim.builtin.sql_integration = { active = false } -- use sql integration
-lvim.builtin.neoscroll = { active = true } -- smooth scrolling
+lvim.builtin.smooth_scroll = "cinnamon" -- for smoth scrolling, can be "cinnamon", "neoscroll" or ""
 lvim.builtin.neoclip = { active = true, enable_persistent_history = false }
 lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non focused windows
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin

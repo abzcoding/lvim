@@ -348,7 +348,22 @@ M.config = function()
         }
       end,
       event = "BufRead",
-      disable = not lvim.builtin.neoscroll.active,
+      disable = lvim.builtin.smooth_scroll ~= "neoscroll",
+    },
+    {
+      "declancm/cinnamon.nvim",
+      config = function()
+        require("cinnamon").setup {
+          default_keymaps = true,
+          extra_keymaps = true,
+          extended_keymaps = false,
+          centered = true,
+          disable = false,
+          scroll_limit = 150,
+        }
+      end,
+      event = "BufRead",
+      disable = lvim.builtin.smooth_scroll ~= "cinnamon",
     },
     {
       "github/copilot.vim",
