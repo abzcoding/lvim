@@ -89,7 +89,7 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./l
 - if you don't want the SQL integration, disable it
   - `lvim.builtin.sql_integration = { active = false }`
 - if you don't like smooth scrolling, disable it
-  - `lvim.builtin.neoscroll = { active = false }`
+  - `lvim.builtin.smooth_scroll= ""`
 - if you want an obvious focused window, and you don't get seizures from it
   - `lvim.builtin.nonumber_unfocus = true`
 - choose between [hop](https://github.com/phaazon/hop.nvim) and [lightspeed](https://github.com/ggandor/lightspeed.nvim) as your favorite motion provider
@@ -405,6 +405,7 @@ _Symbols Outline_
 - [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
+- [Cinnamon scroll](https://github.com/declancm/cinnamon.nvim)
 - [Copilot](https://github.com/github/copilot.vim)
 - [Harpoon](https://github.com/ThePrimeagen/harpoon)
 - [vim-log-highlighting](https://github.com/mtdl9/vim-log-highlighting)

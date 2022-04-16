@@ -358,8 +358,7 @@ M.config = function()
           extra_keymaps = true,
           extended_keymaps = false,
           centered = true,
-          disable = false,
-          scroll_limit = 150,
+          scroll_limit = 100,
         }
       end,
       event = "BufRead",
