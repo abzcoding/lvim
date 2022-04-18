@@ -11,7 +11,7 @@ require("user.neovim").config()
 
 -- Customization
 -- =========================================
-lvim.builtin.sell_your_soul_to_devil ={active =  false, prada = false} -- if you want microsoft to abuse your soul
+lvim.builtin.sell_your_soul_to_devil = { active = false, prada = false } -- if you want microsoft to abuse your soul
 lvim.builtin.lastplace = { active = false } -- change to false if you are jumping to future
 lvim.builtin.tabnine = { active = true } -- change to false if you don't like tabnine
 lvim.builtin.persistence = { active = true } -- change to false if you don't want persistence
@@ -52,7 +52,7 @@ lvim.builtin.dressing = { active = false } -- enable to override vim.ui.input an
 local user = os.getenv "USER"
 if user and user == "abz" then
   lvim.builtin.nvim_web_devicons = { active = false }
-  lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false}
+  lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
   lvim.lsp.document_highlight = false
   lvim.builtin.csv_support = true
   lvim.builtin.async_tasks.active = true

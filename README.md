@@ -71,7 +71,8 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./l
 - if you don't want to use `harpoon`, disable it
   - `lvim.builtin.harpoon = { active = false }`
 - if you want to try out GitHub copilot, change the following
-  - `lvim.builtin.sell_your_soul_to_devil = true`
+  - `lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }`
+  - in case you want to use `cmp-copilot`, set `prada=true` after copilot installation
 - I use a custom `lualine` disable it if you don't like it
   - `lvim.builtin.fancy_statusline = { active = false }`
 - You can use the `diffview` plugin instead of normal `gitsigns diff`
