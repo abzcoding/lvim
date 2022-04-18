@@ -369,7 +369,7 @@ M.config = function()
       config = function()
         require("user.copilot").config()
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil,
+      disable = (not lvim.builtin.sell_your_soul_to_devil) or lvim.builtin.sell_your_soul_to_devil.lua,
     },
     {
       "ThePrimeagen/harpoon",
