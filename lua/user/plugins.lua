@@ -369,7 +369,20 @@ M.config = function()
       config = function()
         require("user.copilot").config()
       end,
-      disable = (not lvim.builtin.sell_your_soul_to_devil) or lvim.builtin.sell_your_soul_to_devil.lua,
+      disable = (not lvim.builtin.sell_your_soul_to_devil.active) or lvim.builtin.sell_your_soul_to_devil.prada,
+    },
+    {
+      "zbirenbaum/copilot.lua",
+      after = "nvim-cmp",
+      requires = {"zbirenbaum/copilot-cmp"},
+      config = function()
+        local cmp_source = { name = "copilot", group_index = 2 }
+        table.insert(lvim.builtin.cmp.sources, cmp_source)
+        vim.defer_fn(function()
+          require("copilot").setup()
+          end, 100)
+      end,
+      disable = not lvim.builtin.sell_your_soul_to_devil.prada
     },
     {
       "ThePrimeagen/harpoon",
