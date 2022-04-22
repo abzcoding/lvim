@@ -387,6 +387,7 @@ _Symbols Outline_
 - [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
 - [crates.nvim](https://github.com/Saecki/crates.nvim)
 - [command_center](https://github.com/FeiyouG/command_center.nvim)
+- [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim)
 
 ### Optional Plugins
 

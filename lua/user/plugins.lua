@@ -369,20 +369,20 @@ M.config = function()
       config = function()
         require("user.copilot").config()
       end,
-      disable = (not lvim.builtin.sell_your_soul_to_devil.active) or lvim.builtin.sell_your_soul_to_devil.prada,
+      disable = not lvim.builtin.sell_your_soul_to_devil.active or lvim.builtin.sell_your_soul_to_devil.prada,
     },
     {
       "zbirenbaum/copilot.lua",
       after = "nvim-cmp",
-      requires = {"zbirenbaum/copilot-cmp"},
+      requires = { "zbirenbaum/copilot-cmp" },
       config = function()
         local cmp_source = { name = "copilot", group_index = 2 }
         table.insert(lvim.builtin.cmp.sources, cmp_source)
         vim.defer_fn(function()
           require("copilot").setup()
-          end, 100)
+        end, 100)
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil.prada
+      disable = not lvim.builtin.sell_your_soul_to_devil.prada,
     },
     {
       "ThePrimeagen/harpoon",
@@ -587,6 +587,15 @@ M.config = function()
       "kdheepak/cmp-latex-symbols",
       requires = "hrsh7th/nvim-cmp",
       ft = "tex",
+    },
+    {
+      "ThePrimeagen/refactoring.nvim",
+      ft = { "typescript", "javascript", "lua", "c", "cpp", "go", "python", "java", "php" },
+      event = "BufRead",
+      config = function()
+        require("refactoring").setup {}
+      end,
+      disable = not lvim.builtin.refactoring.active,
     },
   }
 end

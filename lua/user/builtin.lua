@@ -384,6 +384,7 @@ M.config = function()
   -- Telescope
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
+  lvim.builtin.telescope.defaults.dynamic_preview_title = true
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.telescope.defaults.prompt_prefix = "  "
   lvim.builtin.telescope.defaults.borderchars = {
