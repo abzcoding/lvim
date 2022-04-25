@@ -103,7 +103,7 @@ function M.code_actions()
     layout_config = {
       prompt_position = "top",
       width = 80,
-      height = 12,
+      height = 18,
     },
     winblend = 0,
     border = {},
