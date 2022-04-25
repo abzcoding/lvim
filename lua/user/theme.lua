@@ -34,7 +34,7 @@ end
 M.rose_pine = function()
   require("rose-pine").setup {
     ---@usage 'main'|'moon'
-    dark_variant = "moon",
+    dark_variant = "main",
     bold_vert_split = false,
     dim_nc_background = lvim.builtin.global_statusline,
     disable_background = lvim.transparent_window,
@@ -60,8 +60,9 @@ M.rose_pine = function()
         h5 = "pine",
         h6 = "foam",
       },
-      -- or set all headings at once
-      -- headings = 'subtle'
+    },
+    highlight_groups = {
+      Boolean = { fg = "love" },
     },
   }
 end
@@ -191,7 +192,7 @@ M.colors = {
 
   rose_pine_colors = {
     none = "NONE",
-    bg = "#1f1d2e",
+    bg = "#2a273f",
     fg = "#e0def4",
     fg_gutter = "#3b4261",
     black = "#393b44",
@@ -217,7 +218,7 @@ M.colors = {
     orange_br = "#F6A878",
     pink_br = "#DF97DB",
     comment = "#526175",
-    bg_alt = "#232136",
+    bg_alt = "#191724",
     git = {
       add = "#84Cee4",
       change = "#c4a7e7",
