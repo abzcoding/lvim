@@ -97,43 +97,6 @@ function M.find_string()
   builtin.live_grep(opts)
 end
 
--- show code actions in a fancy floating window
-function M.code_actions()
-  local opts = {
-    layout_config = {
-      prompt_position = "top",
-      width = 80,
-      height = 18,
-    },
-    winblend = 0,
-    border = {},
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    previewer = false,
-    shorten_path = false,
-  }
-  builtin.lsp_code_actions(themes.get_dropdown(opts))
-end
-
-function M.codelens_actions()
-  local opts = {
-    winblend = 15,
-    layout_config = {
-      prompt_position = "top",
-      width = 80,
-      height = 12,
-    },
-    borderchars = {
-      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
-      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
-      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    },
-    border = {},
-    previewer = false,
-    shorten_path = false,
-  }
-  builtin.lsp_codelens_actions(themes.get_dropdown(opts))
-end
-
 -- show refrences to this using language server
 function M.lsp_references()
   local opts = {
