@@ -88,6 +88,10 @@ M.config = function()
         yanked = "  yanked ",
       },
     },
+    null_ls = {
+      enabled = false,
+      name = "Crates",
+    },
   }
 end
 
