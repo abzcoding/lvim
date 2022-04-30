@@ -54,7 +54,7 @@ M.config = function()
       end,
     },
     {
-      "ray-x/lsp_signature.nvim",
+      "abzcoding/lsp_signature.nvim",
       config = function()
         require("user/lsp_signature").config()
       end,
@@ -262,7 +262,7 @@ M.config = function()
       disable = not lvim.builtin.test_runner.active,
     },
     {
-      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      "jose-elias-alvarez/typescript.nvim",
       ft = {
         "javascript",
         "javascriptreact",
@@ -272,7 +272,10 @@ M.config = function()
         "typescript.tsx",
       },
       opt = true,
-      event = "BufReadPre",
+      event = { "BufReadPre", "BufNew" },
+      config = function()
+        require("user.tss").config()
+      end,
       before = "williamboman/nvim-lsp-installer",
     },
     {

@@ -280,7 +280,7 @@ M.config = function()
     r = { "<ESC><CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
   }
   lvim.builtin.which_key.mappings["l"]["f"] = {
-    "<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>",
+    "<cmd>lua vim.lsp.buf.format()<cr>",
     "Format",
   }
   lvim.builtin.which_key.mappings["lh"] = {
