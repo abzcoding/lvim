@@ -393,7 +393,7 @@ _Symbols Outline_
 
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-- [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
+- [remember.nvim](https://github.com/vladdoster/remember.nvim)
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
 - [Persistence](https://github.com/folke/persistence.nvim)
 - [Presence](https://github.com/andweeb/presence.nvim)

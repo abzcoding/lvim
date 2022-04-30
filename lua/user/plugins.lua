@@ -61,18 +61,9 @@ M.config = function()
       event = { "BufRead", "BufNew" },
     },
     {
-      "ethanholz/nvim-lastplace",
+      "vladdoster/remember.nvim",
       config = function()
-        require("nvim-lastplace").setup {
-          lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-          lastplace_ignore_filetype = {
-            "gitcommit",
-            "gitrebase",
-            "svn",
-            "hgcommit",
-          },
-          lastplace_open_folds = true,
-        }
+        require("remember").setup {}
       end,
       event = "BufWinEnter",
       disable = not lvim.builtin.lastplace.active,
