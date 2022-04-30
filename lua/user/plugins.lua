@@ -442,7 +442,7 @@ M.config = function()
       config = function()
         require("user.dev_icons").set_icon()
       end,
-      disable = lvim.builtin.nvim_web_devicons == nil,
+      disable = lvim.use_icons or not lvim.builtin.custom_web_devicons,
     },
     {
       "nvim-telescope/telescope-live-grep-raw.nvim",

@@ -537,12 +537,9 @@ M.config = function()
     end
     return default_exe_handler(err, result, ctx, config)
   end
-  --   if lvim.builtin.lastplace.active == false then
-  --     -- go to last loc when opening a buffer
-  --     vim.cmd [[
-  --   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
-  -- ]]
-  --   end
+  if not lvim.use_icons and lvim.builtin.custom_web_devicons then
+    require("user.dev_icons").use_my_icons()
+  end
 end
 
 function M.tab(fallback)

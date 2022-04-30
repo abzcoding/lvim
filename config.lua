@@ -28,6 +28,7 @@ lvim.builtin.sql_integration = { active = false } -- use sql integration
 lvim.builtin.smooth_scroll = "cinnamon" -- for smoth scrolling, can be "cinnamon", "neoscroll" or ""
 lvim.builtin.neoclip = { active = true, enable_persistent_history = false }
 lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non focused windows
+lvim.builtin.custom_web_devicons = false -- install https://github.com/Nguyen-Hoang-Nam/mini-file-icons
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin
 lvim.builtin.remote_dev = { active = false } -- enable/disable remote development
 lvim.builtin.cursorline = { active = false } -- use a bit fancier cursorline
@@ -52,7 +53,8 @@ lvim.builtin.refactoring = { active = false } -- enable to use refactoring.nvim 
 
 local user = os.getenv "USER"
 if user and user == "abz" then
-  lvim.builtin.nvim_web_devicons = { active = false }
+  lvim.builtin.custom_web_devicons = true
+  lvim.use_icons = false -- only set to false if you know what are you doing
   lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
   lvim.lsp.document_highlight = false
   lvim.builtin.csv_support = true
