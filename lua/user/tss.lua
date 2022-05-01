@@ -124,6 +124,16 @@ _G.css_to_js = css_to_js
 local function on_attach(client, bufnr)
   require("lvim.lsp").common_on_attach(client, bufnr)
   api.nvim_buf_create_user_command(bufnr, "CssToJs", css_to_js, { range = true })
+  M.buf_map(bufnr, "n", "gs", ":TypescriptRemoveUnused<CR>")
+  M.buf_map(bufnr, "n", "gS", ":TypescriptOrganizeImports<CR>")
+  M.buf_map(bufnr, "n", "go", ":TypescriptAddMissingImports<CR>")
+  M.buf_map(bufnr, "n", "gA", ":TypescriptFixAll<CR>")
+  M.buf_map(bufnr, "n", "gI", ":TypescriptRenameFile<CR>")
+  M.buf_map(bufnr, "i", "${", change_template_string_quotes, { nowait = true })
+  api.nvim_buf_create_user_command(bufnr, "CssToJs", css_to_js, { range = true })
+  M.buf_map(bufnr, "n", "gx", ":set opfunc=v:lua.css_to_js<CR>g@")
+  M.buf_map(bufnr, "n", "gxx", ":CssToJs<CR>")
+  M.buf_map(bufnr, "v", "gx", ":CssToJs<CR>")
 end
 
 M.config = function()
@@ -147,16 +157,6 @@ M.config = function()
     },
   }
 
-  lvim.lsp.buffer_mappings.normal_mode["gs"] = {    "<cmd>:TypescriptRemoveUnused<CR>",    "Remove Unused"  }
-  lvim.lsp.buffer_mappings.normal_mode["gS"] = {    "<cmd>:TypescriptOrganizeImports<CR>",    "Organize Imports"  }
-  lvim.lsp.buffer_mappings.normal_mode["go"] = {    "<cmd>:TypescriptAddMissingImports<CR>",    "Add Missing Imports"  }
-  lvim.lsp.buffer_mappings.normal_mode["gA"] = {    "<cmd>:TypescriptFixAll<CR>",    "Fix All"  }
-  lvim.lsp.buffer_mappings.normal_mode["gI"] = {    "<cmd>:TypescriptRenameFile<CR>",    "Rename File"  }
-  lvim.lsp.buffer_mappings.insert_mode["${"] = {    change_template_string_quotes,    "Change Template Quotes"  }
-  lvim.lsp.buffer_mappings.normal_mode["gs"] = {    "<cmd>:TypescriptRemoveUnused<CR>",    "Remove Unused"  }
-  lvim.lsp.buffer_mappings.normal_mode["gx"] = {    ":set opfunc=v:lua.css_to_js<CR>g@",    "Css to Js"  }
-  lvim.lsp.buffer_mappings.normal_mode["gxx"] = {    ":CssToJs<CR>",    "Css to JS"  }
-  lvim.lsp.buffer_mappings.visual_mode["gx"] = {    ":CssToJs<CR>",    "Css to JS"  }
 end
 
 return M
