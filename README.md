@@ -65,7 +65,7 @@ You can change this in [plugins.lua](./lua/user/plugins.lua) and [theme.lua](./l
     <small><i>(🔎 Click to expand/collapse)</i></small>
   </summary>
 
-- I'm on the `rolling` branch of LunarVim and i'm using `neovim 0.7 head`
+- I'm on [this PR](https://github.com/LunarVim/LunarVim/pull/2544) of LunarVim and i'm using `neovim 0.8 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - i have a auto command to disable syntax,etc when you open files larger than `1MB`
 - if you don't want to use `harpoon`, disable it
@@ -378,7 +378,7 @@ _Symbols Outline_
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Neogen](https://github.com/danymat/neogen)
 - [Vimtex](https://github.com/lervag/vimtex)
-- [nvim-lsp-ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
+- [typescript.nvim](https://github.com/jose-elias-alvarez/typescript.nvim)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 - [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
@@ -393,7 +393,7 @@ _Symbols Outline_
 
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-- [nvim-lastplace](https://github.com/ethanholz/nvim-lastplace)
+- [remember.nvim](https://github.com/vladdoster/remember.nvim)
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
 - [Persistence](https://github.com/folke/persistence.nvim)
 - [Presence](https://github.com/andweeb/presence.nvim)

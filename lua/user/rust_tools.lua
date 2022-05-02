@@ -14,27 +14,10 @@ M.config = function()
       autoSetHints = true,
       hover_with_actions = true,
       executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
-      runnables = {
-        use_telescope = true,
-        prompt_prefix = "  ",
-        selection_caret = "  ",
-        entry_prefix = "  ",
-        initial_mode = "insert",
-        selection_strategy = "reset",
-        sorting_strategy = "descending",
-        layout_strategy = "vertical",
-        layout_config = {
-          width = 0.3,
-          height = 0.50,
-          preview_cutoff = 0,
-          prompt_position = "bottom",
-        },
-      },
-      debuggables = {
-        use_telescope = true,
-      },
       inlay_hints = {
         only_current_line = false,
+        only_current_line_autocmd = "CursorHold",
+        show_variable_name = false,
         show_parameter_hints = true,
         parameter_hints_prefix = "<-",
         other_hints_prefix = "=>",

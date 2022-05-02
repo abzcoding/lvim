@@ -21,7 +21,7 @@ M.config = function()
     { description = "Save all files", cmd = "wa" },
     { description = "Save current file", cmd = "w" },
     { description = "Search word", cmd = "lua require('user.telescope').find_string()" },
-    { description = "Format document", cmd = "lua vim.lsp.buf.formatting_seq_sync()" },
+    { description = "Format document", cmd = "lua vim.lsp.buf.format()" },
     { description = "Workspace diagnostics", cmd = "Telescope diagnostics" },
     { description = "Workspace symbols", cmd = "Telescope lsp_workspace_symbols" },
     { description = "List projects", cmd = "Telescope projects" },
