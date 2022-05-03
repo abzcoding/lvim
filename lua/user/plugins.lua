@@ -613,6 +613,12 @@ M.config = function()
       end,
       disable = not lvim.builtin.refactoring.active,
     },
+    {
+      "ur4ltz/surround.nvim",
+      config = function()
+        require("surround").setup { mappings_style = "sandwich" }
+      end,
+    },
   }
 end
 
