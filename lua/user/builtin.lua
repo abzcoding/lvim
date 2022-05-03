@@ -551,13 +551,13 @@ function M.tab(fallback)
     cmp.select_next_item()
   elseif vim.api.nvim_get_mode().mode == "c" then
     fallback()
-  elseif copilot_keys ~= "" then -- prioritise copilot over snippets
-    -- Copilot keys do not need to be wrapped in termcodes
-    vim.api.nvim_feedkeys(copilot_keys, "i", true)
   elseif luasnip.expandable() then
     luasnip.expand()
   elseif methods.jumpable() then
     luasnip.jump(1)
+  elseif copilot_keys ~= "" then -- prioritise copilot over snippets
+    -- Copilot keys do not need to be wrapped in termcodes
+    vim.api.nvim_feedkeys(copilot_keys, "i", true)
   elseif methods.check_backspace() then
     fallback()
   else
