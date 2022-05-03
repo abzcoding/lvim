@@ -340,17 +340,6 @@ M.config = function()
       disable = not lvim.builtin.neoclip.active,
     },
     {
-      "gelguy/wilder.nvim",
-      -- event = { "CursorHold", "CmdlineEnter" },
-      rocks = { "luarocks-fetch-gitrec", "pcre2" },
-      requires = { "romgrk/fzy-lua-native" },
-      config = function()
-        vim.cmd(string.format("source %s", "~/.config/lvim/vimscript/wilder.vim"))
-      end,
-      run = ":UpdateRemotePlugins",
-      disable = not lvim.builtin.fancy_wild_menu.active,
-    },
-    {
       "kristijanhusak/vim-dadbod-completion",
       disable = not lvim.builtin.sql_integration.active,
     },
@@ -380,14 +369,41 @@ M.config = function()
         }
       end,
       event = "BufRead",
-      disable = not lvim.builtin.neoscroll.active,
+      disable = lvim.builtin.smooth_scroll ~= "neoscroll",
+    },
+    {
+      "declancm/cinnamon.nvim",
+      config = function()
+        require("cinnamon").setup {
+          default_keymaps = true,
+          extra_keymaps = true,
+          extended_keymaps = false,
+          centered = true,
+          scroll_limit = 100,
+        }
+      end,
+      event = "BufRead",
+      disable = lvim.builtin.smooth_scroll ~= "cinnamon",
     },
     {
       "github/copilot.vim",
       config = function()
         require("user.copilot").config()
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil,
+      disable = not lvim.builtin.sell_your_soul_to_devil.active or lvim.builtin.sell_your_soul_to_devil.prada,
+    },
+    {
+      "zbirenbaum/copilot.lua",
+      after = "nvim-cmp",
+      requires = { "zbirenbaum/copilot-cmp" },
+      config = function()
+        local cmp_source = { name = "copilot", group_index = 2 }
+        table.insert(lvim.builtin.cmp.sources, cmp_source)
+        vim.defer_fn(function()
+          require("copilot").setup()
+        end, 100)
+      end,
+      disable = not lvim.builtin.sell_your_soul_to_devil.prada,
     },
     {
       "ThePrimeagen/harpoon",
@@ -434,8 +450,7 @@ M.config = function()
       disable = not lvim.builtin.remote_dev.active,
     },
     {
-      "abzcoding/filetype.nvim",
-      branch = "fix/qf-syntax",
+      "nathom/filetype.nvim",
       config = function()
         require("user.filetype").config()
       end,
@@ -449,14 +464,6 @@ M.config = function()
     },
     {
       "nvim-telescope/telescope-live-grep-raw.nvim",
-    },
-    {
-      "abzcoding/renamer.nvim",
-      branch = "develop",
-      config = function()
-        require("user.renamer").config()
-      end,
-      disable = not lvim.builtin.fancy_rename.active,
     },
     { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
     {
@@ -575,7 +582,36 @@ M.config = function()
     },
     {
       "hrsh7th/cmp-cmdline",
-      disable = lvim.builtin.fancy_wild_menu.active,
+      disable = not lvim.builtin.fancy_wild_menu.active,
+    },
+    {
+      "gfeiyou/command-center.nvim",
+      config = function()
+        require("user.cc").config()
+      end,
+      requires = "nvim-telescope/telescope.nvim",
+    },
+    {
+      "stevearc/dressing.nvim",
+      config = function()
+        require("user.dress").config()
+      end,
+      disable = not lvim.builtin.dressing.active,
+      event = "BufWinEnter",
+    },
+    {
+      "kdheepak/cmp-latex-symbols",
+      requires = "hrsh7th/nvim-cmp",
+      ft = "tex",
+    },
+    {
+      "ThePrimeagen/refactoring.nvim",
+      ft = { "typescript", "javascript", "lua", "c", "cpp", "go", "python", "java", "php" },
+      event = "BufRead",
+      config = function()
+        require("refactoring").setup {}
+      end,
+      disable = not lvim.builtin.refactoring.active,
     },
   }
 end

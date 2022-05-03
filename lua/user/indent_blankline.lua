@@ -40,7 +40,6 @@ M.config = function()
       "dashboard",
       "packer",
       "neogitstatus",
-      "NvimTree",
       "Outline",
       "Trouble",
       "lspinfo",

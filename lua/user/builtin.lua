@@ -2,9 +2,6 @@ local M = {}
 
 M.config = function()
   local kind = require "user.lsp_kind"
-  -- Snippets
-  -- =========================================
-  require("luasnip/loaders/from_vscode").load { paths = { "~/.config/lvim/snippets" } }
 
   -- Autopairs
   -- =========================================
@@ -12,10 +9,6 @@ M.config = function()
   --   local Rule = require "nvim-autopairs.rule"
   --   autopairs.add_rule(Rule("$$", "$$", "tex"))
   -- end
-
-  -- Command Palette
-  -- =========================================
-  lvim.builtin.cpmenu = M.cpmenu()
 
   -- Bufferline
   -- =========================================
@@ -101,22 +94,10 @@ M.config = function()
     { name = "calc" },
     { name = "emoji" },
     { name = "treesitter" },
+    { name = "latex_symbols" },
     { name = "crates" },
     { name = "orgmode" },
   }
-  local border = {
-    { "╭", "CmpBorder" },
-    { "─", "CmpBorder" },
-    { "╮", "CmpBorder" },
-    { "│", "CmpBorder" },
-    { "╯", "CmpBorder" },
-    { "─", "CmpBorder" },
-    { "╰", "CmpBorder" },
-    { "│", "CmpBorder" },
-  }
-  lvim.builtin.cmp.documentation.border = border
-  lvim.builtin.cmp.documentation.scrollbar = "║"
-  lvim.builtin.cmp.window = { border = border, scrollbar = "║" }
   lvim.builtin.cmp.experimental = {
     ghost_text = false,
     native_menu = false,
@@ -133,22 +114,51 @@ M.config = function()
     emoji = "",
     path = "",
     calc = "",
+    latex_symbols = "(LaTeX)",
+    crates = "(Crates)",
     cmp_tabnine = "ﮧ",
     ["vim-dadbod-completion"] = "𝓐",
   }
-  if not lvim.builtin.fancy_wild_menu.active then
-    require("cmp").setup.cmdline(":", {
+  local cmp_ok, cmp = pcall(require, "cmp")
+  if not cmp_ok or cmp == nil then
+    cmp = {
+      mapping = function(...) end,
+      setup = { filetype = function(...) end, cmdline = function(...) end },
+      config = { sources = function(...) end },
+    }
+  end
+  if lvim.builtin.fancy_wild_menu.active then
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline {},
       sources = {
         { name = "cmdline" },
+        { name = "path" },
       },
     })
   end
-  if lvim.builtin.sell_your_soul_to_devil then
+  cmp.setup.filetype("toml", {
+    sources = cmp.config.sources({
+      { name = "nvim_lsp", max_item_count = 8 },
+      { name = "crates" },
+      { name = "luasnip", max_item_count = 5 },
+    }, {
+      { name = "buffer", max_item_count = 5, keyword_length = 5 },
+    }),
+  })
+  cmp.setup.filetype("tex", {
+    sources = cmp.config.sources({
+      { name = "latex_symbols", max_item_count = 3, keyword_length = 3 },
+      { name = "nvim_lsp", max_item_count = 8 },
+      { name = "luasnip", max_item_count = 5 },
+    }, {
+      { name = "buffer", max_item_count = 5, keyword_length = 5 },
+    }),
+  })
+  if lvim.builtin.sell_your_soul_to_devil.active then
     lvim.keys.insert_mode["<c-h>"] = { [[copilot#Accept("\<CR>")]], { expr = true, script = true } }
     lvim.keys.insert_mode["<M-]>"] = { "<Plug>(copilot-next)", { silent = true } }
     lvim.keys.insert_mode["<M-[>"] = { "<Plug>(copilot-previous)", { silent = true } }
     lvim.keys.insert_mode["<M-\\>"] = { "<Cmd>vertical Copilot panel<CR>", { silent = true } }
-    local cmp = require "cmp"
     lvim.builtin.cmp.mapping["<Tab>"] = cmp.mapping(M.tab, { "i", "c" })
     lvim.builtin.cmp.mapping["<S-Tab>"] = cmp.mapping(M.shift_tab, { "i", "c" })
   end
@@ -185,15 +195,15 @@ M.config = function()
 
   -- LSP
   -- =========================================
-  lvim.lsp.buffer_mappings.normal_mode["ga"] = {
-    "<cmd>lua require('user.telescope').code_actions()<CR>",
-    "Code Action",
-  }
+  lvim.lsp.buffer_mappings.normal_mode["ga"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
   lvim.lsp.buffer_mappings.normal_mode["gI"] = {
     "<cmd>lua require('user.telescope').lsp_implementations()<CR>",
     "Goto Implementation",
   }
-  lvim.lsp.buffer_mappings.normal_mode["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" }
+  lvim.lsp.buffer_mappings.normal_mode["gA"] = {
+    "<cmd>lua if vim.bo.filetype == 'rust' then vim.cmd[[RustHoverActions]] else vim.lsp.codelens.run() end<CR>",
+    "CodeLens Action",
+  }
   lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
   lvim.lsp.buffer_mappings.normal_mode["K"] = {
     "<cmd>lua require('user.builtin').show_documentation()<CR>",
@@ -378,6 +388,7 @@ M.config = function()
   -- Telescope
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
+  lvim.builtin.telescope.defaults.dynamic_preview_title = true
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.telescope.defaults.prompt_prefix = "  "
   lvim.builtin.telescope.defaults.borderchars = {
@@ -485,8 +496,17 @@ M.config = function()
     find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
   }
   lvim.builtin.telescope.on_config_done = function(telescope)
+    local command_center = require "command_center"
+    lvim.builtin.telescope.extensions.command_center = {
+      components = {
+        command_center.component.DESCRIPTION,
+        -- command_center.component.KEYBINDINGS,
+        command_center.component.COMMAND,
+      },
+      auto_replace_desc_with_cmd = false,
+    }
     telescope.load_extension "file_create"
-    telescope.load_extension "command_palette"
+    telescope.load_extension "command_center"
     if lvim.builtin.file_browser.active then
       telescope.load_extension "file_browser"
     end
@@ -530,67 +550,6 @@ M.config = function()
   --   end
 end
 
-function M.rename(curr, win)
-  local name = vim.trim(vim.fn.getline ".")
-  vim.api.nvim_win_close(win, true)
-  if #name > 0 and name ~= curr then
-    local params = vim.lsp.util.make_position_params()
-    params.newName = name
-    vim.lsp.buf_request(0, "textDocument/rename", params)
-  end
-end
-
-function M.lsp_rename()
-  local name = vim.fn.expand "<cword>"
-  local ok, ts = pcall(require, "nvim-treesitter-playground.hl-info")
-  local tshl = ""
-  if ok and ts then
-    if #ts <= 0 then
-      return
-    end
-    tshl = ts.get_treesitter_hl()
-    local ind = tshl[#tshl]:match "^.*()%*%*.*%*%*"
-    tshl = tshl[#tshl]:sub(ind + 2, -3)
-  end
-
-  local win = require("plenary.popup").create(name, {
-    title = "New Name",
-    style = "minimal",
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    relative = "cursor",
-    borderhighlight = "FloatBorder",
-    titlehighlight = "Title",
-    highlight = tshl,
-    focusable = true,
-    width = 25,
-    height = 1,
-    line = "cursor+2",
-    col = "cursor-1",
-  })
-  -- Move cursor to the end of the prefix
-  vim.cmd "stopinsert"
-  vim.cmd "startinsert!"
-  vim.cmd [[lua require('cmp').setup.buffer { enabled = false }]]
-
-  local opts = { noremap = false, silent = true }
-  vim.api.nvim_buf_set_keymap(0, "i", "<Esc>", "<cmd>stopinsert | q!<CR>", opts)
-  vim.api.nvim_buf_set_keymap(0, "n", "<Esc>", "<cmd>stopinsert | q!<CR>", opts)
-  vim.api.nvim_buf_set_keymap(
-    0,
-    "i",
-    "<CR>",
-    "<cmd>stopinsert | lua require('user.builtin').rename(" .. name .. "," .. win .. ")<CR>",
-    opts
-  )
-  vim.api.nvim_buf_set_keymap(
-    0,
-    "n",
-    "<CR>",
-    "<cmd>stopinsert | lua require('user.builtin').rename(" .. name .. "," .. win .. ")<CR>",
-    opts
-  )
-end
-
 function M.tab(fallback)
   local methods = require("lvim.core.cmp").methods
   local cmp = require "cmp"
@@ -632,86 +591,6 @@ function M.shift_tab(fallback)
       methods.feedkeys("<Plug>(Tabout)", "")
     end
   end
-end
-
-function M.cpmenu()
-  return {
-    {
-      "File",
-      { "entire selection", ':call feedkeys("GVgg")' },
-      { "file browser", ":Telescope file_browser", 1 },
-      { "files", ":lua require('telescope.builtin').find_files()", 1 },
-      { "git files", ":lua require('user.telescope').git_files()", 1 },
-      { "last search", ":lua require('telescope.builtin').resume({cache_index=3})" },
-      { "quit", ":qa" },
-      { "save all files", ":wa" },
-      { "save current file", ":w" },
-      { "search word", ":lua require('user.telescope').find_string()", 1 },
-    },
-    {
-      "Lsp",
-      { "formatting", ":lua vim.lsp.buf.formatting_seq_sync()" },
-      { "workspace diagnostics", ":Telescope diagnostics" },
-      { "workspace symbols", ":Telescope lsp_workspace_symbols" },
-    },
-    {
-      "Project",
-      { "list", ":Telescope projects" },
-      { "build", ":AsyncTask project-build" },
-      { "run", ":AsyncTask project-run" },
-      { "tasks", ":AsyncTaskList" },
-    },
-    {
-      "Vim",
-      { "buffers", ":Telescope buffers" },
-      { "check health", ":checkhealth" },
-      { "colorshceme", ":lua require('telescope.builtin').colorscheme()", 1 },
-      { "command history", ":lua require('telescope.builtin').command_history()" },
-      { "commands", ":lua require('telescope.builtin').commands()" },
-      { "cursor column", ":set cursorcolumn!" },
-      { "cursor line", ":set cursorline!" },
-      { "jumps", ":lua require('telescope.builtin').jumplist()" },
-      { "keymaps", ":lua require('telescope.builtin').keymaps()" },
-      { "paste mode", ":set paste!" },
-      { "registers (A-e)", ":lua require('telescope.builtin').registers()" },
-      { "relative number", ":set relativenumber!" },
-      { "reload vimrc", ":source $MYVIMRC" },
-      { "search highlighting", ":set hlsearch!" },
-      { "search history", ":lua require('telescope.builtin').search_history()" },
-      { "spell checker", ":set spell!" },
-      { "vim options", ":lua require('telescope.builtin').vim_options()" },
-    },
-    {
-      "Help",
-      { "cheatsheet", ":help index" },
-      { "quick reference", ":help quickref" },
-      { "search help", ":lua require('telescope.builtin').help_tags()", 1 },
-      { "summary", ":help summary" },
-      { "tips", ":help tips" },
-      { "tutorial", ":help tutor" },
-    },
-    {
-      "Dap",
-      { "brakpoints", ":lua require'telescope'.extensions.dap.list_breakpoints{}" },
-      { "clear breakpoints", ":lua require('dap.breakpoints').clear()" },
-      { "close", ":lua require'dap'.close(); require'dap'.repl.close()" },
-      { "commands", ":lua require'telescope'.extensions.dap.commands{}" },
-      { "configurations", ":lua require'telescope'.extensions.dap.configurations{}" },
-      { "continue", ":lua require'dap'.continue()" },
-      { "current scopes floating window", ":lua ViewCurrentScopesFloatingWindow()" },
-      { "current scopes", ':lua ViewCurrentScopes(); vim.cmd("wincmd w|vertical resize 40")' },
-      { "current value floating window", ":lua ViewCurrentValueFloatingWindow()" },
-      { "frames", ":lua require'telescope'.extensions.dap.frames{}" },
-      { "pause", ":lua require'dap'.pause()" },
-      { "repl", ":lua require'dap'.repl.open(); vim.cmd(\"wincmd w|resize 12\")" },
-      { "run to cursor", ":lua require'dap'.run_to_cursor()" },
-      { "step back", ":lua require'dap'.step_back()" },
-      { "step into", ":lua require'dap'.step_into()" },
-      { "step out", ":lua require'dap'.step_out()" },
-      { "step over", ":lua require'dap'.step_over()" },
-      { "toggle breakpoint", ":lua require'dap'.toggle_breakpoint()" },
-    },
-  }
 end
 
 -- credit: https://github.com/max397574/NeovimConfig/blob/master/lua/configs/lsp/init.lua

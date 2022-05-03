@@ -34,9 +34,17 @@ M.config = function()
   vim.opt.splitbelow = true -- force all horizontal splits to go below current window
   vim.opt.splitright = true -- force all vertical splits to go to the right of current window
   vim.g.ultest_summary_width = 30
+  vim.opt.completeopt = { "menu", "menuone", "noselect" }
   vim.opt.relativenumber = true
   vim.opt.colorcolumn = "80,120"
   vim.opt.wrap = false
+  vim.opt.diffopt = {
+    "internal",
+    "filler",
+    "closeoff",
+    "hiddenoff",
+    "algorithm:minimal",
+  }
   vim.opt.termguicolors = true
   vim.opt.updatetime = 100
   vim.opt.timeoutlen = 500

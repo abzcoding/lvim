@@ -1,34 +1,14 @@
-" Vim syntax file
-" Language:	Markdown
-" Maintainer:	Ben Williams <benw@plasticboy.com>
-" URL:		http://plasticboy.com/markdown-vim-mode/
-" Remark:	Uses HTML syntax file
-" TODO: 	Handle stuff contained within stuff (e.g. headings within blockquotes)
+runtime! syntax/html.vim
 
-
-" Read the HTML syntax to start with
-if version < 600
-  so <sfile>:p:h/html.vim
-else
-  runtime! syntax/html.vim
-
-  if exists('b:current_syntax')
-    unlet b:current_syntax
-  endif
+if exists('b:current_syntax')
+  unlet b:current_syntax
 endif
-
-if version < 600
-  syntax clear
-elseif exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
 
 " don't use standard HiLink, it will not work with included syntax files
-if version < 508
-  command! -nargs=+ HtmlHiLink hi link <args>
-else
-  command! -nargs=+ HtmlHiLink hi def link <args>
-endif
+command! -nargs=+ HtmlHiLink hi def link <args>
 
 syn spell toplevel
 syn case ignore
@@ -37,20 +17,13 @@ syn sync linebreaks=1
 let s:conceal = ''
 let s:concealends = ''
 let s:concealcode = ''
-if has('conceal') && get(g:, 'vim_markdown_conceal', 1)
+if has('conceal')
   let s:conceal = ' conceal'
   let s:concealends = ' concealends'
 endif
-if has('conceal') && get(g:, 'vim_markdown_conceal_code_blocks', 1)
-  let s:concealcode = ' concealends'
-endif
 
 " additions to HTML groups
-if get(g:, 'vim_markdown_emphasis_multiline', 1)
-    let s:oneline = ''
-else
-    let s:oneline = ' oneline'
-endif
+let s:oneline = ''
 syn region mkdItalic matchgroup=mkdItalic start="\%(\*\|_\)"    end="\%(\*\|_\)"
 syn region mkdBold matchgroup=mkdBold start="\%(\*\*\|__\)"    end="\%(\*\*\|__\)"
 syn region mkdBoldItalic matchgroup=mkdBoldItalic start="\%(\*\*\*\|___\)"    end="\%(\*\*\*\|___\)"
@@ -115,45 +88,6 @@ syn region mkdNonListItemBlock start="\(\%^\(\s*\([-*+]\|\d\+\.\)\s\+\)\@!\|\n\(
 syn match  mkdRule         /^\s*\*\s\{0,1}\*\s\{0,1}\*\(\*\|\s\)*$/
 syn match  mkdRule         /^\s*-\s\{0,1}-\s\{0,1}-\(-\|\s\)*$/
 syn match  mkdRule         /^\s*_\s\{0,1}_\s\{0,1}_\(_\|\s\)*$/
-
-" YAML frontmatter
-if get(g:, 'vim_markdown_frontmatter', 0)
-  syn include @yamlTop syntax/yaml.vim
-  syn region Comment matchgroup=mkdDelimiter start="\%^---$" end="^\(---\|\.\.\.\)$" contains=@yamlTop keepend
-  unlet! b:current_syntax
-endif
-
-if get(g:, 'vim_markdown_toml_frontmatter', 0)
-  try
-    syn include @tomlTop syntax/toml.vim
-    syn region Comment matchgroup=mkdDelimiter start="\%^+++$" end="^+++$" transparent contains=@tomlTop keepend
-    unlet! b:current_syntax
-  catch /E484/
-    syn region Comment matchgroup=mkdDelimiter start="\%^+++$" end="^+++$"
-  endtry
-endif
-
-if get(g:, 'vim_markdown_json_frontmatter', 0)
-  try
-    syn include @jsonTop syntax/json.vim
-    syn region Comment matchgroup=mkdDelimiter start="\%^{$" end="^}$" contains=@jsonTop keepend
-    unlet! b:current_syntax
-  catch /E484/
-    syn region Comment matchgroup=mkdDelimiter start="\%^{$" end="^}$"
-  endtry
-endif
-
-if get(g:, 'vim_markdown_math', 0)
-  syn include @tex syntax/tex.vim
-  syn region mkdMath start="\\\@<!\$" end="\$" skip="\\\$" contains=@tex keepend
-  syn region mkdMath start="\\\@<!\$\$" end="\$\$" skip="\\\$" contains=@tex keepend
-endif
-
-" Strike through
-if get(g:, 'vim_markdown_strikethrough', 0)
-    execute 'syn region mkdStrike matchgroup=htmlStrike start="\%(\~\~\)" end="\%(\~\~\)"' . s:concealends
-    HtmlHiLink mkdStrike        htmlStrike
-endif
 
 syn cluster mkdNonListItem contains=@htmlTop,htmlItalic,htmlBold,htmlBoldItalic,mkdFootnotes,mkdInlineURL,mkdLink,mkdLinkDef,mkdLineBreak,mkdBlockquote,mkdCode,mkdRule,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,mkdMath,mkdStrike
 

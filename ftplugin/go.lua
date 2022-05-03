@@ -6,6 +6,7 @@ local opts = {
         gc_details = true, -- Toggle the calculation of gc annotations
         generate = true, -- Runs go generate for a given directory
         regenerate_cgo = true, -- Regenerates cgo definitions
+        test = true,
         tidy = true, -- Runs go mod tidy for a module
         upgrade_dependency = true, -- Upgrades a dependency in the go.mod file for a module
         vendor = true, -- Runs go mod vendor for a module
@@ -27,11 +28,5 @@ local opts = {
     },
   },
 }
-
-local servers = require "nvim-lsp-installer.servers"
-local server_available, requested_server = servers.get_server "gopls"
-if server_available then
-  opts.cmd_env = requested_server:get_default_options().cmd_env
-end
 
 require("lvim.lsp.manager").setup("gopls", opts)
