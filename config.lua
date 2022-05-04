@@ -68,7 +68,7 @@ if user and user == "abz" then
   lvim.builtin.dressing.active = true
   lvim.builtin.fancy_wild_menu.active = true
   lvim.builtin.refactoring.active = true
-  require("user.prose").config() -- setup prosemd-lsp for my local use
+  require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
