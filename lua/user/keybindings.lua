@@ -279,10 +279,6 @@ M.config = function()
     name = "+Lsp",
     r = { "<ESC><CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
   }
-  lvim.builtin.which_key.mappings["l"]["f"] = {
-    "<cmd>lua vim.lsp.buf.format()<cr>",
-    "Format",
-  }
   lvim.builtin.which_key.mappings["lh"] = {
     "<cmd>hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b<cr>",
     "Clear HL",
