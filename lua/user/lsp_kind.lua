@@ -35,6 +35,7 @@ M.icons = {
   info = "",
   hint = " ",
   code_action = "",
+  code_lens_action = "",
   test = "",
   docs = "",
   clock = " ",
