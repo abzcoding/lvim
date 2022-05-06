@@ -158,6 +158,7 @@ M.config = function()
     local function t(str)
       return vim.api.nvim_replace_termcodes(str, true, true, true)
     end
+
     lvim.builtin.cmp.mapping["<c-h>"] = cmp.mapping(function()
       vim.api.nvim_feedkeys(vim.fn["copilot#Accept"](t "<Tab>"), "n", true)
     end)
@@ -524,7 +525,7 @@ M.config = function()
     separator = "·", -- symbol used between a key and it's label
     group = "", -- symbol prepended to a group
   }
-  lvim.builtin.which_key.setup.triggers = { "<leader>", "g", "z" }
+  lvim.builtin.which_key.setup.triggers = { "<leader>", "g", "z", "]", "[" }
   lvim.builtin.which_key.setup.ignore_missing = true
 
   -- ETC
