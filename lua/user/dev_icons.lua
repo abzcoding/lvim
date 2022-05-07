@@ -92,17 +92,6 @@ M.use_my_icons = function()
     DEBUG = "",
     TRACE = "✎",
   }
-  lvim.builtin.cmp.formatting.format = function(entry, vim_item)
-    local max_width = lvim.builtin.cmp.formatting.max_width
-    if max_width ~= 0 and #vim_item.abbr > max_width then
-      vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
-    end
-    vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind]
-    vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
-    vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
-      or lvim.builtin.cmp.formatting.duplicates_default
-    return vim_item
-  end
   lvim.builtin.bufferline.options.show_buffer_icons = true
   lvim.builtin.bufferline.options.show_buffer_close_icons = true
 end

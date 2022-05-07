@@ -15,18 +15,18 @@ M.cmp_kind = {
   Function = " ",
   Interface = " ",
   Keyword = " ",
-  Method = "ƒ ",
-  Module = " ",
+  Method = "",
+  Module = "",
   Operator = " ",
   Property = " ",
   Reference = "",
-  Snippet = " ", -- " "," "
+  Snippet = "", -- ""," "," "
   Struct = "פּ ",
   Text = " ",
   TypeParameter = "  ",
   Unit = "塞",
   Value = " ",
-  Variable = " ",
+  Variable = "",
 }
 
 M.icons = {

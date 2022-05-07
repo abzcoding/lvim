@@ -103,21 +103,27 @@ M.config = function()
     native_menu = false,
     custom_menu = true,
   }
-  lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
-  lvim.builtin.cmp.formatting.source_names = {
+  local cmp_sources = {
+    ["vim-dadbod-completion"] = "(DadBod)",
     buffer = "(Buffer)",
-    nvim_lsp = "(LSP)",
-    luasnip = "(Snip)",
-    treesitter = "",
-    nvim_lua = "(NvLua)",
-    spell = "暈",
-    emoji = "",
-    path = "",
-    calc = "",
-    latex_symbols = "(LaTeX)",
+    cmp_tabnine = "(TabNine)",
     crates = "(Crates)",
-    cmp_tabnine = "ﮧ",
-    ["vim-dadbod-completion"] = "𝓐",
+    latex_symbols = "(LaTeX)",
+    nvim_lua = "(NvLua)",
+  }
+  lvim.builtin.cmp.formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      if entry.source.name == "cmdline" then
+        vim_item.kind = "⌘"
+        vim_item.menu = ""
+        return vim_item
+      end
+      vim_item.menu = cmp_sources[entry.source.name] or vim_item.kind
+      vim_item.kind = kind.cmp_kind[vim_item.kind] or vim_item.kind
+
+      return vim_item
+    end,
   }
   local cmp_ok, cmp = pcall(require, "cmp")
   if not cmp_ok or cmp == nil then
