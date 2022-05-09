@@ -479,7 +479,7 @@ M.config = function()
       config = function()
         require("user.tabout").config()
       end,
-      disable = not lvim.builtin.tabout.active,
+      disable = not lvim.builtin.sell_your_soul_to_devil,
     },
     {
       "kevinhwang91/nvim-hlslens",

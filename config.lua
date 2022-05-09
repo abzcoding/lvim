@@ -4,7 +4,7 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "dracula"
 lvim.debug = false
-lvim.transparent_window = true -- Transparent window
+lvim.transparent_window = false -- Transparent window
 vim.lsp.set_log_level "warn"
 lvim.lsp.document_highlight = true
 lvim.log.level = "warn"
@@ -22,7 +22,7 @@ lvim.builtin.presence = { active = false } -- change to true if you want discord
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.dap.active = true -- change this to enable/disable debugging
 lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
-lvim.builtin.fancy_wild_menu = { active = true } -- enable/disable use wilder.nvim
+lvim.builtin.fancy_wild_menu = { active = false } -- enable/disable use wilder.nvim
 -- lvim.builtin.fancy_rename = { active = true } -- enable/disable custom rename
 lvim.builtin.fancy_diff = { active = false } -- enable/disable fancier git diff
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
