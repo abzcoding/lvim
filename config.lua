@@ -31,12 +31,8 @@ lvim.builtin.cheat = { active = true } -- enable cheat.sh integration
 lvim.builtin.sql_integration = { active = true } -- use sql integration
 lvim.builtin.smooth_scroll = "" -- disable smooth scroll for now
 lvim.builtin.neoclip = { active = true, enable_persistent_history = false }
-<<<<<<< HEAD
-lvim.builtin.nonumber_unfocus = true -- differntiate between focused and non focused windows
-=======
 lvim.builtin.nonumber_unfocus = false -- diffrentiate between focused and non focused windows
-lvim.builtin.custom_web_devicons = false -- install https://github.com/Nguyen-Hoang-Nam/mini-file-icons
->>>>>>> 95f5ea70c6997a30d0877fbe4dc95e730f45f3dc
+lvim.builtin.custom_web_devicons = true -- install https://github.com/Nguyen-Hoang-Nam/mini-file-icons
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin
 lvim.builtin.remote_dev = { active = false } -- enable/disable remote development
 lvim.builtin.cursorline = { active = true } -- use a bit fancier cursorline
@@ -60,35 +56,9 @@ lvim.builtin.treesitter.rainbow.enable = true
 lvim.lsp.diagnostics.virtual_text = true -- remove this line if you want to see inline errors
 lvim.builtin.editorconfig = { active = true } -- enable/disable editorconfig
 lvim.builtin.nvim_web_devicons = { active = false }
-lvim.builtin.dressing.active = true
-lvim.builtin.refactoring.active = true
-
-require("user.prose").config() -- setup prosemd-lsp for my local use
-
-
-<<<<<<< HEAD
-=======
-local user = os.getenv "USER"
-if user and user == "abz" then
-  lvim.builtin.custom_web_devicons = true
-  lvim.use_icons = false -- only set to false if you know what are you doing
-  lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
-  lvim.lsp.document_highlight = false
-  lvim.builtin.csv_support = true
-  lvim.builtin.async_tasks.active = true
-  lvim.builtin.dap.active = true
-  lvim.builtin.sql_integration.active = true
-  vim.g.instant_username = user
-  lvim.builtin.collaborative_editing.active = true
-  lvim.builtin.file_browser.active = true
-  lvim.builtin.global_statusline = true
-  lvim.builtin.dressing.active = true
-  lvim.builtin.fancy_wild_menu.active = true
-  lvim.builtin.refactoring.active = true
-  require("lvim.lsp.manager").setup("prosemd_lsp", {})
-end
-lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
->>>>>>> 95f5ea70c6997a30d0877fbe4dc95e730f45f3dc
+lvim.builtin.dressing = { active = true }
+lvim.builtin.refactoring = {active = true }
+require("lvim.lsp.manager").setup("prosemd_lsp", {})
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
   preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
