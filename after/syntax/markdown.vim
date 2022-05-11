@@ -102,10 +102,10 @@ HtmlHiLink mkdBlockquote    Comment
 HtmlHiLink mkdListItem      Identifier
 HtmlHiLink mkdRule          Identifier
 HtmlHiLink mkdLineBreak     Visual
-HtmlHiLink mkdFootnotes     htmlLink
-HtmlHiLink mkdLink          htmlLink
+" HtmlHiLink mkdFootnotes     htmlLink
+" HtmlHiLink mkdLink          htmlLink
 HtmlHiLink mkdURL           htmlString
-HtmlHiLink mkdInlineURL     htmlLink
+" HtmlHiLink mkdInlineURL     htmlLink
 HtmlHiLink mkdID            Identifier
 HtmlHiLink mkdLinkDef       mkdID
 HtmlHiLink mkdLinkDefTarget mkdURL

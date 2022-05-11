@@ -73,6 +73,9 @@ M.config = function()
         return string.format("%s%s [%s]", message, percentage and string.format(" (%s%%)", percentage) or "", task_name)
       end,
     },
+    sources = {
+      ["null-ls"] = { ignore = true },
+    },
     debug = {
       logging = false, -- whether to enable logging, for debugging
       strict = false, -- whether to interpret LSP strictly
