@@ -35,6 +35,7 @@ exceptions:
   - CMD
   - CNA
   - CNAME
+  - CONOP
   - CORE
   - CPU
   - CRIME
@@ -62,6 +63,7 @@ exceptions:
   - EFS
   - EKS
   - EOL
+  - EPA
   - ETC
   - EXIF
   - FAQ
@@ -101,6 +103,7 @@ exceptions:
   - IMAP
   - IOPS
   - IRC
+  - ISAC
   - ISN
   - ISO
   - JPEG
@@ -168,6 +171,7 @@ exceptions:
   - SAST
   - SATA
   - SCIM
+  - SCORE
   - SCP
   - SCSS
   - SDK
@@ -182,6 +186,7 @@ exceptions:
   - SMTP
   - SOAR
   - SOC
+  - SOP
   - SOX
   - SPDX
   - SPF
@@ -196,6 +201,7 @@ exceptions:
   - SVG
   - SVN
   - SYN
+  - TBA
   - TCP
   - TIFF
   - TIP

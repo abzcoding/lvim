@@ -70,4 +70,30 @@ M.set_icon = function()
   }
 end
 
+M.use_my_icons = function()
+  for _, sign in ipairs(lvim.lsp.diagnostics.signs.values) do
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+  end
+  lvim.builtin.nvimtree.setup.diagnostics.enable = true
+  lvim.builtin.nvimtree.setup.renderer.icons.webdev_colors = true
+  lvim.builtin.nvimtree.show_icons = {
+    git = 1,
+    folders = 1,
+    files = 1,
+    folder_arrows = 1,
+  }
+  vim.fn.sign_define("DapBreakpoint", lvim.builtin.dap.breakpoint)
+  vim.fn.sign_define("DapBreakpointRejected", lvim.builtin.dap.breakpoint_rejected)
+  vim.fn.sign_define("DapStopped", lvim.builtin.dap.stopped)
+  lvim.builtin.notify.opts.icons = {
+    ERROR = "",
+    WARN = "",
+    INFO = "",
+    DEBUG = "",
+    TRACE = "✎",
+  }
+  lvim.builtin.bufferline.options.show_buffer_icons = true
+  lvim.builtin.bufferline.options.show_buffer_close_icons = true
+end
+
 return M

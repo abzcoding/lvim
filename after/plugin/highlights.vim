@@ -26,10 +26,10 @@ highlight! link CmpItemKindEvent  TSVariable
 highlight! link CmpItemKindOperator  Operator
 highlight! link CmpItemKindTypeParameter  Type
 highlight! link CmpItemKindSnippet  Statement
-hi HlSearchNear guibg=None guifg=#bb9af7 gui=underline
-hi HlSearchFloat guibg=None guifg=#bb9af7 gui=underline
-hi HlSearchLensNear guibg=None guifg=#bb9af7 gui=italic
-hi HlSearchLens guibg=None guifg=#bb9af7 gui=underline
+" hi HlSearchNear guibg=None guifg=#bb9af7 gui=underline
+" hi HlSearchFloat guibg=None guifg=#bb9af7 gui=underline
+" hi HlSearchLensNear guibg=None guifg=#bb9af7 gui=italic
+" hi HlSearchLens guibg=None guifg=#bb9af7 gui=underline
 highlight! link IndentBlanklineIndent1  TSComment
 highlight! link IndentBlanklineIndent2  TSComment
 highlight! link IndentBlanklineIndent3  TSComment

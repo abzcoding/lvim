@@ -51,10 +51,10 @@ local filter_description = function(name, description)
   return result
 end
 
-local get_docstring = function(snippets, ft, context)
+local get_docstring = function(luasnip, ft, context)
   local docstring = {}
   if context then
-    local snips_for_ft = snippets[ft]
+    local snips_for_ft = luasnip.get_snippets(ft)
     if snips_for_ft then
       for _, snippet in pairs(snips_for_ft) do
         if context.name == snippet.name and context.trigger == snippet.trigger then
@@ -130,8 +130,8 @@ local luasnip_fn = function(opts)
             .. " "
             .. filter_description(entry.context.name, entry.context.description),
 
-          preview_command = function(pvw_entry, bufnr)
-            local snippet = get_docstring(luasnip.snippets, entry.ft, entry.context)
+          preview_command = function(_, bufnr)
+            local snippet = get_docstring(luasnip, entry.ft, entry.context)
             vim.api.nvim_buf_set_option(bufnr, "filetype", entry.ft)
             if type(snippet) ~= "table" then
               local lines = {}

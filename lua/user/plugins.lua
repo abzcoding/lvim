@@ -18,18 +18,9 @@ M.config = function()
       event = { "BufRead", "BufNew" },
     },
     {
-      "ethanholz/nvim-lastplace",
+      "vladdoster/remember.nvim",
       config = function()
-        require("nvim-lastplace").setup {
-          lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-          lastplace_ignore_filetype = {
-            "gitcommit",
-            "gitrebase",
-            "svn",
-            "hgcommit",
-          },
-          lastplace_open_folds = true,
-        }
+        require("remember").setup {}
       end,
       event = "BufWinEnter",
       disable = not lvim.builtin.lastplace.active,
@@ -283,7 +274,7 @@ M.config = function()
       disable = not lvim.builtin.test_runner.active,
     },
     {
-      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      "jose-elias-alvarez/typescript.nvim",
       ft = {
         "javascript",
         "javascriptreact",
@@ -293,7 +284,10 @@ M.config = function()
         "typescript.tsx",
       },
       opt = true,
-      event = "BufReadPre",
+      event = { "BufReadPre", "BufNew" },
+      config = function()
+        require("user.tss").config()
+      end,
       before = "williamboman/nvim-lsp-installer",
     },
     {
@@ -460,7 +454,7 @@ M.config = function()
       config = function()
         require("user.dev_icons").set_icon()
       end,
-      disable = lvim.builtin.nvim_web_devicons == nil,
+      disable = lvim.use_icons or not lvim.builtin.custom_web_devicons,
     },
     {
       "nvim-telescope/telescope-live-grep-raw.nvim",
