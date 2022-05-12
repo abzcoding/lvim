@@ -463,17 +463,6 @@ M.config = function()
       disable = not lvim.builtin.hlslens.active,
     },
     {
-      "kosayoda/nvim-lightbulb",
-      config = function()
-        vim.fn.sign_define(
-          "LightBulbSign",
-          { text = require("user.lsp_kind").icons.code_action, texthl = "DiagnosticInfo" }
-        )
-      end,
-      event = "BufRead",
-      ft = { "rust", "go", "typescript", "typescriptreact" },
-    },
-    {
       "chrisbra/csv.vim",
       ft = { "csv" },
       disable = not lvim.builtin.csv_support,
