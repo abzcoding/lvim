@@ -165,7 +165,7 @@ npm run build-plugin
 
 ### Recommended Fonts
 
-- [FiraCode Nerd Font](firaCode): My preferred font
+- [FiraCode]: My preferred nerd font
 - Any of the [Nerd Fonts]
 
 On macOS with Homebrew, choose one of the [Nerd Fonts],
