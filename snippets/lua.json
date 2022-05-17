@@ -1,7 +1,11 @@
 {
   "describe": {
     "prefix": "describe",
-    "body": ["describe('${1:Title}', function()", "\t${2}", "end)"]
+    "body": [
+      "describe('${1:Title}', function()",
+      "\t${2}",
+      "end)"
+    ]
   },
   "doc": {
     "prefix": "doc",
@@ -13,23 +17,33 @@
   },
   "apifun": {
     "prefix": "api.",
-    "body": ["vim.api.nvim_${1:buf}_${2:get}_${3:name}"]
+    "body": [
+      "vim.api.nvim_${1:buf}_${2:get}_${3:name}"
+    ]
   },
   "fn": {
     "prefix": "lfn",
-    "body": ["local fn = vim.fn"]
+    "body": [
+      "local fn = vim.fn"
+    ]
   },
   "api": {
     "prefix": "lapi",
-    "body": ["local api = vim.api"]
+    "body": [
+      "local api = vim.api"
+    ]
   },
   "fmt": {
     "prefix": "lfmt",
-    "body": ["local fmt = string.format"]
+    "body": [
+      "local fmt = string.format"
+    ]
   },
   "inspect": {
     "prefix": "vi",
-    "body": ["print(\"${1}: \" .. vim.inspect(${1}))"]
+    "body": [
+      "print(\"${1}: \" .. vim.inspect(${1}))"
+    ]
   },
   "for": {
     "body": "for ${1:i}=${2:1},${3:10} do\n\t${0:print(i)}\nend",
