@@ -157,7 +157,6 @@ local function set_harpoon_keymaps()
 end
 
 M.set_async_tasks_keymaps = function()
-  local poor_mans_autocmds = require("user.autocommands").make_run()
   if lvim.builtin.async_tasks.active then
     lvim.builtin.which_key.mappings["m"] = {
       name = " Make",
@@ -174,7 +173,7 @@ M.set_async_tasks_keymaps = function()
   else
     lvim.builtin.which_key.mappings["m"] = "Make"
     lvim.builtin.which_key.mappings["r"] = "Run"
-    vim.tbl_deep_extend("force", lvim.autocommands.custom_groups, poor_mans_autocmds)
+    require("user.autocommands").make_run()
   end
 end
 
