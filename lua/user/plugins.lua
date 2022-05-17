@@ -429,7 +429,7 @@ M.config = function()
       end,
     },
     {
-      "Nguyen-Hoang-Nam/nvim-mini-file-icons",
+      "abzcoding/nvim-mini-file-icons",
       config = function()
         require("user.dev_icons").set_icon()
       end,
