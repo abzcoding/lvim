@@ -3,6 +3,9 @@ luac.out
 .java-debug
 .vscode-java-test
 
+# Logs
+.nvimlog
+
 # luarocks build files
 *.src.rock
 *.zip

@@ -74,15 +74,7 @@ augroup END
     ]]
   end
 
-  local codelens_viewer = "lua require('nvim-lightbulb').update_lightbulb()"
-  local user = os.getenv "USER"
-  if user and user == "abz" then
-    codelens_viewer = "lua require('user.codelens').show_line_sign()"
-  end
-
   lvim.autocommands.custom_groups = {
-    { "CursorHold", "*.rs,*.go,*.ts,*.tsx", codelens_viewer },
-
     -- toggleterm
     { "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },
 
@@ -143,6 +135,14 @@ augroup END
     -- uncomment the following if you want to show diagnostics on hover
     -- { "CursorHold", "*", "lua vim.diagnostic.open_float(0,{scope='line'})" },
   }
+
+  local codelens_viewer = "lua require('user.codelens').show_line_sign()"
+  local user = os.getenv "USER"
+	lvim.autocommands.custom_groups[#lvim.autocommands.custom_groups + 1] = {
+		"CursorHold",
+		"*.rs,*.go,*.ts,*.tsx",
+		codelens_viewer,
+	}
 end
 
 M.make_run = function()

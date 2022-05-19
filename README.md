@@ -165,7 +165,7 @@ npm run build-plugin
 
 ### Recommended Fonts
 
-- [FiraCode Nerd Font](firaCode): My preferred font
+- [FiraCode]: My preferred nerd font
 - Any of the [Nerd Fonts]
 
 On macOS with Homebrew, choose one of the [Nerd Fonts],
@@ -382,7 +382,6 @@ _Symbols Outline_
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
 - [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
-- [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
 - [fidget](https://github.com/j-hui/fidget.nvim)
 - [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
 - [crates.nvim](https://github.com/Saecki/crates.nvim)
