@@ -40,6 +40,8 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - [Plugin: Ultest](#plugin-ultest)
   - [Plugin: Spectre](#plugin-spectre)
   - [Plugin: Copilot](#plugin-copilot)
+- [Troubleshooting](#troubleshooting)
+
 
 <!-- vim-markdown-toc -->
 </details>
@@ -672,3 +674,10 @@ Note that,
 [nodejs install]: https://nodejs.org/en/download/package-manager/#macos
 [lsp-installer]: https://github.com/williamboman/nvim-lsp-installer#available-lsps
 [tex-support]: https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1
+
+  
+# Troubleshooting
+  
+1. Check your neovim version. Are you on the newest nightly version? 
+2. Reset your packer cache, and update lvim.
+  
