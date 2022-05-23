@@ -1,18 +1,19 @@
 local M = {}
 
+local create_aucmd = vim.api.nvim_create_autocmd
+
 M.config = function()
+  vim.api.nvim_create_augroup("_lvim_user", {})
   -- Autocommands
   if lvim.builtin.nonumber_unfocus then
-    vim.cmd [[
-" don't show line number in unfocued window
-augroup WindFocus
-    autocmd!
-    autocmd WinEnter * set relativenumber number cursorline
-    autocmd WinLeave * set norelativenumber nonumber nocursorline
-augroup END
-  ]]
+    create_aucmd("WinEnter", { group = "_lvim_user", pattern = "*", command = "set relativenumber number cursorline" })
+    create_aucmd(
+      "WinLeave",
+      { group = "_lvim_user", pattern = "*", command = "set norelativenumber nonumber nocursorline" }
+    )
   end
 
+  -- TODO: change this to lua
   vim.cmd [[
 " disable syntax highlighting in big files
 function! DisableSyntaxTreesitter()
@@ -66,12 +67,11 @@ augroup END
 
   if lvim.builtin.sql_integration.active then
     -- Add vim-dadbod-completion in sql files
-    vim.cmd [[
-    augroup DadbodSql
-      au!
-      autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }
-    augroup END
-    ]]
+    create_aucmd("FileType", {
+      group = "_lvim_user",
+      pattern = { "sql", "mysql", "plsql" },
+      command = "lua require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }",
+    })
   end
 
   lvim.autocommands.custom_groups = {
@@ -137,7 +137,6 @@ augroup END
   }
 
   local codelens_viewer = "lua require('user.codelens').show_line_sign()"
-  local user = os.getenv "USER"
 	lvim.autocommands.custom_groups[#lvim.autocommands.custom_groups + 1] = {
 		"CursorHold",
 		"*.rs,*.go,*.ts,*.tsx",
@@ -146,60 +145,68 @@ augroup END
 end
 
 M.make_run = function()
-  return {
-    -- c, cpp
-    {
-      "Filetype",
-      "c,cpp",
-      "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='make ;read',count=2,direction='float'})<CR>",
-    },
-    {
-      "Filetype",
-      "c,cpp",
-      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='make run;read',count=3,direction='float'})<CR>",
-    },
-
-    -- go
-    {
-      "Filetype",
-      "go",
-      "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go build -v .;read',count=2,direction='float'})<CR>",
-    },
-    {
-      "Filetype",
-      "go",
-      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go run .;read',count=3,direction='float'})<CR>",
-    },
-
-    -- python
-    {
-      "Filetype",
-      "python",
-      "nnoremap <leader>r <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='python "
-        .. vim.fn.expand "%"
-        .. ";read',count=2,direction='float'})<CR>",
-    },
-    {
-      "Filetype",
-      "python",
-      "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='echo \"compile :pepelaugh:\";read',count=2,direction='float'})<CR>",
-    },
-
-    -- rust
-    {
-      "Filetype",
-      "rust",
-      "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo build;read',count=2,direction='float'})<CR>",
-    },
-    {
-      "Filetype",
-      "rust",
-      "nnoremap <leader>r <cmd>lua require('rust-tools.runnables').runnables()<CR>",
-    },
-
-    -- toml
-    { "FileType", "toml", "lua require('cmp').setup.buffer { sources = { { name = 'crates' } } }" },
-  }
+  create_aucmd("FileType", {
+    group = "_lvim_user",
+    pattern = { "c", "cpp" },
+    callback = function()
+      vim.keymap.set(
+        "n",
+        "<leader>m",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='make ;read',count=2,direction='float'})<CR>"
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>r",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='make run;read',count=3,direction='float'})<CR>"
+      )
+    end,
+  })
+  create_aucmd("FileType", {
+    group = "_lvim_user",
+    pattern = "go",
+    callback = function()
+      vim.keymap.set(
+        "n",
+        "<leader>m",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go build -v .;read',count=2,direction='float'})<CR>"
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>r",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go run .;read',count=3,direction='float'})<CR>"
+      )
+    end,
+  })
+  create_aucmd("FileType", {
+    group = "_lvim_user",
+    pattern = "python",
+    callback = function()
+      vim.keymap.set(
+        "n",
+        "<leader>r",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='python "
+          .. vim.fn.expand "%"
+          .. ";read',count=2,direction='float'})<CR>"
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>m",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='echo \"compile :pepelaugh:\";read',count=2,direction='float'})<cr>"
+      )
+    end,
+  })
+  create_aucmd("FileType", {
+    group = "_lvim_user",
+    pattern = "rust",
+    callback = function()
+      vim.keymap.set(
+        "n",
+        "<leader>m",
+        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo build;read',count=2,direction='float'})<CR>"
+      )
+      vim.keymap.set("n", "<leader>r", "<cmd>lua require('rust-tools.runnables').runnables()<CR>")
+    end,
+  })
 end
 
 return M
