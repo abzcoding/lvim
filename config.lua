@@ -4,7 +4,7 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "dracula"
 lvim.debug = false
-lvim.transparent_window = false -- Transparent window
+lvim.transparent_window = true -- Transparent window
 vim.lsp.set_log_level "warn"
 lvim.lsp.document_highlight = true
 lvim.log.level = "warn"
