@@ -580,6 +580,13 @@ M.config = function()
       end,
       disable = not lvim.builtin.refactoring.active,
     },
+    {
+      "b0o/incline.nvim",
+      config = function()
+        require("user.incline").config()
+      end,
+      disable = not lvim.builtin.global_statusline,
+    },
   }
 end
 
