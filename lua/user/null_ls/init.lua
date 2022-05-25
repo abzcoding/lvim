@@ -37,6 +37,8 @@ M.config = function()
     nls.builtins.formatting.scalafmt,
     nls.builtins.formatting.sqlformat,
     nls.builtins.formatting.terraform_fmt,
+    -- Support for nix files
+    nls.builtins.formatting.alejandra,
     nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
     nls.builtins.formatting.black.with { extra_args = { "--fast" }, filetypes = { "python" } },
     nls.builtins.formatting.isort.with { extra_args = { "--profile", "black" }, filetypes = { "python" } },
@@ -67,6 +69,9 @@ M.config = function()
     nls.builtins.diagnostics.luacheck,
     nls.builtins.diagnostics.vint,
     nls.builtins.diagnostics.chktex,
+    -- Support for nix files
+    nls.builtins.diagnostics.deadnix,
+    nls.builtins.diagnostics.statix,
     nls.builtins.diagnostics.markdownlint.with {
       filetypes = { "markdown" },
     },
