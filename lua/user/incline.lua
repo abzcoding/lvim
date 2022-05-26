@@ -45,8 +45,9 @@ M.config = function()
           Normal = "Pmenu",
         },
       },
-      width = "fill",
-      padding = { left = 2, right = 1 },
+      width = "fit",
+      padding = { left = 2, right = 2 },
+      placement = { vertical = "top", horizontal = "right" },
       margin = {
         horizontal = 0,
       },
