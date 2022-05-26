@@ -42,11 +42,11 @@ M.config = function()
       zindex = 49,
       winhighlight = {
         inactive = {
-          Normal = "Pmenu",
+          Normal = "Directory",
         },
       },
       width = "fit",
-      padding = { left = 2, right = 2 },
+      padding = { left = 2, right = 1 },
       placement = { vertical = "top", horizontal = "right" },
       margin = {
         horizontal = 0,
