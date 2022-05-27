@@ -24,7 +24,6 @@ M.config = function()
     handler_opts = {
       border = "single", -- double, single, shadow, none
     },
-    check_completion_visible = true,
     -- transpancy = 80,
     -- extra_trigger_chars = { "(", "," }, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
     zindex = 1002, -- by default it will be on top of all floating windows, set to 50 send it to bottom
