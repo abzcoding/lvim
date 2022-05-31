@@ -76,11 +76,11 @@ M.use_my_icons = function()
   end
   lvim.builtin.nvimtree.setup.diagnostics.enable = true
   lvim.builtin.nvimtree.setup.renderer.icons.webdev_colors = true
-  lvim.builtin.nvimtree.show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
+  lvim.builtin.nvimtree.setup.renderer.icons.show = {
+    git = true,
+    folder = true,
+    file = true,
+    folder_arrow = true,
   }
   vim.fn.sign_define("DapBreakpoint", lvim.builtin.dap.breakpoint)
   vim.fn.sign_define("DapBreakpointRejected", lvim.builtin.dap.breakpoint_rejected)
