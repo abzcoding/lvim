@@ -47,7 +47,7 @@ M.config = function()
   }
   vim.opt.termguicolors = true
   vim.opt.updatetime = 100
-  vim.opt.timeoutlen = 500
+  vim.opt.timeoutlen = 5000
   vim.opt.redrawtime = 1500
   vim.opt.ttimeoutlen = 10
   vim.opt.wrapscan = true -- Searches wrap around the end of the file

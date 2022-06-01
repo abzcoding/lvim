@@ -26,6 +26,7 @@ M.config = function()
       prefer_local = "node_modules/.bin",
     },
     nls.builtins.formatting.eslint_d.with {
+      timeout = 10000,
       condition = function(utils)
         return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
       end,

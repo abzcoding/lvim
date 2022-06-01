@@ -12,7 +12,6 @@ lvim.log.level = "warn"
 vim.g.instant_username = os.getenv "USER"
 require("user.neovim").config()
 
-
 -- =========================================
 lvim.builtin.lastplace = { active = true } -- change to false if you are jumping to future
 lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false } -- if you want microsoft to abuse your soul
@@ -57,7 +56,7 @@ lvim.lsp.diagnostics.virtual_text = true -- remove this line if you want to see 
 lvim.builtin.editorconfig = { active = true } -- enable/disable editorconfig
 lvim.builtin.nvim_web_devicons = { active = false }
 lvim.builtin.dressing = { active = true }
-lvim.builtin.refactoring = {active = true }
+lvim.builtin.refactoring = { active = true }
 require("lvim.lsp.manager").setup("prosemd_lsp", {})
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
@@ -66,9 +65,9 @@ lvim.builtin.latex = {
 }
 lvim.builtin.notify.active = true
 lvim.lsp.automatic_servers_installation = true
-if lvim.builtin.cursorline.active then
-  lvim.lsp.document_highlight = false
-end
+-- if lvim.builtin.cursorline.active then
+--   lvim.lsp.document_highlight = false
+-- end
 lvim.lsp.code_lens_refresh = true
 require("user.builtin").config()
 
@@ -120,6 +119,7 @@ formatters.setup {
   {
     command = "prettierd",
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact", "vue" },
+    filetypes = { "typescript", "typescriptreact" },
+    -- filetypes = { "typescript", "typescriptreact", "vue" },
   },
 }

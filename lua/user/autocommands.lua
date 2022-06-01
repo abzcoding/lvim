@@ -95,7 +95,7 @@ augroup END
     {
       "Filetype",
       "terraform",
-      "autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_seq_sync()",
+      "autocmd BufWritePre <buffer> :lua vim.lsp.buf.format()",
     },
 
     -- java
