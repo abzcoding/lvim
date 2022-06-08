@@ -285,7 +285,7 @@ M.config = function()
   if lvim.builtin.persistence then
     lvim.builtin.which_key.mappings["q"] = {
       name = " Quit",
-      d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+      d = { "<cmd>lua require('persistence').stop()<cr> | :qa!<cr>", "Quit without saving session" },
       l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
       s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
     }
