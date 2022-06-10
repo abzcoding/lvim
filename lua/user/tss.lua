@@ -27,6 +27,10 @@ M.buf_map = function(bufnr, mode, target, source, opts)
   M.map(mode, target, source, get_map_options(opts))
 end
 
+M.t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 M.input = function(keys, mode)
   api.nvim_feedkeys(M.t(keys), mode or "m", true)
 end
