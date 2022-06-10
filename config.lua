@@ -37,6 +37,7 @@ lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
 lvim.builtin.csv_support = false -- enable/disable csv support
 lvim.builtin.sidebar = { active = false } -- enable/disable sidebar
 lvim.builtin.async_tasks = { active = false } -- enable/disable async tasks
+lvim.builtin.winbar_provider = "filename" -- can be "filename" or "treesitter" or ""
 lvim.builtin.metals = {
   active = false, -- enable/disable nvim-metals for scala development
   fallbackScalaVersion = "2.13.7",
