@@ -92,12 +92,12 @@ M.kanagawa = function()
   local kanagawa = require "kanagawa"
   kanagawa.setup {
     undercurl = true, -- enable undercurls
-    commentStyle = "NONE",
-    functionStyle = "NONE",
-    keywordStyle = "italic",
-    statementStyle = "italic",
-    typeStyle = "NONE",
-    variablebuiltinStyle = "italic",
+    commentStyle = {},
+    functionStyle = {},
+    keywordStyle = { italic = true },
+    statementStyle = { italic = true },
+    typeStyle = {},
+    variablebuiltinStyle = { italic = true },
     specialReturn = true, -- special highlight for the return keyword
     specialException = true, -- special highlight for exception handling keywords
     dimInactive = lvim.builtin.global_statusline, -- dim inactive window `:h hl-NormalNC`
@@ -274,6 +274,7 @@ M.hi_colors = function()
     local ret = vim.api.nvim_get_hl_by_name(name.group, true)
     return string.format("#%06x", ret[name.property])
   end
+
   for k, v in pairs(color_binds) do
     local found, color = pcall(get_hl_by_name, v)
     if found then
