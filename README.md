@@ -385,7 +385,7 @@ _Symbols Outline_
 - [typescript.nvim](https://github.com/jose-elias-alvarez/typescript.nvim)
 - [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim)
 - [NeoClip](https://github.com/AckslD/nvim-neoclip.lua)
-- [Telescope live grep raw](nvim-telescope/telescope-live-grep-raw.nvim)
+- [Telescope live grep args](nvim-telescope/telescope-live-grep-args.nvim)
 - [fidget](https://github.com/j-hui/fidget.nvim)
 - [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
 - [crates.nvim](https://github.com/Saecki/crates.nvim)
