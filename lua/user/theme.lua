@@ -242,6 +242,9 @@ M.colors = {
 
 M.current_colors = function()
   local colors = M.colors.tokyonight_colors
+  if not lvim.builtin.time_based_themes then
+    return colors
+  end
   local _time = os.date "*t"
   if _time.hour >= 1 and _time.hour < 9 then
     colors = M.colors.rose_pine_colors

@@ -2,7 +2,8 @@
 -- =========================================
 lvim.format_on_save = false
 lvim.leader = " "
-lvim.colorscheme = "pablo"
+lvim.colorscheme = "pablo" -- set to a custom theme
+lvim.builtin.time_based_themes = true -- set false to use your own configured theme
 lvim.debug = false
 vim.lsp.set_log_level "warn"
 lvim.log.level = "warn"
