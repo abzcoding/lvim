@@ -35,6 +35,7 @@ end
 local mode = function()
   local mod = vim.fn.mode()
   local _time = os.date "*t"
+
   local selector = math.floor(_time.hour / 8) + 1
   local normal_icons = {
     "  ",
@@ -321,7 +322,15 @@ M.config = function()
       if #cwd > 0 and #ftype > 0 then
         show_name = fname:sub(#cwd + 2)
       end
-      return show_name .. "%{&readonly?'  ':''}" .. "%{&modified?'  ':''}"
+      local readonly = ""
+      local modified = ""
+      if vim.bo.readonly then
+        readonly = "  "
+      end
+      if vim.bo.modified then
+        modified = "  "
+      end
+      return show_name .. readonly .. modified
     end,
     cond = conditions.buffer_not_empty,
     padding = { left = 1, right = 1 },
@@ -395,11 +404,11 @@ M.config = function()
 
   -- Insert mid section. You can make any number of sections in neovim :)
   -- for lualine it's any number greater then 2
-  ins_left {
-    function()
-      return "%="
-    end,
-  }
+  -- ins_left {
+  --   function()
+  --     return "%="
+  --   end,
+  -- }
 
   ins_right {
     function()
