@@ -136,6 +136,8 @@ end
 _G.css_to_js = css_to_js
 
 local function on_attach(client, bufnr)
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
   require("lvim.lsp").common_on_attach(client, bufnr)
   api.nvim_buf_create_user_command(bufnr, "CssToJs", css_to_js, { range = true })
   M.buf_map(bufnr, "n", "gs", ":TypescriptRemoveUnused<CR>")
