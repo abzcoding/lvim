@@ -26,6 +26,7 @@ M.config = function()
   end
   -- vim.g.did_load_filetypes = 1
   vim.g.ultest_summary_width = 30
+  vim.g.ultest_deprecation_notice = 0
   vim.opt.completeopt = { "menu", "menuone", "noselect" }
   vim.opt.relativenumber = true
   vim.opt.diffopt = {

@@ -323,6 +323,12 @@ M.config = function()
     f = { "<cmd>Ultest<cr>", "File" },
     n = { "<cmd>UltestNearest<cr>", "Nearest" },
     s = { "<cmd>UltestSummary<cr>", "Summary" },
+    -- f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "File" },
+    -- o = { "<cmd>lua require('neotest').output.open({ enter = true, short = false })<cr>", "Output" },
+    -- r = { "<cmd>lua require('neotest').run.run()<cr>", "Run" },
+    -- s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+    -- n = { "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>", "jump to next failed" },
+    -- p = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "jump to previous failed" },
   }
   lvim.builtin.which_key.mappings["T"] = {
     name = "飯Trouble",
