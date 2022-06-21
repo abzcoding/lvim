@@ -17,6 +17,7 @@ M.config = function()
   if not g_ok then
     bufferline_groups = { builtin = { ungroupued = { name = "ungrouped" } } }
   end
+  lvim.builtin.bufferline.options.navigation = { mode = "uncentered" }
   lvim.builtin.bufferline.options.diagnostics = false -- do not show diagnostics in bufferline
   lvim.builtin.bufferline.options.diagnostics_indicator = function(_, _, diagnostics)
     local result = {}
@@ -36,13 +37,27 @@ M.config = function()
       toggle_hidden_on_enter = true,
     },
     items = {
+      bufferline_groups.builtin.pinned:with { icon = "" },
       bufferline_groups.builtin.ungrouped,
       {
         highlight = { guisp = "#51AFEF" },
         name = "tests",
         icon = kind.icons.test,
         matcher = function(buf)
-          return buf.filename:match "_spec" or buf.filename:match "test"
+          local name = buf.filename
+          return name:match "_spec" or name:match "_test" or name:match "test_"
+        end,
+      },
+      {
+        name = "Terraform",
+        matcher = function(buf)
+          return buf.name:match "%.tf" ~= nil
+        end,
+      },
+      {
+        name = "SQL",
+        matcher = function(buf)
+          return buf.filename:match "%.sql$"
         end,
       },
       {
