@@ -442,7 +442,7 @@ _Symbols Outline_
 - [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
 - [dressing.nvim](https://github.com/stevearc/dressing.nvim)
 - [incline.nvim](https://github.com/b0o/incline.nvim)
-- [winbar.nvim](https://github.com/b0o/incline.nvim)
+- [winbar.nvim](https://github.com/fgheng/winbar.nvim)
 - [vim-tpipeline](https://github.com/vimpostor/vim-tpipeline)
 
 </details>
