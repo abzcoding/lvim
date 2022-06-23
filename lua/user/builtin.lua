@@ -514,7 +514,7 @@ M.config = function()
     },
   }
   local telescope_actions = require "telescope.actions.set"
-  lvim.builtin.telescope.defaults.pickers.find_files = {
+  lvim.builtin.telescope.pickers.find_files = {
     attach_mappings = function(_)
       telescope_actions.select:enhance {
         post = function()
