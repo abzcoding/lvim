@@ -89,7 +89,7 @@ M.config = function()
   local buttons = {
     type = "group",
     val = {
-      button("f", " " .. kind.cmp_kind.Folder .. " Explore", ":Telescope find_files preview={timeout=1000}<CR>"),
+      button("f", " " .. kind.cmp_kind.Folder .. " Explore", "<cmd>lua require('lvim.core.telescope.custom-finders').find_project_files()<CR>"),
       button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
       button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
       button(
