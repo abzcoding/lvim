@@ -156,7 +156,7 @@ M.config = function()
     {
       "rcarriga/nvim-dap-ui",
       config = function()
-        require("dapui").setup()
+        require("user.dapui").config()
       end,
       ft = { "python", "rust", "go" },
       event = "BufReadPost",
