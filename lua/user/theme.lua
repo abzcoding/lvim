@@ -81,6 +81,21 @@ M.catppuccin = function()
       nvimtree = {
         transparent_panel = lvim.transparent_window,
       },
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = "italic",
+          hints = "italic",
+          warnings = "italic",
+          information = "italic",
+        },
+        underlines = {
+          errors = "undercurl",
+          hints = "NONE",
+          warnings = "undercurl",
+          information = "NONE",
+        },
+      },
       which_key = true,
       lightspeed = lvim.builtin.motion_provider == "lightspeed",
       hop = lvim.builtin.motion_provider == "hop",

@@ -20,7 +20,11 @@ M.config = function()
       require "neotest-python" {
         dap = { justMyCode = false, console = "integratedTerminal" },
       },
-      require "neotest-go",
+      require "neotest-go" {
+        experimental = {
+          test_table = true,
+        },
+      },
       require "neotest-plenary" {
         ignore_file_types = { "python", "go" },
       },
