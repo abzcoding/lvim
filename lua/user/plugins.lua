@@ -33,6 +33,9 @@ M.config = function()
     {
       "catppuccin/nvim",
       as = "catppuccin",
+      setup = function()
+        vim.g.catppuccin_flavour = "mocha"
+      end,
       config = function()
         require("user.theme").catppuccin()
         vim.cmd [[colorscheme catppuccin]]
