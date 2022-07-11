@@ -632,6 +632,7 @@ M.config = function()
     {
       "vimpostor/vim-tpipeline",
       disable = not lvim.builtin.tmux_lualine,
+      commit = "a95ccb6939c819142f9b972033010403c4b7f5d8",
     },
   }
 end
