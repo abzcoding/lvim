@@ -56,7 +56,6 @@ lvim.builtin.tmux_lualine = false -- use vim-tpipeline to integrate lualine and 
 
 local user = os.getenv "USER"
 if user and user == "abz" then
-  lvim.builtin.tmux_lualine = true
   if lvim.builtin.tmux_lualine then
     vim.opt.cmdheight = 1 -- WARN: =0 only works with the latest neovim
     vim.g.tpipeline_cursormoved = 1

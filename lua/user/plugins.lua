@@ -576,11 +576,10 @@ M.config = function()
       disable = not lvim.builtin.fancy_wild_menu.active,
     },
     {
-      "gfeiyou/command-center.nvim",
+      "mrjones2014/legendary.nvim",
       config = function()
-        require("user.cc").config()
+        require("user.legendary").config()
       end,
-      requires = "nvim-telescope/telescope.nvim",
     },
     {
       "stevearc/dressing.nvim",
@@ -632,7 +631,6 @@ M.config = function()
     {
       "vimpostor/vim-tpipeline",
       disable = not lvim.builtin.tmux_lualine,
-      commit = "a95ccb6939c819142f9b972033010403c4b7f5d8",
     },
   }
 end
