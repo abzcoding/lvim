@@ -189,6 +189,15 @@ M.config = function()
       ft = { "rust", "rs" },
     },
     {
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+        require("lsp_lines").setup()
+      end,
+      event = "BufRead",
+      disable = not lvim.builtin.lsp_lines,
+
+    },
+    {
       "folke/zen-mode.nvim",
       config = function()
         require("user.zen").config()
