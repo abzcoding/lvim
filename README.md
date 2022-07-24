@@ -443,6 +443,7 @@ _Symbols Outline_
 - [dressing.nvim](https://github.com/stevearc/dressing.nvim)
 - [incline.nvim](https://github.com/b0o/incline.nvim)
 - [winbar.nvim](https://github.com/fgheng/winbar.nvim)
+- [lsp_lines.nvim](https://git.sr.ht/~whynothugo/lsp_lines.nvim)
 
 </details>
 
