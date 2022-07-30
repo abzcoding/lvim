@@ -18,6 +18,9 @@ M.config = function()
       -- Convert kind to Title Case (e.g. legendary.keymaps => Legendary Keymaps)
       return " " .. string.gsub(" " .. kind:gsub("%.", " "), "%W%l", string.upper):sub(2) .. " "
     end,
+    commands = {
+      { ':Telescope live_grep', description = 'Find Text ( live grep )' },
+    }
   }
 end
 
