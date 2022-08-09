@@ -523,7 +523,7 @@ M.config = function()
       }
       return true
     end,
-    find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
+    find_command = { "fd", "--type=file", "--hidden" },
   }
   lvim.builtin.telescope.on_config_done = function(telescope)
     telescope.load_extension "file_create"
