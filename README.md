@@ -205,18 +205,9 @@ brew install --cask font-hack-nerd-font
 ## Language-Server Protocol (LSP)
 
 To leverage LSP auto-completions and other functionalities, after you open a
-file in Neovim, run `:LspInstall <server>` to use
-[nvim-lsp-installer](lsp-installer) installation feature.
+file in Neovim, run `:MasonInstall <server>` to use
+[mason](mason) installation feature.
 Use `Tab` to list available servers.
-
-Here are some common LSP server installations:
-
-- `:LspInstall html cssls jsonls yamlls`
-- `:LspInstall gopls`
-- `:LspInstall pylsp`
-- `:LspInstall bashls vimls sumneko_lua`
-- `:LspInstall diagnosticls`
-- and [more](lsp-installer)…
 
 ## Upgrade
 
@@ -227,6 +218,8 @@ lvim # run :PackerSync
 ```
 
 ### Recommended Linters
+
+You can use [mason](mason) to install these:
 
 ```shell
 brew install luarocks
@@ -693,7 +686,7 @@ Note that,
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [fd]: https://github.com/sharkdp/fd
 [nodejs install]: https://nodejs.org/en/download/package-manager/#macos
-[lsp-installer]: https://github.com/williamboman/nvim-lsp-installer#available-lsps
+[mason]: https://github.com/williamboman/mason.nvim
 [tex-support]: https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1
 
   
