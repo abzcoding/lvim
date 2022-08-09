@@ -6,13 +6,9 @@ M.config = function()
     return
   end
 
-  local lsp_installer_servers = require "nvim-lsp-installer.servers"
-  local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
-
   local opts = {
     tools = {
       autoSetHints = true,
-      hover_with_actions = true,
       executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
       inlay_hints = {
         only_current_line = false,
@@ -42,7 +38,6 @@ M.config = function()
       },
     },
     server = {
-      cmd_env = requested_server._default_options.cmd_env,
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
     },

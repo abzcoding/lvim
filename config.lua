@@ -115,7 +115,6 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {
   "gopls",
   "jdtls",
   "pyright",
-  "r_language_server",
   "rust_analyzer",
   "sumneko_lua",
   "taplo",

@@ -280,7 +280,6 @@ M.config = function()
       config = function()
         require("user.tss").config()
       end,
-      before = "williamboman/nvim-lsp-installer",
     },
     {
       "lervag/vimtex",
