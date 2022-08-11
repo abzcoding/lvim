@@ -117,6 +117,7 @@ M.todo_comments = {
   NOTE = " ",
   ERROR = " ",
   REFS = "",
+  SHIELD = "",
 }
 
 M.numbers = {

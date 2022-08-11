@@ -17,6 +17,7 @@ M.config = function()
       NOTE = { icon = icons.NOTE, alt = { "INFO", "NB" } },
       ERROR = { icon = icons.ERROR, color = "error", alt = { "ERR" } },
       REFS = { icon = icons.REFS },
+      SAFETY = {icon = icons.SHIELD, color = "hint"},
     },
     highlight = { max_line_len = 120 },
     colors = {

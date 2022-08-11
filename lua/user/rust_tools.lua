@@ -8,12 +8,11 @@ M.config = function()
 
   local opts = {
     tools = {
-      autoSetHints = true,
       executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
+      reload_workspace_from_cargo_toml = true,
       inlay_hints = {
+        auto = true,
         only_current_line = false,
-        only_current_line_autocmd = "CursorHold",
-        show_variable_name = false,
         show_parameter_hints = true,
         parameter_hints_prefix = "<-",
         other_hints_prefix = "=>",
