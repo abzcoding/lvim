@@ -222,7 +222,7 @@ M.config = function()
   -- =========================================
   M.set_async_tasks_keymaps()
   lvim.builtin.which_key.mappings["/"] = {
-    "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>",
+    "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
     " Comment",
   }
   lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "舘Dashboard" }
@@ -275,6 +275,10 @@ M.config = function()
       "Prev Diagnostic",
     }
   end
+
+  lvim.builtin.which_key.vmappings["/"] =
+    { "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Comment" }
+
   lvim.builtin.which_key.vmappings["l"] = {
     name = "+Lsp",
     r = { "<ESC><CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
