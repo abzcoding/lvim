@@ -13,6 +13,11 @@ M.config = function()
   -- Bufferline
   -- =========================================
   local List = require "plenary.collections.py_list"
+
+  lvim.builtin.bufferline.highlights = {
+    background = { italic = true },
+    buffer_selected = { bold = true },
+  }
   local g_ok, bufferline_groups = pcall(require, "bufferline.groups")
   if not g_ok then
     bufferline_groups = {
@@ -50,7 +55,7 @@ M.config = function()
       bufferline_groups.builtin.pinned:with { icon = "" },
       bufferline_groups.builtin.ungrouped,
       {
-        highlight = { guisp = "#51AFEF" },
+        highlight = { sp = "#51AFEF" },
         name = "tests",
         icon = kind.icons.test,
         matcher = function(buf)
@@ -72,7 +77,7 @@ M.config = function()
       },
       {
         name = "view models",
-        highlight = { guisp = "#03589C" },
+        highlight = { sp = "#03589C" },
         matcher = function(buf)
           return buf.filename:match "view_model%.dart"
         end,
@@ -85,7 +90,7 @@ M.config = function()
         end,
       },
       {
-        highlight = { guisp = "#C678DD" },
+        highlight = { sp = "#C678DD" },
         name = "docs",
         matcher = function(buf)
           local list = List { "md", "org", "norg", "wiki" }
@@ -93,7 +98,7 @@ M.config = function()
         end,
       },
       {
-        highlight = { guisp = "#F6A878" },
+        highlight = { sp = "#F6A878" },
         name = "config",
         matcher = function(buf)
           return buf.filename:match "go.mod"
