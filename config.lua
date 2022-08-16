@@ -60,8 +60,11 @@ end
 
 local user = os.getenv "USER"
 if user and user == "abz" then
+  lvim.builtin.lsp_lines = true
+  vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)
+  lvim.builtin.tmux_lualine = true
   if lvim.builtin.tmux_lualine then
-    vim.opt.cmdheight = 1 -- WARN: =0 only works with the latest neovim
+    vim.opt.cmdheight = 0 -- WARN: =0 only works with the latest neovim
     vim.g.tpipeline_cursormoved = 1
   end
   lvim.builtin.custom_web_devicons = true
