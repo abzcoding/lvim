@@ -228,10 +228,13 @@ M.config = function()
   -- WhichKey keybindings
   -- =========================================
   M.set_async_tasks_keymaps()
-  lvim.builtin.which_key.mappings["/"] = {
-    "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
-    " Comment",
-  }
+  local status_ok_comment, _ = pcall(require, "Comment.api.toogle")
+  if status_ok_comment then
+    lvim.builtin.which_key.mappings["/"] = {
+      "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
+      " Comment",
+    }
+  end
   lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "舘Dashboard" }
   if lvim.builtin.dap.active then
     lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
@@ -286,8 +289,10 @@ M.config = function()
     }
   end
 
-  lvim.builtin.which_key.vmappings["/"] =
-    { "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Comment" }
+  if status_ok_comment then
+    lvim.builtin.which_key.vmappings["/"] =
+      { "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Comment" }
+  end
 
   lvim.builtin.which_key.vmappings["l"] = {
     name = "+Lsp",
