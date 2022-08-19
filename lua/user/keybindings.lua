@@ -228,7 +228,7 @@ M.config = function()
   -- WhichKey keybindings
   -- =========================================
   M.set_async_tasks_keymaps()
-  local status_ok_comment, _ = pcall(require, "Comment.api.toogle")
+  local status_ok_comment, _ = pcall(require, "Comment.api.toggle")
   if status_ok_comment then
     lvim.builtin.which_key.mappings["/"] = {
       "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
