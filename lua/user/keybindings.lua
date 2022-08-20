@@ -228,8 +228,8 @@ M.config = function()
   -- WhichKey keybindings
   -- =========================================
   M.set_async_tasks_keymaps()
-  local status_ok_comment, _ = pcall(require, "Comment.api.toogle")
-  if status_ok_comment then
+  local status_ok_comment, cmt = pcall(require, "Comment.api")
+  if status_ok_comment and cmt['toggle'] ~= nil then
     lvim.builtin.which_key.mappings["/"] = {
       "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
       " Comment",
@@ -289,7 +289,7 @@ M.config = function()
     }
   end
 
-  if status_ok_comment then
+  if status_ok_comment and cmt['toggle'] ~= nil then
     lvim.builtin.which_key.vmappings["/"] =
       { "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Comment" }
   end
