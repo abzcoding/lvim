@@ -160,6 +160,23 @@ M.config = function()
   dap.configurations.javascript = dap.configurations.typescript
   dap.configurations.javascriptreact = dap.configurations.typescript
 
+  --Java debugger adapter settings
+  dap.configurations.java = {
+    {
+      name = "Debug (Attach) - Remote",
+      type = "java",
+      request = "attach",
+      hostName = "127.0.0.1",
+      port = 5005,
+    },
+    {
+      name = "Debug Non-Project class",
+      type = "java",
+      request = "launch",
+      program = "${file}",
+    },
+  }
+
   dap.adapters.codelldb = function(on_adapter)
     local stdout = vim.loop.new_pipe(false)
     local stderr = vim.loop.new_pipe(false)
