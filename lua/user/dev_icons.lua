@@ -2,8 +2,13 @@ local M = {}
 
 M.set_icon = function()
   require("nvim-web-devicons").set_icon {
+    toml = {
+      icon = "📦",
+      color = "#8FAA54",
+      name = "Toml",
+    },
     rs = {
-      icon = "",
+      icon = "🦀",
       color = "#d28445",
       name = "Rust",
     },
