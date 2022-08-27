@@ -168,6 +168,7 @@ M.config = function()
     },
     {
       "andymass/vim-matchup",
+      branch = "dev-nvim-fix-19931",
       event = "BufReadPost",
       config = function()
         vim.g.matchup_enabled = 1
@@ -195,7 +196,6 @@ M.config = function()
       end,
       event = "BufRead",
       disable = not lvim.builtin.lsp_lines,
-
     },
     {
       "folke/zen-mode.nvim",
