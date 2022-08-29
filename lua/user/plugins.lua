@@ -195,7 +195,6 @@ M.config = function()
       end,
       event = "BufRead",
       disable = not lvim.builtin.lsp_lines,
-
     },
     {
       "folke/zen-mode.nvim",

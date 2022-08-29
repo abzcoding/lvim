@@ -6,6 +6,10 @@ M.hide_diagnostics = function()
     local ns = vim.lsp.diagnostic.get_namespace(client.id)
     vim.diagnostic.hide(ns)
   end
+
+  if vim.bo.filetype == "rust" then
+    vim.cmd "RustDisableInlayHints"
+  end
 end
 
 M.show_diagnostics = function()
@@ -13,6 +17,10 @@ M.show_diagnostics = function()
   for _, client in ipairs(clients) do
     local ns = vim.lsp.diagnostic.get_namespace(client.id)
     vim.diagnostic.show(ns, nil, nil, lvim.lsp.diagnostics)
+  end
+
+  if vim.bo.filetype == "rust" then
+    vim.cmd "RustEnableInlayHints"
   end
 end
 
