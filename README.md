@@ -38,6 +38,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
   - [Plugin: Bufferline](#plugin-bufferline)
   - [Plugin: Trouble](#plugin-trouble)
   - [Plugin: Ultest](#plugin-ultest)
+  - [Plugin: Neotest](#plugin-neotest)
   - [Plugin: Spectre](#plugin-spectre)
   - [Plugin: Copilot](#plugin-copilot)
   - [Plugin: Lsp_lines](#plugin-lsp-lines)
@@ -100,8 +101,8 @@ lvim.plugins = {
   - `lvim.builtin.lastplace = { active = false }`
 - sometimes `compe-tabnine` doesn't play nice, you can disable it :)
   - `lvim.builtin.tabnine = { active = false }`
-- if you don't need testing, just disable it
-  - `lvim.builtin.test_runner = { active = false }`
+- if you don't need testing, just disable it (use `ultest` or `neotest`)
+  - `lvim.builtin.test_runner = { active = false, runner = "ultest" }`
 - if you don't want [cheat.sh](http://cheat.sh) integration, disable it
   - `lvim.builtin.cheat = { active = false }`
 - if you don't want the SQL integration, disable it
@@ -437,6 +438,7 @@ _Symbols Outline_
 - [incline.nvim](https://github.com/b0o/incline.nvim)
 - [winbar.nvim](https://github.com/fgheng/winbar.nvim)
 - [lsp_lines.nvim](https://git.sr.ht/~whynothugo/lsp_lines.nvim)
+- [neotest](https://github.com/nvim-neotest/neotest)
 
 </details>
 
@@ -657,6 +659,20 @@ Note that,
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | run all tests in a file |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | only run nearest test   |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | open test summary       |
+
+### Plugin: Neotest
+
+| Key                                        | Mode | Action                       |
+| ------------------------------------------ | :--: | ---------------------------- |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>a</kbd> |  𝐍   | run all tests                |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | run tests in a file          |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>r</kbd> |  𝐍   | only run nearest test        |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | open test summary            |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>o</kbd> |  𝐍   | open test output             |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>w</kbd> |  𝐍   | watch test                   |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>x</kbd> |  𝐍   | stop test                    |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | jump to next failed test     |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>p</kbd> |  𝐍   | jump to previous failed test |
 
 ### Plugin: Spectre
 

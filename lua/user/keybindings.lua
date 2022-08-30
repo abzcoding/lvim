@@ -229,7 +229,7 @@ M.config = function()
   -- =========================================
   M.set_async_tasks_keymaps()
   local status_ok_comment, cmt = pcall(require, "Comment.api")
-  if status_ok_comment and cmt['toggle'] ~= nil then
+  if status_ok_comment and cmt["toggle"] ~= nil then
     lvim.builtin.which_key.mappings["/"] = {
       "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
       " Comment",
@@ -289,7 +289,7 @@ M.config = function()
     }
   end
 
-  if status_ok_comment and cmt['toggle'] ~= nil then
+  if status_ok_comment and cmt["toggle"] ~= nil then
     lvim.builtin.which_key.vmappings["/"] =
       { "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Comment" }
   end
@@ -337,18 +337,33 @@ M.config = function()
     "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
     "String",
   }
-  lvim.builtin.which_key.mappings["t"] = {
-    name = "ﭧ Test",
-    f = { "<cmd>Ultest<cr>", "File" },
-    n = { "<cmd>UltestNearest<cr>", "Nearest" },
-    s = { "<cmd>UltestSummary<cr>", "Summary" },
-    -- f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "File" },
-    -- o = { "<cmd>lua require('neotest').output.open({ enter = true, short = false })<cr>", "Output" },
-    -- r = { "<cmd>lua require('neotest').run.run()<cr>", "Run" },
-    -- s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
-    -- n = { "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>", "jump to next failed" },
-    -- p = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "jump to previous failed" },
-  }
+  if lvim.builtin.test_runner.active then
+    if lvim.builtin.test_runner.runner == "neotest" then
+      lvim.builtin.which_key.mappings["t"] = {
+        name = "ﭧ Test",
+        f = {
+          "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), env=require('user.ntest').get_env()})<cr>",
+          "File",
+        },
+        o = { "<cmd>lua require('neotest').output.open({ enter = true, short = false })<cr>", "Output" },
+        r = { "<cmd>lua require('neotest').run.run({env=require('user.ntest').get_env()})<cr>", "Run" },
+        a = { "<cmd>lua require('user.ntest').run_all()<cr>", "Run All" },
+        s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+        n = { "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>", "jump to next failed" },
+        p = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "jump to previous failed" },
+        d = { "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<cr>", "Dap Run" },
+        x = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
+        w = { "<cmd>lua require('neotest').watch.watch()<cr>", "Watch" },
+      }
+    else
+      lvim.builtin.which_key.mappings["t"] = {
+        name = "ﭧ Test",
+        f = { "<cmd>Ultest<cr>", "File" },
+        n = { "<cmd>UltestNearest<cr>", "Nearest" },
+        s = { "<cmd>UltestSummary<cr>", "Summary" },
+      }
+    end
+  end
   lvim.builtin.which_key.mappings["T"] = {
     name = "飯Trouble",
     d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
