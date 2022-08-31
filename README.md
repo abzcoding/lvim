@@ -15,7 +15,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
 <!-- vim-markdown-toc GFM -->
 
 - [Theme](#theme)
-- [Customization](#features)
+- [Customization](#customization)
 - [Install](#install)
 - [Collaborative Editing](#collaborative-editing)
 - [Java](#java)
@@ -41,7 +41,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly ðŸ
   - [Plugin: Neotest](#plugin-neotest)
   - [Plugin: Spectre](#plugin-spectre)
   - [Plugin: Copilot](#plugin-copilot)
-  - [Plugin: Lsp_lines](#plugin-lsp-lines)
+  - [Plugin: Lsp_Lines](#plugin-lsp_lines)
 - [Troubleshooting](#troubleshooting)
 
 <!-- vim-markdown-toc -->
@@ -83,7 +83,7 @@ lvim.plugins = {
     <small><i>(ðŸ”Ž Click to expand/collapse)</i></small>
   </summary>
 
-- I'm on [this PR](https://github.com/LunarVim/LunarVim/pull/2544) of LunarVim and i'm using `neovim 0.8 head`
+- I'm on [this PR](https://github.com/LunarVim/LunarVim/pull/2544) of LunarVim and i am using `neovim 0.8 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - i have a auto command to disable syntax,etc when you open files larger than `1MB`
 - if you don't want to use `harpoon`, disable it
