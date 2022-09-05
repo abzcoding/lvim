@@ -41,14 +41,20 @@ M.config = function()
       on_init = require("lvim.lsp").common_on_init,
     },
   }
-  local extension_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.7.3/"
+  local path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/")
+    or vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.7.3/"
+  local codelldb_path = path .. "adapter/codelldb"
+  local liblldb_path = path .. "lldb/lib/liblldb.so"
 
-  local codelldb_path = extension_path .. "adapter/codelldb"
-  local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+  if vim.fn.has "mac" == 1 then
+    liblldb_path = path .. "lldb/lib/liblldb.dylib"
+  end
 
-  opts.dap = {
-    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-  }
+  if vim.fn.filereadable(codelldb_path) and vim.fn.filereadable(liblldb_path) then
+    opts.dap = {
+      adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+    }
+  end
   rust_tools.setup(opts)
 end
 
