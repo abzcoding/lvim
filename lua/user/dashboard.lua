@@ -13,24 +13,30 @@ M.config = function()
   }
 
   local plugins = ""
-  local date = ""
+  local date = os.date "%a %d %b"
   if vim.fn.has "linux" == 1 or vim.fn.has "mac" == 1 then
     local handle = io.popen 'fd -d 2 . $HOME"/.local/share/lunarvim/site/pack/packer" | grep pack | wc -l | tr -d "\n" '
     plugins = handle:read "*a"
     handle:close()
 
-    local thingy = io.popen 'echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"'
-    date = thingy:read "*a"
-    thingy:close()
     plugins = plugins:gsub("^%s*(.-)%s*$", "%1")
   else
     plugins = "N/A"
-    date = "  whatever "
   end
 
   local plugin_count = {
     type = "text",
-    val = "└─ " .. kind.cmp_kind.Module .. " " .. plugins .. " plugins in total ─┘",
+    val = "└─ "
+      .. kind.cmp_kind.Module
+      .. " "
+      .. plugins
+      .. " plugins  v"
+      .. vim.version().major
+      .. "."
+      .. vim.version().minor
+      .. "."
+      .. vim.version().patch
+      .. " ─┘",
     opts = {
       position = "center",
       hl = "String",
@@ -89,7 +95,11 @@ M.config = function()
   local buttons = {
     type = "group",
     val = {
-      button("f", " " .. kind.cmp_kind.Folder .. " Explore", "<cmd>lua require('lvim.core.telescope.custom-finders').find_project_files()<CR>"),
+      button(
+        "f",
+        " " .. kind.cmp_kind.Folder .. " Explore",
+        "<cmd>lua require('lvim.core.telescope.custom-finders').find_project_files()<CR>"
+      ),
       button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
       button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
       button(
