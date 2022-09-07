@@ -482,11 +482,11 @@ function M.tab(fallback)
     fallback()
   elseif luasnip.expand_or_locally_jumpable() then
     luasnip.expand_or_jump()
-  elseif methods.jumpable(1) then
-    luasnip.jump(1)
   elseif copilot_keys ~= "" then -- prioritise copilot over snippets
     -- Copilot keys do not need to be wrapped in termcodes
     vim.api.nvim_feedkeys(copilot_keys, "i", true)
+  elseif methods.jumpable(1) then
+    luasnip.jump(1)
   elseif methods.has_words_before() then
     cmp.complete()
   else
