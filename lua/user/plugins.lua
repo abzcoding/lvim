@@ -587,6 +587,7 @@ M.config = function()
       config = function()
         require("user.legendary").config()
       end,
+      disable = not lvim.builtin.legendary.active,
     },
     {
       "stevearc/dressing.nvim",

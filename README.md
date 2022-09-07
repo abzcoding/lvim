@@ -398,7 +398,6 @@ _Symbols Outline_
 - [fidget](https://github.com/j-hui/fidget.nvim)
 - [clangd_extensions.nvim](https://github.com/p00f/clangd_extensions.nvim)
 - [crates.nvim](https://github.com/Saecki/crates.nvim)
-- [legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 - [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim)
 
 ### Optional Plugins
@@ -439,6 +438,7 @@ _Symbols Outline_
 - [winbar.nvim](https://github.com/fgheng/winbar.nvim)
 - [lsp_lines.nvim](https://git.sr.ht/~whynothugo/lsp_lines.nvim)
 - [neotest](https://github.com/nvim-neotest/neotest)
+- [legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 
 </details>
 

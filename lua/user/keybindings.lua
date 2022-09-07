@@ -267,8 +267,11 @@ M.config = function()
     s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
   }
-  lvim.builtin.which_key.mappings["C"] = { "<cmd>lua require('legendary').find('commands')<cr>", " Command Palette" }
-  lvim.keys.normal_mode["<c-P>"] = "<cmd>lua require('legendary').find()<cr>"
+  if lvim.builtin.legendary.active then
+    lvim.builtin.which_key.mappings["C"] =
+      { "<cmd>lua require('legendary').find('commands')<cr>", " Command Palette" }
+    lvim.keys.normal_mode["<c-P>"] = "<cmd>lua require('legendary').find()<cr>"
+  end
 
   if lvim.builtin.file_browser.active then
     lvim.builtin.which_key.mappings["se"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
