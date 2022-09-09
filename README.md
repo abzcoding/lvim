@@ -135,7 +135,7 @@ lvim.plugins = {
 
 ### Prerequisites
 
-- [Neovim](neovim-install) >= v0.6.0
+- [Neovim](neovim-install) >= v0.7.0
 
 ```shell
   brew install neovim --nightly
