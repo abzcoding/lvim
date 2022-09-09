@@ -137,6 +137,11 @@ M.config = function()
   local alpha_opts = require("user.dashboard").config()
   lvim.builtin.alpha["custom"] = { config = alpha_opts }
 
+  -- GitSigns
+  -- =========================================
+  lvim.builtin.gitsigns.opts._threaded_diff = true
+  lvim.builtin.gitsigns.opts._extmark_signs = true
+
   -- LSP
   -- =========================================
   lvim.lsp.buffer_mappings.normal_mode["ga"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
@@ -232,6 +237,11 @@ M.config = function()
   -- =========================================
   lvim.builtin.project.active = true
   lvim.builtin.project.detection_methods = { "lsp", "pattern" }
+
+  -- Toggleterm
+  -- =========================================
+  lvim.builtin.terminal.autochdir = true
+
 
   -- Treesitter
   -- =========================================

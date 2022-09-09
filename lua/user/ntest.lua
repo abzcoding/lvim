@@ -6,6 +6,15 @@ M.config = function()
     return
   end
 
+  local namespace = vim.api.nvim_create_namespace "neotest"
+  vim.diagnostic.config({
+    virtual_text = {
+      format = function(diagnostic)
+        return diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+      end,
+    },
+  }, namespace)
+
   nt.setup {
     running = {
       concurrent = false,
@@ -20,10 +29,10 @@ M.config = function()
       },
     },
     discovery = {
-      enabled = false,
+      enabled = true,
     },
     diagnostic = {
-      enabled = false,
+      enabled = true,
     },
     icons = {
       running = require("user.lsp_kind").icons.clock,

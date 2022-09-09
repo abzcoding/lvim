@@ -117,6 +117,7 @@ M.config = function()
         },
       },
     },
+    hover = { enabled = true, reveal = { "close" } },
     offsets = {
       {
         text = "EXPLORER",

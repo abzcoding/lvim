@@ -7,7 +7,7 @@ M.config = function()
   end
   flt.setup {
     ui = { border = "rounded" },
-    debugger = { enabled = true, run_via_dap = true },
+    debugger = { enabled = true, run_via_dap = true, exception_breakpoints = {} },
     outline = { auto_open = false },
     decorations = {
       statusline = { device = true, app_version = true },
