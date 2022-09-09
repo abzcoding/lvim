@@ -1,3 +1,4 @@
+; extends
 (
  (function_call
    (identifier) @require_call
