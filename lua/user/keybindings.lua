@@ -371,6 +371,8 @@ M.config = function()
         o = { "<cmd>lua require('neotest').output.open({ enter = true, short = false })<cr>", "Output" },
         r = { "<cmd>lua require('neotest').run.run({env=require('user.ntest').get_env()})<cr>", "Run" },
         a = { "<cmd>lua require('user.ntest').run_all()<cr>", "Run All" },
+        c = { "<cmd>lua require('user.ntest').cancel()<cr>", "Cancel" },
+        R = { "<cmd>lua require('user.ntest').run_file_sync()<cr>", "Run Async" },
         s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
         n = { "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>", "jump to next failed" },
         p = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "jump to previous failed" },

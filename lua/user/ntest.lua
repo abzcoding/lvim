@@ -95,4 +95,12 @@ M.run_all = function()
   end
 end
 
+M.cancel = function()
+  require("neotest").run.stop { interactive = true }
+end
+
+M.run_file_sync = function()
+  require("neotest").run.run { vim.fn.expand "%", concurrent = false }
+end
+
 return M
