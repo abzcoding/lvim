@@ -77,7 +77,7 @@ if user and user == "abz" then
   lvim.use_icons = false -- only set to false if you know what are you doing
   lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
   lvim.lsp.document_highlight = false
-  lvim.builtin.task_runner = "overseer"
+  lvim.builtin.task_runner = "async_tasks"
   lvim.builtin.dap.active = true
   vim.g.instant_username = user
   lvim.builtin.global_statusline = true
