@@ -605,12 +605,12 @@ Note that,
 
 | Key                               | Mode | Action                           |
 | --------------------------------- | :--: | -------------------------------- |
-| <kbd>Space</kbd>+<kbd>Space</kbd> |  𝐍   | show harpoon shortlist           |
-| <kbd>Space</kbd>+<kbd>a</kbd>     |  𝐍   | add file to shortlist            |
-| <kbd>Space</kbd>+<kbd>1</kbd>     |  𝐍   | jump to first file on shortlist  |
-| <kbd>Space</kbd>+<kbd>2</kbd>     |  𝐍   | jump to second file on shortlist |
-| <kbd>Space</kbd>+<kbd>3</kbd>     |  𝐍   | jump to third file on shortlist  |
-| <kbd>Space</kbd>+<kbd>4</kbd>     |  𝐍   | jump to forth file on shortlist  |
+| <kbd>Space</kbd>+<kbd>Space</kbd> |  𝐍   | Show harpoon shortlist           |
+| <kbd>Space</kbd>+<kbd>a</kbd>     |  𝐍   | Add file to shortlist            |
+| <kbd>Space</kbd>+<kbd>1</kbd>     |  𝐍   | Jump to first file on shortlist  |
+| <kbd>Space</kbd>+<kbd>2</kbd>     |  𝐍   | Jump to second file on shortlist |
+| <kbd>Space</kbd>+<kbd>3</kbd>     |  𝐍   | Jump to third file on shortlist  |
+| <kbd>Space</kbd>+<kbd>4</kbd>     |  𝐍   | Jump to forth file on shortlist  |
 
 ### Plugin: Neogen
 
@@ -625,20 +625,20 @@ Note that,
 
 | Key                                        | Mode | Action                                |
 | ------------------------------------------ | :--: | ------------------------------------- |
-| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>d</kbd> |  𝐍   | quit without saving session           |
-| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>l</kbd> |  𝐍   | restore last session                  |
-| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>s</kbd> |  𝐍   | restore last session from current dir |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>d</kbd> |  𝐍   | Quit without saving session           |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>l</kbd> |  𝐍   | Restore last session                  |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>s</kbd> |  𝐍   | Restore last session from current dir |
 
 ### Plugin: Bufferline
 
 | Key                                        | Mode | Action               |
 | ------------------------------------------ | :--: | -------------------- |
-| <kbd>Shift</kbd>+<kbd>x</kbd>              |  𝐍   | close buffer         |
-| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>f</kbd> |  𝐍   | find buffer          |
-| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>b</kbd> |  𝐍   | toggle buffer groups |
-| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>p</kbd> |  𝐍   | toggle pin           |
-| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>s</kbd> |  𝐍   | pick buffer          |
-| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>1</kbd> |  𝐍   | goto buffer 1        |
+| <kbd>Shift</kbd>+<kbd>x</kbd>              |  𝐍   | Close buffer         |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>f</kbd> |  𝐍   | Find buffer          |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>b</kbd> |  𝐍   | Toggle buffer groups |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>p</kbd> |  𝐍   | Toggle pin           |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>s</kbd> |  𝐍   | Pick buffer          |
+| <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>1</kbd> |  𝐍   | Goto buffer 1        |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>h</kbd> |  𝐍   | Close all to left    |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>l</kbd> |  𝐍   | Close all to right   |
 | <kbd>Space</kbd>+<kbd>b</kbd>+<kbd>D</kbd> |  𝐍   | Sort by directory    |
@@ -648,48 +648,49 @@ Note that,
 
 | Key                                        | Mode | Action                |
 | ------------------------------------------ | :--: | --------------------- |
-| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>d</kbd> |  𝐍   | diagnostics           |
-| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>f</kbd> |  𝐍   | definitions           |
-| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>r</kbd> |  𝐍   | references            |
-| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>t</kbd> |  𝐍   | todo                  |
-| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>w</kbd> |  𝐍   | workspace diagnostics |
+| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>d</kbd> |  𝐍   | Diagnostics           |
+| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>f</kbd> |  𝐍   | Definitions           |
+| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>r</kbd> |  𝐍   | References            |
+| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>t</kbd> |  𝐍   | Todo                  |
+| <kbd>Space</kbd>+<kbd>T</kbd>+<kbd>w</kbd> |  𝐍   | Workspace diagnostics |
 
 ### Plugin: Ultest
 
 | Key                                        | Mode | Action                  |
 | ------------------------------------------ | :--: | ----------------------- |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | run all tests in a file |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | only run nearest test   |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | open test summary       |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | Run all tests in a file |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | Only run nearest test   |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | Open test summary       |
 
 ### Plugin: Neotest
 
 | Key                                        | Mode | Action                       |
 | ------------------------------------------ | :--: | ---------------------------- |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>a</kbd> |  𝐍   | run all tests                |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | run tests in a file          |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>r</kbd> |  𝐍   | only run nearest test        |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | open test summary            |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>o</kbd> |  𝐍   | open test output             |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>w</kbd> |  𝐍   | watch test                   |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>x</kbd> |  𝐍   | stop test                    |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | jump to next failed test     |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>p</kbd> |  𝐍   | jump to previous failed test |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>a</kbd> |  𝐍   | Run all tests                |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | Run tests in a file          |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>r</kbd> |  𝐍   | Only run nearest test        |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | Open test summary            |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>o</kbd> |  𝐍   | Open test output             |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>w</kbd> |  𝐍   | Watch test                   |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>x</kbd> |  𝐍   | Stop test                    |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | Jump to next failed test     |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>p</kbd> |  𝐍   | Jump to previous failed test |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>c</kbd> |  𝐍   | Cancel test                  |
 
 ### Plugin: Spectre
 
 | Key                                        | Mode | Action                         |
 | ------------------------------------------ | :--: | ------------------------------ |
-| <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>p</kbd> |  𝐍   | replace word in project        |
-| <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>w</kbd> |  𝐍   | replace visually selected word |
-| <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>f</kbd> |  𝐍   | replace word in current buffer |
+| <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>p</kbd> |  𝐍   | Replace word in project        |
+| <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>w</kbd> |  𝐍   | Replace visually selected word |
+| <kbd>Space</kbd>+<kbd>R</kbd>+<kbd>f</kbd> |  𝐍   | Replace word in current buffer |
 
 ### Plugin: Copilot
 
 | Key                          | Mode | Action                              |
 | ---------------------------- | :--: | ----------------------------------- |
 | <kbd>Ctrl</kbd>+<kbd>h</kbd> |  𝐈   | `copilot#Accept("<CR>")`            |
-| <kbd>Ctrl</kbd>+<kbd>e</kbd> |  𝐈   | close cmp menu                      |
+| <kbd>Ctrl</kbd>+<kbd>e</kbd> |  𝐈   | Close cmp menu                      |
 | <kbd>Ctrl</kbd>+<kbd>]</kbd> |  𝐈   | `<Plug>(copilot-dismiss)`           |
 | <kbd>Alt</kbd>+<kbd>]</kbd>  |  𝐈   | `<Plug>(copilot-next)`              |
 | <kbd>Alt</kbd>+<kbd>[</kbd>  |  𝐈   | `<Plug>(copilot-previous)`          |
