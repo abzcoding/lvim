@@ -15,7 +15,7 @@ M.config = function()
     },
   }, namespace)
 
-  nt.setup {
+  local opts = {
     running = {
       concurrent = false,
     },
@@ -53,6 +53,18 @@ M.config = function()
       require "neotest-plenary",
     },
   }
+
+  if lvim.builtin.task_runner == "overseer" then
+    opts.consumers = {
+      overseer = require "neotest.consumers.overseer",
+    }
+    opts.overseer = {
+      enabled = true,
+      force_default = true,
+    }
+  end
+
+  nt.setup(opts)
 end
 
 M.get_env = function()

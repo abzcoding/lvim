@@ -524,7 +524,7 @@ M.config = function()
         ]]
       end,
       event = "BufRead",
-      disable = not lvim.builtin.async_tasks.active,
+      disable = lvim.builtin.task_runner ~= "async_tasks",
     },
     {
       "scalameta/nvim-metals",
@@ -640,6 +640,13 @@ M.config = function()
     {
       "vimpostor/vim-tpipeline",
       disable = not lvim.builtin.tmux_lualine,
+    },
+    {
+      "stevearc/overseer.nvim",
+      config = function()
+        require("user.ovs").config()
+      end,
+      disable = lvim.builtin.task_runner ~= "overseer",
     },
   }
 end

@@ -42,6 +42,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
   - [Plugin: Spectre](#plugin-spectre)
   - [Plugin: Copilot](#plugin-copilot)
   - [Plugin: Lsp_Lines](#plugin-lsp_lines)
+  - [Plugin: Overseer](#plugin-overseer)
 - [Troubleshooting](#troubleshooting)
 
 <!-- vim-markdown-toc -->
@@ -118,7 +119,7 @@ lvim.plugins = {
 - if you don't need CSV support, disable it
   - `lvim.builtin.csv_support = false`
 - if you want to use the cool make and run system, enable it
-  - `lvim.builtin.async_tasks = { active = true }`
+  - `lvim.builtin.task_runner = "async_tasks"
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 
@@ -439,6 +440,7 @@ _Symbols Outline_
 - [lsp_lines.nvim](https://git.sr.ht/~whynothugo/lsp_lines.nvim)
 - [neotest](https://github.com/nvim-neotest/neotest)
 - [legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
+- [overseer.nvim](https://github.com/stevearc/overseer.nvim)
 
 </details>
 
@@ -698,6 +700,19 @@ Note that,
 | Key                           | Mode | Action                   |
 | ----------------------------- | :--: | ------------------------ |
 | <kbd>Space</kbd>+<kbd>v</kbd> |  𝐍   | Toggle showing lsp_lines |
+
+### Plugin: Overseer
+
+| Key                                        | Mode | Action           |
+| ------------------------------------------ | :--: | ---------------- |
+| <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>f</kbd> |  𝐍   | Run              |
+| <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>p</kbd> |  𝐍   | Run with cmd     |
+| <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>t</kbd> |  𝐍   | Toggle output    |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>n</kbd> |  𝐍   | New Task         |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>l</kbd> |  𝐍   | Load Task Bundle |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>s</kbd> |  𝐍   | Save Task Bundle |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>q</kbd> |  𝐍   | Quick Action     |
+| <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>f</kbd> |  𝐍   | Task Action      |
 
 </details>
 

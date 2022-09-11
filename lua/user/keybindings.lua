@@ -157,8 +157,8 @@ local function set_harpoon_keymaps()
   }
 end
 
-M.set_async_tasks_keymaps = function()
-  if lvim.builtin.async_tasks.active then
+M.set_task_runner_keymaps = function()
+  if lvim.builtin.task_runner == "async_tasks" then
     lvim.builtin.which_key.mappings["m"] = {
       name = " Make",
       f = { "<cmd>AsyncTask file-build<cr>", "File" },
@@ -170,6 +170,22 @@ M.set_async_tasks_keymaps = function()
       name = " Run",
       f = { "<cmd>AsyncTask file-run<cr>", "File" },
       p = { "<cmd>AsyncTask project-run<cr>", "Project" },
+    }
+  elseif lvim.builtin.task_runner == "overseer" then
+    lvim.builtin.which_key.mappings["m"] = {
+      name = " Tasks",
+      l = { "<cmd>OverseerLoadBundle<CR>", "Load Bundle" },
+      s = { "<cmd>OverseerSaveBundle<CR>", "Save Bundle" },
+      n = { "<cmd>OverseerBuild<CR>", "New Task" },
+      q = { "<cmd>OverseerQuickAction<CR>", "Quick Action" },
+      f = { "<cmd>OverseerTaskAction<CR>", "Task Action" },
+      t = { "<cmd>OverseerToggle<cr>", "Toggle Output" },
+    }
+    lvim.builtin.which_key.mappings["r"] = {
+      name = " Run",
+      f = { "<cmd>OverseerRun<cr>", "Run" },
+      p = { "<cmd>OverseerRunCmd<cr>", "Run with Cmd" },
+      t = { "<cmd>OverseerToggle<cr>", "Toggle" },
     }
   else
     lvim.builtin.which_key.mappings["m"] = "Make"
@@ -227,7 +243,7 @@ M.config = function()
 
   -- WhichKey keybindings
   -- =========================================
-  M.set_async_tasks_keymaps()
+  M.set_task_runner_keymaps()
   local status_ok_comment, cmt = pcall(require, "Comment.api")
   if status_ok_comment and cmt["toggle"] ~= nil then
     lvim.builtin.which_key.mappings["/"] = {

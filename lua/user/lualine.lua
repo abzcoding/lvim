@@ -402,6 +402,13 @@ M.config = function()
     },
   }
 
+  if lvim.builtin.task_runner == "overseer" then
+    ins_left {
+      "provider",
+      unique = true,
+    }
+  end
+
   -- Insert mid section. You can make any number of sections in neovim :)
   -- for lualine it's any number greater then 2
   -- ins_left {
@@ -450,18 +457,11 @@ M.config = function()
       end
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
-      local trim_width = 120
-      if lvim.builtin.global_statusline then
-        trim_width = 100
-      end
-      local trim = vim.fn.winwidth(0) < trim_width
 
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
           local _added_client = client.name
-          if trim then
-            _added_client = string.sub(client.name, 1, 4)
-          end
+          _added_client = string.sub(client.name, 1, 4)
           table.insert(buf_client_names, _added_client)
         end
       end
@@ -471,9 +471,7 @@ M.config = function()
       local supported_formatters = {}
       for _, fmt in pairs(formatters.list_registered(buf_ft)) do
         local _added_formatter = fmt
-        if trim then
-          _added_formatter = string.sub(fmt, 1, 4)
-        end
+        _added_formatter = string.sub(fmt, 1, 4)
         table.insert(supported_formatters, _added_formatter)
       end
       vim.list_extend(buf_client_names, supported_formatters)
@@ -483,9 +481,7 @@ M.config = function()
       local supported_linters = {}
       for _, lnt in pairs(linters.list_registered(buf_ft)) do
         local _added_linter = lnt
-        if trim then
-          _added_linter = string.sub(lnt, 1, 4)
-        end
+        _added_linter = string.sub(lnt, 1, 4)
         table.insert(supported_linters, _added_linter)
       end
       vim.list_extend(buf_client_names, supported_linters)
