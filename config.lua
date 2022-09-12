@@ -41,8 +41,8 @@ lvim.builtin.task_runner = "" -- change this to use different task runners ( "as
 lvim.builtin.winbar_provider = "filename" -- can be "filename" or "treesitter" or ""
 lvim.builtin.metals = {
   active = false, -- enable/disable nvim-metals for scala development
-  fallbackScalaVersion = "2.13.7",
-  serverVersion = "0.10.9+271-a8bb69f6-SNAPSHOT",
+  fallbackScalaVersion = "3.2.0-RC3",
+  serverVersion = "0.11.8",
 }
 lvim.builtin.collaborative_editing = { active = false } -- enable/disable collaborative editing
 lvim.builtin.file_browser = { active = false } -- enable/disable telescope file browser

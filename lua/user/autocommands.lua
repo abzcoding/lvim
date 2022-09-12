@@ -71,11 +71,13 @@ augroup END
     pattern = "go",
     command = "nnoremap <leader>H <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
   })
-  create_aucmd("Filetype", {
-    group = "_lvim_user",
-    pattern = { "scala", "sbt", "java" },
-    command = "lua require('user.metals').config()",
-  })
+  if lvim.builtin.metals.active then
+    create_aucmd("Filetype", {
+      group = "_lvim_user",
+      pattern = { "scala", "sbt" },
+      callback = require("user.metals").start,
+    })
+  end
   create_aucmd("FileType", {
     group = "_lvim_user",
     pattern = "java",
