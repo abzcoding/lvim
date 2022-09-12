@@ -160,7 +160,16 @@ M.config = function()
     separator_style = os.getenv "KITTY_WINDOW_ID" and "slant" or "thin",
     right_mouse_command = "vert sbuffer %d",
     show_close_icon = false,
-    indicator = { style = "bold" },
+    -- indicator = { style = "bold" },
+    indicator = {
+      icon = "▎", -- this should be omitted if indicator style is not 'icon'
+      style = "icon", -- can also be 'underline'|'none',
+    },
+    max_name_length = 18,
+    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+    truncate_names = true, -- whether or not tab names should be truncated
+    tab_size = 18,
+    color_icons = true,
     show_buffer_close_icons = true,
     diagnostics_update_in_insert = false,
   }
