@@ -1,34 +1,52 @@
 local M = {}
 
 M.tokyonight = function()
-  vim.g.tokyonight_dev = true
-  vim.g.tokyonight_style = "storm"
-  vim.g.tokyonight_sidebars = {
-    "qf",
-    "vista_kind",
-    "terminal",
-    "packer",
-    "spectre_panel",
-    "NeogitStatus",
-    "help",
+  require("tokyonight").setup {
+    style = "storm",
+    transparent = lvim.transparent_window,
+    terminal_colors = true,
+    styles = {
+      comments = {},
+      keywords = { italic = true },
+      functions = {},
+      variables = {},
+      sidebars = "dark",
+      floats = "dark",
+    },
+    sidebars = {
+      "qf",
+      "vista_kind",
+      "terminal",
+      "packer",
+      "spectre_panel",
+      "NeogitStatus",
+      "help",
+    },
+    day_brightness = 0.3,
+    hide_inactive_statusline = true,
+    dim_inactive = true,
+    lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+
+    on_colors = function(colors)
+      colors.git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" }
+      colors.bg_dark = "#1a1e30"
+      colors.bg_dim = "#1f2335"
+      colors.bg_float = "#1a1e30"
+    end,
+    on_highlights = function(hl, c)
+      c.bg_dark = "#1a1e30"
+      c.bg_dim = "#1f2335"
+      c.bg_float = "#1a1e30"
+      hl.VertSplit = { fg = c.bg_statusline, bg = c.bg_statusline, style = "NONE" }
+      hl.WinSeparator = { fg = c.bg_dark, bg = c.bg_dark }
+      hl.SignColumn = { fg = c.fg_gutter, bg = "NONE" }
+      hl.SignColumnSB = { link = "SignColumn" }
+      hl.NormalNC = { fg = c.fg_dark, bg = c.bg_dim }
+      hl.TelescopeBorder = { fg = c.border_highlight, bg = lvim.transparent_window and c.bg_float or c.none }
+      hl.TelescopeNormal = { fg = c.fg, bg = lvim.transparent_window and c.bg_float or c.none }
+      hl.NvimTreeFolderIcon = { bg = c.none, fg = c.yellow }
+    end,
   }
-  vim.g.tokyonight_cterm_colors = false
-  vim.g.tokyonight_terminal_colors = true
-  vim.g.tokyonight_italic_comments = false
-  vim.g.tokyonight_italic_keywords = true
-  vim.g.tokyonight_italic_functions = false
-  vim.g.tokyonight_italic_variables = false
-  vim.g.tokyonight_transparent = lvim.transparent_window
-  vim.g.tokyonight_hide_inactive_statusline = true
-  vim.g.tokyonight_dark_sidebar = true
-  vim.g.tokyonight_dim_inactive = true
-  vim.g.tokyonight_global_status = true
-  vim.g.tokyonight_dark_float = true
-  vim.g.tokyonight_colors = { git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" } }
-  local _time = os.date "*t"
-  if _time.hour < 8 then
-    vim.g.tokyonight_style = "night"
-  end
 end
 
 M.rose_pine = function()

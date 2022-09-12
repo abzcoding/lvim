@@ -19,8 +19,7 @@ M.config = function()
       end,
     },
     {
-      "abzcoding/tokyonight.nvim",
-      branch = "feat/local",
+      "folke/tokyonight.nvim",
       config = function()
         require("user.theme").tokyonight()
         vim.cmd [[colorscheme tokyonight]]
