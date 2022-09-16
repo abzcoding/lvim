@@ -22,7 +22,10 @@ M.config = function()
       },
       settings = {
         showTodos = false,
-        renameFilesWithClasses = "always",
+        renameFilesWithClasses = "prompt",
+        updateImportsOnRename = true,
+        completeFunctionCalls = true,
+        lineLength = 100,
       },
       on_attach = require("lvim.lsp").common_on_attach,
     },
