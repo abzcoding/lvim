@@ -155,6 +155,12 @@ M.config = function()
     "CodeLens Action",
   }
   lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
+  lvim.lsp.buffer_mappings.normal_mode["gp"] = {
+    function()
+      require("user.peek").Peek "definition"
+    end,
+    "Peek definition",
+  }
   lvim.lsp.buffer_mappings.normal_mode["K"] = {
     "<cmd>lua require('user.builtin').show_documentation()<CR>",
     "Show Documentation",

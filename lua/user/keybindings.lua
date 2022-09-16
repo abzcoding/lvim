@@ -322,6 +322,12 @@ M.config = function()
     name = "+Lsp",
     r = { "<ESC><CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
   }
+  lvim.builtin.which_key.mappings["lp"] = {
+    name = "Peek",
+    d = { "<cmd>lua require('user.peek').Peek('definition')<cr>", "Definition" },
+    t = { "<cmd>lua require('user.peek').Peek('typeDefinition')<cr>", "Type Definition" },
+    i = { "<cmd>lua require('user.peek').Peek('implementation')<cr>", "Implementation" },
+  }
   lvim.builtin.which_key.mappings["lh"] = {
     "<cmd>hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b<cr>",
     "Clear HL",
