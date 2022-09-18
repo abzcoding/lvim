@@ -87,12 +87,16 @@ end
 
 M.catppuccin = function()
   local catppuccin = require "catppuccin"
-  catppuccin.setup {
+  local opts = {
     transparent_background = lvim.transparent_window,
     term_colors = false,
     styles = {
       comments = {},
       keywords = { "italic" },
+    },
+    compile = {
+      enabled = true, -- NOTE: make sure to run `:CatppuccinCompile`
+      path = vim.fn.stdpath "cache" .. "/catppuccin",
     },
     dim_inactive = {
       enabled = lvim.builtin.global_statusline,
@@ -100,17 +104,18 @@ M.catppuccin = function()
       percentage = 0.15,
     },
     integrations = {
+      cmp = true,
+      fidget = true,
       lsp_trouble = true,
-      nvimtree = {
-        transparent_panel = lvim.transparent_window,
-      },
+      telescope = true,
+      treesitter = true,
       native_lsp = {
         enabled = true,
         virtual_text = {
           errors = { "italic" },
-          hints = { "italic" },
+          hints = {},
           warnings = { "italic" },
-          information = { "italic" },
+          information = {},
         },
         underlines = {
           errors = { "undercurl" },
@@ -119,11 +124,44 @@ M.catppuccin = function()
           information = {},
         },
       },
-      which_key = true,
+      dap = {
+        enabled = lvim.builtin.dap.active,
+        enable_ui = lvim.builtin.dap.active,
+      },
+      indent_blankline = {
+        enabled = true,
+        colored_indent_levels = true,
+      },
+      gitsigns = lvim.builtin.gitsigns.active,
+      notify = lvim.builtin.notify.active,
+      nvimtree = lvim.builtin.nvimtree.active,
+      overseer = lvim.builtin.task_runner == "overseer",
+      symbols_outline = lvim.builtin.tag_provider == "symbols-outline",
+      which_key = lvim.builtin.which_key.active,
       lightspeed = lvim.builtin.motion_provider == "lightspeed",
       hop = lvim.builtin.motion_provider == "hop",
     },
+    highlight_overrides = {
+      mocha = {
+        NormalFloat = { fg = "#CDD6F4", bg = "#151521" },
+      },
+    },
   }
+  if lvim.transparent_window then
+    local colors = require("catppuccin.palettes").get_palette()
+    colors.none = "NONE"
+    opts.custom_highlights = {
+      Comment = { fg = colors.overlay1 },
+      LineNr = { fg = colors.overlay1 },
+      CursorLine = { bg = colors.none },
+      CursorLineNr = { fg = colors.lavender },
+      DiagnosticVirtualTextError = { bg = colors.none },
+      DiagnosticVirtualTextWarn = { bg = colors.none },
+      DiagnosticVirtualTextInfo = { bg = colors.none },
+      DiagnosticVirtualTextHint = { bg = colors.none },
+    }
+  end
+  catppuccin.setup(opts)
 end
 
 M.kanagawa = function()
