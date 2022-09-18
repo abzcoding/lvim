@@ -43,6 +43,7 @@ I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly �
   - [Plugin: Copilot](#plugin-copilot)
   - [Plugin: Lsp_Lines](#plugin-lsp_lines)
   - [Plugin: Overseer](#plugin-overseer)
+  - [Plugin: NeoTree](#plugin-neotree)
 - [Troubleshooting](#troubleshooting)
 
 <!-- vim-markdown-toc -->
@@ -119,7 +120,9 @@ lvim.plugins = {
 - if you don't need CSV support, disable it
   - `lvim.builtin.csv_support = false`
 - if you want to use the cool make and run system, enable it
-  - `lvim.builtin.task_runner = "async_tasks"
+  - `lvim.builtin.task_runner = "async_tasks"`
+- you can choose between `nvimtree` and `neo-tree` as your file tree viewer
+  - `lvim.builtin.tree_provider = "neo-tree"`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 
@@ -441,6 +444,7 @@ _Symbols Outline_
 - [neotest](https://github.com/nvim-neotest/neotest)
 - [legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 - [overseer.nvim](https://github.com/stevearc/overseer.nvim)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim/blob/v2.x)
 
 </details>
 
@@ -714,6 +718,22 @@ Note that,
 | <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>s</kbd> |  𝐍   | Save Task Bundle |
 | <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>q</kbd> |  𝐍   | Quick Action     |
 | <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>f</kbd> |  𝐍   | Task Action      |
+
+### Plugin: NeoTree
+
+| Key                           | Mode | Action                           |
+| ----------------------------- | :--: | -------------------------------- |
+| <kbd>Space</kbd>+<kbd>e</kbd> |  𝐍   | Toggle tree                      |
+| <kbd>></kbd> and <kbd><</kbd> |  𝐍   | Next and prev source inside tree |
+| <kbd><cr></kbd>               |  𝐍   | Open                             |
+| <kbd>s</kbd>                  |  𝐍   | Open in vertical split           |
+| <kbd>S</kbd>                  |  𝐍   | Open in horizontal spit          |
+| <kbd>H</kbd>                  |  𝐍   | Toggle hidden files              |
+| <kbd>a</kbd>                  |  𝐍   | Add files/dirs                   |
+| <kbd>A</kbd>                  |  𝐍   | Add new dir                      |
+| <kbd>r</kbd>                  |  𝐍   | Rename                           |
+| <kbd>P</kbd>                  |  𝐍   | Toggle preview                   |
+| <kbd>/</kbd>                  |  𝐍   | Fuzzy finder                     |
 
 </details>
 

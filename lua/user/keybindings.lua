@@ -270,6 +270,9 @@ M.config = function()
   if lvim.builtin.lsp_lines then
     M.set_lsp_lines_keymap()
   end
+  if lvim.builtin.tree_provider == "neo-tree" then
+    lvim.builtin.which_key.mappings["e"] = { ":NeoTreeRevealToggle<CR>", "Tree" }
+  end
   lvim.builtin.which_key.mappings["F"] = {
     name = " Find",
     b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },

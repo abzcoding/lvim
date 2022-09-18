@@ -647,6 +647,17 @@ M.config = function()
       end,
       disable = lvim.builtin.task_runner ~= "overseer",
     },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v2.x",
+      requires = {
+        "MunifTanjim/nui.nvim",
+      },
+      config = function()
+        require("user.neotree").config()
+      end,
+      disable = lvim.builtin.tree_provider ~= "neo-tree",
+    },
   }
 end
 

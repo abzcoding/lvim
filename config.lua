@@ -4,6 +4,7 @@ lvim.format_on_save = false
 lvim.leader = " "
 lvim.colorscheme = "pablo" -- set to a custom theme
 lvim.builtin.time_based_themes = true -- set false to use your own configured theme
+lvim.transparent_window = false -- enable/disable transparency
 lvim.debug = false
 vim.lsp.set_log_level "warn"
 lvim.log.level = "warn"
@@ -58,6 +59,7 @@ if lvim.builtin.lsp_lines then
   lvim.lsp.diagnostics.virtual_text = false
 end
 lvim.builtin.legendary = { active = false } -- enable/disable legendary plugin ( ctrl-p command )
+lvim.builtin.tree_provider = "nvimtree" -- can be "neo-tree" or "nvimtree" or ""
 
 local user = os.getenv "USER"
 if user and user == "abz" then
@@ -91,8 +93,10 @@ if user and user == "abz" then
     filter = require("lvim.lsp.utils").format_filter,
   }
   lvim.builtin.smooth_scroll = "cinnamon"
+  lvim.builtin.tree_provider = "neo-tree"
   require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
+lvim.builtin.nvimtree.active = lvim.builtin.tree_provider == "nvimtree"
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
