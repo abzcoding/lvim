@@ -9,6 +9,8 @@ M.set_wezterm_keybindings = function()
   lvim.keys.insert_mode["˚"] = lvim.keys.insert_mode["<A-k>"]
   lvim.keys.normal_mode["å"] = lvim.keys.normal_mode["<A-a>"]
   lvim.keys.normal_mode["≈"] = lvim.keys.normal_mode["<A-x>"]
+  lvim.keys.visual_mode["å"] = lvim.keys.visual_mode["<A-a>"]
+  lvim.keys.visual_mode["≈"] = lvim.keys.visual_mode["<A-x>"]
 end
 
 M.set_terminal_keymaps = function()
@@ -238,6 +240,8 @@ M.config = function()
   if lvim.builtin.harpoon.active then
     set_harpoon_keymaps()
   end
+  lvim.keys.visual_mode["<A-a>"] = "<C-a>"
+  lvim.keys.visual_mode["<A-x>"] = "<C-x>"
   lvim.keys.visual_mode["p"] = [["_dP]]
   lvim.keys.visual_mode["ga"] = "<esc><Cmd>lua vim.lsp.buf.range_code_action()<CR>"
   lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
