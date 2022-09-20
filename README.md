@@ -377,7 +377,6 @@ _Symbols Outline_
 <details>
   <summary><strong>Plugins</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
 
-- [Tokyonight Theme](https://github.com/folke/tokyonight.nvim/)
 - [Doom One Theme](https://github.com/NTBBloodbath/doom-one.nvim)
 - [Rose Pine Theme](https://github.com/rose-pine/neovim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)

@@ -245,6 +245,12 @@ M.config = function()
   lvim.builtin.project.active = true
   lvim.builtin.project.detection_methods = { "lsp", "pattern" }
 
+  -- Theme
+  -- =========================================
+  lvim.builtin.theme.options.style = "storm"
+  lvim.builtin.theme.options.styles.comments = {}
+  lvim.builtin.theme.options.dim_inactive = true
+
   -- Toggleterm
   -- =========================================
   lvim.builtin.terminal.autochdir = true

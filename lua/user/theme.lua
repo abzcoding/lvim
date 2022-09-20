@@ -1,54 +1,5 @@
 local M = {}
 
-M.tokyonight = function()
-  require("tokyonight").setup {
-    style = "storm",
-    transparent = lvim.transparent_window,
-    terminal_colors = true,
-    styles = {
-      comments = {},
-      keywords = { italic = true },
-      functions = {},
-      variables = {},
-      sidebars = "dark",
-      floats = "dark",
-    },
-    sidebars = {
-      "qf",
-      "vista_kind",
-      "terminal",
-      "packer",
-      "spectre_panel",
-      "NeogitStatus",
-      "help",
-    },
-    day_brightness = 0.3,
-    hide_inactive_statusline = true,
-    dim_inactive = true,
-    lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
-
-    on_colors = function(colors)
-      colors.git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" }
-      colors.bg_dark = "#1a1e30"
-      colors.bg_dim = "#1f2335"
-      colors.bg_float = "#1a1e30"
-    end,
-    on_highlights = function(hl, c)
-      c.bg_dark = "#1a1e30"
-      c.bg_dim = "#1f2335"
-      c.bg_float = "#1a1e30"
-      hl.VertSplit = { fg = c.bg_statusline, bg = c.bg_statusline, style = "NONE" }
-      hl.WinSeparator = { fg = c.bg_dark, bg = c.bg_dark }
-      hl.SignColumn = { fg = c.fg_gutter, bg = "NONE" }
-      hl.SignColumnSB = { link = "SignColumn" }
-      hl.NormalNC = { fg = c.fg_dark, bg = c.bg_dim }
-      hl.TelescopeBorder = { fg = c.border_highlight, bg = lvim.transparent_window and c.bg_float or c.none }
-      hl.TelescopeNormal = { fg = c.fg, bg = lvim.transparent_window and c.bg_float or c.none }
-      hl.NvimTreeFolderIcon = { bg = c.none, fg = c.yellow }
-    end,
-  }
-end
-
 M.rose_pine = function()
   require("rose-pine").setup {
     ---@usage 'main'|'moon'
@@ -370,6 +321,37 @@ M.telescope_theme = function()
 
   local function set_fg_bg(group, fg, bg)
     vim.cmd("hi " .. group .. " guifg=" .. fg .. " guibg=" .. bg)
+  end
+
+  local _time = os.date "*t"
+  if _time.hour >= 9 and _time.hour < 17 then
+    -- HACK: change highlights for tokyonight theme
+    local bg = "#24283b"
+    local bg_dark = "#1a1e30"
+    local bg_dim = "#1f2335"
+    local bg_float = "#1a1e30"
+    local fg = "#c0caf5"
+    local fg_gutter = "#3b4261"
+    local fg_dark = "#a9b1d6"
+    local border_highlight = "#3d59a1"
+    local yellow = "#e0af68"
+    local git_added = "#449dab"
+    local git_removed = "#f7768e"
+    local git_changed = "#6183bb"
+    -- local git_changed = "#bb7a61"
+    set_fg_bg("NormalFloat", fg, bg_float)
+    set_fg_bg("Cursor", bg, fg)
+    set_fg_bg("VertSplit", bg_dark, bg_dark)
+    set_fg_bg("WinSeparator", bg_dark, bg_dark)
+    set_fg_bg("SignColumn", fg_gutter, "NONE")
+    set_fg_bg("SignColumnSB", fg_gutter, "NONE")
+    set_fg_bg("NormalNC", fg_dark, bg_dim)
+    set_fg_bg("TelescopeBorder", border_highlight, lvim.transparent_window and bg_float or "NONE")
+    set_fg_bg("TelescopeNormal", fg, lvim.transparent_window and bg_float or "NONE")
+    set_fg_bg("NvimTreeFolderIcon", yellow, "NONE")
+    set_fg_bg("diffAdded", git_added, "NONE")
+    set_fg_bg("diffRemoved", git_removed, "NONE")
+    set_fg_bg("diffChanged", git_changed, "NONE")
   end
 
   local colors = M.hi_colors()

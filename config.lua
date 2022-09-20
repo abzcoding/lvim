@@ -2,7 +2,7 @@
 -- =========================================
 lvim.format_on_save = false
 lvim.leader = " "
-lvim.colorscheme = "pablo" -- set to a custom theme
+lvim.colorscheme = "tokyonight" -- set to a custom theme
 lvim.builtin.time_based_themes = true -- set false to use your own configured theme
 lvim.transparent_window = false -- enable/disable transparency
 lvim.debug = false
@@ -60,6 +60,9 @@ if lvim.builtin.lsp_lines then
 end
 lvim.builtin.legendary = { active = false } -- enable/disable legendary plugin ( ctrl-p command )
 lvim.builtin.tree_provider = "nvimtree" -- can be "neo-tree" or "nvimtree" or ""
+lvim.builtin.lir.active = false
+lvim.builtin.breadcrumbs.active = false
+lvim.builtin.illuminate.active = false
 
 local user = os.getenv "USER"
 if user and user == "abz" then
@@ -72,7 +75,7 @@ if user and user == "abz" then
   vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)
   lvim.builtin.tmux_lualine = true
   if lvim.builtin.tmux_lualine then
-    vim.opt.cmdheight = 0 -- WARN: =0 only works with the latest neovim
+    vim.opt.cmdheight = 1 -- WARN: =0 is broken on neovim head (https://github.com/neovim/neovim/issues/20243)
     vim.g.tpipeline_cursormoved = 1
   end
   lvim.builtin.custom_web_devicons = true

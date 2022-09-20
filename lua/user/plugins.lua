@@ -19,17 +19,6 @@ M.config = function()
       end,
     },
     {
-      "folke/tokyonight.nvim",
-      config = function()
-        require("user.theme").tokyonight()
-        vim.cmd [[colorscheme tokyonight]]
-      end,
-      cond = function()
-        local _time = os.date "*t"
-        return (_time.hour >= 9 and _time.hour < 17) and lvim.builtin.time_based_themes
-      end,
-    },
-    {
       "catppuccin/nvim",
       as = "catppuccin",
       setup = function()
