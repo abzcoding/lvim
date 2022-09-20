@@ -6,6 +6,9 @@ M.config = function()
     return
   end
 
+  local capabilities = require("lvim.lsp").common_capabilities()
+  capabilities.offsetEncoding = { "utf-16" }
+
   local clangd_flags = {
     "--fallback-style=google",
     "--background-index",
@@ -29,7 +32,7 @@ M.config = function()
       cmd = { "clangd", unpack(clangd_flags) },
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
-      capabilities = require("lvim.lsp").common_capabilities(),
+      capabilities = capabilities,
     },
     extensions = {
       -- defaults:
