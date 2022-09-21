@@ -32,6 +32,11 @@ M.rose_pine = function()
     },
     highlight_groups = {
       Boolean = { fg = "love" },
+      Cursor = { fg = "#232136", bg = "#e0def4" },
+      NormalFloat = { bg = "#191724" },
+      VertSplit = { fg = "#21202e", bg = "#21202e" },
+      SignColumn = { fg = "#e0def4", bg = "NONE" },
+      SignColumnSB = { fg = "#e0def4", bg = "NONE" },
     },
   }
 end
