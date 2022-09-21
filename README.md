@@ -115,7 +115,7 @@ lvim.plugins = {
   - `lvim.builtin.nonumber_unfocus = true`
 - choose between [hop](https://github.com/phaazon/hop.nvim) and [lightspeed](https://github.com/ggandor/lightspeed.nvim) as your favorite motion provider
   - `lvim.builtin.motion_provider = "hop"`
-- choose between [filename->incline](https://github.com/b0o/incline.nvim) and [treesitter->winbar](https://github.com/fgheng/winbar.nvim) as your winbar provider
+- choose between [filename->incline](https://github.com/b0o/incline.nvim) and [treesitter->winbar](https://github.com/fgheng/winbar.nvim) or [navic](https://github.com/SmiteshP/nvim-navic) as your winbar provider
   - `lvim.builtin.winbar_provider = "treesitter"`
 - if you don't need CSV support, disable it
   - `lvim.builtin.csv_support = false`

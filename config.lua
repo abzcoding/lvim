@@ -39,7 +39,7 @@ lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
 lvim.builtin.csv_support = false -- enable/disable csv support
 lvim.builtin.sidebar = { active = false } -- enable/disable sidebar
 lvim.builtin.task_runner = "" -- change this to use different task runners ( "async_tasks" or "overseer" or "")
-lvim.builtin.winbar_provider = "filename" -- can be "filename" or "treesitter" or ""
+lvim.builtin.winbar_provider = "filename" -- can be "filename" or "treesitter" or "navic" or ""
 lvim.builtin.metals = {
   active = false, -- enable/disable nvim-metals for scala development
   fallbackScalaVersion = "3.2.0-RC3",
@@ -98,6 +98,9 @@ if user and user == "abz" then
   lvim.builtin.smooth_scroll = "cinnamon"
   lvim.builtin.tree_provider = "neo-tree"
   require("lvim.lsp.manager").setup("prosemd_lsp", {})
+end
+if lvim.builtin.winbar_provider == "navic" then
+  lvim.builtin.breadcrumbs.active = false
 end
 lvim.builtin.nvimtree.active = lvim.builtin.tree_provider == "nvimtree"
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors

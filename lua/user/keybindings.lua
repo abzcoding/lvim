@@ -255,6 +255,8 @@ M.config = function()
       "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
       " Comment",
     }
+  else
+    lvim.builtin.which_key.mappings["/"] = { "<Plug>(comment_toggle_linewise_current)", " Comment" }
   end
   lvim.builtin.which_key.mappings[";"] = { "<cmd>Alpha<CR>", "舘Dashboard" }
   if lvim.builtin.dap.active then
@@ -275,7 +277,7 @@ M.config = function()
     M.set_lsp_lines_keymap()
   end
   if lvim.builtin.tree_provider == "neo-tree" then
-    lvim.builtin.which_key.mappings["e"] = { ":NeoTreeRevealToggle<CR>", "Tree" }
+    lvim.builtin.which_key.mappings["e"] = { ":NeoTreeRevealToggle<CR>", " Explorer" }
   end
   lvim.builtin.which_key.mappings["F"] = {
     name = " Find",
