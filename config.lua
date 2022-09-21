@@ -63,6 +63,7 @@ lvim.builtin.tree_provider = "nvimtree" -- can be "neo-tree" or "nvimtree" or ""
 lvim.builtin.lir.active = false
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.illuminate.active = false
+lvim.builtin.indentlines.active = true
 
 local user = os.getenv "USER"
 if user and user == "abz" then

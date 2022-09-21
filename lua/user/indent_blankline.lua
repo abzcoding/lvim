@@ -1,12 +1,7 @@
 local M = {}
 
 M.config = function()
-  local status_ok, bl = pcall(require, "indent_blankline")
-  if not status_ok then
-    return
-  end
-
-  bl.setup {
+  lvim.builtin.indentlines.options = {
     enabled = true,
     bufname_exclude = { "README.md" },
     buftype_exclude = { "terminal", "nofile" },
@@ -87,6 +82,13 @@ M.config = function()
       "operation_type",
     },
   }
+  vim.g.indent_blankline_buftype_exclude = lvim.builtin.indentlines.options.bufname_exclude
+  vim.g.indent_blankline_filetype_exclude = lvim.builtin.indentlines.options.filetype_exclude
+  vim.g.indentLine_enabled = 1
+  vim.g.indent_blankline_char_list = { "", "┊", "┆", "¦", "|", "¦", "┆", "┊", "" }
+  vim.g.indent_blankline_show_first_indent_level = false
+  vim.g.indent_blankline_use_treesitter = true
+  vim.g.indent_blankline_show_current_context = true
 end
 
 return M

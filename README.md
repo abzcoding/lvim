@@ -383,7 +383,6 @@ _Symbols Outline_
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
-- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Twilight](https://github.com/folke/twilight.nvim)
 - [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)
 - [vim match-up](https://github.com/andymass/vim-matchup)

@@ -143,6 +143,10 @@ M.config = function()
   lvim.builtin.gitsigns.opts._extmark_signs = true
   lvim.builtin.gitsigns.opts.current_line_blame_formatter = " <author>, <author_time> · <summary>"
 
+  -- IndentBlankline
+  -- =========================================
+  require("user.indent_blankline").config()
+
   -- LSP
   -- =========================================
   lvim.lsp.buffer_mappings.normal_mode["ga"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }

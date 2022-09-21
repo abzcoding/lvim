@@ -105,16 +105,6 @@ M.config = function()
       disable = lvim.builtin.tag_provider ~= "symbols-outline",
     },
     {
-      "lukas-reineke/indent-blankline.nvim",
-      setup = function()
-        vim.g.indent_blankline_char = "▏"
-      end,
-      config = function()
-        require("user.indent_blankline").config()
-      end,
-      event = "BufRead",
-    },
-    {
       "tzachar/cmp-tabnine",
       run = "./install.sh",
       requires = "hrsh7th/nvim-cmp",
