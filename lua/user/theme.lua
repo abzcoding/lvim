@@ -146,7 +146,7 @@ M.colors = {
   tokyonight_colors = {
     none = "NONE",
     bg_dark = "#1f2335",
-    bg_alt = "#1f2335",
+    bg_alt = "#1a1b26",
     bg = "#24283b",
     bg_br = "#292e42",
     terminal_black = "#414868",
@@ -238,7 +238,8 @@ M.colors = {
     gray0 = "#6E6C7E",
     black4 = "#575268",
     bg_br = "#302D41",
-    bg = "#1A1826",
+    bg = "#302D41",
+    surface1 = "#302D41",
     bg_alt = "#1E1E2E",
     fg = "#D9E0EE",
     black = "#1A1826",
@@ -251,7 +252,7 @@ M.colors = {
   },
 
   kanagawa_colors = {
-    bg = "#16161D",
+    bg = "#21212A",
     bg_alt = "#1F1F28",
     bg_br = "#363646",
     fg = "#DCD7BA",
@@ -265,13 +266,12 @@ M.colors = {
     green = "#76946A",
     git = {
       add = "#76946A",
-      conflict = "#252535",
-      delete = "#C34043",
-      change = "#DCA561",
+      conflict = "#DCA561",
+      delete = "#E46876",
+      change = "#7FB4CA",
     },
   },
 }
-
 M.current_colors = function()
   local colors = M.colors.tokyonight_colors
   if not lvim.builtin.time_based_themes then
@@ -328,35 +328,22 @@ M.telescope_theme = function()
     vim.cmd("hi " .. group .. " guifg=" .. fg .. " guibg=" .. bg)
   end
 
-  local _time = os.date "*t"
-  if _time.hour >= 9 and _time.hour < 17 then
-    -- HACK: change highlights for tokyonight theme
-    local bg = "#24283b"
-    local bg_dark = "#1a1e30"
-    local bg_dim = "#1f2335"
-    local bg_float = "#1a1e30"
-    local fg = "#c0caf5"
-    local fg_gutter = "#3b4261"
-    local fg_dark = "#a9b1d6"
-    local border_highlight = "#3d59a1"
-    local yellow = "#e0af68"
-    local git_added = "#449dab"
-    local git_removed = "#f7768e"
-    local git_changed = "#6183bb"
-    -- local git_changed = "#bb7a61"
-    set_fg_bg("NormalFloat", fg, bg_float)
-    set_fg_bg("Cursor", bg, fg)
-    set_fg_bg("VertSplit", bg_dark, bg_dark)
-    set_fg_bg("WinSeparator", bg_dark, bg_dark)
-    set_fg_bg("SignColumn", fg_gutter, "NONE")
-    set_fg_bg("SignColumnSB", fg_gutter, "NONE")
-    set_fg_bg("NormalNC", fg_dark, bg_dim)
-    set_fg_bg("TelescopeBorder", border_highlight, lvim.transparent_window and bg_float or "NONE")
-    set_fg_bg("TelescopeNormal", fg, lvim.transparent_window and bg_float or "NONE")
-    set_fg_bg("NvimTreeFolderIcon", yellow, "NONE")
-    set_fg_bg("diffAdded", git_added, "NONE")
-    set_fg_bg("diffRemoved", git_removed, "NONE")
-    set_fg_bg("diffChanged", git_changed, "NONE")
+  -- NOTE: these are my personal preferences
+  if lvim.builtin.time_based_themes then
+    local _time = os.date "*t"
+    local current_colors = M.current_colors()
+    set_fg_bg("diffAdded", current_colors.git.add, "NONE")
+    set_fg_bg("diffRemoved", current_colors.git.delete, "NONE")
+    set_fg_bg("diffChanged", current_colors.git.change, "NONE")
+    set_fg_bg("WinSeparator", current_colors.bg_alt, current_colors.bg_alt)
+    set_fg_bg("SignColumn", current_colors.bg, "NONE")
+    set_fg_bg("SignColumnSB", current_colors.bg, "NONE")
+    if _time.hour >= 9 and _time.hour < 17 then
+      -- HACK: change highlights for tokyonight theme
+      set_fg_bg("NormalFloat", current_colors.fg, current_colors.bg_alt)
+      set_fg_bg("Cursor", current_colors.bg, current_colors.fg)
+      set_fg_bg("NormalNC", current_colors.fg_dark, "#1f2335")
+    end
   end
 
   local colors = M.hi_colors()

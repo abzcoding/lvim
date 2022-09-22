@@ -264,7 +264,7 @@ M.config = function()
     "b:gitsigns_head",
     icon = " ",
     cond = conditions.check_git_workspace and conditions.hide_in_width,
-    color = { fg = colors.blue },
+    color = { fg = colors.blue, bg = colors.bg },
     padding = 0,
   })
 
@@ -517,7 +517,7 @@ M.config = function()
     "fileformat",
     fmt = string.upper,
     icons_enabled = true,
-    color = { fg = colors.green, gui = "bold" },
+    color = { fg = colors.green, bg = colors.bg, gui = "bold" },
     cond = conditions.hide_small,
   })
 
