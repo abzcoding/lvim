@@ -162,10 +162,10 @@ M.config = function()
       return vim.fn.empty(vim.fn.expand "%:t") ~= 1
     end,
     hide_in_width = function()
-      return vim.fn.winwidth(0) > 80
+      return vim.o.columns > 80
     end,
     hide_small = function()
-      return vim.fn.winwidth(0) > 150
+      return vim.o.columns > 140
     end,
     check_git_workspace = function()
       local filepath = vim.fn.expand "%:p:h"
@@ -230,13 +230,17 @@ M.config = function()
         },
         {
           "filename",
-          cond = conditions.buffer_not_empty,
+          cond = conditions.buffer_not_empty and conditions.hide_in_width,
           color = { fg = colors.blue, gui = "bold" },
         },
       },
       lualine_x = {},
     },
   }
+
+  if lvim.builtin.global_statusline then
+    config.options.disabled_filetypes = { "alpha" }
+  end
 
   -- Inserts a component in lualine_c at left section
   local function ins_left(component)
@@ -259,7 +263,7 @@ M.config = function()
   table.insert(config.sections.lualine_b, {
     "b:gitsigns_head",
     icon = " ",
-    cond = conditions.check_git_workspace,
+    cond = conditions.check_git_workspace and conditions.hide_in_width,
     color = { fg = colors.blue },
     padding = 0,
   })
@@ -275,7 +279,7 @@ M.config = function()
       end
       return ""
     end,
-    cond = conditions.hide_in_width,
+    cond = conditions.hide_small,
   }
 
   ins_left {
@@ -295,7 +299,7 @@ M.config = function()
       return win .. " " .. get_file_icon()
     end,
     padding = { left = 2, right = 0 },
-    cond = conditions.buffer_not_empty,
+    cond = conditions.buffer_not_empty and conditions.hide_small,
     color = "LualineFileIconColor",
   }
 
@@ -331,7 +335,7 @@ M.config = function()
       end
       return show_name .. readonly .. modified
     end,
-    cond = conditions.buffer_not_empty,
+    cond = conditions.buffer_not_empty and conditions.hide_small,
     padding = { left = 1, right = 1 },
     color = { fg = colors.fg, gui = "bold", bg = colors.bg },
   }
@@ -435,10 +439,12 @@ M.config = function()
       end
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
+      local only_lsp = ""
 
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
           local _added_client = client.name
+          only_lsp = only_lsp .. _added_client
           _added_client = string.sub(client.name, 1, 4)
           table.insert(buf_client_names, _added_client)
         end
@@ -464,7 +470,13 @@ M.config = function()
       end
       vim.list_extend(buf_client_names, supported_linters)
 
-      return kind.icons.ls_active .. table.concat(buf_client_names, ", ")
+      if conditions.hide_small() then
+        return kind.icons.ls_active .. table.concat(buf_client_names, ", ")
+      elseif conditions.hide_in_width() then
+        return only_lsp
+      else
+        return string.sub(only_lsp, 1, 5)
+      end
     end,
     color = { fg = colors.fg, bg = colors.bg },
     cond = conditions.hide_in_width,
@@ -499,19 +511,19 @@ M.config = function()
       return format_file_size(file)
     end,
     color = { fg = colors.fg, bg = colors.bg },
-    cond = conditions.buffer_not_empty,
+    cond = conditions.buffer_not_empty and conditions.hide_small,
   }
   table.insert(config.sections.lualine_y, {
     "fileformat",
     fmt = string.upper,
     icons_enabled = true,
     color = { fg = colors.green, gui = "bold" },
-    cond = conditions.hide_in_width,
+    cond = conditions.hide_small,
   })
 
   table.insert(config.sections.lualine_y, {
     clock,
-    cond = conditions.hide_in_width,
+    cond = conditions.hide_small,
     color = { fg = colors.blue, bg = colors.bg },
   })
 
