@@ -28,9 +28,6 @@ local function testing()
   end
   return nil
 end
-local function using_session()
-  return (vim.g.using_persistence ~= nil)
-end
 
 local mode = function()
   local mod = vim.fn.mode()
@@ -184,13 +181,7 @@ M.config = function()
       -- Disable sections and component separators
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
-      theme = {
-        -- We are going to use lualine_c an lualine_x as left and
-        -- right section. Both are highlighted by c theme .  So we
-        -- are just setting default looks o statusline
-        normal = { c = { fg = colors.fg, bg = colors.bg } },
-        inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
-      },
+      theme = "auto",
       disabled_filetypes = {
         "dashboard",
         "NvimTree",
@@ -257,22 +248,21 @@ M.config = function()
     table.insert(config.sections.lualine_x, component)
   end
 
-  ins_left {
+  table.insert(config.sections.lualine_a, {
     function()
       return mode()
     end,
     color = function()
-      return { fg = mode_color[vim.fn.mode()], bg = colors.bg }
+      return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
     end,
-    padding = { left = 1, right = 0 },
-  }
-  ins_left {
+  })
+  table.insert(config.sections.lualine_b, {
     "b:gitsigns_head",
     icon = " ",
     cond = conditions.check_git_workspace,
     color = { fg = colors.blue },
     padding = 0,
-  }
+  })
 
   ins_left {
     function()
@@ -285,13 +275,14 @@ M.config = function()
       end
       return ""
     end,
-    color = { fg = colors.cyan },
     cond = conditions.hide_in_width,
   }
 
   ins_left {
     function()
-      vim.api.nvim_command("hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg)
+      vim.api.nvim_command(
+        "hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg .. " gui=bold"
+      )
       local fname = vim.fn.expand "%:p"
       if string.find(fname, "term://") ~= nil then
         return kind.icons.term
@@ -306,7 +297,6 @@ M.config = function()
     padding = { left = 2, right = 0 },
     cond = conditions.buffer_not_empty,
     color = "LualineFileIconColor",
-    gui = "bold",
   }
 
   ins_left {
@@ -343,7 +333,7 @@ M.config = function()
     end,
     cond = conditions.buffer_not_empty,
     padding = { left = 1, right = 1 },
-    color = { fg = colors.fg, gui = "bold" },
+    color = { fg = colors.fg, gui = "bold", bg = colors.bg },
   }
 
   ins_left {
@@ -378,6 +368,7 @@ M.config = function()
     color = { fg = colors.green },
     cond = conditions.hide_in_width,
   }
+
   ins_left {
     provider = function()
       return testing()
@@ -396,44 +387,21 @@ M.config = function()
   }
 
   ins_left {
-    provider = function()
-      if vim.g.using_persistence then
-        return "  |"
-      elseif vim.g.using_persistence == false then
-        return "  |"
-      end
+    function()
+      return ""
     end,
-    enabled = function()
-      return using_session()
-    end,
-    hl = {
-      fg = colors.fg,
-    },
+    padding = { left = 0, right = 0 },
+    color = { fg = colors.bg },
+    cond = nil,
   }
-
-  if lvim.builtin.task_runner == "overseer" then
-    ins_left {
-      "provider",
-      unique = true,
-    }
-  end
-
-  -- Insert mid section. You can make any number of sections in neovim :)
-  -- for lualine it's any number greater then 2
-  -- ins_left {
-  --   function()
-  --     return "%="
-  --   end,
-  -- }
 
   ins_right {
     function()
-      if not vim.bo.readonly or not vim.bo.modifiable then
-        return ""
-      end
-      return "" -- """
+      return ""
     end,
-    color = { fg = colors.red },
+    padding = { left = 0, right = 0 },
+    color = { fg = colors.bg },
+    cond = nil,
   }
 
   ins_right {
@@ -441,17 +409,18 @@ M.config = function()
     sources = { "nvim_diagnostic" },
     symbols = { error = kind.icons.error, warn = kind.icons.warn, info = kind.icons.info, hint = kind.icons.hint },
     cond = conditions.hide_in_width,
+    color = { fg = colors.fg, bg = colors.bg },
   }
 
   ins_right {
     function()
-      if next(vim.treesitter.highlighter.active) then
-        return "  "
-      end
-      return ""
+      return ""
     end,
-    padding = 0,
-    color = { fg = colors.green },
+    color = function()
+      local buf = vim.api.nvim_get_current_buf()
+      local ts = vim.treesitter.highlighter.active[buf]
+      return { fg = ts and not vim.tbl_isempty(ts) and colors.green or colors.red, bg = colors.bg }
+    end,
     cond = conditions.hide_in_width,
   }
   ins_right {
@@ -497,14 +466,14 @@ M.config = function()
 
       return kind.icons.ls_active .. table.concat(buf_client_names, ", ")
     end,
-    color = { fg = colors.fg },
+    color = { fg = colors.fg, bg = colors.bg },
     cond = conditions.hide_in_width,
   }
 
   ins_right {
     "location",
     padding = 0,
-    color = { fg = colors.orange },
+    color = { fg = colors.orange, bg = colors.bg },
   }
 
   ins_right {
@@ -522,29 +491,31 @@ M.config = function()
         end
         return string.format("%.1f%s", size, sufixes[i])
       end
+
       local file = vim.fn.expand "%:p"
       if string.len(file) == 0 then
         return ""
       end
       return format_file_size(file)
     end,
+    color = { fg = colors.fg, bg = colors.bg },
     cond = conditions.buffer_not_empty,
   }
-  ins_right {
+  table.insert(config.sections.lualine_y, {
     "fileformat",
     fmt = string.upper,
     icons_enabled = true,
     color = { fg = colors.green, gui = "bold" },
     cond = conditions.hide_in_width,
-  }
+  })
 
-  ins_right {
+  table.insert(config.sections.lualine_y, {
     clock,
     cond = conditions.hide_in_width,
     color = { fg = colors.blue, bg = colors.bg },
-  }
+  })
 
-  ins_right {
+  table.insert(config.sections.lualine_z, {
     function()
       local current_line = vim.fn.line "."
       local total_lines = vim.fn.line "$"
@@ -556,7 +527,7 @@ M.config = function()
     padding = 0,
     color = { fg = colors.yellow, bg = colors.bg },
     cond = nil,
-  }
+  })
 
   -- Now don't forget to initialize lualine
   lvim.builtin.lualine.options = config.options

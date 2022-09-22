@@ -71,6 +71,7 @@ if user and user == "abz" then
   vim.opt.mousescroll = { "ver:1", "hor:6" }
   vim.o.mousefocus = true
   vim.o.mousemoveevent = true
+  ---
 
   lvim.builtin.lsp_lines = true
   vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)
@@ -78,6 +79,7 @@ if user and user == "abz" then
   if lvim.builtin.tmux_lualine then
     vim.opt.cmdheight = 1 -- WARN: =0 is broken on neovim head (https://github.com/neovim/neovim/issues/20243)
     vim.g.tpipeline_cursormoved = 1
+    vim.g.tpipeline_clearstl = 1
   end
   lvim.builtin.custom_web_devicons = true
   lvim.use_icons = false -- only set to false if you know what are you doing
