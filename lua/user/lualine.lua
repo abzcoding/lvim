@@ -445,7 +445,7 @@ M.config = function()
         if client.name ~= "null-ls" then
           local _added_client = client.name
           only_lsp = only_lsp .. _added_client
-          _added_client = string.sub(client.name, 1, 4)
+          _added_client = string.sub(client.name, 1, 7)
           table.insert(buf_client_names, _added_client)
         end
       end
