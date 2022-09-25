@@ -77,7 +77,7 @@ if user and user == "abz" then
   vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)
   lvim.builtin.tmux_lualine = false -- BUG: seems broken atm
   if lvim.builtin.tmux_lualine then
-    vim.opt.cmdheight = 1 -- WARN: =0 is broken on neovim head (https://github.com/neovim/neovim/issues/20243)
+    vim.opt.cmdheight = 1 -- WARN: =0 is broken on neovim head (https://github.com/neovim/neovim/issues/20281)
     vim.g.tpipeline_cursormoved = 1
     vim.g.tpipeline_clearstl = 1
   end

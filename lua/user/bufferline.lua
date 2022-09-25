@@ -2,8 +2,13 @@ local M = {}
 
 M.config = function()
   local kind = require "user.lsp_kind"
-  local List = require "plenary.collections.py_list"
   lvim.builtin.bufferline.highlights = {
+    fill = {
+      bg = {
+        attribute = "bg",
+        highlight = "NormalNC",
+      },
+    },
     background = { italic = true },
     buffer_selected = { bold = true },
   }
@@ -32,8 +37,8 @@ M.config = function()
           table.insert(result, symbols[name] .. count)
         end
       end
-      result = table.concat(result, " ")
-      return #result > 0 and result or ""
+      local res = table.concat(result, " ")
+      return #res > 0 and res or ""
     end,
 
     mode = "buffers",
