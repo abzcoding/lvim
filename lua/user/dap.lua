@@ -300,9 +300,6 @@ M.config = function()
     end,
     console = "integratedTerminal",
   })
-  lvim.builtin.dap.on_config_done = function(_)
-    lvim.builtin.which_key.mappings["d"].name = " Debug"
-  end
 end
 
 return M

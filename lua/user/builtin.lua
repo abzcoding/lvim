@@ -238,7 +238,6 @@ M.config = function()
       error = kind.icons.error,
     },
   }
-  lvim.builtin.nvimtree.setup.renderer.icons.glyphs = kind.nvim_tree_icons
   lvim.builtin.nvimtree.on_config_done = function(_)
     lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<CR>", " Explorer" }
   end
@@ -529,7 +528,8 @@ function M.tab(fallback)
   elseif methods.jumpable(1) then
     luasnip.jump(1)
   elseif methods.has_words_before() then
-    cmp.complete()
+    -- cmp.complete()
+    fallback()
   else
     methods.feedkeys("<Plug>(Tabout)", "")
   end
