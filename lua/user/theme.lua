@@ -340,9 +340,10 @@ M.telescope_theme = function()
     set_fg_bg("SignColumnSB", current_colors.bg, "NONE")
     if _time.hour >= 9 and _time.hour < 17 then
       -- HACK: change highlights for tokyonight theme
-      set_fg_bg("NormalFloat", current_colors.fg, current_colors.bg_alt)
+      set_fg_bg("NormalFloat", current_colors.fg, "#181924")
       set_fg_bg("Cursor", current_colors.bg, current_colors.fg)
-      set_fg_bg("NormalNC", current_colors.fg_dark, "#1f2335")
+      set_fg_bg("NormalNC", current_colors.fg_dark, "#1c1d28")
+      set_fg_bg("Normal", current_colors.fg, "#1f2335")
     end
   end
 
