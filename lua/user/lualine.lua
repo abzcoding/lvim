@@ -172,6 +172,9 @@ M.config = function()
       local gitdir = vim.fn.finddir(".git", filepath .. ";")
       return gitdir and #gitdir > 0 and #gitdir < #filepath
     end,
+    tmux_lualine = function()
+      return not (lvim.builtin.tmux_lualine and vim.fn.exists "$TMUX" == 1)
+    end,
   }
 
   -- Config
@@ -398,7 +401,7 @@ M.config = function()
     end,
     padding = { left = 0, right = 0 },
     color = { fg = colors.bg },
-    cond = nil,
+    cond = conditions.tmux_lualine,
   }
 
   ins_right {
@@ -407,7 +410,7 @@ M.config = function()
     end,
     padding = { left = 0, right = 0 },
     color = { fg = colors.bg },
-    cond = nil,
+    cond = conditions.tmux_lualine,
   }
 
   ins_right {
