@@ -637,6 +637,14 @@ M.config = function()
       end,
       disable = lvim.builtin.tree_provider ~= "neo-tree",
     },
+    -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
+    -- {
+    --   "lvimuser/lsp-inlayhints.nvim",
+    --   branch = "anticonceal",
+    --   config = function()
+    --     require("lsp-inlayhints").setup()
+    --   end,
+    -- },
   }
 end
 
