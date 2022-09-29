@@ -344,6 +344,7 @@ M.telescope_theme = function()
       set_fg_bg("Cursor", current_colors.bg, current_colors.fg)
       set_fg_bg("NormalNC", current_colors.fg_dark, "#1c1d28")
       set_fg_bg("Normal", current_colors.fg, "#1f2335")
+      set_fg_bg("CursorLineNr",current_colors.orange, "bold")
     end
   end
 
