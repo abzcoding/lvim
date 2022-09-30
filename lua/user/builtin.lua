@@ -227,6 +227,26 @@ M.config = function()
   lvim.builtin.lualine.active = true
   lvim.builtin.lualine.sections.lualine_b = { "branch" }
 
+  -- Notify
+  -- =========================================
+  lvim.builtin.notify.opts.min_width = function()
+    return math.floor(vim.o.columns * 0.4)
+  end
+  lvim.builtin.notify.opts.max_width = function()
+    return math.floor(vim.o.columns * 0.4)
+  end
+  lvim.builtin.notify.opts.max_height = function()
+    return math.floor(vim.o.lines * 0.8)
+  end
+  lvim.builtin.notify.opts.render = function(...)
+    local notif = select(2, ...)
+    local style = notif.title[1] == "" and "minimal" or "default"
+    require("notify.render")[style](...)
+  end
+  lvim.builtin.notify.opts.stages = "fade_in_slide_out"
+  lvim.builtin.notify.opts.timeout = 3000
+  lvim.builtin.notify.opts.background_colour = "NormalFloat"
+
   -- NvimTree
   -- =========================================
   lvim.builtin.nvimtree.setup.diagnostics = {
