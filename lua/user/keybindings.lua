@@ -270,6 +270,8 @@ M.config = function()
   if lvim.builtin.fancy_diff.active then
     lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen<cr>", "diffview: diff HEAD" }
     lvim.builtin.which_key.mappings["gh"] = { "<cmd>DiffviewFileHistory<cr>", "diffview: filehistory" }
+  else
+    lvim.builtin.which_key.mappings["gh"] = { "<cmd>Telescope git_bcommits<cr>", "file history" }
   end
   if lvim.builtin.cheat.active then
     lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", " Cheat.sh" }
