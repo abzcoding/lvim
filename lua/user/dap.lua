@@ -55,6 +55,15 @@ M.config = function()
           local target_dir = metadata.target_directory
           return target_dir .. "/debug/" .. target_name
         end,
+        args = function()
+          local inputstr = vim.fn.input("Params: ", "")
+          local params = {}
+          local sep = "%s"
+          for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+            table.insert(params, str)
+          end
+          return params
+        end,
       },
     }
   end
