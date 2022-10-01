@@ -45,6 +45,7 @@ M.config = function()
 
     mode = "buffers",
     sort_by = "insert_after_current",
+    always_show_bufferline = false,
     groups = {
       options = {
         toggle_hidden_on_enter = true,

@@ -104,7 +104,11 @@ if user and user == "abz" then
   require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 if lvim.builtin.winbar_provider == "navic" then
-  lvim.builtin.breadcrumbs.active = false
+  vim.opt.showtabline = 1
+  lvim.keys.normal_mode["<tab>"] =
+    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>"
+  lvim.builtin.bufferline.active = false
+  lvim.builtin.breadcrumbs.active = true
 end
 lvim.builtin.nvimtree.active = lvim.builtin.tree_provider == "nvimtree"
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors

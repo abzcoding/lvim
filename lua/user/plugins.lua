@@ -492,7 +492,7 @@ M.config = function()
           let g:asynctasks_extra_config = ['~/.config/lvim/tasks.ini']
         ]]
       end,
-      event = "BufRead",
+      event = { "BufRead", "BufNew" },
       disable = lvim.builtin.task_runner ~= "async_tasks",
     },
     {
