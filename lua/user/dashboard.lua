@@ -98,7 +98,7 @@ M.config = function()
       button(
         "f",
         " " .. kind.cmp_kind.Folder .. " Explore",
-        "<cmd>lua require('lvim.core.telescope.custom-finders').find_project_files()<CR>"
+        "<cmd>lua require('user.telescope').find_project_files()<CR>"
       ),
       button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
       button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),

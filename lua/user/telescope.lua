@@ -4,6 +4,7 @@ local action_state = require "telescope.actions.state"
 local themes = require "telescope.themes"
 local builtin = require "telescope.builtin"
 local actions = require "telescope.actions"
+local telescope_utils = require "telescope.utils"
 
 function M._multiopen(prompt_bufnr, open_cmd)
   local picker = action_state.get_current_picker(prompt_bufnr)
@@ -251,6 +252,26 @@ function M.grep_string_visual()
   require("telescope.builtin").live_grep {
     default_text = visual_selection(),
   }
+end
+
+function M.find_project_files(opts)
+  opts = opts or {}
+  if opts.cwd then
+    opts.cwd = vim.fn.expand(opts.cwd)
+  else
+    opts.cwd = vim.loop.cwd()
+  end
+
+  local _, ret = telescope_utils.get_os_command_output({ "git", "rev-parse", "--show-toplevel" }, opts.cwd)
+  if ret ~= 0 then
+    local in_worktree = telescope_utils.get_os_command_output({ "git", "rev-parse", "--is-inside-work-tree" }, opts.cwd)
+    local in_bare = telescope_utils.get_os_command_output({ "git", "rev-parse", "--is-bare-repository" }, opts.cwd)
+    if in_worktree[1] ~= "true" and in_bare[1] ~= "true" then
+      builtin.find_files(opts)
+      return
+    end
+  end
+  builtin.git_files(opts)
 end
 
 return M
