@@ -221,6 +221,7 @@ M.config = function()
     end
     return t.message
   end
+  lvim.lsp.on_attach_callback = M.lsp_on_attach_callback
 
   -- Lualine
   -- =========================================
@@ -670,6 +671,54 @@ M.show_documentation = function()
     vim.cmd("Man " .. vim.fn.expand "<cword>")
   else
     vim.lsp.buf.hover()
+  end
+end
+
+M.lsp_on_attach_callback = function(client, bufnr)
+  local opts = { noremap = true, silent = true }
+  if client.name == "clangd" then
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>H", "<Cmd>ClangdSwitchSourceHeader<CR>", opts)
+  elseif client.name == "gopls" then
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>H",
+      "<Cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
+      opts
+    )
+  elseif client.name == "jdtls" then
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>rf",
+      "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn package;read', hidden =false}:toggle()<CR>",
+      opts
+    )
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>mf",
+      "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn compile;read', hidden =false}:toggle()<CR>",
+      opts
+    )
+  elseif client.name == "rust_analyzer" then
+    vim.api.nvim_buf_set_keymap(
+      bufnr,
+      "n",
+      "<leader>H",
+      "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo clippy;read',count=2,direction='float'})<CR>",
+      opts
+    )
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lm", "<Cmd>RustExpandMacro<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lH", "<Cmd>RustToggleInlayHints<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>le", "<Cmd>RustRunnables<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lh", "<Cmd>RustHoverActions<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lc", "<Cmd>RustOpenCargo<CR>", opts)
+
+  elseif client.name == "tsserver" then
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lA", "<Cmd>TSLspImportAll<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lR", "<Cmd>TSLspRenameFile<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lO", "<Cmd>TSLspOrganize<CR>", opts)
   end
 end
 

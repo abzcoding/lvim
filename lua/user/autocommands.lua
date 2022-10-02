@@ -87,17 +87,6 @@ augroup END
     pattern = "term://*",
     command = "lua require('user.keybindings').set_terminal_keymaps()",
   })
-  -- { "FileType", { group = "_lvim_user", pattern="alpha", command = "nnoremap <silent> <buffer> q :q<CR>" } },
-  create_aucmd("Filetype", {
-    group = "_lvim_user",
-    pattern = { "c", "cpp" },
-    command = "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>",
-  })
-  create_aucmd("Filetype", {
-    group = "_lvim_user",
-    pattern = "go",
-    command = "nnoremap <leader>H <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
-  })
   if lvim.builtin.metals.active then
     create_aucmd("Filetype", {
       group = "_lvim_user",
@@ -105,47 +94,6 @@ augroup END
       callback = require("user.metals").start,
     })
   end
-  create_aucmd("FileType", {
-    group = "_lvim_user",
-    pattern = "java",
-    callback = function()
-      vim.keymap.set(
-        "n",
-        "<leader>r",
-        "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn package;read', hidden =false}:toggle()<CR>"
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>m",
-        "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn compile;read', hidden =false}:toggle()<CR>"
-      )
-    end,
-  })
-  create_aucmd("FileType", {
-    group = "_lvim_user",
-    pattern = "rust",
-    callback = function()
-      vim.keymap.set(
-        "n",
-        "<leader>H",
-        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo clippy;read',count=2,direction='float'})<CR>"
-      )
-      vim.keymap.set("n", "<leader>lm", "<Cmd>RustExpandMacro<CR>")
-      vim.keymap.set("n", "<leader>lH", "<Cmd>RustToggleInlayHints<CR>")
-      vim.keymap.set("n", "<leader>le", "<Cmd>RustRunnables<CR>")
-      vim.keymap.set("n", "<leader>lh", "<Cmd>RustHoverActions<CR>")
-      vim.keymap.set("n", "<leader>lc", "<Cmd>RustOpenCargo<CR>")
-    end,
-  })
-  create_aucmd("FileType", {
-    group = "_lvim_user",
-    pattern = { "typescript", "typescriptreact" },
-    callback = function()
-      vim.keymap.set("n", "<leader>lA", "<Cmd>TSLspImportAll<CR>")
-      vim.keymap.set("n", "<leader>lR", "<Cmd>TSLspRenameFile<CR>")
-      vim.keymap.set("n", "<leader>lO", "<Cmd>TSLspOrganize<CR>")
-    end,
-  })
   create_aucmd("FileType", {
     group = "_lvim_user",
     pattern = "toml",
