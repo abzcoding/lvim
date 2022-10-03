@@ -57,6 +57,11 @@ augroup BigFileDisable
     autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
 augroup END
   ]]
+  create_aucmd("BufReadPost", {
+    group = "_lvim_user",
+    pattern = "*.md",
+    command = "set syntax=markdown",
+  })
 
   if lvim.builtin.sql_integration.active then
     -- Add vim-dadbod-completion in sql files

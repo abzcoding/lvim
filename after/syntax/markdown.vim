@@ -93,7 +93,7 @@ syn cluster mkdNonListItem contains=@htmlTop,htmlItalic,htmlBold,htmlBoldItalic,
 
 "highlighting for Markdown groups
 HtmlHiLink mkdString        String
-HtmlHiLink mkdCode          String
+" HtmlHiLink mkdCode          String
 HtmlHiLink mkdCodeDelimiter String
 HtmlHiLink mkdCodeStart     String
 HtmlHiLink mkdCodeEnd       String

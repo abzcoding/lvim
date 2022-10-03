@@ -101,7 +101,7 @@ if user and user == "abz" then
   }
   lvim.builtin.smooth_scroll = "cinnamon"
   lvim.builtin.tree_provider = "neo-tree"
-  require("lvim.lsp.manager").setup("prosemd_lsp", {})
+  -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 if lvim.builtin.winbar_provider == "navic" then
   vim.opt.showtabline = 1
