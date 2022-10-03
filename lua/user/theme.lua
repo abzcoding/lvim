@@ -37,6 +37,7 @@ M.rose_pine = function()
       VertSplit = { fg = "#21202e", bg = "#21202e" },
       SignColumn = { fg = "#e0def4", bg = "NONE" },
       SignColumnSB = { fg = "#e0def4", bg = "NONE" },
+      mkdInlineURL = { fg = "#c4a7e7", style = "NONE" },
     },
   }
 end
@@ -344,7 +345,7 @@ M.telescope_theme = function()
       set_fg_bg("Cursor", current_colors.bg, current_colors.fg)
       set_fg_bg("NormalNC", current_colors.fg_dark, "#1c1d28")
       set_fg_bg("Normal", current_colors.fg, "#1f2335")
-      set_fg_bg("CursorLineNr",current_colors.orange, "bold")
+      set_fg_bg("CursorLineNr", current_colors.orange, "bold")
     end
   end
 
