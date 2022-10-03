@@ -426,7 +426,7 @@ M.config = function()
     {
       "abzcoding/nvim-mini-file-icons",
       config = function()
-        require("user.dev_icons").set_icon()
+        require("nvim-web-devicons").setup()
       end,
       disable = lvim.use_icons or not lvim.builtin.custom_web_devicons,
     },
