@@ -102,6 +102,7 @@ if user and user == "abz" then
   }
   lvim.builtin.smooth_scroll = "cinnamon"
   lvim.builtin.tree_provider = "neo-tree"
+  lvim.builtin.noice.active = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 if lvim.builtin.winbar_provider == "navic" then

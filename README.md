@@ -123,7 +123,7 @@ lvim.plugins = {
   - `lvim.builtin.task_runner = "async_tasks"`
 - you can choose between `nvimtree` and `neo-tree` as your file tree viewer
   - `lvim.builtin.tree_provider = "neo-tree"`
-- you can use noice.nvim if you liek
+- you can use noice.nvim if you want
   - `lvim.builtin.noice = { active = true }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
