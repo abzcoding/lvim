@@ -622,6 +622,17 @@ M.config = function()
       end,
       disable = lvim.builtin.tree_provider ~= "neo-tree",
     },
+    {
+      "folke/noice.nvim",
+      event = "VimEnter",
+      config = function()
+        require("user.noice").config()
+      end,
+      requires = {
+        "MunifTanjim/nui.nvim",
+      },
+      disable = not lvim.builtin.noice.active,
+    },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
     -- {
     --   "lvimuser/lsp-inlayhints.nvim",

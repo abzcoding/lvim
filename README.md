@@ -123,6 +123,8 @@ lvim.plugins = {
   - `lvim.builtin.task_runner = "async_tasks"`
 - you can choose between `nvimtree` and `neo-tree` as your file tree viewer
   - `lvim.builtin.tree_provider = "neo-tree"`
+- you can use noice.nvim if you liek
+  - `lvim.builtin.noice = { active = true }`
 - If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 
@@ -443,6 +445,7 @@ _Symbols Outline_
 - [legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 - [overseer.nvim](https://github.com/stevearc/overseer.nvim)
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim/blob/v2.x)
+- [noice.nvim](https://github.com/folke/noice.nvim)
 
 </details>
 

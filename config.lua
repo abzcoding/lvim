@@ -64,6 +64,7 @@ lvim.builtin.lir.active = false
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.illuminate.active = false
 lvim.builtin.indentlines.active = true
+lvim.builtin.noice = { active = false }
 
 local user = os.getenv "USER"
 if user and user == "abz" then
