@@ -9,6 +9,9 @@ M.config = function()
     cmdline = {
       view = "cmdline",
     },
+    popupmenu = {
+      enabled = not lvim.builtin.fancy_wild_menu.active,
+    },
   }
 end
 
