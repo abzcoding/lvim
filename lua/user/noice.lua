@@ -24,15 +24,20 @@ M.config = function()
       {
         filter = {
           event = "msg_show",
-          kind = "",
-          find = "written",
+          find = " lines,",
         },
         opts = { skip = true },
       },
       {
         filter = {
           event = "msg_show",
-          kind = "",
+          find = "go up one level",
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "msg_show",
           find = "yanked",
         },
         opts = { skip = true },
