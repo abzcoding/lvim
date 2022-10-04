@@ -736,6 +736,8 @@ Note that,
 | <kbd>a</kbd>                  |  𝐍   | Add files/dirs                   |
 | <kbd>A</kbd>                  |  𝐍   | Add new dir                      |
 | <kbd>r</kbd>                  |  𝐍   | Rename                           |
+| <kbd>h</kbd>                  |  𝐍   | Go Updir                         |
+| <kbd>l</kbd>                  |  𝐍   | Open                             |
 | <kbd>P</kbd>                  |  𝐍   | Toggle preview                   |
 | <kbd>/</kbd>                  |  𝐍   | Fuzzy finder                     |
 

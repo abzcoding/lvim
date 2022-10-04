@@ -49,6 +49,12 @@ M.config = function()
           ".DS_Store",
         },
       },
+      window = {
+        mappings = {
+          ["h"] = "navigate_up",
+          ["l"] = "open",
+        },
+      },
       follow_current_file = true,
       hijack_netrw_behavior = "open_current",
       use_libuv_file_watcher = true,
