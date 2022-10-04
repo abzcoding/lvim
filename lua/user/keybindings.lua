@@ -306,7 +306,7 @@ M.config = function()
   lvim.builtin.which_key.mappings.g.name = " Git"
   lvim.builtin.which_key.mappings.l.name = " LSP"
   lvim.builtin.which_key.mappings["f"] = {
-    require("lvim.core.telescope.custom-finders").find_project_files,
+    require("user.telescope").find_project_files,
     " Find File",
   }
   local ok, _ = pcall(require, "vim.diagnostic")
