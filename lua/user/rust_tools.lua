@@ -42,7 +42,7 @@ M.config = function()
     },
   }
   local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/")
-  local vscode_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.7.4/"
+  local vscode_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
 
   local path = ""
   local debugger_found = true
