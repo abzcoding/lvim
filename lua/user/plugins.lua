@@ -183,7 +183,7 @@ M.config = function()
       config = function()
         require("user.colorizer").config()
       end,
-      -- event = "BufRead", -- BUG: doesn't work on the first file when lazy loaded
+      event = "BufReadPre",
     },
     {
       "folke/persistence.nvim",
