@@ -228,6 +228,10 @@ M.config = function()
   lvim.builtin.lualine.active = true
   lvim.builtin.lualine.sections.lualine_b = { "branch" }
 
+  -- Mason
+  -- =========================================
+  lvim.builtin.mason.ui.icons = kind.mason
+
   -- Notify
   -- =========================================
   lvim.builtin.notify.opts.min_width = function()
@@ -714,7 +718,6 @@ M.lsp_on_attach_callback = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>le", "<Cmd>RustRunnables<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lh", "<Cmd>RustHoverActions<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lc", "<Cmd>RustOpenCargo<CR>", opts)
-
   elseif client.name == "tsserver" then
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lA", "<Cmd>TSLspImportAll<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lR", "<Cmd>TSLspRenameFile<CR>", opts)

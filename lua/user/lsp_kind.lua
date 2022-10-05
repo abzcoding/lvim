@@ -1,5 +1,11 @@
 local M = {}
 
+M.mason = {
+  package_pending = " ",
+  package_installed = " ",
+  package_uninstalled = " ﮊ",
+}
+
 M.cmp_kind = {
   Class = " ",
   Color = " ",
