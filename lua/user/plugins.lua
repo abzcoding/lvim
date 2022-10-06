@@ -132,7 +132,7 @@ M.config = function()
       config = function()
         require("user.bqf").config()
       end,
-      event = "BufReadPre",
+      event = "BufRead",
     },
     {
       "andymass/vim-matchup",

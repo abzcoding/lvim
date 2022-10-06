@@ -27,7 +27,28 @@ M.config = function()
       {
         filter = {
           event = "msg_show",
-          find = " lines,",
+          find = "e486:",
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "msg_show",
+          find = "; before #",
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "msg_show",
+          find = "; after #",
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "msg_show",
+          find = " lines, ",
         },
         opts = { skip = true },
       },
