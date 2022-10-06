@@ -12,6 +12,9 @@ M.config = function()
     popupmenu = {
       enabled = not lvim.builtin.fancy_wild_menu.active,
     },
+    notify = {
+      enabled = lvim.builtin.notify.active,
+    },
     routes = {
       {
         filter = { event = "msg_show", kind = "search_count" },
