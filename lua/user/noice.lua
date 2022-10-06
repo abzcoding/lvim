@@ -27,7 +27,7 @@ M.config = function()
       {
         filter = {
           event = "msg_show",
-          find = "e486:",
+          find = "E486:",
         },
         opts = { skip = true },
       },

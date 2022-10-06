@@ -140,6 +140,7 @@ M.kanagawa = function()
     colors = { sumiInk1b = "#1b1b23" },
     overrides = {
       diffRemoved = { fg = "#E46876" },
+      NvimTreeFolderIcon = { fg = "#7e9cd8" }
     },
   }
 end
