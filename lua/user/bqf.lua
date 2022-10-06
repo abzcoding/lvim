@@ -7,36 +7,28 @@ M.config = function()
   end
 
   bqf.setup {
-    auto_resize_height = true,
+    auto_enable = true,
+    magic_window = true,
+    auto_resize_height = false,
     func_map = {
-      tab = "st",
-      split = "sv",
-      vsplit = "sg",
-
-      stoggleup = "K",
-      stoggledown = "J",
-      stogglevm = "<Space>",
-
-      ptoggleitem = "p",
-      ptoggleauto = "P",
-      ptogglemode = "zp",
-
-      pscrollup = "<C-b>",
-      pscrolldown = "<C-f>",
-
-      prevfile = "gk",
-      nextfile = "gj",
-
-      prevhist = "<S-Tab>",
-      nexthist = "<Tab>",
+      split = "s",
+      vsplit = "v",
+      stoggleup = "M",
+      stoggledown = "m",
+      stogglevm = "m",
+      filterr = "f",
+      filter = "F",
     },
     preview = {
-      auto_preview = true,
+      auto_preview = false,
+      show_title = true,
+      delay_syntax = 50,
+      wrap = false,
       should_preview_cb = function(bufnr)
         local ret = true
         local filename = vim.api.nvim_buf_get_name(bufnr)
         local fsize = vim.fn.getfsize(filename)
-        -- file size greater than 10k can't be previewed automatically
+        -- file size greater than 100k can't be previewed automatically
         if fsize > 100 * 1024 then
           ret = false
         end
