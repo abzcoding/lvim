@@ -2,7 +2,7 @@
 
 Do not use as is, use it as a source of inspiration.
 
-I've customized my ZSH/Tmux/Alacritty too much, so it might not work properly 😅
+I've customized my ZSH/Tmux/[Wezterm](https://github.com/abzcoding/wezterm) too much, so it might not work properly 😅
 
 ![141789968-ed61958c-9154-4774-b2e2-dfabe48d9660](https://user-images.githubusercontent.com/10992695/141791560-5062246a-056c-4a73-afa7-3152e6ad396e.jpg)
 
