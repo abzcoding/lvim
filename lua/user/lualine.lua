@@ -442,13 +442,18 @@ M.config = function()
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
       local only_lsp = ""
+      local lsp_icon = kind.icons.ls_active
 
       for _, client in pairs(buf_clients) do
         if client.name ~= "null-ls" then
           local _added_client = client.name
           only_lsp = only_lsp .. _added_client
           _added_client = string.sub(client.name, 1, 7)
-          table.insert(buf_client_names, _added_client)
+          if client.name == "copilot" then
+            lsp_icon = " "
+          else
+            table.insert(buf_client_names, _added_client)
+          end
         end
       end
 
@@ -473,7 +478,7 @@ M.config = function()
       vim.list_extend(buf_client_names, supported_linters)
 
       if conditions.hide_small() then
-        return kind.icons.ls_active .. table.concat(buf_client_names, ", ")
+        return lsp_icon .. table.concat(buf_client_names, ", ")
       elseif conditions.hide_in_width() then
         return only_lsp
       else
