@@ -88,11 +88,6 @@ M.config = function()
         return utils.root_has_file "revive.toml"
       end,
     },
-    nls.builtins.diagnostics.golangci_lint.with {
-      condition = function(utils)
-        return utils.root_has_file ".golangci.yml"
-      end,
-    },
     nls.builtins.code_actions.shellcheck,
     nls.builtins.code_actions.eslint_d.with {
       condition = function(utils)

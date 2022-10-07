@@ -140,6 +140,13 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  if lvim.builtin.go_programming.active then
+    require("lvim.lsp.manager").setup("golangci_lint_ls", {
+      on_init = require("lvim.lsp").common_on_init,
+      capabilities = require("lvim.lsp").common_capabilities(),
+    })
+  end
+
   lvim.lsp.buffer_mappings.normal_mode["ga"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
   lvim.lsp.buffer_mappings.normal_mode["gI"] = {
     "<cmd>lua require('user.telescope').lsp_implementations()<CR>",
@@ -287,7 +294,7 @@ M.config = function()
   lvim.builtin.treesitter.context_commentstring.enable = true
   local languages = vim.tbl_flatten {
     { "bash", "c", "c_sharp", "cmake", "comment", "cpp", "css", "d", "dart" },
-    { "dockerfile", "elixir", "elm", "erlang", "fennel", "fish", "go" },
+    { "dockerfile", "elixir", "elm", "erlang", "fennel", "fish", "go", "gomod" },
     { "gomod", "graphql", "hcl", "help", "html", "java", "javascript", "jsdoc" },
     { "json", "jsonc", "julia", "kotlin", "latex", "ledger", "lua", "make" },
     { "markdown", "nix", "ocaml", "perl", "php", "python", "query", "r" },
