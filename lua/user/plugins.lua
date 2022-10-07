@@ -624,6 +624,49 @@ M.config = function()
       },
       disable = not lvim.builtin.noice.active,
     },
+    {
+      "olexsmir/gopher.nvim",
+      config = function()
+        require("gopher").setup {
+          commands = {
+            go = "go",
+            gomodifytags = "gomodifytags",
+            gotests = "gotests",
+            impl = "impl",
+            iferr = "iferr",
+          },
+        }
+      end,
+      ft = { "go", "gomod" },
+      event = "BufRead",
+      disable = not lvim.builtin.go_programming.active,
+    },
+    {
+      "leoluz/nvim-dap-go",
+      config = function()
+        require("dap-go").setup()
+      end,
+      ft = { "go", "gomod" },
+      event = "BufRead",
+      disable = not lvim.builtin.go_programming.active,
+    },
+    {
+      "AckslD/swenv.nvim",
+      disable = not lvim.builtin.python_programming.active,
+      ft = "python",
+      event = "BufRead",
+    },
+    {
+      "mfussenegger/nvim-dap-python",
+      config = function()
+        local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+        require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+        require("dap-python").test_runner = "pytest"
+      end,
+      ft = "python",
+      event = "BufRead",
+      disable = not lvim.builtin.python_programming.active,
+    },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
     -- {
     --   "lvimuser/lsp-inlayhints.nvim",

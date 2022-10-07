@@ -679,70 +679,92 @@ M.show_documentation = function()
   end
 end
 
-M.lsp_on_attach_callback = function(client, bufnr)
-  local opts = { noremap = true, silent = true }
-  if client.name == "clangd" then
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>H", "<Cmd>ClangdSwitchSourceHeader<CR>", opts)
-  elseif client.name == "gopls" then
-    vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "<leader>H",
-      "<Cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
-      opts
-    )
-  elseif client.name == "jdtls" then
-    vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "<leader>rf",
-      "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn package;read', hidden =false}:toggle()<CR>",
-      opts
-    )
-    vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "<leader>mf",
-      "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn compile;read', hidden =false}:toggle()<CR>",
-      opts
-    )
-  elseif client.name == "rust_analyzer" then
-    vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "<leader>H",
-      "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo clippy;read',count=2,direction='float'})<CR>",
-      opts
-    )
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lm", "<Cmd>RustExpandMacro<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lH", "<Cmd>RustToggleInlayHints<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>le", "<Cmd>RustRunnables<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lh", "<Cmd>RustHoverActions<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lc", "<Cmd>RustOpenCargo<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lo", "<Cmd>RustOpenExternalDocs<CR>", opts)
-  elseif client.name == "taplo" then
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lt", "<Cmd>lua require('crates').toggle()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lu", "<Cmd>lua require('crates').update_crate()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lU", "<Cmd>lua require('crates').upgrade_crate()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lg", "<Cmd>lua require('crates').update_all_crates()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lG", "<Cmd>lua require('crates').upgrade_all_crates()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lH", "<Cmd>lua require('crates').open_homepage()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lD", "<Cmd>lua require('crates').open_documentation()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lR", "<Cmd>lua require('crates').open_repository()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lv", "<Cmd>lua require('crates').show_versions_popup()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lF", "<Cmd>lua require('crates').show_features_popup()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "<leader>lD",
-      "<Cmd>lua require('crates').show_dependencies_popup()<CR>",
-      opts
-    )
-  elseif client.name == "tsserver" then
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lA", "<Cmd>TSLspImportAll<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lR", "<Cmd>TSLspRenameFile<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lO", "<Cmd>TSLspOrganize<CR>", opts)
+M.lsp_on_attach_callback = function(client, _)
+  local wkstatus_ok, which_key = pcall(require, "which-key")
+  if not wkstatus_ok then
+    return
   end
+  local mappings = {}
+
+  local opts = {
+    mode = "n",
+    prefix = "<leader>",
+    buffer = nil,
+    silent = true,
+    noremap = true,
+    nowait = true,
+  }
+  -- local opts = { noremap = true, silent = true }
+  if client.name == "clangd" then
+    mappings["H"] = {
+      "<Cmd>ClangdSwitchSourceHeader<CR>",
+      "Swich Header/Source",
+    }
+  elseif client.name == "gopls" then
+    mappings["H"] = {
+      "<Cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
+      "Go Vet",
+    }
+    if lvim.builtin.go_programming.active then
+      mappings["li"] = { "<cmd>GoInstallDeps<cr>", "Install Dependencies" }
+      mappings["lT"] = { "<cmd>GoMod tidy<cr>", "Tidy" }
+      mappings["lt"] = { "<cmd>GoTestAdd<cr>", "Add Test" }
+      mappings["tA"] = { "<cmd>GoTestsAll<cr>", "Add All Tests" }
+      mappings["le"] = { "<cmd>GoTestsExp<cr>", "Add Exported Tests" }
+      mappings["lg"] = { "<cmd>GoGenerate<cr>", "Generate" }
+      mappings["lF"] = { "<cmd>GoGenerate %<cr>", "Generate File" }
+      mappings["lc"] = { "<cmd>GoCmt<cr>", "Comment" }
+      mappings["dT"] = { "<cmd>lua require('dap-go').debug_test()<cr>", "Debug Test" }
+    end
+  elseif client.name == "jdtls" then
+    mappings["rf"] = {
+      "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn package;read', hidden =false}:toggle()<CR>",
+      "Maven Package",
+    }
+    mappings["mf"] = {
+      "<cmd>lua require('toggleterm.terminal').Terminal:new {cmd='mvn compile;read', hidden =false}:toggle()<CR>",
+      "Maven Compile",
+    }
+  elseif client.name == "rust_analyzer" then
+    mappings["H"] = {
+      "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo clippy;read',count=2,direction='float'})<CR>",
+      "Clippy",
+    }
+    mappings["lA"] = { "<Cmd>RustHoverActions<CR>", "Hover Actions" }
+    mappings["lm"] = { "<Cmd>RustExpandMacro<CR>", "Expand Macro" }
+    mappings["lH"] = { "<Cmd>RustToggleInlayHints<CR>", "Toggle Inlay Hints" }
+    mappings["le"] = { "<Cmd>RustRunnables<CR>", "Runnables" }
+    mappings["lc"] = { "<Cmd>RustOpenCargo<CR>", "Open Cargo" }
+    mappings["lo"] = { "<Cmd>RustOpenExternalDocs<CR>", "Open External Docs" }
+  elseif client.name == "taplo" then
+    mappings["lt"] = { "<Cmd>lua require('crates').toggle()<CR>", "Toggle Crate" }
+    mappings["lu"] = { "<Cmd>lua require('crates').update_crate()<CR>", "Update Crate" }
+    mappings["lU"] = { "<Cmd>lua require('crates').upgrade_crate()<CR>", "Upgrade Crate" }
+    mappings["lg"] = { "<Cmd>lua require('crates').update_all_crates()<CR>", "Update All" }
+    mappings["lG"] = { "<Cmd>lua require('crates').upgrade_all_crates()<CR>", "Upgrade All" }
+    mappings["lH"] = { "<Cmd>lua require('crates').open_homepage()<CR>", "Open HomePage" }
+    mappings["lD"] = { "<Cmd>lua require('crates').open_documentation()<CR>", "Open Documentation" }
+    mappings["lR"] = { "<Cmd>lua require('crates').open_repository()<CR>", "Open Repository" }
+    mappings["lv"] = { "<Cmd>lua require('crates').show_versions_popup()<CR>", "Show Versions" }
+    mappings["lF"] = { "<Cmd>lua require('crates').show_features_popup()<CR>", "Show Features" }
+    mappings["lD"] = { "<Cmd>lua require('crates').show_dependencies_popup()<CR>", "Show Dependencies" }
+  elseif client.name == "tsserver" then
+    mappings["lA"] = { "<Cmd>TSLspImportAll<CR>", "Import All" }
+    mappings["lR"] = { "<Cmd>TSLspRenameFile<CR>", "Rename File" }
+    mappings["lO"] = { "<Cmd>TSLspOrganize<CR>", "Organize Imports" }
+  elseif client.name == "pyright" then
+    if lvim.builtin.python_programming.active then
+      mappings["df"] = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" }
+      mappings["dm"] = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" }
+      mappings["dS"] = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" }
+      mappings["P"] = {
+        name = "Python",
+        i = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Pick Env" },
+        d = { "<cmd>lua require('swenv.api').get_current_venv()<cr>", "Show Env" },
+      }
+    end
+  end
+  which_key.register(mappings, opts)
 end
 
 M.setup_cmdline = function()
