@@ -35,6 +35,10 @@ local opts = {
       },
     },
   },
+  on_attach = function(client, bufnr)
+    require("lvim.lsp").common_on_attach(client, bufnr)
+    local _, _ = pcall(vim.lsp.codelens.refresh)
+  end,
 }
 
 require("lvim.lsp.manager").setup("gopls", opts)
