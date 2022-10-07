@@ -155,6 +155,7 @@ M.config = function()
         require("user.rust_tools").config()
       end,
       ft = { "rust", "rs" },
+      disable = not lvim.builtin.rust_programming.active,
     },
     {
       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -247,6 +248,16 @@ M.config = function()
       config = function()
         require("user.tss").config()
       end,
+      disable = not lvim.builtin.web_programming.active,
+    },
+    {
+      "vuki656/package-info.nvim",
+      config = function()
+        require("package-info").setup()
+      end,
+      opt = true,
+      event = { "BufReadPre", "BufNew" },
+      disable = not lvim.builtin.web_programming.active,
     },
     {
       "lervag/vimtex",
@@ -531,6 +542,7 @@ M.config = function()
       config = function()
         require("user.crates").config()
       end,
+      disable = not lvim.builtin.rust_programming.active,
     },
     {
       "hrsh7th/cmp-cmdline",
@@ -638,7 +650,7 @@ M.config = function()
         }
       end,
       ft = { "go", "gomod" },
-      event = "BufRead",
+      event = { "BufRead", "BufNew" },
       disable = not lvim.builtin.go_programming.active,
     },
     {
@@ -647,14 +659,14 @@ M.config = function()
         require("dap-go").setup()
       end,
       ft = { "go", "gomod" },
-      event = "BufRead",
+      event = { "BufRead", "BufNew" },
       disable = not lvim.builtin.go_programming.active,
     },
     {
       "AckslD/swenv.nvim",
       disable = not lvim.builtin.python_programming.active,
       ft = "python",
-      event = "BufRead",
+      event = { "BufRead", "BufNew" },
     },
     {
       "mfussenegger/nvim-dap-python",
@@ -664,7 +676,7 @@ M.config = function()
         require("dap-python").test_runner = "pytest"
       end,
       ft = "python",
-      event = "BufRead",
+      event = { "BufRead", "BufNew" },
       disable = not lvim.builtin.python_programming.active,
     },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged

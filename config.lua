@@ -65,8 +65,10 @@ lvim.builtin.breadcrumbs.active = false
 lvim.builtin.illuminate.active = false
 lvim.builtin.indentlines.active = true
 lvim.builtin.noice = { active = false }
-lvim.builtin.go_programming = { active = false } -- extra goodies for go programming
-lvim.builtin.python_programming = { active = false } -- extra goodies for python programming
+lvim.builtin.go_programming = { active = false } -- gopher.nvim + nvim-dap-go
+lvim.builtin.python_programming = { active = false } -- swenv.nvim + nvim-dap-python
+lvim.builtin.web_programming = { active = false } -- typescript.nvim + package-info.nvimconfig
+lvim.builtin.rust_programming = { active = false } -- rust_tools.nvim + crates.nvim
 
 local user = os.getenv "USER"
 if user and user == "abz" then
@@ -107,6 +109,8 @@ if user and user == "abz" then
   lvim.builtin.noice.active = true
   lvim.builtin.go_programming.active = true
   lvim.builtin.python_programming.active = true
+  lvim.builtin.web_programming.active = true
+  lvim.builtin.rust_programming.active = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 if lvim.builtin.winbar_provider == "navic" then

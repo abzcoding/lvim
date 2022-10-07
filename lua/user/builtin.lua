@@ -737,24 +737,28 @@ M.lsp_on_attach_callback = function(client, _)
       "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo clippy;read',count=2,direction='float'})<CR>",
       "Clippy",
     }
-    mappings["lA"] = { "<Cmd>RustHoverActions<CR>", "Hover Actions" }
-    mappings["lm"] = { "<Cmd>RustExpandMacro<CR>", "Expand Macro" }
-    mappings["lH"] = { "<Cmd>RustToggleInlayHints<CR>", "Toggle Inlay Hints" }
-    mappings["le"] = { "<Cmd>RustRunnables<CR>", "Runnables" }
-    mappings["lc"] = { "<Cmd>RustOpenCargo<CR>", "Open Cargo" }
-    mappings["lo"] = { "<Cmd>RustOpenExternalDocs<CR>", "Open External Docs" }
+    if lvim.builtin.rust_programming.active then
+      mappings["lA"] = { "<Cmd>RustHoverActions<CR>", "Hover Actions" }
+      mappings["lm"] = { "<Cmd>RustExpandMacro<CR>", "Expand Macro" }
+      mappings["lH"] = { "<Cmd>RustToggleInlayHints<CR>", "Toggle Inlay Hints" }
+      mappings["le"] = { "<Cmd>RustRunnables<CR>", "Runnables" }
+      mappings["lc"] = { "<Cmd>RustOpenCargo<CR>", "Open Cargo" }
+      mappings["lo"] = { "<Cmd>RustOpenExternalDocs<CR>", "Open External Docs" }
+    end
   elseif client.name == "taplo" then
-    mappings["lt"] = { "<Cmd>lua require('crates').toggle()<CR>", "Toggle Crate" }
-    mappings["lu"] = { "<Cmd>lua require('crates').update_crate()<CR>", "Update Crate" }
-    mappings["lU"] = { "<Cmd>lua require('crates').upgrade_crate()<CR>", "Upgrade Crate" }
-    mappings["lg"] = { "<Cmd>lua require('crates').update_all_crates()<CR>", "Update All" }
-    mappings["lG"] = { "<Cmd>lua require('crates').upgrade_all_crates()<CR>", "Upgrade All" }
-    mappings["lH"] = { "<Cmd>lua require('crates').open_homepage()<CR>", "Open HomePage" }
-    mappings["lD"] = { "<Cmd>lua require('crates').open_documentation()<CR>", "Open Documentation" }
-    mappings["lR"] = { "<Cmd>lua require('crates').open_repository()<CR>", "Open Repository" }
-    mappings["lv"] = { "<Cmd>lua require('crates').show_versions_popup()<CR>", "Show Versions" }
-    mappings["lF"] = { "<Cmd>lua require('crates').show_features_popup()<CR>", "Show Features" }
-    mappings["lD"] = { "<Cmd>lua require('crates').show_dependencies_popup()<CR>", "Show Dependencies" }
+    if lvim.builtin.rust_programming.active then
+      mappings["lt"] = { "<Cmd>lua require('crates').toggle()<CR>", "Toggle Crate" }
+      mappings["lu"] = { "<Cmd>lua require('crates').update_crate()<CR>", "Update Crate" }
+      mappings["lU"] = { "<Cmd>lua require('crates').upgrade_crate()<CR>", "Upgrade Crate" }
+      mappings["lg"] = { "<Cmd>lua require('crates').update_all_crates()<CR>", "Update All" }
+      mappings["lG"] = { "<Cmd>lua require('crates').upgrade_all_crates()<CR>", "Upgrade All" }
+      mappings["lH"] = { "<Cmd>lua require('crates').open_homepage()<CR>", "Open HomePage" }
+      mappings["lD"] = { "<Cmd>lua require('crates').open_documentation()<CR>", "Open Documentation" }
+      mappings["lR"] = { "<Cmd>lua require('crates').open_repository()<CR>", "Open Repository" }
+      mappings["lv"] = { "<Cmd>lua require('crates').show_versions_popup()<CR>", "Show Versions" }
+      mappings["lF"] = { "<Cmd>lua require('crates').show_features_popup()<CR>", "Show Features" }
+      mappings["lD"] = { "<Cmd>lua require('crates').show_dependencies_popup()<CR>", "Show Dependencies" }
+    end
   elseif client.name == "tsserver" then
     mappings["lA"] = { "<Cmd>TSLspImportAll<CR>", "Import All" }
     mappings["lR"] = { "<Cmd>TSLspRenameFile<CR>", "Rename File" }
@@ -769,6 +773,15 @@ M.lsp_on_attach_callback = function(client, _)
         i = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Pick Env" },
         d = { "<cmd>lua require('swenv.api').get_current_venv()<cr>", "Show Env" },
       }
+    end
+  elseif client.name == "jsonls" then
+    if lvim.builtin.web_programming.active then
+      mappings["ls"] = { "<cmd>lua require('package-info').show()<cr>", "Show pkg info" }
+      mappings["lc"] = { "<cmd>lua require('package-info').hide()<cr>", "Hide pkg info" }
+      mappings["lu"] = { "<cmd>lua require('package-info').update()<cr>", "Update dependency" }
+      mappings["ld"] = { "<cmd>lua require('package-info').delete()<cr>", "Delete dependency" }
+      mappings["li"] = { "<cmd>lua require('package-info').install()<cr>", "Install dependency" }
+      mappings["lC"] = { "<cmd>lua require('package-info').change_version()<cr>", "Change Version" }
     end
   end
   which_key.register(mappings, opts)
