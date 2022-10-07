@@ -47,3 +47,6 @@ require("user.dev_icons").define_dap_signs()
 if lvim.use_icons == false and lvim.builtin.custom_web_devicons then
   require("user.dev_icons").set_icon()
 end
+if lvim.builtin.fancy_wild_menu.active then
+  require("user.builtin").setup_cmdline()
+end

@@ -65,15 +65,6 @@ M.config = function()
       config = { sources = function(...) end },
     }
   end
-  if lvim.builtin.fancy_wild_menu.active then
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline {},
-      sources = {
-        { name = "cmdline" },
-        { name = "path" },
-      },
-    })
-  end
   cmp.setup.filetype("toml", {
     sources = cmp.config.sources({
       { name = "nvim_lsp", max_item_count = 8 },
@@ -751,6 +742,19 @@ M.lsp_on_attach_callback = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lA", "<Cmd>TSLspImportAll<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lR", "<Cmd>TSLspRenameFile<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lO", "<Cmd>TSLspOrganize<CR>", opts)
+  end
+end
+
+M.setup_cmdline = function()
+  local found, cmp = pcall(require, "cmp")
+  if found then
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline {},
+      sources = {
+        { name = "cmdline" },
+        { name = "path" },
+      },
+    })
   end
 end
 
