@@ -65,6 +65,15 @@ M.config = function()
       config = { sources = function(...) end },
     }
   end
+  if lvim.builtin.fancy_wild_menu.active then
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline {},
+      sources = {
+        { name = "cmdline" },
+        { name = "path" },
+      },
+    })
+  end
   cmp.setup.filetype("toml", {
     sources = cmp.config.sources({
       { name = "nvim_lsp", max_item_count = 8 },
@@ -785,19 +794,6 @@ M.lsp_on_attach_callback = function(client, _)
     end
   end
   which_key.register(mappings, opts)
-end
-
-M.setup_cmdline = function()
-  local found, cmp = pcall(require, "cmp")
-  if found then
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline {},
-      sources = {
-        { name = "cmdline" },
-        { name = "path" },
-      },
-    })
-  end
 end
 
 return M

@@ -73,6 +73,7 @@ lvim.builtin.go_programming = { active = false } -- gopher.nvim + nvim-dap-go
 lvim.builtin.python_programming = { active = false } -- swenv.nvim + nvim-dap-python
 lvim.builtin.web_programming = { active = false } -- typescript.nvim + package-info.nvimconfig
 lvim.builtin.rust_programming = { active = false } -- rust_tools.nvim + crates.nvim
+lvim.builtin.cmp.cmdline.enable = false
 
 -- Custom User Config
 -- =========================================
