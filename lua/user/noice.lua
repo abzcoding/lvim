@@ -13,7 +13,7 @@ M.config = function()
       enabled = not lvim.builtin.fancy_wild_menu.active,
     },
     notify = {
-      enabled = lvim.builtin.notify.active,
+      enabled = false,
     },
     routes = {
       {
@@ -23,13 +23,6 @@ M.config = function()
       {
         view = "split",
         filter = { event = "msg_show", min_height = 20 },
-      },
-      {
-        filter = {
-          event = "msg_show",
-          find = "E486:",
-        },
-        opts = { skip = true },
       },
       {
         filter = {
