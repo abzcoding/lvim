@@ -1,6 +1,7 @@
 local M = {}
 
 M.config = function()
+  local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
   local function sep_os_replacer(str)
     local result = str
     local path_sep = package.config:sub(1, 1)
@@ -135,15 +136,13 @@ M.config = function()
       cwd = "${workspaceFolder}",
     },
   }
+  local firefox_path = mason_path .. "packages/firefox-debug-adapter/"
 
   dap.adapters.firefox = {
     type = "executable",
     command = "node",
     args = {
-      join_path(
-        vim.fn.expand "~/",
-        "/.vscode/extensions/firefox-devtools.vscode-firefox-debug-2.9.6/dist/adapter.bundle.js"
-      ),
+      firefox_path .. "dist/adapter.bundle.js",
     },
   }
 
@@ -211,7 +210,7 @@ M.config = function()
     },
   }
 
-  local path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/")
+  local path = vim.fn.glob(mason_path .. "packages/codelldb/extension/")
     or vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
   local lldb_cmd = path .. "adapter/codelldb"
 
@@ -309,6 +308,28 @@ M.config = function()
     end,
     console = "integratedTerminal",
   })
+  dap.adapters.php = {
+    type = "executable",
+    command = "node",
+    args = { mason_path .. "packages/php-debug-adapter/extension/out/phpDebug.js" },
+  }
+  dap.configurations.php = {
+    {
+      name = "Listen for Xdebug",
+      type = "php",
+      request = "launch",
+      port = 9003,
+    },
+    {
+      name = "Debug currently open script",
+      type = "php",
+      request = "launch",
+      port = 9003,
+      cwd = "${fileDirname}",
+      program = "${file}",
+      runtimeExecutable = "php",
+    },
+  }
 end
 
 return M
