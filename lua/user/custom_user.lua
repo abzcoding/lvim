@@ -5,6 +5,7 @@ M.config = function()
   vim.opt.mousescroll = { "ver:1", "hor:6" }
   vim.o.mousefocus = true
   vim.o.mousemoveevent = true
+  vim.o.splitkeep = "screen"
   ---
 
   lvim.builtin.lsp_lines = true
