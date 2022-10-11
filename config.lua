@@ -77,7 +77,7 @@ lvim.builtin.cmp.cmdline.enable = false
 
 -- Custom User Config
 -- =========================================
-local user = os.getenv "USER"
+local user = vim.env.USER
 if user and user == "abz" then
   require("user.custom_user").config()
 end

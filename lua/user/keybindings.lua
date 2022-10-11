@@ -423,7 +423,7 @@ M.config = function()
 
   -- My wezterm is weird
   -- =========================================
-  local user = os.getenv "USER"
+  local user = vim.env.USER
   if user and user == "abz" then
     M.set_wezterm_keybindings()
   end

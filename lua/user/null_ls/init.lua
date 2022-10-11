@@ -10,7 +10,7 @@ M.config = function()
   if not status_ok then
     return
   end
-  local semgrep_rule_folder = os.getenv "HOME" .. "/.config/semgrep/semgrep-rules/"
+  local semgrep_rule_folder = vim.env.HOME .. "/.config/semgrep/semgrep-rules/"
   local use_semgrep = false
   if vim.fn.filereadable(semgrep_rule_folder .. "template.yaml") then
     use_semgrep = true

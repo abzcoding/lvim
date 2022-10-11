@@ -196,7 +196,7 @@ M.config = function()
     { " ", "FloatBorder" },
     { " ", "FloatBorder" },
   }
-  if os.getenv "KITTY_WINDOW_ID" then
+  if vim.env.KITTY_WINDOW_ID then
     lvim.lsp.float.border = {
       { "🭽", "FloatBorder" },
       { "▔", "FloatBorder" },

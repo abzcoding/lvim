@@ -103,7 +103,7 @@ augroup END
   })
 
   local codelens_viewer = "lua require('user.codelens').show_line_sign()"
-  local user = os.getenv "USER"
+  local user = vim.env.USER
   if user and user == "abz" then
     create_aucmd("CursorHold", {
       group = "_lvim_user",
