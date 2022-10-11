@@ -271,14 +271,15 @@ M.config = function()
   ins_left {
     function()
       local utils = require "lvim.core.lualine.utils"
-      local filename = vim.fn.expand "%"
-      local kube_env = os.getenv "KUBECONFIG"
+      local filename = vim.fn.expand "%:t"
+      local kube_env = vim.env.KUBECONFIG
       local kube_filename = "kubectl-edit"
       if (vim.bo.filetype == "yaml") and (string.sub(filename, 1, kube_filename:len()) == kube_filename) then
         return string.format("⎈  (%s)", utils.env_cleanup(kube_env))
       end
       return ""
     end,
+    color = { fg = colors.cyan, bg = colors.bg },
     cond = conditions.hide_small,
   }
 
@@ -306,8 +307,13 @@ M.config = function()
   ins_left {
     function()
       local fname = vim.fn.expand "%:p"
+      local filename = vim.fn.expand "%:t"
+      local kube_filename = "kubectl-edit"
       local ftype = vim.bo.filetype
       local cwd = vim.api.nvim_call_function("getcwd", {})
+      if (vim.bo.filetype == "yaml") and (string.sub(filename, 1, kube_filename:len()) == kube_filename) then
+        return "kubernetes"
+      end
       if (vim.fn.has "linux" == 1) or (vim.fn.has "mac" == 1) then
         if string.find(fname, "zsh;#toggleterm") ~= nil then
           return cwd
@@ -359,11 +365,11 @@ M.config = function()
     function()
       local utils = require "lvim.core.lualine.utils"
       if vim.bo.filetype == "python" then
-        local venv = os.getenv "CONDA_DEFAULT_ENV"
+        local venv = vim.env.CONDA_DEFAULT_ENV
         if venv then
           return string.format("  (%s)", utils.env_cleanup(venv))
         end
-        venv = os.getenv "VIRTUAL_ENV"
+        venv = vim.env.VIRTUAL_ENV
         if venv then
           return string.format("  (%s)", utils.env_cleanup(venv))
         end
