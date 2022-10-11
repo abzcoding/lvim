@@ -45,6 +45,6 @@ luac.out
 *.hex
 
 # LunarVim
-plugin/
+plugin/packer_compiled.lua
 
 .luacheckcache
