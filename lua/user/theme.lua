@@ -140,7 +140,7 @@ M.kanagawa = function()
     colors = { sumiInk1b = "#1b1b23" },
     overrides = {
       diffRemoved = { fg = "#E46876" },
-      NvimTreeFolderIcon = { fg = "#7e9cd8" }
+      NvimTreeFolderIcon = { fg = "#7e9cd8" },
     },
   }
 end
@@ -335,6 +335,7 @@ M.telescope_theme = function()
   if lvim.builtin.time_based_themes then
     local _time = os.date "*t"
     local current_colors = M.current_colors()
+    set_fg_bg("CmpBorder", current_colors.bg_alt, current_colors.bg_alt)
     set_fg_bg("diffAdded", current_colors.git.add, "NONE")
     set_fg_bg("diffRemoved", current_colors.git.delete, "NONE")
     set_fg_bg("diffChanged", current_colors.git.change, "NONE")
@@ -343,6 +344,7 @@ M.telescope_theme = function()
     set_fg_bg("SignColumnSB", current_colors.bg, "NONE")
     if _time.hour >= 9 and _time.hour < 17 then
       -- HACK: change highlights for tokyonight theme
+      set_fg_bg("CmpBorder", "#181924", "#181924")
       set_fg_bg("NormalFloat", current_colors.fg, "#181924")
       set_fg_bg("Cursor", current_colors.bg, current_colors.fg)
       set_fg_bg("NormalNC", current_colors.fg_dark, "#1c1d28")

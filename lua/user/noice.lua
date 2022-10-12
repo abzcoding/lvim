@@ -6,16 +6,42 @@ M.config = function()
     return
   end
   noice.setup {
-    cmdline = {
-      view = "cmdline",
+    views = {
+      cmdline_popup = {
+        border = {
+          style = "none",
+          padding = { 2, 3 },
+        },
+        size = {
+          width = "auto",
+          height = "auto",
+        },
+        filter_options = {},
+        win_options = {
+          winhighlight = {
+            NormalFloat = "NormalFloat",
+            FloatBorder = "FloatBorder",
+            Normal = "NormalFloat",
+            Search = "None",
+            Pmenu = "NormalFloat",
+          },
+        },
+      },
     },
+    -- cmdline = {
+    --   view = "cmdline",
+    -- },
     popupmenu = {
       enabled = not lvim.builtin.fancy_wild_menu.active,
     },
     notify = {
-      enabled = false,
+      enabled = lvim.builtin.notify.active,
     },
     routes = {
+      {
+        view = "notify",
+        filter = { event = "msg_showmode" },
+      },
       {
         filter = { event = "msg_show", kind = "search_count" },
         opts = { skip = true },

@@ -66,13 +66,31 @@ M.config = function()
     }
   end
   if lvim.builtin.fancy_wild_menu.active then
-    cmp.setup.cmdline(":", {
+    local cmdline_opts = {
       mapping = cmp.mapping.preset.cmdline {},
       sources = {
         { name = "cmdline" },
         { name = "path" },
       },
-    })
+    }
+    if lvim.builtin.noice.active then
+      cmdline_opts.window = {
+        completion = {
+          border = {
+            { "╭", "CmpBorder" },
+            { "─", "CmpBorder" },
+            { "╮", "CmpBorder" },
+            { "│", "CmpBorder" },
+            { "╯", "CmpBorder" },
+            { "─", "CmpBorder" },
+            { "╰", "CmpBorder" },
+            { "│", "CmpBorder" },
+          },
+          winhighlight = "Search:None",
+        },
+      }
+    end
+    cmp.setup.cmdline(":", cmdline_opts)
   end
   cmp.setup.filetype("toml", {
     sources = cmp.config.sources({
