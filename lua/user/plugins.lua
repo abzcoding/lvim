@@ -21,6 +21,7 @@ M.config = function()
     {
       "catppuccin/nvim",
       as = "catppuccin",
+      run = ":CatppuccinCompile",
       setup = function()
         vim.g.catppuccin_flavour = "mocha"
       end,

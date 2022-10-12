@@ -18,6 +18,7 @@ M.config = function()
         },
         filter_options = {},
         win_options = {
+          winblend = 5,
           winhighlight = {
             NormalFloat = "NormalFloat",
             FloatBorder = "FloatBorder",
