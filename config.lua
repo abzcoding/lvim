@@ -91,6 +91,9 @@ if lvim.builtin.winbar_provider == "navic" then
   lvim.builtin.bufferline.active = false
   lvim.builtin.breadcrumbs.active = true
 end
+if lvim.builtin.breadcrumbs.active and lvim.builtin.noice.active then
+  table.insert(lvim.builtin.breadcrumbs.winbar_filetype_exclude, "vim")
+end
 lvim.builtin.nvimtree.active = lvim.builtin.tree_provider == "nvimtree"
 lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
