@@ -12,7 +12,9 @@ M.config = function()
 
   -- Bufferline
   -- =========================================
-  require("user.bufferline").config()
+  if lvim.builtin.bufferline.active then
+    require("user.bufferline").config()
+  end
 
   -- CMP
   -- =========================================
