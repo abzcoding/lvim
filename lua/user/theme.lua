@@ -340,6 +340,8 @@ M.telescope_theme = function()
     local _time = os.date "*t"
     local current_colors = M.current_colors()
     set_fg_bg("CmpBorder", current_colors.cmp_border, current_colors.cmp_border)
+    set_fg_bg("NoiceCmdlinePopupBorder", current_colors.cmp_border, current_colors.cmp_border)
+    set_fg_bg("NoiceCmdlinePopupSearchBorder", current_colors.cmp_border, current_colors.cmp_border)
     set_fg_bg("diffAdded", current_colors.git.add, "NONE")
     set_fg_bg("diffRemoved", current_colors.git.delete, "NONE")
     set_fg_bg("diffChanged", current_colors.git.change, "NONE")

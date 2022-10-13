@@ -8,23 +8,34 @@ M.config = function()
   noice.setup {
     views = {
       cmdline_popup = {
-        border = {
-          style = "none",
-          padding = { 2, 3 },
-        },
-        size = {
-          width = "auto",
-          height = "auto",
-        },
-        filter_options = {},
         win_options = {
           winblend = 5,
           winhighlight = {
-            NormalFloat = "NormalFloat",
-            FloatBorder = "FloatBorder",
             Normal = "NormalFloat",
-            Search = "None",
-            Pmenu = "NormalFloat",
+            FloatBorder = "NoiceCmdlinePopupBorder",
+            IncSearch = "",
+            Search = "",
+          },
+          cursorline = false,
+        },
+        filter_options = {
+          {
+            filter = { event = "cmdline", find = "^%s*[/?]" },
+            opts = {
+              border = {
+                text = {
+                  top = " Search ",
+                },
+              },
+              win_options = {
+                winhighlight = {
+                  Normal = "NormalFloat",
+                  FloatBorder = "NoiceCmdlinePopupBorder",
+                  IncSearch = "",
+                  Search = "",
+                },
+              },
+            },
           },
         },
       },
