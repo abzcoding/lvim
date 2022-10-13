@@ -784,6 +784,13 @@ M.lsp_on_attach_callback = function(client, _)
       mappings["lm"] = { "<Cmd>RustExpandMacro<CR>", "Expand Macro" }
       mappings["lH"] = { "<Cmd>RustToggleInlayHints<CR>", "Toggle Inlay Hints" }
       mappings["le"] = { "<Cmd>RustRunnables<CR>", "Runnables" }
+      mappings["lD"] = { "<cmd>RustDebuggables<Cr>", "Debuggables" }
+      mappings["lP"] = { "<cmd>RustParentModule<Cr>", "Parent Module" }
+      mappings["lv"] = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" }
+      mappings["lR"] = {
+        "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
+        "Reload Workspace",
+      }
       mappings["lc"] = { "<Cmd>RustOpenCargo<CR>", "Open Cargo" }
       mappings["lo"] = { "<Cmd>RustOpenExternalDocs<CR>", "Open External Docs" }
     end
@@ -805,6 +812,11 @@ M.lsp_on_attach_callback = function(client, _)
     mappings["lA"] = { "<Cmd>TSLspImportAll<CR>", "Import All" }
     mappings["lR"] = { "<Cmd>TSLspRenameFile<CR>", "Rename File" }
     mappings["lO"] = { "<Cmd>TSLspOrganize<CR>", "Organize Imports" }
+    mappings["li"] = { "<cmd>TypescriptAddMissingImports<Cr>", "AddMissingImports" }
+    mappings["lo"] = { "<cmd>TypescriptOrganizeImports<cr>", "OrganizeImports" }
+    mappings["lu"] = { "<cmd>TypescriptRemoveUnused<Cr>", "RemoveUnused" }
+    mappings["lF"] = { "<cmd>TypescriptFixAll<Cr>", "FixAll" }
+    mappings["lg"] = { "<cmd>TypescriptGoToSourceDefinition<Cr>", "GoToSourceDefinition" }
   elseif client.name == "pyright" then
     if lvim.builtin.python_programming.active then
       mappings["df"] = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" }
