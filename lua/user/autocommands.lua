@@ -4,6 +4,7 @@ local create_aucmd = vim.api.nvim_create_autocmd
 
 M.config = function()
   vim.api.nvim_clear_autocmds { pattern = "lir", group = "_filetype_settings" }
+  vim.api.nvim_clear_autocmds { pattern = "*", group = "_format_options" }
   vim.api.nvim_create_augroup("_lvim_user", {})
   -- Autocommands
   if lvim.builtin.nonumber_unfocus then
