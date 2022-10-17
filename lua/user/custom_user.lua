@@ -15,7 +15,6 @@ M.config = function()
     vim.opt.cmdheight = 0
     vim.opt.laststatus = 0
     vim.g.tpipeline_cursormoved = 1
-    vim.g.tpipeline_clearstl = 1
   end
   lvim.builtin.custom_web_devicons = true
   lvim.use_icons = false -- only set to false if you know what are you doing
