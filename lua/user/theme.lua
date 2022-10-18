@@ -32,13 +32,54 @@ M.rose_pine = function()
     },
     highlight_groups = {
       Boolean = { fg = "love" },
-      Cursor = { fg = "#232136", bg = "#e0def4" },
-      NormalFloat = { bg = "#191724" },
-      MsgArea = { fg = "#e0def4" },
-      VertSplit = { fg = "#21202e", bg = "#21202e" },
-      SignColumn = { fg = "#e0def4", bg = "NONE" },
-      SignColumnSB = { fg = "#e0def4", bg = "NONE" },
-      mkdInlineURL = { fg = "#c4a7e7", style = "NONE" },
+      Cursor = { fg = "#232136", bg = "text" },
+      NormalFloat = { bg = "base" },
+      MsgArea = { fg = "text" },
+      VertSplit = { fg = "highlight_low", bg = "highlight_low" },
+      SignColumn = { fg = "text", bg = "none" },
+      SignColumnSB = { fg = "text", bg = "none" },
+      mkdInlineURL = { fg = "iris", style = "none" },
+      ["@variable"] = { fg = "text" },
+      ["@variable.builtin"] = { fg = "love" },
+      ["@type"] = { fg = "foam" },
+      ["@text"] = { fg = "text" },
+      ["@property"] = { fg = "iris" },
+      ["@parameter"] = { fg = "iris" },
+      ["@constant.builtin"] = { fg = "love" },
+      ["@constant"] = { fg = "foam" },
+      ["@constructor"] = { fg = "foam" },
+      ["@field"] = { fg = "foam" },
+      ["@function.builtin"] = { fg = "love" },
+      ["@function"] = { fg = "rose" },
+      ["@include"] = { fg = "pine" },
+      ["@keyword"] = { fg = "pine" },
+      ["@keyword.operator"] = { fg = "subtle" },
+      ["@label"] = { fg = "foam" },
+      ["@punctuation.bracket"] = { fg = "muted" },
+      ["@punctuation.delimiter"] = { fg = "muted" },
+      ["@punctuation.special"] = { fg = "muted" },
+      ["@string.escape"] = { fg = "pine" },
+      ["@string.special"] = { fg = "gold" },
+      ["@tag"] = { fg = "foam" },
+      ["@tag.delimiter"] = { fg = "subtle" },
+      ["@text.title"] = { fg = "iris", style = "bold" },
+      ["@text.uri"] = { fg = "iris" },
+      CmpItemKindText = { fg = "gold" },
+      CmpItemKindConstructor = { fg = "foam" },
+      CmpItemKindField = { fg = "foam" },
+      CmpItemKindValue = { fg = "text" },
+      CmpItemKindEvent = { fg = "text" },
+      CmpItemKindUnit = { fg = "gold" },
+      CmpItemKindConstant = { fg = "gold" },
+      CmpItemKindModule = { fg = "iris" },
+      CmpItemKindEnum = { fg = "foam" },
+      CmpItemKindStruct = { fg = "foam" },
+      CmpItemKindTypeParameter = { fg = "foam" },
+      CmpItemKindTypeKeyword = { fg = "pine" },
+      CmpItemKindTypeDirectory = { fg = "foam" },
+      CmpItemKindReference = { fg = "gold" },
+      CmpItemKindOperator = { fg = "subtle" },
+      CmpItemKindTypeSnippet = { fg = "pine" },
     },
   }
 end
@@ -142,6 +183,16 @@ M.kanagawa = function()
     overrides = {
       diffRemoved = { fg = "#E46876" },
       NvimTreeFolderIcon = { fg = "#7e9cd8" },
+
+      -- " highlight! link TSConstructor @constructor
+      -- " highlight! link TSProperty @property
+      -- " highlight! link TSField @field
+      -- " highlight! link TSInclude @include
+      -- " highlight! link TSKeyword @keyword
+      -- " highlight! link TSParameterReference @parameter
+      -- " highlight! link TSText @string
+      -- " highlight! link TSType @type
+      -- " highlight! link TSVariable @variable
     },
   }
 end
