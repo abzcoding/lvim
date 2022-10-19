@@ -40,6 +40,7 @@ M.config = function()
   lvim.builtin.python_programming.active = true
   lvim.builtin.web_programming.active = true
   lvim.builtin.rust_programming.active = true
+  lvim.builtin.borderless_cmp = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

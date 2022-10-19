@@ -74,6 +74,7 @@ lvim.builtin.python_programming = { active = false } -- swenv.nvim + nvim-dap-py
 lvim.builtin.web_programming = { active = false } -- typescript.nvim + package-info.nvim
 lvim.builtin.rust_programming = { active = false } -- rust_tools.nvim + crates.nvim
 lvim.builtin.cmp.cmdline.enable = false
+lvim.builtin.borderless_cmp = false
 
 -- Custom User Config
 -- =========================================

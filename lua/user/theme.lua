@@ -129,7 +129,7 @@ M.catppuccin = function()
       },
       indent_blankline = {
         enabled = true,
-        colored_indent_levels = true,
+        colored_indent_levels = false,
       },
       gitsigns = lvim.builtin.gitsigns.active,
       notify = lvim.builtin.notify.active,
@@ -144,6 +144,10 @@ M.catppuccin = function()
     highlight_overrides = {
       mocha = {
         NormalFloat = { fg = "#CDD6F4", bg = "#151521" },
+        CmpItemKindEnum = { fg = "#B4BEFE" },
+        CmpItemKindEnumMember = { fg = "#F5C2E7" },
+        CmpItemMenu = { fg = "#7F849C" },
+        CmpItemAbbr = { fg = "#BAC2DE" },
       },
     },
   }
@@ -183,16 +187,7 @@ M.kanagawa = function()
     overrides = {
       diffRemoved = { fg = "#E46876" },
       NvimTreeFolderIcon = { fg = "#7e9cd8" },
-
-      -- " highlight! link TSConstructor @constructor
-      -- " highlight! link TSProperty @property
-      -- " highlight! link TSField @field
-      -- " highlight! link TSInclude @include
-      -- " highlight! link TSKeyword @keyword
-      -- " highlight! link TSParameterReference @parameter
-      -- " highlight! link TSText @string
-      -- " highlight! link TSType @type
-      -- " highlight! link TSVariable @variable
+      CmpItemKindEnum = { fg = "#957FB8" },
     },
   }
 end
