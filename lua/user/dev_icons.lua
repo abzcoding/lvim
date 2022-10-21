@@ -79,23 +79,20 @@ M.use_my_icons = function()
   for _, sign in ipairs(lvim.lsp.diagnostics.signs.values) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
   end
-  lvim.builtin.nvimtree.setup.diagnostics.enable = true
-  lvim.builtin.nvimtree.setup.renderer.icons.webdev_colors = true
-  lvim.builtin.nvimtree.setup.renderer.icons.show = {
-    git = true,
-    folder = true,
-    file = true,
-    folder_arrow = true,
-  }
-  lvim.builtin.notify.opts.icons = {
-    ERROR = "",
-    WARN = "",
-    INFO = "",
-    DEBUG = "",
-    TRACE = "✎",
-  }
-  lvim.builtin.bufferline.options.show_buffer_icons = true
-  lvim.builtin.bufferline.options.show_buffer_close_icons = true
+  if lvim.builtin.tree_provider == "nvimtree" then
+    lvim.builtin.nvimtree.setup.diagnostics.enable = true
+    lvim.builtin.nvimtree.setup.renderer.icons.webdev_colors = true
+    lvim.builtin.nvimtree.setup.renderer.icons.show = {
+      git = true,
+      folder = true,
+      file = true,
+      folder_arrow = true,
+    }
+  end
+  if lvim.builtin.bufferline.active then
+    lvim.builtin.bufferline.options.show_buffer_icons = true
+    lvim.builtin.bufferline.options.show_buffer_close_icons = true
+  end
 end
 
 M.define_dap_signs = function()
