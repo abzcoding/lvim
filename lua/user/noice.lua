@@ -21,36 +21,10 @@ M.config = function()
           },
           cursorline = false,
         },
-        filter_options = {
-          {
-            filter = { event = "cmdline", find = "^%s*[/?]" },
-            opts = {
-              border = {
-                text = {
-                  top = " Search ",
-                },
-              },
-              win_options = {
-                winhighlight = {
-                  Normal = "NormalFloat",
-                  FloatBorder = "NoiceCmdlinePopupBorder",
-                  IncSearch = "",
-                  Search = "",
-                },
-              },
-            },
-          },
-        },
       },
     },
-    -- cmdline = {
-    --   view = "cmdline",
-    -- },
     popupmenu = {
       enabled = not lvim.builtin.fancy_wild_menu.active,
-    },
-    notify = {
-      enabled = true,
     },
     routes = {
       {
@@ -63,7 +37,7 @@ M.config = function()
       },
       {
         view = "split",
-        filter = { event = "msg_show", min_height = 20 },
+        filter = { event = "msg_show", min_height = 10 },
       },
       {
         filter = {
