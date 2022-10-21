@@ -69,7 +69,7 @@ M.config = function()
     }
     lvim.builtin.cmp.formatting.format = function(entry, vim_item)
       if entry.source.name == "cmdline" then
-        vim_item.kind = "⌘"
+        vim_item.kind = ""
         vim_item.menu = ""
         return vim_item
       end
@@ -175,6 +175,14 @@ M.config = function()
       key = type,
       location = location,
     }
+  end
+
+  -- Dap
+  -- =========================================
+  if lvim.builtin.dap.active then
+    lvim.builtin.dap.on_config_done = function()
+      lvim.builtin.which_key.mappings["d"].name = " Debug"
+    end
   end
 
   -- Dashboard
@@ -284,26 +292,6 @@ M.config = function()
   -- Mason
   -- =========================================
   lvim.builtin.mason.ui.icons = kind.mason
-
-  -- Notify
-  -- =========================================
-  lvim.builtin.notify.opts.min_width = function()
-    return math.floor(vim.o.columns * 0.4)
-  end
-  lvim.builtin.notify.opts.max_width = function()
-    return math.floor(vim.o.columns * 0.4)
-  end
-  lvim.builtin.notify.opts.max_height = function()
-    return math.floor(vim.o.lines * 0.8)
-  end
-  lvim.builtin.notify.opts.render = function(...)
-    local notif = select(2, ...)
-    local style = notif.title[1] == "" and "minimal" or "default"
-    require("notify.render")[style](...)
-  end
-  lvim.builtin.notify.opts.stages = "fade_in_slide_out"
-  lvim.builtin.notify.opts.timeout = 3000
-  lvim.builtin.notify.opts.background_colour = "NormalFloat"
 
   -- NvimTree
   -- =========================================

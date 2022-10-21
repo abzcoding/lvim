@@ -6,6 +6,9 @@ M.config = function()
     return
   end
   noice.setup {
+    lsp_progress = {
+      enabled = false,
+    },
     views = {
       cmdline_popup = {
         win_options = {
@@ -47,7 +50,7 @@ M.config = function()
       enabled = not lvim.builtin.fancy_wild_menu.active,
     },
     notify = {
-      enabled = lvim.builtin.notify.active,
+      enabled = true,
     },
     routes = {
       {
