@@ -9,6 +9,11 @@ M.config = function()
     lsp_progress = {
       enabled = false,
     },
+    cmdline = {
+      format = {
+        filter = { pattern = "^:%s*!", icon = "", ft = "sh" },
+      },
+    },
     views = {
       cmdline_popup = {
         win_options = {

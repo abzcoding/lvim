@@ -87,6 +87,8 @@ end
 M.catppuccin = function()
   local catppuccin = require "catppuccin"
   local opts = {
+    flavour = "mocha",
+    background = { light = "latte", dark = "mocha" },
     transparent_background = lvim.transparent_window,
     term_colors = false,
     styles = {
@@ -108,6 +110,9 @@ M.catppuccin = function()
       lsp_trouble = true,
       telescope = true,
       treesitter = true,
+      mason = true,
+      neotest = lvim.builtin.test_runner == "neotest",
+      noice = lvim.builtin.noice.active,
       native_lsp = {
         enabled = true,
         virtual_text = {
@@ -148,6 +153,7 @@ M.catppuccin = function()
         CmpItemKindEnumMember = { fg = "#F5C2E7" },
         CmpItemMenu = { fg = "#7F849C" },
         CmpItemAbbr = { fg = "#BAC2DE" },
+        Cursor = { fg = "#1e1e2e", bg = "#d9e0ee" },
       },
     },
   }

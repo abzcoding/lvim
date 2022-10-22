@@ -22,12 +22,9 @@ M.config = function()
       "catppuccin/nvim",
       as = "catppuccin",
       run = ":CatppuccinCompile",
-      setup = function()
-        vim.g.catppuccin_flavour = "mocha"
-      end,
       config = function()
         require("user.theme").catppuccin()
-        vim.cmd [[colorscheme catppuccin]]
+        vim.cmd [[colorscheme catppuccin-mocha]]
       end,
       cond = function()
         local _time = os.date "*t"
