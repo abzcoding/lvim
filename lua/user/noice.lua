@@ -12,6 +12,27 @@ M.config = function()
     cmdline = {
       format = {
         filter = { pattern = "^:%s*!", icon = "", ft = "sh" },
+        IncRename = {
+          pattern = "^:%s*IncRename%s+",
+          icon = " ",
+          conceal = true,
+          opts = {
+            -- relative = "cursor",
+            -- size = { min_width = 20 },
+            -- position = { row = -3, col = 0 },
+            buf_options = { filetype = "text" },
+            win_options = {
+              winblend = 5,
+              winhighlight = {
+                Normal = "NormalFloat",
+                FloatBorder = "NoiceCmdlinePopupBorder",
+                IncSearch = "",
+                Search = "",
+              },
+              cursorline = false,
+            },
+          },
+        },
       },
     },
     views = {

@@ -5,11 +5,16 @@ M.config = function()
   if not status_ok then
     return
   end
+  local ignored_buftypes = { "neo-tree" }
+  if lvim.builtin.noice.active then
+    table.insert(ignored_buftypes, "text")
+  end
 
   dressing.setup {
     input = {
       get_config = function()
-        if vim.api.nvim_buf_get_option(0, "filetype") == "neo-tree" then
+        local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+        if vim.tbl_contains(ignored_buftypes, filetype) then
           return { enabled = false }
         end
       end,

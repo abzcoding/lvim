@@ -698,6 +698,15 @@ M.config = function()
       end,
       disable = not lvim.builtin.web_programming.active,
     },
+    {
+      "smjonas/inc-rename.nvim",
+      config = function()
+        require("inc_rename").setup {
+          input_buffer_type = "text",
+        }
+      end,
+      disable = not lvim.builtin.noice.active,
+    },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
     -- {
     --   "lvimuser/lsp-inlayhints.nvim",
