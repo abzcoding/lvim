@@ -329,7 +329,7 @@ M.config = function()
   end
 
   if lvim.builtin.noice.active then
-    lvim.builtin.which_key.mappings["lr"] = { ":IncRename ", "Rename" }
+    lvim.builtin.which_key.mappings["l"]["r"] = { ":IncRename ", "Rname" }
   else
     lvim.builtin.which_key.vmappings["l"] = {
       name = "+Lsp",

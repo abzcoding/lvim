@@ -701,9 +701,7 @@ M.config = function()
     {
       "smjonas/inc-rename.nvim",
       config = function()
-        require("inc_rename").setup {
-          input_buffer_type = "text",
-        }
+        require("inc_rename").setup()
       end,
       disable = not lvim.builtin.noice.active,
     },
