@@ -711,6 +711,7 @@ M.config = function()
         require("hlargs").setup()
       end,
       requires = { "nvim-treesitter/nvim-treesitter" },
+      disable = not lvim.builtin.colored_args,
     },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
     -- {
