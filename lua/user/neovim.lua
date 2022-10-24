@@ -153,7 +153,7 @@ M.config = function()
     vim.g.neovide_cursor_trail_length = 0.05
     vim.g.neovide_cursor_antialiasing = true
     vim.g.neovide_remember_window_size = true
-    vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h14]]
+    vim.cmd [[set guifont=FiraCode\ Nerd\ Font,mini-file-icons]]
   end
 
   if vim.g.nvui then

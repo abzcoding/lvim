@@ -154,6 +154,8 @@ M.catppuccin = function()
         CmpItemMenu = { fg = "#7F849C" },
         CmpItemAbbr = { fg = "#BAC2DE" },
         Cursor = { fg = "#1e1e2e", bg = "#d9e0ee" },
+        ["@constant.builtin"] = { fg = "#EBA0AC" },
+        TSConstBuiltin = { fg = "#EBA0AC" },
       },
     },
   }
@@ -194,6 +196,7 @@ M.kanagawa = function()
       diffRemoved = { fg = "#E46876" },
       NvimTreeFolderIcon = { fg = "#7e9cd8" },
       CmpItemKindEnum = { fg = "#957FB8" },
+      ["@parameter"] = { fg = "#DCA561" },
     },
   }
 end
@@ -248,7 +251,7 @@ M.colors = {
     gray = "#2a2e36",
     red = "#eb6f92",
     green = "#97c374",
-    yellow = "#f6c177",
+    yellow = "#ea9d34",
     blue = "#9ccfd8",
     magenta = "#c4a7e7",
     cyan = "#9ccfd8",
@@ -284,8 +287,8 @@ M.colors = {
     pink = "#F5C2E7",
     red = "#F28FAD",
     maroon = "#E8A2AF",
-    orange = "#F8BD96",
-    yellow = "#FAE3B0",
+    orange = "#FAB387",
+    yellow = "#FACB9A",
     green = "#ABE9B3",
     blue = "#96CDFB",
     cyan = "#89DCEB",
@@ -405,6 +408,7 @@ M.telescope_theme = function()
   if lvim.builtin.time_based_themes then
     local _time = os.date "*t"
     local current_colors = M.current_colors()
+    set_fg_bg("Hlargs", current_colors.yellow, "none")
     set_fg_bg("CmpBorder", current_colors.cmp_border, current_colors.cmp_border)
     set_fg_bg("NoiceCmdlinePopupBorder", current_colors.cmp_border, current_colors.cmp_border)
     set_fg_bg("NoiceCmdlinePopupBorderCmdline", current_colors.cmp_border, current_colors.cmp_border)
