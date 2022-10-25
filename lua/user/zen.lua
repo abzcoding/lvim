@@ -43,7 +43,7 @@ M.config = function()
     },
     plugins = {
       gitsigns = { enabled = false }, -- disables git signs
-      tmux = { enabled = true },
+      tmux = { enabled = not lvim.builtin.tmux_lualine },
       twilight = { enabled = true },
       kitty = {
         enabled = false,
