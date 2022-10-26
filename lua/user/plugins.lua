@@ -507,6 +507,7 @@ M.config = function()
       config = function()
         require("user.fidget_spinner").config()
       end,
+      -- disable = lvim.builtin.noice.active,
     },
     {
       "michaelb/sniprun",

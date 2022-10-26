@@ -230,6 +230,7 @@ M.colors = {
     purple = "#9d7cd8",
     orange = "#ff9e64",
     yellow = "#e0af68",
+    hlargs = "#e0af68",
     green = "#9ece6a",
     green1 = "#73daca",
     green2 = "#41a6b5",
@@ -252,6 +253,7 @@ M.colors = {
     red = "#eb6f92",
     green = "#97c374",
     yellow = "#ea9d34",
+    hlargs = "#c4a7e7",
     blue = "#9ccfd8",
     magenta = "#c4a7e7",
     cyan = "#9ccfd8",
@@ -288,7 +290,8 @@ M.colors = {
     red = "#F28FAD",
     maroon = "#E8A2AF",
     orange = "#FAB387",
-    yellow = "#EBA0AC",
+    yellow = "#F9E2AF",
+    hlargs = "#EBA0AC",
     green = "#ABE9B3",
     blue = "#96CDFB",
     cyan = "#89DCEB",
@@ -322,6 +325,7 @@ M.colors = {
     red = "#E46876",
     orange = "#FFA066",
     yellow = "#DCA561",
+    hlargs = "#DCA561",
     blue = "#7FB4CA",
     cyan = "#658594",
     violet = "#957FB8",
@@ -408,13 +412,16 @@ M.telescope_theme = function()
   if lvim.builtin.time_based_themes then
     local _time = os.date "*t"
     local current_colors = M.current_colors()
-    set_fg_bg("Hlargs", current_colors.yellow, "none")
+    set_fg_bg("Hlargs", current_colors.hlargs, "none")
     set_fg_bg("CmpBorder", current_colors.cmp_border, current_colors.cmp_border)
-    set_fg_bg("NoiceCmdlinePopupBorder", current_colors.cmp_border, current_colors.cmp_border)
-    set_fg_bg("NoiceCmdlinePopupBorderCmdline", current_colors.cmp_border, current_colors.cmp_border)
-    set_fg_bg("NoiceCmdlinePopupBorderFilter", current_colors.cmp_border, current_colors.cmp_border)
-    set_fg_bg("NoiceCmdlinePopupBorderLua", current_colors.cmp_border, current_colors.cmp_border)
-    set_fg_bg("NoiceCmdlinePopupBorderSearch", current_colors.cmp_border, current_colors.cmp_border)
+    link("NoiceCmdlinePopupBorder", "CmpBorder")
+    link("NoiceCmdlinePopupBorderCmdline", "CmpBorder")
+    link("NoiceCmdlinePopupBorderFilter", "CmpBorder")
+    link("NoiceCmdlinePopupBorderHelp", "CmpBorder")
+    link("NoiceCmdlinePopupBorderIncRename", "CmpBorder")
+    link("NoiceCmdlinePopupBorderInput", "CmpBorder")
+    link("NoiceCmdlinePopupBorderLua", "CmpBorder")
+    link("NoiceCmdlinePopupBorderSearch", "CmpBorder")
     set_fg_bg("diffAdded", current_colors.git.add, "NONE")
     set_fg_bg("diffRemoved", current_colors.git.delete, "NONE")
     set_fg_bg("diffChanged", current_colors.git.change, "NONE")

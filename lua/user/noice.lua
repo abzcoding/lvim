@@ -5,9 +5,58 @@ M.config = function()
   if not status_ok then
     return
   end
+  local spinners = require "noice.util.spinners"
+  spinners.spinners["mine"] = {
+    frames = {
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+    },
+    interval = 80,
+  }
   noice.setup {
-    lsp_progress = {
-      enabled = false,
+    format = {
+      spinner = {
+        name = "mine",
+        hl = "Constant",
+      },
+    },
+    lsp = {
+      progress = {
+        enabled = false,
+        format = {
+          { "{data.progress.percentage} ", hl_group = "Comment" },
+          { "{spinner} ", hl_group = "NoiceLspProgressSpinner" },
+          { "{data.progress.title} ", hl_group = "Comment" },
+        },
+        format_done = {},
+      },
+      hover = { enabled = true },
     },
     cmdline = {
       format = {
@@ -21,16 +70,6 @@ M.config = function()
             -- size = { min_width = 20 },
             -- position = { row = -3, col = 0 },
             buf_options = { filetype = "text" },
-            win_options = {
-              winblend = 5,
-              winhighlight = {
-                Normal = "NormalFloat",
-                FloatBorder = "NoiceCmdlinePopupBorder",
-                IncSearch = "",
-                Search = "",
-              },
-              cursorline = false,
-            },
           },
         },
       },
