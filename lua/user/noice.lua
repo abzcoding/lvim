@@ -48,7 +48,7 @@ M.config = function()
     },
     lsp = {
       progress = {
-        enabled = true,
+        enabled = false,
         format = {
           { "{data.progress.percentage} ", hl_group = "Comment" },
           { "{spinner} ", hl_group = "NoiceLspProgressSpinner" },
