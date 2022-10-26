@@ -65,6 +65,7 @@ M.config = function()
       },
       documentation = {
         border = cmp_border,
+        winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
       },
     }
     lvim.builtin.cmp.formatting.format = function(entry, vim_item)
