@@ -90,8 +90,12 @@ end
 
 M.run_all = function()
   local neotest = require "neotest"
-  for _, adapter_id in ipairs(neotest.run.adapters()) do
-    neotest.run.run { suite = true, adapter = adapter_id }
+  if lvim.builtin.task_runner == "overseer" then
+    neotest.run.run(vim.fn.expand "%")
+  else
+    for _, adapter_id in ipairs(neotest.run.adapters()) do
+      neotest.run.run { suite = true, adapter = adapter_id }
+    end
   end
 end
 
