@@ -294,6 +294,12 @@ M.config = function()
   -- =========================================
   lvim.builtin.mason.ui.icons = kind.mason
 
+  -- Noice
+  -- =========================================
+  if lvim.builtin.noice.active then
+    vim.lsp.handlers["textDocument/signatureHelp"] = require("noice.source.lsp").signature
+  end
+
   -- NvimTree
   -- =========================================
   lvim.builtin.nvimtree.setup.diagnostics = {

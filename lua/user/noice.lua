@@ -57,6 +57,7 @@ M.config = function()
         format_done = {},
       },
       hover = { enabled = true },
+      signature = { enabled = false, auto_open = false },
     },
     cmdline = {
       format = {
