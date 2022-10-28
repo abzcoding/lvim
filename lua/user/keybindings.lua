@@ -214,18 +214,12 @@ M.config = function()
   lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
   if lvim.builtin.noice.active then
     lvim.keys.insert_mode["<C-s>"] = function()
-      local Lsp = require "noice.source.lsp"
-      local message = Lsp.get(Lsp.kinds.signature)
-      if message:win() then
-        return
-      end
       local params = vim.lsp.util.make_position_params(0, "utf-16")
-      vim.lsp.buf_request(
-        0,
-        "textDocument/signatureHelp",
-        params,
-        vim.lsp.with(require("noice.source.lsp").signature, { trigger = true })
-      )
+      vim.lsp.buf_request(0, "textDocument/signatureHelp", params, function(err, result, ctx)
+        require("noice.lsp").signature(err, result, ctx, {
+          trigger = true,
+        })
+      end)
     end
   end
   lvim.keys.insert_mode["<A-s>"] =
