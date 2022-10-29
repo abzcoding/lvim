@@ -144,6 +144,10 @@ M.config = function()
         filter = { find = "No active Snippet" },
         opts = { skip = true },
       },
+      {
+        filter = { find = "waiting for cargo metadata" },
+        opts = { skip = true },
+      },
     },
   }
 end
