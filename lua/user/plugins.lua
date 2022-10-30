@@ -588,7 +588,7 @@ M.config = function()
       config = function()
         require("user.winb").config()
       end,
-      event = { "InsertEnter", "CursorMoved" },
+      event = { "InsertEnter", "CursorHoldI" },
       disable = lvim.builtin.winbar_provider ~= "treesitter",
     },
     {
@@ -598,7 +598,7 @@ M.config = function()
         require("user.gps").config()
       end,
       requires = "nvim-treesitter/nvim-treesitter",
-      event = { "InsertEnter", "CursorMoved" },
+      event = { "InsertEnter", "CursorHoldI" },
       disable = lvim.builtin.winbar_provider ~= "treesitter",
     },
     {
