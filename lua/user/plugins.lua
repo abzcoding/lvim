@@ -80,11 +80,11 @@ M.config = function()
       cmd = "Trouble",
     },
     {
-      "ggandor/lightspeed.nvim",
+      "ggandor/leap.nvim",
       config = function()
-        require("user.lightspeed").config()
+        require("user.leap").config()
       end,
-      disable = lvim.builtin.motion_provider ~= "lightspeed",
+      disable = lvim.builtin.motion_provider ~= "leap",
     },
     {
       "phaazon/hop.nvim",
