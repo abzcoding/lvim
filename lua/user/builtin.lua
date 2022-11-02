@@ -326,9 +326,9 @@ M.config = function()
 
   -- Theme
   -- =========================================
-  lvim.builtin.theme.options.style = "storm"
-  lvim.builtin.theme.options.styles.comments = {}
-  lvim.builtin.theme.options.dim_inactive = true
+  lvim.builtin.theme.tokyonight.options.style = "storm"
+  lvim.builtin.theme.tokyonight.options.styles.comments = {}
+  lvim.builtin.theme.tokyonight.options.dim_inactive = true
 
   -- Toggleterm
   -- =========================================
