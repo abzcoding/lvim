@@ -29,8 +29,8 @@ M.config = function()
     val = "└─ "
       .. kind.cmp_kind.Module
       .. " "
-      .. string.format("% 3d", plugins)
-      .. " plugins  v"
+      .. string.format("% 4d", plugins)
+      .. " plugins  "
       .. vim.version().major
       .. "."
       .. vim.version().minor
