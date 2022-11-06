@@ -29,6 +29,7 @@ M.config = function()
   lvim.builtin.refactoring.active = true
   lvim.builtin.test_runner.runner = "neotest"
   lvim.format_on_save = {
+    enabled = true,
     pattern = "*.rs",
     timeout = 2000,
     filter = require("lvim.lsp.utils").format_filter,
