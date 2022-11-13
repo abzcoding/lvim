@@ -473,9 +473,7 @@ M.config = function()
       disable = not lvim.builtin.csv_support,
     },
     {
-      -- NOTE: https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/316
-      "numToStr/nvim-treesitter-textobjects",
-      branch = "rust/let-expr",
+      "nvim-treesitter/nvim-treesitter-textobjects",
       after = "nvim-treesitter",
     },
     {
