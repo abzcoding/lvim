@@ -229,6 +229,7 @@ exceptions:
   - XDR
   - XML
   - XSS
+  - XXE
   - YAML
   - ZAP
   - ZIP
