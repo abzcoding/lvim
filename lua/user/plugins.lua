@@ -725,6 +725,22 @@ M.config = function()
       requires = { "nvim-treesitter/nvim-treesitter" },
       disable = not lvim.builtin.colored_args,
     },
+    {
+      "cshuaimin/ssr.nvim",
+      config = function()
+        require("ssr").setup {
+          min_width = 50,
+          min_height = 5,
+          keymaps = {
+            close = "q",
+            next_match = "n",
+            prev_match = "N",
+            replace_all = "<leader><cr>",
+          },
+        }
+      end,
+      event = { "BufReadPost", "BufNew" },
+    },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
     -- {
     --   "lvimuser/lsp-inlayhints.nvim",
