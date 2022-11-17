@@ -79,6 +79,7 @@ M.config = function()
     nls.builtins.diagnostics.statix,
     nls.builtins.diagnostics.markdownlint.with {
       filetypes = { "markdown" },
+      extra_args = { "-r", "~MD013" },
     },
     nls.builtins.diagnostics.vale.with {
       filetypes = { "markdown" },

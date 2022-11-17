@@ -42,6 +42,7 @@ ChaosKube
 ChatOps
 Citrix
 Citus
+ClickJacking
 Cloudwatch
 Cobertura
 Codepen
