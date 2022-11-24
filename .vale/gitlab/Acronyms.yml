@@ -99,6 +99,7 @@ exceptions:
   - IBM
   - ICMP
   - IDE
+  - IDOR
   - IID
   - IMAP
   - IOPS
@@ -154,6 +155,7 @@ exceptions:
   - RAID
   - RAM
   - RBAC
+  - RCE
   - RDP
   - REST
   - RFB

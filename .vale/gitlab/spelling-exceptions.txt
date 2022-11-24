@@ -79,6 +79,7 @@ ETag
 Ecto
 Elasticsearch
 Excon
+Exfiltrate
 Facebook
 Falco
 Fastzip
@@ -717,6 +718,7 @@ sparkline
 sparklines
 spectre
 spidering
+sqlmap
 starrer
 starrers
 storable

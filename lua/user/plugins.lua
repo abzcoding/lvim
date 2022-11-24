@@ -538,7 +538,7 @@ M.config = function()
       config = function()
         require("user.cle").config()
       end,
-      ft = { "c", "cpp", "objc", "objcpp" },
+      ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
     },
     {
       "editorconfig/editorconfig-vim",
