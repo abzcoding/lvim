@@ -54,6 +54,8 @@ exceptions:
   - DLL
   - DNS
   - DOM
+  - DOS
+  - DTD
   - DSA
   - DSS
   - DVCS
@@ -201,6 +203,7 @@ exceptions:
   - SSL
   - SSO
   - SSRF
+  - SSTI
   - SVG
   - SVN
   - SYN

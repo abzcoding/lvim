@@ -63,6 +63,7 @@ Datadog
 Debian
 Decompressor
 Denormalization
+Deserialization
 Deserializer
 DevOps
 Disqus
@@ -189,6 +190,7 @@ Nanoc
 Neogen
 Neoscroll
 Neovim
+Netcat
 Netlify
 Nginx
 Nokogiri
@@ -294,6 +296,7 @@ Webservice
 Wireshark
 Wordpress
 Worldline
+XInclude
 Xcode
 Xeon
 YouTrack
@@ -425,6 +428,8 @@ deprovisions
 dequarantine
 dequarantined
 dequarantining
+deserialization
+deserialize
 dirsearch
 disambiguates
 discoverability
@@ -440,6 +445,7 @@ enqueued
 enqueues
 enum
 enums
+exfiltration
 expirable
 failover
 failovers
@@ -937,4 +943,3 @@ wireframes
 wireframing
 worktree
 worktrees
-z
