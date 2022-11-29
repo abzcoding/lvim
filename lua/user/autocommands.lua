@@ -30,31 +30,32 @@ M.config = function()
   --   end,
   -- })
 
-  -- TODO: change this to lua
-  vim.cmd [[
-" disable syntax highlighting in big files
-function! DisableSyntaxTreesitter()
-    echo("Big file, disabling syntax, treesitter and folding")
-    if exists(':TSBufDisable')
-        exec 'TSBufDisable autotag'
-        exec 'TSBufDisable highlight'
-    endif
+  -- NOTE: using bigfile.nvim instead of this autocmd
 
-    set foldmethod=manual
-    syntax clear
-    syntax off
-    filetype off
-    set noundofile
-    set noswapfile
-    set noloadplugins
-    set lazyredraw
-endfunction
+  --   vim.cmd [[
+  -- " disable syntax highlighting in big files
+  -- function! DisableSyntaxTreesitter()
+  --     echo("Big file, disabling syntax, treesitter and folding")
+  --     if exists(':TSBufDisable')
+  --         exec 'TSBufDisable autotag'
+  --         exec 'TSBufDisable highlight'
+  --     endif
 
-augroup BigFileDisable
-    autocmd!
-    autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
-augroup END
-  ]]
+  --     set foldmethod=manual
+  --     syntax clear
+  --     syntax off
+  --     filetype off
+  --     set noundofile
+  --     set noswapfile
+  --     set noloadplugins
+  --     set lazyredraw
+  -- endfunction
+
+  -- augroup BigFileDisable
+  --     autocmd!
+  --     autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
+  -- augroup END
+  --   ]]
   create_aucmd("BufReadPost", {
     group = "_lvim_user",
     pattern = "*.md",
