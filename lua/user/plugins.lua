@@ -409,7 +409,7 @@ M.config = function()
     {
       "sindrets/diffview.nvim",
       opt = true,
-      cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
       module = "diffview",
       keys = { "<leader>gd", "<leader>gh" },
       config = function()
