@@ -37,6 +37,7 @@ exceptions:
   - CNAME
   - CONOP
   - CORE
+  - CORS
   - CPU
   - CRIME
   - CSPM

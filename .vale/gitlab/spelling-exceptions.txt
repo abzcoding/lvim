@@ -132,6 +132,7 @@ Immer
 Ingress
 Inode
 Istio
+JSONP
 Jaeger
 JavaScript
 Javafuzz

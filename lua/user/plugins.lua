@@ -539,6 +539,7 @@ M.config = function()
         require("user.cle").config()
       end,
       ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
+      disable = not lvim.builtin.cpp_programming.active,
     },
     {
       "editorconfig/editorconfig-vim",
@@ -740,6 +741,14 @@ M.config = function()
         }
       end,
       event = { "BufReadPost", "BufNew" },
+    },
+    {
+      "Civitasv/cmake-tools.nvim",
+      config = function()
+        require("user.cle").cmake_config()
+      end,
+      ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
+      disable = not lvim.builtin.cpp_programming.active,
     },
     -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
     -- {

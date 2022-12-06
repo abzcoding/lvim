@@ -768,10 +768,24 @@ M.lsp_on_attach_callback = function(client, _)
   }
   -- local opts = { noremap = true, silent = true }
   if client.name == "clangd" then
-    mappings["H"] = {
-      "<Cmd>ClangdSwitchSourceHeader<CR>",
-      "Swich Header/Source",
-    }
+    if lvim.builtin.cpp_programming.active then
+      mappings["H"] = {
+        "<Cmd>ClangdSwitchSourceHeader<CR>",
+        "Swich Header/Source",
+      }
+      mappings["lg"] = { "<cmd>CMakeGenerate<CR>", "Generate CMake" }
+      mappings["rm"] = { "<cmd>CMakeRun<CR>", "Run CMake" }
+      mappings["mm"] = { "<cmd>CMakeBuild<CR>", "Build CMake" }
+      mappings["dm"] = { "<cmd>CMakeDebug<CR>", "Debug CMake" }
+      mappings["ms"] = { "<cmd>CMakeSelectBuildType<CR>", "Select Build Type" }
+      mappings["mt"] = { "<cmd>CMakeSelectBuildTarget<CR>", "Select Build Target" }
+      mappings["rt"] = { "<cmd>CMakeSelectLaunchTarget<CR>", "Select Launch Target" }
+      mappings["lo"] = { "<cmd>CMakeOpen<CR>", "Open CMake Console" }
+      mappings["lc"] = { "<cmd>CMakeClose<CR>", "Close CMake Console" }
+      mappings["mi"] = { "cmd>CMakeInstall<cr>", "Install CMake Targets" }
+      mappings["mc"] = { "<cmd>CMakeClean<CR>", "Clean CMake Targets" }
+      mappings["rc"] = { "<cmd>CMakeStop<CR>", "Stop CMake" }
+    end
   elseif client.name == "gopls" then
     mappings["H"] = {
       "<Cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='go vet .;read',count=2,direction='float'})<CR>",
