@@ -44,6 +44,7 @@ M.config = function()
   lvim.builtin.cpp_programming.active = true
   lvim.builtin.borderless_cmp = true
   lvim.builtin.colored_args = true
+  lvim.builtin.inlay_hints.active = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

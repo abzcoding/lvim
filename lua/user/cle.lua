@@ -37,7 +37,7 @@ M.config = function()
     extensions = {
       -- defaults:
       -- Automatically set inlay hints (type hints)
-      autoSetHints = true,
+      autoSetHints = not lvim.builtin.inlay_hints.active,
       -- Whether to show hover actions inside the hover window
       -- These apply to the default ClangdSetInlayHints command
       inlay_hints = {

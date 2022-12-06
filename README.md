@@ -451,6 +451,8 @@ _Symbols Outline_
 - [nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js)
 - [inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [hlargs.nvim](https://github.com/m-demare/hlargs.nvim)
+- [cmake-tools.nvim](https://github.com/Civitasv/cmake-tools.nvim)
+- [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
 
 </details>
 

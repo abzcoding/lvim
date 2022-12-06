@@ -750,14 +750,13 @@ M.config = function()
       ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
       disable = not lvim.builtin.cpp_programming.active,
     },
-    -- TODO: set this up when https://github.com/neovim/neovim/pull/20130 is merged
-    -- {
-    --   "lvimuser/lsp-inlayhints.nvim",
-    --   branch = "anticonceal",
-    --   config = function()
-    --     require("lsp-inlayhints").setup()
-    --   end,
-    -- },
+    {
+      "lvimuser/lsp-inlayhints.nvim",
+      config = function()
+        require("lsp-inlayhints").setup()
+      end,
+      disable = not lvim.builtin.inlay_hints.active,
+    },
   }
 end
 
