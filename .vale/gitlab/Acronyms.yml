@@ -88,10 +88,12 @@ exceptions:
   - GPL
   - GPU
   - GUI
+  - GUID
   - HAML
   - HDD
   - HEAD
   - HIPAA
+  - HMAC
   - HMP
   - HSTS
   - HTML
@@ -190,6 +192,7 @@ exceptions:
   - SLA
   - SMS
   - SMTP
+  - SOAP
   - SOAR
   - SOC
   - SOP
@@ -232,6 +235,7 @@ exceptions:
   - VPN
   - WAF
   - WIP
+  - WSDL
   - WSL
   - XDR
   - XML
