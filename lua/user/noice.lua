@@ -5,6 +5,17 @@ M.config = function()
   if not status_ok then
     return
   end
+  local focused = true
+  vim.api.nvim_create_autocmd("FocusGained", {
+    callback = function()
+      focused = true
+    end,
+  })
+  vim.api.nvim_create_autocmd("FocusLost", {
+    callback = function()
+      focused = false
+    end,
+  })
   local spinners = require "noice.util.spinners"
   spinners.spinners["mine"] = {
     frames = {
@@ -98,6 +109,22 @@ M.config = function()
       enabled = not lvim.builtin.fancy_wild_menu.active,
     },
     routes = {
+      {
+        filter = {
+          cond = function()
+            return not focused
+          end,
+        },
+        view = "notify_send",
+        opts = { stop = false },
+      },
+      {
+        filter = {
+          event = "msg_show",
+          find = "%d+L, %d+B",
+        },
+        view = "mini",
+      },
       {
         filter = { event = "msg_show", min_height = 10 },
         view = "split",
