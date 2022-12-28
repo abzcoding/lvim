@@ -267,6 +267,7 @@ M.config = function()
     },
     {
       "nvim-neotest/neotest",
+      lazy = true,
       config = function()
         require("user.ntest").config()
       end,
@@ -276,8 +277,8 @@ M.config = function()
         { "nvim-neotest/neotest-plenary" },
         { "rouge8/neotest-rust" },
       },
-      -- lazy = true,
       event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
+      event = "LazyVimStarted",
       enabled = (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
     {
@@ -380,7 +381,7 @@ M.config = function()
     {
       "zbirenbaum/copilot.lua",
       lazy = true,
-      dependencies = { "zbirenbaum/copilot-cmp" , "nvim-cmp"},
+      dependencies = { "zbirenbaum/copilot-cmp", "nvim-cmp" },
       config = function()
         local cmp_source = { name = "copilot", group_index = 2 }
         table.insert(lvim.builtin.cmp.sources, cmp_source)
@@ -454,7 +455,7 @@ M.config = function()
     {
       "kevinhwang91/nvim-hlslens",
       init = function()
-	require('hlslens').setup()
+        require("hlslens").setup()
       end,
       config = function()
         require("user.hlslens").config()
@@ -470,6 +471,7 @@ M.config = function()
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
       dependencies = "nvim-treesitter",
+      lazy = true,
     },
     {
       "sidebar-nvim/sidebar.nvim",
@@ -484,7 +486,7 @@ M.config = function()
       dependencies = {
         { "skywind3000/asyncrun.vim" },
       },
-      init =function()
+      init = function()
         vim.cmd [[
           let g:asyncrun_open = 8
           let g:asynctask_template = '~/.config/lvim/task_template.ini'
@@ -601,13 +603,12 @@ M.config = function()
     {
       "SmiteshP/nvim-gps",
       lazy = true,
-      -- module_pattern = { "gps", "nvim-gps" },
       config = function()
         require("user.gps").config()
       end,
       dependencies = "nvim-treesitter/nvim-treesitter",
       event = { "InsertEnter", "CursorHoldI" },
-      enabled = lvim.builtin.winbar_provider ~= "treesitter",
+      enabled = lvim.builtin.winbar_provider == "treesitter",
     },
     {
       "vimpostor/vim-tpipeline",
@@ -687,7 +688,7 @@ M.config = function()
       end,
       ft = "python",
       event = { "BufRead", "BufNew" },
-      enabled =  lvim.builtin.python_programming.active,
+      enabled = lvim.builtin.python_programming.active,
     },
     {
       "mxsdev/nvim-dap-vscode-js",
