@@ -74,7 +74,7 @@ M.config = function()
     },
     {
       "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
       config = function()
         require("user.todo_comments").config()
       end,
@@ -119,7 +119,7 @@ M.config = function()
     {
       "tzachar/cmp-tabnine",
       build = "./install.sh",
-      requires = "hrsh7th/nvim-cmp",
+      dependencies = "hrsh7th/nvim-cmp",
       config = function()
         local tabnine = require "cmp_tabnine.config"
         tabnine:setup {
@@ -235,7 +235,7 @@ M.config = function()
         }
       end,
       event = "InsertEnter",
-      requires = "nvim-treesitter/nvim-treesitter",
+      dependencies = "nvim-treesitter/nvim-treesitter",
     },
     {
       "vim-test/vim-test",
@@ -280,7 +280,7 @@ M.config = function()
       config = function()
         require("user.ntest").config()
       end,
-      requires = {
+      dependencies = {
         { "nvim-neotest/neotest-go" },
         { "nvim-neotest/neotest-python" },
         { "nvim-neotest/neotest-plenary" },
@@ -294,7 +294,7 @@ M.config = function()
       "rcarriga/vim-ultest",
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
       wants = "vim-test",
-      requires = { "vim-test/vim-test" },
+      dependencies = { "vim-test/vim-test" },
       build = ":UpdateRemotePlugins",
       opt = true,
       event = { "BufEnter *_test.*,*_spec.*,*est_*.*" },
@@ -302,7 +302,7 @@ M.config = function()
     },
     {
       "akinsho/flutter-tools.nvim",
-      requires = "nvim-lua/plenary.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
       config = function()
         require("user.flutter_tools").config()
       end,
@@ -310,7 +310,7 @@ M.config = function()
     },
     {
       "RishabhRD/nvim-cheat.sh",
-      requires = "RishabhRD/popfix",
+      dependencies = "RishabhRD/popfix",
       config = function()
         vim.g.cheat_default_window_layout = "vertical_split"
       end,
@@ -326,7 +326,7 @@ M.config = function()
       end,
       opt = true,
       keys = "<leader>y",
-      requires = neoclip_req,
+      dependencies = neoclip_req,
       cond = not lvim.builtin.neoclip.active,
     },
     {
@@ -346,7 +346,7 @@ M.config = function()
         vim.g.db_ui_use_nerd_fonts = 1
         vim.g.db_ui_show_database_icon = 1
       end,
-      requires = {
+      dependencies = {
         {
           "tpope/vim-dadbod",
           opt = true,
@@ -391,7 +391,7 @@ M.config = function()
     {
       "zbirenbaum/copilot.lua",
       after = "nvim-cmp",
-      requires = { "zbirenbaum/copilot-cmp" },
+      dependencies = { "zbirenbaum/copilot-cmp" },
       config = function()
         local cmp_source = { name = "copilot", group_index = 2 }
         table.insert(lvim.builtin.cmp.sources, cmp_source)
@@ -403,7 +403,7 @@ M.config = function()
     },
     {
       "ThePrimeagen/harpoon",
-      requires = {
+      dependencies = {
         { "nvim-lua/plenary.nvim" },
         { "nvim-lua/popup.nvim" },
       },
@@ -489,7 +489,7 @@ M.config = function()
     },
     {
       "skywind3000/asynctasks.vim",
-      requires = {
+      dependencies = {
         { "skywind3000/asyncrun.vim" },
       },
       setup = function()
@@ -504,7 +504,7 @@ M.config = function()
     },
     {
       "scalameta/nvim-metals",
-      requires = { "nvim-lua/plenary.nvim" },
+      dependencies = { "nvim-lua/plenary.nvim" },
       cond = not lvim.builtin.metals.active,
     },
     {
@@ -552,7 +552,7 @@ M.config = function()
     {
       "saecki/crates.nvim",
       event = { "BufRead Cargo.toml" },
-      requires = { { "nvim-lua/plenary.nvim" } },
+      dependencies = { { "nvim-lua/plenary.nvim" } },
       config = function()
         require("user.crates").config()
       end,
@@ -579,7 +579,7 @@ M.config = function()
     },
     {
       "kdheepak/cmp-latex-symbols",
-      requires = "hrsh7th/nvim-cmp",
+      dependencies = "hrsh7th/nvim-cmp",
       ft = "tex",
     },
     {
@@ -612,7 +612,7 @@ M.config = function()
       config = function()
         require("user.gps").config()
       end,
-      requires = "nvim-treesitter/nvim-treesitter",
+      dependencies = "nvim-treesitter/nvim-treesitter",
       event = { "InsertEnter", "CursorHoldI" },
       cond = lvim.builtin.winbar_provider ~= "treesitter",
     },
@@ -630,7 +630,7 @@ M.config = function()
     {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v2.x",
-      requires = {
+      dependencies = {
         "MunifTanjim/nui.nvim",
       },
       config = function()
@@ -644,7 +644,7 @@ M.config = function()
       config = function()
         require("user.noice").config()
       end,
-      requires = {
+      dependencies = {
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
       },
@@ -726,7 +726,7 @@ M.config = function()
       config = function()
         require("hlargs").setup()
       end,
-      requires = { "nvim-treesitter/nvim-treesitter" },
+      dependencies = { "nvim-treesitter/nvim-treesitter" },
       cond = not lvim.builtin.colored_args,
     },
     {
