@@ -277,7 +277,7 @@ M.config = function()
         { "rouge8/neotest-rust" },
       },
       -- lazy = true,
-      -- event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
+      event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
       enabled = (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
     {
@@ -379,6 +379,7 @@ M.config = function()
     },
     {
       "zbirenbaum/copilot.lua",
+      lazy = true,
       dependencies = { "zbirenbaum/copilot-cmp" , "nvim-cmp"},
       config = function()
         local cmp_source = { name = "copilot", group_index = 2 }
@@ -426,6 +427,7 @@ M.config = function()
     },
     {
       "abzcoding/nvim-mini-file-icons",
+      lazy = true,
       config = function()
         require("nvim-web-devicons").setup()
       end,
@@ -598,6 +600,7 @@ M.config = function()
     },
     {
       "SmiteshP/nvim-gps",
+      lazy = true,
       -- module_pattern = { "gps", "nvim-gps" },
       config = function()
         require("user.gps").config()
@@ -608,6 +611,7 @@ M.config = function()
     },
     {
       "vimpostor/vim-tpipeline",
+      lazy = true,
       enabled = lvim.builtin.tmux_lualine,
     },
     {
@@ -715,6 +719,7 @@ M.config = function()
     },
     {
       "m-demare/hlargs.nvim",
+      lazy = true,
       config = function()
         require("hlargs").setup()
       end,
