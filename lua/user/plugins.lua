@@ -4,7 +4,7 @@ M.config = function()
   -- NOTE: after https://github.com/LunarVim/LunarVim/pull/3647 gets merged
   -- we need to change `run` to `build`
 
-  local neoclip_req = { "kkharji/sqlite.lua", module = "sqlite" }
+  local neoclip_req = { "kkharji/sqlite.lua"}
   if lvim.builtin.neoclip.enable_persistent_history == false then
     neoclip_req = {}
   end
@@ -128,7 +128,7 @@ M.config = function()
           sort = true,
         }
       end,
-      opt = true,
+      lazy = true,
       event = "InsertEnter",
       cond = not lvim.builtin.tabnine.active,
     },
@@ -201,11 +201,11 @@ M.config = function()
     {
       "folke/persistence.nvim",
       event = "BufReadPre",
-      module = "persistence",
+      -- module = "persistence",
       config = function()
         require("persistence").setup {
           dir = vim.fn.expand(get_cache_dir() .. "/sessions/"), -- directory where session files are saved
-          options = { "buffers", "curdir", "tabpages", "winsize" }, -- sessionoptions used for saving
+          options = { "buffers", "curdir", "tabpages", "winsize" }, -- session options used for saving
         }
       end,
       cond = not lvim.builtin.persistence.active,
@@ -255,7 +255,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
-      opt = true,
+      lazy = true,
       event = { "BufReadPre", "BufNew" },
       config = function()
         require("user.tss").config()
@@ -267,7 +267,7 @@ M.config = function()
       config = function()
         require("package-info").setup()
       end,
-      opt = true,
+      lazy = true,
       event = { "BufReadPre", "BufNew" },
       cond = not lvim.builtin.web_programming.active,
     },
@@ -286,17 +286,17 @@ M.config = function()
         { "nvim-neotest/neotest-plenary" },
         { "rouge8/neotest-rust" },
       },
-      -- opt = true,
+      -- lazy = true,
       -- event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
       cond = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
     {
       "rcarriga/vim-ultest",
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
-      wants = "vim-test",
+      -- wants = "vim-test",
       dependencies = { "vim-test/vim-test" },
       build = ":UpdateRemotePlugins",
-      opt = true,
+      lazy = true,
       event = { "BufEnter *_test.*,*_spec.*,*est_*.*" },
       cond = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
     },
@@ -314,7 +314,7 @@ M.config = function()
       config = function()
         vim.g.cheat_default_window_layout = "vertical_split"
       end,
-      opt = true,
+      lazy = true,
       cmd = { "Cheat", "CheatWithoutComments", "CheatList", "CheatListWithoutComments" },
       keys = "<leader>?",
       cond = not lvim.builtin.cheat.active,
@@ -324,7 +324,7 @@ M.config = function()
       config = function()
         require("user.neoclip").config()
       end,
-      opt = true,
+      lazy = true,
       keys = "<leader>y",
       dependencies = neoclip_req,
       cond = not lvim.builtin.neoclip.active,
@@ -342,17 +342,17 @@ M.config = function()
         "DBUIFindBuffer",
         "DBUIRenameBuffer",
       },
-      setup = function()
+      init = function()
         vim.g.db_ui_use_nerd_fonts = 1
         vim.g.db_ui_show_database_icon = 1
       end,
       dependencies = {
         {
           "tpope/vim-dadbod",
-          opt = true,
+          lazy = true,
         },
       },
-      opt = true,
+      lazy = true,
       cond = not lvim.builtin.sql_integration.active,
     },
     {
@@ -411,9 +411,9 @@ M.config = function()
     },
     {
       "sindrets/diffview.nvim",
-      opt = true,
+      lazy = true,
       cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
-      module = "diffview",
+      -- module = "diffview",
       keys = { "<leader>gd", "<leader>gh" },
       config = function()
         require("user.diffview").config()
@@ -422,7 +422,7 @@ M.config = function()
     },
     {
       "chipsenkbeil/distant.nvim",
-      opt = true,
+      lazy = true,
       build = { "DistantInstall" },
       cmd = { "DistantLaunch", "DistantRun" },
       config = function()
@@ -449,13 +449,13 @@ M.config = function()
     { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
     {
       "yamatsum/nvim-cursorline",
-      opt = true,
+      lazy = true,
       event = "BufWinEnter",
       cond = not lvim.builtin.cursorline.active,
     },
     {
       "abecodes/tabout.nvim",
-      wants = { "nvim-treesitter" },
+      -- wants = { "nvim-treesitter" },
       after = { "nvim-cmp" },
       config = function()
         require("user.tabout").config()
@@ -464,6 +464,9 @@ M.config = function()
     },
     {
       "kevinhwang91/nvim-hlslens",
+      init = function()
+	require('hlslens').setup()
+      end,
       config = function()
         require("user.hlslens").config()
       end,
@@ -492,7 +495,7 @@ M.config = function()
       dependencies = {
         { "skywind3000/asyncrun.vim" },
       },
-      setup = function()
+      init =function()
         vim.cmd [[
           let g:asyncrun_open = 8
           let g:asynctask_template = '~/.config/lvim/task_template.ini'
@@ -530,7 +533,7 @@ M.config = function()
     },
     {
       "liuchengxu/vista.vim",
-      setup = function()
+      init = function()
         require("user.vista").config()
       end,
       event = "BufReadPost",
@@ -608,7 +611,7 @@ M.config = function()
     },
     {
       "SmiteshP/nvim-gps",
-      module_pattern = { "gps", "nvim-gps" },
+      -- module_pattern = { "gps", "nvim-gps" },
       config = function()
         require("user.gps").config()
       end,
@@ -672,6 +675,7 @@ M.config = function()
       config = function()
         require("dap-go").setup()
       end,
+      dependencies = "mfussenegger/nvim-dap",
       ft = { "go", "gomod" },
       event = { "BufRead", "BufNew" },
       cond = not lvim.builtin.go_programming.active,
@@ -703,7 +707,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
-      opt = true,
+      lazy = true,
       event = { "BufReadPre", "BufNew" },
       config = function()
         require("dap-vscode-js").setup {
