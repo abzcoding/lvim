@@ -245,7 +245,7 @@ M.config = function()
       config = function()
         require("user.vim_test").config()
       end,
-      disable = not (lvim.builtin.test_buildner.active and lvim.builtin.test_buildner.buildner == "ultest"),
+      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
     },
     {
       "jose-elias-alvarez/typescript.nvim",
@@ -290,7 +290,7 @@ M.config = function()
       },
       -- opt = true,
       -- event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
-      disable = not (lvim.builtin.test_buildner.active and lvim.builtin.test_buildner.buildner == "neotest"),
+      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
     {
       "rcarriga/vim-ultest",
@@ -300,7 +300,7 @@ M.config = function()
       build = ":UpdateRemotePlugins",
       opt = true,
       event = { "BufEnter *_test.*,*_spec.*,*est_*.*" },
-      disable = not (lvim.builtin.test_buildner.active and lvim.builtin.test_buildner.buildner == "ultest"),
+      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
     },
     {
       "akinsho/flutter-tools.nvim",
@@ -492,17 +492,17 @@ M.config = function()
     {
       "skywind3000/asynctasks.vim",
       requires = {
-        { "skywind3000/asyncbuild.vim" },
+        { "skywind3000/asyncrun.vim" },
       },
       setup = function()
         vim.cmd [[
-          let g:asyncbuild_open = 8
+          let g:asyncrun_open = 8
           let g:asynctask_template = '~/.config/lvim/task_template.ini'
           let g:asynctasks_extra_config = ['~/.config/lvim/tasks.ini']
         ]]
       end,
       event = { "BufRead", "BufNew" },
-      disable = lvim.builtin.task_buildner ~= "async_tasks",
+      disable = lvim.builtin.task_runner ~= "async_tasks",
     },
     {
       "scalameta/nvim-metals",
@@ -526,9 +526,9 @@ M.config = function()
       -- disable = lvim.builtin.noice.active,
     },
     {
-      "michaelb/snipbuild",
+      "michaelb/sniprun",
       build = "bash ./install.sh",
-      disable = not lvim.builtin.snipbuild.active,
+      disable = not lvim.builtin.sniprun.active,
     },
     {
       "liuchengxu/vista.vim",
@@ -627,7 +627,7 @@ M.config = function()
       config = function()
         require("user.ovs").config()
       end,
-      disable = lvim.builtin.task_buildner ~= "overseer",
+      disable = lvim.builtin.task_runner ~= "overseer",
     },
     {
       "nvim-neo-tree/neo-tree.nvim",
@@ -689,7 +689,7 @@ M.config = function()
       config = function()
         local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
         require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
-        require("dap-python").test_buildner = "pytest"
+        require("dap-python").test_runner = "pytest"
       end,
       ft = "python",
       event = { "BufRead", "BufNew" },
