@@ -1,6 +1,11 @@
 local M = {}
 
 M.config = function()
+  -- NOTE: after https://github.com/LunarVim/LunarVim/pull/3647 gets merged
+  -- we need to change `run` to `build`
+  -- and `tag` to `version`
+  -- and `requires` to `dependencies`
+
   local neoclip_req = { "kkharji/sqlite.lua", module = "sqlite" }
   if lvim.builtin.neoclip.enable_persistent_history == false then
     neoclip_req = {}
