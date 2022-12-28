@@ -37,7 +37,7 @@ M.config = function()
     {
       "catppuccin/nvim",
       as = "catppuccin",
-      run = ":CatppuccinCompile",
+      build = ":CatppuccinCompile",
       config = function()
         require("user.theme").catppuccin()
         vim.cmd [[colorscheme catppuccin-mocha]]
@@ -120,7 +120,7 @@ M.config = function()
     },
     {
       "tzachar/cmp-tabnine",
-      run = "./install.sh",
+      build = "./install.sh",
       requires = "hrsh7th/nvim-cmp",
       config = function()
         local tabnine = require "cmp_tabnine.config"
@@ -160,7 +160,7 @@ M.config = function()
     },
     {
       "iamcco/markdown-preview.nvim",
-      run = "cd app && npm install",
+      build = "cd app && npm install",
       ft = "markdown",
     },
     {
@@ -245,7 +245,7 @@ M.config = function()
       config = function()
         require("user.vim_test").config()
       end,
-      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
+      disable = not (lvim.builtin.test_buildner.active and lvim.builtin.test_buildner.buildner == "ultest"),
     },
     {
       "jose-elias-alvarez/typescript.nvim",
@@ -290,17 +290,17 @@ M.config = function()
       },
       -- opt = true,
       -- event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
-      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
+      disable = not (lvim.builtin.test_buildner.active and lvim.builtin.test_buildner.buildner == "neotest"),
     },
     {
       "rcarriga/vim-ultest",
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
       wants = "vim-test",
       requires = { "vim-test/vim-test" },
-      run = ":UpdateRemotePlugins",
+      build = ":UpdateRemotePlugins",
       opt = true,
       event = { "BufEnter *_test.*,*_spec.*,*est_*.*" },
-      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
+      disable = not (lvim.builtin.test_buildner.active and lvim.builtin.test_buildner.buildner == "ultest"),
     },
     {
       "akinsho/flutter-tools.nvim",
@@ -425,7 +425,7 @@ M.config = function()
     {
       "chipsenkbeil/distant.nvim",
       opt = true,
-      run = { "DistantInstall" },
+      build = { "DistantInstall" },
       cmd = { "DistantLaunch", "DistantRun" },
       config = function()
         require("distant").setup {
@@ -492,17 +492,17 @@ M.config = function()
     {
       "skywind3000/asynctasks.vim",
       requires = {
-        { "skywind3000/asyncrun.vim" },
+        { "skywind3000/asyncbuild.vim" },
       },
       setup = function()
         vim.cmd [[
-          let g:asyncrun_open = 8
+          let g:asyncbuild_open = 8
           let g:asynctask_template = '~/.config/lvim/task_template.ini'
           let g:asynctasks_extra_config = ['~/.config/lvim/tasks.ini']
         ]]
       end,
       event = { "BufRead", "BufNew" },
-      disable = lvim.builtin.task_runner ~= "async_tasks",
+      disable = lvim.builtin.task_buildner ~= "async_tasks",
     },
     {
       "scalameta/nvim-metals",
@@ -526,9 +526,9 @@ M.config = function()
       -- disable = lvim.builtin.noice.active,
     },
     {
-      "michaelb/sniprun",
-      run = "bash ./install.sh",
-      disable = not lvim.builtin.sniprun.active,
+      "michaelb/snipbuild",
+      build = "bash ./install.sh",
+      disable = not lvim.builtin.snipbuild.active,
     },
     {
       "liuchengxu/vista.vim",
@@ -627,7 +627,7 @@ M.config = function()
       config = function()
         require("user.ovs").config()
       end,
-      disable = lvim.builtin.task_runner ~= "overseer",
+      disable = lvim.builtin.task_buildner ~= "overseer",
     },
     {
       "nvim-neo-tree/neo-tree.nvim",
@@ -689,7 +689,7 @@ M.config = function()
       config = function()
         local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
         require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
-        require("dap-python").test_runner = "pytest"
+        require("dap-python").test_buildner = "pytest"
       end,
       ft = "python",
       event = { "BufRead", "BufNew" },
