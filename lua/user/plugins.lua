@@ -293,7 +293,6 @@ M.config = function()
     {
       "rcarriga/vim-ultest",
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
-      -- wants = "vim-test",
       dependencies = { "vim-test/vim-test" },
       build = ":UpdateRemotePlugins",
       lazy = true,
@@ -390,8 +389,7 @@ M.config = function()
     },
     {
       "zbirenbaum/copilot.lua",
-      after = "nvim-cmp",
-      dependencies = { "zbirenbaum/copilot-cmp" },
+      dependencies = { "zbirenbaum/copilot-cmp" , "nvim-cmp"},
       config = function()
         local cmp_source = { name = "copilot", group_index = 2 }
         table.insert(lvim.builtin.cmp.sources, cmp_source)
@@ -455,8 +453,7 @@ M.config = function()
     },
     {
       "abecodes/tabout.nvim",
-      -- wants = { "nvim-treesitter" },
-      after = { "nvim-cmp" },
+      dependencies = { "nvim-treesitter", "nvim-cmp" },
       config = function()
         require("user.tabout").config()
       end,
@@ -480,7 +477,7 @@ M.config = function()
     },
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      after = "nvim-treesitter",
+      dependencies = "nvim-treesitter",
     },
     {
       "sidebar-nvim/sidebar.nvim",
