@@ -72,7 +72,7 @@ M.config = function()
         require("remember").setup {}
       end,
       event = "BufWinEnter",
-      disable = not lvim.builtin.lastplace.active,
+      cond = not lvim.builtin.lastplace.active,
     },
     {
       "folke/todo-comments.nvim",
@@ -100,7 +100,7 @@ M.config = function()
       config = function()
         require("user.leap").config()
       end,
-      disable = lvim.builtin.motion_provider ~= "leap",
+      cond = lvim.builtin.motion_provider ~= "leap",
     },
     {
       "phaazon/hop.nvim",
@@ -108,7 +108,7 @@ M.config = function()
       config = function()
         require("user.hop").config()
       end,
-      disable = lvim.builtin.motion_provider ~= "hop",
+      cond = lvim.builtin.motion_provider ~= "hop",
     },
     {
       "simrat39/symbols-outline.nvim",
@@ -116,7 +116,7 @@ M.config = function()
         require("user.symbols_outline").config()
       end,
       event = "BufReadPost",
-      disable = lvim.builtin.tag_provider ~= "symbols-outline",
+      cond = lvim.builtin.tag_provider ~= "symbols-outline",
     },
     {
       "tzachar/cmp-tabnine",
@@ -132,7 +132,7 @@ M.config = function()
       end,
       opt = true,
       event = "InsertEnter",
-      disable = not lvim.builtin.tabnine.active,
+      cond = not lvim.builtin.tabnine.active,
     },
     {
       "folke/twilight.nvim",
@@ -169,7 +169,7 @@ M.config = function()
         require("user.rust_tools").config()
       end,
       ft = { "rust", "rs" },
-      disable = not lvim.builtin.rust_programming.active,
+      cond = not lvim.builtin.rust_programming.active,
     },
     {
       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -177,7 +177,7 @@ M.config = function()
         require("lsp_lines").setup()
       end,
       event = "BufRead",
-      disable = not lvim.builtin.lsp_lines,
+      cond = not lvim.builtin.lsp_lines,
     },
     {
       "folke/zen-mode.nvim",
@@ -210,14 +210,14 @@ M.config = function()
           options = { "buffers", "curdir", "tabpages", "winsize" }, -- sessionoptions used for saving
         }
       end,
-      disable = not lvim.builtin.persistence.active,
+      cond = not lvim.builtin.persistence.active,
     },
     {
       "andweeb/presence.nvim",
       config = function()
         require("user.presence").config()
       end,
-      disable = not lvim.builtin.presence.active,
+      cond = not lvim.builtin.presence.active,
     },
     { "mfussenegger/nvim-jdtls", ft = "java" },
     {
@@ -227,7 +227,7 @@ M.config = function()
       config = function()
         require("user.orgmode").setup()
       end,
-      disable = not lvim.builtin.orgmode.active,
+      cond = not lvim.builtin.orgmode.active,
     },
     {
       "danymat/neogen",
@@ -245,7 +245,7 @@ M.config = function()
       config = function()
         require("user.vim_test").config()
       end,
-      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
+      cond = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
     },
     {
       "jose-elias-alvarez/typescript.nvim",
@@ -262,7 +262,7 @@ M.config = function()
       config = function()
         require("user.tss").config()
       end,
-      disable = not lvim.builtin.web_programming.active,
+      cond = not lvim.builtin.web_programming.active,
     },
     {
       "vuki656/package-info.nvim",
@@ -271,7 +271,7 @@ M.config = function()
       end,
       opt = true,
       event = { "BufReadPre", "BufNew" },
-      disable = not lvim.builtin.web_programming.active,
+      cond = not lvim.builtin.web_programming.active,
     },
     {
       "lervag/vimtex",
@@ -290,7 +290,7 @@ M.config = function()
       },
       -- opt = true,
       -- event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
-      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
+      cond = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
     {
       "rcarriga/vim-ultest",
@@ -300,7 +300,7 @@ M.config = function()
       build = ":UpdateRemotePlugins",
       opt = true,
       event = { "BufEnter *_test.*,*_spec.*,*est_*.*" },
-      disable = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
+      cond = not (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "ultest"),
     },
     {
       "akinsho/flutter-tools.nvim",
@@ -319,7 +319,7 @@ M.config = function()
       opt = true,
       cmd = { "Cheat", "CheatWithoutComments", "CheatList", "CheatListWithoutComments" },
       keys = "<leader>?",
-      disable = not lvim.builtin.cheat.active,
+      cond = not lvim.builtin.cheat.active,
     },
     {
       "AckslD/nvim-neoclip.lua",
@@ -329,11 +329,11 @@ M.config = function()
       opt = true,
       keys = "<leader>y",
       requires = neoclip_req,
-      disable = not lvim.builtin.neoclip.active,
+      cond = not lvim.builtin.neoclip.active,
     },
     {
       "kristijanhusak/vim-dadbod-completion",
-      disable = not lvim.builtin.sql_integration.active,
+      cond = not lvim.builtin.sql_integration.active,
     },
     {
       "kristijanhusak/vim-dadbod-ui",
@@ -355,7 +355,7 @@ M.config = function()
         },
       },
       opt = true,
-      disable = not lvim.builtin.sql_integration.active,
+      cond = not lvim.builtin.sql_integration.active,
     },
     {
       "karb94/neoscroll.nvim",
@@ -366,7 +366,7 @@ M.config = function()
         }
       end,
       event = "BufRead",
-      disable = lvim.builtin.smooth_scroll ~= "neoscroll",
+      cond = lvim.builtin.smooth_scroll ~= "neoscroll",
     },
     {
       "declancm/cinnamon.nvim",
@@ -381,14 +381,14 @@ M.config = function()
         }
       end,
       event = "BufRead",
-      disable = lvim.builtin.smooth_scroll ~= "cinnamon",
+      cond = lvim.builtin.smooth_scroll ~= "cinnamon",
     },
     {
       "github/copilot.vim",
       config = function()
         require("user.copilot").config()
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil.active or lvim.builtin.sell_your_soul_to_devil.prada,
+      cond = not lvim.builtin.sell_your_soul_to_devil.active or lvim.builtin.sell_your_soul_to_devil.prada,
     },
     {
       "zbirenbaum/copilot.lua",
@@ -401,7 +401,7 @@ M.config = function()
           require("copilot").setup()
         end, 100)
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil.prada,
+      cond = not lvim.builtin.sell_your_soul_to_devil.prada,
     },
     {
       "ThePrimeagen/harpoon",
@@ -409,7 +409,7 @@ M.config = function()
         { "nvim-lua/plenary.nvim" },
         { "nvim-lua/popup.nvim" },
       },
-      disable = not lvim.builtin.harpoon.active,
+      cond = not lvim.builtin.harpoon.active,
     },
     {
       "sindrets/diffview.nvim",
@@ -420,7 +420,7 @@ M.config = function()
       config = function()
         require("user.diffview").config()
       end,
-      disable = not lvim.builtin.fancy_diff.active,
+      cond = not lvim.builtin.fancy_diff.active,
     },
     {
       "chipsenkbeil/distant.nvim",
@@ -436,14 +436,14 @@ M.config = function()
           ),
         }
       end,
-      disable = not lvim.builtin.remote_dev.active,
+      cond = not lvim.builtin.remote_dev.active,
     },
     {
       "abzcoding/nvim-mini-file-icons",
       config = function()
         require("nvim-web-devicons").setup()
       end,
-      disable = lvim.use_icons or not lvim.builtin.custom_web_devicons,
+      cond = lvim.use_icons or not lvim.builtin.custom_web_devicons,
     },
     {
       "nvim-telescope/telescope-live-grep-args.nvim",
@@ -453,7 +453,7 @@ M.config = function()
       "yamatsum/nvim-cursorline",
       opt = true,
       event = "BufWinEnter",
-      disable = not lvim.builtin.cursorline.active,
+      cond = not lvim.builtin.cursorline.active,
     },
     {
       "abecodes/tabout.nvim",
@@ -462,7 +462,7 @@ M.config = function()
       config = function()
         require("user.tabout").config()
       end,
-      disable = not lvim.builtin.sell_your_soul_to_devil,
+      cond = not lvim.builtin.sell_your_soul_to_devil,
     },
     {
       "kevinhwang91/nvim-hlslens",
@@ -470,12 +470,12 @@ M.config = function()
         require("user.hlslens").config()
       end,
       event = "BufReadPost",
-      disable = not lvim.builtin.hlslens.active,
+      cond = not lvim.builtin.hlslens.active,
     },
     {
       "chrisbra/csv.vim",
       ft = { "csv" },
-      disable = not lvim.builtin.csv_support,
+      cond = not lvim.builtin.csv_support,
     },
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
@@ -487,7 +487,7 @@ M.config = function()
         require("user.sidebar").config()
       end,
       -- event = "BufRead",
-      disable = not lvim.builtin.sidebar.active,
+      cond = not lvim.builtin.sidebar.active,
     },
     {
       "skywind3000/asynctasks.vim",
@@ -502,33 +502,33 @@ M.config = function()
         ]]
       end,
       event = { "BufRead", "BufNew" },
-      disable = lvim.builtin.task_runner ~= "async_tasks",
+      cond = lvim.builtin.task_runner ~= "async_tasks",
     },
     {
       "scalameta/nvim-metals",
       requires = { "nvim-lua/plenary.nvim" },
-      disable = not lvim.builtin.metals.active,
+      cond = not lvim.builtin.metals.active,
     },
     {
       "jbyuki/instant.nvim",
       event = "BufRead",
-      disable = not lvim.builtin.collaborative_editing.active,
+      cond = not lvim.builtin.collaborative_editing.active,
     },
     {
       "nvim-telescope/telescope-file-browser.nvim",
-      disable = not lvim.builtin.file_browser.active,
+      cond = not lvim.builtin.file_browser.active,
     },
     {
       "j-hui/fidget.nvim",
       config = function()
         require("user.fidget_spinner").config()
       end,
-      -- disable = lvim.builtin.noice.active,
+      -- cond = lvim.builtin.noice.active,
     },
     {
       "michaelb/sniprun",
       build = "bash ./install.sh",
-      disable = not lvim.builtin.sniprun.active,
+      cond = not lvim.builtin.sniprun.active,
     },
     {
       "liuchengxu/vista.vim",
@@ -536,7 +536,7 @@ M.config = function()
         require("user.vista").config()
       end,
       event = "BufReadPost",
-      disable = lvim.builtin.tag_provider ~= "vista",
+      cond = lvim.builtin.tag_provider ~= "vista",
     },
     {
       "p00f/clangd_extensions.nvim",
@@ -544,12 +544,12 @@ M.config = function()
         require("user.cle").config()
       end,
       ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
-      disable = not lvim.builtin.cpp_programming.active,
+      cond = not lvim.builtin.cpp_programming.active,
     },
     {
       "editorconfig/editorconfig-vim",
       event = "BufRead",
-      disable = not lvim.builtin.editorconfig.active,
+      cond = not lvim.builtin.editorconfig.active,
     },
     {
       "saecki/crates.nvim",
@@ -558,25 +558,25 @@ M.config = function()
       config = function()
         require("user.crates").config()
       end,
-      disable = not lvim.builtin.rust_programming.active,
+      cond = not lvim.builtin.rust_programming.active,
     },
     {
       "hrsh7th/cmp-cmdline",
-      disable = not lvim.builtin.fancy_wild_menu.active,
+      cond = not lvim.builtin.fancy_wild_menu.active,
     },
     {
       "mrjones2014/legendary.nvim",
       config = function()
         require("user.legendary").config()
       end,
-      disable = not lvim.builtin.legendary.active,
+      cond = not lvim.builtin.legendary.active,
     },
     {
       "stevearc/dressing.nvim",
       config = function()
         require("user.dress").config()
       end,
-      disable = not lvim.builtin.dressing.active,
+      cond = not lvim.builtin.dressing.active,
       event = "BufWinEnter",
     },
     {
@@ -591,14 +591,14 @@ M.config = function()
       config = function()
         require("refactoring").setup {}
       end,
-      disable = not lvim.builtin.refactoring.active,
+      cond = not lvim.builtin.refactoring.active,
     },
     {
       "b0o/incline.nvim",
       config = function()
         require("user.incline").config()
       end,
-      disable = lvim.builtin.winbar_provider ~= "filename",
+      cond = lvim.builtin.winbar_provider ~= "filename",
     },
     {
       "fgheng/winbar.nvim",
@@ -606,7 +606,7 @@ M.config = function()
         require("user.winb").config()
       end,
       event = { "InsertEnter", "CursorHoldI" },
-      disable = lvim.builtin.winbar_provider ~= "treesitter",
+      cond = lvim.builtin.winbar_provider ~= "treesitter",
     },
     {
       "SmiteshP/nvim-gps",
@@ -616,18 +616,18 @@ M.config = function()
       end,
       requires = "nvim-treesitter/nvim-treesitter",
       event = { "InsertEnter", "CursorHoldI" },
-      disable = lvim.builtin.winbar_provider ~= "treesitter",
+      cond = lvim.builtin.winbar_provider ~= "treesitter",
     },
     {
       "vimpostor/vim-tpipeline",
-      disable = not lvim.builtin.tmux_lualine,
+      cond = not lvim.builtin.tmux_lualine,
     },
     {
       "stevearc/overseer.nvim",
       config = function()
         require("user.ovs").config()
       end,
-      disable = lvim.builtin.task_runner ~= "overseer",
+      cond = lvim.builtin.task_runner ~= "overseer",
     },
     {
       "nvim-neo-tree/neo-tree.nvim",
@@ -638,7 +638,7 @@ M.config = function()
       config = function()
         require("user.neotree").config()
       end,
-      disable = lvim.builtin.tree_provider ~= "neo-tree",
+      cond = lvim.builtin.tree_provider ~= "neo-tree",
     },
     {
       "folke/noice.nvim",
@@ -650,7 +650,7 @@ M.config = function()
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
       },
-      disable = not lvim.builtin.noice.active,
+      cond = not lvim.builtin.noice.active,
     },
     {
       "olexsmir/gopher.nvim",
@@ -667,7 +667,7 @@ M.config = function()
       end,
       ft = { "go", "gomod" },
       event = { "BufRead", "BufNew" },
-      disable = not lvim.builtin.go_programming.active,
+      cond = not lvim.builtin.go_programming.active,
     },
     {
       "leoluz/nvim-dap-go",
@@ -676,11 +676,11 @@ M.config = function()
       end,
       ft = { "go", "gomod" },
       event = { "BufRead", "BufNew" },
-      disable = not lvim.builtin.go_programming.active,
+      cond = not lvim.builtin.go_programming.active,
     },
     {
       "AckslD/swenv.nvim",
-      disable = not lvim.builtin.python_programming.active,
+      cond = not lvim.builtin.python_programming.active,
       ft = "python",
       event = { "BufRead", "BufNew" },
     },
@@ -693,7 +693,7 @@ M.config = function()
       end,
       ft = "python",
       event = { "BufRead", "BufNew" },
-      disable = not lvim.builtin.python_programming.active,
+      cond = not lvim.builtin.python_programming.active,
     },
     {
       "mxsdev/nvim-dap-vscode-js",
@@ -714,14 +714,14 @@ M.config = function()
           adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
         }
       end,
-      disable = not lvim.builtin.web_programming.active,
+      cond = not lvim.builtin.web_programming.active,
     },
     {
       "smjonas/inc-rename.nvim",
       config = function()
         require("inc_rename").setup()
       end,
-      disable = not lvim.builtin.noice.active,
+      cond = not lvim.builtin.noice.active,
     },
     {
       "m-demare/hlargs.nvim",
@@ -729,7 +729,7 @@ M.config = function()
         require("hlargs").setup()
       end,
       requires = { "nvim-treesitter/nvim-treesitter" },
-      disable = not lvim.builtin.colored_args,
+      cond = not lvim.builtin.colored_args,
     },
     {
       "cshuaimin/ssr.nvim",
@@ -753,14 +753,14 @@ M.config = function()
         require("user.cle").cmake_config()
       end,
       ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
-      disable = not lvim.builtin.cpp_programming.active,
+      cond = not lvim.builtin.cpp_programming.active,
     },
     {
       "lvimuser/lsp-inlayhints.nvim",
       config = function()
         require("lsp-inlayhints").setup()
       end,
-      disable = not lvim.builtin.inlay_hints.active,
+      cond = not lvim.builtin.inlay_hints.active,
     },
   }
 end
