@@ -146,8 +146,8 @@ M.config = function()
         separator = true,
       },
       {
-        text = " PACKER", -- TODO Is this packer related?
-        filetype = "packer", -- Is this packer related?
+        text = " LAZY",
+        filetype = "lazy", 
         highlight = "PanelHeading",
         separator = true,
       },
