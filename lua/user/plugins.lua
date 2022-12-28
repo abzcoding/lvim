@@ -3,8 +3,6 @@ local M = {}
 M.config = function()
   -- NOTE: after https://github.com/LunarVim/LunarVim/pull/3647 gets merged
   -- we need to change `run` to `build`
-  -- and `tag` to `version`
-  -- and `requires` to `dependencies`
 
   local neoclip_req = { "kkharji/sqlite.lua", module = "sqlite" }
   if lvim.builtin.neoclip.enable_persistent_history == false then
@@ -24,7 +22,7 @@ M.config = function()
     -- },
     {
       "rose-pine/neovim",
-      as = "rose-pine",
+      name = "rose-pine",
       config = function()
         require("user.theme").rose_pine()
         vim.cmd [[colorscheme rose-pine]]
@@ -36,7 +34,7 @@ M.config = function()
     },
     {
       "catppuccin/nvim",
-      as = "catppuccin",
+      name = "catppuccin",
       build = ":CatppuccinCompile",
       config = function()
         require("user.theme").catppuccin()
