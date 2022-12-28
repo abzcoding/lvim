@@ -87,7 +87,7 @@ M.config = function()
       config = function()
         require("user.leap").config()
       end,
-      enabled = lvim.builtin.motion_provider ~= "leap",
+      enabled = lvim.builtin.motion_provider == "leap",
     },
     {
       "phaazon/hop.nvim",
@@ -95,7 +95,7 @@ M.config = function()
       config = function()
         require("user.hop").config()
       end,
-      enabled = lvim.builtin.motion_provider ~= "hop",
+      enabled = lvim.builtin.motion_provider == "hop",
     },
     {
       "simrat39/symbols-outline.nvim",
@@ -103,7 +103,7 @@ M.config = function()
         require("user.symbols_outline").config()
       end,
       event = "BufReadPost",
-      enabled = lvim.builtin.tag_provider ~= "symbols-outline",
+      enabled = lvim.builtin.tag_provider == "symbols-outline",
     },
     {
       "tzachar/cmp-tabnine",
@@ -355,6 +355,7 @@ M.config = function()
       end,
       event = "BufRead",
       enabled = lvim.builtin.smooth_scroll ~= "neoscroll",
+      enabled = lvim.builtin.smooth_scroll == "neoscroll",
     },
     {
       "declancm/cinnamon.nvim",
@@ -370,6 +371,7 @@ M.config = function()
       end,
       event = "BufRead",
       enabled = lvim.builtin.smooth_scroll ~= "cinnamon",
+      enabled = lvim.builtin.smooth_scroll == "cinnamon",
     },
     {
       "github/copilot.vim",
@@ -495,6 +497,7 @@ M.config = function()
       end,
       event = { "BufRead", "BufNew" },
       enabled = lvim.builtin.task_runner ~= "async_tasks",
+      enabled = lvim.builtin.task_runner == "async_tasks",
     },
     {
       "scalameta/nvim-metals",
@@ -529,6 +532,7 @@ M.config = function()
       end,
       event = "BufReadPost",
       enabled = lvim.builtin.tag_provider ~= "vista",
+      enabled = lvim.builtin.tag_provider == "vista",
     },
     {
       "p00f/clangd_extensions.nvim",
@@ -590,7 +594,7 @@ M.config = function()
       config = function()
         require("user.incline").config()
       end,
-      enabled = lvim.builtin.winbar_provider ~= "filename",
+      enabled = lvim.builtin.winbar_provider == "filename",
     },
     {
       "fgheng/winbar.nvim",
@@ -598,7 +602,7 @@ M.config = function()
         require("user.winb").config()
       end,
       event = { "InsertEnter", "CursorHoldI" },
-      enabled = lvim.builtin.winbar_provider ~= "treesitter",
+      enabled = lvim.builtin.winbar_provider == "treesitter",
     },
     {
       "SmiteshP/nvim-gps",
@@ -620,7 +624,7 @@ M.config = function()
       config = function()
         require("user.ovs").config()
       end,
-      enabled = lvim.builtin.task_runner ~= "overseer",
+      enabled = lvim.builtin.task_runner == "overseer",
     },
     {
       "nvim-neo-tree/neo-tree.nvim",
