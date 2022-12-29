@@ -135,17 +135,17 @@ M.config = function()
     },
     {
       "folke/twilight.nvim",
+      lazy = true,
       config = function()
         require("user.twilight").config()
       end,
-      event = "BufRead",
     },
     {
       "kevinhwang91/nvim-bqf",
+      lazy = true,
       config = function()
         require("user.bqf").config()
       end,
-      event = "BufRead",
     },
     {
       "andymass/vim-matchup",
@@ -164,6 +164,7 @@ M.config = function()
     },
     {
       "simrat39/rust-tools.nvim",
+      lazy = true,
       config = function()
         require("user.rust_tools").config()
       end,
@@ -180,14 +181,15 @@ M.config = function()
     },
     {
       "folke/zen-mode.nvim",
+      lazy = true,
+      cmd = "ZenMode",
       config = function()
         require("user.zen").config()
       end,
-      event = "BufRead",
     },
     {
       "windwp/nvim-spectre",
-      event = "BufRead",
+      lazy = true,
       config = function()
         require("user.spectre").config()
       end,
@@ -230,12 +232,12 @@ M.config = function()
     },
     {
       "danymat/neogen",
+      lazy = true,
       config = function()
         require("neogen").setup {
           enabled = true,
         }
       end,
-      event = "InsertEnter",
       dependencies = "nvim-treesitter/nvim-treesitter",
     },
     {
@@ -257,7 +259,6 @@ M.config = function()
         "typescript.tsx",
       },
       lazy = true,
-      event = { "BufReadPre", "BufNew" },
       config = function()
         require("user.tss").config()
       end,
@@ -282,15 +283,13 @@ M.config = function()
         require("user.ntest").config()
       end,
       dependencies = {
-        { "nvim-neotest/neotest-go" },
-        { "nvim-neotest/neotest-python" },
         { "nvim-neotest/neotest-plenary" },
-        { "rouge8/neotest-rust" },
       },
-      -- lazy = true,
-      -- event = { "BufEnter *_test.*,*_spec.*,test_*.*" },
       enabled = (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
+    { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
+    { "nvim-neotest/neotest-python", event = { "BufEnter *.py" } },
+    { "nvim-rust/neotest-rust", event = { "BufEnter *.rs" } },
     {
       "rcarriga/vim-ultest",
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
@@ -390,7 +389,7 @@ M.config = function()
     },
     {
       "zbirenbaum/copilot.lua",
-      dependencies = { "zbirenbaum/copilot-cmp" , "nvim-cmp"},
+      dependencies = { "zbirenbaum/copilot-cmp", "nvim-cmp" },
       config = function()
         local cmp_source = { name = "copilot", group_index = 2 }
         table.insert(lvim.builtin.cmp.sources, cmp_source)
@@ -471,6 +470,8 @@ M.config = function()
     },
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
+      lazy = true,
+      event = "BufReadPre",
       dependencies = "nvim-treesitter",
     },
     {
@@ -710,6 +711,7 @@ M.config = function()
     },
     {
       "smjonas/inc-rename.nvim",
+      lazy = true,
       config = function()
         require("inc_rename").setup()
       end,
@@ -717,6 +719,8 @@ M.config = function()
     },
     {
       "m-demare/hlargs.nvim",
+      lazy = true,
+      event = "VeryLazy",
       config = function()
         require("hlargs").setup()
       end,
@@ -725,6 +729,7 @@ M.config = function()
     },
     {
       "cshuaimin/ssr.nvim",
+      lazy = true,
       config = function()
         require("ssr").setup {
           min_width = 50,
