@@ -172,10 +172,10 @@ M.config = function()
     },
     {
       url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      lazy = true,
       config = function()
         require("lsp_lines").setup()
       end,
-      event = "BufRead",
       enabled = lvim.builtin.lsp_lines,
     },
     {
