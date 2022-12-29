@@ -566,6 +566,7 @@ M.config = function()
     },
     {
       "stevearc/dressing.nvim",
+      lazy = true,
       config = function()
         require("user.dress").config()
       end,
@@ -579,6 +580,7 @@ M.config = function()
     },
     {
       "ThePrimeagen/refactoring.nvim",
+      lazy = true,
       ft = { "typescript", "javascript", "lua", "c", "cpp", "go", "python", "java", "php" },
       event = "BufRead",
       config = function()
@@ -625,6 +627,7 @@ M.config = function()
     {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v2.x",
+      cmd = "Neotree",
       dependencies = {
         "MunifTanjim/nui.nvim",
       },
