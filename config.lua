@@ -75,7 +75,7 @@ lvim.builtin.cpp_programming = { active = false } -- clangd_extensions.nvim + ma
 lvim.builtin.cmp.cmdline.enable = false
 lvim.builtin.borderless_cmp = false
 lvim.builtin.colored_args = false -- if true then sets up hlargs.nvim
-lvim.builtin.bigfile.active = true
+lvim.builtin.bigfile = { active = true } -- disable syntax parse for bigfiles
 lvim.builtin.inlay_hints = { active = false } -- enable/disable inlay hints
 
 -- Custom User Config
