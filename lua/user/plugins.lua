@@ -453,11 +453,9 @@ M.config = function()
     },
     {
       "abecodes/tabout.nvim",
-      dependencies = { "nvim-cmp" },
       config = function()
         require("user.tabout").config()
       end,
-      enabled = lvim.builtin.sell_your_soul_to_devil,
     },
     {
       "kevinhwang91/nvim-hlslens",
