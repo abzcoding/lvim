@@ -103,7 +103,8 @@ M.config = function()
     },
     {
       "phaazon/hop.nvim",
-      event = "BufRead",
+      event = "VeryLazy",
+      commands = { "HopChar1CurrentLineAC", "HopChar1CurrentLineBC", "HopChar2MW", "HopWordMW" },
       config = function()
         require("user.hop").config()
       end,
