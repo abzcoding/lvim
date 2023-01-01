@@ -99,7 +99,7 @@ M.config = function()
       config = function()
         require("user.leap").config()
       end,
-      enable = lvim.builtin.motion_provider == "leap",
+      enabled = lvim.builtin.motion_provider == "leap",
     },
     {
       "phaazon/hop.nvim",
@@ -108,7 +108,7 @@ M.config = function()
       config = function()
         require("user.hop").config()
       end,
-      enable = lvim.builtin.motion_provider == "hop",
+      enabled = lvim.builtin.motion_provider == "hop",
     },
     {
       "simrat39/symbols-outline.nvim",
@@ -116,7 +116,7 @@ M.config = function()
         require("user.symbols_outline").config()
       end,
       event = "BufReadPost",
-      enable = lvim.builtin.tag_provider == "symbols-outline",
+      enabled = lvim.builtin.tag_provider == "symbols-outline",
     },
     {
       "tzachar/cmp-tabnine",
@@ -364,7 +364,7 @@ M.config = function()
         }
       end,
       event = "BufRead",
-      enable = lvim.builtin.smooth_scroll == "neoscroll",
+      enabled = lvim.builtin.smooth_scroll == "neoscroll",
     },
     {
       "declancm/cinnamon.nvim",
@@ -379,7 +379,7 @@ M.config = function()
         }
       end,
       event = "BufRead",
-      enable = lvim.builtin.smooth_scroll == "cinnamon",
+      enabled = lvim.builtin.smooth_scroll == "cinnamon",
     },
     {
       "github/copilot.vim",
@@ -610,7 +610,7 @@ M.config = function()
       end,
       dependencies = "nvim-treesitter/nvim-treesitter",
       event = { "InsertEnter", "CursorHoldI" },
-      enable = lvim.builtin.winbar_provider == "treesitter",
+      enabled = lvim.builtin.winbar_provider == "treesitter",
     },
     {
       "vimpostor/vim-tpipeline",
@@ -621,7 +621,7 @@ M.config = function()
       config = function()
         require("user.ovs").config()
       end,
-      enable = lvim.builtin.task_runner == "overseer",
+      enabled = lvim.builtin.task_runner == "overseer",
     },
     {
       "nvim-neo-tree/neo-tree.nvim",
@@ -633,7 +633,7 @@ M.config = function()
       config = function()
         require("user.neotree").config()
       end,
-      enable = lvim.builtin.tree_provider == "neo-tree",
+      enabled = lvim.builtin.tree_provider == "neo-tree",
     },
     { "MunifTanjim/nui.nvim" },
     {
