@@ -136,7 +136,7 @@ end
 
 function M.installed_plugins()
   builtin.find_files {
-    cwd = join_paths(vim.env.LUNARVIM_RUNTIME_DIR, "site", "pack", "packer"),
+    cwd = join_paths(vim.env.LUNARVIM_RUNTIME_DIR, "site", "pack", "lazy"),
   }
 end
 
