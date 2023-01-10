@@ -26,9 +26,9 @@ M.config = function()
       name = "rose-pine",
       config = function()
         require("user.theme").rose_pine()
-        vim.cmd [[colorscheme rose-pine]]
+        lvim.colorscheme = "rose-pine"
       end,
-      cond = function()
+      enabled = function()
         local _time = os.date "*t"
         return (_time.hour >= 1 and _time.hour < 9) and lvim.builtin.time_based_themes
       end,
@@ -39,9 +39,9 @@ M.config = function()
       build = ":CatppuccinCompile",
       config = function()
         require("user.theme").catppuccin()
-        vim.cmd [[colorscheme catppuccin-mocha]]
+        lvim.colorscheme = "catppuccin-mocha"
       end,
-      cond = function()
+      enabled = function()
         local _time = os.date "*t"
         return (_time.hour >= 17 and _time.hour < 21) and lvim.builtin.time_based_themes
       end,
@@ -50,9 +50,9 @@ M.config = function()
       "rebelot/kanagawa.nvim",
       config = function()
         require("user.theme").kanagawa()
-        vim.cmd [[colorscheme kanagawa]]
+        lvim.colorscheme = "kanagawa"
       end,
-      cond = function()
+      enabled = function()
         local _time = os.date "*t"
         return ((_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1))
           and lvim.builtin.time_based_themes
@@ -85,13 +85,14 @@ M.config = function()
       "folke/trouble.nvim",
       config = function()
         require("trouble").setup {
-          auto_open = true,
+          auto_open = false,
           auto_close = true,
           padding = false,
           height = 10,
           use_diagnostic_signs = true,
         }
       end,
+      event = "VeryLazy",
       cmd = "Trouble",
     },
     {
