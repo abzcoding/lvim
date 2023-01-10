@@ -366,7 +366,6 @@ M.config = function()
       node_decremental = "<C-r>",
     },
   }
-  lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
   lvim.builtin.treesitter.matchup.enable = true
   -- lvim.treesitter.textsubjects.enable = true
   -- lvim.treesitter.playground.enable = true
