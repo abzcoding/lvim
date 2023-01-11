@@ -57,7 +57,7 @@ M.config = function()
           icon = kind.icons.config,
           highlight = { fg = "#ECBE7B" },
           matcher = function(buf)
-            return vim.startswith(buf.path, string.format("%s/site/pack/packer", vim.fn.stdpath "data"))
+            return vim.startswith(buf.path, string.format("%s/site/pack/lazy", vim.fn.stdpath "data"))
               or vim.startswith(buf.path, vim.fn.expand "$VIMRUNTIME")
           end,
         },
@@ -146,8 +146,8 @@ M.config = function()
         separator = true,
       },
       {
-        text = " PACKER",
-        filetype = "packer",
+        text = " LAZY",
+        filetype = "lazy", 
         highlight = "PanelHeading",
         separator = true,
       },

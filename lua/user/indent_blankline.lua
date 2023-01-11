@@ -33,7 +33,7 @@ M.config = function()
       "help",
       "startify",
       "dashboard",
-      "packer",
+      "lazy",
       "neogitstatus",
       "Outline",
       "Trouble",
