@@ -172,7 +172,7 @@ brew install node
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
 lvim +LvimUpdate +LvimCacheReset +q
-lvim # run :PackerSync
+lvim # run :Lazy sync
 ```
 
 ### Java
@@ -222,7 +222,7 @@ Use `Tab` to list available servers.
 ```shell
 cd ~/.config/lvim
 git pull
-lvim # run :PackerSync
+lvim # run :Lazy sync
 ```
 
 ### Recommended Linters
