@@ -283,6 +283,7 @@ M.config = function()
       dependencies = {
         { "nvim-neotest/neotest-plenary" },
       },
+      event = { "BufReadPost", "BufNew" },
       enabled = (lvim.builtin.test_runner.active and lvim.builtin.test_runner.runner == "neotest"),
     },
     { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
@@ -578,7 +579,7 @@ M.config = function()
       "ThePrimeagen/refactoring.nvim",
       lazy = true,
       ft = { "typescript", "javascript", "lua", "c", "cpp", "go", "python", "java", "php" },
-      event = "BufRead",
+      event = "BufReadPost",
       config = function()
         require("refactoring").setup {}
       end,
