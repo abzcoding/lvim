@@ -457,6 +457,9 @@ M.config = function()
     },
     {
       "kevinhwang91/nvim-hlslens",
+      config = function()
+        require("user.hlslens").config()
+      end,
       event = "BufReadPost",
       enabled = lvim.builtin.hlslens.active,
     },
