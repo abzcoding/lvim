@@ -34,6 +34,9 @@ M.config = function()
       end,
     },
   }
+  dap.adapters.nlua = function(callback, config)
+    callback { type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 }
+  end
 
   -- NOTE: if you want to use `dap` instead of `RustDebuggables` you can use the following configuration
   if vim.fn.executable "lldb-vscode" == 1 then
