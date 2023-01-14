@@ -58,8 +58,11 @@ M.config = function()
     tex_preview_settings = skim_args
   end
   return {
-    cmd = { vim.fn.stdpath "data" .. "/lspinstall/latex/texlab" },
+    cmd = { vim.fn.stdpath "data" .. "/mason/packages/texlab/texlab" },
     filetypes = { "tex", "bib" },
+    root_dir = function(fname)
+      return require("lspconfig").util.path.dirname(fname)
+    end,
     settings = {
       texlab = {
         auxDirectory = nil,

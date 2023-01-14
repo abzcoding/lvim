@@ -273,6 +273,9 @@ M.config = function()
     },
     {
       "lervag/vimtex",
+      init = function()
+        vim.g.vimtex_view_enabled = true
+      end,
       ft = "tex",
     },
     {
@@ -639,7 +642,7 @@ M.config = function()
     { "MunifTanjim/nui.nvim" },
     {
       "folke/noice.nvim",
-      event = "VimEnter",
+      event = "VeryLazy",
       config = function()
         require("user.noice").config()
       end,
