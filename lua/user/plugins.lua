@@ -763,6 +763,11 @@ M.config = function()
       end,
       enabled = lvim.builtin.inlay_hints.active,
     },
+    {
+      "raimon49/requirements.txt.vim",
+      event = "VeryLazy",
+      enabled = lvim.builtin.python_programming.active,
+    },
   }
 end
 

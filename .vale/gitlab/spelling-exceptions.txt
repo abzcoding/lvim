@@ -476,6 +476,7 @@ gitlabsos
 gitrob
 globals
 gobuster
+golang
 goroutine
 goroutines
 goto
@@ -586,6 +587,7 @@ namespacing
 namespacings
 negatable
 neovim
+nginx
 nmap
 noteable
 noteables
@@ -600,6 +602,7 @@ offboarding
 offboards
 onboarding
 onedarker
+openjdk
 parallelization
 parallelizations
 paravirtualization
@@ -616,6 +619,7 @@ polyfill
 polyfills
 pooler
 postfixed
+postgres
 postgres.ai
 precompile
 precompiled
@@ -832,6 +836,7 @@ triages
 triaging
 truffleHog
 truthy
+ubuntu
 ui
 unapplied
 unapprove
