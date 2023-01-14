@@ -140,7 +140,7 @@ M.config = function()
     },
     {
       "kevinhwang91/nvim-bqf",
-      lazy = true,
+      event = "BufReadPost",
       config = function()
         require("user.bqf").config()
       end,
