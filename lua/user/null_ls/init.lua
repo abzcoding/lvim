@@ -39,6 +39,7 @@ M.config = function()
     },
     nls.builtins.formatting.stylua,
     nls.builtins.formatting.goimports,
+    nls.builtins.formatting.gofumpt,
     nls.builtins.formatting.cmake_format,
     nls.builtins.formatting.scalafmt,
     nls.builtins.formatting.sqlformat,

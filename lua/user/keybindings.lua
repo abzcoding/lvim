@@ -210,6 +210,8 @@ M.config = function()
         })
       end)
     end
+  else
+    lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<CR>"
   end
   lvim.keys.insert_mode["<A-s>"] =
     "<cmd>lua require('telescope').extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<CR>"
