@@ -32,7 +32,6 @@ M.config = function()
     {
       "catppuccin/nvim",
       name = "catppuccin",
-      build = ":CatppuccinCompile",
       config = function()
         require("user.theme").catppuccin()
         lvim.colorscheme = "catppuccin-mocha"
