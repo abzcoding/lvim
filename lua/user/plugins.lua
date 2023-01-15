@@ -277,6 +277,7 @@ M.config = function()
         vim.g.vimtex_view_enabled = true
       end,
       ft = "tex",
+      lazy = false,
     },
     {
       "nvim-neotest/neotest",
