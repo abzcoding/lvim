@@ -65,7 +65,6 @@ M.config = function()
       config = function()
         require("remember").setup {}
       end,
-      event = "BufWinEnter",
       enabled = lvim.builtin.lastplace.active,
     },
     {
@@ -100,7 +99,7 @@ M.config = function()
     {
       "phaazon/hop.nvim",
       event = "VeryLazy",
-      commands = { "HopChar1CurrentLineAC", "HopChar1CurrentLineBC", "HopChar2MW", "HopWordMW" },
+      cmd = { "HopChar1CurrentLineAC", "HopChar1CurrentLineBC", "HopChar2MW", "HopWordMW" },
       config = function()
         require("user.hop").config()
       end,
