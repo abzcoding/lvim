@@ -13,12 +13,12 @@ M.set_icon = function()
       name = "Rust",
     },
     tf = {
-      icon = "ﲽ",
+      icon = "",
       color = "#3d59a1",
       name = "Terraform",
     },
     tfvars = {
-      icon = "ﲽ",
+      icon = "",
       color = "#51afef",
       name = "Terraform",
     },
