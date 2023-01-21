@@ -1,3 +1,7 @@
+local M = {}
+
+M.set_syntax = function()
+  vim.cmd [[
 runtime! syntax/html.vim
 
 if exists('b:current_syntax')
@@ -151,3 +155,7 @@ let b:current_syntax = "mkd"
 
 delcommand HtmlHiLink
 " vim: ts=8
+]]
+end
+
+return M
