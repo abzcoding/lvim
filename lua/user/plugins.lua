@@ -770,6 +770,16 @@ M.config = function()
       event = "VeryLazy",
       enabled = lvim.builtin.python_programming.active,
     },
+    {
+      "phaazon/mind.nvim",
+      branch = "v2.2",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("user.mind").config()
+      end,
+      event = "VeryLazy",
+      enabled = lvim.builtin.mind.active,
+    },
   }
 end
 

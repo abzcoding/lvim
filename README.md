@@ -45,6 +45,7 @@ I've customized my ZSH/Tmux/[Wezterm](https://github.com/abzcoding/wezterm) too 
   - [Plugin: Lsp_Lines](#plugin-lsp_lines)
   - [Plugin: Overseer](#plugin-overseer)
   - [Plugin: NeoTree](#plugin-neotree)
+  - [Plugin: Mind](#plugin-mind)
 - [Troubleshooting](#troubleshooting)
 
 <!-- vim-markdown-toc -->
@@ -453,6 +454,7 @@ _Symbols Outline_
 - [hlargs.nvim](https://github.com/m-demare/hlargs.nvim)
 - [cmake-tools.nvim](https://github.com/Civitasv/cmake-tools.nvim)
 - [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
+- [mind.nvim](https://github.com/phaazon/mind.nvim)
 
 </details>
 
@@ -754,6 +756,20 @@ Note that,
 | <kbd>l</kbd>                  |  𝐍   | Open                             |
 | <kbd>P</kbd>                  |  𝐍   | Toggle preview                   |
 | <kbd>/</kbd>                  |  𝐍   | Fuzzy finder                     |
+
+### Plugin: Mind
+
+| Key                                        | Mode | Action            |
+| ------------------------------------------ | :--: | ----------------- |
+| <kbd>Space</kbd>+<kbd>M</kbd>+<kbd>M</kbd> |  𝐍   | Open Main Tree    |
+| <kbd>Space</kbd>+<kbd>M</kbd>+<kbd>m</kbd> |  𝐍   | Open Local Tree   |
+| <kbd><cr></kbd>                            |  𝐍   | open data         |
+| <kbd><tab></kbd>                           |  𝐍   | toggle node       |
+| <kbd><s-tab></kbd>                         |  𝐍   | toggle parent     |
+| <kbd>/</kbd>                               |  𝐍   | select path       |
+| <kbd>$</kbd>                               |  𝐍   | change icons menu |
+| <kbd>c</kbd>                               |  𝐍   | create new node   |
+| <kbd>q</kbd>                               |  𝐍   | quit              |
 
 </details>
 

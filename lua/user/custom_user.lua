@@ -46,6 +46,7 @@ M.config = function()
   lvim.builtin.colored_args = true
   lvim.builtin.inlay_hints.active = true
   lvim.reload_config_on_save = false -- NOTE: i don't like this
+  lvim.builtin.mind.active = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

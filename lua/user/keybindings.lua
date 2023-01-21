@@ -356,6 +356,9 @@ M.config = function()
     "<cmd>hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b<cr>",
     "Clear HL",
   }
+  if lvim.builtin.mind.active then
+    M.set_mind_keymaps()
+  end
   if lvim.builtin.persistence then
     lvim.builtin.which_key.mappings["q"] = {
       name = " Quit",
@@ -465,6 +468,121 @@ M.config = function()
   whk.register {
     ["]n"] = { "[[:call search('^(@@ .* @@|[<=>|]{7}[<=>|]@!)', 'W')<cr>]]", "next merge conflict" },
     ["[n"] = { "[[:call search('^(@@ .* @@|[<=>|]{7}[<=>|]@!)', 'bW')<cr>]]", "prev merge conflict" },
+  }
+end
+
+M.set_mind_keymaps = function()
+  lvim.builtin.which_key.mappings["M"] = {
+    name = " Mind",
+    c = {
+      function()
+        require("mind").wrap_smart_project_tree_fn(function(args)
+          require("mind.commands").create_node_index(
+            args.get_tree(),
+            require("mind.node").MoveDir.INSIDE_END,
+            args.save_tree,
+            args.opts
+          )
+        end)
+      end,
+      "Create node index",
+    },
+    C = {
+      function()
+        require("mind").wrap_main_tree_fn(function(args)
+          require("mind.commands").create_node_index(
+            args.get_tree(),
+            require("mind.node").MoveDir.INSIDE_END,
+            args.save_tree,
+            args.opts
+          )
+        end)
+      end,
+      "Create node index",
+    },
+    i = {
+      function()
+        vim.notify "initializing project tree"
+        require("mind").wrap_smart_project_tree_fn(function(args)
+          local tree = args.get_tree()
+          local mind_node = require "mind.node"
+
+          local _, tasks = mind_node.get_node_by_path(tree, "/Tasks", true)
+          tasks.icon = "陼"
+
+          local _, backlog = mind_node.get_node_by_path(tree, "/Tasks/Backlog", true)
+          backlog.icon = " "
+
+          local _, on_going = mind_node.get_node_by_path(tree, "/Tasks/On-going", true)
+          on_going.icon = " "
+
+          local _, done = mind_node.get_node_by_path(tree, "/Tasks/Done", true)
+          done.icon = " "
+
+          local _, cancelled = mind_node.get_node_by_path(tree, "/Tasks/Cancelled", true)
+          cancelled.icon = " "
+
+          local _, notes = mind_node.get_node_by_path(tree, "/Notes", true)
+          notes.icon = " "
+
+          args.save_tree()
+        end)
+      end,
+      "Initialize project tree",
+    },
+    l = {
+      function()
+        require("mind").wrap_smart_project_tree_fn(function(args)
+          require("mind.commands").copy_node_link_index(args.get_tree(), nil, args.opts)
+        end)
+      end,
+      "Copy node link index",
+    },
+    L = {
+      function()
+        require("mind").wrap_main_tree_fn(function(args)
+          require("mind.commands").copy_node_link_index(args.get_tree(), nil, args.opts)
+        end)
+      end,
+      "Copy node link index",
+    },
+    j = {
+      function()
+        require("mind").wrap_main_tree_fn(function(args)
+          local tree = args.get_tree()
+          local path = vim.fn.strftime "/Journal/%Y/%b/%d"
+          local _, node = require("mind.node").get_node_by_path(tree, path, true)
+
+          if node == nil then
+            vim.notify("cannot open journal 🙁", vim.log.levels.WARN)
+            return
+          end
+
+          require("mind.commands").open_data(tree, node, args.data_dir, args.save_tree, args.opts)
+          args.save_tree()
+        end)
+      end,
+      "Open journal",
+    },
+    M = { "<cmd>MindOpenMain<CR>", "Open main tree" },
+    z = { "<cmd>MindClose<CR>", "Close" },
+    m = { "<cmd>MindOpenSmartProject<CR>", "Open smart project tree" },
+    s = {
+      function()
+        require("mind").wrap_smart_project_tree_fn(function(args)
+          require("mind.commands").open_data_index(args.get_tree(), args.data_dir, args.save_tree, args.opts)
+        end)
+      end,
+      "Open data index",
+    },
+    S = {
+      function()
+        require("mind").wrap_main_tree_fn(function(args)
+          require("mind.commands").open_data_index(args.get_tree(), args.data_dir, args.save_tree, args.opts)
+        end)
+      end,
+      "Open data index",
+    },
   }
 end
 

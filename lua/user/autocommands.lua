@@ -74,7 +74,7 @@ M.config = function()
     pattern = "*.md",
     desc = "beautify markdown",
     callback = function()
-      vim.cmd[[set syntax=markdown]]
+      vim.cmd [[set syntax=markdown]]
       require("user.markdown_syn").set_syntax()
     end,
   })
