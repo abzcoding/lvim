@@ -34,11 +34,10 @@ M.config = function()
       name = "catppuccin",
       config = function()
         require("user.theme").catppuccin()
-        lvim.colorscheme = "catppuccin-mocha"
-      end,
-      cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 17 and _time.hour < 21) and lvim.builtin.time_based_themes
+        if (_time.hour >= 17 and _time.hour < 21) and lvim.builtin.time_based_themes then
+          lvim.colorscheme = "catppuccin-mocha"
+        end
       end,
     },
     {

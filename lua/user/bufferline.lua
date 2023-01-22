@@ -1,6 +1,8 @@
 local M = {}
 
 M.config = function()
+  vim.cmd "function! TbToggle_theme(a,b,c,d) \n lua require('user.theme').toggle_theme() \n endfunction"
+  vim.cmd "function! Quit_vim(a,b,c,d) \n qa \n endfunction"
   local kind = require "user.lsp_kind"
   lvim.builtin.bufferline.highlights = {
     background = { italic = true },
@@ -20,8 +22,7 @@ M.config = function()
       builtin = {
         pinned = {
           name = "pinned",
-          with = function(_ico)
-          end,
+          with = function(_ico) end,
         },
         ungroupued = { name = "ungrouped" },
       },
@@ -41,7 +42,6 @@ M.config = function()
       local res = table.concat(result, " ")
       return #res > 0 and res or ""
     end,
-
     mode = "buffers",
     sort_by = "insert_after_current",
     always_show_bufferline = false,
@@ -147,7 +147,7 @@ M.config = function()
       },
       {
         text = " LAZY",
-        filetype = "lazy", 
+        filetype = "lazy",
         highlight = "PanelHeading",
         separator = true,
       },
@@ -180,6 +180,17 @@ M.config = function()
     show_buffer_close_icons = true,
     diagnostics_update_in_insert = false,
   }
+
+  if lvim.builtin.time_based_themes then
+    lvim.builtin.bufferline.options.custom_areas = {
+      right = function()
+        return {
+          { text = "%@TbToggle_theme@" .. vim.g.toggle_theme_icon .. "%X" },
+          { text = "%@Quit_vim@ %X", fg = "#f7768e" },
+        }
+      end,
+    }
+  end
 end
 
 M.delete_buffer = function()

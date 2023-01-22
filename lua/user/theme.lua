@@ -434,7 +434,7 @@ M.hi_colors = function()
   return colors
 end
 
-M.telescope_theme = function()
+M.telescope_theme = function(colorset)
   local function link(group, other)
     vim.cmd("highlight! link " .. group .. " " .. other)
   end
@@ -458,8 +458,10 @@ M.telescope_theme = function()
 
   -- NOTE: these are my personal preferences
   if lvim.builtin.time_based_themes then
-    local _time = os.date "*t"
-    local current_colors = M.current_colors()
+    local current_colors = colorset
+    if colorset == nil or #colorset == 0 then
+      current_colors = M.current_colors()
+    end
     set_fg_bg("Hlargs", current_colors.hlargs, "none")
     set_fg_bg("CmpBorder", current_colors.cmp_border, current_colors.cmp_border)
     link("NoiceCmdlinePopupBorder", "CmpBorder")
@@ -494,6 +496,24 @@ M.telescope_theme = function()
   set_fg_bg("TelescopeResultsTitle", colors.bg, colors.bg)
   set_fg_bg("TelescopeResultsBorder", colors.bg, colors.bg)
   set_bg("TelescopeSelection", colors.bg_alt)
+end
+
+M.toggle_theme = function()
+  local theme = lvim.colorscheme
+  local colorset = require("user.theme").colors.tokyonight_colors
+  if theme == "tokyonight" then
+    lvim.colorscheme = "catppuccin-mocha"
+    colorset = require("user.theme").colors.catppuccin_colors
+  else
+    lvim.colorscheme = "tokyonight"
+  end
+  if vim.g.toggle_theme_icon == "   " then
+    vim.g.toggle_theme_icon = "   "
+  else
+    vim.g.toggle_theme_icon = "   "
+  end
+  vim.cmd("colorscheme " .. lvim.colorscheme)
+  require("user.theme").telescope_theme(colorset)
 end
 
 return M
