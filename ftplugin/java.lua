@@ -6,11 +6,10 @@ end
 
 -- Determine OS
 local home = vim.env.HOME
-local launcher_path =
-  vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason")
+local launcher_path = vim.fn.glob(mason_path .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
 if #launcher_path == 0 then
-  launcher_path =
-    vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", 1, 1)[1]
+    launcher_path = vim.fn.glob(mason_path .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", 1, 1)[1]
 end
 if vim.fn.has "mac" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
@@ -33,32 +32,24 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-
 local workspace_dir = WORKSPACE_PATH .. project_name
 
--- NOTE: for debugging
--- git clone git@github.com:microsoft/java-debug.git ~/.config/lvim/.java-debug
--- cd ~/.config/lvim/.java-debug/
--- ./mvnw clean install
-local bundles = vim.fn.glob(
-  home .. "/.config/lvim/.java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-)
+-- Test bundle
+-- Run :MasonInstall java-test
+local bundles = vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar")
 if #bundles == 0 then
-  bundles = vim.fn.glob(
-    home .. "/.config/lvim/.java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
-    1,
-    1
-  )
+    bundles = vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar", 1, 1)
 end
-
--- NOTE: for testing
--- git clone git@github.com:microsoft/vscode-java-test.git ~/.config/lvim/.vscode-java-test
--- cd ~/.config/lvim/vscode-java-test
--- npm install
--- npm run build-plugin
-local extra_bundles = vim.split(vim.fn.glob(home .. "/.config/lvim/.vscode-java-test/server/*.jar"), "\n")
+-- Debug bundle
+-- Run :MasonInstall java-debug-adapter
+local extra_bundles =
+    vim.fn.glob(mason_path .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar")
 if #extra_bundles == 0 then
-  extra_bundles = vim.fn.glob(home .. "/.config/lvim/.vscode-java-test/server/*.jar", 1, 1)
+    extra_bundles = vim.fn.glob(
+        mason_path .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
+        1,
+        1
+    )
 end
 vim.list_extend(bundles, extra_bundles)
 
@@ -70,7 +61,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
-    "-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+    "-javaagent:" .. mason_path .. "/packages/jdtls/lombok.jar",
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
@@ -80,12 +71,19 @@ local config = {
     "-jar",
     launcher_path,
     "-configuration",
-    home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
+    mason_path .. "/packages/jdtls/config_" .. CONFIG,
     "-data",
     workspace_dir,
   },
 
-  on_attach = require("lvim.lsp").common_on_attach,
+ on_attach = function(client, bufnr)
+    local _, _ = pcall(vim.lsp.codelens.refresh)
+    if lvim.builtin.dap.active then
+      require("jdtls.dap").setup_dap_main_class_configs()
+      require("jdtls").setup_dap { hotcodereplace = "auto" }
+      require("lvim.lsp").on_attach(client, bufnr)
+    end
+  end,
   on_init = require("lvim.lsp").common_on_init,
   on_exit = require("lvim.lsp").common_on_exit,
   capabilities = require("lvim.lsp").common_capabilities(),
@@ -114,6 +112,11 @@ local config = {
       },
       references = {
         includeDecompiledSources = true,
+      },
+      inlayHints = {
+        parameterNames = {
+          enabled = "all", -- literals, all, none
+        },
       },
       format = {
         enabled = true,
@@ -160,7 +163,6 @@ local config = {
 }
 
 jdtls.start_or_attach(config)
-jdtls.setup_dap { hotcodereplace = "auto" }
 
 vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
 vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
