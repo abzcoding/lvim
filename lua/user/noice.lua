@@ -82,6 +82,10 @@ M.config = function()
     },
     views = {
       cmdline_popup = {
+        border = {
+          style = "none",
+          padding = { 1, 2 },
+        },
         win_options = {
           winblend = 5,
           winhighlight = {
@@ -99,6 +103,10 @@ M.config = function()
     },
     routes = {
       {
+        view = "notify",
+        filter = { event = "msg_showmode" },
+      },
+      {
         filter = {
           event = "msg_show",
           find = "%d+L, %d+B",
@@ -106,9 +114,9 @@ M.config = function()
         view = "mini",
       },
       {
-        filter = { event = "msg_show", min_height = 10 },
-        view = "split",
-        opts = { enter = true },
+        view = "cmdline_output",
+        filter = { cmdline = "^:", min_height = 5 },
+        -- BUG: will be fixed after https://github.com/neovim/neovim/issues/21044 gets merged
       },
       {
         filter = { event = "msg_show", kind = "search_count" },
