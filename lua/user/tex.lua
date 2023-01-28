@@ -1,15 +1,14 @@
 local M = {}
 
-M.config = function()
+M.init = function()
+  vim.g.vimtex_view_enabled = true
   vim.g.vimtex_compiler_method = "latexmk"
   vim.g.vimtex_view_method = lvim.builtin.latex.view_method
   if lvim.builtin.latex.view_method == "skim" then
     vim.g.vimtex_view_skim_activate = 1
     vim.g.vimtex_view_skim_reading_bar = 0
   end
-  local latexmk_args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" }
   if lvim.builtin.latex.rtl_support then
-    latexmk_args = { "-xelatex", "-file-line-error", "-interaction=nonstopmode", "-synctex=1", "%f" }
     vim.g.vimtex_compiler_latexmk_engines = {
       _ = "-xelatex",
       pdflatex = "-pdf",
@@ -27,13 +26,20 @@ M.config = function()
   vim.g.tex_flavor = "latex"
   vim.g.vimtex_fold_enabled = 0
   vim.g.vimtex_quickfix_ignore_filters = {}
+end
+
+M.config = function()
   vim.cmd [[
-        augroup vimtex_event_1
-            au!
-            au User VimtexEventQuit     call vimtex#compiler#clean(0)
-            au User VimtexEventInitPost call vimtex#compiler#compile()
-        augroup END
-    ]]
+  augroup vimtex_event_1
+    au!
+    au User VimtexEventQuit     VimtexClean
+    au User VimtexEventInitPost VimtexCompile
+  augroup END
+  ]]
+  local latexmk_args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" }
+  if lvim.builtin.latex.rtl_support then
+    latexmk_args = { "-xelatex", "-file-line-error", "-interaction=nonstopmode", "-synctex=1", "%f" }
+  end
   local tex_preview_settings = {}
   local forward_search_executable = lvim.builtin.latex.preview_exec
 

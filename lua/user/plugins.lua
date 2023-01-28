@@ -271,13 +271,13 @@ M.config = function()
     {
       "lervag/vimtex",
       init = function()
-        vim.g.vimtex_view_enabled = true
+        require("user.tex").init()
       end,
       config = function()
         vim.cmd "call vimtex#init()"
       end,
       ft = "tex",
-      lazy = false,
+      event = "VeryLazy",
     },
     {
       "nvim-neotest/neotest",
