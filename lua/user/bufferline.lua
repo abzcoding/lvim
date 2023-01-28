@@ -122,6 +122,13 @@ M.config = function()
               or filename:match "Makefile"
           end,
         },
+        {
+          name = "terms",
+          auto_close = true,
+          matcher = function(buf)
+            return buf.path:match "term://" ~= nil
+          end,
+        },
       },
     },
     hover = { enabled = true, reveal = { "close" } },
