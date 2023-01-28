@@ -273,6 +273,9 @@ M.config = function()
       init = function()
         vim.g.vimtex_view_enabled = true
       end,
+      config = function()
+        vim.cmd "call vimtex#init()"
+      end,
       ft = "tex",
       lazy = false,
     },
