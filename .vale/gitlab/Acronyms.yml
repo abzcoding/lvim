@@ -213,6 +213,7 @@ exceptions:
   - SYN
   - TBA
   - TCP
+  - TEE
   - TIFF
   - TIP
   - TLD

@@ -525,6 +525,7 @@ keyspace
 keytab
 keytabs
 kubectl
+kubelet
 kubernetes
 lang
 ldapsearch

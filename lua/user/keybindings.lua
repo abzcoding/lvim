@@ -196,7 +196,7 @@ M.config = function()
   -- Additional keybindings
   -- =========================================
   lvim.keys.normal_mode["<CR>"] = {
-    "<cmd>lua require('user.neovim').maximize_current_split()<CR>",
+    "<cmd>lua if vim.bo.filetype ~= 'alpha' then require('user.neovim').maximize_current_split() else vim.cmd[[unmap <CR>]] end<CR>",
     { noremap = true, silent = true, nowait = true },
   }
   lvim.keys.insert_mode["<A-a>"] = "<ESC>ggVG<CR>"
