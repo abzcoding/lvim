@@ -137,7 +137,7 @@ M.config = function()
     },
     {
       "kevinhwang91/nvim-bqf",
-      event = "BufReadPost",
+      event = "WinEnter",
       config = function()
         require("user.bqf").config()
       end,
