@@ -12,6 +12,9 @@ M.config = function()
     },
     enable_git_status = true,
     git_status_async = true,
+    nesting_rules = {
+      ["dart"] = { "freezed.dart", "g.dart" },
+    },
     default_component_configs = {
       indent = {
         padding = 0,
