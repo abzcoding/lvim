@@ -56,7 +56,7 @@ M.config = function()
         },
         format_done = {},
       },
-      hover = { enabled = true },
+      hover = { enabled = false },
       signature = { enabled = false, auto_open = { enabled = false } },
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
