@@ -104,6 +104,7 @@ lvim.builtin.latex = {
   view_method = "skim", -- change to zathura if you are on linux
   preview_exec = "/Applications/Skim.app/Contents/SharedSupport/displayline", -- change this to zathura as well
   rtl_support = true, -- if you want to use xelatex, it's a bit slower but works very well for RTL langs
+  active = false, -- set to true to enable
 }
 if lvim.builtin.cursorline.active then
   lvim.lsp.document_highlight = false

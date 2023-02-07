@@ -278,6 +278,7 @@ M.config = function()
       end,
       ft = "tex",
       event = "VeryLazy",
+      enabled = lvim.builtin.latex.active,
     },
     {
       "nvim-neotest/neotest",
