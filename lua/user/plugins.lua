@@ -542,7 +542,7 @@ M.config = function()
         require("user.cle").config()
       end,
       ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
-      enabled = not lvim.builtin.cpp_programming.active,
+      enabled = lvim.builtin.cpp_programming.active,
     },
     {
       "editorconfig/editorconfig-vim",
