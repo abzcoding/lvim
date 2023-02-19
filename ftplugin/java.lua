@@ -51,7 +51,11 @@ if #extra_bundles == 0 then
         1
     )
 end
-vim.list_extend(bundles, extra_bundles)
+bundles = { bundles }
+vim.list_extend(
+  bundles,
+  { extra_bundles }
+)
 
 local config = {
   cmd = {
