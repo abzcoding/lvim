@@ -9,16 +9,16 @@ local home = vim.env.HOME
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason")
 local launcher_path = vim.fn.glob(mason_path .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
 if #launcher_path == 0 then
-    launcher_path = vim.fn.glob(mason_path .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", 1, 1)[1]
+  launcher_path = vim.fn.glob(mason_path .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", true, true)[1]
 end
+local CONFIG = "linux"
 if vim.fn.has "mac" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
   CONFIG = "mac"
 elseif vim.fn.has "unix" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
-  CONFIG = "linux"
 else
-  print "Unsupported system"
+  vim.notify("Unsupported system", vim.log.levels.ERROR)
 end
 
 -- Find root of project
@@ -36,22 +36,21 @@ local workspace_dir = WORKSPACE_PATH .. project_name
 
 -- Test bundle
 -- Run :MasonInstall java-test
-local bundles = vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar")
+local bundles = { vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar", true) }
 if #bundles == 0 then
-    bundles = vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar", 1, 1)
+  bundles = { vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar", true) }
 end
 -- Debug bundle
 -- Run :MasonInstall java-debug-adapter
 local extra_bundles =
-    vim.fn.glob(mason_path .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar")
+  vim.fn.glob(mason_path .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar", true)
 if #extra_bundles == 0 then
-    extra_bundles = vim.fn.glob(
-        mason_path .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
-        1,
-        1
-    )
+  extra_bundles = vim.fn.glob(
+    mason_path .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
+    true
+  )
 end
-vim.list_extend(bundles, extra_bundles)
+vim.list_extend(bundles, { extra_bundles })
 
 local config = {
   cmd = {
@@ -76,7 +75,7 @@ local config = {
     workspace_dir,
   },
 
- on_attach = function(client, bufnr)
+  on_attach = function(client, bufnr)
     local _, _ = pcall(vim.lsp.codelens.refresh)
     if lvim.builtin.dap.active then
       require("jdtls.dap").setup_dap_main_class_configs()
