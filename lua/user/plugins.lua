@@ -567,6 +567,7 @@ M.config = function()
       config = function()
         require("user.legendary").config()
       end,
+      event = 'VimEnter',
       enabled = lvim.builtin.legendary.active,
     },
     {

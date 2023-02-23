@@ -1,7 +1,6 @@
 local M = {}
 
-local function default_commands()
-end
+local function default_commands() end
 
 M.config = function()
   local status_ok, legend = pcall(require, "legendary")
@@ -10,19 +9,11 @@ M.config = function()
   end
 
   legend.setup {
-    select_prompt = function(kind)
-      if kind == "legendary.items" then
-        return " Legendary "
-      end
-
-      -- Convert kind to Title Case (e.g. legendary.keymaps => Legendary Keymaps)
-      return " " .. string.gsub(" " .. kind:gsub("%.", " "), "%W%l", string.upper):sub(2) .. " "
-    end,
+    select_prompt = " Legendary ",
     commands = {
-      { ':Telescope live_grep', description = 'Find Text ( live grep )' },
-    }
+      { ":Telescope live_grep", description = "Find Text ( live grep )" },
+    },
   }
 end
-
 
 return M
