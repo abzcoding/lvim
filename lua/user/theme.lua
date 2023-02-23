@@ -394,7 +394,8 @@ M.current_colors = function()
   end
   local _time = os.date "*t"
   if _time.hour >= 1 and _time.hour < 9 then
-    colors = M.colors.rose_pine_colors
+    -- colors = M.colors.rose_pine_colors
+    colors = M.colors.catppuccin_colors
   elseif _time.hour >= 9 and _time.hour < 17 then
     colors = M.colors.tokyonight_colors
   elseif _time.hour >= 17 and _time.hour < 21 then
