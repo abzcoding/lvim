@@ -736,7 +736,9 @@ M.config = function()
       lazy = true,
       event = "VeryLazy",
       config = function()
-        require("hlargs").setup()
+        require("hlargs").setup {
+          excluded_filetype = { "TelescopePrompt", "guihua", "guihua_rust", "clap_input" },
+        }
       end,
       dependencies = { "nvim-treesitter/nvim-treesitter" },
       enabled = lvim.builtin.colored_args,
