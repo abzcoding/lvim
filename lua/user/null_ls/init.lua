@@ -93,7 +93,8 @@ M.config = function()
       end,
     },
     nls.builtins.code_actions.shellcheck,
-    nls.builtins.code_actions.gomodifytags,
+    -- WARN: broken on neovim-head because of `nvim.treesitter.get_node_at_pos` being deprecated
+    -- nls.builtins.code_actions.gomodifytags,
     nls.builtins.code_actions.eslint_d.with {
       condition = function(utils)
         return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
@@ -104,6 +105,8 @@ M.config = function()
     -- nls.builtins.formatting.google_java_format,
     -- nls.builtins.code_actions.proselint,
     -- nls.builtins.diagnostics.proselint,
+    -- HACK: using my own version for now
+    custom_go_actions.gomodifytags,
     custom_go_actions.gostructhelper,
     custom_md_hover.dictionary,
   }
