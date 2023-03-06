@@ -234,17 +234,33 @@ M.kanagawa = function()
     statementStyle = { italic = true },
     typeStyle = {},
     variablebuiltinStyle = { italic = true },
-    specialReturn = true, -- special highlight for the return keyword
-    specialException = true, -- special highlight for exception handling keywords
-    dimInactive = lvim.builtin.global_statusline, -- dim inactive window `:h hl-NormalNC`
-    globalStatus = lvim.builtin.global_statusline, -- adjust window separators highlight for laststatus=3
+    specialReturn = true,
+    specialException = true,
+    dimInactive = lvim.builtin.global_statusline,
+    globalStatus = lvim.builtin.global_statusline,
     transparent = lvim.transparent_window,
-    colors = { sumiInk1b = "#1b1b23" },
-    overrides = {
-      diffRemoved = { fg = "#E46876" },
-      NvimTreeFolderIcon = { fg = "#7e9cd8" },
-      CmpItemKindEnum = { fg = "#957FB8" },
-      ["@parameter"] = { fg = "#DCA561" },
+    colors = {
+      palette = { sumiInk1b = "#1b1b23" },
+      theme = {
+        all = {
+          ui = {
+            bg_gutter = "none",
+          },
+        },
+      },
+    },
+    overrides = function(_)
+      return {
+        diffRemoved = { fg = "#E46876" },
+        NvimTreeFolderIcon = { fg = "#7e9cd8" },
+        CmpItemKindEnum = { fg = "#957FB8" },
+        ["@parameter"] = { fg = "#DCA561" },
+      }
+    end,
+    theme = "wave",
+    background = {
+      dark = "wave",
+      light = "lotus",
     },
   }
 end
