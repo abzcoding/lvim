@@ -26,8 +26,7 @@ M.tokyonight = function()
     day_brightness = 0.3,
     hide_inactive_statusline = true,
     dim_inactive = true,
-    lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
-
+    lualine_bold = false,
     on_colors = function(colors)
       colors.git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" }
       colors.bg_dark = "#1a1e30"
@@ -472,6 +471,20 @@ M.telescope_theme = function(colorset)
   link("LspDiagnosticsSignInfo", "DiagnosticInfo")
   link("NeoTreeDirectoryIcon", "NvimTreeFolderIcon")
   link("IndentBlanklineIndent1 ", "@comment")
+  if vim.fn.has "nvim-0.9" == 1 then
+    link("@lsp.type.enum", "@type")
+    link("@lsp.type.keyword", "@keyword")
+    link("@lsp.type.interface", "Identifier")
+    link("@lsp.type.namespace", "@namespace")
+    link("@lsp.type.parameter", "@parameter")
+    link("@lsp.type.property", "@property")
+    link("@lsp.type.interface", "Identifier")
+    link("@lsp.type.variable", "Identifier")
+    link("@lsp.typemod.function.defaultLibrary", "Special")
+    link("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
+    link("@lsp.typemod.function.defaultLibrary", "Special")
+    link("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
+  end
 
   -- NOTE: these are my personal preferences
   if lvim.builtin.time_based_themes then
