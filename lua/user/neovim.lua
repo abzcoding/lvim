@@ -95,6 +95,8 @@ M.config = function()
     "*.swp,.lock,.DS_Store,._*,tags.lock",
     -- version control
     ".git,.svn",
+    --rust
+    "Cargo.lock,Cargo.Bazel.lock",
   }
   vim.opt.shortmess = {
     t = true, -- truncate file messages at start

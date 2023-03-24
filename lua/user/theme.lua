@@ -482,6 +482,10 @@ M.telescope_theme = function(colorset)
     link("@lsp.type.interface", "@interface")
     link("@lsp.typemod.function.defaultLibrary", "Special")
     link("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
+    link("@lsp.typemod.variable.global", "@constant.builtin")
+    link("@lsp.typemod.operator.injected", "@operator")
+    link("@lsp.typemod.string.injected", "@string")
+    link("@lsp.typemod.variable.injected", "@variable")
   end
 
   -- NOTE: these are my personal preferences

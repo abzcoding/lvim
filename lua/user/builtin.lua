@@ -571,6 +571,8 @@ M.config = function()
     end,
     find_command = { "fd", "--type=file", "--hidden" },
   }
+  lvim.builtin.telescope.pickers.buffers.sort_lastused = true
+  lvim.builtin.telescope.pickers.buffers.sort_mru = true
   lvim.builtin.telescope.on_config_done = function(telescope)
     telescope.load_extension "file_create"
     if lvim.builtin.file_browser.active then
