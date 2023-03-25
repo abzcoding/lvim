@@ -144,7 +144,8 @@ M.config = function()
       end,
     },
     {
-      "andymass/vim-matchup",
+      "amaanq/vim-matchup",
+      branch = "ts-deps",
       event = "BufReadPost",
       config = function()
         vim.g.matchup_enabled = 1
@@ -729,7 +730,8 @@ M.config = function()
       enabled = lvim.builtin.noice.active,
     },
     {
-      "m-demare/hlargs.nvim",
+      "lostl1ght/hlargs.nvim",
+      branch = "fix-deprecations",
       lazy = true,
       event = "VeryLazy",
       config = function()
