@@ -3,6 +3,7 @@ local M = {}
 local create_aucmd = vim.api.nvim_create_autocmd
 
 M.config = function()
+  local user = vim.env.USER
   vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
@@ -122,8 +123,38 @@ M.config = function()
   })
 
   local codelens_viewer = "lua require('user.codelens').show_line_sign()"
-  local user = vim.env.USER
+  -- NOTE: don't give corporate code to the devil
   if user and user == "abz" then
+    if lvim.builtin.sell_your_soul_to_devil.active or lvim.builtin.tabnine.active then
+      create_aucmd("UIEnter", {
+        group = "_lvim_user",
+        pattern = { "*" },
+        callback = function()
+          local dirpath = vim.fn.expand "%:p:h"
+          if string.find(dirpath, user .. "/dev/src/git.") ~= nil then
+            if lvim.builtin.sell_your_soul_to_devil.active then
+              vim.cmd "Copilot disable"
+            end
+            if lvim.builtin.tabnine.active then
+              require("cmp_tabnine.config"):setup { ignored_file_types = { "*" }, run_on_every_keystroke = false }
+              lvim.builtin.cmp.sources = {
+                { name = "nvim_lsp" },
+                { name = "buffer", max_item_count = 5, keyword_length = 5 },
+                { name = "path", max_item_count = 5 },
+                { name = "luasnip", max_item_count = 3 },
+                { name = "nvim_lua" },
+                { name = "calc" },
+                { name = "emoji" },
+                { name = "treesitter" },
+                { name = "latex_symbols" },
+                { name = "crates" },
+                { name = "orgmode" },
+              }
+            end
+          end
+        end,
+      })
+    end
     create_aucmd("CursorHold", {
       group = "_lvim_user",
       pattern = { "*.rs", "*.go", "*.ts", "*.tsx" },
