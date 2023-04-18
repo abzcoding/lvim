@@ -194,6 +194,7 @@ exceptions:
   - SHA
   - SIEM
   - SLA
+  - SLSA
   - SMS
   - SMTP
   - SOAP
