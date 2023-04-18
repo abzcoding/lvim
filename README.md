@@ -169,7 +169,7 @@ brew install node
 </details>
 
 ```shell
-# install LunarVim
+bash <(curl -s "https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh")
 mv ~/.config/lvim ~/.config/lvim_backup
 git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
 lvim +LvimUpdate +LvimCacheReset +q
