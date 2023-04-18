@@ -208,6 +208,7 @@ Overcommit
 Packagist
 Patroni
 Pentest
+PentestMonkey
 PgBouncer
 Phabricator
 Pipfile
@@ -237,6 +238,7 @@ Rubix
 Rubocop
 Rubular
 SIEM
+SQLi
 SSRF
 Salesforce
 Schemastore

@@ -40,6 +40,7 @@ exceptions:
   - CORS
   - CPU
   - CRIME
+  - CRLF
   - CSPM
   - CSRF
   - CSS
@@ -127,8 +128,10 @@ exceptions:
   - LSP
   - LTS
   - MBR
+  - MFA
   - MIME
   - MIT
+  - MSSQL
   - MVC
   - NAT
   - NDA
@@ -165,6 +168,7 @@ exceptions:
   - REST
   - RFB
   - RFC
+  - RFI
   - RHEL
   - RPC
   - RPM
