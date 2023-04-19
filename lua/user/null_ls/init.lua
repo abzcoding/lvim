@@ -30,6 +30,11 @@ M.config = function()
       filetypes = { "solidity" },
       timeout = 10000,
     },
+    nls.builtins.formatting.ruff.with {
+      condition = function(utils)
+        return utils.root_has_file { "ruff.toml", ".ruff.toml" }
+      end,
+    },
     nls.builtins.formatting.prettierd.with {
       condition = function(utils)
         return not utils.root_has_file { ".eslintrc", ".eslintrc.js" }
@@ -62,6 +67,11 @@ M.config = function()
     nls.builtins.diagnostics.solhint.with {
       condition = function(utils)
         return utils.root_has_file ".solhint.json"
+      end,
+    },
+    nls.builtins.diagnostics.ruff.with {
+      condition = function(utils)
+        return utils.root_has_file { "ruff.toml", ".ruff.toml" }
       end,
     },
     nls.builtins.diagnostics.hadolint,
