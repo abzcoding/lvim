@@ -169,6 +169,7 @@ M.config = function()
       },
     }
   end
+  vim.g.editorconfig = true
 
   vim.g.markdown_fenced_languages = { "shell=bash" }
 
