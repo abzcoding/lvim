@@ -64,7 +64,7 @@ M.config = function()
           name = "Tests",
           icon = kind.icons.test,
           matcher = function(buf)
-            local name = buf.filename
+            local name = vim.api.nvim_buf_get_name(buf.id)
             return name:match "_spec" or name:match "_test" or name:match "test_"
           end,
         },
@@ -77,14 +77,16 @@ M.config = function()
         {
           name = "SQL",
           matcher = function(buf)
-            return buf.filename:match "%.sql$"
+            local name = vim.api.nvim_buf_get_name(buf.id)
+            return name:match "%.sql$"
           end,
         },
         {
           name = "View models",
           highlight = { sp = "#03589C" },
           matcher = function(buf)
-            return buf.filename:match "view_model%.dart"
+            local name = vim.api.nvim_buf_get_name(buf.id)
+            return name:match "view_model%.dart"
           end,
         },
         {
@@ -109,7 +111,8 @@ M.config = function()
           highlight = { sp = "#F6A878" },
           name = "Config",
           matcher = function(buf)
-            local filename = buf.filename
+            local name = vim.api.nvim_buf_get_name(buf.id)
+            local filename = vim.split(name, "/", { plain = true })[-1]
             if filename == nil then
               return false
             end
