@@ -23,6 +23,11 @@ M.config = function()
   else
     plugins = "N/A"
   end
+  local minor_len = string.len(vim.version().minor)
+  local empty_space = ""
+  for i = 1, minor_len do
+    empty_space = empty_space .. " "
+  end
 
   local plugin_count = {
     type = "text",
@@ -45,7 +50,7 @@ M.config = function()
 
   local heading = {
     type = "text",
-    val = "┌─ " .. kind.icons.calendar .. " Today is " .. date .. " ─┐",
+    val = "┌─ " .. kind.icons.calendar .. empty_space .. "Today is " .. date .. " ─┐",
     opts = {
       position = "center",
       hl = "String",
