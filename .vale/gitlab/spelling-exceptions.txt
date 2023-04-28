@@ -187,6 +187,7 @@ Microsoft
 MinIO
 Minikube
 ModSecurity
+Monero
 Monokai
 Nanoc
 Neogen
@@ -224,6 +225,7 @@ ProseMirror
 Puma
 Python
 Qualys
+Qubes
 Quicktime
 Rackspace
 Raspbian
