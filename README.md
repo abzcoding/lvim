@@ -744,7 +744,7 @@ Note that,
 | ----------------------------- | :--: | -------------------------------- |
 | <kbd>Space</kbd>+<kbd>e</kbd> |  𝐍   | Toggle tree                      |
 | <kbd>></kbd> and <kbd><</kbd> |  𝐍   | Next and prev source inside tree |
-| <kbd><cr></kbd>               |  𝐍   | Open                             |
+| <kbd>Enter</kbd>              |  𝐍   | Open                             |
 | <kbd>s</kbd>                  |  𝐍   | Open in vertical split           |
 | <kbd>S</kbd>                  |  𝐍   | Open in horizontal spit          |
 | <kbd>H</kbd>                  |  𝐍   | Toggle hidden files              |
@@ -762,9 +762,9 @@ Note that,
 | ------------------------------------------ | :--: | ----------------- |
 | <kbd>Space</kbd>+<kbd>M</kbd>+<kbd>M</kbd> |  𝐍   | Open Main Tree    |
 | <kbd>Space</kbd>+<kbd>M</kbd>+<kbd>m</kbd> |  𝐍   | Open Local Tree   |
-| <kbd><cr></kbd>                            |  𝐍   | open data         |
-| <kbd><tab></kbd>                           |  𝐍   | toggle node       |
-| <kbd><s-tab></kbd>                         |  𝐍   | toggle parent     |
+| <kbd>Enter</kbd>                           |  𝐍   | open data         |
+| <kbd>Tab</kbd>                             |  𝐍   | toggle node       |
+| <kbd>Shift</kbd>+<kbd>Tab</kbd>            |  𝐍   | toggle parent     |
 | <kbd>/</kbd>                               |  𝐍   | select path       |
 | <kbd>$</kbd>                               |  𝐍   | change icons menu |
 | <kbd>c</kbd>                               |  𝐍   | create new node   |
