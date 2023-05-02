@@ -16,7 +16,7 @@ M.show_diagnostics = function()
   local clients = vim.lsp.get_active_clients()
   for _, client in ipairs(clients) do
     local ns = vim.lsp.diagnostic.get_namespace(client.id)
-    vim.diagnostic.show(ns, nil, nil, lvim.lsp.diagnostics)
+    vim.diagnostic.show(ns, nil, nil, require('user.builtin').default_diagnostic_config)
   end
 
   if vim.bo.filetype == "rust" then

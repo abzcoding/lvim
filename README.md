@@ -127,7 +127,7 @@ lvim.plugins = {
   - `lvim.builtin.tree_provider = "neo-tree"`
 - you can use noice.nvim if you want
   - `lvim.builtin.noice = { active = true }`
-- If you wanna see the issues, remove `lvim.lsp.diagnostics.virtual_text = false`
+- If you wanna see the issues, change `default_diagnostic_config.virtual_text` inside `builtin.lua`
 - I'm using `skim` for `latex` stuff, change it to `zathura` if you are on `linux`
 
 <!--
