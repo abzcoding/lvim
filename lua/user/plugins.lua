@@ -539,9 +539,6 @@ M.config = function()
     },
     {
       "p00f/clangd_extensions.nvim",
-      config = function()
-        require("user.cle").config()
-      end,
       ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
       enabled = lvim.builtin.cpp_programming.active,
     },

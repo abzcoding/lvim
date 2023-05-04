@@ -1,5 +1,18 @@
 local M = {}
 local kind = require "user.lsp_kind"
+local cmp_ok, cmp = pcall(require, "cmp")
+if not cmp_ok or cmp == nil then
+  cmp = {
+    mapping = function(...) end,
+    setup = {
+      filetype = function(...) end,
+      cmdline = function(...) end,
+    },
+    config = {
+      sources = function(...) end,
+    },
+  }
+end
 
 M.default_diagnostic_config = {
   signs = {
@@ -64,6 +77,32 @@ M.config = function()
 
   -- CMP
   -- =========================================
+  local comparators = {
+    cmp.config.compare.offset,
+    cmp.config.compare.exact,
+    cmp.config.compare.score,
+    cmp.config.compare.recently_used,
+    cmp.config.compare.locality,
+    cmp.config.compare.kind,
+    cmp.config.compare.length,
+    cmp.config.compare.order,
+  }
+  if lvim.builtin.cpp_programming.active then
+    comparators = {
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.recently_used,
+      require "clangd_extensions.cmp_scores",
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    }
+  end
+  lvim.builtin.cmp.sorting = {
+    priority_weight = 2,
+    comparators = comparators,
+  }
   lvim.builtin.cmp.sources = {
     { name = "nvim_lsp" },
     { name = "cmp_tabnine", max_item_count = 3 },
@@ -139,19 +178,6 @@ M.config = function()
 
         return vim_item
       end,
-    }
-  end
-  local cmp_ok, cmp = pcall(require, "cmp")
-  if not cmp_ok or cmp == nil then
-    cmp = {
-      mapping = function(...) end,
-      setup = {
-        filetype = function(...) end,
-        cmdline = function(...) end,
-      },
-      config = {
-        sources = function(...) end,
-      },
     }
   end
   if lvim.builtin.fancy_wild_menu.active then
@@ -627,7 +653,6 @@ end
 
 function M.tab(fallback)
   local methods = require("lvim.core.cmp").methods
-  local cmp = require "cmp"
   local luasnip = require "luasnip"
   local copilot_keys = vim.fn["copilot#Accept"]()
   if cmp.visible() then
@@ -652,7 +677,6 @@ end
 function M.shift_tab(fallback)
   local methods = require("lvim.core.cmp").methods
   local luasnip = require "luasnip"
-  local cmp = require "cmp"
   if cmp.visible() then
     cmp.select_prev_item()
   elseif vim.api.nvim_get_mode().mode == "c" then
