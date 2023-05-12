@@ -24,6 +24,7 @@ exceptions:
   - ARN
   - ARP
   - ASCII
+  - ASN
   - AWS
   - BAR
   - BGP
@@ -43,6 +44,7 @@ exceptions:
   - CPU
   - CRIME
   - CRLF
+  - CRUD
   - CSI
   - CSPM
   - CSRF
@@ -149,6 +151,7 @@ exceptions:
   - ONLY
   - OSI
   - OSS
+  - OTP
   - OTR
   - OWASP
   - PAT
