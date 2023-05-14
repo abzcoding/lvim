@@ -87,18 +87,6 @@ M.config = function()
     cmp.config.compare.length,
     cmp.config.compare.order,
   }
-  if lvim.builtin.cpp_programming.active then
-    comparators = {
-      cmp.config.compare.offset,
-      cmp.config.compare.exact,
-      cmp.config.compare.recently_used,
-      require "clangd_extensions.cmp_scores",
-      cmp.config.compare.locality,
-      cmp.config.compare.kind,
-      cmp.config.compare.length,
-      cmp.config.compare.order,
-    }
-  end
   lvim.builtin.cmp.sorting = {
     priority_weight = 2,
     comparators = comparators,
