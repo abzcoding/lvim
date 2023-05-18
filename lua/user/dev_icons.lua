@@ -23,7 +23,7 @@ M.set_icon = function()
       name = "Terraform",
     },
     mod = {
-      icon = "ﳑ",
+      icon = "",
       color = "#6a9fb5",
       name = "Mod",
     },
