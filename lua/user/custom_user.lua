@@ -20,8 +20,9 @@ M.config = function()
       vim.cmd [[ autocmd WinEnter,BufEnter,VimResized * setlocal laststatus=0 ]]
     end
   end
-  lvim.builtin.custom_web_devicons = true
-  lvim.use_icons = false -- only set to false if you know what are you doing
+  -- NOTE: custom icons doesn't work with nerd font v3 yet
+  lvim.builtin.custom_web_devicons = false
+  lvim.use_icons = true -- only set to false if you know what are you doing
   lvim.builtin.sell_your_soul_to_devil = { active = true, prada = false }
   lvim.lsp.document_highlight = false
   lvim.builtin.task_runner = "async_tasks"

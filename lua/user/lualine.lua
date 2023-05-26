@@ -35,7 +35,7 @@ local mode = function()
 
   local selector = math.floor(_time.hour / 8) + 1
   local normal_icons = {
-    "  ",
+    " 󰊠 ",
     "  ",
     "  ",
   }
@@ -43,21 +43,21 @@ local mode = function()
     return normal_icons[selector]
   elseif mod == "i" or mod == "ic" or mod == "ix" then
     local insert_icons = {
-      "  ",
+      "  ",
       "  ",
       "  ",
     }
     return insert_icons[selector]
   elseif mod == "V" or mod == "v" or mod == "vs" or mod == "Vs" or mod == "cv" then
     local verbose_icons = {
-      " 勇",
+      "  ",
       "  ",
       "  ",
     }
     return verbose_icons[selector]
   elseif mod == "c" or mod == "ce" then
     local command_icons = {
-      "  ",
+      " 󰏒 ",
       "  ",
       "  ",
     }
@@ -65,7 +65,7 @@ local mode = function()
     return command_icons[selector]
   elseif mod == "r" or mod == "rm" or mod == "r?" or mod == "R" or mod == "Rc" or mod == "Rv" or mod == "Rv" then
     local replace_icons = {
-      "  ",
+      "  ",
       "  ",
       "  ",
     }
@@ -217,7 +217,7 @@ M.config = function()
           function()
             local selector = math.floor(_time.hour / 8) + 1
             local icns = {
-              "  ",
+              " 󰊠 ",
               "  ",
               "  ",
             }
@@ -336,7 +336,7 @@ M.config = function()
       local readonly = ""
       local modified = ""
       if vim.bo.readonly then
-        readonly = "  "
+        readonly = "  "
       end
       if vim.bo.modified then
         modified = "  "
@@ -351,7 +351,7 @@ M.config = function()
   ins_left {
     "diff",
     source = diff_source,
-    symbols = { added = "  ", modified = "柳", removed = " " },
+    symbols = { added = "  ", modified = " ", removed = " " },
     diff_color = {
       added = { fg = colors.git.add, bg = colors.bg },
       modified = { fg = colors.git.change, bg = colors.bg },
@@ -456,7 +456,7 @@ M.config = function()
           only_lsp = only_lsp .. _added_client
           _added_client = string.sub(client.name, 1, 7)
           if client.name == "copilot" then
-            lsp_icon = " "
+            lsp_icon = " "
           else
             table.insert(buf_client_names, _added_client)
           end

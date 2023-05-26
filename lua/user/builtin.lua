@@ -689,11 +689,11 @@ M.codes = {
     "ovl_no_viable_function_in_call",
   },
   different_requires = {
-    message = " Buddy you've imported this before, with the same name",
+    message = " Buddy you've imported this before, with the same name",
     "different-requires",
   },
   empty_block = {
-    message = " That shouldn't be empty here",
+    message = " That shouldn't be empty here",
     "empty-block",
   },
   missing_symbol = {
@@ -707,7 +707,7 @@ M.codes = {
     "invalid_token_after_toplevel_declarator",
   },
   redefinition = {
-    message = " That variable was defined before",
+    message = " That variable was defined before",
     "redefinition",
     "redefined-local",
   },
@@ -722,11 +722,11 @@ M.codes = {
     "trailing-space",
   },
   unused_variable = {
-    message = " Don't define variables you don't use",
+    message = " Don't define variables you don't use",
     "unused-local",
   },
   unused_function = {
-    message = " Don't define functions you don't use",
+    message = " Don't define functions you don't use",
     "unused-function",
   },
   useless_symbols = {
@@ -734,7 +734,7 @@ M.codes = {
     "unknown-symbol",
   },
   wrong_type = {
-    message = " Try to use the correct types",
+    message = " Try to use the correct types",
     "init_conversion_failed",
   },
   undeclared_variable = {
