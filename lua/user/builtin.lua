@@ -278,15 +278,14 @@ M.config = function()
   end
 
   lvim.lsp.buffer_mappings.normal_mode["ga"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
-  lvim.lsp.buffer_mappings.normal_mode["gI"] = {
-    "<cmd>lua require('user.telescope').lsp_implementations()<CR>",
-    "Goto Implementation",
-  }
   lvim.lsp.buffer_mappings.normal_mode["gA"] = {
     "<cmd>lua if vim.bo.filetype == 'rust' then vim.cmd[[RustHoverActions]] else vim.lsp.codelens.run() end<CR>",
     "CodeLens Action",
   }
   lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
+  lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" }
+  lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>Trouble lsp_definitions<CR>", "Goto Definition" }
+  lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" }
   lvim.lsp.buffer_mappings.normal_mode["gp"] = {
     function()
       require("user.peek").Peek "definition"

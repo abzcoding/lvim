@@ -37,11 +37,21 @@ M.config = function()
       },
     },
     server = {
-      on_attach = require("lvim.lsp").common_on_attach,
+      on_attach = function(client, bufnr)
+        require("lvim.lsp").common_on_attach(client, bufnr)
+      end,
       on_init = require("lvim.lsp").common_on_init,
+      capabilities = require("lvim.lsp").common_capabilities(),
       settings = {
         ["rust-analyzer"] = {
           inlayHints = { locationLinks = false },
+          lens = {
+            enable = true,
+          },
+          checkOnSave = {
+            enable = true,
+            command = "clippy",
+          },
         },
       },
     },
