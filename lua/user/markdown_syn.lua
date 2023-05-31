@@ -127,12 +127,12 @@ syn region mdStrikethrough matchgroup=htmlStyleDelim start="\S\@<=\~\~\|\~\~\S\@
 syn match mdLine "^----*"
 
 syn match mdTask "^ *- \[ \].*$" contains=mdCheckbox
-syn match mdCheckbox "- \[ \]" contained containedin=mdTask conceal cchar=☐
+syn match mdCheckbox "- \[ \]" contained containedin=mdTask conceal cchar=󰄱
 
 syn match mdCompleteTask "^ *- \[x\].*$" contains=mdCompleteMark
 syn match mdCompleteTask "\(^ *[\*-] \)\@!.*@done.*$"
-syn match mdCompleteMark "- \[x\]" contained containedin=mdCompleteTask conceal cchar=
- 
+syn match mdCompleteMark "- \[x\]" contained containedin=mdCompleteTask conceal cchar=󰄵
+
 syn match mdCancelledTask "^ *- X.*$" contains=mdCancelMark
 syn match mdCancelMark "- X" contained containedin=mdCancelledTask conceal cchar=✗
 
@@ -142,8 +142,8 @@ syn match mdItem "^ *[\*-]\( X \| \[[x ]\]\)\@! " contains=mdBullet
 syn match mdBullet "[\*-]" contained containedin=mdItem conceal cchar=●
 syn region mdIgnore start="\S\@<=\$\|\$\S\@=" end="\S\@<=\$\|\$\S\@=" keepend oneline concealends
 
-syntax match todoCheckbox "\v.*\[\ \]"hs=e-2 conceal cchar=
-syntax match todoCheckbox "\v.*\[x\]"hs=e-2 conceal cchar=
+syntax match todoCheckbox "\v.*\[\ \]"hs=e-2 conceal cchar=󰄱
+syntax match todoCheckbox "\v.*\[x\]"hs=e-2 conceal cchar=󰄵
 setlocal conceallevel=2
 
 highlight Conceal guibg=NONE
