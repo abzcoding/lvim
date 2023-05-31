@@ -194,7 +194,7 @@ M.config = function()
       right = function()
         return {
           { text = "%@TbToggle_theme@" .. vim.g.toggle_theme_icon .. "%X" },
-          { text = "%@Quit_vim@ %X", fg = "#f7768e" },
+          { text = "%@Quit_vim@󰗼 %X", fg = "#f7768e" },
         }
       end,
     }

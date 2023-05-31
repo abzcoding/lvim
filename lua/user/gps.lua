@@ -11,11 +11,11 @@ M.config = function()
     disable_icons = false, -- Setting it to true will disable all icons
 
     icons = {
-      ["class-name"] = " ", -- Classes and class-like objects
-      ["function-name"] = " ", -- Functions
-      ["method-name"] = " ", -- Methods (functions inside class-like objects)
+      ["class-name"] = " ", -- Classes and class-like objects
+      ["function-name"] = "󰊕 ", -- Functions
+      ["method-name"] = " ", -- Methods (functions inside class-like objects)
       -- ["container-name"] = "⛶ ", -- Containers (example: lua tables)
-      ["tag-name"] = "炙", -- Tags (example: html tags)
+      ["tag-name"] = "󰓹", -- Tags (example: html tags)
     },
 
     -- Add custom configuration per language or
@@ -25,10 +25,10 @@ M.config = function()
       -- Some languages have custom icons
       ["json"] = {
         icons = {
-          ["array-name"] = " ",
-          ["object-name"] = " ",
+          ["array-name"] = " ",
+          ["object-name"] = " ",
           ["null-name"] = "[] ",
-          ["boolean-name"] = "ﰰ ",
+          ["boolean-name"] = "󰦏 ",
           ["number-name"] = "# ",
           ["string-name"] = " ",
         },
@@ -46,13 +46,13 @@ M.config = function()
       },
       ["toml"] = {
         icons = {
-          ["table-name"] = " ",
-          ["array-name"] = " ",
-          ["boolean-name"] = "ﰰﰴ ",
-          ["date-name"] = " ",
-          ["date-time-name"] = " ",
-          ["float-name"] = " ",
-          ["inline-table-name"] = " ",
+          ["table-name"] = "󰓫 ",
+          ["array-name"] = " ",
+          ["boolean-name"] = "󰦏 ",
+          ["date-name"] = " ",
+          ["date-time-name"] = "󰃰 ",
+          ["float-name"] = "󰉧 ",
+          ["inline-table-name"] = "󰨘 ",
           ["integer-name"] = "# ",
           ["string-name"] = " ",
           ["time-name"] = " ",
@@ -65,26 +65,26 @@ M.config = function()
       },
       ["yaml"] = {
         icons = {
-          ["mapping-name"] = " ",
-          ["sequence-name"] = " ",
+          ["mapping-name"] = "󰍍 ",
+          ["sequence-name"] = "󰜩 ",
           ["null-name"] = "[] ",
-          ["boolean-name"] = "ﰰﰴ ",
+          ["boolean-name"] = "󰦏 ",
           ["integer-name"] = "# ",
-          ["float-name"] = " ",
+          ["float-name"] = "󰉧 ",
           ["string-name"] = " ",
         },
       },
       ["yang"] = {
         icons = {
-          ["module-name"] = "",
-          ["augment-path"] = "",
-          ["container-name"] = "",
-          ["grouping-name"] = "",
+          ["module-name"] = "󰕳",
+          ["augment-path"] = "󰴠",
+          ["container-name"] = "󱣘",
+          ["grouping-name"] = " ",
           ["typedef-name"] = "",
-          ["identity-name"] = "",
-          ["list-name"] = "﬘",
-          ["leaf-list-name"] = "",
-          ["leaf-name"] = "",
+          ["identity-name"] = "󰻾",
+          ["list-name"] = "󱃔",
+          ["leaf-list-name"] = "󰌪",
+          ["leaf-name"] = "󰲓",
           ["action-name"] = "",
         },
       },

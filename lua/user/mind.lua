@@ -35,10 +35,10 @@ M.config = function()
             local tree = args.get_tree()
             local node = require("mind.node").get_node_by_line(tree, line)
 
-            if node.icon == nil or node.icon == " " then
-              node.icon = " "
-            elseif node.icon == " " then
-              node.icon = " "
+            if node.icon == nil or node.icon == " " then
+              node.icon = " "
+            elseif node.icon == " " then
+              node.icon = " "
             end
 
             args.save_tree()

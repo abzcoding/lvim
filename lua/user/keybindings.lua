@@ -514,7 +514,7 @@ M.set_mind_keymaps = function()
           backlog.icon = " "
 
           local _, on_going = mind_node.get_node_by_path(tree, "/Tasks/On-going", true)
-          on_going.icon = " "
+          on_going.icon = " "
 
           local _, done = mind_node.get_node_by_path(tree, "/Tasks/Done", true)
           done.icon = "󱍧 "

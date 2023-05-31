@@ -345,6 +345,7 @@ M.config = function()
       end,
       cwd = "${workspaceFolder}",
       stopOnEntry = true,
+      runInTerminal = true,
     },
   }
   dap.configurations.c = dap.configurations.cpp

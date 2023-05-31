@@ -38,7 +38,7 @@ M.set_icon = function()
       name = "Text",
     },
     csv = {
-      icon = "",
+      icon = " ",
       color = "#31B53E",
       name = "CSV",
     },

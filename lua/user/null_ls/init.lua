@@ -53,7 +53,9 @@ M.config = function()
     nls.builtins.formatting.cmake_format,
     nls.builtins.formatting.scalafmt,
     nls.builtins.formatting.sqlformat,
-    nls.builtins.formatting.terraform_fmt,
+    nls.builtins.formatting.terraform_fmt.with {
+      filetypes = { "terraform", "tf", "terraform-vars", "hcl" },
+    },
     -- Support for nix files
     nls.builtins.formatting.alejandra,
     nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
