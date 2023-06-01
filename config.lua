@@ -7,7 +7,6 @@ lvim.transparent_window = false -- enable/disable transparency
 lvim.debug = false
 vim.lsp.set_log_level "error"
 lvim.log.level = "warn"
--- vim.o.conceallevel = 2 -- uncomment if you want to see concealed text
 require("user.neovim").config()
 lvim.lsp.code_lens_refresh = true
 lvim.lsp.installer.setup.automatic_installation = false
