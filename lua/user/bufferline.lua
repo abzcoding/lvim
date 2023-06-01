@@ -112,7 +112,11 @@ M.config = function()
           name = "Config",
           matcher = function(buf)
             local name = vim.api.nvim_buf_get_name(buf.id)
-            local filename = vim.split(name, "/", { plain = true })[-1]
+            local filename_arr = vim.split(name, "/", { plain = true })
+            local filename = nil
+            if #filename_arr > 0 then
+              filename = filename_arr[#filename_arr]
+            end
             if filename == nil then
               return false
             end
