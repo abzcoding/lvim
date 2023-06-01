@@ -9,6 +9,20 @@ M.config = function()
       winbar = true,
       separator_active = " ",
       statusline = false,
+      sources = {
+        {
+          source = "filesystem",
+          display_name = " 󰉓 Files ",
+        },
+        {
+          source = "buffers",
+          display_name = " 󰈙 Buffers ",
+        },
+        {
+          source = "git_status",
+          display_name = " 󰊢 Git ",
+        },
+      },
     },
     enable_git_status = true,
     git_status_async = true,
