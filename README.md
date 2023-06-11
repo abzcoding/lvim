@@ -452,7 +452,6 @@ _Symbols Outline_
 - [inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [hlargs.nvim](https://github.com/m-demare/hlargs.nvim)
 - [cmake-tools.nvim](https://github.com/Civitasv/cmake-tools.nvim)
-- [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
 - [mind.nvim](https://github.com/phaazon/mind.nvim)
 
 </details>
@@ -499,22 +498,23 @@ Note that,
 
 ### UI
 
-| Key                                                           | Mode | Action              | Plugin or Mapping                             |
-| ------------------------------------------------------------- | :--: | ------------------- | --------------------------------------------- |
-| <kbd>Space</kbd>+<kbd>e</kbd>                                 |  𝐍   | Open file tree      | <small>NvimTree</small>                       |
-| <kbd>Space</kbd>+<kbd>o</kbd>                                 |  𝐍   | Open symbols        | <small>Symbols-outline</small>                |
-| <kbd>Space</kbd>+<kbd>f</kbd>                                 |  𝐍   | Open file finder    | <small>Telescope</small>                      |
-| <kbd>Space</kbd>+<kbd>h</kbd>                                 |  𝐍   | Remove highlight    | <small>`nohlsearch<`</small>                  |
-| <kbd>Space</kbd>+<kbd>/</kbd>                                 |  𝐍   | Toggle comment      | <small>Comment.nvim</small>                   |
-| <kbd>Space</kbd>+<kbd>?</kbd>                                 |  𝐍   | Open cheats         | <small>cheat.sh</small>                       |
-| <kbd>Space</kbd>+<kbd>'</kbd>                                 |  𝐍   | Open marks          | <small>which-key marks</small>                |
-| <kbd>Space</kbd>+<kbd>z</kbd>                                 |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                  |
-| <kbd>Space</kbd>+<kbd>P</kbd>                                 |  𝐍   | Projects            | <small>project.nvim</small>                   |
-| <kbd>Ctrl</kbd>+<kbd>\</kbd>                                  | 𝐈 𝐍  | Open terminal       | <small>toggleterm.nvim</small>                |
-| <kbd>Alt</kbd>+<kbd>0</kbd>                                   | 𝐈 𝐍  | Vertical terminal   | <small>toggleterm.nvim</small>                |
-| <kbd>Ctrl</kbd>+<kbd>s</kbd>                                  |  𝐈   | Show signature help | <small>`vim.lsp.buf.signature_help()`</small> |
-| <kbd>Alt</kbd>+<kbd>s</kbd>                                   |  𝐈   | Snippet selection   | <small>Telescope luasnip extension</small>    |
-| <kbd>Space</kbd>+<kbd>C</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> |  𝐍   | Command Palette     | <small>legendary.nvim</small>                 |
+| Key                                                           | Mode | Action              | Plugin or Mapping                                         |
+| ------------------------------------------------------------- | :--: | ------------------- | --------------------------------------------------------- |
+| <kbd>Space</kbd>+<kbd>e</kbd>                                 |  𝐍   | Open file tree      | <small>NvimTree</small>                                   |
+| <kbd>Space</kbd>+<kbd>o</kbd>                                 |  𝐍   | Open symbols        | <small>Symbols-outline</small>                            |
+| <kbd>Space</kbd>+<kbd>f</kbd>                                 |  𝐍   | Open file finder    | <small>Telescope</small>                                  |
+| <kbd>Space</kbd>+<kbd>h</kbd>                                 |  𝐍   | Remove highlight    | <small>`nohlsearch<`</small>                              |
+| <kbd>Space</kbd>+<kbd>/</kbd>                                 |  𝐍   | Toggle comment      | <small>Comment.nvim</small>                               |
+| <kbd>Space</kbd>+<kbd>?</kbd>                                 |  𝐍   | Open cheats         | <small>cheat.sh</small>                                   |
+| <kbd>Space</kbd>+<kbd>I</kbd>                                 |  𝐍   | Inlay Hints         | <small>`require('vim.lsp._inlay_hint').refresh()`</small> |
+| <kbd>Space</kbd>+<kbd>'</kbd>                                 |  𝐍   | Open marks          | <small>which-key marks</small>                            |
+| <kbd>Space</kbd>+<kbd>z</kbd>                                 |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                              |
+| <kbd>Space</kbd>+<kbd>P</kbd>                                 |  𝐍   | Projects            | <small>project.nvim</small>                               |
+| <kbd>Ctrl</kbd>+<kbd>\</kbd>                                  | 𝐈 𝐍  | Open terminal       | <small>toggleterm.nvim</small>                            |
+| <kbd>Alt</kbd>+<kbd>0</kbd>                                   | 𝐈 𝐍  | Vertical terminal   | <small>toggleterm.nvim</small>                            |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>                                  |  𝐈   | Show signature help | <small>`vim.lsp.buf.signature_help()`</small>             |
+| <kbd>Alt</kbd>+<kbd>s</kbd>                                   |  𝐈   | Snippet selection   | <small>Telescope luasnip extension</small>                |
+| <kbd>Space</kbd>+<kbd>C</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> |  𝐍   | Command Palette     | <small>legendary.nvim</small>                             |
 
 ### Motion
 

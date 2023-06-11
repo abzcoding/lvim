@@ -759,13 +759,6 @@ M.config = function()
       enabled = lvim.builtin.cpp_programming.active,
     },
     {
-      "lvimuser/lsp-inlayhints.nvim",
-      config = function()
-        require("lsp-inlayhints").setup()
-      end,
-      enabled = lvim.builtin.inlay_hints.active,
-    },
-    {
       "raimon49/requirements.txt.vim",
       event = "VeryLazy",
       enabled = lvim.builtin.python_programming.active,
