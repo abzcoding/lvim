@@ -28,6 +28,7 @@ Bepa
 Bhyve
 Bitbucket
 Blankline
+Bootloader
 Bootsnap
 Bugzilla
 Buildkite
@@ -361,6 +362,7 @@ blockquotes
 blockquoting
 boolean
 booleans
+bootkit
 browsable
 bufferline
 bugfix
@@ -534,6 +536,7 @@ kubernetes
 lang
 ldapsearch
 libFuzzer
+libc
 lightspeed
 linter
 linters
@@ -552,6 +555,7 @@ luajit
 luasnip
 lunarvim
 lvim
+malloc
 markdownlint
 matcher
 matchers
@@ -735,6 +739,7 @@ serverless
 severities
 sharded
 sharding
+shellcode
 shfmt
 skippable
 smartcard
@@ -748,9 +753,14 @@ spidering
 sqlmap
 starrer
 starrers
+stdcall
+stderr
+stdin
+stdout
 storable
 storages
 strace
+strcpy
 strikethrough
 strikethroughs
 stunnel

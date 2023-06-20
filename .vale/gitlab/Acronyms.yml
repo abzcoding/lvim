@@ -24,6 +24,7 @@ exceptions:
   - ARN
   - ARP
   - ASCII
+  - ASLR
   - ASN
   - AWS
   - BAR
@@ -179,6 +180,8 @@ exceptions:
   - RFC
   - RFI
   - RHEL
+  - ROM
+  - ROP
   - RPC
   - RPM
   - RPS
@@ -196,6 +199,7 @@ exceptions:
   - SCSS
   - SDK
   - SDN
+  - SEH
   - SELF
   - SEO
   - SET
@@ -204,6 +208,7 @@ exceptions:
   - SIEM
   - SLA
   - SLSA
+  - SMB
   - SMS
   - SMTP
   - SOAP
@@ -226,6 +231,7 @@ exceptions:
   - SVN
   - SYN
   - TBA
+  - TBD
   - TCP
   - TEE
   - TIFF
