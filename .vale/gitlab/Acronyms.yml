@@ -32,6 +32,7 @@ exceptions:
   - BSD
   - CAS
   - CASMM
+  - CAM
   - CDN
   - CIS
   - CLI
@@ -57,6 +58,7 @@ exceptions:
   - DAG
   - DAST
   - DDOS
+  - DEP
   - DHCP
   - DHT
   - DLL
@@ -107,10 +109,12 @@ exceptions:
   - HTML
   - HTTP
   - HTTPS
+  - HVCI
   - IAM
   - IANA
   - IBM
   - ICMP
+  - IDA
   - IDE
   - IDOR
   - IID
@@ -135,6 +139,7 @@ exceptions:
   - LSP
   - LTS
   - LUKS
+  - MAC
   - MBR
   - MFA
   - MIME
@@ -159,6 +164,7 @@ exceptions:
   - PCI
   - PCI-DSS
   - PDF
+  - PID
   - PEM
   - PEP
   - PGP
@@ -167,9 +173,11 @@ exceptions:
   - POSIX
   - POST
   - PPP
+  - PTE
   - PUT
   - QEMU
   - QMP
+  - QUIC
   - RAID
   - RAM
   - RBAC
@@ -187,6 +195,7 @@ exceptions:
   - RPS
   - RSA
   - RSS
+  - RST
   - RVM
   - SAAS
   - SAML
@@ -252,6 +261,7 @@ exceptions:
   - UTF
   - UUID
   - VCS
+  - VLAN
   - VNC
   - VPC
   - VPN
