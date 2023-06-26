@@ -34,12 +34,15 @@ exceptions:
   - CASMM
   - CAM
   - CDN
+  - CET
+  - CFG
   - CIS
   - CLI
   - CMD
   - CNA
   - CNAME
   - CNI
+  - COM
   - CONOP
   - CORE
   - CORS
@@ -112,6 +115,7 @@ exceptions:
   - HVCI
   - IAM
   - IANA
+  - IAT
   - IBM
   - ICMP
   - IDA
@@ -121,6 +125,7 @@ exceptions:
   - IMAP
   - IOPS
   - IRC
+  - IRQL
   - ISAC
   - ISN
   - ISO
@@ -165,6 +170,7 @@ exceptions:
   - PCI-DSS
   - PDF
   - PID
+  - PEB
   - PEM
   - PEP
   - PGP

@@ -106,7 +106,7 @@ M.config = function()
         "<cmd>lua require('user.telescope').find_project_files()<CR>"
       ),
       button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
-      button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
+      button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persisted').load()<cr>"),
       button("g", " " .. kind.icons.git .. " Git Status", ":lua require 'lvim.core.terminal'.lazygit_toggle()<CR>"),
       button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
       button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),

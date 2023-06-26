@@ -604,6 +604,9 @@ M.config = function()
     if lvim.builtin.file_browser.active then
       telescope.load_extension "file_browser"
     end
+    if lvim.builtin.persistence.active then
+      telescope.load_extension "persisted"
+    end
   end
 
   -- WhichKey

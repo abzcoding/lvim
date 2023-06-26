@@ -413,7 +413,7 @@ _Symbols Outline_
 - [Leap](https://github.com/ggandor/leap.nvim)
 - [remember.nvim](https://github.com/vladdoster/remember.nvim)
 - [Tabnine](https://github.com/tzachar/compe-tabnine)
-- [Persistence](https://github.com/folke/persistence.nvim)
+- [Persistence](https://github.com/olimorris/persisted.nvim)
 - [Presence](https://github.com/andweeb/presence.nvim)
 - [Orgmode.nvim](https://github.com/kristijanhusak/orgmode.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
@@ -639,11 +639,11 @@ Note that,
 
 ### Plugin: Persistence
 
-| Key                                        | Mode | Action                                |
-| ------------------------------------------ | :--: | ------------------------------------- |
-| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>d</kbd> |  𝐍   | Quit without saving session           |
-| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>l</kbd> |  𝐍   | Restore last session                  |
-| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>s</kbd> |  𝐍   | Restore last session from current dir |
+| Key                                        | Mode | Action         |
+| ------------------------------------------ | :--: | -------------- |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>d</kbd> |  𝐍   | Delete Session |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>l</kbd> |  𝐍   | Load Session   |
+| <kbd>Space</kbd>+<kbd>q</kbd>+<kbd>s</kbd> |  𝐍   | Save Session   |
 
 ### Plugin: Bufferline
 
