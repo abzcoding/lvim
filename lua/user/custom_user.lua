@@ -41,7 +41,7 @@ M.config = function()
   }
   lvim.builtin.smooth_scroll = "cinnamon"
   lvim.builtin.tree_provider = "neo-tree"
-  lvim.builtin.noice.active = true
+  lvim.builtin.noice.active = false
   lvim.builtin.go_programming.active = true
   lvim.builtin.python_programming.active = true
   lvim.builtin.web_programming.active = true
@@ -51,6 +51,7 @@ M.config = function()
   lvim.builtin.colored_args = true
   lvim.reload_config_on_save = false -- NOTE: i don't like this
   lvim.builtin.mind.active = true
+  lvim.builtin.telescope.active = false -- NOTE: temporary fix for telescope (dlsym(RTLD_DEFAULT, linetabsize_col): symbol not found)
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

@@ -106,7 +106,7 @@ local function set_bufferline_keymaps()
     p = { "<Cmd>BufferLineTogglePin<CR>", "toggle pin" },
     s = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
     t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
-    f = { "<cmd>Telescope buffers<cr>", "Find" },
+    f = { "<cmd>FzfLua buffers<cr>", "Find" },
     b = { "<cmd>b#<cr>", "Previous" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
     l = {
@@ -246,7 +246,7 @@ M.config = function()
   lvim.keys.visual_mode["<A-x>"] = "<C-x>"
   lvim.keys.visual_mode["p"] = [["_dP]]
   lvim.keys.visual_mode["ga"] = "<esc><Cmd>lua vim.lsp.buf.range_code_action()<CR>"
-  lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
+  lvim.keys.visual_mode["<leader>st"] = "<Cmd>FzfLua tags_grep_cword<CR>"
 
   -- WhichKey keybindings
   -- =========================================
@@ -269,7 +269,7 @@ M.config = function()
     lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen<cr>", "diffview: diff HEAD" }
     lvim.builtin.which_key.mappings["gh"] = { "<cmd>DiffviewFileHistory<cr>", "diffview: filehistory" }
   else
-    lvim.builtin.which_key.mappings["gh"] = { "<cmd>Telescope git_bcommits<cr>", "file history" }
+    lvim.builtin.which_key.mappings["gh"] = { "<cmd>FzfLua git_bcommits<cr>", "file history" }
   end
   if lvim.builtin.cheat.active then
     lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", " Cheat.sh" }
@@ -282,16 +282,16 @@ M.config = function()
   end
   lvim.builtin.which_key.mappings["F"] = {
     name = " Find",
-    b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },
-    f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
-    g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
-    i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
+    b = { "<cmd>FzfLua builtin<cr>", "Builtin" },
+    f = { "<cmd>FzfLua grep_curbuf<cr>", "Current Buffer" },
+    g = { "<cmd>FzfLua git_files<cr>", "Git Files" },
+    -- i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
     l = {
-      "<cmd>lua require('telescope.builtin').resume()<cr>",
+      "<cmd>FzfLua resume<cr>",
       "Last Search",
     },
-    p = { "<cmd>lua require('user.telescope').project_search()<cr>", "Project" },
-    s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
+    p = { "<cmd>FzfLua grep_project<cr>", "Project" },
+    s = { "<cmd>FzfLua git_status<cr>", "Git Status" },
     z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
   }
   if lvim.builtin.legendary.active then
@@ -301,7 +301,7 @@ M.config = function()
   end
 
   if lvim.builtin.file_browser.active then
-    lvim.builtin.which_key.mappings["se"] = { "<cmd>Telescope file_browser<cr>", "File Browser" }
+    lvim.builtin.which_key.mappings["se"] = { "<cmd>FzfLua files<cr>", "File Browser" }
   end
   lvim.builtin.which_key.mappings["H"] = "󰞋 Help"
   lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", "󰸱 No Highlight" }
@@ -311,7 +311,8 @@ M.config = function()
   end
   lvim.builtin.which_key.mappings.l.name = " LSP"
   lvim.builtin.which_key.mappings["f"] = {
-    require("user.telescope").find_project_files,
+    -- require("user.telescope").find_project_files,
+    "<cmd>FzfLua git_files<cr>",
     " Find File",
   }
   local ok, _ = pcall(require, "vim.diagnostic")
@@ -397,8 +398,13 @@ M.config = function()
     },
   }
   lvim.builtin.which_key.mappings.s.name = " Search"
+  lvim.builtin.which_key.mappings["st"] = {
+    "<cmd>FzfLua grep_project<cr>",
+    "Text",
+  }
   lvim.builtin.which_key.mappings["ss"] = {
-    "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
+    -- "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
+    "<cmd>FzfLua live_grep_native<cr>",
     "String",
   }
   if lvim.builtin.test_runner.active then

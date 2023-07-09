@@ -770,6 +770,14 @@ M.config = function()
       event = "VeryLazy",
       enabled = lvim.builtin.mind.active,
     },
+    {
+      "ibhagwan/fzf-lua",
+      config = function()
+        -- calling `setup` is optional for customization
+        require("fzf-lua").setup {}
+      end,
+      enabled = not lvim.builtin.telescope.active,
+    },
   }
 end
 
