@@ -300,9 +300,9 @@ M.config = function()
     lvim.keys.normal_mode["<c-P>"] = "<cmd>lua require('legendary').find()<cr>"
   end
 
-  if lvim.builtin.file_browser.active then
-    lvim.builtin.which_key.mappings["se"] = { "<cmd>FzfLua files<cr>", "File Browser" }
-  end
+  -- if lvim.builtin.file_browser.active then
+  lvim.builtin.which_key.mappings["se"] = { "<cmd>FzfLua files<cr>", "File Browser" }
+  -- end
   lvim.builtin.which_key.mappings["H"] = "󰞋 Help"
   lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", "󰸱 No Highlight" }
   lvim.builtin.which_key.mappings.g.name = " Git"

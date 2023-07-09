@@ -774,7 +774,8 @@ M.config = function()
       "ibhagwan/fzf-lua",
       config = function()
         -- calling `setup` is optional for customization
-        require("fzf-lua").setup {}
+        local ff = require('user.fzf')
+        require("fzf-lua").setup(vim.tbl_deep_extend("keep", vim.deepcopy(ff.active_profile), ff.default_opts))
       end,
       enabled = not lvim.builtin.telescope.active,
     },
