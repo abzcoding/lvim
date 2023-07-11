@@ -34,7 +34,7 @@ lvim.builtin.custom_web_devicons = false -- install https://github.com/Nguyen-Ho
 lvim.builtin.harpoon = { active = true } -- use the harpoon plugin
 lvim.builtin.remote_dev = { active = false } -- enable/disable remote development
 lvim.builtin.cursorline = { active = false } -- use a bit fancier cursorline
-lvim.builtin.motion_provider = "hop" -- change this to use different motion providers ( hop or leap )
+lvim.builtin.motion_provider = "hop" -- change this to use different motion providers ( hop or leap or flash)
 lvim.builtin.hlslens = { active = false } -- enable/disable hlslens
 lvim.builtin.csv_support = false -- enable/disable csv support
 lvim.builtin.sidebar = { active = false } -- enable/disable sidebar
