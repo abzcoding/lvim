@@ -129,11 +129,14 @@ exceptions:
   - ISAC
   - ISN
   - ISO
+  - IUM
   - JPEG
   - JPG
   - JSON
   - JVM
   - JWT
+  - KASLR
+  - KMCI
   - KVM
   - LAN
   - LDAP
@@ -146,6 +149,7 @@ exceptions:
   - LUKS
   - MAC
   - MBR
+  - MDL
   - MFA
   - MIME
   - MIT
@@ -202,6 +206,7 @@ exceptions:
   - RSA
   - RSS
   - RST
+  - RVA
   - RVM
   - SAAS
   - SAML
@@ -213,6 +218,7 @@ exceptions:
   - SCP
   - SCSS
   - SDK
+  - SDDL
   - SDN
   - SEH
   - SELF
@@ -221,6 +227,7 @@ exceptions:
   - SFTP
   - SHA
   - SIEM
+  - SIP
   - SLA
   - SLSA
   - SMB
@@ -247,6 +254,7 @@ exceptions:
   - SYN
   - TBA
   - TBD
+  - TCC
   - TCP
   - TEE
   - TIFF
@@ -266,12 +274,14 @@ exceptions:
   - UTC
   - UTF
   - UUID
+  - VBS
   - VCS
   - VLAN
   - VNC
   - VPC
   - VPN
   - WAF
+  - WHQL
   - WIP
   - WSDL
   - WSL
