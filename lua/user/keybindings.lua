@@ -13,6 +13,32 @@ M.set_wezterm_keybindings = function()
   lvim.keys.visual_mode["≈"] = lvim.keys.visual_mode["<A-x>"]
 end
 
+M.fzf_projects = function()
+  local fzf_lua = require "fzf-lua"
+  local history = require "project_nvim.utils.history"
+  fzf_lua.fzf_exec(function(cb)
+    local results = history.get_recent_projects()
+    for _, e in ipairs(results) do
+      cb(e)
+    end
+    cb()
+  end, {
+    actions = {
+      ["default"] = {
+        function(selected)
+          fzf_lua.files { cwd = selected[1] }
+        end,
+      },
+      ["ctrl-d"] = {
+        function(selected)
+          history.delete_project { value = selected[1] }
+        end,
+        fzf_lua.actions.resume,
+      },
+    },
+  })
+end
+
 M.set_terminal_keymaps = function()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
@@ -384,7 +410,7 @@ M.config = function()
   end
   lvim.builtin.which_key.mappings.L.name = " LunarVim"
   lvim.builtin.which_key.mappings.p.name = " Lazy"
-  lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", " Projects" }
+  lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require('user.keybindings').fzf_projects()<CR>", " Projects" }
   lvim.builtin.which_key.mappings["R"] = {
     name = " Replace",
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Current Buffer" },
@@ -398,7 +424,7 @@ M.config = function()
     },
   }
   lvim.builtin.which_key.mappings.s.name = " Search"
-  lvim.builtin.which_key.mappings["st"] = {
+  lvim.builtin.which_key.mappings.s.t = {
     "<cmd>FzfLua grep_project<cr>",
     "Text",
   }

@@ -153,6 +153,7 @@ exceptions:
   - MFA
   - MIME
   - MIT
+  - MMIO
   - MSSQL
   - MVC
   - NAT

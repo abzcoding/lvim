@@ -442,9 +442,6 @@ M.config = function()
       end,
       enabled = lvim.builtin.custom_web_devicons or not lvim.use_icons,
     },
-    {
-      "nvim-telescope/telescope-live-grep-args.nvim",
-    },
     { "mtdl9/vim-log-highlighting", ft = { "text", "log" } },
     {
       "yamatsum/nvim-cursorline",
