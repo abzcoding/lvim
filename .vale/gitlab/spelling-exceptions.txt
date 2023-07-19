@@ -76,6 +76,7 @@ Dockerized
 Dockerizing
 Dpl
 Dreamweaver
+Duqu
 EDR
 ETag
 Ecto
@@ -270,6 +271,7 @@ Splunk
 SpotBugs
 Stackdriver
 Stackprof
+Stuxnet
 Superblock
 Sysbench
 TODO
@@ -519,6 +521,7 @@ jasmine-jquery
 javascript
 jq
 jsdom
+json
 julia
 jumplist
 kanban

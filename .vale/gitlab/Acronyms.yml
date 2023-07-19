@@ -15,8 +15,9 @@ second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
   - ACID
-  - ACK
+  - ACG
   - ACL
+  - ACK
   - AJAX
   - ANSI
   - API
@@ -28,6 +29,7 @@ exceptions:
   - ASN
   - AWS
   - BAR
+  - BASLR
   - BGP
   - BSD
   - CAS
@@ -222,6 +224,7 @@ exceptions:
   - SDDL
   - SDN
   - SEH
+  - SEHOP
   - SELF
   - SEO
   - SET
@@ -232,6 +235,8 @@ exceptions:
   - SLA
   - SLSA
   - SMB
+  - SMAP
+  - SMEP
   - SMS
   - SMTP
   - SOAP
