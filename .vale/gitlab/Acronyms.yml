@@ -61,6 +61,7 @@ exceptions:
   - CVE
   - CVS
   - DAG
+  - DAO
   - DAST
   - DDOS
   - DEP
@@ -126,6 +127,7 @@ exceptions:
   - IID
   - IMAP
   - IOPS
+  - IPFS
   - IRC
   - IRQL
   - ISAC
@@ -161,6 +163,7 @@ exceptions:
   - NAT
   - NDA
   - NFS
+  - NFT
   - NGINX
   - NIST
   - NOTE
