@@ -53,6 +53,7 @@ M.config = function()
   lvim.builtin.mind.active = true
   lvim.builtin.telescope.active = false -- NOTE: temporary fix for telescope (dlsym(RTLD_DEFAULT, linetabsize_col): symbol not found)
   lvim.builtin.motion_provider = "flash"
+  lvim.builtin.harpoon.active = false
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 
