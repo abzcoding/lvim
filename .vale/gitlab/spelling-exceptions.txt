@@ -58,6 +58,7 @@ Corosync
 Coursier
 Crossplane
 CrowdIn
+Cryptocurrency
 Cyber
 DDOS
 Dangerfile
@@ -82,6 +83,7 @@ EDR
 ETag
 Ecto
 Elasticsearch
+Ethereum
 Excon
 Exfiltrate
 Facebook
@@ -131,6 +133,7 @@ Heroku
 Herokuish
 Hexo
 HipChat
+Hyperledger
 Iglu
 Immer
 Incentivized
@@ -188,6 +191,7 @@ Markdown
 Matomo
 Mattermost
 Memorystore
+Merkle
 Microsoft
 MinIO
 Minikube
@@ -415,6 +419,7 @@ crosslinked
 crosslinking
 crosslinks
 crt
+crypto
 cyber
 cybersecurity
 datasource

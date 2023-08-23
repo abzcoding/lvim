@@ -25,6 +25,7 @@ exceptions:
   - ARN
   - ARP
   - ASCII
+  - ASIC
   - ASLR
   - ASN
   - AWS
@@ -65,6 +66,7 @@ exceptions:
   - DAST
   - DDOS
   - DEP
+  - DEX
   - DHCP
   - DHT
   - DLL
@@ -84,6 +86,7 @@ exceptions:
   - EPA
   - ETC
   - ETCD
+  - EVM
   - EXIF
   - FAQ
   - FIFO
@@ -220,12 +223,14 @@ exceptions:
   - SANS
   - SAST
   - SATA
+  - SCA
   - SCIM
   - SCORE
   - SCP
   - SCSS
   - SDK
   - SDDL
+  - SDLC
   - SDN
   - SEH
   - SEHOP
