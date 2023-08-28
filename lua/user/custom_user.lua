@@ -10,7 +10,7 @@ M.config = function()
 
   lvim.builtin.lsp_lines = true
   vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)
-  lvim.builtin.tmux_lualine = false
+  lvim.builtin.tmux_lualine = true
   if lvim.builtin.tmux_lualine then
     vim.opt.cmdheight = 0
     vim.opt.laststatus = 0
@@ -54,6 +54,7 @@ M.config = function()
   lvim.builtin.telescope.active = false -- NOTE: temporary fix for telescope (dlsym(RTLD_DEFAULT, linetabsize_col): symbol not found)
   lvim.builtin.motion_provider = "flash"
   lvim.builtin.harpoon.active = false
+  lvim.builtin.sell_your_soul_to_devil.openai = true -- NOTE: requires valid OPENAI_API_KEY environment variable
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

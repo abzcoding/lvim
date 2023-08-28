@@ -424,6 +424,12 @@ M.config = function()
     color = { fg = colors.fg, bg = colors.bg },
   }
 
+  if lvim.builtin.sell_your_soul_to_devil.openai then
+    ins_right {
+      require("wtf").get_status,
+    }
+  end
+
   ins_right {
     function()
       return ""

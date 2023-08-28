@@ -33,6 +33,7 @@ exceptions:
   - BASLR
   - BGP
   - BSD
+  - BYOD
   - CAS
   - CASMM
   - CAM
@@ -174,6 +175,7 @@ exceptions:
   - NTP
   - NVRAM
   - ONLY
+  - OPA
   - OSI
   - OSS
   - OTP
@@ -213,6 +215,7 @@ exceptions:
   - RPC
   - RPM
   - RPS
+  - RRA
   - RSA
   - RSS
   - RST

@@ -454,6 +454,8 @@ _Symbols Outline_
 - [hlargs.nvim](https://github.com/m-demare/hlargs.nvim)
 - [cmake-tools.nvim](https://github.com/Civitasv/cmake-tools.nvim)
 - [mind.nvim](https://github.com/phaazon/mind.nvim)
+- [wtf.nvim](https://github.com/piersolenski/wtf.nvim)
+- [backseat.nvim](https://github.com/james1236/backseat.nvim)
 
 </details>
 

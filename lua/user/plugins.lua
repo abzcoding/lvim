@@ -782,6 +782,48 @@ M.config = function()
       keys = require("user.flash").keys,
       enabled = lvim.builtin.motion_provider == "flash",
     },
+    {
+      "piersolenski/wtf.nvim",
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+      },
+      event = "VeryLazy",
+      opts = {
+        popup_type = "vertical",
+      },
+      keys = {
+        {
+          "gw",
+          mode = { "n" },
+          function()
+            require("wtf").ai()
+          end,
+          desc = "Debug diagnostic with AI",
+        },
+        {
+          mode = { "n" },
+          "gW",
+          function()
+            require("wtf").search()
+          end,
+          desc = "Search diagnostic with Google",
+        },
+      },
+      enabled = lvim.builtin.sell_your_soul_to_devil.openai,
+    },
+    {
+      "james1236/backseat.nvim",
+      config = function()
+        require("backseat").setup {
+          highlight = {
+            icon = "󰳃 ",
+            group = "SpecialComment",
+          },
+        }
+      end,
+      event = "VeryLazy",
+      enabled = lvim.builtin.sell_your_soul_to_devil.openai,
+    },
   }
 end
 
