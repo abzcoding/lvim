@@ -21,6 +21,7 @@ exceptions:
   - AJAX
   - ANSI
   - API
+  - APT
   - ARM
   - ARN
   - ARP
