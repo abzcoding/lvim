@@ -13,6 +13,32 @@ M.set_wezterm_keybindings = function()
   lvim.keys.visual_mode["≈"] = lvim.keys.visual_mode["<A-x>"]
 end
 
+M.fzf_projects = function()
+  local fzf_lua = require "fzf-lua"
+  local history = require "project_nvim.utils.history"
+  fzf_lua.fzf_exec(function(cb)
+    local results = history.get_recent_projects()
+    for _, e in ipairs(results) do
+      cb(e)
+    end
+    cb()
+  end, {
+    actions = {
+      ["default"] = {
+        function(selected)
+          fzf_lua.files { cwd = selected[1] }
+        end,
+      },
+      ["ctrl-d"] = {
+        function(selected)
+          history.delete_project { value = selected[1] }
+        end,
+        fzf_lua.actions.resume,
+      },
+    },
+  })
+end
+
 M.set_terminal_keymaps = function()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)

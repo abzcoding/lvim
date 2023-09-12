@@ -10,8 +10,6 @@ level: suggestion
 ignorecase: true
 link: https://docs.gitlab.com/ee/development/documentation/styleguide/index.html#usage-list
 tokens:
-  - easy
-  - easily
   - handy
   - simple
   - simply

@@ -52,3 +52,6 @@ luac.out
 plugin/packer_compiled.lua
 
 .luacheckcache
+
+# ETC
+.idea

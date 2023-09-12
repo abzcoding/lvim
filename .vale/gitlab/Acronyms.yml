@@ -15,21 +15,26 @@ second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
   - ACID
-  - ACK
+  - ACG
   - ACL
+  - ACK
   - AJAX
   - ANSI
   - API
+  - APT
   - ARM
   - ARN
   - ARP
   - ASCII
+  - ASIC
   - ASLR
   - ASN
   - AWS
   - BAR
+  - BASLR
   - BGP
   - BSD
+  - BYOD
   - CAS
   - CASMM
   - CAM
@@ -59,9 +64,11 @@ exceptions:
   - CVE
   - CVS
   - DAG
+  - DAO
   - DAST
   - DDOS
   - DEP
+  - DEX
   - DHCP
   - DHT
   - DLL
@@ -81,6 +88,7 @@ exceptions:
   - EPA
   - ETC
   - ETCD
+  - EVM
   - EXIF
   - FAQ
   - FIFO
@@ -124,16 +132,20 @@ exceptions:
   - IID
   - IMAP
   - IOPS
+  - IPFS
   - IRC
   - IRQL
   - ISAC
   - ISN
   - ISO
+  - IUM
   - JPEG
   - JPG
   - JSON
   - JVM
   - JWT
+  - KASLR
+  - KMCI
   - KVM
   - LAN
   - LDAP
@@ -146,20 +158,25 @@ exceptions:
   - LUKS
   - MAC
   - MBR
+  - MDL
   - MFA
   - MIME
   - MIT
+  - MMIO
   - MSSQL
   - MVC
   - NAT
   - NDA
   - NFS
+  - NFT
   - NGINX
   - NIST
   - NOTE
   - NPM
   - NTP
+  - NVRAM
   - ONLY
+  - OPA
   - OSI
   - OSS
   - OTP
@@ -199,31 +216,40 @@ exceptions:
   - RPC
   - RPM
   - RPS
+  - RRA
   - RSA
   - RSS
   - RST
+  - RVA
   - RVM
   - SAAS
   - SAML
   - SANS
   - SAST
   - SATA
+  - SCA
   - SCIM
   - SCORE
   - SCP
   - SCSS
   - SDK
+  - SDDL
+  - SDLC
   - SDN
   - SEH
+  - SEHOP
   - SELF
   - SEO
   - SET
   - SFTP
   - SHA
   - SIEM
+  - SIP
   - SLA
   - SLSA
   - SMB
+  - SMAP
+  - SMEP
   - SMS
   - SMTP
   - SOAP
@@ -247,6 +273,7 @@ exceptions:
   - SYN
   - TBA
   - TBD
+  - TCC
   - TCP
   - TEE
   - TIFF
@@ -266,12 +293,14 @@ exceptions:
   - UTC
   - UTF
   - UUID
+  - VBS
   - VCS
   - VLAN
   - VNC
   - VPC
   - VPN
   - WAF
+  - WHQL
   - WIP
   - WSDL
   - WSL
