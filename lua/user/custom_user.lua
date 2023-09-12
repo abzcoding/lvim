@@ -51,7 +51,6 @@ M.config = function()
   lvim.builtin.colored_args = true
   lvim.reload_config_on_save = false -- NOTE: i don't like this
   lvim.builtin.mind.active = true
-  lvim.builtin.telescope.active = false -- NOTE: temporary fix for telescope (dlsym(RTLD_DEFAULT, linetabsize_col): symbol not found)
   lvim.builtin.motion_provider = "flash"
   lvim.builtin.harpoon.active = false
   lvim.builtin.sell_your_soul_to_devil.openai = true -- NOTE: requires valid OPENAI_API_KEY environment variable
