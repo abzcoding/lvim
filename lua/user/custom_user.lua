@@ -50,9 +50,9 @@ M.config = function()
   lvim.builtin.borderless_cmp = true
   lvim.builtin.colored_args = true
   lvim.reload_config_on_save = false -- NOTE: i don't like this
-  lvim.builtin.mind.active = true
+  lvim.builtin.mind.active = false
   lvim.builtin.motion_provider = "flash"
-  lvim.builtin.harpoon.active = false
+  lvim.builtin.harpoon.active = true
   lvim.builtin.sell_your_soul_to_devil.openai = true -- NOTE: requires valid OPENAI_API_KEY environment variable
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end

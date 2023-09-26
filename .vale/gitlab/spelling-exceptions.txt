@@ -132,6 +132,7 @@ Haswell
 Helm
 Heroku
 Herokuish
+Heuristical
 Hexo
 HipChat
 Hyperledger
@@ -226,6 +227,7 @@ Pipfile
 Pipfiles
 Piwik
 Poedit
+Ponzi
 PostgreSQL
 Prettifier
 Pritaly
