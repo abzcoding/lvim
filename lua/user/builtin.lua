@@ -266,7 +266,11 @@ M.config = function()
 
   -- IndentBlankline
   -- =========================================
-  require("user.indent_blankline").config()
+  if lvim.builtin.indentlines.mine then
+    require("user.indent_blankline").setup()
+  elseif lvim.builtin.indentlines.active then
+    require("user.indent_blankline").config()
+  end
 
   -- LSP
   -- =========================================

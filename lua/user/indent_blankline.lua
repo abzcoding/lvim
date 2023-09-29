@@ -1,5 +1,58 @@
 local M = {}
 
+M.setup = function()
+  local status_ok, ibl = pcall(require, "ibl")
+  if not status_ok then
+    return
+  end
+  ibl.setup {
+    indent = {
+      char = { "", "┊", "┆", "¦", "|", "¦", "┆", "┊", "" },
+    },
+    exclude = {
+      buftype = { "terminal", "nofile" },
+      filetype = {
+        "alpha",
+        "log",
+        "gitcommit",
+        "dapui_scopes",
+        "dapui_stacks",
+        "dapui_watches",
+        "dapui_breakpoints",
+        "dapui_hover",
+        "LuaTree",
+        "dbui",
+        "UltestSummary",
+        "UltestOutput",
+        "vimwiki",
+        "markdown",
+        "json",
+        "txt",
+        "vista",
+        "NvimTree",
+        "git",
+        "TelescopePrompt",
+        "undotree",
+        "flutterToolsOutline",
+        "org",
+        "orgagenda",
+        "help",
+        "startify",
+        "dashboard",
+        "lazy",
+        "neogitstatus",
+        "Outline",
+        "Trouble",
+        "lspinfo",
+        "", -- for all buffers without a file type
+      },
+    },
+    scope = {
+      enabled = true,
+    },
+  }
+end
+
 M.config = function()
   lvim.builtin.indentlines.options = {
     enabled = true,
