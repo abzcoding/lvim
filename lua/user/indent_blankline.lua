@@ -137,4 +137,20 @@ M.config = function()
   }
 end
 
+M.enable = function()
+  if lvim.builtin.indentlines.mine then
+    require("ibl").setup_buffer(0, { enabled = true })
+  elseif lvim.builtin.indentlines.active then
+    vim.cmd [[IndentBlanklineEnable!]]
+  end
+end
+
+M.disable = function()
+  if lvim.builtin.indentlines.mine then
+    require("ibl").setup_buffer(0, { enabled = false })
+  elseif lvim.builtin.indentlines.active then
+    vim.cmd [[IndentBlanklineDisable!]]
+  end
+end
+
 return M
