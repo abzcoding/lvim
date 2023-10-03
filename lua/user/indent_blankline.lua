@@ -49,8 +49,11 @@ M.setup = function()
     },
     scope = {
       enabled = true,
+      show_start = false,
     },
   }
+  local hooks = require "ibl.hooks"
+  hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
 end
 
 M.config = function()

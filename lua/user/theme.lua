@@ -34,7 +34,7 @@ function HighlightedFoldtext()
       prev_range = range
     end
   end
-  result[#result] = {" {...} ( ".. tostring(vim.v.foldend - vim.v.foldstart) .. " lines)", "Folded"}
+  result[#result] = { " {...} ( " .. tostring(vim.v.foldend - vim.v.foldstart) .. " lines)", "Folded" }
 
   return result
 end
@@ -221,6 +221,7 @@ M.catppuccin = function()
       },
       indent_blankline = {
         enabled = true,
+        scope_color = "surface2",
         colored_indent_levels = false,
       },
       gitsigns = lvim.builtin.gitsigns.active,

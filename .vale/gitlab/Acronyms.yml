@@ -19,6 +19,7 @@ exceptions:
   - ACL
   - ACK
   - AJAX
+  - AMSI
   - ANSI
   - API
   - APT
@@ -226,6 +227,7 @@ exceptions:
   - RVA
   - RVM
   - SAAS
+  - SAM
   - SAML
   - SANS
   - SAST
