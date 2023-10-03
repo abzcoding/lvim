@@ -194,7 +194,9 @@ Matomo
 Mattermost
 Memorystore
 Merkle
+Meterpreter
 Microsoft
+Mimikatz
 MinIO
 Minikube
 ModSecurity

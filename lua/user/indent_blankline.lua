@@ -10,8 +10,8 @@ M.setup = function()
       char = { "", "┊", "┆", "¦", "|", "¦", "┆", "┊", "" },
     },
     exclude = {
-      buftype = { "terminal", "nofile" },
-      filetype = {
+      buftypes = { "terminal", "nofile" },
+      filetypes = {
         "alpha",
         "log",
         "gitcommit",
