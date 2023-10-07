@@ -18,6 +18,7 @@ exceptions:
   - ACG
   - ACL
   - ACK
+  - ADFS
   - AJAX
   - AMSI
   - ANSI
@@ -147,6 +148,7 @@ exceptions:
   - JVM
   - JWT
   - KASLR
+  - KDC
   - KMCI
   - KVM
   - LAN
@@ -176,6 +178,7 @@ exceptions:
   - NIST
   - NOTE
   - NPM
+  - NTLM
   - NTP
   - NVRAM
   - ONLY
@@ -185,6 +188,7 @@ exceptions:
   - OTP
   - OTR
   - OWASP
+  - PAC
   - PAT
   - PCI
   - PCI-DSS
@@ -266,6 +270,7 @@ exceptions:
   - SPDX
   - SPF
   - SPICE
+  - SPN
   - SQL
   - SSD
   - SSG
@@ -283,6 +288,7 @@ exceptions:
   - TCC
   - TCP
   - TEE
+  - TGT
   - TIFF
   - TIP
   - TLD

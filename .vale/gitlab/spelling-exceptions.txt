@@ -157,6 +157,7 @@ Kargadan
 Karma
 Kerberos
 Keycloak
+Keylog
 Keymap
 Kibana
 Kinesis
@@ -194,6 +195,7 @@ Matomo
 Mattermost
 Memorystore
 Merkle
+Metasploit
 Meterpreter
 Microsoft
 Mimikatz
@@ -414,6 +416,7 @@ compilable
 composable
 config
 configs
+crackable
 cron
 cronjob
 cronjobs

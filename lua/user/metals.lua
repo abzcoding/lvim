@@ -21,6 +21,7 @@ M.start = function()
     },
     fallbackScalaVersion = lvim.builtin.metals.fallbackScalaVersion,
     serverVersion = lvim.builtin.metals.serverVersion,
+    bloopVersion = lvim.builtin.metals.bloopVersion,
     serverProperties = {
       "-Xms750m",
       "-Xmx5G",

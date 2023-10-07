@@ -43,7 +43,8 @@ lvim.builtin.winbar_provider = "filename" -- can be "filename" or "treesitter" o
 lvim.builtin.metals = {
   active = false, -- enable/disable nvim-metals for scala development
   fallbackScalaVersion = "3.2.0-RC3",
-  serverVersion = "0.11.12",
+  serverVersion = "1.0.1",
+  bloopVersion = "1.5.11",
 }
 lvim.builtin.collaborative_editing = { active = false } -- enable/disable collaborative editing
 lvim.builtin.file_browser = { active = false } -- enable/disable telescope file browser
