@@ -788,4 +788,5 @@ Note that,
 # Troubleshooting
 
 1. Check your neovim version. Are you on the newest nightly version?
-2. Reset your packer cache, and update lvim.
+2. make sure to run `:Lazy sync`
+3. Reset your Lunarvim cache using `:LvimCacheReset`

@@ -89,6 +89,7 @@ Excon
 Exfiltrate
 Facebook
 Falco
+Fargate
 Fastzip
 Figma
 Filebeat
@@ -214,6 +215,7 @@ Nginx
 Nokogiri
 Nurtch
 OAuth
+OPSEC
 Octokit
 Okta
 OmniAuth

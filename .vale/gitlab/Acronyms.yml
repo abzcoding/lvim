@@ -34,12 +34,14 @@ exceptions:
   - AWS
   - BAR
   - BASLR
+  - BEV
   - BGP
   - BSD
   - BYOD
   - CAS
   - CASMM
   - CAM
+  - CCSS
   - CDN
   - CET
   - CFG
@@ -53,6 +55,7 @@ exceptions:
   - CONOP
   - CORE
   - CORS
+  - CPA
   - CPU
   - CRIME
   - CRLF
@@ -129,13 +132,16 @@ exceptions:
   - IBM
   - ICMP
   - ICO
+  - ICS
   - IDA
   - IDE
   - IDOR
+  - IDS
   - IID
   - IMAP
   - IOPS
   - IPFS
+  - IPS
   - IRC
   - IRQL
   - ISAC
@@ -163,6 +169,7 @@ exceptions:
   - MAC
   - MBR
   - MDL
+  - MEV
   - MFA
   - MIME
   - MIT
@@ -238,6 +245,7 @@ exceptions:
   - SATA
   - SBOM
   - SCA
+  - SCADA
   - SCIM
   - SCORE
   - SCP
@@ -309,6 +317,7 @@ exceptions:
   - UUID
   - VBS
   - VCS
+  - VHD
   - VLAN
   - VNC
   - VPC
