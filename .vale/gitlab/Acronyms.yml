@@ -34,8 +34,10 @@ exceptions:
   - AWS
   - BAR
   - BASLR
+  - BCP
   - BEV
   - BGP
+  - BNB
   - BSD
   - BYOD
   - CAS
@@ -87,12 +89,14 @@ exceptions:
   - ECDSA
   - ECS
   - EDR
+  - EEA
   - EFS
   - EKS
   - EOL
   - EPA
   - ETC
   - ETCD
+  - ETH
   - EVM
   - EXIF
   - FAQ
@@ -121,6 +125,7 @@ exceptions:
   - HIPAA
   - HMAC
   - HMP
+  - HSM
   - HSTS
   - HTML
   - HTTP
@@ -157,6 +162,7 @@ exceptions:
   - KDC
   - KMCI
   - KVM
+  - KYC
   - LAN
   - LDAP
   - LDAPS
@@ -169,11 +175,13 @@ exceptions:
   - MAC
   - MBR
   - MDL
+  - MDM
   - MEV
   - MFA
   - MIME
   - MIT
   - MMIO
+  - MSA
   - MSSQL
   - MVC
   - NAT
@@ -235,6 +243,7 @@ exceptions:
   - RSA
   - RSS
   - RST
+  - RTL
   - RVA
   - RVM
   - SAAS
