@@ -134,6 +134,7 @@ exceptions:
   - IAM
   - IANA
   - IAT
+  - IAVL
   - IBM
   - ICMP
   - ICO
@@ -166,6 +167,7 @@ exceptions:
   - LAN
   - LDAP
   - LDAPS
+  - LED
   - LESS
   - LFS
   - LRU
