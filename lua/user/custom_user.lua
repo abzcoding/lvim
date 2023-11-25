@@ -54,8 +54,6 @@ M.config = function()
   lvim.builtin.motion_provider = "flash"
   lvim.builtin.harpoon.active = true
   lvim.builtin.sell_your_soul_to_devil.openai = true -- NOTE: requires valid OPENAI_API_KEY environment variable
-  lvim.builtin.indentlines.active = false
-  lvim.builtin.indentlines.mine = true -- NOTE: using v3 till fixed upstream in lunarvim
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 
