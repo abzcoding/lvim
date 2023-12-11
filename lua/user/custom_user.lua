@@ -54,6 +54,7 @@ M.config = function()
   lvim.builtin.motion_provider = "flash"
   lvim.builtin.harpoon.active = true
   lvim.builtin.sell_your_soul_to_devil.openai = true -- NOTE: requires valid OPENAI_API_KEY environment variable
+  lvim.builtin.symbols_usage.active = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

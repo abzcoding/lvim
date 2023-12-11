@@ -333,7 +333,8 @@ M.config = function()
   lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", "󰸱 No Highlight" }
   lvim.builtin.which_key.mappings.g.name = " Git"
   if vim.fn.has "nvim-0.10" == 1 then
-    lvim.builtin.which_key.mappings["I"] = { "<cmd>lua vim.lsp.inlay_hint(0)<cr>", " Toggle Inlay" }
+
+    lvim.builtin.which_key.mappings["I"] = { "<cmd>lua require('user.neovim').inlay_hints()<cr>", " Toggle Inlay" }
   end
   lvim.builtin.which_key.mappings.l.name = " LSP"
   lvim.builtin.which_key.mappings["f"] = {

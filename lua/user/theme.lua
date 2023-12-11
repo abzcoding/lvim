@@ -597,6 +597,18 @@ M.telescope_theme = function(colorset)
     set_fg_bg("FzfLuaScrollBorderFull", colors.bg, colors.bg)
     set_fg_bg("FzfLuaHelpNormal", colors.bg_alt, colors.bg)
   end
+
+  if lvim.builtin.symbols_usage.active then
+    local function h(name)
+      return vim.api.nvim_get_hl(0, { name = name })
+    end
+
+    vim.api.nvim_set_hl(0, "SymbolUsageRounding", { fg = h("CursorLine").bg, italic = true })
+    vim.api.nvim_set_hl(0, "SymbolUsageContent", { bg = h("CursorLine").bg, fg = h("Comment").fg, italic = true })
+    vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Function").fg, bg = h("CursorLine").bg, italic = true })
+    vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Type").fg, bg = h("CursorLine").bg, italic = true })
+    vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("@keyword").fg, bg = h("CursorLine").bg, italic = true })
+  end
 end
 
 M.toggle_theme = function()
