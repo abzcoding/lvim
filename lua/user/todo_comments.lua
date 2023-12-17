@@ -17,9 +17,15 @@ M.config = function()
       NOTE = { icon = icons.NOTE, alt = { "INFO", "NB" } },
       ERROR = { icon = icons.ERROR, color = "error", alt = { "ERR" } },
       REFS = { icon = icons.REFS },
-      SAFETY = {icon = icons.SHIELD, color = "hint"},
+      SAFETY = { icon = icons.SHIELD, color = "hint" },
+      audit = { icon = icons.WARN, color = "warning" },
+      -- auditissue = { icon = icons.ERROR, color = "error", alt = { "audit-issue" } },
+      -- auditinfo = { icon = icons.NOTE, color = "hint", alt = { "audit-info" } },
     },
-    highlight = { max_line_len = 120 },
+    highlight = {
+      max_line_len = 120,
+      pattern = { [[.*<(KEYWORDS)\s*:]], [[\/\/.+(audit)\s+]] },
+    },
     colors = {
       error = { "DiagnosticError" },
       warning = { "DiagnosticWarn" },
