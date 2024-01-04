@@ -42,6 +42,7 @@ M.cmp_kind = {
   Property = " ",
   Reference = " ",
   Snippet = " ", -- ""," "," "
+  spell = "󰓆",
   StaticMethod = "",
   String = " ",
   Struct = "󰙅",

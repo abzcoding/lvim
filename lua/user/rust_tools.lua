@@ -52,6 +52,9 @@ M.config = function()
             enable = true,
             command = "clippy",
           },
+          diagnostics = {
+            experimental = true,
+          },
         },
       },
     },
