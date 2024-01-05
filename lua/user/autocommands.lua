@@ -196,18 +196,6 @@ M.make_run = function()
       )
     end,
   })
-  create_aucmd("FileType", {
-    group = "_lvim_user",
-    pattern = "rust",
-    callback = function()
-      vim.keymap.set(
-        "n",
-        "<leader>m",
-        "<cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='cargo build;read',count=2,direction='float'})<CR>"
-      )
-      vim.keymap.set("n", "<leader>r", "<cmd>lua require('rust-tools.runnables').runnables()<CR>")
-    end,
-  })
 end
 
 return M

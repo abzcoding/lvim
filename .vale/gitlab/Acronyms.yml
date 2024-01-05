@@ -38,6 +38,7 @@ exceptions:
   - BEV
   - BGP
   - BNB
+  - BPDU
   - BSD
   - BYOD
   - CAM
@@ -152,7 +153,6 @@ exceptions:
   - IOPS
   - IPFS
   - IPS
-  - IPSec
   - IRC
   - IRQL
   - ISAC
@@ -192,6 +192,7 @@ exceptions:
   - MSA
   - MSSQL
   - MVC
+  - NAC
   - NAT
   - NDA
   - NFS

@@ -159,9 +159,9 @@ M.config = function()
       ft = "markdown",
     },
     {
-      "simrat39/rust-tools.nvim",
-      lazy = true,
-      config = function()
+      "mrcjkb/rustaceanvim",
+      version = "^3",
+      init = function()
         require("user.rust_tools").config()
       end,
       ft = { "rust", "rs" },
@@ -832,7 +832,7 @@ M.config = function()
     },
     {
       "Wansmer/symbol-usage.nvim",
-      event = 'LspAttach',
+      event = "LspAttach",
       enabled = lvim.builtin.symbols_usage.active,
       config = function()
         require("user.symbol_use").config()

@@ -289,7 +289,7 @@ M.config = function()
 
   lvim.lsp.buffer_mappings.normal_mode["ga"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
   lvim.lsp.buffer_mappings.normal_mode["gA"] = {
-    "<cmd>lua if vim.bo.filetype == 'rust' then vim.cmd[[RustHoverActions]] else vim.lsp.codelens.run() end<CR>",
+    "<cmd>lua if vim.bo.filetype == 'rust' then vim.cmd[[RustLsp hover actions]] else vim.lsp.codelens.run() end<CR>",
     "CodeLens Action",
   }
   lvim.lsp.buffer_mappings.normal_mode["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" }
@@ -767,9 +767,8 @@ M.show_documentation = function()
   elseif vim.tbl_contains({ "man" }, filetype) then
     vim.cmd("Man " .. vim.fn.expand "<cword>")
   elseif filetype == "rust" then
-    local found, rt = pcall(require, "rust-tools")
-    if found then
-      rt.hover_actions.hover_actions()
+    if lvim.builtin.rust_programming.active then
+      vim.cmd.RustLsp { "hover", "actions" }
     else
       vim.lsp.buf.hover()
     end
@@ -844,19 +843,14 @@ M.lsp_on_attach_callback = function(client, _)
       "Clippy",
     }
     if lvim.builtin.rust_programming.active then
-      mappings["lA"] = { "<Cmd>RustHoverActions<CR>", "Hover Actions" }
-      mappings["lm"] = { "<Cmd>RustExpandMacro<CR>", "Expand Macro" }
-      mappings["lH"] = { "<Cmd>RustToggleInlayHints<CR>", "Toggle Inlay Hints" }
-      mappings["le"] = { "<Cmd>RustRunnables<CR>", "Runnables" }
-      mappings["lD"] = { "<cmd>RustDebuggables<Cr>", "Debuggables" }
-      mappings["lP"] = { "<cmd>RustParentModule<Cr>", "Parent Module" }
-      mappings["lv"] = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" }
-      mappings["lR"] = {
-        "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
-        "Reload Workspace",
-      }
-      mappings["lc"] = { "<Cmd>RustOpenCargo<CR>", "Open Cargo" }
-      mappings["lo"] = { "<Cmd>RustOpenExternalDocs<CR>", "Open External Docs" }
+      mappings["lA"] = { "<Cmd>RustLsp hover actions<CR>", "Hover Actions" }
+      mappings["lm"] = { "<Cmd>RustLsp expandMacro<CR>", "Expand Macro" }
+      mappings["le"] = { "<Cmd>RustLsp runnables<CR>", "Runnables" }
+      mappings["lD"] = { "<cmd>RustLsp debuggables<Cr>", "Debuggables" }
+      mappings["lP"] = { "<cmd>RustLsp parentModule<Cr>", "Parent Module" }
+      mappings["lv"] = { "<cmd>RustLsp crateGraph<Cr>", "View Crate Graph" }
+      mappings["lR"] = { "<cmd>RustLsp flyCheck<Cr>", "Reload Workspace" }
+      mappings["lc"] = { "<Cmd>RustLsp openCargo<CR>", "Open Cargo" }
     end
   elseif client.name == "taplo" then
     if lvim.builtin.rust_programming.active then

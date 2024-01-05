@@ -1,14 +1,9 @@
 local M = {}
 
 M.config = function()
-  local status_ok, rust_tools = pcall(require, "rust-tools")
-  if not status_ok then
-    return
-  end
-
   local opts = {
     tools = {
-      executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
+      executor = require "rustaceanvim.executors.termopen", -- can be quickfix or termopen
       reload_workspace_from_cargo_toml = true,
       inlay_hints = {
         auto = true,
@@ -42,7 +37,7 @@ M.config = function()
       end,
       on_init = require("lvim.lsp").common_on_init,
       capabilities = require("lvim.lsp").common_capabilities(),
-      settings = {
+      default_settings = {
         ["rust-analyzer"] = {
           inlayHints = { locationLinks = false },
           lens = {
@@ -60,7 +55,7 @@ M.config = function()
     },
   }
   local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/")
-  local vscode_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
+  local vscode_path = vim.fn.expand "~/" .. ".vscode/extensions/vadimcn.vscode-lldb-1.10.0/"
 
   local path = ""
   local debugger_found = true
@@ -82,14 +77,17 @@ M.config = function()
     end
 
     if vim.fn.filereadable(codelldb_path) and vim.fn.filereadable(liblldb_path) then
+      local cfg = require "rustaceanvim.config"
       opts.dap = {
-        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+        adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
       }
     else
       vim.notify("please reinstall codellb, i cannot find liblldb or codelldb itself", vim.log.levels.WARN)
     end
   end
-  rust_tools.setup(opts)
+  vim.g.rustaceanvim = function()
+    return opts
+  end
 end
 
 M.dir_exists = function(file)
