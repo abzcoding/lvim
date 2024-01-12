@@ -227,6 +227,7 @@ exceptions:
   - PID
   - PNG
   - POC
+  - POP
   - POSIX
   - POST
   - PPP
@@ -291,6 +292,7 @@ exceptions:
   - SMEP
   - SMS
   - SMTP
+  - SNMP
   - SOAP
   - SOAR
   - SOC

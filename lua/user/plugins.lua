@@ -168,7 +168,7 @@ M.config = function()
       enabled = lvim.builtin.rust_programming.active,
     },
     {
-      url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      "abzcoding/lsp_lines.nvim",
       lazy = true,
       config = function()
         require("lsp_lines").setup()
