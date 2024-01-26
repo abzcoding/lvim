@@ -72,7 +72,6 @@ lvim.builtin.colored_args = false -- if true then sets up hlargs.nvim
 lvim.builtin.bigfile.active = true
 lvim.builtin.indentlines.active = false
 lvim.builtin.indentlines.mine = true -- NOTE: using v3 till fixed upstream in lunarvim
--- WARN: mind plugin is deprecated ( use with caution )
 lvim.builtin.mind = { active = false, root_path = "~/.mind" } -- enable/disable mind.nvim
 lvim.builtin.symbols_usage = { active = false } -- enable/disable symbols-usage.nvim
 

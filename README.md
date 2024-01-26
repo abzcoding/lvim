@@ -453,7 +453,7 @@ _Symbols Outline_
 - [inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [hlargs.nvim](https://github.com/m-demare/hlargs.nvim)
 - [cmake-tools.nvim](https://github.com/Civitasv/cmake-tools.nvim)
-- [mind.nvim](https://github.com/phaazon/mind.nvim)
+- [mind.nvim](https://github.com/Selyss/mind.nvim)
 - [wtf.nvim](https://github.com/piersolenski/wtf.nvim)
 - [backseat.nvim](https://github.com/james1236/backseat.nvim)
 

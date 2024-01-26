@@ -758,8 +758,7 @@ M.config = function()
       enabled = lvim.builtin.python_programming.active,
     },
     {
-      "phaazon/mind.nvim",
-      branch = "v2.2",
+      "Selyss/mind.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
       config = function()
         require("user.mind").config()
