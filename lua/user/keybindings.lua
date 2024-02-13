@@ -407,6 +407,8 @@ M.config = function()
     lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", " Symbol Outline" }
   elseif lvim.builtin.tag_provider == "vista" then
     lvim.builtin.which_key.mappings["o"] = { "<cmd>Vista!!<cr>", "Vista" }
+  elseif lvim.builtin.tag_provider == "outline" then
+    lvim.builtin.which_key.mappings["o"] = { "<cmd>Outline<cr>", " Symbol Outline" }
   end
   lvim.builtin.which_key.mappings.L.name = " LunarVim"
   lvim.builtin.which_key.mappings.p.name = " Lazy"

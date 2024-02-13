@@ -47,6 +47,7 @@ M.config = function()
   lvim.builtin.go_programming.active = true
   lvim.builtin.python_programming.active = true
   lvim.builtin.web_programming.active = true
+  lvim.builtin.web_programming.extra = "typescript-tools.nvim"
   lvim.builtin.rust_programming.active = true
   lvim.builtin.cpp_programming.active = true
   lvim.builtin.borderless_cmp = true
@@ -56,6 +57,7 @@ M.config = function()
   lvim.builtin.motion_provider = "flash"
   lvim.builtin.harpoon.active = true
   lvim.builtin.symbols_usage.active = true
+  lvim.builtin.tag_provider = "outline"
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

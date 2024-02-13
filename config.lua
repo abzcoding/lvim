@@ -49,7 +49,7 @@ lvim.builtin.metals = {
 lvim.builtin.collaborative_editing = { active = false } -- enable/disable collaborative editing
 lvim.builtin.file_browser = { active = false } -- enable/disable telescope file browser
 lvim.builtin.sniprun = { active = false } -- enable/disable sniprun
-lvim.builtin.tag_provider = "symbols-outline" -- change this to use different tag providers ( symbols-outline or vista )
+lvim.builtin.tag_provider = "symbols-outline" -- change this to use different tag providers ( symbols-outline or vista or outline)
 lvim.builtin.global_statusline = false -- set true to use global statusline
 lvim.builtin.dressing = { active = false } -- enable to override vim.ui.input and vim.ui.select with telescope
 lvim.builtin.refactoring = { active = false } -- enable to use refactoring.nvim code_actions
@@ -63,7 +63,7 @@ lvim.builtin.illuminate.active = false
 lvim.builtin.noice = { active = false } -- enables noice.nvim and inc-rename.nvim
 lvim.builtin.go_programming = { active = false } -- gopher.nvim + nvim-dap-go
 lvim.builtin.python_programming = { active = false } -- swenv.nvim + nvim-dap-python + requirements.txt.vim
-lvim.builtin.web_programming = { active = false } -- typescript.nvim + package-info.nvim
+lvim.builtin.web_programming = { active = false, extra = "typescript.nvim" } -- (typescript.nvim or typescript-tools.nvim) + package-info.nvim
 lvim.builtin.rust_programming = { active = false } -- rustaceanvim + crates.nvim
 lvim.builtin.cpp_programming = { active = false } -- clangd_extensions.nvim + make-tools.nvim
 lvim.builtin.cmp.cmdline.enable = false
