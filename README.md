@@ -456,6 +456,7 @@ _Symbols Outline_
 - [wtf.nvim](https://github.com/piersolenski/wtf.nvim)
 - [backseat.nvim](https://github.com/james1236/backseat.nvim)
 - [outline.nvim](https://github.com/hedyhli/outline.nvim)
+- [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim)
 
 </details>
 
