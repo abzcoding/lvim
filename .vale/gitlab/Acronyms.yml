@@ -95,6 +95,7 @@ exceptions:
   - EFS
   - EIGRP
   - EKS
+  - ELF
   - EOL
   - EPA
   - ETC
@@ -111,14 +112,17 @@ exceptions:
   - FREE
   - FTP
   - GCP
+  - GDB
   - GDK
   - GDPR
+  - GDT
   - GET
   - GIF
   - GKE
   - GNU
   - GPG
   - GPL
+  - GPR
   - GPU
   - GUI
   - GUID
@@ -167,6 +171,8 @@ exceptions:
   - KASLR
   - KDC
   - KMCI
+  - KPTI
+  - KVA
   - KVM
   - KYC
   - LAN
@@ -310,6 +316,7 @@ exceptions:
   - SSO
   - SSRF
   - SSTI
+  - STIBP
   - SUID
   - SVG
   - SVN
@@ -322,6 +329,7 @@ exceptions:
   - TGT
   - TIFF
   - TIP
+  - TLB
   - TLD
   - TLS
   - TODO
@@ -329,7 +337,9 @@ exceptions:
   - TOR
   - TOTP
   - TSC
+  - TSS
   - TTL
+  - TUI
   - UAF
   - UDP
   - UNIX

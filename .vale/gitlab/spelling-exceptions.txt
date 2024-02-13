@@ -255,6 +255,7 @@ Redcarpet
 Redis
 Redmine
 Restlet
+Retpoline
 Rubinius
 Rubix
 Rubocop

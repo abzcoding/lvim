@@ -184,7 +184,7 @@ M.config = function()
       end,
     },
     {
-      "windwp/nvim-spectre",
+      "nvim-pack/nvim-spectre",
       lazy = true,
       config = function()
         require("user.spectre").config()

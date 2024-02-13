@@ -393,7 +393,7 @@ _Symbols Outline_
 - [Markdown Preview for (Neo)vim](https://github.com/iamcco/markdown-preview.nvim)
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rustaceanvim](https://github.com/mrcjkb/rustaceanvim)
-- [nvim-spectre](https://github.com/windwp/nvim-spectre)
+- [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Neogen](https://github.com/danymat/neogen)
 - [Vimtex](https://github.com/lervag/vimtex)
