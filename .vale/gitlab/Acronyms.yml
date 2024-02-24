@@ -37,6 +37,7 @@ exceptions:
   - BCP
   - BEV
   - BGP
+  - BIOS
   - BNB
   - BPDU
   - BSD
@@ -120,9 +121,11 @@ exceptions:
   - GIF
   - GKE
   - GNU
+  - GOT
   - GPG
   - GPL
   - GPR
+  - GPT
   - GPU
   - GUI
   - GUID
@@ -161,6 +164,7 @@ exceptions:
   - IRC
   - IRQL
   - ISAC
+  - ISF
   - ISN
   - ISO
   - IUM
@@ -196,6 +200,7 @@ exceptions:
   - MIT
   - MITM
   - MMIO
+  - MMU
   - MSA
   - MSSQL
   - MVC
@@ -222,6 +227,7 @@ exceptions:
   - OTR
   - OWASP
   - PAC
+  - PAE
   - PAT
   - PCI
   - PCI-DSS
@@ -232,6 +238,7 @@ exceptions:
   - PGP
   - PHP
   - PID
+  - PLT
   - PNG
   - POC
   - POP
@@ -343,6 +350,7 @@ exceptions:
   - TUI
   - UAF
   - UDP
+  - UEFI
   - UNIX
   - URI
   - URL

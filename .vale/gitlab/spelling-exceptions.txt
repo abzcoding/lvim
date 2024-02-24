@@ -384,6 +384,8 @@ blockquoting
 boolean
 booleans
 bootkit
+bootloader
+bootsector
 browsable
 bufferline
 bugfix
@@ -490,6 +492,7 @@ fastlane
 favicon
 favorited
 ffuf
+filesystem
 filetype
 filetypes
 firewalled
@@ -540,6 +543,7 @@ issuables
 jQuery
 jasmine-jquery
 javascript
+journaling
 jq
 jsdom
 json
