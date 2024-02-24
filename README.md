@@ -231,8 +231,6 @@ lvim # run :Lazy sync
 You can use [mason](mason) to install these:
 
 ```shell
-brew install luarocks
-luarocks install luacheck  # if you want to use luacheck
 cargo install selene  # if you want to use selene instead of luacheck
 brew install hadolint  # if you want to lint dockerfiles
 pip install vim-vint  # for vim linting
