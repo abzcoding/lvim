@@ -18,12 +18,14 @@ exceptions:
   - ACID
   - ACK
   - ACL
+  - ADC
   - ADFS
   - AJAX
   - AMSI
   - ANSI
   - API
   - APT
+  - ARINC
   - ARM
   - ARN
   - ARP
@@ -72,6 +74,7 @@ exceptions:
   - CTI
   - CVE
   - CVS
+  - DAC
   - DAG
   - DAO
   - DAST
@@ -117,6 +120,7 @@ exceptions:
   - GDK
   - GDPR
   - GDT
+  - GEO
   - GET
   - GIF
   - GKE
@@ -125,8 +129,11 @@ exceptions:
   - GPG
   - GPL
   - GPR
+  - GPS
   - GPT
   - GPU
+  - GSM
+  - GSO
   - GUI
   - GUID
   - HAML
@@ -167,6 +174,7 @@ exceptions:
   - ISF
   - ISN
   - ISO
+  - ISS
   - IUM
   - JPEG
   - JPG
@@ -184,8 +192,10 @@ exceptions:
   - LDAP
   - LDAPS
   - LED
+  - LEO
   - LESS
   - LFS
+  - LIDAR
   - LRU
   - LSP
   - LTS
@@ -194,6 +204,7 @@ exceptions:
   - MBR
   - MDL
   - MDM
+  - MEO
   - MEV
   - MFA
   - MIME
@@ -205,6 +216,7 @@ exceptions:
   - MSSQL
   - MVC
   - NAC
+  - NASA
   - NAT
   - NDA
   - NFS
@@ -221,6 +233,7 @@ exceptions:
   - ONLY
   - OPA
   - OSI
+  - OSINT
   - OSPF
   - OSS
   - OTP
