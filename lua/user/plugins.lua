@@ -862,6 +862,10 @@ M.config = function()
       end,
       enabled = (lvim.builtin.web_programming.active and lvim.builtin.web_programming.extra == "typescript-tools.nvim"),
     },
+    {
+      "nvim-neotest/nvim-nio",
+      enabled = lvim.builtin.dap.active,
+    },
   }
 end
 

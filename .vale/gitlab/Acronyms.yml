@@ -43,6 +43,7 @@ exceptions:
   - BNB
   - BPDU
   - BSD
+  - BSOD
   - BYOD
   - CAM
   - CAS
@@ -105,6 +106,7 @@ exceptions:
   - ETC
   - ETCD
   - ETH
+  - ETW
   - EVM
   - EXIF
   - FAQ
@@ -145,6 +147,7 @@ exceptions:
   - HOTP
   - HSM
   - HSTS
+  - HTA
   - HTML
   - HTTP
   - HTTPS
@@ -164,6 +167,7 @@ exceptions:
   - IGRP
   - IID
   - IMAP
+  - IOC
   - IOPS
   - IPC
   - IPFS
@@ -178,6 +182,7 @@ exceptions:
   - IUM
   - JPEG
   - JPG
+  - JSE
   - JSON
   - JVM
   - JWT
@@ -196,6 +201,7 @@ exceptions:
   - LESS
   - LFS
   - LIDAR
+  - LNK
   - LRU
   - LSP
   - LTS
@@ -213,6 +219,7 @@ exceptions:
   - MMIO
   - MMU
   - MSA
+  - MSI
   - MSSQL
   - MVC
   - NAC
@@ -360,6 +367,7 @@ exceptions:
   - TSC
   - TSS
   - TTL
+  - TTP
   - TUI
   - UAF
   - UDP
@@ -372,6 +380,8 @@ exceptions:
   - UTF
   - UTM
   - UUID
+  - VBA
+  - VBE
   - VBS
   - VCS
   - VHD
@@ -387,9 +397,13 @@ exceptions:
   - WMIC
   - WPAD
   - WSDL
+  - WSH
   - WSL
   - XDR
+  - XLAM
+  - XLL
   - XML
+  - XSL
   - XSS
   - XXE
   - YAML
