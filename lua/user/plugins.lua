@@ -866,6 +866,13 @@ M.config = function()
       "nvim-neotest/nvim-nio",
       enabled = lvim.builtin.dap.active,
     },
+    {
+      "mireq/large_file",
+      config = function()
+        require("large_file").setup()
+      end,
+      enabled = not lvim.builtin.bigfile.active,
+    },
   }
 end
 
