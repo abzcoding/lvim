@@ -269,6 +269,7 @@ M.config = function()
   lvim.builtin.gitsigns.opts._extmark_signs = true
   lvim.builtin.gitsigns.opts.current_line_blame_formatter = " <author>, <author_time> · <summary>"
   lvim.builtin.gitsigns.opts.attach_to_untracked = false
+  lvim.builtin.gitsigns.opts.yadm = nil
 
   -- IndentBlankline
   -- =========================================
