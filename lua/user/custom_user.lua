@@ -17,7 +17,7 @@ M.config = function()
     vim.g.tpipeline_cursormoved = 1
     -- HACK: lualine hijacks the statusline, so we need to set it back to what we want
     if vim.env.TMUX then
-      vim.cmd [[ autocmd WinEnter,BufEnter,VimResized * setlocal laststatus=0 ]]
+      vim.cmd [[ autocmd WinEnter,BufEnter,VimResized,Filetype * setlocal laststatus=0 ]]
     end
   end
   -- NOTE: custom icons doesn't work with nerd font v3 yet
