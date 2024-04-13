@@ -455,7 +455,7 @@ M.config = function()
           local _added_client = client.name
           only_lsp = only_lsp .. _added_client
           _added_client = string.sub(client.name, 1, 7)
-          if client.name == "copilot" then
+          if client.name == "GitHub Copilot" then
             lsp_icon = " "
           else
             table.insert(buf_client_names, _added_client)
