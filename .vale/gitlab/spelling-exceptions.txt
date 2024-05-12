@@ -390,6 +390,7 @@ booleans
 bootkit
 bootloader
 bootsector
+breakpoint
 browsable
 bufferline
 bugfix

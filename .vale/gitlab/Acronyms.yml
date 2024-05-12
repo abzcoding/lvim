@@ -52,6 +52,7 @@ exceptions:
   - CDN
   - CET
   - CFG
+  - CFI
   - CIS
   - CLI
   - CMD
@@ -85,6 +86,7 @@ exceptions:
   - DHCP
   - DHT
   - DLL
+  - DMA
   - DNS
   - DOM
   - DOS
@@ -92,6 +94,7 @@ exceptions:
   - DSS
   - DTD
   - DVCS
+  - EAF
   - EAP
   - ECDSA
   - ECS
@@ -138,6 +141,7 @@ exceptions:
   - GSO
   - GUI
   - GUID
+  - HAL
   - HAML
   - HDD
   - HEAD
@@ -152,6 +156,7 @@ exceptions:
   - HTTP
   - HTTPS
   - HVCI
+  - IAF
   - IAM
   - IANA
   - IAT
@@ -189,6 +194,7 @@ exceptions:
   - KASLR
   - KDC
   - KMCI
+  - KMCS
   - KPTI
   - KVA
   - KVM
@@ -203,10 +209,12 @@ exceptions:
   - LIDAR
   - LNK
   - LRU
+  - LSA
   - LSP
   - LTS
   - LUKS
   - MAC
+  - MASLR
   - MBR
   - MDL
   - MDM
@@ -353,6 +361,7 @@ exceptions:
   - TBD
   - TCC
   - TCP
+  - TEB
   - TEE
   - TGT
   - TIFF
@@ -364,6 +373,7 @@ exceptions:
   - TOML
   - TOR
   - TOTP
+  - TPM
   - TSC
   - TSS
   - TTL
