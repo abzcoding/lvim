@@ -1,7 +1,5 @@
 local M = {}
 
-local function default_commands() end
-
 M.config = function()
   local status_ok, legend = pcall(require, "legendary")
   if not status_ok then

@@ -12,12 +12,8 @@ if #launcher_path == 0 then
   launcher_path = vim.fn.glob(mason_path .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", true, true)[1]
 end
 local CONFIG = "linux"
-if vim.fn.has "mac" == 1 then
-  WORKSPACE_PATH = home .. "/workspace/"
-  CONFIG = "mac"
-elseif vim.fn.has "unix" == 1 then
-  WORKSPACE_PATH = home .. "/workspace/"
-else
+local WORKSPACE_PATH = home .. "/workspace/"
+if vim.fn.has "mac" ~= 1 and vim.fn.has "unix" ~= 1 then
   vim.notify("Unsupported system", vim.log.levels.ERROR)
 end
 
@@ -37,9 +33,7 @@ local workspace_dir = WORKSPACE_PATH .. project_name
 -- Test bundle
 -- Run :MasonInstall java-test
 local bundles = { vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar", true) }
-if #bundles == 0 then
-  bundles = { vim.fn.glob(mason_path .. "/packages/java-test/extension/server/*.jar", true) }
-end
+
 -- Debug bundle
 -- Run :MasonInstall java-debug-adapter
 local extra_bundles =

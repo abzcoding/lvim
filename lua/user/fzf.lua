@@ -10,10 +10,10 @@ local function hl_match(t)
         return h
       end
     else
-      local ok, hl = pcall(vim.api.nvim_get_hl_by_name, h, true)
+      local ok, hl = vim.api.nvim_get_hl(0, { name = h })
       -- must have at least bg or fg, otherwise this returns
       -- succesffully for cleared highlights (on colorscheme switch)
-      if ok and (hl.foreground or hl.background) then
+      if ok and (hl.fg or hl.bg) then
         return h
       end
     end

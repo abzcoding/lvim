@@ -65,7 +65,7 @@ M.make_code_action = function(opts)
           local client = vim.lsp.get_client_by_id(params.client_id)
           local spawn_opts = {
             cwd = client and client.config.root_dir or vim.fn.getcwd(),
-            input = content,
+            input = command,
             handler = handler,
             timeout = timeout,
           }

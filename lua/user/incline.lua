@@ -12,8 +12,8 @@ local function render(props)
   if bufname == "" then
     return "[No name]"
   end
-  local ret = vim.api.nvim_get_hl_by_name("Directory", true)
-  local directory_color = string.format("#%06x", ret["foreground"])
+  local ret = vim.api.nvim_get_hl(0, { name = "Directory" })
+  local directory_color = string.format("#%06x", ret["fg"])
   local parts = vim.split(vim.fn.fnamemodify(bufname, ":."), "/")
   local result = {}
   for idx, part in ipairs(parts) do

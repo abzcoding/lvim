@@ -207,6 +207,7 @@ exceptions:
   - LESS
   - LFS
   - LIDAR
+  - LLVM
   - LNK
   - LRU
   - LSA

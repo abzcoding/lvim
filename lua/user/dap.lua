@@ -379,7 +379,7 @@ M.config = function()
     python = function() end,
     pythonPath = function()
       local path
-      for _, server in pairs(vim.lsp.buf_get_clients()) do
+      for _, server in pairs(vim.lsp.get_clients()) do
         if server.name == "pyright" or server.name == "pylance" then
           path = vim.tbl_get(server, "config", "settings", "python", "pythonPath")
           break

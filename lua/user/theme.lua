@@ -479,7 +479,7 @@ M.hi_colors = function()
     red = { group = "diffRemoved", property = "foreground" },
   }
   local function get_hl_by_name(name)
-    local ret = vim.api.nvim_get_hl_by_name(name.group, true)
+    local ret = vim.api.nvim_get_hl(0, { name = name.group })
     return string.format("#%06x", ret[name.property])
   end
 
@@ -585,7 +585,7 @@ M.telescope_theme = function(colorset)
   local bg = vim.api.nvim_get_hl(0, { name = "StatusLine" }).bg
   local hl = vim.api.nvim_get_hl(0, { name = "Folded" })
   hl.bg = bg
-  vim.api.nvim_set_hl(0, "Folded", hl)
+  vim.api.nvim_set_hl(0, "Folded", { fg = hl.fg, bg = hl.bg })
   vim.opt.foldtext = [[luaeval('HighlightedFoldtext')()]]
 
   if not lvim.builtin.telescope.active then

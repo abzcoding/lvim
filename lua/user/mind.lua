@@ -51,8 +51,6 @@ M.config = function()
 
             if node.icon == nil or node.icon == " " then
               node.icon = " "
-            elseif node.icon == " " then
-              node.icon = " "
             end
 
             args.save_tree()
