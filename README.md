@@ -87,7 +87,7 @@ lvim.plugins = {
     <small><i>(🔎 Click to expand/collapse)</i></small>
   </summary>
 
-- I'm on [this PR](https://github.com/LunarVim/LunarVim/pull/2544) of LunarVim and i am using `neovim 0.9 head`
+- I'm using `neovim 0.11 head`
 - Do not use as is, too much bloated! Also do not use on a potato PC!!
 - i have a auto command to disable syntax,etc when you open files larger than `1MB`
 - if you don't want to use `harpoon`, disable it
@@ -143,7 +143,7 @@ lvim.plugins = {
 
 ### Prerequisites
 
-- [Neovim](neovim-install) >= v0.8.0
+- [Neovim](neovim-install) >= v0.10.0
 
 ```shell
   brew install neovim --nightly
