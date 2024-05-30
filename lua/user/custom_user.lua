@@ -59,6 +59,7 @@ M.config = function()
   lvim.builtin.symbols_usage.active = true
   lvim.builtin.tag_provider = "outline"
   lvim.builtin.bigfile.active = false
+  lvim.builtin.trouble.active = true
   -- require("lvim.lsp.manager").setup("prosemd_lsp", {})
 end
 

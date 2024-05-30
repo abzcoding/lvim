@@ -333,7 +333,8 @@ M.config = function()
   lvim.builtin.which_key.mappings["h"] = { "<cmd>nohlsearch<CR>", "󰸱 No Highlight" }
   lvim.builtin.which_key.mappings.g.name = " Git"
   if vim.fn.has "nvim-0.10" == 1 then
-    lvim.builtin.which_key.mappings["I"] = { "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", " Toggle Inlay" }
+    lvim.builtin.which_key.mappings["I"] =
+      { "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", " Toggle Inlay" }
   end
   lvim.builtin.which_key.mappings.l.name = " LSP"
   lvim.builtin.which_key.mappings["f"] = {
@@ -458,16 +459,18 @@ M.config = function()
       }
     end
   end
-  lvim.builtin.which_key.mappings["T"] = {
-    name = " Trouble",
-    d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
-    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-    r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    t = { "<cmd>TodoLocList <cr>", "Todo" },
-    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnosticss" },
-  }
+  if lvim.builtin.trouble.active then
+    lvim.builtin.which_key.mappings["T"] = {
+      name = " Trouble",
+      d = { "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Diagnostics" },
+      f = { "<cmd>Trouble lsp_definitions toggle<cr>", "Definitions" },
+      l = { "<cmd>Trouble loclist toggle<cr>", "LocationList" },
+      q = { "<cmd>Trouble quickfix toggle<cr>", "QuickFix" },
+      r = { "<cmd>Trouble lsp_references toggle<cr>", "References" },
+      t = { "<cmd>TodoLocList <cr>", "Todo" },
+      w = { "<cmd>Trouble diagnostics toggle<cr>", "Workspace Diagnostics" },
+    }
+  end
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", " Zen" }
   lvim.builtin.which_key.mappings["w"] = { "<cmd>w!<CR>", " Save" }
   lvim.builtin.which_key.vmappings["g"] = {

@@ -74,6 +74,7 @@ lvim.builtin.indentlines.active = false
 lvim.builtin.indentlines.mine = true -- NOTE: using v3 till fixed upstream in lunarvim
 lvim.builtin.mind = { active = false, root_path = "~/.mind" } -- enable/disable mind.nvim
 lvim.builtin.symbols_usage = { active = false } -- enable/disable symbols-usage.nvim
+lvim.builtin.trouble = { active = false } -- enable/disable trouble.nvim
 
 -- Custom User Config
 -- =========================================

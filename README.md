@@ -383,7 +383,6 @@ _Symbols Outline_
 - [Rose Pine Theme](https://github.com/rose-pine/neovim)
 - [LSP Signature](https://github.com/ray-x/lsp_signature.nvim/)
 - [Todo Comments](https://github.com/folke/todo-comments.nvim)
-- [Trouble](https://github.com/folke/trouble.nvim)
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [Twilight](https://github.com/folke/twilight.nvim)
 - [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)
@@ -406,6 +405,7 @@ _Symbols Outline_
 
 ### Optional Plugins
 
+- [Trouble](https://github.com/folke/trouble.nvim)
 - [Hop](https://github.com/phaazon/hop.nvim)
 - [Flash](https://github.com/folke/flash.nvim)
 - [Leap](https://github.com/ggandor/leap.nvim)
