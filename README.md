@@ -4,7 +4,8 @@ Do not use as is, use it as a source of inspiration.
 
 I've customized my ZSH/Tmux/[Wezterm](https://github.com/abzcoding/wezterm) too much, so it might not work properly 😅
 
-![141789968-ed61958c-9154-4774-b2e2-dfabe48d9660](https://user-images.githubusercontent.com/10992695/141791560-5062246a-056c-4a73-afa7-3152e6ad396e.jpg)
+<img width="1913" alt="Screenshot 2024-06-04 at 18 26 59" src="https://github.com/abzcoding/lvim/assets/10992695/261d74aa-cfd9-44f4-893a-f8d59d139b59">
+
 
 <details open>
   <summary>
@@ -286,21 +287,26 @@ The default is to serve localhost only, on port 8080. For a more advanced (remot
 <details>
   <summary><strong>Screenshots</strong> <small><i>(🔎 Click to expand/collapse)</i></small></summary>
 
-<img width="1914" alt="Screen Shot 2021-10-20 at 1 09 24 PM" src="https://user-images.githubusercontent.com/10992695/138069108-4fd1b129-0b20-4bfe-bf55-81614410ea58.png">
+<img width="1915" alt="Screenshot 2024-06-04 at 18 30 21" src="https://github.com/abzcoding/lvim/assets/10992695/276166a9-671b-4aed-8043-030c431ea9b0">
+
 
 ### BufferLine
 
-<img width="662" alt="Screen Shot 2021-10-18 at 5 44 20 PM" src="https://user-images.githubusercontent.com/10992695/137748538-33c59697-6783-43e5-bbd7-d920f91965bf.png">
+<img width="753" alt="Screenshot 2024-06-04 at 18 30 53" src="https://github.com/abzcoding/lvim/assets/10992695/24209836-f06e-4c2e-9b0d-112646c984a6">
+
 
 #### StatusLine
 
-<img width="1912" alt="Screen Shot 2021-10-18 at 5 45 16 PM" src="https://user-images.githubusercontent.com/10992695/137748708-ce6a91e1-aec4-46ea-b119-2086897c1d0e.png">
+<img width="1913" alt="Screenshot 2024-06-04 at 18 32 55" src="https://github.com/abzcoding/lvim/assets/10992695/d5c7a833-e90b-40be-9876-047f97887ee1">
+
 
 #### Dashboard
 
-<img width="1913" alt="Screen Shot 2021-10-18 at 5 40 16 PM" src="https://user-images.githubusercontent.com/10992695/137747972-825b31a8-ce43-483e-b766-8d26f9d77d3f.png">
+<img width="1770" alt="Screenshot 2024-06-04 at 18 33 48" src="https://github.com/abzcoding/lvim/assets/10992695/5e4afbf5-068f-4185-916b-bda1367007da">
 
-<img width="1904" alt="Screen Shot 2021-10-18 at 5 51 50 PM" src="https://user-images.githubusercontent.com/10992695/137749839-6b53ee28-5cc2-4ed0-999d-14905a68c645.png">
+
+<img width="1825" alt="Screenshot 2024-06-04 at 18 33 56" src="https://github.com/abzcoding/lvim/assets/10992695/9c9ec74a-03de-4423-bcd5-4518578ded89">
+
 
 #### lsp_signature
 
