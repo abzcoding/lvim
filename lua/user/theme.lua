@@ -586,7 +586,6 @@ M.telescope_theme = function(colorset)
   local hl = vim.api.nvim_get_hl(0, { name = "Folded" })
   hl.bg = bg
   vim.api.nvim_set_hl(0, "Folded", { fg = hl.fg, bg = hl.bg })
-  vim.opt.foldtext = [[luaeval('HighlightedFoldtext')()]]
 
   if not lvim.builtin.telescope.active then
     set_fg_bg("FzfLuaBorder", colors.bg, colors.bg)

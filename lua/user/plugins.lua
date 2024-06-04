@@ -27,7 +27,6 @@ M.config = function()
       cond = function()
         local _time = os.date "*t"
         return (_time.hour >= 1 and _time.hour < 9) and lvim.builtin.time_based_themes
-        -- return false
       end,
     },
     {
@@ -521,7 +520,6 @@ M.config = function()
     },
     {
       "j-hui/fidget.nvim",
-      -- branch = "legacy",
       config = function()
         require("user.fidget_spinner").config()
       end,

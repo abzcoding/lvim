@@ -53,6 +53,7 @@ M.config = function()
   vim.wo.foldlevel = 4
   vim.wo.foldnestmax = 3
   vim.wo.foldminlines = 1
+  vim.o.foldtext = "v:lua.HighlightedFoldtext()"
   vim.opt.guifont = "FiraCode Nerd Font:h13"
   vim.opt.cmdheight = 1
   vim.g.dashboard_enable_session = 0
