@@ -10,7 +10,7 @@ M.config = function()
     progress = {
       poll_rate = 0,
       suppress_on_insert = false,
-      ignore_done_already = false,
+      ignore_done_already = true,
       ignore_empty_message = true,
       ignore = { "null-ls", "none-ls" },
 
