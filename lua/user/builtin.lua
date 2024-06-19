@@ -269,6 +269,14 @@ M.config = function()
   lvim.builtin.gitsigns.opts.current_line_blame_formatter = " <author>, <author_time> · <summary>"
   lvim.builtin.gitsigns.opts.attach_to_untracked = false
   lvim.builtin.gitsigns.opts.yadm = nil
+  lvim.builtin.gitsigns.opts.signs = {
+    add = { text = "┃" },
+    change = { text = "┃" },
+    delete = { text = "_" },
+    topdelete = { text = "‾" },
+    changedelete = { text = "~" },
+    untracked = { text = "┆" },
+  }
 
   -- IndentBlankline
   -- =========================================
