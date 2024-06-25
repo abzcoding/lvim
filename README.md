@@ -393,7 +393,6 @@ _Symbols Outline_
 - [Twilight](https://github.com/folke/twilight.nvim)
 - [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)
 - [vim match-up](https://github.com/andymass/vim-matchup)
-- [Markdown Preview for (Neo)vim](https://github.com/iamcco/markdown-preview.nvim)
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rustaceanvim](https://github.com/mrcjkb/rustaceanvim)
 - [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
@@ -462,6 +461,7 @@ _Symbols Outline_
 - [outline.nvim](https://github.com/hedyhli/outline.nvim)
 - [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim)
 - [large_file](https://github.com/mireq/large_file)
+- [markdown.nvim](https://github.com/abzcoding/markdown.nvim/tree/feature/fancy)
 
 </details>
 

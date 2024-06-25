@@ -1,7 +1,7 @@
 -- Neovim
 -- =========================================
 lvim.leader = " "
-lvim.colorscheme = "tokyonight" -- set to a custom theme
+lvim.colorscheme = "habamax" -- set to a custom theme
 lvim.builtin.time_based_themes = true -- set false to use your own configured theme
 lvim.transparent_window = false -- enable/disable transparency
 lvim.debug = false
@@ -75,6 +75,7 @@ lvim.builtin.indentlines.mine = true -- NOTE: using v3 till fixed upstream in lu
 lvim.builtin.mind = { active = false, root_path = "~/.mind" } -- enable/disable mind.nvim
 lvim.builtin.symbols_usage = { active = false } -- enable/disable symbols-usage.nvim
 lvim.builtin.trouble = { active = false } -- enable/disable trouble.nvim
+lvim.builtin.markdown = { active = false } -- enable/disable markdown.nvim
 
 -- Custom User Config
 -- =========================================

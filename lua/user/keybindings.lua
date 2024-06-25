@@ -484,6 +484,11 @@ M.config = function()
     "Structural replace",
   }
 
+  if lvim.builtin.symbols_usage.active then
+    lvim.builtin.which_key.mappings["Y"] =
+      { "<cmd>lua require('symbol-usage').toggle()<cr>", "󰫦 Toggle Symbols" }
+  end
+
   -- My wezterm is weird
   -- =========================================
   local user = vim.env.USER

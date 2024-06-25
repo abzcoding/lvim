@@ -52,15 +52,6 @@ M.config = function()
   --     autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
   -- augroup END
   --   ]]
-  create_aucmd("BufWinEnter", {
-    group = "_lvim_user",
-    pattern = "*.md",
-    desc = "beautify markdown",
-    callback = function()
-      vim.cmd [[set syntax=markdown]]
-      require("user.markdown_syn").set_syntax()
-    end,
-  })
 
   if lvim.builtin.sql_integration.active then
     -- Add vim-dadbod-completion in sql files

@@ -40,8 +40,8 @@ function HighlightedFoldtext()
 end
 
 M.tokyonight = function()
-  -- require("tokyonight").setup {
-  lvim.builtin.theme.tokyonight.options = {
+  require("tokyonight").setup {
+  -- lvim.builtin.theme.tokyonight.options = {
     style = "storm",
     transparent = lvim.transparent_window,
     terminal_colors = true,
@@ -83,6 +83,12 @@ M.tokyonight = function()
       hl.NormalNC = { fg = current_colors.fg_dark, bg = "#1c1d28" }
       hl.Normal = { fg = current_colors.fg, bg = "#1f2335" }
       hl.CursorLineNr = { fg = current_colors.orange, style = "bold" }
+      hl["rainbow1"] = { fg = c.red }
+      hl["rainbow2"] = { fg = c.orange }
+      hl["rainbow3"] = { fg = c.yellow }
+      hl["rainbow4"] = { fg = c.green }
+      hl["rainbow5"] = { fg = c.teal }
+      hl["rainbow6"] = { fg = c.magenta }
     end,
   }
 end
@@ -296,6 +302,12 @@ M.kanagawa = function()
         NvimTreeFolderIcon = { fg = "#7e9cd8" },
         CmpItemKindEnum = { fg = "#957FB8" },
         ["@parameter"] = { fg = "#DCA561" },
+        rainbow1 = { fg = "#C34043" },
+        rainbow2 = { fg = "#FFA066" },
+        rainbow3 = { fg = "#DCA561" },
+        rainbow4 = { fg = "#76946A" },
+        rainbow5 = { fg = "#4e8ca2" },
+        rainbow6 = { fg = "#949fb5" },
       }
     end,
     theme = "wave",
@@ -452,7 +464,6 @@ M.current_colors = function()
   local _time = os.date "*t"
   if _time.hour >= 1 and _time.hour < 9 then
     colors = M.colors.rose_pine_colors
-    -- colors = M.colors.catppuccin_colors
   elseif _time.hour >= 9 and _time.hour < 17 then
     colors = M.colors.tokyonight_colors
   elseif _time.hour >= 17 and _time.hour < 21 then
@@ -537,6 +548,12 @@ M.telescope_theme = function(colorset)
     link("@lsp.typemod.variable", "@variable")
     link("@lsp.typemod.parameter.label", "@field")
     link("@type.qualifier", "@keyword")
+    link("@markup.heading.1.markdown", "rainbow1")
+    link("@markup.heading.2.markdown", "rainbow2")
+    link("@markup.heading.3.markdown", "rainbow3")
+    link("@markup.heading.4.markdown", "rainbow4")
+    link("@markup.heading.5.markdown", "rainbow5")
+    link("@markup.heading.6.markdown", "rainbow6")
   end
 
   -- NOTE: these are my personal preferences
@@ -614,11 +631,11 @@ end
 M.toggle_theme = function()
   local theme = lvim.colorscheme
   local colorset = require("user.theme").colors.tokyonight_colors
-  if theme == "tokyonight" then
+  if theme == "tokyonight-moon" then
     lvim.colorscheme = "catppuccin-mocha"
     colorset = require("user.theme").colors.catppuccin_colors
   else
-    lvim.colorscheme = "tokyonight"
+    lvim.colorscheme = "tokyonight-moon"
   end
   if vim.g.toggle_theme_icon == "   " then
     vim.g.toggle_theme_icon = "   "

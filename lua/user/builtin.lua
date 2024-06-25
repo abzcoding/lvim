@@ -363,11 +363,6 @@ M.config = function()
   lvim.builtin.project.active = true
   lvim.builtin.project.detection_methods = { "lsp", "pattern" }
 
-  -- Theme
-  -- =========================================
-  require("user.theme").tokyonight()
-  lvim.builtin.theme.name = "tokyonight"
-
   -- Toggleterm
   -- =========================================
   lvim.builtin.terminal.active = true
