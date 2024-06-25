@@ -171,8 +171,6 @@ M.config = function()
   end
   vim.g.editorconfig = true
 
-  vim.g.markdown_fenced_languages = { "shell=bash" }
-
   if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0.01
     vim.g.neovide_cursor_trail_length = 0.05
