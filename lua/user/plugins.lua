@@ -814,7 +814,7 @@ M.config = function()
       name = "new-indent",
       main = "ibl",
       config = function()
-        require("ibl").setup()
+        require("user.indent_blankline").setup()
       end,
       enabled = lvim.builtin.indentlines.mine,
     },

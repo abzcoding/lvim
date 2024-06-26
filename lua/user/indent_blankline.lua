@@ -49,7 +49,7 @@ M.setup = function()
     },
     scope = {
       enabled = true,
-      show_start = false,
+      show_start = true,
     },
   }
   local hooks = require "ibl.hooks"
