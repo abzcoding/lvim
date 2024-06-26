@@ -41,7 +41,7 @@ end
 
 M.tokyonight = function()
   require("tokyonight").setup {
-    style = "storm",
+    style = "moon",
     transparent = lvim.transparent_window,
     terminal_colors = true,
     styles = {

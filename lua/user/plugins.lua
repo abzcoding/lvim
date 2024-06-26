@@ -10,7 +10,10 @@ M.config = function()
       "folke/tokyonight.nvim",
       config = function()
         require("user.theme").tokyonight()
-        vim.cmd [[colorscheme tokyonight-moon]]
+        local _time = os.date "*t"
+        if (_time.hour >= 9 and _time.hour < 17) and lvim.builtin.time_based_themes then
+          lvim.colorscheme = "tokyonight-moon"
+        end
       end,
     },
     {
@@ -357,12 +360,10 @@ M.config = function()
       "declancm/cinnamon.nvim",
       config = function()
         require("cinnamon").setup {
-          default_keymaps = true,
-          default_delay = 4,
-          extra_keymaps = true,
-          extended_keymaps = false,
-          centered = true,
-          scroll_limit = 100,
+          keymaps = { extra = true },
+          options = {
+            delay = 4,
+          },
         }
       end,
       event = "BufRead",
