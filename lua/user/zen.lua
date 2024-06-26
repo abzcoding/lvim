@@ -1,11 +1,7 @@
 local M = {}
 
 M.hide_diagnostics = function()
-  local clients = vim.lsp.get_clients()
-  for _, client in ipairs(clients) do
-    local ns = vim.lsp.diagnostic.get_namespace(client.id)
-    vim.diagnostic.hide(ns)
-  end
+  vim.diagnostic.hide()
 
   if vim.bo.filetype == "rust" then
     vim.cmd "RustDisableInlayHints"
@@ -13,11 +9,7 @@ M.hide_diagnostics = function()
 end
 
 M.show_diagnostics = function()
-  local clients = vim.lsp.get_clients()
-  for _, client in ipairs(clients) do
-    local ns = vim.lsp.diagnostic.get_namespace(client.id)
-    vim.diagnostic.show(ns, nil, nil, require('user.builtin').default_diagnostic_config)
-  end
+  vim.diagnostic.show()
 
   if vim.bo.filetype == "rust" then
     vim.cmd "RustEnableInlayHints"
