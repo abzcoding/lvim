@@ -356,11 +356,6 @@ M.config = function()
   end
   -- lvim.builtin.nvimtree.hide_dotfiles = 0
 
-  -- Project
-  -- =========================================
-  lvim.builtin.project.active = true
-  lvim.builtin.project.detection_methods = { "lsp", "pattern" }
-
   -- Toggleterm
   -- =========================================
   lvim.builtin.terminal.active = true

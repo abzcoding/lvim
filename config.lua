@@ -76,6 +76,7 @@ lvim.builtin.mind = { active = false, root_path = "~/.mind" } -- enable/disable 
 lvim.builtin.symbols_usage = { active = false } -- enable/disable symbols-usage.nvim
 lvim.builtin.trouble = { active = false } -- enable/disable trouble.nvim
 lvim.builtin.markdown = { active = false } -- enable/disable markdown.nvim
+lvim.builtin.project.mine = false
 
 -- Custom User Config
 -- =========================================

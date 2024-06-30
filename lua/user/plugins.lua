@@ -870,6 +870,15 @@ M.config = function()
       end,
       enabled = lvim.builtin.markdown.active,
     },
+    {
+      "abzcoding/project.nvim",
+      name = "new-project",
+      branch = "fix/nvim-12",
+      config = function()
+        require("user.project").config()
+      end,
+      enabled = not lvim.builtin.project.active and lvim.builtin.project.mine,
+    },
   }
 end
 
