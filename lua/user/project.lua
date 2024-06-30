@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = function()
-  local ok, pj = pcall(require, "new-project")
+  local ok, pj = pcall(require, "project_nvim")
   if not ok then
     return
   end
