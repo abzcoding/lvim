@@ -42,6 +42,7 @@ end
 M.tokyonight = function()
   require("tokyonight").setup {
     style = "moon",
+    light_style = "day",
     transparent = lvim.transparent_window,
     terminal_colors = true,
     styles = {
@@ -81,7 +82,7 @@ M.tokyonight = function()
       hl.Cursor = { fg = current_colors.bg, bg = current_colors.fg }
       hl.NormalNC = { fg = current_colors.fg_dark, bg = "#1c1d28" }
       hl.Normal = { fg = current_colors.fg, bg = "#1f2335" }
-      hl.CursorLineNr = { fg = current_colors.orange, style = "bold" }
+      hl.CursorLineNr = { fg = current_colors.orange }
       hl["rainbow1"] = { fg = c.red, bg = "#24283b" }
       hl["rainbow2"] = { fg = c.orange, bg = "#24283b" }
       hl["rainbow3"] = { fg = c.yellow, bg = "#24283b" }
@@ -89,6 +90,7 @@ M.tokyonight = function()
       hl["rainbow5"] = { fg = c.teal, bg = "#24283b" }
       hl["rainbow6"] = { fg = c.magenta, bg = "#24283b" }
     end,
+    cache = true,
   }
 end
 
