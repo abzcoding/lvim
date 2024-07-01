@@ -602,7 +602,6 @@ M.config = function()
       telescope.load_extension "file_browser"
     end
     if lvim.builtin.project.mine then
-      vim.notify "Loading projects extension"
       telescope.load_extension "projects"
     end
   end
