@@ -460,7 +460,6 @@ _Symbols Outline_
 - [backseat.nvim](https://github.com/james1236/backseat.nvim)
 - [outline.nvim](https://github.com/hedyhli/outline.nvim)
 - [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim)
-- [large_file](https://github.com/mireq/large_file)
 - [markdown.nvim](https://github.com/abzcoding/markdown.nvim/tree/feature/fancy)
 
 </details>

@@ -855,13 +855,6 @@ M.config = function()
       enabled = lvim.builtin.dap.active,
     },
     {
-      "mireq/large_file",
-      config = function()
-        require("large_file").setup()
-      end,
-      enabled = not lvim.builtin.bigfile.active,
-    },
-    {
       "abzcoding/markdown.nvim",
       branch = "feature/fancy",
       name = "render-markdown",
