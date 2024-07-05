@@ -360,7 +360,7 @@ M.config = function()
       "declancm/cinnamon.nvim",
       config = function()
         require("cinnamon").setup {
-          keymaps = { basic = true, extra = true },
+          keymaps = { basic = true, extra = false },
           options = {
             mode = "window",
           },
