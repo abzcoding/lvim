@@ -175,6 +175,7 @@ M.rose_pine = function()
       CmpItemKindReference = { fg = "gold" },
       CmpItemKindOperator = { fg = "subtle" },
       CmpItemKindTypeSnippet = { fg = "pine" },
+      ColorColumn = {bg = "#16141f"},
       rainbow1 = { fg = "#eb6f92", bg = "#2a273f" },
       rainbow2 = { fg = "#ea9d34", bg = "#2a273f" },
       rainbow3 = { fg = "#f7c177", bg = "#2a273f" },

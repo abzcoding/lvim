@@ -54,6 +54,7 @@ exceptions:
   - CFG
   - CFI
   - CIS
+  - CISO
   - CLI
   - CMD
   - CNA

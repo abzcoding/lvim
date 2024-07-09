@@ -48,7 +48,7 @@ M.setup = function()
       },
     },
     scope = {
-      enabled = true,
+      enabled = false,
       show_start = true,
     },
   }
