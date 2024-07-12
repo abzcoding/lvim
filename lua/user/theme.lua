@@ -245,7 +245,7 @@ M.catppuccin = function()
       neotree = lvim.builtin.tree_provider == "neo-tree",
       overseer = lvim.builtin.task_runner == "overseer",
       symbols_outline = lvim.builtin.tag_provider == "symbols-outline",
-      which_key = lvim.builtin.which_key.active,
+      which_key = lvim.builtin.which_key.active or lvim.builtin.which_key.mine,
       leap = lvim.builtin.motion_provider == "leap",
       hop = lvim.builtin.motion_provider == "hop",
     },

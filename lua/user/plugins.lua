@@ -872,6 +872,17 @@ M.config = function()
       end,
       enabled = not lvim.builtin.project.active and lvim.builtin.project.mine,
     },
+    {
+      "folke/which-key.nvim",
+      name = "whhk",
+      event = "VeryLazy",
+      commit = "0119a83f6cd097701ff13044be4e1effc8dffe02",
+      pin = true,
+      config = function()
+        require("user.which").config()
+      end,
+      enabled = not lvim.builtin.which_key.active and lvim.builtin.which_key.mine,
+    },
   }
 end
 

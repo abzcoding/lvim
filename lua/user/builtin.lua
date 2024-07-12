@@ -436,17 +436,7 @@ M.config = function()
       },
     },
     swap = {
-      enable = true,
-      swap_next = {
-        ["<leader><M-a>"] = "@parameter.inner",
-        ["<leader><M-f>"] = "@function.outer",
-        ["<leader><M-e>"] = "@element",
-      },
-      swap_previous = {
-        ["<leader><M-A>"] = "@parameter.inner",
-        ["<leader><M-F>"] = "@function.outer",
-        ["<leader><M-E>"] = "@element",
-      },
+      enable = false,
     },
     move = {
       enable = true,

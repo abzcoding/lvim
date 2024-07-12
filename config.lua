@@ -77,6 +77,8 @@ lvim.builtin.symbols_usage = { active = false } -- enable/disable symbols-usage.
 lvim.builtin.trouble = { active = false } -- enable/disable trouble.nvim
 lvim.builtin.markdown = { active = false } -- enable/disable markdown.nvim
 lvim.builtin.project.mine = false
+lvim.builtin.which_key.active = false -- pin to v2.0.1
+lvim.builtin.which_key.mine = true -- pin to v2.0.1
 
 -- Custom User Config
 -- =========================================
