@@ -265,7 +265,7 @@ go build -o /usr/local/bin/gostructhelper && chmod 0755 /usr/local/bin/gostructh
 
 ## Collaborative Editing
 
-<details open>
+<details>
   <summary>
     <strong>Collaborative Editing</strong>
     <small><i>(🔎 Click to expand/collapse)</i></small>
