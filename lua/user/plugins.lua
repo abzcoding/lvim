@@ -148,7 +148,6 @@ M.config = function()
     },
     {
       "mrcjkb/rustaceanvim",
-      version = "^3",
       init = function()
         require("user.rust_tools").config()
       end,
