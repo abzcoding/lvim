@@ -178,6 +178,12 @@ lvim # run :Lazy sync
 
 ### Java
 
+<details>
+  <summary>
+    <strong>Java</strong>
+    <small><i>(🔎 Click to expand/collapse)</i></small>
+  </summary>
+
 Please run the following to have a better debugging and testing support for java
 
 ```shell
@@ -190,6 +196,8 @@ cd ~/.config/lvim/.vscode-java-test
 npm install
 npm run build-plugin
 ```
+
+</details>
 
 ### Recommended Fonts
 
