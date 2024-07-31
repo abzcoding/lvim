@@ -469,6 +469,7 @@ _Symbols Outline_
 - [outline.nvim](https://github.com/hedyhli/outline.nvim)
 - [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim)
 - [markdown.nvim](https://github.com/abzcoding/markdown.nvim/tree/feature/fancy)
+- [helpview.nvim](https://github.com/OXY2DEV/helpview.nvim)
 
 </details>
 

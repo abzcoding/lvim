@@ -882,6 +882,15 @@ M.config = function()
       end,
       enabled = not lvim.builtin.which_key.active and lvim.builtin.which_key.mine,
     },
+    {
+      "OXY2DEV/helpview.nvim",
+      lazy = true,
+      ft = "help",
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+      },
+      enabled = lvim.builtin.markdown.active,
+    },
   }
 end
 
