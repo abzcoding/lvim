@@ -51,6 +51,11 @@ M.config = function()
         dap = { justMyCode = false, console = "integratedTerminal" },
       },
       require "neotest-plenary",
+      require "neotest-zig" {
+        dap = {
+          adapter = "lldb",
+        },
+      },
     },
   }
 

@@ -280,6 +280,7 @@ M.config = function()
     { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
     { "nvim-neotest/neotest-python", event = { "BufEnter *.py" } },
     { "rouge8/neotest-rust", event = { "BufEnter *.rs" } },
+    { "lawrence-laz/neotest-zig", event = { "BufEnter *.zig" } },
     {
       "rcarriga/vim-ultest",
       cmd = { "Ultest", "UltestSummary", "UltestNearest" },
