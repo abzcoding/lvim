@@ -329,6 +329,7 @@ exceptions:
   - SFTP
   - SHA
   - SIEM
+  - SIM
   - SIP
   - SLA
   - SLSA
@@ -403,6 +404,7 @@ exceptions:
   - VNF
   - VPC
   - VPN
+  - VPS
   - VSS
   - WAF
   - WHQL

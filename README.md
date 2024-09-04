@@ -400,7 +400,6 @@ _Symbols Outline_
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [Twilight](https://github.com/folke/twilight.nvim)
 - [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)
-- [vim match-up](https://github.com/andymass/vim-matchup)
 - [Zen Mode](https://github.com/folke/zen-mode.nvim)
 - [rustaceanvim](https://github.com/mrcjkb/rustaceanvim)
 - [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
