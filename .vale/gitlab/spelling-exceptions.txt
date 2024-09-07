@@ -37,6 +37,7 @@ Bugzilla
 Buildkite
 CIS
 CSV
+CTemplar
 Caddy
 Camo
 Catppuccino
@@ -61,6 +62,8 @@ Coursier
 Crossplane
 CrowdIn
 Cryptocurrency
+Cryptomator
+Cwtch
 Cyber
 DDOS
 Dangerfile
@@ -87,6 +90,7 @@ ETag
 Ecto
 Elasticsearch
 Ethereum
+Etherpad
 Excon
 Exfiltrate
 Facebook
@@ -194,6 +198,7 @@ Mailgun
 Mailroom
 Makefile
 Makefiles
+Maltego
 Markdown
 Matomo
 Mattermost
@@ -207,14 +212,18 @@ MinIO
 Minikube
 ModSecurity
 Monero
+Monero
 Monokai
+Mullvad
 Nanoc
 Neogen
 Neoscroll
 Neovim
 Netcat
 Netlify
+Nextcloud
 Nginx
+Njalla
 Nokogiri
 Nurtch
 OAuth
@@ -225,6 +234,7 @@ OmniAuth
 OpenID
 OpenShift
 Opsgenie
+Orbot
 Overcommit
 Packagist
 Patroni
@@ -241,6 +251,7 @@ PostgreSQL
 Prefetch
 Prettifier
 Pritaly
+Privex
 Priyanka
 Prometheus
 ProseMirror
@@ -267,6 +278,7 @@ SQLi
 SSRF
 Salesforce
 Schemastore
+Searx
 Seccomp
 Semgrep
 Sendmail
@@ -293,12 +305,16 @@ Splunk
 SpotBugs
 Stackdriver
 Stackprof
+Startpage
 Stuxnet
 Superblock
+Suricata
+Syncthing
 Sysbench
 Sysmon
 TODO
 Tabnine
+Termux
 Thanos
 Thoughtbot
 Tiller
@@ -308,8 +324,10 @@ Tokenizers
 Tokyonight
 Traceroute
 Trello
+Tresorit
 Trivy
 Truststore
+Tutanota
 Twilio
 Twitter
 TypeScript
@@ -321,10 +339,12 @@ Vimtex
 Vue
 Vuex
 WAF
+Waterfox
 Wazuh
 WebdriverIO
 Webex
 Webservice
+Whonix
 Wireshark
 Wordpress
 Worldline
@@ -334,6 +354,7 @@ Xeon
 YouTrack
 Yubico
 ZSH
+Zcash
 Zeitwerk
 Zendesk
 Zstandard

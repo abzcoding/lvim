@@ -74,6 +74,7 @@ exceptions:
   - CSRF
   - CSS
   - CSV
+  - CTF
   - CTI
   - CVE
   - CVS
