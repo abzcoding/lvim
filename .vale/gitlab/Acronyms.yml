@@ -20,7 +20,9 @@ exceptions:
   - ACL
   - ADC
   - ADFS
+  - AES
   - AJAX
+  - AMD
   - AMSI
   - ANSI
   - API
@@ -33,14 +35,17 @@ exceptions:
   - ASIC
   - ASLR
   - ASN
+  - ATA
   - AWS
   - BAR
   - BASLR
   - BCP
   - BEV
+  - BFLA
   - BGP
   - BIOS
   - BNB
+  - BOLA
   - BPDU
   - BSD
   - BSOD
@@ -98,7 +103,9 @@ exceptions:
   - DVCS
   - EAF
   - EAP
+  - ECDH
   - ECDSA
+  - ECH
   - ECS
   - EDR
   - EEA
@@ -146,6 +153,7 @@ exceptions:
   - HAL
   - HAML
   - HDD
+  - HDMI
   - HEAD
   - HIPAA
   - HMAC
@@ -246,6 +254,7 @@ exceptions:
   - NIST
   - NOTE
   - NPM
+  - NTFS
   - NTLM
   - NTP
   - NVRAM
@@ -277,6 +286,7 @@ exceptions:
   - POSIX
   - POST
   - PPP
+  - PSP
   - PTE
   - PUT
   - QEMU
@@ -351,6 +361,7 @@ exceptions:
   - SPN
   - SQL
   - SSD
+  - SSDT
   - SSG
   - SSH
   - SSL
@@ -384,6 +395,7 @@ exceptions:
   - TTL
   - TTP
   - TUI
+  - UAC
   - UAF
   - UDP
   - UEFI
