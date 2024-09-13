@@ -336,6 +336,7 @@ M.config = function()
   else
     vim.lsp.handlers["textDocument/hover"] = M.enhanced_float_handler(vim.lsp.handlers.hover)
     vim.lsp.handlers["textDocument/signatureHelp"] = M.enhanced_float_handler(vim.lsp.handlers.signature_help)
+    vim.api.nvim_create_namespace "enhanced_handler"
   end
 
   -- NvimTree
@@ -895,6 +896,7 @@ end
 
 M.enhanced_float_handler = function(handler)
   return function(err, result, ctx, config)
+    local ns = vim.api.nvim_create_namespace "enhanced_handler"
     local buf, win = handler(
       err,
       result,
@@ -928,7 +930,7 @@ M.enhanced_float_handler = function(handler)
           local to
           from, to = line:find(pattern, from)
           if from then
-            vim.api.nvim_buf_set_extmark(buf, -1, l - 1, from - 1, {
+            vim.api.nvim_buf_set_extmark(buf, ns, l - 1, from - 1, {
               end_col = to,
               hl_group = hl_group,
             })
