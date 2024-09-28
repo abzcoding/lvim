@@ -29,6 +29,7 @@ Bazel
 Bepa
 Bhyve
 Binance
+Bing
 Bitbucket
 Bitwarden
 Blankline
@@ -48,6 +49,7 @@ CentOS
 Certbot
 ChaosKube
 ChatOps
+Chronolocation
 Citrix
 Citus
 ClickJacking
@@ -366,6 +368,7 @@ Worldline
 XInclude
 Xcode
 Xeon
+Yandex
 YouTrack
 Yubico
 ZSH
@@ -539,6 +542,7 @@ filetype
 filetypes
 firewalled
 firewalling
+footprinting
 formatters
 ftdetect
 ftplugin

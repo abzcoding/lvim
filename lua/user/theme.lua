@@ -4,7 +4,7 @@ function HighlightedFoldtext()
   local pos = vim.v.foldstart
   local line = vim.api.nvim_buf_get_lines(0, pos - 1, pos, false)[1]
   local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
-  local parser = vim.treesitter.get_parser(0, lang)
+  local parser = vim.treesitter.get_parser(0, lang, { error = false })
   local query = vim.treesitter.query.get(parser:lang(), "highlights")
 
   if query == nil then

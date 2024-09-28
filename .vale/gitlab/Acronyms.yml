@@ -258,6 +258,7 @@ exceptions:
   - NTLM
   - NTP
   - NVRAM
+  - OCR
   - ONLY
   - OPA
   - OSI
