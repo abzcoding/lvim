@@ -1,12 +1,10 @@
 local M = {}
 
 M.config = function()
-  if vim.fn.has "nvim-0.9" == 1 then
-    vim.opt.mousescroll = { "ver:1", "hor:6" }
-    vim.o.mousefocus = true
-    vim.o.mousemoveevent = true
-    vim.o.splitkeep = "screen"
-  end
+  vim.opt.mousescroll = { "ver:1", "hor:6" }
+  vim.o.mousefocus = true
+  vim.o.mousemoveevent = true
+  vim.o.splitkeep = "screen"
 
   lvim.builtin.lsp_lines = true
   vim.diagnostic.config { virtual_lines = false } -- i only want to use it explicitly ( by calling the toggle function)

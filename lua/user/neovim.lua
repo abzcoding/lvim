@@ -56,6 +56,7 @@ M.config = function()
   vim.o.foldtext = "v:lua.HighlightedFoldtext()"
   vim.opt.guifont = "FiraCode Nerd Font:h13"
   vim.opt.cmdheight = 1
+  vim.g.root_lsp_ignore = { "copilot" }
   vim.g.dashboard_enable_session = 0
   vim.g.dashboard_disable_statusline = 1
   vim.opt.pumblend = 10
@@ -153,22 +154,20 @@ M.config = function()
     end,
   })
 
-  if vim.fn.has "nvim-0.8" == 1 then
-    vim.filetype.add {
-      extension = {
-        fnl = "fennel",
-        wiki = "markdown",
-      },
-      filename = {
-        ["go.sum"] = "gosum",
-        ["go.mod"] = "gomod",
-      },
-      pattern = {
-        ["*.tml"] = "gohtmltmpl",
-        ["%.env.*"] = "sh",
-      },
-    }
-  end
+  vim.filetype.add {
+    extension = {
+      fnl = "fennel",
+      wiki = "markdown",
+    },
+    filename = {
+      ["go.sum"] = "gosum",
+      ["go.mod"] = "gomod",
+    },
+    pattern = {
+      ["*.tml"] = "gohtmltmpl",
+      ["%.env.*"] = "sh",
+    },
+  }
   vim.g.editorconfig = true
 
   if vim.g.neovide then
