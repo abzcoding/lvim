@@ -103,6 +103,7 @@ exceptions:
   - DVCS
   - EAF
   - EAP
+  - EAT
   - ECDH
   - ECDSA
   - ECH
@@ -195,6 +196,7 @@ exceptions:
   - ISO
   - ISS
   - IUM
+  - JIT
   - JPEG
   - JPG
   - JSE
@@ -429,6 +431,7 @@ exceptions:
   - WSH
   - WSL
   - XDR
+  - XFG
   - XLAM
   - XLL
   - XML

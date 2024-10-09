@@ -851,6 +851,14 @@ M.config = function()
         "nvim-treesitter/nvim-treesitter",
         "nvim-tree/nvim-web-devicons",
       },
+      config = function()
+        local presets = require "markview.presets"
+
+        require("markview").setup {
+          checkboxes = presets.checkboxes.nerd,
+          headings = presets.headings.glow,
+        }
+      end,
       enabled = lvim.builtin.markdown.active,
     },
     {
