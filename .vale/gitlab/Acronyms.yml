@@ -14,6 +14,7 @@ first: '\b([A-Z]{3,5})\b'
 second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
+  - AARW
   - ACG
   - ACID
   - ACK
@@ -184,11 +185,13 @@ exceptions:
   - IID
   - IMAP
   - IOC
+  - IOCTL
   - IOPS
   - IPC
   - IPFS
   - IPS
   - IRC
+  - IRP
   - IRQL
   - ISAC
   - ISF
