@@ -283,6 +283,7 @@ Redis
 Redmine
 Restlet
 Retpoline
+Riemannian
 Rubinius
 Rubix
 Rubocop
@@ -314,6 +315,7 @@ Solargraph
 Solarized
 Sotoon
 Sourcegraph
+Spacetime
 Spinlock
 Splunk
 SpotBugs
@@ -429,6 +431,7 @@ booleans
 bootkit
 bootloader
 bootsector
+bosonic
 breakpoint
 browsable
 bufferline
@@ -460,10 +463,12 @@ checksumming
 chroot
 clonable
 cmd
+cohomology
 colocated
 colocating
 colorscheme
 colorschemes
+compactifications
 compilable
 composable
 concolic
@@ -884,6 +889,7 @@ subzy
 sudo
 supercookie
 supercookies
+superstring
 supertype
 supertypes
 swappiness
@@ -1034,6 +1040,7 @@ upvote
 upvoted
 upvotes
 userland
+usermode
 utilize
 validator
 validators

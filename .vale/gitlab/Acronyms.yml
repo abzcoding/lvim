@@ -59,6 +59,7 @@ exceptions:
   - CET
   - CFG
   - CFI
+  - CFT
   - CIS
   - CISO
   - CLI
@@ -115,6 +116,7 @@ exceptions:
   - EIGRP
   - EKS
   - ELF
+  - ELK
   - EOL
   - EPA
   - ETC
@@ -227,6 +229,7 @@ exceptions:
   - LNK
   - LRU
   - LSA
+  - LSASS
   - LSP
   - LTS
   - LUKS
@@ -278,6 +281,7 @@ exceptions:
   - PAT
   - PCI
   - PCI-DSS
+  - PDE
   - PDF
   - PEB
   - PEM
@@ -296,6 +300,7 @@ exceptions:
   - PTE
   - PUT
   - QEMU
+  - QFT
   - QMP
   - QUIC
   - RAID

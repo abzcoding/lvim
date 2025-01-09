@@ -2,18 +2,10 @@ local M = {}
 
 M.hide_diagnostics = function()
   vim.diagnostic.hide()
-
-  if vim.bo.filetype == "rust" then
-    vim.cmd "RustDisableInlayHints"
-  end
 end
 
 M.show_diagnostics = function()
   vim.diagnostic.show()
-
-  if vim.bo.filetype == "rust" then
-    vim.cmd "RustEnableInlayHints"
-  end
 end
 
 M.config = function()
