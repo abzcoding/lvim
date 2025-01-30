@@ -187,6 +187,7 @@ M.set_task_runner_keymaps = function()
       name = " Run",
       f = { "<cmd>AsyncTask file-run<cr>", "File" },
       p = { "<cmd>AsyncTask project-run<cr>", "Project" },
+      l = { "<cmd>AsyncTaskLast<cr>", "Run Last" },
     }
   elseif lvim.builtin.task_runner == "overseer" then
     lvim.builtin.which_key.mappings["m"] = {
@@ -196,13 +197,13 @@ M.set_task_runner_keymaps = function()
       n = { "<cmd>OverseerBuild<CR>", "New Task" },
       q = { "<cmd>OverseerQuickAction<CR>", "Quick Action" },
       f = { "<cmd>OverseerTaskAction<CR>", "Task Action" },
-      t = { "<cmd>OverseerToggle<cr>", "Toggle Output" },
+      t = { "<cmd>OverseerToggle!<cr>", "Toggle Output" },
     }
     lvim.builtin.which_key.mappings["r"] = {
       name = " Run",
       f = { "<cmd>OverseerRun<cr>", "Run" },
       p = { "<cmd>OverseerRunCmd<cr>", "Run with Cmd" },
-      t = { "<cmd>OverseerToggle<cr>", "Toggle" },
+      t = { "<cmd>OverseerToggle!<cr>", "Toggle" },
     }
   else
     lvim.builtin.which_key.mappings["m"] = "Make"
@@ -308,8 +309,8 @@ M.config = function()
   end
   lvim.builtin.which_key.mappings["F"] = {
     name = " Find",
-    b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },
-    f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
+    b = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
+    f = { "<cmd>lua require('user.telescope').find_project_files()<cr>", "Find Project files" },
     g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
     i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
     l = {

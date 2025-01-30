@@ -268,7 +268,7 @@ function M.find_project_files(opts)
       return
     end
   end
-  builtin.git_files(opts)
+  builtin.find_files(opts)
 end
 
 return M

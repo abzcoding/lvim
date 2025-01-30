@@ -8,6 +8,20 @@ M.config = function()
   local STATUS = require("overseer.constants").STATUS
 
   see.setup {
+    templates = { builtin = true },
+    strategy = { "jobstart" },
+    task_list = {
+      bindings = {
+        dd = "Dispose",
+      },
+    },
+    task_launcher = {
+      bindings = {
+        n = {
+          ["<leader>c"] = "Cancel",
+        },
+      },
+    },
     log = {
       {
         type = "echo",
@@ -25,8 +39,10 @@ M.config = function()
         "on_exit_set_status",
         { "on_complete_notify", system = "unfocused" },
         "on_complete_dispose",
+        { "display_duration", detail_level = 2 },
       },
       default_neotest = {
+        "unique",
         { "on_complete_notify", system = "unfocused", on_change = true },
         "default",
       },
@@ -49,7 +65,6 @@ M.config = function()
       },
     },
   }
-
 end
 
 return M

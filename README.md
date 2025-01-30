@@ -577,6 +577,7 @@ Note that,
 | <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>e</kbd> |  𝐍   | Edit Tasks    |
 | <kbd>Space</kbd>+<kbd>m</kbd>+<kbd>l</kbd> |  𝐍   | List Tasks    |
 | <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>f</kbd> |  𝐍   | Run File      |
+| <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>l</kbd> |  𝐍   | Run Last      |
 | <kbd>Space</kbd>+<kbd>r</kbd>+<kbd>p</kbd> |  𝐍   | Run Project   |
 
 ### Plugin: Gitsigns
