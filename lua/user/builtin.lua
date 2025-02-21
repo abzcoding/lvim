@@ -379,7 +379,7 @@ M.config = function()
       { "json", "jsonc", "julia", "kotlin", "latex", "ledger", "lua", "make" },
       { "markdown", "markdown_inline", "nix", "ocaml", "perl", "php", "python" },
       { "query", "r", "regex", "rego", "ruby", "rust", "scala", "scss", "solidity" },
-      { "swift", "teal", "toml", "tsx", "typescript", "vim", "vue", "yaml", "zig" },
+      { "teal", "toml", "tsx", "typescript", "vim", "vue", "yaml", "zig" },
     })
     :flatten()
     :totable()
