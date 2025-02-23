@@ -1,5 +1,10 @@
 # Bloated LunarVim
 
+> [!IMPORTANT] 
+> currently in the process of migrating to other configurations, for now testing [zed](https://github.com/abzcoding/zed) and [lazyvim](https://github.com/abzcoding/nv)
+
+
+
 Do not use as is, use it as a source of inspiration.
 
 I've customized my ZSH/Tmux/[Wezterm](https://github.com/abzcoding/wezterm) too much, so it might not work properly 😅
